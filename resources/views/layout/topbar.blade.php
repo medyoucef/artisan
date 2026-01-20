@@ -30,7 +30,7 @@
                                         </div>
                                         <div class="top-bar-text">
                                             <h3>appelez-nous</h3>
-                                            <p>+213 678976457</p>
+                                            <p>+1 XXX XXX XXXX</p>
                                         </div>
                                     </div>
                                 </div>

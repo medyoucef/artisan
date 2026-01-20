@@ -1,61 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🛠️ Khdamlii – Plateforme de mise en relation entre artisans et clients
+Khdamlii est une plateforme conçue pour aider les particuliers à trouver rapidement un artisan qualifié près de chez eux.
+Elle permet également aux artisans indépendants et aux sociétés d’artisans de présenter leurs services et d’être contactés facilement.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+🎯 Objectif de la plateforme
+Faciliter la recherche d’artisans fiables et compétents
 
-## About Laravel
+Mettre en avant le savoir-faire local
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Offrir une interface simple, rapide et intuitive
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Permettre aux artisans d’augmenter leur visibilité
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Assurer une mise en relation directe entre clients et professionnels
 
-## Learning Laravel
+🧭 Fonctionnement général du site
+🔹 1. Page d’accueil
+La page d’accueil présente :
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Un carrousel mettant en avant différents métiers (plombier, menuisier, électricien, peintre, maçon…)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Les avantages de la plateforme (travail expert, qualité, support 7/7)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Une section À propos expliquant la mission de Khdamlii
 
-## Laravel Sponsors
+Des statistiques (nombre d’artisans, sociétés, projets réalisés…)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+La liste des professions disponibles
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+Une section Artisans & Sociétés (visible uniquement pour les utilisateurs connectés)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+🔹 2. Rechercher un artisan ou une société
+Les utilisateurs peuvent :
 
-## Code of Conduct
+Rechercher un artisan indépendant
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Rechercher une société d’artisans
 
-## Security Vulnerabilities
+Filtrer par ville ou adresse
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Voir les informations essentielles :
 
-## License
+Nom
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Métier
+
+Ville
+
+Adresse
+
+Téléphone
+
+WhatsApp
+
+Réseaux sociaux
+
+La recherche est instantanée (AJAX) : les résultats s’affichent sans recharger la page.
+
+🔹 3. Page des artisans
+Cette page affiche :
+
+La photo de l’artisan
+
+Son nom
+
+Sa profession
+
+Sa ville et son adresse
+
+Son numéro de téléphone
+
+Un bouton WhatsApp pour le contacter directement
+
+Ses réseaux sociaux (Facebook, Instagram)
+
+🔹 4. Page des sociétés d’artisans
+Cette page affiche :
+
+Le nom de la société
+
+Sa photo
+
+Sa ville et son adresse
+
+Son numéro de téléphone
+
+Un bouton WhatsApp
+
+Une recherche dynamique par ville ou adresse
+
+🔹 5. Page des professions
+Chaque profession possède :
+
+Une image représentative
+
+Une description
+
+Un bouton permettant d’ouvrir l’image en grand
+
+Un lien vers les artisans qui exercent ce métier
+
+🔹 6. Authentification
+Certaines sections sont réservées aux utilisateurs connectés :
+
+Liste des artisans
+
+Liste des sociétés
+
+Informations détaillées
+
+Les visiteurs non connectés voient un message les invitant à se connecter.

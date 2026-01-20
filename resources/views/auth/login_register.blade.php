@@ -56,10 +56,11 @@
     <!-- Nouveau champ : type_user -->
     <div class="input-group">
         <select name="type_user" required>
-            <option value="" disabled selected>Choose user type</option>
-            <option value="client">Client</option>
-            <option value="artisan">Artisan</option>
-            <option value="societe d'artisan">Société d'artisan</option>
+        <option value="" disabled selected>Choose user type</option>
+        <option value="client">Client</option>
+        <option value="artisan">Artisan</option>
+        <option value="societe_artisan">Société d'artisan</option>
+
         </select>
         <!-- <label for="">User Type</label> -->
     </div>

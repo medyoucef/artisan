@@ -75,12 +75,12 @@
                     <div class="card wow fadeInRight" data-wow-delay="0.1s">
                         <div class="card-header">
                             <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
-                                Khdamli est-il disponible partout en Algérie ?
+                                Khdamli est-il disponible partout dan le pays ?
                             </a>
                         </div>
                         <div id="collapseSix" class="collapse" data-parent="#accordion-2">
                             <div class="card-body">
-                                Oui, notre plateforme couvre toutes les wilayas d’Algérie. Le nombre d’artisans varie selon les régions.
+                                Oui, notre plateforme couvre tout le pays. Le nombre d’artisans varie selon les régions.
                             </div>
                         </div>
                     </div>

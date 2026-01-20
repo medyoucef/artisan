@@ -14,14 +14,12 @@
                     <a href="{{ route('artisan') }}" class="nav-item nav-link">Artisan</a>
                     <a href="{{ route('company') }}" class="nav-item nav-link">Entreprise</a>
                     <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
-                    
-                    @guest
-                        <a href="{{ route('auth') }}" class="nav-item nav-link">
-                            <i class="fas fa-sign-in-alt me-1"></i> Login
-                        </a>
-                    @endguest
 
                     @auth
+                        <a href="{{ route('profile') }}" class="nav-item nav-link">
+                            <i class="fas fa-user-circle me-1"></i> Profile
+                        </a>
+
                         <a href="#" class="nav-item nav-link"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="fas fa-sign-out-alt me-1"></i> Logout
@@ -31,6 +29,12 @@
                             @csrf
                         </form>
                     @endauth
+
+                    @guest
+                        <a href="{{ route('auth') }}" class="nav-item nav-link">
+                            <i class="fas fa-sign-in-alt me-1"></i> Login
+                        </a>
+                    @endguest
                 </div>
             </div>
         </nav>

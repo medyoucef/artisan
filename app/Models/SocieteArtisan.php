@@ -10,6 +10,9 @@ class SocieteArtisan extends Model
 
     protected $table = 'societe_artisan';
 
-    protected $fillable = ['name', 'description', 'photo'];
+    protected $fillable = [
+        'nom_societe', 'ville', 'adresse', 'telephone', 'photo',
+    ];
+    
 
 }

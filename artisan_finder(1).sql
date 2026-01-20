@@ -42,13 +42,6 @@ CREATE TABLE `artisans` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `artisans`
---
-
-INSERT INTO `artisans` (`id`, `nom`, `profession`, `photo`, `telephone`, `facebook`, `instagram`, `whatsapp`, `ville`, `adresse`, `created_at`) VALUES
-(1, 'mohammed oulladi', 'éléctricien', 'team-1.jpg', '0542775614', 'facebook.com', 'instagrame.com', '213542775614', 'Oran', 'cité fellawcen el barki', '2025-05-14 19:00:10'),
-(2, 'oulladi tayeb', 'coiffeur', 'slide7.jpg', '0540537532', 'facebook.com', 'istagramme/tayeb.com', '2135406253654', 'Alger', 'bach jarah alger centre', '2025-05-15 13:22:26'),
-(3, 'ali yazi', 'menuiserie', 'team-2.jpg', '0776534569', 'facebook.com', 'insta.com', '213542775614', 'Annaba', 'cité 260log annaba', '2025-05-15 14:34:29');
 
 -- --------------------------------------------------------
 
@@ -81,13 +74,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `messages`
---
-
-INSERT INTO `messages` (`id`, `nom`, `email`, `sujet`, `message`, `date_message`) VALUES
-(1, 'mohammed', 'moh31@gmail.com', 'problème', 'shvfghjvf fhgdfhjgfhj gfhdgfjd', '2025-05-18 11:45:28');
-
--- --------------------------------------------------------
+---------------------------------------------------
 
 --
 -- Structure de la table `professions`
@@ -140,15 +127,7 @@ CREATE TABLE `societe_artisan` (
   `photo` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `societe_artisan`
---
 
-INSERT INTO `societe_artisan` (`id`, `nom_societe`, `ville`, `adresse`, `telephone`, `photo`) VALUES
-(1, 'Oran artisan ', 'Oran', 'centre ville Oran', '213542775614', 'th.jpeg'),
-(2, 'Alger artisan', 'alger', 'el harache alger', '213667092345', 'soc2.jpeg');
-
--- --------------------------------------------------------
 
 --
 -- Structure de la table `users`

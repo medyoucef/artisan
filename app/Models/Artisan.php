@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artisan extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
         'nom', 'profession', 'photo', 'telephone',
         'facebook', 'instagram', 'whatsapp',

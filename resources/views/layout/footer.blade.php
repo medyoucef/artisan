@@ -38,7 +38,7 @@
                             <div class="newsletter">
                                 <h2>A propos</h2>
                                 <p>
-                                hdamlii est une plateforme 100% algérienne conçue pour mettre en relation les particuliers et les artisans qualifiés à travers toute l'Algérie. 
+                                hdamlii est une plateforme  conçue pour mettre en relation les particuliers et les artisans qualifiés à travers tout le pays. 
                                 </p>
                                 <div class="form">
                                     <input class="form-control" placeholder="Email here">
@@ -65,7 +65,7 @@
 						
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                         <div class="col-md-6">
-                            <p>Designed By <a href="#">Yazi & Oulladi </a></p>
+                            <p>Designed By <a href="#">Oulladi </a></p>
                         </div>
                     </div>
                 </div>

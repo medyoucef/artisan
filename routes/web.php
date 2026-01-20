@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtisanController;
 use App\Http\Controllers\SocieteArtisanController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfessionController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -32,3 +33,12 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.cu
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
+Route::post('/rejoindre-artisan', [ArtisanController::class, 'rejoindre'])->name('artisan.rejoindre');
+
+
+Route::post('/rejoindre-societe', [ProfileController::class, 'rejoindreSociete'])->name('societe.rejoindre');

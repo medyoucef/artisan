@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('ville');
             $table->string('adresse')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

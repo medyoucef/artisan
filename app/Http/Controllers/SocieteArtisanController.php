@@ -13,11 +13,22 @@ class SocieteArtisanController extends Controller
     }
 
     public function search(Request $request)
-    {
-        $societes = $this->filterSocietes($request);
-        $html = view('partials.societe_cards', compact('societes'))->render();
-        return response()->json(['html' => $html]);
+{
+    $query = SocieteArtisan::query();
+
+    if ($request->has('adresse') && !empty($request->adresse)) {
+        $query->where('adresse', 'like', '%' . $request->adresse . '%');
     }
+
+    $societes = $query->get();
+
+    $html = view('partials.societes_liste', compact('societes'))->render();
+
+    return response()->json(['html' => $html]);
+}
+
+
+    
 
     private function filterSocietes(Request $request)
     {
@@ -33,4 +44,5 @@ class SocieteArtisanController extends Controller
 
         return $query->get();
     }
+    
 }

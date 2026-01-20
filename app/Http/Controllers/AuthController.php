@@ -7,33 +7,38 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+
 class AuthController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('auth.login_register');
     }
 
     public function register(Request $request)
     {
-        // Validation
+        // Validation des champs
         $request->validate([
             'username' => 'required|string|max:255',
-            'type_user' => 'required|string|in:client,artisan,societe d\'artisan',
+            'type_user' => 'required|string|in:client,artisan,societe_artisan',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
+        
 
-        // Insertion
-        User::create([
+        // Création de l'utilisateur
+        $user = User::create([
             'name' => $request->username,
             'type_user' => $request->type_user,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        // dd($user);
+        // Connexion automatique
+        Auth::login($user);
 
-        // Redirection ou message de succès
-        return redirect()->route('home')->with('success', 'Inscription réussie !');
+        // Redirection vers la page home
+        return redirect()->route('home')->with('success', 'Inscription réussie, bienvenue !');
     }
 
     public function login(Request $request)
@@ -41,22 +46,18 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Connexion réussie
             return redirect()->route('home');
         }
 
-        // Connexion échouée : on renvoie avec un message
         return back()->with('login_error', 'Email ou mot de passe incorrect');
     }
 
-    // Ajoutez cette méthode pour gérer la déconnexion
-        public function logout(Request $request)
-        {
-            Auth::logout();
-            $request->session()->invalidate();
-            $request->session()->regenerateToken();
-            
-            return redirect('/');
-        }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
+        return redirect('/');
+    }
 }

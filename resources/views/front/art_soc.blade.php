@@ -72,7 +72,7 @@
     <form method="GET" class="row" id="searchSocieteForm">
         
         <div class="col-md-5">
-            <input type="text" name="ville" class="form-control" placeholder="Rechercher par wilaya (ex: Oran)">
+            <input type="text" name="adresse" class="form-control" placeholder="Rechercher par ville (ex: Montréal)">
         </div>
         <div class="col-md-2">
             <button type="submit" class="btn btn-primary w-100">Rechercher</button>
@@ -82,27 +82,32 @@
 
 
 @auth
-    <div class="row" id="societeResults">
-        @foreach($societes as $societe)
+<!-- Affichage des sociétés si l'utilisateur est connecté -->
+<div class="row" id="societeResults">
+    @foreach ($societes as $societe)
         <div class="col-lg-3 col-md-6">
             <div class="team-item">
                 <div class="team-img">
-                    <img src="{{ asset('img/' . $societe->photo) }}" alt="Photo Société" style="width:100%; height:250px; object-fit:cover;">
+                    <img 
+                        src="{{ Str::startsWith($societe->photo, 'photos/') ? asset('storage/' . $societe->photo) : asset('img/' . $societe->photo) }}" 
+                        alt="Photo Société" 
+                        style="width:100%; height:250px; object-fit:cover;">
                 </div>
-                <div class="team-text">
-                    <h2>{{ $societe->nom_societe }}</h2>
-                    <p><i class="fas fa-map-marker-alt"></i> {{ $societe->ville }} - {{ $societe->adresse }}</p>
-                    <p><i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/{{ preg_replace('/\D+/', '', $societe->telephone) }}" target="_blank">
-                            {{ $societe->telephone }}
-                        </a>
-                    </p>
+                    <div class="team-text">
+                        <h2>{{ $societe->name }}</h2>
+                        <p><i class="fas fa-map-marker-alt"></i>  {{ $societe->adresse }}</p>
+                        <p><i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/{{ preg_replace('/\D+/', '', $societe->telephone) }}" target="_blank">
+                                {{ $societe->telephone }}
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
         @endforeach
     </div>
 @endauth
+
 
 @guest
     <div class="alert alert-warning w-100 text-center">
@@ -138,7 +143,7 @@
         <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/slick/slick.min.js"></script>
 
-        <!-- Template Javascript -->
+        
         <script src="js/main.js"></script>
         <script>
 $(document).ready(function() {

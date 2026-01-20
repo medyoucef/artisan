@@ -74,7 +74,7 @@
             <input type="text" name="profession" class="form-control" placeholder="Rechercher par métier (ex: électricien)">
         </div>
         <div class="col-md-5">
-            <input type="text" name="ville" class="form-control" placeholder="Rechercher par wilaya (ex: Oran)">
+            <input type="text" name="ville" class="form-control" placeholder="Rechercher par ville (ex:Montréal)">
         </div>
         <div class="col-md-2">
             <button type="submit" class="btn btn-primary w-100">Rechercher</button>
@@ -89,7 +89,11 @@
         <div class="col-lg-3 col-md-6">
             <div class="team-item">
                 <div class="team-img">
-                    <img src="{{ asset('img/' . $artisan->photo) }}" alt="Photo Artisan" style="width:100%; height:250px; object-fit:cover;">
+                <img 
+                src="{{ Str::startsWith($artisan->photo, 'photos/') ? asset('storage/' . $artisan->photo) : asset('img/' . $artisan->photo) }}" 
+                alt="Photo Artisans" 
+                style="width:100%; height:250px; object-fit:cover;">
+
                 </div>
                 <div class="team-text">
                     <h2>{{ $artisan->nom }}</h2>
