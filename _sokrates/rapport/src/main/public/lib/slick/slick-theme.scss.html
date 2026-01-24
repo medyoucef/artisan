@@ -1,0 +1,220 @@
+<html>
+<head>
+    <title>public/lib/slick/slick-theme.scss</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public/lib/slick/slick-theme.scss (<b>170</b> lines of code) (<a href="slick-theme.scss">raw</a>):</h3>
+<div id="editor">@charset &quot;UTF-8&quot;;
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// &quot;\2190&quot; outputs ascii character &quot;&larr;&quot;
+// &quot;\2192&quot; outputs ascii character &quot;&rarr;&quot;
+// &quot;\2022&quot; outputs ascii character &quot;&bull;&quot;
+
+$slick-font-path: &quot;./fonts/&quot; !default;
+$slick-font-family: &quot;slick&quot; !default;
+$slick-loader-path: &quot;./&quot; !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: &quot;\2190&quot; !default;
+$slick-next-character: &quot;\2192&quot; !default;
+$slick-dot-character: &quot;\2022&quot; !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+@function slick-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    }
+    @else {
+        @return url($slick-font-path + $url);
+    }
+}
+
+/* Slider */
+
+.slick-list {
+    .slick-loading &amp; {
+        background: #fff slick-image-url(&quot;ajax-loader.gif&quot;) center center no-repeat;
+    }
+}
+
+/* Icons */
+@if $slick-font-family == &quot;slick&quot; {
+    @font-face {
+        font-family: &quot;slick&quot;;
+        src: slick-font-url(&quot;slick.eot&quot;);
+        src: slick-font-url(&quot;slick.eot?#iefix&quot;) format(&quot;embedded-opentype&quot;), slick-font-url(&quot;slick.woff&quot;) format(&quot;woff&quot;), slick-font-url(&quot;slick.ttf&quot;) format(&quot;truetype&quot;), slick-font-url(&quot;slick.svg#slick&quot;) format(&quot;svg&quot;);
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    &amp;:hover, &amp;:focus {
+        outline: none;
+        background: transparent;
+        color: transparent;
+        &amp;:before {
+            opacity: $slick-opacity-on-hover;
+        }
+    }
+    &amp;.slick-disabled:before {
+        opacity: $slick-opacity-not-active;
+    }
+    &amp;:before {
+        font-family: $slick-font-family;
+        font-size: 20px;
+        line-height: 1;
+        color: $slick-arrow-color;
+        opacity: $slick-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.slick-prev {
+    left: -25px;
+    [dir=&quot;rtl&quot;] &amp; {
+        left: auto;
+        right: -25px;
+    }
+    &amp;:before {
+        content: $slick-prev-character;
+        [dir=&quot;rtl&quot;] &amp; {
+            content: $slick-next-character;
+        }
+    }
+}
+
+.slick-next {
+    right: -25px;
+    [dir=&quot;rtl&quot;] &amp; {
+        left: -25px;
+        right: auto;
+    }
+    &amp;:before {
+        content: $slick-next-character;
+        [dir=&quot;rtl&quot;] &amp; {
+            content: $slick-prev-character;
+        }
+    }
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 20px;
+            width: 20px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            &amp;:hover, &amp;:focus {
+                outline: none;
+                &amp;:before {
+                    opacity: $slick-opacity-on-hover;
+                }
+            }
+            &amp;:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: $slick-dot-character;
+                width: 20px;
+                height: 20px;
+                font-family: $slick-font-family;
+                font-size: $slick-dot-size;
+                line-height: 20px;
+                text-align: center;
+                color: $slick-dot-color;
+                opacity: $slick-opacity-not-active;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        &amp;.slick-active button:before {
+            color: $slick-dot-color-active;
+            opacity: $slick-opacity-default;
+        }
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/scss");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

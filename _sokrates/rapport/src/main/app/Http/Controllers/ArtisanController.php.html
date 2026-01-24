@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>app/Http/Controllers/ArtisanController.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Http/Controllers/ArtisanController.php (<b>58</b> lines of code) (<a href="ArtisanController.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Artisan;
+class ArtisanController extends Controller
+{
+    public function index(Request $request)
+    {
+        $query = DB::table('artisans');
+
+        if ($request-&gt;filled('profession')) {
+            $query-&gt;where('profession', 'like', '%' . $request-&gt;profession . '%');
+        }
+
+        if ($request-&gt;filled('ville')) {
+            $query-&gt;where('ville', 'like', '%' . $request-&gt;ville . '%');
+        }
+
+        $artisans = $query-&gt;get();
+
+        return view('front.art_ind', compact('artisans'));
+    }
+
+    public function search(Request $request)
+{
+    $query = Artisan::query();
+
+    if ($request-&gt;filled('ville')) {
+        $query-&gt;where('ville', 'like', '%' . $request-&gt;ville . '%');
+    }
+
+    if ($request-&gt;filled('profession')) {
+        $query-&gt;where('profession', 'like', '%' . $request-&gt;profession . '%');
+    }
+
+    $artisans = $query-&gt;get();
+
+    $html = view('partials.artisan_cards', compact('artisans'))-&gt;render();
+
+    return response()-&gt;json(['html' =&gt; $html]);
+}
+
+public function rejoindre(Request $request)
+{
+    $request-&gt;validate([
+        'profession' =&gt; 'required|string|max:255',
+    ]);
+
+    $user = Auth::user();
+
+    // V&eacute;rifier s&rsquo;il n'est pas d&eacute;j&agrave; dans la table artisans
+    $existe = Artisan::where('nom', $user-&gt;name)-&gt;first();
+    if ($existe) {
+        return back()-&gt;with('success', 'Vous &ecirc;tes d&eacute;j&agrave; enregistr&eacute; comme artisan.');
+    }
+
+    Artisan::create([
+        'nom' =&gt; $user-&gt;name,
+        'profession' =&gt; $request-&gt;profession,
+        'photo' =&gt; $user-&gt;photo,
+        'telephone' =&gt; null, // tu peux ajouter un champ dans le profil plus tard
+        'facebook' =&gt; null,
+        'instagram' =&gt; null,
+        'whatsapp' =&gt; null,
+        'ville' =&gt; $user-&gt;ville,
+        'adresse' =&gt; $user-&gt;adresse,
+        'created_at' =&gt; now(),
+    ]);
+
+    return back()-&gt;with('success', 'Bienvenue parmi les artisans !');
+}
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

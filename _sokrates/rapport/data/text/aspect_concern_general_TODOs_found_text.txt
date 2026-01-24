@@ -1,0 +1,5 @@
+Summary: 2 instances, 2 unique
+
+Text	Count
+// TODO: Should be computed from number of min width items in stage	1
+// TODO console.error	1

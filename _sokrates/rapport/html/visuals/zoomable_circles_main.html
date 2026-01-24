@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    .node {
+        cursor: pointer;
+    }
+
+    .node:hover {
+        stroke: #000;
+        stroke-width: 1.5px;
+    }
+
+    .node--leaf {
+        fill: white;
+    }
+
+    .label {
+        font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-anchor: middle;
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    }
+
+    .label,
+    .node--root,
+    .node--leaf {
+        pointer-events: none;
+    }
+
+</style>
+<svg width="960" height="960"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+    var svg = d3.select("svg"),
+        margin = 20,
+        diameter = +svg.attr("width"),
+        g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+    var color = d3.scaleLinear()
+        .domain([-1, 5])
+        .range(["hsl(152,80%,100%)", "hsl(228,30%,40%)"])
+        .interpolate(d3.interpolateHcl);
+
+    var pack = d3.pack()
+        .size([diameter - margin, diameter - margin])
+        .padding(2);
+
+
+    var root = {
+        "name": "cluster",
+        "children": [ {
+  "name" : "app",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "Http",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Controllers",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ArtisanController.php",
+        "color" : "",
+        "size" : 58,
+        "children" : [ ]
+      }, {
+        "name" : "Auth",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ConfirmPasswordController.php",
+          "color" : "",
+          "size" : 13,
+          "children" : [ ]
+        }, {
+          "name" : "ForgotPasswordController.php",
+          "color" : "",
+          "size" : 8,
+          "children" : [ ]
+        }, {
+          "name" : "LoginController.php",
+          "color" : "",
+          "size" : 14,
+          "children" : [ ]
+        }, {
+          "name" : "RegisterController.php",
+          "color" : "",
+          "size" : 32,
+          "children" : [ ]
+        }, {
+          "name" : "ResetPasswordController.php",
+          "color" : "",
+          "size" : 9,
+          "children" : [ ]
+        }, {
+          "name" : "VerificationController.php",
+          "color" : "",
+          "size" : 15,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "AuthController.php",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "Controller.php",
+        "color" : "",
+        "size" : 5,
+        "children" : [ ]
+      }, {
+        "name" : "HomeController.php",
+        "color" : "",
+        "size" : 27,
+        "children" : [ ]
+      }, {
+        "name" : "MessageController.php",
+        "color" : "",
+        "size" : 23,
+        "children" : [ ]
+      }, {
+        "name" : "ProfessionController.php",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      }, {
+        "name" : "ProfileController.php",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "SocieteArtisanController.php",
+        "color" : "",
+        "size" : 34,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "Models",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Artisan.php",
+      "color" : "",
+      "size" : 17,
+      "children" : [ ]
+    }, {
+      "name" : "Message.php",
+      "color" : "",
+      "size" : 7,
+      "children" : [ ]
+    }, {
+      "name" : "Profession.php",
+      "color" : "",
+      "size" : 13,
+      "children" : [ ]
+    }, {
+      "name" : "Service.php",
+      "color" : "",
+      "size" : 9,
+      "children" : [ ]
+    }, {
+      "name" : "SocieteArtisan.php",
+      "color" : "",
+      "size" : 12,
+      "children" : [ ]
+    }, {
+      "name" : "User.php",
+      "color" : "",
+      "size" : 23,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "Providers",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "AppServiceProvider.php",
+      "color" : "",
+      "size" : 12,
+      "children" : [ ]
+    } ]
+  } ]
+}, {
+  "name" : "artisan_finder(1).sql",
+  "color" : "",
+  "size" : 111,
+  "children" : [ ]
+}, {
+  "name" : "bootstrap",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "app.php",
+    "color" : "",
+    "size" : 14,
+    "children" : [ ]
+  }, {
+    "name" : "providers.php",
+    "color" : "",
+    "size" : 4,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "config",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "app.php",
+    "color" : "",
+    "size" : 22,
+    "children" : [ ]
+  }, {
+    "name" : "auth.php",
+    "color" : "",
+    "size" : 28,
+    "children" : [ ]
+  }, {
+    "name" : "cache.php",
+    "color" : "",
+    "size" : 57,
+    "children" : [ ]
+  }, {
+    "name" : "database.php",
+    "color" : "",
+    "size" : 109,
+    "children" : [ ]
+  }, {
+    "name" : "filesystems.php",
+    "color" : "",
+    "size" : 36,
+    "children" : [ ]
+  }, {
+    "name" : "logging.php",
+    "color" : "",
+    "size" : 79,
+    "children" : [ ]
+  }, {
+    "name" : "mail.php",
+    "color" : "",
+    "size" : 57,
+    "children" : [ ]
+  }, {
+    "name" : "queue.php",
+    "color" : "",
+    "size" : 52,
+    "children" : [ ]
+  }, {
+    "name" : "services.php",
+    "color" : "",
+    "size" : 20,
+    "children" : [ ]
+  }, {
+    "name" : "session.php",
+    "color" : "",
+    "size" : 23,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "database",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "factories",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "UserFactory.php",
+      "color" : "",
+      "size" : 25,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "migrations",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "0001_01_01_000000_create_users_table.php",
+      "color" : "",
+      "size" : 38,
+      "children" : [ ]
+    }, {
+      "name" : "0001_01_01_000001_create_cache_table.php",
+      "color" : "",
+      "size" : 25,
+      "children" : [ ]
+    }, {
+      "name" : "0001_01_01_000002_create_jobs_table.php",
+      "color" : "",
+      "size" : 46,
+      "children" : [ ]
+    }, {
+      "name" : "2025_05_27_164600_create_messages_table.php",
+      "color" : "",
+      "size" : 22,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_01_152838_create_artisans_table.php",
+      "color" : "",
+      "size" : 27,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_01_152839_create_professions_table.php",
+      "color" : "",
+      "size" : 21,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_01_152840_create_services_table.php",
+      "color" : "",
+      "size" : 21,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_01_152840_create_societe_artisans_table.php",
+      "color" : "",
+      "size" : 21,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_01_215847_add_type_user_to_users_table.php",
+      "color" : "",
+      "size" : 19,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_20_095950_add_fields_to_users_table.php",
+      "color" : "",
+      "size" : 21,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_20_105730_add_updated_at_to_artisans_table.php",
+      "color" : "",
+      "size" : 19,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_20_140908_add_telephone_to_users_table.php",
+      "color" : "",
+      "size" : 19,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_20_141421_add_updated_at_to_societe_artisan_table.php",
+      "color" : "",
+      "size" : 19,
+      "children" : [ ]
+    }, {
+      "name" : "2025_06_20_141652_add_created_at_to_societe_artisan_table.php",
+      "color" : "",
+      "size" : 19,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "seeders",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "DatabaseSeeder.php",
+      "color" : "",
+      "size" : 14,
+      "children" : [ ]
+    } ]
+  } ]
+}, {
+  "name" : "phpunit.xml",
+  "color" : "",
+  "size" : 33,
+  "children" : [ ]
+}, {
+  "name" : "public",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "css",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "login.css",
+      "color" : "",
+      "size" : 119,
+      "children" : [ ]
+    }, {
+      "name" : "style.css",
+      "color" : "",
+      "size" : 1827,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "index.php",
+    "color" : "",
+    "size" : 10,
+    "children" : [ ]
+  }, {
+    "name" : "js",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "main.js",
+      "color" : "",
+      "size" : 105,
+      "children" : [ ]
+    }, {
+      "name" : "script.js",
+      "color" : "",
+      "size" : 9,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "lib",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "easing",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "easing.js",
+        "color" : "",
+        "size" : 150,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "flaticon",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "font",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "flaticon.css",
+          "color" : "",
+          "size" : 34,
+          "children" : [ ]
+        }, {
+          "name" : "flaticon.html",
+          "color" : "",
+          "size" : 457,
+          "children" : [ ]
+        }, {
+          "name" : "_flaticon.scss",
+          "color" : "",
+          "size" : 51,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "isotope",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "isotope.pkgd.js",
+        "color" : "",
+        "size" : 2193,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "lightbox",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "css",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "lightbox.css",
+          "color" : "",
+          "size" : 176,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "js",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "lightbox.js",
+          "color" : "",
+          "size" : 372,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "links.php",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "owlcarousel",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "assets",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "owl.carousel.css",
+          "color" : "",
+          "size" : 132,
+          "children" : [ ]
+        }, {
+          "name" : "owl.theme.default.css",
+          "color" : "",
+          "size" : 40,
+          "children" : [ ]
+        }, {
+          "name" : "owl.theme.default.min.css",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "owl.theme.green.css",
+          "color" : "",
+          "size" : 40,
+          "children" : [ ]
+        }, {
+          "name" : "owl.theme.green.min.css",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "owl.carousel.js",
+        "color" : "",
+        "size" : 2420,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "slick",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "config.rb",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      }, {
+        "name" : "slick-theme.css",
+        "color" : "",
+        "size" : 170,
+        "children" : [ ]
+      }, {
+        "name" : "slick-theme.less",
+        "color" : "",
+        "size" : 152,
+        "children" : [ ]
+      }, {
+        "name" : "slick-theme.scss",
+        "color" : "",
+        "size" : 170,
+        "children" : [ ]
+      }, {
+        "name" : "slick.css",
+        "color" : "",
+        "size" : 104,
+        "children" : [ ]
+      }, {
+        "name" : "slick.js",
+        "color" : "",
+        "size" : 2129,
+        "children" : [ ]
+      }, {
+        "name" : "slick.less",
+        "color" : "",
+        "size" : 87,
+        "children" : [ ]
+      }, {
+        "name" : "slick.scss",
+        "color" : "",
+        "size" : 87,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "waypoints",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "links.php",
+        "color" : "",
+        "size" : 5,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "wow",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "wow.js",
+        "color" : "",
+        "size" : 472,
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+}, {
+  "name" : "resources",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "css",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "app.css",
+      "color" : "",
+      "size" : 9,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "js",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "app.js",
+      "color" : "",
+      "size" : 1,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "sass",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "app.scss",
+      "color" : "",
+      "size" : 3,
+      "children" : [ ]
+    }, {
+      "name" : "_variables.scss",
+      "color" : "",
+      "size" : 4,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "views",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "auth",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "login_register.blade.php",
+        "color" : "",
+        "size" : 90,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "front",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "about.blade.php",
+        "color" : "",
+        "size" : 122,
+        "children" : [ ]
+      }, {
+        "name" : "art_ind.blade.php",
+        "color" : "",
+        "size" : 134,
+        "children" : [ ]
+      }, {
+        "name" : "art_soc.blade.php",
+        "color" : "",
+        "size" : 136,
+        "children" : [ ]
+      }, {
+        "name" : "contact.blade.php",
+        "color" : "",
+        "size" : 133,
+        "children" : [ ]
+      }, {
+        "name" : "profile.blade.php",
+        "color" : "",
+        "size" : 143,
+        "children" : [ ]
+      }, {
+        "name" : "profile_edit.blade.php",
+        "color" : "",
+        "size" : 88,
+        "children" : [ ]
+      }, {
+        "name" : "service.blade.php",
+        "color" : "",
+        "size" : 80,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "home.blade.php",
+      "color" : "",
+      "size" : 20,
+      "children" : [ ]
+    }, {
+      "name" : "index.blade.php",
+      "color" : "",
+      "size" : 380,
+      "children" : [ ]
+    }, {
+      "name" : "layout",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "footer.blade.php",
+        "color" : "",
+        "size" : 69,
+        "children" : [ ]
+      }, {
+        "name" : "nav_bar.blade.php",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "question.blade.php",
+        "color" : "",
+        "size" : 138,
+        "children" : [ ]
+      }, {
+        "name" : "sendMessage.blade.php",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "topbar.blade.php",
+        "color" : "",
+        "size" : 50,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "layouts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "app.blade.php",
+        "color" : "",
+        "size" : 63,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "partials",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "artisan_cards.blade.php",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "societes_liste.blade.php",
+        "color" : "",
+        "size" : 28,
+        "children" : [ ]
+      }, {
+        "name" : "societe_cards.blade.php",
+        "color" : "",
+        "size" : 31,
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+}, {
+  "name" : "routes",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "console.php",
+    "color" : "",
+    "size" : 6,
+    "children" : [ ]
+  }, {
+    "name" : "web.php",
+    "color" : "",
+    "size" : 27,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "storage",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "framework",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "views",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "028bce5b410dfba0ce555c594dc621cc.php",
+        "color" : "",
+        "size" : 139,
+        "children" : [ ]
+      }, {
+        "name" : "0a91049541c8c278d5dc6bc5009db1c0.php",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "0be5fbe14e443444bd1f225175f044d2.php",
+        "color" : "",
+        "size" : 193,
+        "children" : [ ]
+      }, {
+        "name" : "1639945e2a31000c17c9cec339739cb6.php",
+        "color" : "",
+        "size" : 135,
+        "children" : [ ]
+      }, {
+        "name" : "176fe7c698dbe36fc15642db0b7fbb3b.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "18bb04ab7f5f1e808b8ce3ced054efc0.php",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "1958f5a5b68f55f06b367f2ce8d0bede.php",
+        "color" : "",
+        "size" : 156,
+        "children" : [ ]
+      }, {
+        "name" : "206938c949e34059fd43d8d3aa0f0ced.php",
+        "color" : "",
+        "size" : 134,
+        "children" : [ ]
+      }, {
+        "name" : "20edb2485ee3b02bee281f0cee523d82.php",
+        "color" : "",
+        "size" : 380,
+        "children" : [ ]
+      }, {
+        "name" : "2737e2ce19580b3fdb70d3726613b4ce.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "29abc373efe767a2e760fb8b5df9d3fe.php",
+        "color" : "",
+        "size" : 139,
+        "children" : [ ]
+      }, {
+        "name" : "2db556e063e4147cdcf0bd304d565dce.php",
+        "color" : "",
+        "size" : 183,
+        "children" : [ ]
+      }, {
+        "name" : "354e34927a76399b3e64f164eb5443c2.php",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "38cb578b1a3b655c1fd8f78fe0f8471d.php",
+        "color" : "",
+        "size" : 34,
+        "children" : [ ]
+      }, {
+        "name" : "3c27f935771fc83addd970332eedaf8f.php",
+        "color" : "",
+        "size" : 380,
+        "children" : [ ]
+      }, {
+        "name" : "3d82499e1cc8a9efd19e2310c61d0323.php",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      }, {
+        "name" : "435ac70f5c7d98672ba8747b4a4e2b30.php",
+        "color" : "",
+        "size" : 134,
+        "children" : [ ]
+      }, {
+        "name" : "4750baca37881108ffd5e267b0e3a83c.php",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "4a73ff01ca5ec3fbdad398e7782007da.php",
+        "color" : "",
+        "size" : 130,
+        "children" : [ ]
+      }, {
+        "name" : "4d7b7cfe77140002739771f8c6c1cd8f.php",
+        "color" : "",
+        "size" : 79,
+        "children" : [ ]
+      }, {
+        "name" : "4fe4f115e577719e2eba2900e8e9fa10.php",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "591f51ae5d6223fbe584dc6577d846ae.php",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "5a73bd4198eb32d506f76f5b1bbbcd25.php",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "5d2f6d06a440297343fafb266f60e9f0.php",
+        "color" : "",
+        "size" : 31,
+        "children" : [ ]
+      }, {
+        "name" : "5dd5927777b90c5d44c7d4078df3d5ed.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "61fee7ad2d9376e94b9d7a553aefbfbb.php",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "64ee9777a1b7ef5a7db7a7103f634cd5.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "66da1bfdd1b1a3897a65c4be0bd29f1a.php",
+        "color" : "",
+        "size" : 81,
+        "children" : [ ]
+      }, {
+        "name" : "6968636e3a37f5014d19024fa9a7c5f1.php",
+        "color" : "",
+        "size" : 81,
+        "children" : [ ]
+      }, {
+        "name" : "6aef6bbd263c66e1bc1a72b0549e978c.php",
+        "color" : "",
+        "size" : 172,
+        "children" : [ ]
+      }, {
+        "name" : "719f5be912f0694a33aeeb86e195c21a.php",
+        "color" : "",
+        "size" : 132,
+        "children" : [ ]
+      }, {
+        "name" : "71a84f0e8051325082bdb809d2701bae.php",
+        "color" : "",
+        "size" : 124,
+        "children" : [ ]
+      }, {
+        "name" : "761567e2ae87915d7290cfffaa79102f.php",
+        "color" : "",
+        "size" : 183,
+        "children" : [ ]
+      }, {
+        "name" : "7e095807effdbab044619856de57c96f.php",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      }, {
+        "name" : "860d9d16399020041a58cd550f201ead.php",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "8617c48f4ac7905ba1aecc9d9528d27a.php",
+        "color" : "",
+        "size" : 90,
+        "children" : [ ]
+      }, {
+        "name" : "86cccdc7823cee1bd77105d89d8638e8.php",
+        "color" : "",
+        "size" : 27,
+        "children" : [ ]
+      }, {
+        "name" : "878ec5161856b73a7bf2e920b2a585ef.php",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "89e777edd53aab0d19f28731e67e9450.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "9a14755e934b97434d5e6fcb9dbfde2c.php",
+        "color" : "",
+        "size" : 122,
+        "children" : [ ]
+      }, {
+        "name" : "9ebe68a946f9ddc1f984e077fc35a756.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "9fada826ee00a312e714e63de7f64838.php",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "9fcd4be86f466ee2ee9ef0eb806b1eaa.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "a4c9e41ce8c5dee08cc2762cab59d22f.php",
+        "color" : "",
+        "size" : 172,
+        "children" : [ ]
+      }, {
+        "name" : "a4fc478d5a5c9c18d84b1e8d00e5517a.php",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "b404da36b14b476e32e95917365710b3.php",
+        "color" : "",
+        "size" : 70,
+        "children" : [ ]
+      }, {
+        "name" : "be8b6d1fdd2fdcae7bb3d6382a0b686a.php",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "c9e5719741d06ccda0393a9cb140d4e0.php",
+        "color" : "",
+        "size" : 156,
+        "children" : [ ]
+      }, {
+        "name" : "cdfcbd1a1b754262e95e923bd8a97e47.php",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "d04dc44118f96e3dc6fcbfb011438571.php",
+        "color" : "",
+        "size" : 122,
+        "children" : [ ]
+      }, {
+        "name" : "d6cbae0555f95fa24cbc18a1e326f1d2.php",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "dc86248c4bb86977317901e4d1bc8904.php",
+        "color" : "",
+        "size" : 137,
+        "children" : [ ]
+      }, {
+        "name" : "e1368f5e5ceb4bd65bc5b1a5af202e46.php",
+        "color" : "",
+        "size" : 69,
+        "children" : [ ]
+      }, {
+        "name" : "e66a6fee40923bdcb5094745284b3a7f.php",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "e986e6acf67511cc4c56ba4e1c55b701.php",
+        "color" : "",
+        "size" : 107,
+        "children" : [ ]
+      }, {
+        "name" : "ea1825065bf2b2c4185fbe24b841a7e1.php",
+        "color" : "",
+        "size" : 107,
+        "children" : [ ]
+      }, {
+        "name" : "f4e4640f2959be64e9037ab0087a89a1.php",
+        "color" : "",
+        "size" : 31,
+        "children" : [ ]
+      }, {
+        "name" : "f71fdad28b672f21335053b9d07474fd.php",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "f7bc5e13bbd429c33e0d09648f856847.php",
+        "color" : "",
+        "size" : 70,
+        "children" : [ ]
+      }, {
+        "name" : "f86cce6c114517ee6876f4c401b436f2.php",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "f94507b4499308d70d4e8ffb76b48b40.php",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "fa7b183079d07f01c4b77b0a222143a4.php",
+        "color" : "",
+        "size" : 68,
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+}, {
+  "name" : "vite.config.js",
+  "color" : "",
+  "size" : 13,
+  "children" : [ ]
+} ]
+    }
+
+    root = d3.hierarchy(root)
+        .sum(function (d) {
+            return d.size;
+        })
+        .sort(function (a, b) {
+            return b.value - a.value;
+        });
+
+    var focus = root,
+        nodes = pack(root).descendants(),
+        view;
+
+    var circle = g.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+        .attr("class", function (d) {
+            return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
+        })
+        .style("fill", function (d) {
+            return d.children ? color(d.depth) : (d.data.color ? d.data.color : null);
+        })
+        .on("click", function (d) {
+            if (focus !== d) zoom(d), d3.event.stopPropagation();
+        });
+
+    var text = g.selectAll("text")
+        .data(nodes)
+        .enter().append("text")
+        .attr("class", "label")
+        .style("fill-opacity", function (d) {
+            return d.parent === root ? 1 : 0;
+        })
+        .style("display", function (d) {
+            return d.parent === root ? "inline" : "none";
+        })
+        .text(function (d) {
+            return d.data.name.length > 33 ? (d.data.name.substr(0, 14) + "..." + d.data.name.substr(d.data.name.length - 14))  : d.data.name;
+        });
+
+    var node = g.selectAll("circle,text");
+
+    svg
+        .style("background", color(-1))
+        .on("click", function () {
+            zoom(root);
+        });
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+        var focus0 = focus;
+        focus = d;
+
+        var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function (d) {
+                var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+                return function (t) {
+                    zoomTo(i(t));
+                };
+            });
+
+        transition.selectAll("text")
+            .filter(function (d) {
+                return d.parent === focus || this.style.display === "inline";
+            })
+            .style("fill-opacity", function (d) {
+                return d.parent === focus ? 1 : 0;
+            })
+            .on("start", function (d) {
+                if (d.parent === focus) this.style.display = "inline";
+            })
+            .on("end", function (d) {
+                if (d.parent !== focus) this.style.display = "none";
+            });
+    }
+
+    function zoomTo(v) {
+        var k = diameter / v[2];
+        view = v;
+        node.attr("transform", function (d) {
+            return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+        });
+        circle.attr("r", function (d) {
+            return d.r * k;
+        });
+    }
+
+</script>

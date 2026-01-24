@@ -1,0 +1,117 @@
+[ {
+  "key" : "general",
+  "concerns" : [ {
+    "name" : "TODOs",
+    "filesCount" : 2,
+    "linesOfCode" : 4613,
+    "numberOfRegexLineMatches" : 2,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 2,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 4613,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "Unclassified",
+    "filesCount" : 166,
+    "linesOfCode" : 15213,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 135,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 8,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 12,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 5,
+      "description" : [ ]
+    }, {
+      "name" : "  *.less",
+      "value" : 2,
+      "description" : [ ]
+    }, {
+      "name" : "  *.sql",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xml",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.rb",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 8146,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 3251,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 2653,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 457,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 315,
+      "description" : [ ]
+    }, {
+      "name" : "  *.less",
+      "value" : 239,
+      "description" : [ ]
+    }, {
+      "name" : "  *.sql",
+      "value" : 111,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xml",
+      "value" : 33,
+      "description" : [ ]
+    }, {
+      "name" : "  *.rb",
+      "value" : 8,
+      "description" : [ ]
+    } ]
+  } ],
+  "concernsGroup" : null,
+  "fileCountPerConcern" : [ {
+    "name" : "TODOs",
+    "value" : 2,
+    "description" : [ ]
+  }, {
+    "name" : "Unclassified",
+    "value" : 166,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerConcern" : [ {
+    "name" : "TODOs",
+    "value" : 4613,
+    "description" : [ ]
+  }, {
+    "name" : "Unclassified",
+    "value" : 15213,
+    "description" : [ ]
+  } ]
+} ]

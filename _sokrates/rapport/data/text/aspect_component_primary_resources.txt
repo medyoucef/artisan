@@ -1,0 +1,24 @@
+Path	Lines of Code
+resources/css/app.css	9
+resources/js/app.js	1
+resources/sass/_variables.scss	4
+resources/sass/app.scss	3
+resources/views/auth/login_register.blade.php	90
+resources/views/front/about.blade.php	122
+resources/views/front/art_ind.blade.php	134
+resources/views/front/art_soc.blade.php	136
+resources/views/front/contact.blade.php	133
+resources/views/front/profile.blade.php	143
+resources/views/front/profile_edit.blade.php	88
+resources/views/front/service.blade.php	80
+resources/views/home.blade.php	20
+resources/views/index.blade.php	380
+resources/views/layout/footer.blade.php	69
+resources/views/layout/nav_bar.blade.php	37
+resources/views/layout/question.blade.php	138
+resources/views/layout/sendMessage.blade.php	29
+resources/views/layout/topbar.blade.php	50
+resources/views/layouts/app.blade.php	63
+resources/views/partials/artisan_cards.blade.php	37
+resources/views/partials/societe_cards.blade.php	31
+resources/views/partials/societes_liste.blade.php	28

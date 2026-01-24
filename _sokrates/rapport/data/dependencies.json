@@ -1,0 +1,474 @@
+[ {
+  "fromFiles" : [ {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/ArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 58,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\Artisan;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/AuthController.php",
+      "extension" : "php",
+      "linesOfCode" : 46,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\User;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/HomeController.php",
+      "extension" : "php",
+      "linesOfCode" : 27,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\Profession;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/MessageController.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\Message;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/ProfessionController.php",
+      "extension" : "php",
+      "linesOfCode" : 12,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\Profession;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/ProfileController.php",
+      "extension" : "php",
+      "linesOfCode" : 51,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\User;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/SocieteArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 34,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\SocieteArtisan;"
+  } ],
+  "from" : {
+    "anchor" : "App\\Http\\Controllers",
+    "codeFragment" : "namespace App\\Http\\Controllers;",
+    "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Http/Controllers/ArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 58,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/AuthController.php",
+      "extension" : "php",
+      "linesOfCode" : 46,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Controller.php",
+      "extension" : "php",
+      "linesOfCode" : 5,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/HomeController.php",
+      "extension" : "php",
+      "linesOfCode" : 27,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/MessageController.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ProfessionController.php",
+      "extension" : "php",
+      "linesOfCode" : 12,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ProfileController.php",
+      "extension" : "php",
+      "linesOfCode" : 51,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/SocieteArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 34,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  },
+  "to" : {
+    "anchor" : "App\\Models",
+    "codeFragment" : "namespace App\\Models;",
+    "dependencyPatterns" : [ "use.*App\\\\Models[ ]*;", "use.*App\\\\Models\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Models/Artisan.php",
+      "extension" : "php",
+      "linesOfCode" : 17,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Message.php",
+      "extension" : "php",
+      "linesOfCode" : 7,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Profession.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Service.php",
+      "extension" : "php",
+      "linesOfCode" : 9,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/SocieteArtisan.php",
+      "extension" : "php",
+      "linesOfCode" : 12,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/User.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  }
+}, {
+  "fromFiles" : [ {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/Auth/ConfirmPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Http\\Controllers\\Controller;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/Auth/ForgotPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 8,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Http\\Controllers\\Controller;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/Auth/LoginController.php",
+      "extension" : "php",
+      "linesOfCode" : 14,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Http\\Controllers\\Controller;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/Auth/RegisterController.php",
+      "extension" : "php",
+      "linesOfCode" : 32,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Http\\Controllers\\Controller;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/Auth/ResetPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 9,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Http\\Controllers\\Controller;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/Auth/VerificationController.php",
+      "extension" : "php",
+      "linesOfCode" : 15,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Http\\Controllers\\Controller;"
+  } ],
+  "from" : {
+    "anchor" : "App\\Http\\Controllers\\Auth",
+    "codeFragment" : "namespace App\\Http\\Controllers\\Auth;",
+    "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers\\\\Auth[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\Auth\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Http/Controllers/Auth/ConfirmPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/ForgotPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 8,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/LoginController.php",
+      "extension" : "php",
+      "linesOfCode" : 14,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/RegisterController.php",
+      "extension" : "php",
+      "linesOfCode" : 32,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/ResetPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 9,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/VerificationController.php",
+      "extension" : "php",
+      "linesOfCode" : 15,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  },
+  "to" : {
+    "anchor" : "App\\Http\\Controllers",
+    "codeFragment" : "namespace App\\Http\\Controllers;",
+    "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Http/Controllers/ArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 58,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/AuthController.php",
+      "extension" : "php",
+      "linesOfCode" : 46,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Controller.php",
+      "extension" : "php",
+      "linesOfCode" : 5,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/HomeController.php",
+      "extension" : "php",
+      "linesOfCode" : 27,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/MessageController.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ProfessionController.php",
+      "extension" : "php",
+      "linesOfCode" : 12,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ProfileController.php",
+      "extension" : "php",
+      "linesOfCode" : 51,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/SocieteArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 34,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  }
+}, {
+  "fromFiles" : [ {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/Auth/RegisterController.php",
+      "extension" : "php",
+      "linesOfCode" : 32,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\User;"
+  } ],
+  "from" : {
+    "anchor" : "App\\Http\\Controllers\\Auth",
+    "codeFragment" : "namespace App\\Http\\Controllers\\Auth;",
+    "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers\\\\Auth[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\Auth\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Http/Controllers/Auth/ConfirmPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/ForgotPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 8,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/LoginController.php",
+      "extension" : "php",
+      "linesOfCode" : 14,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/RegisterController.php",
+      "extension" : "php",
+      "linesOfCode" : 32,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/ResetPasswordController.php",
+      "extension" : "php",
+      "linesOfCode" : 9,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Auth/VerificationController.php",
+      "extension" : "php",
+      "linesOfCode" : 15,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  },
+  "to" : {
+    "anchor" : "App\\Models",
+    "codeFragment" : "namespace App\\Models;",
+    "dependencyPatterns" : [ "use.*App\\\\Models[ ]*;", "use.*App\\\\Models\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Models/Artisan.php",
+      "extension" : "php",
+      "linesOfCode" : 17,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Message.php",
+      "extension" : "php",
+      "linesOfCode" : 7,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Profession.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Service.php",
+      "extension" : "php",
+      "linesOfCode" : 9,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/SocieteArtisan.php",
+      "extension" : "php",
+      "linesOfCode" : 12,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/User.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  }
+}, {
+  "fromFiles" : [ {
+    "file" : {
+      "relativePath" : "database/seeders/DatabaseSeeder.php",
+      "extension" : "php",
+      "linesOfCode" : 14,
+      "components" : [ "primary::database" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\User;"
+  } ],
+  "from" : {
+    "anchor" : "Database\\Seeders",
+    "codeFragment" : "namespace Database\\Seeders;",
+    "dependencyPatterns" : [ "use.*Database\\\\Seeders[ ]*;", "use.*Database\\\\Seeders\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "database/seeders/DatabaseSeeder.php",
+      "extension" : "php",
+      "linesOfCode" : 14,
+      "components" : [ "primary::database" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  },
+  "to" : {
+    "anchor" : "App\\Models",
+    "codeFragment" : "namespace App\\Models;",
+    "dependencyPatterns" : [ "use.*App\\\\Models[ ]*;", "use.*App\\\\Models\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Models/Artisan.php",
+      "extension" : "php",
+      "linesOfCode" : 17,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Message.php",
+      "extension" : "php",
+      "linesOfCode" : 7,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Profession.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Service.php",
+      "extension" : "php",
+      "linesOfCode" : 9,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/SocieteArtisan.php",
+      "extension" : "php",
+      "linesOfCode" : 12,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/User.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  }
+} ]

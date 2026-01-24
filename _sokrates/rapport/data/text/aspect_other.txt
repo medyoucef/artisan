@@ -1,0 +1,9 @@
+Path	Lines of Code
+INSTALL.md	42
+README.md	61
+composer.json	76
+package-lock.json	2777
+package.json	19
+public/lib/flaticon/font/Flaticon.svg	232
+public/lib/slick/fonts/slick.svg	13
+public/robots.txt	2

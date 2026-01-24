@@ -1,0 +1,1177 @@
+[ {
+  "relativePath" : "app/Http/Controllers/ArtisanController.php",
+  "extension" : "php",
+  "linesOfCode" : 58,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 8,
+  "linesOfCodeInUnits" : 49
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/ConfirmPasswordController.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 4
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/ForgotPasswordController.php",
+  "extension" : "php",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/LoginController.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 5
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/RegisterController.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 3,
+  "linesOfCodeInUnits" : 20
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/ResetPasswordController.php",
+  "extension" : "php",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/VerificationController.php",
+  "extension" : "php",
+  "linesOfCode" : 15,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 6
+}, {
+  "relativePath" : "app/Http/Controllers/AuthController.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 4,
+  "unitsMcCabeIndexSum" : 5,
+  "linesOfCodeInUnits" : 36
+}, {
+  "relativePath" : "app/Http/Controllers/Controller.php",
+  "extension" : "php",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "app/Http/Controllers/HomeController.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 5,
+  "unitsMcCabeIndexSum" : 5,
+  "linesOfCodeInUnits" : 18
+}, {
+  "relativePath" : "app/Http/Controllers/MessageController.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 16
+}, {
+  "relativePath" : "app/Http/Controllers/ProfessionController.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 5
+}, {
+  "relativePath" : "app/Http/Controllers/ProfileController.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 8,
+  "linesOfCodeInUnits" : 41
+}, {
+  "relativePath" : "app/Http/Controllers/SocieteArtisanController.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 7,
+  "linesOfCodeInUnits" : 26
+}, {
+  "relativePath" : "app/Models/Artisan.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 4
+}, {
+  "relativePath" : "app/Models/Message.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "app/Models/Profession.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 4
+}, {
+  "relativePath" : "app/Models/Service.php",
+  "extension" : "php",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "app/Models/SocieteArtisan.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "app/Models/User.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 7
+}, {
+  "relativePath" : "app/Providers/AppServiceProvider.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 6
+}, {
+  "relativePath" : "artisan_finder(1).sql",
+  "extension" : "sql",
+  "linesOfCode" : 111,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "bootstrap/app.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "bootstrap/providers.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/app.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/auth.php",
+  "extension" : "php",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/cache.php",
+  "extension" : "php",
+  "linesOfCode" : 57,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/database.php",
+  "extension" : "php",
+  "linesOfCode" : 109,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/filesystems.php",
+  "extension" : "php",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/logging.php",
+  "extension" : "php",
+  "linesOfCode" : 79,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/mail.php",
+  "extension" : "php",
+  "linesOfCode" : 57,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/queue.php",
+  "extension" : "php",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/services.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "config/session.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "database/factories/UserFactory.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 16
+}, {
+  "relativePath" : "database/migrations/0001_01_01_000000_create_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 31
+}, {
+  "relativePath" : "database/migrations/0001_01_01_000001_create_cache_table.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 18
+}, {
+  "relativePath" : "database/migrations/0001_01_01_000002_create_jobs_table.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 39
+}, {
+  "relativePath" : "database/migrations/2025_05_27_164600_create_messages_table.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 15
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152838_create_artisans_table.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 20
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152839_create_professions_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 14
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152840_create_services_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 14
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152840_create_societe_artisans_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 14
+}, {
+  "relativePath" : "database/migrations/2025_06_01_215847_add_type_user_to_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "database/migrations/2025_06_20_095950_add_fields_to_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 14
+}, {
+  "relativePath" : "database/migrations/2025_06_20_105730_add_updated_at_to_artisans_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "database/migrations/2025_06_20_140908_add_telephone_to_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "database/migrations/2025_06_20_141421_add_updated_at_to_societe_artisan_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "database/migrations/2025_06_20_141652_add_created_at_to_societe_artisan_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "database/seeders/DatabaseSeeder.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 7
+}, {
+  "relativePath" : "phpunit.xml",
+  "extension" : "xml",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/css/login.css",
+  "extension" : "css",
+  "linesOfCode" : 119,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/css/style.css",
+  "extension" : "css",
+  "linesOfCode" : 1827,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/index.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/js/main.js",
+  "extension" : "js",
+  "linesOfCode" : 105,
+  "unitsCount" : 12,
+  "unitsMcCabeIndexSum" : 15,
+  "linesOfCodeInUnits" : 97
+}, {
+  "relativePath" : "public/js/script.js",
+  "extension" : "js",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/easing/easing.js",
+  "extension" : "js",
+  "linesOfCode" : 150,
+  "unitsCount" : 31,
+  "unitsMcCabeIndexSum" : 52,
+  "linesOfCodeInUnits" : 121
+}, {
+  "relativePath" : "public/lib/flaticon/font/flaticon.css",
+  "extension" : "css",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/flaticon/font/flaticon.html",
+  "extension" : "html",
+  "linesOfCode" : 457,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/flaticon/font/_flaticon.scss",
+  "extension" : "scss",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/isotope/isotope.pkgd.js",
+  "extension" : "js",
+  "linesOfCode" : 2193,
+  "unitsCount" : 215,
+  "unitsMcCabeIndexSum" : 577,
+  "linesOfCodeInUnits" : 2152
+}, {
+  "relativePath" : "public/lib/lightbox/css/lightbox.css",
+  "extension" : "css",
+  "linesOfCode" : 176,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/lightbox/js/lightbox.js",
+  "extension" : "js",
+  "linesOfCode" : 372,
+  "unitsCount" : 33,
+  "unitsMcCabeIndexSum" : 89,
+  "linesOfCodeInUnits" : 330
+}, {
+  "relativePath" : "public/lib/lightbox/links.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.carousel.css",
+  "extension" : "css",
+  "linesOfCode" : 132,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.default.css",
+  "extension" : "css",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.default.min.css",
+  "extension" : "css",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.green.css",
+  "extension" : "css",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.green.min.css",
+  "extension" : "css",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/owlcarousel/owl.carousel.js",
+  "extension" : "js",
+  "linesOfCode" : 2420,
+  "unitsCount" : 120,
+  "unitsMcCabeIndexSum" : 538,
+  "linesOfCodeInUnits" : 1816
+}, {
+  "relativePath" : "public/lib/slick/config.rb",
+  "extension" : "rb",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/slick-theme.css",
+  "extension" : "css",
+  "linesOfCode" : 170,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/slick-theme.less",
+  "extension" : "less",
+  "linesOfCode" : 152,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/slick-theme.scss",
+  "extension" : "scss",
+  "linesOfCode" : 170,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/slick.css",
+  "extension" : "css",
+  "linesOfCode" : 104,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/slick.js",
+  "extension" : "js",
+  "linesOfCode" : 2129,
+  "unitsCount" : 99,
+  "unitsMcCabeIndexSum" : 563,
+  "linesOfCodeInUnits" : 2107
+}, {
+  "relativePath" : "public/lib/slick/slick.less",
+  "extension" : "less",
+  "linesOfCode" : 87,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/slick.scss",
+  "extension" : "scss",
+  "linesOfCode" : 87,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/waypoints/links.php",
+  "extension" : "php",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/wow/wow.js",
+  "extension" : "js",
+  "linesOfCode" : 472,
+  "unitsCount" : 41,
+  "unitsMcCabeIndexSum" : 136,
+  "linesOfCodeInUnits" : 430
+}, {
+  "relativePath" : "resources/css/app.css",
+  "extension" : "css",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/js/app.js",
+  "extension" : "js",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/sass/app.scss",
+  "extension" : "scss",
+  "linesOfCode" : 3,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/sass/_variables.scss",
+  "extension" : "scss",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/auth/login_register.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/front/about.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 122,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/front/art_ind.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 134,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 3
+}, {
+  "relativePath" : "resources/views/front/art_soc.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 136,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 6
+}, {
+  "relativePath" : "resources/views/front/contact.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 133,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/front/profile.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 143,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/front/profile_edit.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 88,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/front/service.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 80,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/home.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/index.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 380,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/layout/footer.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/layout/nav_bar.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/layout/question.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 138,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/layout/sendMessage.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/layout/topbar.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/layouts/app.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 63,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/partials/artisan_cards.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/partials/societes_liste.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "resources/views/partials/societe_cards.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "routes/console.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "routes/web.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php",
+  "extension" : "php",
+  "linesOfCode" : 139,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/0a91049541c8c278d5dc6bc5009db1c0.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/0be5fbe14e443444bd1f225175f044d2.php",
+  "extension" : "php",
+  "linesOfCode" : 193,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/1639945e2a31000c17c9cec339739cb6.php",
+  "extension" : "php",
+  "linesOfCode" : 135,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 3
+}, {
+  "relativePath" : "storage/framework/views/176fe7c698dbe36fc15642db0b7fbb3b.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/18bb04ab7f5f1e808b8ce3ced054efc0.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/1958f5a5b68f55f06b367f2ce8d0bede.php",
+  "extension" : "php",
+  "linesOfCode" : 156,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php",
+  "extension" : "php",
+  "linesOfCode" : 134,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php",
+  "extension" : "php",
+  "linesOfCode" : 380,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/2737e2ce19580b3fdb70d3726613b4ce.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php",
+  "extension" : "php",
+  "linesOfCode" : 139,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/2db556e063e4147cdcf0bd304d565dce.php",
+  "extension" : "php",
+  "linesOfCode" : 183,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/354e34927a76399b3e64f164eb5443c2.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/38cb578b1a3b655c1fd8f78fe0f8471d.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/3c27f935771fc83addd970332eedaf8f.php",
+  "extension" : "php",
+  "linesOfCode" : 380,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/3d82499e1cc8a9efd19e2310c61d0323.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php",
+  "extension" : "php",
+  "linesOfCode" : 134,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/4750baca37881108ffd5e267b0e3a83c.php",
+  "extension" : "php",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php",
+  "extension" : "php",
+  "linesOfCode" : 130,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 6
+}, {
+  "relativePath" : "storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php",
+  "extension" : "php",
+  "linesOfCode" : 79,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/591f51ae5d6223fbe584dc6577d846ae.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/5a73bd4198eb32d506f76f5b1bbbcd25.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/5d2f6d06a440297343fafb266f60e9f0.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/5dd5927777b90c5d44c7d4078df3d5ed.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/61fee7ad2d9376e94b9d7a553aefbfbb.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/64ee9777a1b7ef5a7db7a7103f634cd5.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php",
+  "extension" : "php",
+  "linesOfCode" : 81,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php",
+  "extension" : "php",
+  "linesOfCode" : 81,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/6aef6bbd263c66e1bc1a72b0549e978c.php",
+  "extension" : "php",
+  "linesOfCode" : 172,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php",
+  "extension" : "php",
+  "linesOfCode" : 132,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 3
+}, {
+  "relativePath" : "storage/framework/views/71a84f0e8051325082bdb809d2701bae.php",
+  "extension" : "php",
+  "linesOfCode" : 124,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/761567e2ae87915d7290cfffaa79102f.php",
+  "extension" : "php",
+  "linesOfCode" : 183,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/7e095807effdbab044619856de57c96f.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/860d9d16399020041a58cd550f201ead.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php",
+  "extension" : "php",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/86cccdc7823cee1bd77105d89d8638e8.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/878ec5161856b73a7bf2e920b2a585ef.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/89e777edd53aab0d19f28731e67e9450.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php",
+  "extension" : "php",
+  "linesOfCode" : 122,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/9ebe68a946f9ddc1f984e077fc35a756.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/9fada826ee00a312e714e63de7f64838.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/9fcd4be86f466ee2ee9ef0eb806b1eaa.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/a4c9e41ce8c5dee08cc2762cab59d22f.php",
+  "extension" : "php",
+  "linesOfCode" : 172,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/a4fc478d5a5c9c18d84b1e8d00e5517a.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/b404da36b14b476e32e95917365710b3.php",
+  "extension" : "php",
+  "linesOfCode" : 70,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/be8b6d1fdd2fdcae7bb3d6382a0b686a.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/c9e5719741d06ccda0393a9cb140d4e0.php",
+  "extension" : "php",
+  "linesOfCode" : 156,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/cdfcbd1a1b754262e95e923bd8a97e47.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php",
+  "extension" : "php",
+  "linesOfCode" : 122,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/d6cbae0555f95fa24cbc18a1e326f1d2.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php",
+  "extension" : "php",
+  "linesOfCode" : 137,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 6
+}, {
+  "relativePath" : "storage/framework/views/e1368f5e5ceb4bd65bc5b1a5af202e46.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/e66a6fee40923bdcb5094745284b3a7f.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/e986e6acf67511cc4c56ba4e1c55b701.php",
+  "extension" : "php",
+  "linesOfCode" : 107,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/ea1825065bf2b2c4185fbe24b841a7e1.php",
+  "extension" : "php",
+  "linesOfCode" : 107,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/f4e4640f2959be64e9037ab0087a89a1.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/f71fdad28b672f21335053b9d07474fd.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/f7bc5e13bbd429c33e0d09648f856847.php",
+  "extension" : "php",
+  "linesOfCode" : 70,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/f86cce6c114517ee6876f4c401b436f2.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/f94507b4499308d70d4e8ffb76b48b40.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "storage/framework/views/fa7b183079d07f01c4b77b0a222143a4.php",
+  "extension" : "php",
+  "linesOfCode" : 68,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vite.config.js",
+  "extension" : "js",
+  "linesOfCode" : 13,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 11
+} ]

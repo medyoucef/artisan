@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>public function update()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function update()</h3>
+<p style="margin-top: 4px">in <i>app/Http/Controllers/ProfileController.php [19:63]</i></p>
+<ul>
+    <li><b>36</b> lines of code</li>
+    <li><b>7</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+
+        // Validation des champs
+        $request-&gt;validate([
+            'name' =&gt; 'required|string|max:255',
+            'email' =&gt; 'required|email|max:255',
+            'adresse' =&gt; 'nullable|string|max:255',
+            'ville' =&gt; 'nullable|string|max:255',
+            'telephone' =&gt; 'nullable|string|max:20',
+            'photo' =&gt; 'nullable|image|max:2048',
+        ]);
+
+        // Traitement de la photo s'il y en a une
+        if ($request-&gt;hasFile('photo')) {
+            $photoPath = $request-&gt;file('photo')-&gt;store('photos', 'public');
+            $user-&gt;photo = $photoPath;
+        }
+
+        // Mise &agrave; jour des autres champs
+        $user-&gt;name = $request-&gt;name;
+        $user-&gt;email = $request-&gt;email;
+        $user-&gt;adresse = $request-&gt;adresse;
+        $user-&gt;ville = $request-&gt;ville;
+        $user-&gt;telephone = $request-&gt;telephone;
+        $user-&gt;save();
+
+        // ➕ Si type = societe_artisan et les infos sont compl&egrave;tes &rarr; ajouter &agrave; societe_artisan
+        if ($user-&gt;type_user === 'societe_artisan') {
+            if ($user-&gt;adresse &amp;&amp; $user-&gt;ville &amp;&amp; $user-&gt;telephone &amp;&amp; $user-&gt;photo) {
+                SocieteArtisan::updateOrCreate(
+                    ['nom_societe' =&gt; $user-&gt;name],
+                    [
+                        'ville'     =&gt; $user-&gt;ville,
+                        'adresse'   =&gt; $user-&gt;adresse,
+                        'telephone' =&gt; $user-&gt;telephone,
+                        'photo'     =&gt; $user-&gt;photo,
+                    ]
+                );
+            }
+        }
+
+        return redirect()-&gt;back()-&gt;with('success', 'Profil mis &agrave; jour avec succ&egrave;s.');
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

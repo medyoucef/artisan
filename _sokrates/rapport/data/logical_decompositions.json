@@ -1,0 +1,467 @@
+[ {
+  "key" : "primary",
+  "components" : [ {
+    "name" : "app",
+    "filesCount" : 21,
+    "linesOfCode" : 440,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 21,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 440,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "ROOT",
+    "filesCount" : 3,
+    "linesOfCode" : 157,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.sql",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xml",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.sql",
+      "value" : 111,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xml",
+      "value" : 33,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 13,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "bootstrap",
+    "filesCount" : 2,
+    "linesOfCode" : 18,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 2,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 18,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "config",
+    "filesCount" : 10,
+    "linesOfCode" : 483,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 10,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 483,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "database",
+    "filesCount" : 16,
+    "linesOfCode" : 376,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 16,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 376,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "public",
+    "filesCount" : 29,
+    "linesOfCode" : 11527,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 8,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 11,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 3,
+      "description" : [ ]
+    }, {
+      "name" : "  *.less",
+      "value" : 2,
+      "description" : [ ]
+    }, {
+      "name" : "  *.php",
+      "value" : 3,
+      "description" : [ ]
+    }, {
+      "name" : "  *.rb",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 7850,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 2644,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 457,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 308,
+      "description" : [ ]
+    }, {
+      "name" : "  *.less",
+      "value" : 239,
+      "description" : [ ]
+    }, {
+      "name" : "  *.php",
+      "value" : 21,
+      "description" : [ ]
+    }, {
+      "name" : "  *.rb",
+      "value" : 8,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "resources",
+    "filesCount" : 23,
+    "linesOfCode" : 1825,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 19,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 2,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 1808,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 9,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 7,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 1,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "routes",
+    "filesCount" : 2,
+    "linesOfCode" : 33,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 2,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 33,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "storage",
+    "filesCount" : 62,
+    "linesOfCode" : 4967,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 62,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 4967,
+      "description" : [ ]
+    } ]
+  } ],
+  "componentDependencies" : [ {
+    "fromComponent" : "database",
+    "locFrom" : 14,
+    "valueFrom" : 0.0,
+    "valueTo" : 0.0,
+    "evidence" : [ {
+      "pathFrom" : "database/seeders/DatabaseSeeder.php",
+      "evidence" : "use App\\Models\\User;"
+    } ],
+    "toComponent" : "app",
+    "count" : 1,
+    "text" : null,
+    "color" : "",
+    "dependencyString" : "database -> app"
+  } ],
+  "componentDependenciesErrors" : [ ],
+  "logicalDecomposition" : {
+    "name" : "primary",
+    "scope" : "main",
+    "filters" : [ ],
+    "componentsFolderDepth" : 1,
+    "minComponentsCount" : 0,
+    "components" : [ {
+      "name" : "app",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/app/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "ROOT",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/app/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/bootstrap/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/config/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/database/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/public/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/resources/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/routes/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/storage/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "bootstrap",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/bootstrap/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "config",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/config/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "database",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/database/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "public",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/public/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "resources",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/resources/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "routes",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/routes/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "storage",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "C:\\xampp\\htdocs\\chercher_art/storage/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    } ],
+    "metaComponents" : [ ],
+    "groups" : [ ],
+    "includeRemainingFiles" : true,
+    "dependenciesFinder" : {
+      "useBuiltInDependencyFinders" : true,
+      "rules" : [ ],
+      "metaRules" : [ ]
+    },
+    "renderingOptions" : {
+      "orientation" : "TB",
+      "maxNumberOfDependencies" : 100,
+      "renderComponentsWithoutDependencies" : true,
+      "renderIndirectDependencies" : false,
+      "renderInternalIndirectDependencies" : false,
+      "reverseDirection" : false
+    },
+    "includeExternalComponents" : true,
+    "dependencyLinkThreshold" : 1,
+    "duplicationLinkThreshold" : 50,
+    "temporalLinkThreshold" : 1,
+    "maxSearchDepthLines" : 200
+  },
+  "fileCountPerComponent" : [ {
+    "name" : "app",
+    "value" : 21,
+    "description" : [ ]
+  }, {
+    "name" : "ROOT",
+    "value" : 3,
+    "description" : [ ]
+  }, {
+    "name" : "bootstrap",
+    "value" : 2,
+    "description" : [ ]
+  }, {
+    "name" : "config",
+    "value" : 10,
+    "description" : [ ]
+  }, {
+    "name" : "database",
+    "value" : 16,
+    "description" : [ ]
+  }, {
+    "name" : "public",
+    "value" : 29,
+    "description" : [ ]
+  }, {
+    "name" : "resources",
+    "value" : 23,
+    "description" : [ ]
+  }, {
+    "name" : "routes",
+    "value" : 2,
+    "description" : [ ]
+  }, {
+    "name" : "storage",
+    "value" : 62,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerComponent" : [ {
+    "name" : "app",
+    "value" : 440,
+    "description" : [ ]
+  }, {
+    "name" : "ROOT",
+    "value" : 157,
+    "description" : [ ]
+  }, {
+    "name" : "bootstrap",
+    "value" : 18,
+    "description" : [ ]
+  }, {
+    "name" : "config",
+    "value" : 483,
+    "description" : [ ]
+  }, {
+    "name" : "database",
+    "value" : 376,
+    "description" : [ ]
+  }, {
+    "name" : "public",
+    "value" : 11527,
+    "description" : [ ]
+  }, {
+    "name" : "resources",
+    "value" : 1825,
+    "description" : [ ]
+  }, {
+    "name" : "routes",
+    "value" : 33,
+    "description" : [ ]
+  }, {
+    "name" : "storage",
+    "value" : 4967,
+    "description" : [ ]
+  } ]
+} ]

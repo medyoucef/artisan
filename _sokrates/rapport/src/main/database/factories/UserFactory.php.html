@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>database/factories/UserFactory.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">database/factories/UserFactory.php (<b>25</b> lines of code) (<a href="UserFactory.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory&lt;\App\Models\User&gt;
+ */
+class UserFactory extends Factory
+{
+    /**
+     * The current password being used by the factory.
+     */
+    protected static ?string $password;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array&lt;string, mixed&gt;
+     */
+    public function definition(): array
+    {
+        return [
+            'name' =&gt; fake()-&gt;name(),
+            'email' =&gt; fake()-&gt;unique()-&gt;safeEmail(),
+            'email_verified_at' =&gt; now(),
+            'password' =&gt; static::$password ??= Hash::make('password'),
+            'remember_token' =&gt; Str::random(10),
+        ];
+    }
+
+    /**
+     * Indicate that the model's email address should be unverified.
+     */
+    public function unverified(): static
+    {
+        return $this-&gt;state(fn (array $attributes) =&gt; [
+            'email_verified_at' =&gt; null,
+        ]);
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Video.prototype.thumbnail = function()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Video.prototype.thumbnail = function()</h3>
+<p style="margin-top: 4px">in <i>public/lib/owlcarousel/owl.carousel.js [2213:2275]</i></p>
+<ul>
+    <li><b>38</b> lines of code</li>
+    <li><b>8</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+	Video.prototype.thumbnail = function(target, video) {
+		var tnLink,
+			icon,
+			path,
+			dimensions = video.width &amp;&amp; video.height ? 'style=&quot;width:' + video.width + 'px;height:' + video.height + 'px;&quot;' : '',
+			customTn = target.find('img'),
+			srcType = 'src',
+			lazyClass = '',
+			settings = this._core.settings,
+			create = function(path) {
+				icon = '&lt;div class=&quot;owl-video-play-icon&quot;&gt;&lt;/div&gt;';
+
+				if (settings.lazyLoad) {
+					tnLink = '&lt;div class=&quot;owl-video-tn ' + lazyClass + '&quot; ' + srcType + '=&quot;' + path + '&quot;&gt;&lt;/div&gt;';
+				} else {
+					tnLink = '&lt;div class=&quot;owl-video-tn&quot; style=&quot;opacity:1;background-image:url(' + path + ')&quot;&gt;&lt;/div&gt;';
+				}
+				target.after(tnLink);
+				target.after(icon);
+			};
+
+		// wrap video content into owl-video-wrapper div
+		target.wrap('&lt;div class=&quot;owl-video-wrapper&quot;' + dimensions + '&gt;&lt;/div&gt;');
+
+		if (this._core.settings.lazyLoad) {
+			srcType = 'data-src';
+			lazyClass = 'owl-lazy';
+		}
+
+		// custom thumbnail
+		if (customTn.length) {
+			create(customTn.attr(srcType));
+			customTn.remove();
+			return false;
+		}
+
+		if (video.type === 'youtube') {
+			path = &quot;//img.youtube.com/vi/&quot; + video.id + &quot;/hqdefault.jpg&quot;;
+			create(path);
+		} else if (video.type === 'vimeo') {
+			$.ajax({
+				type: 'GET',
+				url: '//vimeo.com/api/v2/video/' + video.id + '.json',
+				jsonp: 'callback',
+				dataType: 'jsonp',
+				success: function(data) {
+					path = data[0].thumbnail_large;
+					create(path);
+				}
+			});
+		} else if (video.type === 'vzaar') {
+			$.ajax({
+				type: 'GET',
+				url: '//vzaar.com/api/videos/' + video.id + '.json',
+				jsonp: 'callback',
+				dataType: 'jsonp',
+				success: function(data) {
+					path = data.framegrab_url;
+					create(path);
+				}
+			});
+		}
+	};
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

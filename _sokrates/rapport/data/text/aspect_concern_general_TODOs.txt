@@ -1,0 +1,3 @@
+Path	Lines of Code
+public/lib/isotope/isotope.pkgd.js	2193
+public/lib/owlcarousel/owl.carousel.js	2420

@@ -1,0 +1,201 @@
+<html>
+<head>
+    <title>storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (<b>137</b> lines of code) (<a href="dc86248c4bb86977317901e4d1bc8904.php">raw</a>):</h3>
+<div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;entreprise d'artisans&lt;/title&gt;
+        &lt;meta content=&quot;width=device-width, initial-scale=1.0&quot; name=&quot;viewport&quot;&gt;
+        &lt;meta content=&quot;Construction Company Website Template&quot; name=&quot;keywords&quot;&gt;
+        &lt;meta content=&quot;Construction Company Website Template&quot; name=&quot;description&quot;&gt;
+
+        &lt;!-- Favicon --&gt;
+        &lt;link href=&quot;img/favicon.ico&quot; rel=&quot;icon&quot;&gt;
+
+        &lt;!-- Google Font --&gt;
+        &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css&quot;&gt;
+        &lt;!-- CSS Libraries --&gt;
+        &lt;link href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/flaticon/font/flaticon.css&quot; rel=&quot;stylesheet&quot;&gt; 
+        &lt;link href=&quot;lib/animate/animate.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/owlcarousel/assets/owl.carousel.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/lightbox/css/lightbox.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/slick/slick.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/slick/slick-theme.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+        &lt;!-- Template Stylesheet --&gt;
+        &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;div class=&quot;wrapper&quot;&gt;
+            &lt;!-- Top Bar Start --&gt;
+            
+            &lt;?php echo $__env-&gt;make('layout.topbar', array_diff_key(get_defined_vars(), ['__data' =&gt; 1, '__path' =&gt; 1]))-&gt;render(); ?&gt;
+            
+            &lt;!-- Top Bar End --&gt;
+
+            &lt;!-- Nav Bar Start --&gt;
+            
+            &lt;?php echo $__env-&gt;make('layout.nav_bar', array_diff_key(get_defined_vars(), ['__data' =&gt; 1, '__path' =&gt; 1]))-&gt;render(); ?&gt;
+            
+            &lt;!-- Nav Bar End --&gt;
+            
+            
+            &lt;!-- Page Header Start --&gt;
+            &lt;div class=&quot;page-header&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;col-12&quot;&gt;
+                            &lt;h2&gt;Les entreprises d'artisans&lt;/h2&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-12&quot;&gt;
+                            &lt;a href=&quot;&quot;&gt;entreprise&lt;/a&gt;
+                            &lt;a href=&quot;&quot;&gt;artisans&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Page Header End --&gt;
+
+
+            
+            
+
+    &lt;div class=&quot;team&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;section-header text-center&quot;&gt;
+            &lt;p&gt;Les entreprises qui traitent avec nous&lt;/p&gt;
+            &lt;h2&gt;Choisissez l'entreprise que vous souhaitez&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;container mb-4&quot;&gt;
+    &lt;form method=&quot;GET&quot; class=&quot;row&quot; id=&quot;searchSocieteForm&quot;&gt;
+        
+        &lt;div class=&quot;col-md-5&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;adresse&quot; class=&quot;form-control&quot; placeholder=&quot;Rechercher par ville (ex: Montr&eacute;al)&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-2&quot;&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary w-100&quot;&gt;Rechercher&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+
+
+&lt;?php if(auth()-&gt;guard()-&gt;check()): ?&gt;
+&lt;!-- Affichage des soci&eacute;t&eacute;s si l'utilisateur est connect&eacute; --&gt;
+&lt;div class=&quot;row&quot; id=&quot;societeResults&quot;&gt;
+    &lt;?php $__currentLoopData = $societes; $__env-&gt;addLoop($__currentLoopData); foreach($__currentLoopData as $societe): $__env-&gt;incrementLoopIndices(); $loop = $__env-&gt;getLastLoop(); ?&gt;
+        &lt;div class=&quot;col-lg-3 col-md-6&quot;&gt;
+            &lt;div class=&quot;team-item&quot;&gt;
+                &lt;div class=&quot;team-img&quot;&gt;
+                    &lt;img 
+                        src=&quot;&lt;?php echo e(Str::startsWith($societe-&gt;photo, 'photos/') ? asset('storage/' . $societe-&gt;photo) : asset('img/' . $societe-&gt;photo)); ?&gt;&quot; 
+                        alt=&quot;Photo Soci&eacute;t&eacute;&quot; 
+                        style=&quot;width:100%; height:250px; object-fit:cover;&quot;&gt;
+                &lt;/div&gt;
+                    &lt;div class=&quot;team-text&quot;&gt;
+                        &lt;h2&gt;&lt;?php echo e($societe-&gt;name); ?&gt;&lt;/h2&gt;
+                        &lt;p&gt;&lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;  &lt;?php echo e($societe-&gt;adresse); ?&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                            &lt;a href=&quot;https://wa.me/&lt;?php echo e(preg_replace('/\D+/', '', $societe-&gt;telephone)); ?&gt;&quot; target=&quot;_blank&quot;&gt;
+                                &lt;?php echo e($societe-&gt;telephone); ?&gt;
+
+                            &lt;/a&gt;
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;?php endforeach; $__env-&gt;popLoop(); $loop = $__env-&gt;getLastLoop(); ?&gt;
+    &lt;/div&gt;
+&lt;?php endif; ?&gt;
+
+
+&lt;?php if(auth()-&gt;guard()-&gt;guest()): ?&gt;
+    &lt;div class=&quot;alert alert-warning w-100 text-center&quot;&gt;
+        Vous devez &lt;a href=&quot;&lt;?php echo e(route('auth')); ?&gt;&quot;&gt;vous connecter&lt;/a&gt; pour voir les entreprises d'artisans.
+    &lt;/div&gt;
+&lt;?php endif; ?&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+            
+
+
+           &lt;!-- Footer Start --&gt;
+           
+            &lt;?php echo $__env-&gt;make('layout.footer', array_diff_key(get_defined_vars(), ['__data' =&gt; 1, '__path' =&gt; 1]))-&gt;render(); ?&gt;
+            
+            &lt;!-- Footer End --&gt;
+
+            &lt;a href=&quot;#&quot; class=&quot;back-to-top&quot;&gt;&lt;i class=&quot;fa fa-chevron-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;!-- JavaScript Libraries --&gt;
+        &lt;script src=&quot;https://code.jquery.com/jquery-3.4.1.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/easing/easing.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/wow/wow.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/owlcarousel/owl.carousel.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/isotope/isotope.pkgd.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/lightbox/js/lightbox.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/waypoints/waypoints.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/counterup/counterup.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/slick/slick.min.js&quot;&gt;&lt;/script&gt;
+
+        
+        &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+$(document).ready(function() {
+    $('#searchSocieteForm input').on('keyup', function() {
+        var formData = $('#searchSocieteForm').serialize();
+
+        $.ajax({
+            url: &quot;&lt;?php echo e(route('societes.search')); ?&gt;&quot;,
+            method: &quot;GET&quot;,
+            data: formData,
+            success: function(response) {
+                $('#societeResults').html(response.html);
+            },
+            error: function(xhr) {
+                console.error('Erreur AJAX:', xhr.responseText);
+            }
+        });
+    });
+
+    $('#searchSocieteForm').on('submit', function(e) {
+        e.preventDefault();
+    });
+});
+&lt;/script&gt;
+
+
+    &lt;/body&gt;
+&lt;/html&gt;
+&lt;?php /**PATH C:\xampp\htdocs\chercher_art\resources\views/front/art_soc.blade.php ENDPATH**/ ?&gt;</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

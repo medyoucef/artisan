@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>( function( window, factory )()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">( function( window, factory )()</h3>
+<p style="margin-top: 4px">in <i>public/lib/isotope/isotope.pkgd.js [2950:2998]</i></p>
+<ul>
+    <li><b>38</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+( function( window, factory ) {
+  // universal module definition
+  /* jshint strict: false */ /*globals define, module, require */
+  if ( typeof define == 'function' &amp;&amp; define.amd ) {
+    // AMD
+    define( [
+        'outlayer/outlayer',
+        'get-size/get-size',
+        'desandro-matches-selector/matches-selector',
+        'fizzy-ui-utils/utils',
+        'isotope-layout/js/item',
+        'isotope-layout/js/layout-mode',
+        // include default layout modes
+        'isotope-layout/js/layout-modes/masonry',
+        'isotope-layout/js/layout-modes/fit-rows',
+        'isotope-layout/js/layout-modes/vertical'
+      ],
+      function( Outlayer, getSize, matchesSelector, utils, Item, LayoutMode ) {
+        return factory( window, Outlayer, getSize, matchesSelector, utils, Item, LayoutMode );
+      });
+  } else if ( typeof module == 'object' &amp;&amp; module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      window,
+      require('outlayer'),
+      require('get-size'),
+      require('desandro-matches-selector'),
+      require('fizzy-ui-utils'),
+      require('isotope-layout/js/item'),
+      require('isotope-layout/js/layout-mode'),
+      // include default layout modes
+      require('isotope-layout/js/layout-modes/masonry'),
+      require('isotope-layout/js/layout-modes/fit-rows'),
+      require('isotope-layout/js/layout-modes/vertical')
+    );
+  } else {
+    // browser global
+    window.Isotope = factory(
+      window,
+      window.Outlayer,
+      window.getSize,
+      window.matchesSelector,
+      window.fizzyUIUtils,
+      window.Isotope.Item,
+      window.Isotope.LayoutMode
+    );
+  }
+
+}( window, function factory( window, Outlayer, getSize, matchesSelector, utils,
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

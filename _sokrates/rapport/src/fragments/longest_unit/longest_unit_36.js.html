@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>function WOW()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">function WOW()</h3>
+<p style="margin-top: 4px">in <i>public/lib/wow/wow.js [216:257]</i></p>
+<ul>
+    <li><b>36</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+    function WOW() {
+      var options = arguments.length &lt;= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+      _classCallCheck(this, WOW);
+
+      this.defaults = {
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: true,
+        live: true,
+        callback: null,
+        scrollContainer: null,
+        resetAnimation: true
+      };
+
+      this.animate = function animateFactory() {
+        if ('requestAnimationFrame' in window) {
+          return function (callback) {
+            return window.requestAnimationFrame(callback);
+          };
+        }
+        return function (callback) {
+          return callback();
+        };
+      }();
+
+      this.vendors = ['moz', 'webkit'];
+
+      this.start = this.start.bind(this);
+      this.resetAnimation = this.resetAnimation.bind(this);
+      this.scrollHandler = this.scrollHandler.bind(this);
+      this.scrollCallback = this.scrollCallback.bind(this);
+      this.scrolled = true;
+      this.config = extend(options, this.defaults);
+      if (options.scrollContainer != null) {
+        this.config.scrollContainer = document.querySelector(options.scrollContainer);
+      }
+      // Map of elements to animation names:
+      this.animationNameCache = new WeakMap();
+      this.wowEvent = createEvent(this.config.boxClass);
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

@@ -1,0 +1,6 @@
+public/lib/isotope/isotope.pkgd.js (1 line):
+	- line 3394: // TODO console.error
+
+
+public/lib/owlcarousel/owl.carousel.js (1 line):
+	- line 329: // TODO: Should be computed from number of min width items in stage

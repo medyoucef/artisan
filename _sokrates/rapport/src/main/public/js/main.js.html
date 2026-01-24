@@ -1,0 +1,163 @@
+<html>
+<head>
+    <title>public/js/main.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public/js/main.js (<b>105</b> lines of code) (<a href="main.js">raw</a>):</h3>
+<div id="editor">(function ($) {
+    &quot;use strict&quot;;
+    
+    // Initiate the wowjs
+    new WOW().init();
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() &gt; 200) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+    
+    
+    // Sticky Navbar
+    $(window).scroll(function () {
+        if ($(this).scrollTop() &gt; 90) {
+            $('.nav-bar').addClass('nav-sticky');
+            $('.carousel, .page-header').css(&quot;margin-top&quot;, &quot;73px&quot;);
+        } else {
+            $('.nav-bar').removeClass('nav-sticky');
+            $('.carousel, .page-header').css(&quot;margin-top&quot;, &quot;0&quot;);
+        }
+    });
+    
+    
+    // Dropdown on mouse hover
+    $(document).ready(function () {
+        function toggleNavbarMethod() {
+            if ($(window).width() &gt; 992) {
+                $('.navbar .dropdown').on('mouseover', function () {
+                    $('.dropdown-toggle', this).trigger('click');
+                }).on('mouseout', function () {
+                    $('.dropdown-toggle', this).trigger('click').blur();
+                });
+            } else {
+                $('.navbar .dropdown').off('mouseover').off('mouseout');
+            }
+        }
+        toggleNavbarMethod();
+        $(window).resize(toggleNavbarMethod);
+    });
+    
+    
+    // jQuery counterUp
+    $('[data-toggle=&quot;counter-up&quot;]').counterUp({
+        delay: 10,
+        time: 2000
+    });
+    
+    
+    // Modal Video
+    $(document).ready(function () {
+        var $videoSrc;
+        $('.btn-play').click(function () {
+            $videoSrc = $(this).data(&quot;src&quot;);
+        });
+        console.log($videoSrc);
+
+        $('#videoModal').on('shown.bs.modal', function (e) {
+            $(&quot;#video&quot;).attr('src', $videoSrc + &quot;?autoplay=1&amp;amp;modestbranding=1&amp;amp;showinfo=0&quot;);
+        })
+
+        $('#videoModal').on('hide.bs.modal', function (e) {
+            $(&quot;#video&quot;).attr('src', $videoSrc);
+        })
+    });
+
+
+    // Testimonial Slider
+    $('.testimonial-slider').slick({
+        infinite: true,
+        autoplay: true,
+        arrows: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.testimonial-slider-nav'
+    });
+    $('.testimonial-slider-nav').slick({
+        arrows: false,
+        dots: false,
+        focusOnSelect: true,
+        centerMode: true,
+        centerPadding: '22px',
+        slidesToShow: 3,
+        asNavFor: '.testimonial-slider'
+    });
+    $('.testimonial .slider-nav').css({&quot;position&quot;: &quot;relative&quot;, &quot;height&quot;: &quot;160px&quot;});
+    
+    
+    // Blogs carousel
+    $(&quot;.related-slider&quot;).owlCarousel({
+        autoplay: true,
+        dots: false,
+        loop: true,
+        nav : true,
+        navText : [
+            '&lt;i class=&quot;fa fa-angle-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;',
+            '&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;'
+        ],
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            }
+        }
+    });
+    
+    
+    // Portfolio isotope and filter
+    var portfolioIsotope = $('.portfolio-container').isotope({
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+    });
+
+    $('#portfolio-flters li').on('click', function () {
+        $(&quot;#portfolio-flters li&quot;).removeClass('filter-active');
+        $(this).addClass('filter-active');
+
+        portfolioIsotope.isotope({filter: $(this).data('filter')});
+    });
+    
+})(jQuery);
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

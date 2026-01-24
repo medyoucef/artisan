@@ -1,0 +1,111 @@
+Start of analysis
+Found 14178 files
+168 are in the main's scope  (19826 lines of code)
+  *.php: 135 files, (8146 lines of code)
+  *.js: 10 files, (7864 lines of code)
+  *.css: 12 files, (2653 lines of code)
+  *.html: 1 files, (457 lines of code)
+  *.scss: 5 files, (315 lines of code)
+  *.less: 2 files, (239 lines of code)
+  *.sql: 1 files, (111 lines of code)
+  *.xml: 1 files, (33 lines of code)
+  *.rb: 1 files, (8 lines of code)
+3 are in the test's scope  (27 lines of code)
+  *.php: 3 files, (27 lines of code)
+1 are in the generated's scope  (2777 lines of code)
+  *.json: 1 files, (2777 lines of code)
+0 are in the build and deployment's scope  (0 lines of code)
+8 are in the other's scope  (3222 lines of code)
+  *.json: 3 files, (2872 lines of code)
+  *.svg: 2 files, (245 lines of code)
+  *.md: 2 files, (103 lines of code)
+  *.txt: 1 files, (2 lines of code)
+Excluded from analyses 13999 files
+Analysing dependencies...
+21 are in the DECOMPOSITION_primary\app's scope  (440 lines of code)
+  *.php: 21 files, (440 lines of code)
+3 are in the DECOMPOSITION_primary\ROOT's scope  (157 lines of code)
+  *.sql: 1 files, (111 lines of code)
+  *.xml: 1 files, (33 lines of code)
+  *.js: 1 files, (13 lines of code)
+2 are in the DECOMPOSITION_primary\bootstrap's scope  (18 lines of code)
+  *.php: 2 files, (18 lines of code)
+10 are in the DECOMPOSITION_primary\config's scope  (483 lines of code)
+  *.php: 10 files, (483 lines of code)
+16 are in the DECOMPOSITION_primary\database's scope  (376 lines of code)
+  *.php: 16 files, (376 lines of code)
+29 are in the DECOMPOSITION_primary\public's scope  (11527 lines of code)
+  *.js: 8 files, (7850 lines of code)
+  *.css: 11 files, (2644 lines of code)
+  *.html: 1 files, (457 lines of code)
+  *.scss: 3 files, (308 lines of code)
+  *.less: 2 files, (239 lines of code)
+  *.php: 3 files, (21 lines of code)
+  *.rb: 1 files, (8 lines of code)
+23 are in the DECOMPOSITION_primary\resources's scope  (1825 lines of code)
+  *.php: 19 files, (1808 lines of code)
+  *.css: 1 files, (9 lines of code)
+  *.scss: 2 files, (7 lines of code)
+  *.js: 1 files, (1 lines of code)
+2 are in the DECOMPOSITION_primary\routes's scope  (33 lines of code)
+  *.php: 2 files, (33 lines of code)
+62 are in the DECOMPOSITION_primary\storage's scope  (4967 lines of code)
+  *.php: 62 files, (4967 lines of code)
+  - "primary", found 4 dependencies (1 component dependencies)
+2 are in the CONCERN_general\TODOs's scope  (4613 lines of code)
+  *.js: 2 files, (4613 lines of code)
+166 are in the CONCERN_general\Unclassified's scope  (15213 lines of code)
+  *.php: 135 files, (8146 lines of code)
+  *.js: 8 files, (3251 lines of code)
+  *.css: 12 files, (2653 lines of code)
+  *.html: 1 files, (457 lines of code)
+  *.scss: 5 files, (315 lines of code)
+  *.less: 2 files, (239 lines of code)
+  *.sql: 1 files, (111 lines of code)
+  *.xml: 1 files, (33 lines of code)
+  *.rb: 1 files, (8 lines of code)
+Analysing units...
+Basic unit metrics...
+  - found 622 units (7600 lines of code in units)
+Unit size 2155 / 1728 / 2597 / 1019 / 101
+Unit size per component:
+Unit Size Component app: 118 / 69 / 60 / 0 / 0
+Unit Size Component database: 164 / 40 / 58 / 0 / 0
+Unit Size Component public: 1846 / 1608 / 2479 / 1019 / 101
+Unit Size Component resources: 9 / 0 / 0 / 0 / 0
+Unit Size Component storage: 18 / 0 / 0 / 0 / 0
+Unit Size Component ROOT: 0 / 11 / 0 / 0 / 0
+Unit size per extension:
+Unit Size Extension php: 309 / 109 / 118 / 0 / 0
+Unit Size Extension js: 1846 / 1619 / 2479 / 1019 / 101
+Conditional complexity: 4282 / 2147 / 930 / 241 / 0
+Conditional complexity per component:
+Conditional Complexity Component app 211 / 36 / 0 / 0 / 0
+Conditional Complexity Component database 262 / 0 / 0 / 0 / 0
+Conditional Complexity Component public 3771 / 2111 / 930 / 241 / 0
+Conditional Complexity Component resources 9 / 0 / 0 / 0 / 0
+Conditional Complexity Component storage 18 / 0 / 0 / 0 / 0
+Conditional Complexity Component ROOT 11 / 0 / 0 / 0 / 0
+Conditional complexity per extension:
+Conditional Complexity Component php: 500 / 36 / 0 / 0 / 0
+Conditional Complexity Component js: 3782 / 2111 / 930 / 241 / 0
+Analysing duplication...
+  - found 845 duplicates (5698 duplicated lines vs. 17439 cleaned lines) in 90 files
+  - per component:primary
+     - "storage": 3494 duplicated lines vs. 3723 total lines
+     - "public": 828 duplicated lines vs. 10644 total lines
+     - "resources": 1279 duplicated lines vs. 1814 total lines
+     - "database": 51 duplicated lines vs. 280 total lines
+     - "config": 46 duplicated lines vs. 473 total lines
+     - "app": 0 duplicated lines vs. 310 total lines
+     - "ROOT": 0 duplicated lines vs. 148 total lines
+     - "bootstrap": 0 duplicated lines vs. 16 total lines
+     - "routes": 0 duplicated lines vs. 31 total lines
+  - per extension:
+     - "php": 4870 duplicated lines vs. 6645 total lines
+     - "less": 170 duplicated lines vs. 239 total lines
+     - "scss": 198 duplicated lines vs. 315 total lines
+     - "css": 280 duplicated lines vs. 2653 total lines
+     - "js": 180 duplicated lines vs. 7029 total lines
+Total analysis time: 11.00s
+

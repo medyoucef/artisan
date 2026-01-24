@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    .node {
+        cursor: pointer;
+    }
+
+    .node:hover {
+        stroke: #000;
+        stroke-width: 1.5px;
+    }
+
+    .node--leaf {
+        fill: white;
+    }
+
+    .label {
+        font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-anchor: middle;
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    }
+
+    .label,
+    .node--root,
+    .node--leaf {
+        pointer-events: none;
+    }
+
+</style>
+<svg width="960" height="960"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+    var svg = d3.select("svg"),
+        margin = 20,
+        diameter = +svg.attr("width"),
+        g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+    var color = d3.scaleLinear()
+        .domain([-1, 5])
+        .range(["hsl(152,80%,100%)", "hsl(228,30%,40%)"])
+        .interpolate(d3.interpolateHcl);
+
+    var pack = d3.pack()
+        .size([diameter - margin, diameter - margin])
+        .padding(2);
+
+
+    var root = {
+        "name": "cluster",
+        "children": [ {
+  "name" : "1-100 (121)",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "app/Http/Controllers/ArtisanController.php",
+    "color" : "#1a9641",
+    "size" : 58,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/Auth/ConfirmPasswordController.php",
+    "color" : "#1a9641",
+    "size" : 13,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/Auth/ForgotPasswordController.php",
+    "color" : "#1a9641",
+    "size" : 8,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/Auth/LoginController.php",
+    "color" : "#1a9641",
+    "size" : 14,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/Auth/RegisterController.php",
+    "color" : "#1a9641",
+    "size" : 32,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/Auth/ResetPasswordController.php",
+    "color" : "#1a9641",
+    "size" : 9,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/Auth/VerificationController.php",
+    "color" : "#1a9641",
+    "size" : 15,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/AuthController.php",
+    "color" : "#1a9641",
+    "size" : 46,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/Controller.php",
+    "color" : "#1a9641",
+    "size" : 5,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/HomeController.php",
+    "color" : "#1a9641",
+    "size" : 27,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/MessageController.php",
+    "color" : "#1a9641",
+    "size" : 23,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/ProfessionController.php",
+    "color" : "#1a9641",
+    "size" : 12,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/ProfileController.php",
+    "color" : "#1a9641",
+    "size" : 51,
+    "children" : [ ]
+  }, {
+    "name" : "app/Http/Controllers/SocieteArtisanController.php",
+    "color" : "#1a9641",
+    "size" : 34,
+    "children" : [ ]
+  }, {
+    "name" : "app/Models/Artisan.php",
+    "color" : "#1a9641",
+    "size" : 17,
+    "children" : [ ]
+  }, {
+    "name" : "app/Models/Message.php",
+    "color" : "#1a9641",
+    "size" : 7,
+    "children" : [ ]
+  }, {
+    "name" : "app/Models/Profession.php",
+    "color" : "#1a9641",
+    "size" : 13,
+    "children" : [ ]
+  }, {
+    "name" : "app/Models/Service.php",
+    "color" : "#1a9641",
+    "size" : 9,
+    "children" : [ ]
+  }, {
+    "name" : "app/Models/SocieteArtisan.php",
+    "color" : "#1a9641",
+    "size" : 12,
+    "children" : [ ]
+  }, {
+    "name" : "app/Models/User.php",
+    "color" : "#1a9641",
+    "size" : 23,
+    "children" : [ ]
+  }, {
+    "name" : "app/Providers/AppServiceProvider.php",
+    "color" : "#1a9641",
+    "size" : 12,
+    "children" : [ ]
+  }, {
+    "name" : "bootstrap/app.php",
+    "color" : "#1a9641",
+    "size" : 14,
+    "children" : [ ]
+  }, {
+    "name" : "bootstrap/providers.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "config/app.php",
+    "color" : "#1a9641",
+    "size" : 22,
+    "children" : [ ]
+  }, {
+    "name" : "config/auth.php",
+    "color" : "#1a9641",
+    "size" : 28,
+    "children" : [ ]
+  }, {
+    "name" : "config/cache.php",
+    "color" : "#1a9641",
+    "size" : 57,
+    "children" : [ ]
+  }, {
+    "name" : "config/filesystems.php",
+    "color" : "#1a9641",
+    "size" : 36,
+    "children" : [ ]
+  }, {
+    "name" : "config/logging.php",
+    "color" : "#1a9641",
+    "size" : 79,
+    "children" : [ ]
+  }, {
+    "name" : "config/mail.php",
+    "color" : "#1a9641",
+    "size" : 57,
+    "children" : [ ]
+  }, {
+    "name" : "config/queue.php",
+    "color" : "#1a9641",
+    "size" : 52,
+    "children" : [ ]
+  }, {
+    "name" : "config/services.php",
+    "color" : "#1a9641",
+    "size" : 20,
+    "children" : [ ]
+  }, {
+    "name" : "config/session.php",
+    "color" : "#1a9641",
+    "size" : 23,
+    "children" : [ ]
+  }, {
+    "name" : "database/factories/UserFactory.php",
+    "color" : "#1a9641",
+    "size" : 25,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/0001_01_01_000000_create_users_table.php",
+    "color" : "#1a9641",
+    "size" : 38,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/0001_01_01_000001_create_cache_table.php",
+    "color" : "#1a9641",
+    "size" : 25,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/0001_01_01_000002_create_jobs_table.php",
+    "color" : "#1a9641",
+    "size" : 46,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_05_27_164600_create_messages_table.php",
+    "color" : "#1a9641",
+    "size" : 22,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_01_152838_create_artisans_table.php",
+    "color" : "#1a9641",
+    "size" : 27,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_01_152839_create_professions_table.php",
+    "color" : "#1a9641",
+    "size" : 21,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_01_152840_create_services_table.php",
+    "color" : "#1a9641",
+    "size" : 21,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_01_152840_create_societe_artisans_table.php",
+    "color" : "#1a9641",
+    "size" : 21,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_01_215847_add_type_user_to_users_table.php",
+    "color" : "#1a9641",
+    "size" : 19,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_20_095950_add_fields_to_users_table.php",
+    "color" : "#1a9641",
+    "size" : 21,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_20_105730_add_updated_at_to_artisans_table.php",
+    "color" : "#1a9641",
+    "size" : 19,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_20_140908_add_telephone_to_users_table.php",
+    "color" : "#1a9641",
+    "size" : 19,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_20_141421_add_updated_at_to_societe_artisan_table.php",
+    "color" : "#1a9641",
+    "size" : 19,
+    "children" : [ ]
+  }, {
+    "name" : "database/migrations/2025_06_20_141652_add_created_at_to_societe_artisan_table.php",
+    "color" : "#1a9641",
+    "size" : 19,
+    "children" : [ ]
+  }, {
+    "name" : "database/seeders/DatabaseSeeder.php",
+    "color" : "#1a9641",
+    "size" : 14,
+    "children" : [ ]
+  }, {
+    "name" : "phpunit.xml",
+    "color" : "#1a9641",
+    "size" : 33,
+    "children" : [ ]
+  }, {
+    "name" : "public/index.php",
+    "color" : "#1a9641",
+    "size" : 10,
+    "children" : [ ]
+  }, {
+    "name" : "public/js/script.js",
+    "color" : "#1a9641",
+    "size" : 9,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/flaticon/font/flaticon.css",
+    "color" : "#1a9641",
+    "size" : 34,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/flaticon/font/_flaticon.scss",
+    "color" : "#1a9641",
+    "size" : 51,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/lightbox/links.php",
+    "color" : "#1a9641",
+    "size" : 6,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/owlcarousel/assets/owl.theme.default.css",
+    "color" : "#1a9641",
+    "size" : 40,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/owlcarousel/assets/owl.theme.default.min.css",
+    "color" : "#1a9641",
+    "size" : 1,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/owlcarousel/assets/owl.theme.green.css",
+    "color" : "#1a9641",
+    "size" : 40,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/owlcarousel/assets/owl.theme.green.min.css",
+    "color" : "#1a9641",
+    "size" : 1,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/config.rb",
+    "color" : "#1a9641",
+    "size" : 8,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/slick.less",
+    "color" : "#1a9641",
+    "size" : 87,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/slick.scss",
+    "color" : "#1a9641",
+    "size" : 87,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/waypoints/links.php",
+    "color" : "#1a9641",
+    "size" : 5,
+    "children" : [ ]
+  }, {
+    "name" : "resources/css/app.css",
+    "color" : "#1a9641",
+    "size" : 9,
+    "children" : [ ]
+  }, {
+    "name" : "resources/js/app.js",
+    "color" : "#1a9641",
+    "size" : 1,
+    "children" : [ ]
+  }, {
+    "name" : "resources/sass/app.scss",
+    "color" : "#1a9641",
+    "size" : 3,
+    "children" : [ ]
+  }, {
+    "name" : "resources/sass/_variables.scss",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/auth/login_register.blade.php",
+    "color" : "#1a9641",
+    "size" : 90,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/front/profile_edit.blade.php",
+    "color" : "#1a9641",
+    "size" : 88,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/front/service.blade.php",
+    "color" : "#1a9641",
+    "size" : 80,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/home.blade.php",
+    "color" : "#1a9641",
+    "size" : 20,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/layout/footer.blade.php",
+    "color" : "#1a9641",
+    "size" : 69,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/layout/nav_bar.blade.php",
+    "color" : "#1a9641",
+    "size" : 37,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/layout/sendMessage.blade.php",
+    "color" : "#1a9641",
+    "size" : 29,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/layout/topbar.blade.php",
+    "color" : "#1a9641",
+    "size" : 50,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/layouts/app.blade.php",
+    "color" : "#1a9641",
+    "size" : 63,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/partials/artisan_cards.blade.php",
+    "color" : "#1a9641",
+    "size" : 37,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/partials/societes_liste.blade.php",
+    "color" : "#1a9641",
+    "size" : 28,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/partials/societe_cards.blade.php",
+    "color" : "#1a9641",
+    "size" : 31,
+    "children" : [ ]
+  }, {
+    "name" : "routes/console.php",
+    "color" : "#1a9641",
+    "size" : 6,
+    "children" : [ ]
+  }, {
+    "name" : "routes/web.php",
+    "color" : "#1a9641",
+    "size" : 27,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/0a91049541c8c278d5dc6bc5009db1c0.php",
+    "color" : "#1a9641",
+    "size" : 11,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/176fe7c698dbe36fc15642db0b7fbb3b.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/18bb04ab7f5f1e808b8ce3ced054efc0.php",
+    "color" : "#1a9641",
+    "size" : 11,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/2737e2ce19580b3fdb70d3726613b4ce.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/354e34927a76399b3e64f164eb5443c2.php",
+    "color" : "#1a9641",
+    "size" : 38,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/38cb578b1a3b655c1fd8f78fe0f8471d.php",
+    "color" : "#1a9641",
+    "size" : 34,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/3d82499e1cc8a9efd19e2310c61d0323.php",
+    "color" : "#1a9641",
+    "size" : 6,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/4750baca37881108ffd5e267b0e3a83c.php",
+    "color" : "#1a9641",
+    "size" : 40,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php",
+    "color" : "#1a9641",
+    "size" : 79,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php",
+    "color" : "#1a9641",
+    "size" : 51,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/591f51ae5d6223fbe584dc6577d846ae.php",
+    "color" : "#1a9641",
+    "size" : 46,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/5a73bd4198eb32d506f76f5b1bbbcd25.php",
+    "color" : "#1a9641",
+    "size" : 29,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/5d2f6d06a440297343fafb266f60e9f0.php",
+    "color" : "#1a9641",
+    "size" : 31,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/5dd5927777b90c5d44c7d4078df3d5ed.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/61fee7ad2d9376e94b9d7a553aefbfbb.php",
+    "color" : "#1a9641",
+    "size" : 46,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/64ee9777a1b7ef5a7db7a7103f634cd5.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php",
+    "color" : "#1a9641",
+    "size" : 81,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php",
+    "color" : "#1a9641",
+    "size" : 81,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/7e095807effdbab044619856de57c96f.php",
+    "color" : "#1a9641",
+    "size" : 6,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/860d9d16399020041a58cd550f201ead.php",
+    "color" : "#1a9641",
+    "size" : 46,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php",
+    "color" : "#1a9641",
+    "size" : 90,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/86cccdc7823cee1bd77105d89d8638e8.php",
+    "color" : "#1a9641",
+    "size" : 27,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/878ec5161856b73a7bf2e920b2a585ef.php",
+    "color" : "#1a9641",
+    "size" : 11,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/89e777edd53aab0d19f28731e67e9450.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/9ebe68a946f9ddc1f984e077fc35a756.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/9fada826ee00a312e714e63de7f64838.php",
+    "color" : "#1a9641",
+    "size" : 51,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/9fcd4be86f466ee2ee9ef0eb806b1eaa.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/a4fc478d5a5c9c18d84b1e8d00e5517a.php",
+    "color" : "#1a9641",
+    "size" : 29,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/b404da36b14b476e32e95917365710b3.php",
+    "color" : "#1a9641",
+    "size" : 70,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/be8b6d1fdd2fdcae7bb3d6382a0b686a.php",
+    "color" : "#1a9641",
+    "size" : 38,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/cdfcbd1a1b754262e95e923bd8a97e47.php",
+    "color" : "#1a9641",
+    "size" : 11,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/d6cbae0555f95fa24cbc18a1e326f1d2.php",
+    "color" : "#1a9641",
+    "size" : 11,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/e1368f5e5ceb4bd65bc5b1a5af202e46.php",
+    "color" : "#1a9641",
+    "size" : 69,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/e66a6fee40923bdcb5094745284b3a7f.php",
+    "color" : "#1a9641",
+    "size" : 46,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/f4e4640f2959be64e9037ab0087a89a1.php",
+    "color" : "#1a9641",
+    "size" : 31,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/f71fdad28b672f21335053b9d07474fd.php",
+    "color" : "#1a9641",
+    "size" : 29,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/f7bc5e13bbd429c33e0d09648f856847.php",
+    "color" : "#1a9641",
+    "size" : 70,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/f86cce6c114517ee6876f4c401b436f2.php",
+    "color" : "#1a9641",
+    "size" : 4,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/f94507b4499308d70d4e8ffb76b48b40.php",
+    "color" : "#1a9641",
+    "size" : 11,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/fa7b183079d07f01c4b77b0a222143a4.php",
+    "color" : "#1a9641",
+    "size" : 68,
+    "children" : [ ]
+  }, {
+    "name" : "vite.config.js",
+    "color" : "#1a9641",
+    "size" : 13,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "101-200 (37)",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "artisan_finder(1).sql",
+    "color" : "#a6d96a",
+    "size" : 111,
+    "children" : [ ]
+  }, {
+    "name" : "config/database.php",
+    "color" : "#a6d96a",
+    "size" : 109,
+    "children" : [ ]
+  }, {
+    "name" : "public/css/login.css",
+    "color" : "#a6d96a",
+    "size" : 119,
+    "children" : [ ]
+  }, {
+    "name" : "public/js/main.js",
+    "color" : "#a6d96a",
+    "size" : 105,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/easing/easing.js",
+    "color" : "#a6d96a",
+    "size" : 150,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/lightbox/css/lightbox.css",
+    "color" : "#a6d96a",
+    "size" : 176,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/owlcarousel/assets/owl.carousel.css",
+    "color" : "#a6d96a",
+    "size" : 132,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/slick-theme.css",
+    "color" : "#a6d96a",
+    "size" : 170,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/slick-theme.less",
+    "color" : "#a6d96a",
+    "size" : 152,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/slick-theme.scss",
+    "color" : "#a6d96a",
+    "size" : 170,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/slick.css",
+    "color" : "#a6d96a",
+    "size" : 104,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/front/about.blade.php",
+    "color" : "#a6d96a",
+    "size" : 122,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/front/art_ind.blade.php",
+    "color" : "#a6d96a",
+    "size" : 134,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/front/art_soc.blade.php",
+    "color" : "#a6d96a",
+    "size" : 136,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/front/contact.blade.php",
+    "color" : "#a6d96a",
+    "size" : 133,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/front/profile.blade.php",
+    "color" : "#a6d96a",
+    "size" : 143,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/layout/question.blade.php",
+    "color" : "#a6d96a",
+    "size" : 138,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php",
+    "color" : "#a6d96a",
+    "size" : 139,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/0be5fbe14e443444bd1f225175f044d2.php",
+    "color" : "#a6d96a",
+    "size" : 193,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/1639945e2a31000c17c9cec339739cb6.php",
+    "color" : "#a6d96a",
+    "size" : 135,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/1958f5a5b68f55f06b367f2ce8d0bede.php",
+    "color" : "#a6d96a",
+    "size" : 156,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php",
+    "color" : "#a6d96a",
+    "size" : 134,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php",
+    "color" : "#a6d96a",
+    "size" : 139,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/2db556e063e4147cdcf0bd304d565dce.php",
+    "color" : "#a6d96a",
+    "size" : 183,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php",
+    "color" : "#a6d96a",
+    "size" : 134,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php",
+    "color" : "#a6d96a",
+    "size" : 130,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/6aef6bbd263c66e1bc1a72b0549e978c.php",
+    "color" : "#a6d96a",
+    "size" : 172,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php",
+    "color" : "#a6d96a",
+    "size" : 132,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/71a84f0e8051325082bdb809d2701bae.php",
+    "color" : "#a6d96a",
+    "size" : 124,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/761567e2ae87915d7290cfffaa79102f.php",
+    "color" : "#a6d96a",
+    "size" : 183,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php",
+    "color" : "#a6d96a",
+    "size" : 122,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/a4c9e41ce8c5dee08cc2762cab59d22f.php",
+    "color" : "#a6d96a",
+    "size" : 172,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/c9e5719741d06ccda0393a9cb140d4e0.php",
+    "color" : "#a6d96a",
+    "size" : 156,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php",
+    "color" : "#a6d96a",
+    "size" : 122,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php",
+    "color" : "#a6d96a",
+    "size" : 137,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/e986e6acf67511cc4c56ba4e1c55b701.php",
+    "color" : "#a6d96a",
+    "size" : 107,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/ea1825065bf2b2c4185fbe24b841a7e1.php",
+    "color" : "#a6d96a",
+    "size" : 107,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "201-500 (6)",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "public/lib/flaticon/font/flaticon.html",
+    "color" : "#ffffbf",
+    "size" : 457,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/lightbox/js/lightbox.js",
+    "color" : "#ffffbf",
+    "size" : 372,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/wow/wow.js",
+    "color" : "#ffffbf",
+    "size" : 472,
+    "children" : [ ]
+  }, {
+    "name" : "resources/views/index.blade.php",
+    "color" : "#ffffbf",
+    "size" : 380,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php",
+    "color" : "#ffffbf",
+    "size" : 380,
+    "children" : [ ]
+  }, {
+    "name" : "storage/framework/views/3c27f935771fc83addd970332eedaf8f.php",
+    "color" : "#ffffbf",
+    "size" : 380,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "501-1000 (0)",
+  "color" : "",
+  "size" : 0,
+  "children" : [ ]
+}, {
+  "name" : "1001+ (4)",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "public/css/style.css",
+    "color" : "#d7191c",
+    "size" : 1827,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/isotope/isotope.pkgd.js",
+    "color" : "#d7191c",
+    "size" : 2193,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/owlcarousel/owl.carousel.js",
+    "color" : "#d7191c",
+    "size" : 2420,
+    "children" : [ ]
+  }, {
+    "name" : "public/lib/slick/slick.js",
+    "color" : "#d7191c",
+    "size" : 2129,
+    "children" : [ ]
+  } ]
+} ]
+    }
+
+    root = d3.hierarchy(root)
+        .sum(function (d) {
+            return d.size;
+        })
+        .sort(function (a, b) {
+            return b.value - a.value;
+        });
+
+    var focus = root,
+        nodes = pack(root).descendants(),
+        view;
+
+    var circle = g.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+        .attr("class", function (d) {
+            return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
+        })
+        .style("fill", function (d) {
+            return d.children ? color(d.depth) : (d.data.color ? d.data.color : null);
+        })
+        .on("click", function (d) {
+            if (focus !== d) zoom(d), d3.event.stopPropagation();
+        });
+
+    var text = g.selectAll("text")
+        .data(nodes)
+        .enter().append("text")
+        .attr("class", "label")
+        .style("fill-opacity", function (d) {
+            return d.parent === root ? 1 : 0;
+        })
+        .style("display", function (d) {
+            return d.parent === root ? "inline" : "none";
+        })
+        .text(function (d) {
+            return d.data.name.length > 33 ? (d.data.name.substr(0, 14) + "..." + d.data.name.substr(d.data.name.length - 14))  : d.data.name;
+        });
+
+    var node = g.selectAll("circle,text");
+
+    svg
+        .style("background", color(-1))
+        .on("click", function () {
+            zoom(root);
+        });
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+        var focus0 = focus;
+        focus = d;
+
+        var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function (d) {
+                var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+                return function (t) {
+                    zoomTo(i(t));
+                };
+            });
+
+        transition.selectAll("text")
+            .filter(function (d) {
+                return d.parent === focus || this.style.display === "inline";
+            })
+            .style("fill-opacity", function (d) {
+                return d.parent === focus ? 1 : 0;
+            })
+            .on("start", function (d) {
+                if (d.parent === focus) this.style.display = "inline";
+            })
+            .on("end", function (d) {
+                if (d.parent !== focus) this.style.display = "none";
+            });
+    }
+
+    function zoomTo(v) {
+        var k = diameter / v[2];
+        view = v;
+        node.attr("transform", function (d) {
+            return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+        });
+        circle.attr("r", function (d) {
+            return d.r * k;
+        });
+    }
+
+</script>

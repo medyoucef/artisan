@@ -1,0 +1,11 @@
+Path	Lines of Code
+config/app.php	22
+config/auth.php	28
+config/cache.php	57
+config/database.php	109
+config/filesystems.php	36
+config/logging.php	79
+config/mail.php	57
+config/queue.php	52
+config/services.php	20
+config/session.php	23
