@@ -19,4 +19,9 @@ class Artisan extends Model
     {
         return $this->belongsTo(Profession::class, 'profession');
     }
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
 }

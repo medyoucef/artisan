@@ -8,6 +8,8 @@ use App\Http\Controllers\SocieteArtisanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfessionController;
+use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\ChatController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -42,3 +44,27 @@ Route::post('/rejoindre-artisan', [ArtisanController::class, 'rejoindre'])->name
 
 
 Route::post('/rejoindre-societe', [ProfileController::class, 'rejoindreSociete'])->name('societe.rejoindre');
+
+
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+
+// route pour la page admin
+Route::middleware(['auth'])->group(function () { Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard'); });
+
+// route pour le chat en ligne
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/chat/{artisan}', [ChatController::class, 'startConversation'])->name('chat.start');
+
+    Route::get('/conversation/{id}', [ChatController::class, 'show'])->name('chat.show');
+
+    Route::post('/conversation/{id}/send', [ChatController::class, 'send'])->name('chat.send');
+});
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/messages', [ChatController::class, 'inbox'])->name('messages.inbox');
+});

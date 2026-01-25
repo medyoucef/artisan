@@ -23,7 +23,12 @@
                 <h2>{{ $artisan->nom }}</h2>
                 <p>{{ $artisan->profession }}</p>
                 <p><i class="fas fa-map-marker-alt"></i> {{ $artisan->ville }} - {{ $artisan->adresse }}</p>
-                <p><i class="fas fa-phone-alt"></i> {{ $artisan->telephone }}</p>
+                <a href="{{ route('chat.start', $artisan->id) }}" 
+   class="btn btn-primary"
+   style="background:#030f27; color:white; padding:8px 15px; border-radius:6px; text-decoration:none; display:inline-block; margin-top:10px;">
+    Contacter l'artisan
+</a>
+
             </div>
 
             <div class="team-social">
