@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard Admin</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title', 'Admin')</title>
 
     <style>
         :root {
@@ -60,37 +59,58 @@
             color: var(--primary);
         }
 
-        /* Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+        /* Table styling */
+        .table-container {
             margin-top: 20px;
+            overflow-x: auto;
         }
 
-        .card {
-            background: var(--light);
-            padding: 20px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
             border-radius: 10px;
-            border-left: 6px solid var(--accent);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            transition: 0.2s;
+            overflow: hidden;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
+        thead {
+            background: var(--primary);
+            color: white;
         }
 
-        .card h3 {
-            margin: 0;
-            color: var(--primary);
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
         }
 
-        .card p {
-            font-size: 28px;
-            margin-top: 10px;
-            color: var(--accent);
+        tr:hover {
+            background: #f1f1f1;
         }
+
+        .btn-edit {
+            background: #4CAF50;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-delete {
+            background: #e63946;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .action-buttons {
+    display: flex;
+    gap: 10px; /* espace entre les boutons */
+    align-items: center;
+}
+.action-buttons form {
+    margin: 0; /* retire le margin par défaut */
+}
 
         /* Responsive sidebar */
         @media (max-width: 768px) {
@@ -112,6 +132,25 @@
                 margin-left: 0;
             }
         }
+
+        .btn-add {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.btn-add:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
     </style>
 </head>
 
@@ -119,7 +158,7 @@
 
     <div class="sidebar">
         <h2>Admin</h2>
-        <a href="#">Dashboard</a>
+        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
         <a href="{{ route('admin.artisans') }}">Artisans</a>
         <a href="{{ route('admin.societes') }}">Sociétés</a>
 <a href="{{ route('admin.users') }}">Utilisateurs</a>
@@ -140,49 +179,7 @@
     </div>
 
     <div class="content">
-        <h1>Dashboard Administrateur</h1>
-
-        <div class="card-grid">
-
-            <a href="{{ route('admin.artisans') }}">
-            <div class="card">
-                <h3>Artisans</h3>
-                <p>{{ $artisans }}</p>
-            </div>
-            </a>
-
-            <a href="{{route('admin.societes')}}">
-            <div class="card">
-                <h3>Sociétés</h3>
-                <p>{{ $societes }}</p>
-            </div>
-            </a>
-
-            <a href="{{route('admin.users')}}">
-            <div class="card">
-                <h3>Utilisateurs</h3>
-                <p>{{ $users }}</p>
-            </div>
-            </a>
-
-            <a href="{{route('admin.messages')}}">
-            <div class="card">
-                <h3>Messages reçus</h3>
-                <p>{{ $messages ?? 0 }}</p>
-            </div>
-
-            </a>
-
-            <a href="{{route('admin.professions')}}">
-            <div class="card">
-                <h3>Profession</h3>
-                <p>{{ $categories ?? 0 }}</p>
-            </div>
-            </a>
-
-            
-
-        </div>
+        @yield('content')
     </div>
 
 </body>

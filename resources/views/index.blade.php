@@ -161,12 +161,12 @@
                         </div>
                         <div class="col-lg-7 col-md-6">
                             <div class="section-header text-left">
-                                <p>Bienvenue chez Khdamlii</p>
+                                <p>Bienvenue chez MonArtisqn</p>
                                 <h2>Trouver un artisan facilement </h2>
                             </div>
                             <div class="about-text">
                                 <p>
-                                    Khdamlii est une plateforme conçue pour mettre en relation les particuliers et les artisans qualifiés à travers tout le pays. Que vous ayez besoin d’un plombier, d’un électricien, d’un menuisier ou tout autre professionnel du bâtiment ou des services, notre objectif est de vous aider à trouver rapidement et facilement l’artisan qu’il vous faut, près de chez vous.
+                                    MonArtisqn est une plateforme conçue pour mettre en relation les particuliers et les artisans qualifiés à travers tout le pays. Que vous ayez besoin d’un plombier, d’un électricien, d’un menuisier ou tout autre professionnel du bâtiment ou des services, notre objectif est de vous aider à trouver rapidement et facilement l’artisan qu’il vous faut, près de chez vous.
                                 </p>
                                 <p>
                                     Nous croyons en la valeur du travail artisanal local, en la confiance et en la qualité du service rendu. Chaque artisan inscrit est soigneusement sélectionné pour vous garantir une expérience fiable, transparente et professionnelle.

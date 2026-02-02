@@ -63,8 +63,39 @@ Route::middleware('auth')->group(function () {
     Route::post('/conversation/{id}/send', [ChatController::class, 'send'])->name('chat.send');
 });
 
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/messages', [ChatController::class, 'inbox'])->name('messages.inbox');
 });
+
+Route::get('/admin/artisans', [DashboardController::class, 'artisans'])->name('admin.artisans');
+Route::get('/admin/societes', [DashboardController::class, 'societes'])->name('admin.societes');
+Route::get('/admin/users', [DashboardController::class, 'users'])->name('admin.users');
+Route::get('/admin/messages', [DashboardController::class, 'messages'])->name('admin.messages');
+Route::get('/admin/professions', [DashboardController::class, 'professions'])->name('admin.professions');
+
+Route::delete('/admin/users/{id}', [DashboardController::class, 'deleteUser'])->name('admin.users.delete');
+Route::delete('/admin/artisans/{id}', [DashboardController::class, 'deleteArtisan'])->name('admin.artisans.delete');
+Route::delete('/admin/societes/{id}', [DashboardController::class, 'deleteSociete'])->name('admin.societes.delete');
+Route::delete('/admin/messages/{id}', [DashboardController::class, 'deleteMessage'])->name('admin.messages.delete');
+Route::delete('/admin/professions/{id}', [DashboardController::class, 'deleteProfession'])->name('admin.professions.delete');
+
+// modifier user
+Route::get('/admin/users/{id}/edit', [DashboardController::class, 'editUser'])->name('admin.users.edit');
+Route::put('/admin/users/{id}', [DashboardController::class, 'updateUser'])->name('admin.users.update');
+
+// modifier profession
+
+Route::get('/admin/professions/{id}/edit', [DashboardController::class, 'editProfession'])->name('admin.professions.edit');
+Route::put('/admin/professions/{id}', [DashboardController::class, 'updateProfession'])->name('admin.professions.update');
+
+// ajouter profession
+Route::get('/admin/professions/create', [DashboardController::class, 'createProfession'])->name('admin.professions.create');
+Route::post('/admin/professions', [DashboardController::class, 'storeProfession'])->name('admin.professions.store');
+
+// modifier artisan
+Route::get('/admin/artisans/{id}/edit', [DashboardController::class, 'editArtisan'])->name('admin.artisans.edit');
+Route::put('/admin/artisans/{id}', [DashboardController::class, 'updateArtisan'])->name('admin.artisans.update');
+
+// modifier societe
+Route::get('/admin/societes/{id}/edit', [DashboardController::class, 'editSociete'])->name('admin.societes.edit');
+Route::put('/admin/societes/{id}', [DashboardController::class, 'updateSociete'])->name('admin.societes.update');
