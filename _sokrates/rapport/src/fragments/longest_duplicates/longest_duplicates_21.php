@@ -1,119 +1,137 @@
-storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php [84:137]:
+resources/views/admin/societes_edit.blade.php [7:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
-                                Combien coûte l'utilisation de Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Khdamli est totalement gratuit pour les utilisateurs. Vous ne payez que l’artisan pour le service rendu.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseEight">
-                                Puis-je réserver un artisan à l'avance ?
-                            </a>
-                        </div>
-                        <div id="collapseEight" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Oui, certains artisans proposent un calendrier de disponibilité pour permettre les réservations à l’avance.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseNine">
-                                Puis-je signaler un artisan ?
-                            </a>
-                        </div>
-                        <div id="collapseNine" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Bien sûr. Si vous avez eu une mauvaise expérience, vous pouvez signaler un artisan directement depuis son profil.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.5s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseTen">
-                                Comment devenir artisan sur Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseTen" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Cliquez sur "S'inscrire comme artisan", remplissez vos informations, ajoutez votre photo et vos services. Notre équipe vérifiera votre profil avant activation.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<style>
+    .edit-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
+
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
+
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php [84:137]:
+storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php [7:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
-                                Combien coûte l'utilisation de Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Khdamli est totalement gratuit pour les utilisateurs. Vous ne payez que l’artisan pour le service rendu.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseEight">
-                                Puis-je réserver un artisan à l'avance ?
-                            </a>
-                        </div>
-                        <div id="collapseEight" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Oui, certains artisans proposent un calendrier de disponibilité pour permettre les réservations à l’avance.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseNine">
-                                Puis-je signaler un artisan ?
-                            </a>
-                        </div>
-                        <div id="collapseNine" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Bien sûr. Si vous avez eu une mauvaise expérience, vous pouvez signaler un artisan directement depuis son profil.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.5s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseTen">
-                                Comment devenir artisan sur Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseTen" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Cliquez sur "S'inscrire comme artisan", remplissez vos informations, ajoutez votre photo et vos services. Notre équipe vérifiera votre profil avant activation.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<style>
+    .edit-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
+
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
+
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

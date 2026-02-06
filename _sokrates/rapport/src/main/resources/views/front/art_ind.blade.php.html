@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">resources/views/front/art_ind.blade.php (<b>134</b> lines of code) (<a href="art_ind.blade.php">raw</a>):</h3>
+<h3 style="margin-bottom: 0">resources/views/front/art_ind.blade.php (<b>143</b> lines of code) (<a href="art_ind.blade.php">raw</a>):</h3>
 <div id="editor">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
@@ -114,7 +114,12 @@
                     &lt;h2&gt;{{ $artisan-&gt;nom }}&lt;/h2&gt;
                     &lt;p&gt;{{ $artisan-&gt;profession }}&lt;/p&gt;
                     &lt;p&gt;&lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt; {{ $artisan-&gt;ville }} - {{ $artisan-&gt;adresse }}&lt;/p&gt;
-                    &lt;p&gt;&lt;i class=&quot;fas fa-phone-alt&quot;&gt;&lt;/i&gt; {{ $artisan-&gt;telephone }}&lt;/p&gt;
+                    &lt;a href=&quot;{{ route('chat.start', $artisan-&gt;id) }}&quot; 
+   class=&quot;btn btn-primary&quot;
+   style=&quot;background:#030f27; color:white; padding:8px 15px; border-radius:6px; text-decoration:none; display:inline-block; margin-top:10px;&quot;&gt;
+    Contacter l'artisan
+&lt;/a&gt;
+
                 &lt;/div&gt;
                 &lt;div class=&quot;team-social&quot;&gt;
                     @if ($artisan-&gt;facebook)

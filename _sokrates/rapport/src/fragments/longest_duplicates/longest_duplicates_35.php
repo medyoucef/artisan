@@ -1,91 +1,131 @@
-resources/views/front/art_soc.blade.php [42:81]:
+resources/views/admin/artisans_edit.blade.php [10:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-            <!-- Nav Bar End -->
-            
-            
-            <!-- Page Header Start -->
-            <div class="page-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>Les entreprises d'artisans</h2>
-                        </div>
-                        <div class="col-12">
-                            <a href="">entreprise</a>
-                            <a href="">artisans</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Page Header End -->
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
 
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
 
-            
-            
+    .form-group {
+        margin-bottom: 18px;
+    }
 
-    <div class="team">
-    <div class="container">
-        <div class="section-header text-center">
-            <p>Les entreprises qui traitent avec nous</p>
-            <h2>Choisissez l'entreprise que vous souhaitez</h2>
-        </div>
-        <div class="container mb-4">
-    <form method="GET" class="row" id="searchSocieteForm">
-        
-        <div class="col-md-5">
-            <input type="text" name="adresse" class="form-control" placeholder="Rechercher par ville (ex: Montréal)">
-        </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100">Rechercher</button>
-        </div>
-    </form>
-</div>
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
+
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php [42:81]:
+storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php [10:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-            <!-- Nav Bar End -->
-            
-            
-            <!-- Page Header Start -->
-            <div class="page-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>Les entreprises d'artisans</h2>
-                        </div>
-                        <div class="col-12">
-                            <a href="">entreprise</a>
-                            <a href="">artisans</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Page Header End -->
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
 
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
 
-            
-            
+    .form-group {
+        margin-bottom: 18px;
+    }
 
-    <div class="team">
-    <div class="container">
-        <div class="section-header text-center">
-            <p>Les entreprises qui traitent avec nous</p>
-            <h2>Choisissez l'entreprise que vous souhaitez</h2>
-        </div>
-        <div class="container mb-4">
-    <form method="GET" class="row" id="searchSocieteForm">
-        
-        <div class="col-md-5">
-            <input type="text" name="adresse" class="form-control" placeholder="Rechercher par ville (ex: Montréal)">
-        </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100">Rechercher</button>
-        </div>
-    </form>
-</div>
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
+
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

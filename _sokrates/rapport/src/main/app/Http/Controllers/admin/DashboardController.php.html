@@ -1,0 +1,230 @@
+<html>
+<head>
+    <title>app/Http/Controllers/admin/DashboardController.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Http/Controllers/admin/DashboardController.php (<b>155</b> lines of code) (<a href="DashboardController.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Artisan;
+use App\Models\SocieteArtisan;
+use App\Models\Message;
+use App\Models\Profession;
+use App\Models\Devis;
+use Illuminate\Http\Request;
+
+
+
+class DashboardController extends Controller
+{
+    public function index()
+{
+    return view('admin.dashboard', [
+        'users'      =&gt; User::count(),
+        'artisans'   =&gt; Artisan::count(),
+        'societes'   =&gt; SocieteArtisan::count(),
+        'messages'   =&gt; Message::count(),
+        'categories' =&gt; Profession::count(),
+        'devis'      =&gt; Devis::count(), 
+    ]);
+}
+
+    public function artisans() {
+        $artisans = Artisan::all();
+        return view('admin.artisans', compact('artisans'));
+    }
+    
+    public function societes() {
+        $societes = SocieteArtisan::all();
+        return view('admin.societes', compact('societes'));
+    }
+    
+    public function users() {
+        $users = User::all();
+        return view('admin.users', compact('users'));
+    }
+    
+    public function messages() {
+        $messages = Message::all();
+        return view('admin.messages', compact('messages'));
+    }
+
+    public function professions() {
+        $professions = Profession::all(); // ou Category si ton mod&egrave;le s'appelle autrement
+        return view('admin.professions', compact('professions'));
+    }
+    // la suppression dans la dashboard
+    public function deleteUser($id) {
+        User::findOrFail($id)-&gt;delete();
+        return back()-&gt;with('success', 'Utilisateur supprim&eacute; avec succ&egrave;s');
+    }
+    
+    public function deleteArtisan($id) {
+        Artisan::findOrFail($id)-&gt;delete();
+        return back()-&gt;with('success', 'Artisan supprim&eacute; avec succ&egrave;s');
+    }
+    
+    public function deleteSociete($id) {
+        Societe::findOrFail($id)-&gt;delete();
+        return back()-&gt;with('success', 'Soci&eacute;t&eacute; supprim&eacute;e avec succ&egrave;s');
+    }
+    
+    public function deleteMessage($id) {
+        Message::findOrFail($id)-&gt;delete();
+        return back()-&gt;with('success', 'Message supprim&eacute; avec succ&egrave;s');
+    }
+    
+    public function deleteProfession($id) {
+        Profession::findOrFail($id)-&gt;delete();
+        return back()-&gt;with('success', 'Profession supprim&eacute;e avec succ&egrave;s');
+    }
+
+    public function editUser($id) {
+        $user = User::findOrFail($id);
+        return view('admin.users_edit', compact('user'));
+    }
+
+    public function updateUser(Request $request, $id)
+{
+    $user = User::findOrFail($id);
+
+    $request-&gt;validate([
+        'name' =&gt; 'required',
+        'email' =&gt; 'required|email',
+    ]);
+
+    $user-&gt;update([
+        'name' =&gt; $request-&gt;name,
+        'email' =&gt; $request-&gt;email,
+    ]);
+
+    return redirect()-&gt;route('admin.users')-&gt;with('success', 'Utilisateur modifi&eacute; avec succ&egrave;s');
+}
+
+    public function editProfession($id) {
+        $profession = Profession::findOrFail($id);
+        return view('admin.professions_edit', compact('profession'));
+    }
+
+    
+    public function updateProfession(Request $request, $id) {
+        $profession = Profession::findOrFail($id);
+
+        $request-&gt;validate([
+            'nom' =&gt; 'required',
+            'description' =&gt; 'nullable',
+        ]);
+
+        $profession-&gt;update([
+            'nom' =&gt; $request-&gt;nom,
+            'description' =&gt; $request-&gt;description,
+        ]);
+
+    return redirect()-&gt;route('admin.professions')-&gt;with('success', 'Profession modifi&eacute;e avec succ&egrave;s');
+}
+
+    // ajouter profession
+    public function createProfession() {
+        return view('admin.professions_create');
+    }
+    
+   
+    public function storeProfession(Request $request) {
+    $request-&gt;validate([
+        'name' =&gt; 'required',
+        'description' =&gt; 'nullable',
+    ]);
+
+    Profession::create([
+        'name' =&gt; $request-&gt;name,
+        'description' =&gt; $request-&gt;description,
+    ]);
+
+    return redirect()-&gt;route('admin.professions')-&gt;with('success', 'Profession ajout&eacute;e avec succ&egrave;s');
+}
+
+    // modifier artisan
+    public function editArtisan($id) {
+        $artisan = Artisan::findOrFail($id);
+        return view('admin.artisans_edit', compact('artisan'));
+    }
+    
+    
+    public function updateArtisan(Request $request, $id) {
+        $artisan = Artisan::findOrFail($id);
+
+        $request-&gt;validate([
+            'nom' =&gt; 'required',
+            'email' =&gt; 'required|email',
+            'telephone' =&gt; 'nullable',
+            'adresse' =&gt; 'nullable',
+            'profession' =&gt; 'nullable',
+        ]);
+
+        $artisan-&gt;update([
+            'nom' =&gt; $request-&gt;nom,
+            'email' =&gt; $request-&gt;email,
+            'telephone' =&gt; $request-&gt;telephone,
+            'adresse' =&gt; $request-&gt;adresse,
+            'profession' =&gt; $request-&gt;profession,
+        ]);
+
+        return redirect()-&gt;route('admin.artisans')-&gt;with('success', 'Artisan modifi&eacute; avec succ&egrave;s');
+    }
+
+    public function editSociete($id) {
+        $societe = SocieteArtisan::findOrFail($id);
+        return view('admin.societes_edit', compact('societe'));
+    }
+
+    
+public function updateSociete(Request $request, $id) {
+    $societe = SocieteArtisan::findOrFail($id);
+
+    $request-&gt;validate([
+        'name' =&gt; 'required',
+        'email' =&gt; 'required|email',
+        'telephone' =&gt; 'nullable',
+        'adresse' =&gt; 'nullable',
+        'description' =&gt; 'nullable',
+    ]);
+
+    $societe-&gt;update([
+        'name' =&gt; $request-&gt;name,
+        'email' =&gt; $request-&gt;email,
+        'telephone' =&gt; $request-&gt;telephone,
+        'adresse' =&gt; $request-&gt;adresse,
+        'description' =&gt; $request-&gt;description,
+    ]);
+
+    return redirect()-&gt;route('admin.societes')-&gt;with('success', 'Soci&eacute;t&eacute; modifi&eacute;e avec succ&egrave;s');
+}
+
+
+    
+    
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

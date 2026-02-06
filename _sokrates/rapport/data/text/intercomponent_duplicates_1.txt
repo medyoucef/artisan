@@ -1,1160 +1,616 @@
 136 duplicated lines in:
   - resources/views/layout/question.blade.php (1:137, 98%)
-  - storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php (1:137, 98%)
+  - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (1:137, 98%)
 
 111 duplicated lines in:
-  - resources/views/index.blade.php (45:173, 29%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (45:173, 30%)
+  - resources/views/index.blade.php (45:173, 28%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (45:173, 29%)
 
-111 duplicated lines in:
-  - resources/views/index.blade.php (45:173, 29%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (45:173, 30%)
+102 duplicated lines in:
+  - resources/views/admin/layout.blade.php (8:160, 79%)
+  - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (8:160, 80%)
 
-91 duplicated lines in:
-  - resources/views/front/about.blade.php (46:142, 74%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (46:142, 77%)
+81 duplicated lines in:
+  - resources/views/admin/dashboard.blade.php (1:122, 58%)
+  - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (1:122, 58%)
 
-91 duplicated lines in:
-  - resources/views/front/about.blade.php (46:142, 74%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (46:142, 77%)
+58 duplicated lines in:
+  - resources/views/admin/devis/index.blade.php (1:79, 71%)
+  - storage/framework/views/363e70e480a2c512b7859cb262374f7b.php (1:79, 78%)
 
-76 duplicated lines in:
-  - resources/views/layout/question.blade.php (1:77, 55%)
-  - storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php (1:77, 55%)
-
-56 duplicated lines in:
-  - resources/views/index.blade.php (176:236, 14%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (176:236, 15%)
-
-56 duplicated lines in:
-  - resources/views/index.blade.php (176:236, 14%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (176:236, 15%)
+55 duplicated lines in:
+  - resources/views/index.blade.php (313:371, 14%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (313:371, 14%)
 
 54 duplicated lines in:
-  - resources/views/layout/question.blade.php (84:137, 39%)
-  - storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php (84:137, 39%)
+  - resources/views/index.blade.php (176:236, 13%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (176:236, 14%)
 
 48 duplicated lines in:
   - resources/views/layout/topbar.blade.php (2:50, 96%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (2:50, 96%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (2:50, 96%)
+
+48 duplicated lines in:
+  - resources/views/admin/professions_edit.blade.php (7:71, 72%)
+  - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (7:71, 80%)
+
+48 duplicated lines in:
+  - resources/views/admin/artisans_edit.blade.php (7:71, 61%)
+  - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:71, 66%)
+
+48 duplicated lines in:
+  - resources/views/admin/professions_create.blade.php (7:71, 73%)
+  - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (7:71, 80%)
+
+48 duplicated lines in:
+  - resources/views/admin/societes_edit.blade.php (7:71, 61%)
+  - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:71, 66%)
+
+48 duplicated lines in:
+  - resources/views/admin/users_edit.blade.php (7:71, 72%)
+  - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:71, 80%)
 
 48 duplicated lines in:
   - resources/views/front/contact.blade.php (46:97, 36%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (46:97, 39%)
-
-48 duplicated lines in:
-  - resources/views/front/contact.blade.php (46:97, 36%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (46:97, 39%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (46:97, 39%)
 
 47 duplicated lines in:
-  - resources/views/index.blade.php (313:371, 12%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (313:371, 12%)
+  - resources/views/admin/artisans_edit.blade.php (7:69, 60%)
+  - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:69, 78%)
 
 47 duplicated lines in:
-  - resources/views/index.blade.php (313:371, 12%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (313:371, 12%)
+  - resources/views/admin/societes_edit.blade.php (7:69, 60%)
+  - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:69, 78%)
+
+47 duplicated lines in:
+  - resources/views/admin/users_edit.blade.php (7:69, 71%)
+  - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:69, 65%)
+
+47 duplicated lines in:
+  - resources/views/admin/users_edit.blade.php (7:69, 71%)
+  - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:69, 65%)
+
+47 duplicated lines in:
+  - resources/views/admin/professions_create.blade.php (7:69, 72%)
+  - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (7:69, 78%)
+
+47 duplicated lines in:
+  - resources/views/admin/artisans_edit.blade.php (7:69, 60%)
+  - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:69, 65%)
+
+47 duplicated lines in:
+  - resources/views/admin/societes_edit.blade.php (7:69, 60%)
+  - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:69, 65%)
+
+47 duplicated lines in:
+  - resources/views/admin/professions_edit.blade.php (7:69, 71%)
+  - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (7:69, 78%)
+
+44 duplicated lines in:
+  - resources/views/admin/professions_edit.blade.php (10:69, 66%)
+  - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/admin/artisans_edit.blade.php (10:69, 56%)
+  - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/admin/users_edit.blade.php (10:69, 66%)
+  - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/admin/professions_edit.blade.php (10:69, 66%)
+  - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (10:69, 61%)
+
+44 duplicated lines in:
+  - resources/views/admin/societes_edit.blade.php (10:69, 56%)
+  - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/admin/professions_edit.blade.php (10:69, 66%)
+  - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (10:69, 61%)
+
+44 duplicated lines in:
+  - resources/views/admin/professions_create.blade.php (10:69, 67%)
+  - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/admin/societes_edit.blade.php (10:69, 56%)
+  - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/devis/client.blade.php (1:56, 63%)
+  - storage/framework/views/dcb36a344db364a89e61f1aafa645c0d.php (1:56, 72%)
+
+44 duplicated lines in:
+  - resources/views/admin/professions_create.blade.php (10:69, 67%)
+  - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (10:69, 61%)
+
+44 duplicated lines in:
+  - resources/views/admin/artisans_edit.blade.php (10:69, 56%)
+  - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/admin/users_edit.blade.php (10:69, 66%)
+  - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69, 73%)
+
+44 duplicated lines in:
+  - resources/views/admin/professions_create.blade.php (10:69, 67%)
+  - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (10:69, 61%)
 
 36 duplicated lines in:
   - resources/views/layout/footer.blade.php (35:71, 52%)
-  - storage/framework/views/e1368f5e5ceb4bd65bc5b1a5af202e46.php (35:71, 52%)
+  - storage/framework/views/6ad0da796f2fd26d59570553557c6b71.php (35:71, 52%)
 
-32 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (46:83, 24%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (46:83, 27%)
+36 duplicated lines in:
+  - resources/views/chat/show.blade.php (1:44, 48%)
+  - storage/framework/views/63ccf8ba014fb693f0b8f031f88d5c96.php (1:44, 53%)
+
+36 duplicated lines in:
+  - resources/views/admin/dashboard.blade.php (9:60, 25%)
+  - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (8:59, 28%)
+
+36 duplicated lines in:
+  - resources/views/admin/layout.blade.php (8:59, 27%)
+  - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (9:60, 26%)
 
 32 duplicated lines in:
   - resources/views/auth/login_register.blade.php (49:90, 35%)
-  - storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php (49:90, 37%)
+  - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (49:90, 37%)
+
+32 duplicated lines in:
+  - resources/views/front/art_ind.blade.php (46:83, 22%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (46:83, 25%)
 
 31 duplicated lines in:
   - resources/views/front/art_soc.blade.php (42:81, 22%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (42:81, 24%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (42:81, 24%)
 
-30 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (2:32, 60%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (2:32, 60%)
-
-28 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (1:32, 20%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (1:32, 22%)
+29 duplicated lines in:
+  - resources/views/index.blade.php (265:297, 7%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (265:297, 7%)
 
 28 duplicated lines in:
   - resources/views/front/art_soc.blade.php (1:32, 20%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (1:32, 23%)
-
-25 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (46:76, 18%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (46:76, 21%)
-
-24 duplicated lines in:
-  - resources/views/index.blade.php (265:294, 6%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (265:294, 6%)
-
-24 duplicated lines in:
-  - resources/views/index.blade.php (146:173, 6%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (55:82, 20%)
-
-24 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (42:74, 17%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (42:74, 20%)
-
-24 duplicated lines in:
-  - resources/views/front/about.blade.php (55:82, 19%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (146:173, 6%)
-
-24 duplicated lines in:
-  - resources/views/index.blade.php (265:294, 6%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (265:294, 6%)
-
-24 duplicated lines in:
-  - resources/views/index.blade.php (146:173, 6%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (55:82, 20%)
-
-24 duplicated lines in:
-  - resources/views/front/about.blade.php (55:82, 19%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (146:173, 6%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (1:32, 22%)
 
 23 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (1:31, 17%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (1:31, 19%)
-
-23 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (1:31, 17%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (1:31, 20%)
-
-23 duplicated lines in:
-  - resources/views/layout/footer.blade.php (42:64, 33%)
-  - storage/framework/views/fa7b183079d07f01c4b77b0a222143a4.php (42:64, 33%)
+  - resources/views/front/art_ind.blade.php (1:31, 16%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (1:31, 18%)
 
 22 duplicated lines in:
-  - resources/views/front/service.blade.php (1:31, 27%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (1:31, 29%)
+  - resources/views/front/art_ind.blade.php (144:169, 15%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (144:169, 17%)
 
 22 duplicated lines in:
   - resources/views/front/contact.blade.php (1:31, 16%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (1:31, 18%)
-
-22 duplicated lines in:
-  - resources/views/front/about.blade.php (1:31, 18%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (1:31, 18%)
-
-22 duplicated lines in:
-  - resources/views/front/about.blade.php (1:31, 18%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (1:31, 18%)
-
-22 duplicated lines in:
-  - resources/views/front/service.blade.php (1:31, 27%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (1:31, 29%)
-
-22 duplicated lines in:
-  - resources/views/front/contact.blade.php (1:31, 16%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (1:31, 18%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (1:31, 18%)
 
 21 duplicated lines in:
   - resources/views/layout/footer.blade.php (1:21, 30%)
-  - storage/framework/views/fa7b183079d07f01c4b77b0a222143a4.php (1:21, 30%)
-
-21 duplicated lines in:
-  - resources/views/layout/footer.blade.php (1:21, 30%)
-  - storage/framework/views/e1368f5e5ceb4bd65bc5b1a5af202e46.php (1:21, 30%)
-
-20 duplicated lines in:
-  - resources/views/front/service.blade.php (47:70, 25%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (47:70, 27%)
-
-20 duplicated lines in:
-  - resources/views/front/service.blade.php (47:70, 25%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (47:70, 27%)
+  - storage/framework/views/6ad0da796f2fd26d59570553557c6b71.php (1:21, 30%)
 
 20 duplicated lines in:
   - resources/views/front/art_soc.blade.php (129:153, 14%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (130:154, 16%)
-
-19 duplicated lines in:
-  - resources/views/front/contact.blade.php (100:118, 14%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (100:118, 15%)
-
-19 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (141:164, 14%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (141:164, 16%)
-
-19 duplicated lines in:
-  - resources/views/front/contact.blade.php (100:118, 14%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (100:118, 15%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (130:154, 16%)
 
 19 duplicated lines in:
   - resources/views/auth/login_register.blade.php (27:46, 21%)
-  - storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php (27:46, 25%)
+  - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (27:46, 22%)
 
 19 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (66:90, 21%)
-  - storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php (65:89, 25%)
+  - resources/views/front/contact.blade.php (100:118, 14%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (100:118, 15%)
 
 19 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (27:46, 21%)
-  - storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php (27:46, 22%)
+  - resources/views/front/about.blade.php (55:77, 15%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (146:168, 5%)
 
-19 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (141:164, 14%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (137:160, 16%)
-
-17 duplicated lines in:
-  - resources/views/front/contact.blade.php (6:31, 12%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (6:31, 22%)
-
-17 duplicated lines in:
-  - resources/views/front/contact.blade.php (6:31, 12%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (6:31, 14%)
-
-17 duplicated lines in:
-  - resources/views/index.blade.php (176:194, 4%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (85:103, 14%)
-
-17 duplicated lines in:
-  - resources/views/index.blade.php (206:224, 4%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (115:131, 14%)
+18 duplicated lines in:
+  - resources/views/devis/create.blade.php (1:18, 62%)
+  - storage/framework/views/304f8051e527d7a891c786c0521d648e.php (1:18, 64%)
 
 17 duplicated lines in:
   - resources/views/front/service.blade.php (6:31, 21%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (6:31, 14%)
-
-17 duplicated lines in:
-  - resources/views/front/contact.blade.php (6:31, 12%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (6:31, 14%)
-
-17 duplicated lines in:
-  - resources/views/front/service.blade.php (6:31, 21%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (6:31, 13%)
-
-17 duplicated lines in:
-  - resources/views/front/about.blade.php (6:31, 13%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (6:31, 22%)
-
-17 duplicated lines in:
-  - resources/views/index.blade.php (206:224, 4%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (115:131, 14%)
-
-17 duplicated lines in:
-  - resources/views/front/contact.blade.php (152:174, 12%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (153:175, 13%)
-
-17 duplicated lines in:
-  - resources/views/front/about.blade.php (85:103, 13%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (176:194, 4%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (6:31, 13%)
 
 17 duplicated lines in:
   - resources/views/front/about.blade.php (115:131, 13%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (206:224, 4%)
-
-17 duplicated lines in:
-  - resources/views/front/service.blade.php (6:31, 21%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (6:31, 13%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (206:224, 4%)
 
 17 duplicated lines in:
   - resources/views/front/about.blade.php (6:31, 13%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (6:31, 13%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (6:31, 13%)
 
 17 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (34:50, 34%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (34:50, 34%)
+  - resources/views/chat/inbox.blade.php (1:20, 53%)
+  - storage/framework/views/ba6024d816e0fafd99e84eba11c4bf6d.php (1:20, 58%)
 
 17 duplicated lines in:
   - resources/views/front/contact.blade.php (152:174, 12%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (153:175, 13%)
-
-17 duplicated lines in:
-  - resources/views/front/about.blade.php (6:31, 13%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (6:31, 22%)
-
-17 duplicated lines in:
-  - resources/views/index.blade.php (176:194, 4%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (85:103, 14%)
-
-17 duplicated lines in:
-  - resources/views/front/about.blade.php (6:31, 13%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (6:31, 13%)
-
-17 duplicated lines in:
-  - resources/views/front/service.blade.php (6:31, 21%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (6:31, 14%)
-
-17 duplicated lines in:
-  - resources/views/front/contact.blade.php (6:31, 12%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (6:31, 22%)
-
-17 duplicated lines in:
-  - resources/views/front/about.blade.php (115:131, 13%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (206:224, 4%)
-
-17 duplicated lines in:
-  - resources/views/front/about.blade.php (85:103, 13%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (176:194, 4%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (153:175, 13%)
 
 16 duplicated lines in:
   - resources/views/front/art_soc.blade.php (155:174, 11%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (156:175, 12%)
-
-16 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (155:174, 11%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (151:170, 13%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (156:175, 12%)
 
 15 duplicated lines in:
-  - resources/views/front/service.blade.php (106:124, 18%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (106:124, 20%)
-
-15 duplicated lines in:
-  - resources/views/front/service.blade.php (106:124, 18%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (106:124, 20%)
+  - resources/views/admin/messages.blade.php (7:23, 36%)
+  - storage/framework/views/c0d73acd37943e5e6e6cb12d115ff894.php (7:23, 45%)
 
 14 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (141:158, 10%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (127:144, 11%)
+  - resources/views/admin/societes.blade.php (7:22, 35%)
+  - storage/framework/views/f8de69c6fee56f52c44947c0b83de2a1.php (7:22, 43%)
+
+14 duplicated lines in:
+  - resources/views/index.blade.php (233:248, 3%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (233:248, 3%)
+
+14 duplicated lines in:
+  - resources/views/front/art_soc.blade.php (129:144, 10%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (144:159, 11%)
+
+14 duplicated lines in:
+  - resources/views/front/art_ind.blade.php (144:159, 9%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (130:145, 11%)
+
+14 duplicated lines in:
+  - resources/views/admin/users.blade.php (7:22, 45%)
+  - storage/framework/views/79735874e300024b53ad0cdaee2033e8.php (7:22, 43%)
 
 13 duplicated lines in:
-  - resources/views/front/service.blade.php (106:122, 16%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (127:143, 11%)
+  - resources/views/admin/artisans.blade.php (4:18, 35%)
+  - storage/framework/views/d8a9d403d8888107e63e337c823d1c6a.php (4:18, 43%)
 
 13 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (141:157, 9%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (106:122, 17%)
-
-13 duplicated lines in:
-  - resources/views/front/service.blade.php (106:122, 16%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (137:153, 11%)
-
-13 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (166:180, 9%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (162:176, 11%)
-
-13 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (166:180, 9%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (166:180, 11%)
-
-13 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (141:157, 9%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (106:122, 17%)
-
-13 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (135:149, 9%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (131:145, 11%)
-
-13 duplicated lines in:
-  - resources/views/front/service.blade.php (106:122, 16%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (141:157, 11%)
-
-12 duplicated lines in:
-  - resources/views/front/service.blade.php (17:31, 15%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (17:31, 10%)
-
-12 duplicated lines in:
-  - resources/views/front/contact.blade.php (152:165, 9%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (141:154, 10%)
+  - resources/views/front/art_ind.blade.php (171:185, 9%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (171:185, 10%)
 
 12 duplicated lines in:
   - resources/views/front/about.blade.php (17:31, 9%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (17:31, 10%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:31, 9%)
 
 12 duplicated lines in:
   - resources/views/front/service.blade.php (106:119, 15%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (153:166, 9%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (153:166, 9%)
 
 12 duplicated lines in:
-  - resources/views/front/about.blade.php (17:31, 9%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (17:31, 10%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:31, 9%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (17:31, 16%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:31, 9%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (17:31, 9%)
-
-12 duplicated lines in:
-  - resources/views/front/contact.blade.php (152:165, 9%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (106:119, 16%)
-
-12 duplicated lines in:
-  - resources/views/front/contact.blade.php (152:165, 9%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (137:150, 10%)
+  - resources/views/admin/dashboard.blade.php (96:112, 8%)
+  - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (116:132, 9%)
 
 12 duplicated lines in:
   - resources/views/front/service.blade.php (17:31, 15%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (17:31, 10%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (145:158, 9%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (136:149, 9%)
-
-12 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (135:148, 8%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (145:158, 10%)
-
-12 duplicated lines in:
-  - resources/views/front/contact.blade.php (152:165, 9%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (127:140, 10%)
-
-12 duplicated lines in:
-  - resources/views/index.blade.php (233:248, 3%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (233:248, 3%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (141:154, 9%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (153:166, 9%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:31, 9%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (17:31, 16%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:31, 9%)
 
 12 duplicated lines in:
   - resources/views/front/contact.blade.php (17:31, 9%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (17:31, 10%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:31, 9%)
 
 12 duplicated lines in:
-  - resources/views/front/service.blade.php (106:119, 15%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (153:166, 9%)
+  - resources/views/admin/professions.blade.php (7:20, 29%)
+  - storage/framework/views/2fdb02cfdf9db42e74a80a071ef0ac56.php (7:20, 36%)
 
 12 duplicated lines in:
-  - resources/views/front/contact.blade.php (152:165, 9%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (106:119, 16%)
+  - resources/views/admin/layout.blade.php (116:132, 9%)
+  - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (96:112, 8%)
 
 12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (141:154, 9%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (153:166, 9%)
-
-12 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (135:148, 8%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (141:154, 10%)
-
-12 duplicated lines in:
-  - resources/views/front/contact.blade.php (17:31, 9%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (17:31, 10%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:31, 9%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (17:31, 9%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:31, 9%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (17:31, 10%)
-
-12 duplicated lines in:
-  - resources/views/index.blade.php (233:248, 3%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (233:248, 3%)
-
-12 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:31, 9%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (17:31, 10%)
-
-11 duplicated lines in:
-  - resources/views/front/service.blade.php (56:70, 13%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (234:248, 3%)
-
-11 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (135:147, 8%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (110:122, 14%)
-
-11 duplicated lines in:
-  - resources/views/index.blade.php (234:248, 2%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (56:70, 14%)
-
-11 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (135:147, 8%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (110:122, 14%)
-
-11 duplicated lines in:
-  - resources/views/front/service.blade.php (56:70, 13%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (234:248, 3%)
+  - resources/views/front/art_ind.blade.php (17:31, 8%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (17:31, 9%)
 
 11 duplicated lines in:
   - resources/views/front/service.blade.php (110:122, 13%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (136:148, 8%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (136:148, 8%)
 
 11 duplicated lines in:
-  - resources/views/index.blade.php (234:248, 2%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (56:70, 14%)
-
-11 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (49:61, 12%)
-  - storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php (49:61, 14%)
+  - resources/views/admin/professions_create.blade.php (76:89, 16%)
+  - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (76:89, 18%)
 
 10 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (135:144, 7%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (157:166, 8%)
+  - resources/views/front/art_ind.blade.php (150:159, 7%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (157:166, 8%)
 
 10 duplicated lines in:
   - resources/views/front/contact.blade.php (156:165, 7%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (136:145, 8%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (150:159, 7%)
+
+10 duplicated lines in:
+  - resources/views/front/about.blade.php (94:103, 8%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (185:194, 2%)
+
+10 duplicated lines in:
+  - resources/views/front/contact.blade.php (156:165, 7%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (136:145, 8%)
+
+10 duplicated lines in:
+  - resources/views/front/service.blade.php (110:119, 12%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (150:159, 7%)
 
 10 duplicated lines in:
   - resources/views/front/art_soc.blade.php (135:144, 7%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (157:166, 8%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (157:166, 8%)
 
 9 duplicated lines in:
-  - resources/views/front/profile_edit.blade.php (1:11, 10%)
-  - storage/framework/views/71a84f0e8051325082bdb809d2701bae.php (1:11, 8%)
+  - resources/views/devis/create.blade.php (23:33, 31%)
+  - storage/framework/views/304f8051e527d7a891c786c0521d648e.php (23:33, 32%)
 
 9 duplicated lines in:
-  - resources/views/layout/nav_bar.blade.php (1:10, 24%)
-  - storage/framework/views/354e34927a76399b3e64f164eb5443c2.php (1:10, 28%)
+  - resources/views/layout/nav_bar.blade.php (1:11, 13%)
+  - storage/framework/views/ca5c895d99c0c11e055b7a435bd5da49.php (1:11, 17%)
 
 9 duplicated lines in:
   - resources/views/front/profile.blade.php (1:13, 6%)
-  - storage/framework/views/0be5fbe14e443444bd1f225175f044d2.php (1:13, 5%)
-
-9 duplicated lines in:
-  - resources/views/layout/nav_bar.blade.php (1:10, 24%)
-  - storage/framework/views/38cb578b1a3b655c1fd8f78fe0f8471d.php (1:10, 31%)
+  - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (1:13, 5%)
 
 8 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (17:24, 10%)
+  - resources/views/front/contact.blade.php (17:24, 6%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24, 6%)
 
 8 duplicated lines in:
   - resources/views/front/profile.blade.php (35:43, 5%)
-  - storage/framework/views/0be5fbe14e443444bd1f225175f044d2.php (35:43, 5%)
+  - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (35:43, 5%)
 
 8 duplicated lines in:
-  - resources/views/front/service.blade.php (17:24, 10%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (17:24, 6%)
+  - resources/views/front/art_soc.blade.php (17:24, 5%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (17:24, 6%)
 
 8 duplicated lines in:
   - resources/views/front/about.blade.php (17:24, 6%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (17:24, 6%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24, 6%)
 
 8 duplicated lines in:
   - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (17:24, 6%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:24, 6%)
 
 8 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:24, 6%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/partials/societes_liste.blade.php (3:11, 28%)
-  - storage/framework/views/f71fdad28b672f21335053b9d07474fd.php (3:11, 34%)
-
-8 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (17:24, 6%)
+  - resources/views/layout/nav_bar.blade.php (46:53, 11%)
+  - storage/framework/views/ca5c895d99c0c11e055b7a435bd5da49.php (46:53, 15%)
 
 8 duplicated lines in:
   - resources/views/front/service.blade.php (17:24, 10%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (17:24, 6%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24, 6%)
+
+8 duplicated lines in:
+  - resources/views/front/art_ind.blade.php (17:24, 5%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24, 6%)
 
 8 duplicated lines in:
   - resources/views/index.blade.php (1:8, 2%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (1:8, 2%)
-
-8 duplicated lines in:
-  - resources/views/front/about.blade.php (17:24, 6%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/front/profile_edit.blade.php (33:42, 9%)
-  - storage/framework/views/71a84f0e8051325082bdb809d2701bae.php (33:42, 7%)
-
-8 duplicated lines in:
-  - resources/views/index.blade.php (1:8, 2%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (1:8, 2%)
-
-8 duplicated lines in:
-  - resources/views/front/contact.blade.php (17:24, 6%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (17:24, 10%)
-
-8 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (17:24, 5%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (17:24, 6%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (17:24, 6%)
-
-8 duplicated lines in:
-  - resources/views/front/contact.blade.php (17:24, 6%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (17:24, 6%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (1:8, 2%)
 
 7 duplicated lines in:
-  - resources/views/front/about.blade.php (128:134, 5%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (197:203, 1%)
-
-7 duplicated lines in:
-  - resources/views/index.blade.php (220:227, 1%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (106:112, 5%)
-
-7 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (55:67, 5%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (55:67, 5%)
+  - resources/views/index.blade.php (299:306, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (299:306, 1%)
 
 7 duplicated lines in:
   - resources/views/auth/login_register.blade.php (9:15, 7%)
-  - storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php (9:15, 8%)
-
-7 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (9:15, 7%)
-  - storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php (9:15, 9%)
-
-7 duplicated lines in:
-  - resources/views/front/profile_edit.blade.php (24:30, 7%)
-  - storage/framework/views/71a84f0e8051325082bdb809d2701bae.php (24:30, 6%)
-
-7 duplicated lines in:
-  - resources/views/index.blade.php (197:203, 1%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (128:134, 5%)
-
-7 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (55:67, 5%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (55:67, 5%)
-
-7 duplicated lines in:
-  - resources/views/front/profile_edit.blade.php (95:103, 7%)
-  - storage/framework/views/71a84f0e8051325082bdb809d2701bae.php (130:138, 6%)
+  - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (9:15, 8%)
 
 7 duplicated lines in:
   - resources/views/front/about.blade.php (106:112, 5%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (220:227, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (220:227, 1%)
+
+7 duplicated lines in:
+  - resources/views/front/service.blade.php (64:70, 8%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (242:248, 1%)
+
+7 duplicated lines in:
+  - resources/views/front/art_ind.blade.php (55:67, 4%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (55:67, 5%)
+
+7 duplicated lines in:
+  - resources/views/front/art_soc.blade.php (55:67, 5%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (55:67, 5%)
+
+7 duplicated lines in:
+  - resources/views/front/about.blade.php (128:134, 5%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (197:203, 1%)
+
+7 duplicated lines in:
+  - resources/views/auth/login_register.blade.php (1:7, 7%)
+  - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (1:7, 8%)
 
 7 duplicated lines in:
   - resources/views/front/profile.blade.php (27:33, 4%)
-  - storage/framework/views/0be5fbe14e443444bd1f225175f044d2.php (27:33, 4%)
-
-7 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (1:7, 7%)
-  - storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php (1:7, 8%)
-
-7 duplicated lines in:
-  - resources/views/index.blade.php (220:227, 1%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (106:112, 5%)
-
-7 duplicated lines in:
-  - resources/views/front/about.blade.php (139:147, 5%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (139:147, 5%)
-
-7 duplicated lines in:
-  - resources/views/index.blade.php (197:203, 1%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (128:134, 5%)
-
-7 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (55:67, 5%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (55:67, 6%)
-
-7 duplicated lines in:
-  - resources/views/front/about.blade.php (139:147, 5%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (139:147, 5%)
-
-7 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (1:7, 7%)
-  - storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php (1:7, 9%)
-
-7 duplicated lines in:
-  - resources/views/front/about.blade.php (106:112, 5%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (220:227, 1%)
-
-7 duplicated lines in:
-  - resources/views/front/about.blade.php (128:134, 5%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (197:203, 1%)
-
-7 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (55:67, 5%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (55:67, 5%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/nav_bar.blade.php (20:26, 16%)
-  - storage/framework/views/354e34927a76399b3e64f164eb5443c2.php (20:26, 18%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (144:149, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (354:359, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (76:81, 4%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (78:83, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (45:50, 12%)
+  - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (27:33, 4%)
 
 6 duplicated lines in:
   - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (354:359, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267, 1%)
 
 6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (354:359, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (445:452, 1%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (130:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (144:149, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (354:359, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (78:83, 4%)
-  - storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php (76:81, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (129:136, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (445:452, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (144:149, 1%)
-
-6 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (76:81, 4%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (76:81, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (144:149, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (71:78, 6%)
-  - storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php (32:37, 7%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (144:149, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (144:149, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (71:78, 6%)
-  - storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php (32:37, 7%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (135:143, 4%)
+  - resources/views/layout/nav_bar.blade.php (63:70, 8%)
+  - storage/framework/views/ca5c895d99c0c11e055b7a435bd5da49.php (64:71, 11%)
 
 6 duplicated lines in:
   - resources/views/layout/topbar.blade.php (23:28, 12%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (34:39, 12%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (34:39, 12%)
 
 6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (354:359, 1%)
+  - resources/views/index.blade.php (354:359, 1%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50, 12%)
+
+6 duplicated lines in:
+  - resources/views/layout/topbar.blade.php (45:50, 12%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149, 1%)
 
 6 duplicated lines in:
   - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (354:359, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236, 1%)
 
 6 duplicated lines in:
   - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (261:267, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359, 1%)
 
 6 duplicated lines in:
   - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (445:452, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (445:452, 1%)
-
-6 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (78:83, 4%)
-  - storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php (78:83, 5%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (133:138, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (122:127, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (23:28, 12%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (34:39, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php (132:137, 4%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149, 1%)
 
 6 duplicated lines in:
   - resources/views/layout/topbar.blade.php (34:39, 12%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (23:28, 12%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (23:28, 12%)
+
+6 duplicated lines in:
+  - resources/views/layout/topbar.blade.php (45:50, 12%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236, 1%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (230:236, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267, 1%)
+
+6 duplicated lines in:
+  - resources/views/layout/question.blade.php (132:137, 4%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359, 1%)
+
+6 duplicated lines in:
+  - resources/views/front/about.blade.php (139:144, 4%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (233:238, 1%)
 
 6 duplicated lines in:
   - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (354:359, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (354:359, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (445:452, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (445:452, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (354:359, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/front/art_soc.blade.php (129:136, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (445:452, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (144:149, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (122:127, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (133:138, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (122:127, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (133:138, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (230:236, 1%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/29abc373efe767a2e760fb8b5df9d3fe.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (261:267, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (354:359, 1%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/9fada826ee00a312e714e63de7f64838.php (45:50, 12%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (32:37, 6%)
-  - storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php (71:78, 7%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (144:149, 1%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (83:91, 8%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php (132:137, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php (137:142, 5%)
-
-6 duplicated lines in:
-  - resources/views/front/art_ind.blade.php (78:83, 4%)
-  - storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php (76:81, 5%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/435ac70f5c7d98672ba8747b4a4e2b30.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/index.blade.php (133:138, 1%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (122:127, 1%)
-
-6 duplicated lines in:
-  - resources/views/auth/login_register.blade.php (32:37, 6%)
-  - storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php (70:77, 7%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236, 1%)
 
 6 duplicated lines in:
   - resources/views/front/art_soc.blade.php (76:81, 4%)
-  - storage/framework/views/1639945e2a31000c17c9cec339739cb6.php (78:83, 5%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (78:83, 4%)
+
+6 duplicated lines in:
+  - resources/views/layout/question.blade.php (132:137, 4%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149, 1%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (354:359, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236, 1%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (354:359, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267, 1%)
 
 6 duplicated lines in:
   - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (230:236, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267, 1%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (144:149, 1%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50, 12%)
+
+6 duplicated lines in:
+  - resources/views/layout/question.blade.php (132:137, 4%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50, 12%)
 
 6 duplicated lines in:
   - resources/views/index.blade.php (230:236, 1%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (144:149, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149, 1%)
 
 6 duplicated lines in:
-  - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/206938c949e34059fd43d8d3aa0f0ced.php (135:143, 4%)
-
-6 duplicated lines in:
-  - resources/views/layout/footer.blade.php (35:40, 8%)
-  - storage/framework/views/fa7b183079d07f01c4b77b0a222143a4.php (35:40, 8%)
+  - resources/views/front/about.blade.php (137:142, 4%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359, 1%)
 
 6 duplicated lines in:
   - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (230:236, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236, 1%)
 
 6 duplicated lines in:
   - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/66da1bfdd1b1a3897a65c4be0bd29f1a.php (83:91, 8%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143, 4%)
+
+6 duplicated lines in:
+  - resources/views/auth/login_register.blade.php (32:37, 6%)
+  - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (71:78, 7%)
+
+6 duplicated lines in:
+  - resources/views/admin/layout.blade.php (167:173, 4%)
+  - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (167:173, 4%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (144:149, 1%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143, 4%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (230:236, 1%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143, 4%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (144:149, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359, 1%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (144:149, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267, 1%)
+
+6 duplicated lines in:
+  - resources/views/front/about.blade.php (137:142, 4%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50, 12%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (122:127, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (133:138, 1%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (144:149, 1%)
+  - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137, 4%)
 
 6 duplicated lines in:
   - resources/views/index.blade.php (354:359, 1%)
-  - storage/framework/views/6968636e3a37f5014d19024fa9a7c5f1.php (83:91, 8%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143, 4%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (230:236, 1%)
+  - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137, 4%)
+
+6 duplicated lines in:
+  - resources/views/layout/question.blade.php (132:137, 4%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143, 4%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (354:359, 1%)
+  - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137, 4%)
 
 6 duplicated lines in:
   - resources/views/front/about.blade.php (137:142, 4%)
-  - storage/framework/views/3c27f935771fc83addd970332eedaf8f.php (144:149, 1%)
+  - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137, 4%)
+
+6 duplicated lines in:
+  - resources/views/index.blade.php (230:236, 1%)
+  - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50, 12%)
 
 6 duplicated lines in:
   - resources/views/layout/topbar.blade.php (45:50, 12%)
-  - storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php (137:142, 5%)
+  - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143, 4%)
 
 6 duplicated lines in:
-  - resources/views/layout/topbar.blade.php (34:39, 12%)
-  - storage/framework/views/4fe4f115e577719e2eba2900e8e9fa10.php (23:28, 12%)
+  - resources/views/index.blade.php (133:138, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (122:127, 1%)
 
 6 duplicated lines in:
-  - resources/views/layout/question.blade.php (132:137, 4%)
-  - storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php (144:149, 1%)
+  - resources/views/index.blade.php (354:359, 1%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149, 1%)
+
+6 duplicated lines in:
+  - resources/views/layout/topbar.blade.php (45:50, 12%)
+  - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137, 4%)
+
+6 duplicated lines in:
+  - resources/views/auth/login_register.blade.php (71:78, 6%)
+  - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (32:37, 7%)
+
+6 duplicated lines in:
+  - resources/views/front/art_ind.blade.php (78:83, 4%)
+  - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (76:81, 4%)
+
+6 duplicated lines in:
+  - resources/views/layout/topbar.blade.php (45:50, 12%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267, 1%)
+
+6 duplicated lines in:
+  - resources/views/front/art_ind.blade.php (103:109, 4%)
+  - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (103:109, 4%)
+
+6 duplicated lines in:
+  - resources/views/layout/topbar.blade.php (45:50, 12%)
+  - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359, 1%)
+
+6 duplicated lines in:
+  - resources/views/admin/dashboard.blade.php (187:197, 4%)
+  - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (187:197, 4%)
 

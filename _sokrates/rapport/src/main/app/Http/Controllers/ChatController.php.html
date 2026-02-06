@@ -1,0 +1,122 @@
+<html>
+<head>
+    <title>app/Http/Controllers/ChatController.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Http/Controllers/ChatController.php (<b>66</b> lines of code) (<a href="ChatController.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Conversation;
+use App\Models\MessagesUserArt;
+use App\Models\Artisan;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Devis;
+
+
+class ChatController extends Controller
+{
+    public function startConversation($artisanId)
+    {
+        $userId = Auth::id();
+
+        $conversation = Conversation::where('user_id', $userId)
+            -&gt;where('artisan_id', $artisanId)
+            -&gt;first();
+
+        if (!$conversation) {
+            $conversation = Conversation::create([
+                'user_id' =&gt; $userId,
+                'artisan_id' =&gt; $artisanId,
+            ]);
+        }
+
+        return redirect()-&gt;route('chat.show', $conversation-&gt;id);
+    }
+
+    
+
+public function show($id)
+{
+    $conversation = Conversation::findOrFail($id);
+
+    $messages = MessagesUserArt::where('conversation_id', $id)
+        -&gt;orderBy('created_at')
+        -&gt;get();
+
+    $devis = Devis::where('conversation_id', $id)
+        -&gt;orderBy('created_at', 'desc')
+        -&gt;get();
+
+    return view('chat.show', compact('conversation', 'messages', 'devis'));
+}
+
+
+
+    public function inbox()
+{
+    $userId = Auth::id();
+
+    // Trouver l'artisan li&eacute; &agrave; ce user
+    $artisan = Artisan::where('user_id', $userId)-&gt;first();
+
+    if (!$artisan) {
+        abort(403, &quot;Vous n'&ecirc;tes pas un artisan.&quot;);
+    }
+
+    // R&eacute;cup&eacute;rer toutes les conversations de cet artisan
+    $conversations = Conversation::where('artisan_id', $artisan-&gt;id)
+        -&gt;with(['user'])
+        -&gt;get();
+
+    return view('chat.inbox', compact('conversations'));
+}
+
+    public function send(Request $request, $id)
+    {
+        $request-&gt;validate([
+            'message' =&gt; 'required|string',
+        ]);
+
+        $conversation = Conversation::findOrFail($id);
+
+        $senderId = Auth::id();
+
+        // D&eacute;terminer le destinataire
+        $receiverId = $senderId == $conversation-&gt;user_id
+                ? $conversation-&gt;artisan-&gt;user_id
+                : $conversation-&gt;user_id;
+
+
+        MessagesUserArt::create([
+            'conversation_id' =&gt; $id,
+            'sender_id' =&gt; $senderId,
+            'receiver_id' =&gt; $receiverId,
+            'message' =&gt; $request-&gt;message,
+        ]);
+
+        return back();
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

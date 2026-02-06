@@ -1,295 +1,169 @@
-storage/framework/views/9a14755e934b97434d5e6fcb9dbfde2c.php [1:142]:
+resources/views/admin/devis/index.blade.php [1:79]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>A propos de nous</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Construction Company Website Template" name="keywords">
-        <meta content="Construction Company Website Template" name="description">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des devis</title>
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+    <style>
+        body { background:#f4f6f9; font-family:Arial; padding:30px; }
+        .container { max-width:1100px; margin:auto; }
 
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        h1 { color:#030f27; margin-bottom:25px; }
 
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/slick/slick.css" rel="stylesheet">
-        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+        table {
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+        }
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+        th, td {
+            padding:12px 15px;
+            border-bottom:1px solid #ddd;
+            text-align:left;
+        }
 
-    <body>
-        <div class="wrapper">
-            <!-- Top Bar Start -->
-            
-            <?php echo $__env->make('layout.topbar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-            
-            <!-- Top Bar End -->
-            
-            <?php echo $__env->make('layout.nav_bar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-            
-            <!-- Nav Bar Start -->
-            
-            <!-- Nav Bar End -->
-            
-            
-            <!-- Page Header Start -->
-            <div class="page-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>A propos de nous</h2>
-                        </div>
-                        <div class="col-12">
-                            <a href="">Accueil</a>
-                            <a href="">A propos de nous</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Page Header End -->
+        th {
+            background:#030f27;
+            color:white;
+        }
 
+        tr:hover {
+            background:#f1f1f1;
+        }
 
-            <!-- About Start -->
-            <div class="about wow fadeInUp" data-wow-delay="0.1s">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 col-md-6">
-                            <div class="about-img">
-                                <img src="img/about.jpg" alt="Image" style="height: 500px;">
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6">
-                            <div class="section-header text-left">
-                                <p>Bienvenue chez Khdamlii</p>
-                                <h2>Trouver un artisan facilement </h2>
-                            </div>
-                            <div class="about-text">
-                                <p>
-                                    Khdamlii est une plateforme 100% algérienne conçue pour mettre en relation les particuliers et les artisans qualifiés à travers toute l'Algérie. Que vous ayez besoin d’un plombier, d’un électricien, d’un menuisier ou tout autre professionnel du bâtiment ou des services, notre objectif est de vous aider à trouver rapidement et facilement l’artisan qu’il vous faut, près de chez vous.
-                                </p>
-                                <p>
-                                    Nous croyons en la valeur du travail artisanal local, en la confiance et en la qualité du service rendu. Chaque artisan inscrit est soigneusement sélectionné pour vous garantir une expérience fiable, transparente et professionnelle.
-                                </p>
-                                <a class="btn" href="art_ind.php">artisan indépendant</a>
-                                <a class="btn" href="art_soc.php">société des artisans</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- About End -->
-            
-            
-            <!-- Fact Start -->
-            <div class="fact">
-                <div class="container-fluid">
-                    <div class="row counters">
-                        <div class="col-md-6 fact-left wow slideInLeft">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-worker"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">109</h2>
-                                        <p>Expert Workers</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-building"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">485</h2>
-                                        <p>Happy Clients</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 fact-right wow slideInRight">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-address"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">789</h2>
-                                        <p>Completed Projects</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-crane"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">890</h2>
-                                        <p>Running Projects</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        .status {
+            padding:6px 12px;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        .pending { background:#fdbe33; color:#030f27; }
+        .accepted { background:green; color:white; }
+        .refused { background:red; color:white; }
+
+        a.btn {
+            padding:6px 12px;
+            background:#030f27;
+            color:white;
+            border-radius:6px;
+            text-decoration:none;
+        }
+
+        a.btn:hover {
+            background:#fdbe33;
+            color:#030f27;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Liste des devis</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Artisan</th>
+                <th>Client</th>
+                <th>Montant</th>
+                <th>Statut</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/d04dc44118f96e3dc6fcbfb011438571.php [1:142]:
+storage/framework/views/363e70e480a2c512b7859cb262374f7b.php [1:79]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>A propos de nous</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Construction Company Website Template" name="keywords">
-        <meta content="Construction Company Website Template" name="description">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des devis</title>
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+    <style>
+        body { background:#f4f6f9; font-family:Arial; padding:30px; }
+        .container { max-width:1100px; margin:auto; }
 
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        h1 { color:#030f27; margin-bottom:25px; }
 
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/slick/slick.css" rel="stylesheet">
-        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+        table {
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+        }
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+        th, td {
+            padding:12px 15px;
+            border-bottom:1px solid #ddd;
+            text-align:left;
+        }
 
-    <body>
-        <div class="wrapper">
-            <!-- Top Bar Start -->
-            
-            <?php echo $__env->make('layout.topbar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-            
-            <!-- Top Bar End -->
-            
-            <?php echo $__env->make('layout.nav_bar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-            
-            <!-- Nav Bar Start -->
-            
-            <!-- Nav Bar End -->
-            
-            
-            <!-- Page Header Start -->
-            <div class="page-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>A propos de nous</h2>
-                        </div>
-                        <div class="col-12">
-                            <a href="">Accueil</a>
-                            <a href="">A propos de nous</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Page Header End -->
+        th {
+            background:#030f27;
+            color:white;
+        }
 
+        tr:hover {
+            background:#f1f1f1;
+        }
 
-            <!-- About Start -->
-            <div class="about wow fadeInUp" data-wow-delay="0.1s">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 col-md-6">
-                            <div class="about-img">
-                                <img src="img/about.jpg" alt="Image" style="height: 500px;">
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6">
-                            <div class="section-header text-left">
-                                <p>Bienvenue chez Khdamlii</p>
-                                <h2>Trouver un artisan facilement </h2>
-                            </div>
-                            <div class="about-text">
-                                <p>
-                                    Khdamlii est une plateforme 100% algérienne conçue pour mettre en relation les particuliers et les artisans qualifiés à travers toute l'Algérie. Que vous ayez besoin d’un plombier, d’un électricien, d’un menuisier ou tout autre professionnel du bâtiment ou des services, notre objectif est de vous aider à trouver rapidement et facilement l’artisan qu’il vous faut, près de chez vous.
-                                </p>
-                                <p>
-                                    Nous croyons en la valeur du travail artisanal local, en la confiance et en la qualité du service rendu. Chaque artisan inscrit est soigneusement sélectionné pour vous garantir une expérience fiable, transparente et professionnelle.
-                                </p>
-                                <a class="btn" href="art_ind.php">artisan indépendant</a>
-                                <a class="btn" href="art_soc.php">société des artisans</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- About End -->
-            
-            
-            <!-- Fact Start -->
-            <div class="fact">
-                <div class="container-fluid">
-                    <div class="row counters">
-                        <div class="col-md-6 fact-left wow slideInLeft">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-worker"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">109</h2>
-                                        <p>Expert Workers</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-building"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">485</h2>
-                                        <p>Happy Clients</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 fact-right wow slideInRight">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-address"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">789</h2>
-                                        <p>Completed Projects</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-crane"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">890</h2>
-                                        <p>Running Projects</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        .status {
+            padding:6px 12px;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        .pending { background:#fdbe33; color:#030f27; }
+        .accepted { background:green; color:white; }
+        .refused { background:red; color:white; }
+
+        a.btn {
+            padding:6px 12px;
+            background:#030f27;
+            color:white;
+            border-radius:6px;
+            text-decoration:none;
+        }
+
+        a.btn:hover {
+            background:#fdbe33;
+            color:#030f27;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Liste des devis</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Artisan</th>
+                <th>Client</th>
+                <th>Montant</th>
+                <th>Statut</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

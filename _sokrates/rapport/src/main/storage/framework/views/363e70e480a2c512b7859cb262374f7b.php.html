@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>storage/framework/views/363e70e480a2c512b7859cb262374f7b.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">storage/framework/views/363e70e480a2c512b7859cb262374f7b.php (<b>89</b> lines of code) (<a href="363e70e480a2c512b7859cb262374f7b.php">raw</a>):</h3>
+<div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Liste des devis&lt;/title&gt;
+
+    &lt;style&gt;
+        body { background:#f4f6f9; font-family:Arial; padding:30px; }
+        .container { max-width:1100px; margin:auto; }
+
+        h1 { color:#030f27; margin-bottom:25px; }
+
+        table {
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding:12px 15px;
+            border-bottom:1px solid #ddd;
+            text-align:left;
+        }
+
+        th {
+            background:#030f27;
+            color:white;
+        }
+
+        tr:hover {
+            background:#f1f1f1;
+        }
+
+        .status {
+            padding:6px 12px;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        .pending { background:#fdbe33; color:#030f27; }
+        .accepted { background:green; color:white; }
+        .refused { background:red; color:white; }
+
+        a.btn {
+            padding:6px 12px;
+            background:#030f27;
+            color:white;
+            border-radius:6px;
+            text-decoration:none;
+        }
+
+        a.btn:hover {
+            background:#fdbe33;
+            color:#030f27;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;Liste des devis&lt;/h1&gt;
+
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;Artisan&lt;/th&gt;
+                &lt;th&gt;Client&lt;/th&gt;
+                &lt;th&gt;Montant&lt;/th&gt;
+                &lt;th&gt;Statut&lt;/th&gt;
+                &lt;th&gt;Date&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+            &lt;?php $__currentLoopData = $devis; $__env-&gt;addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env-&gt;incrementLoopIndices(); $loop = $__env-&gt;getLastLoop(); ?&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;?php echo e($d-&gt;id); ?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?php echo e($d-&gt;artisan-&gt;name); ?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?php echo e($d-&gt;client-&gt;name); ?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?php echo e($d-&gt;montant); ?&gt; &euro;&lt;/td&gt;
+
+                    &lt;td&gt;
+                        &lt;span class=&quot;status
+                            &lt;?php if($d-&gt;statut === 'en_attente'): ?&gt; pending
+                            &lt;?php elseif($d-&gt;statut === 'accept&eacute;'): ?&gt; accepted
+                            &lt;?php else: ?&gt; refused
+                            &lt;?php endif; ?&gt;&quot;&gt;
+                            &lt;?php echo e(ucfirst($d-&gt;statut)); ?&gt;
+
+                        &lt;/span&gt;
+                    &lt;/td&gt;
+
+                    &lt;td&gt;&lt;?php echo e($d-&gt;created_at-&gt;format('d/m/Y')); ?&gt;&lt;/td&gt;
+
+                    
+                &lt;/tr&gt;
+            &lt;?php endforeach; $__env-&gt;popLoop(); $loop = $__env-&gt;getLastLoop(); ?&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;?php /**PATH C:\xampp\htdocs\artisan\resources\views/admin/devis/index.blade.php ENDPATH**/ ?&gt;</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -17,12 +17,12 @@
     } ]
   }, {
     "name" : "Unclassified",
-    "filesCount" : 166,
-    "linesOfCode" : 15213,
+    "filesCount" : 176,
+    "linesOfCode" : 15534,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.php",
-      "value" : 135,
+      "value" : 145,
       "description" : [ ]
     }, {
       "name" : "  *.js",
@@ -59,7 +59,7 @@
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.php",
-      "value" : 8146,
+      "value" : 8467,
       "description" : [ ]
     }, {
       "name" : "  *.js",
@@ -102,7 +102,7 @@
     "description" : [ ]
   }, {
     "name" : "Unclassified",
-    "value" : 166,
+    "value" : 176,
     "description" : [ ]
   } ],
   "linesOfCodePerConcern" : [ {
@@ -111,7 +111,7 @@
     "description" : [ ]
   }, {
     "name" : "Unclassified",
-    "value" : 15213,
+    "value" : 15534,
     "description" : [ ]
   } ]
 } ]

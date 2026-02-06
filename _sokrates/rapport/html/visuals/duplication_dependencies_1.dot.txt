@@ -26,6 +26,6 @@ graph G {
 
 
 
-    "resources" -- "storage" [label=" 3253 ", penwidth="10", color="#DC143CFF"];
+    "resources" -- "storage" [label=" 3367 ", penwidth="10", color="#DC143CFF"];
 
 }

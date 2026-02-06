@@ -1,133 +1,141 @@
-resources/views/index.blade.php [176:236]:
+resources/views/admin/users_edit.blade.php [7:71]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- About End -->
+<style>
+    .edit-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
 
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
 
-            <!-- Fact Start -->
-            <div class="fact">
-                <div class="container-fluid">
-                    <div class="row counters">
-                        <div class="col-md-6 fact-left wow slideInLeft">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-worker"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">107</h2>
-                                        <p>artisan indépendant</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-crane"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">42</h2>
-                                        <p>Société d'artisan</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6 fact-right wow slideInRight">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-address"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">789</h2>
-                                        <p>Completed Projects</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-building"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">685</h2>
-                                        <p>Clients satisfaits</p>
-                                    </div>
-                                </div>
+    .form-group {
+        margin-bottom: 18px;
+    }
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
+
+<div class="edit-container">
+
+    <h1>Modifier l’Utilisateur</h1>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/20edb2485ee3b02bee281f0cee523d82.php [176:236]:
+storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php [7:71]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- About End -->
+<style>
+    .edit-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
 
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
 
-            <!-- Fact Start -->
-            <div class="fact">
-                <div class="container-fluid">
-                    <div class="row counters">
-                        <div class="col-md-6 fact-left wow slideInLeft">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-worker"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">107</h2>
-                                        <p>artisan indépendant</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-crane"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">42</h2>
-                                        <p>Société d'artisan</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6 fact-right wow slideInRight">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-address"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">789</h2>
-                                        <p>Completed Projects</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-6">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-building"></i>
-                                    </div>
-                                    <div class="fact-text">
-                                        <h2 data-toggle="counter-up">685</h2>
-                                        <p>Clients satisfaits</p>
-                                    </div>
-                                </div>
+    .form-group {
+        margin-bottom: 18px;
+    }
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
+
+<div class="edit-container">
+
+    <h1>Modifier l’Utilisateur</h1>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

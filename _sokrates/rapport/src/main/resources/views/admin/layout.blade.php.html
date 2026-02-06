@@ -1,0 +1,212 @@
+<html>
+<head>
+    <title>resources/views/admin/layout.blade.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">resources/views/admin/layout.blade.php (<b>154</b> lines of code) (<a href="layout.blade.php">raw</a>):</h3>
+<div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;@yield('title', 'Admin')&lt;/title&gt;
+
+    &lt;style&gt;
+        :root {
+            --primary: #030f27;
+            --accent: #fdbe33;
+            --light: #ffffff;
+            --bg: #f4f6f9;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: var(--primary);
+            color: var(--light);
+            position: fixed;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+        }
+
+        /* Table styling */
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: var(--primary);
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        .btn-edit {
+            background: #4CAF50;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-delete {
+            background: #e63946;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .action-buttons {
+    display: flex;
+    gap: 10px; /* espace entre les boutons */
+    align-items: center;
+}
+.action-buttons form {
+    margin: 0; /* retire le margin par d&eacute;faut */
+}
+
+        /* Responsive sidebar */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+
+        .btn-add {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.btn-add:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;sidebar&quot;&gt;
+        &lt;h2&gt;Admin&lt;/h2&gt;
+        &lt;a href=&quot;{{ route('admin.dashboard') }}&quot;&gt;Dashboard&lt;/a&gt;
+        &lt;a href=&quot;{{ route('admin.artisans') }}&quot;&gt;Artisans&lt;/a&gt;
+        &lt;a href=&quot;{{ route('admin.societes') }}&quot;&gt;Soci&eacute;t&eacute;s&lt;/a&gt;
+&lt;a href=&quot;{{ route('admin.users') }}&quot;&gt;Utilisateurs&lt;/a&gt;
+&lt;a href=&quot;{{ route('admin.messages') }}&quot;&gt;Messages&lt;/a&gt;
+&lt;a href=&quot;{{ route('admin.professions') }}&quot;&gt;Professions&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Avis&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Param&egrave;tres&lt;/a&gt;
+
+&lt;a href=&quot;#&quot; 
+   onclick=&quot;event.preventDefault(); document.getElementById('logout-form-admin').submit();&quot;&gt;
+    D&eacute;connexion
+&lt;/a&gt;
+
+&lt;form id=&quot;logout-form-admin&quot; action=&quot;{{ route('logout') }}&quot; method=&quot;POST&quot; style=&quot;display: none;&quot;&gt;
+    @csrf
+&lt;/form&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class=&quot;content&quot;&gt;
+        @yield('content')
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

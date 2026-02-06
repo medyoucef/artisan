@@ -1,95 +1,131 @@
-resources/views/auth/login_register.blade.php [49:90]:
+storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php [10:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    <h2>Sign Up</h2>
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
 
-    <div class="input-group">
-        <input type="text" name="username" required>
-        <label for="">Username</label>
-    </div>
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
 
-    <!-- Nouveau champ : type_user -->
-    <div class="input-group">
-        <select name="type_user" required>
-        <option value="" disabled selected>Choose user type</option>
-        <option value="client">Client</option>
-        <option value="artisan">Artisan</option>
-        <option value="societe_artisan">Société d'artisan</option>
+    .form-group {
+        margin-bottom: 18px;
+    }
 
-        </select>
-        <!-- <label for="">User Type</label> -->
-    </div>
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
 
-    <div class="input-group">
-        <input type="email" name="email" required>
-        <label for="">Email</label>
-    </div>
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
 
-    <div class="input-group">
-        <input type="password" name="password" required>
-        <label for="">Password</label>
-    </div>
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
 
-    <div class="remember">
-        <label><input type="checkbox" required> I agree to the terms & conditions</label>
-    </div>
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
 
-    <button type="submit">Sign Up</button>
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
 
-    <div class="signUp-link">
-        <p>Already have an account? <a href="" class="signInBtn-link">Sign In</a></p>
-    </div>
-  </form>
-</div>
-
-  </div>
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php [49:90]:
+storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php [10:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    <h2>Sign Up</h2>
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
 
-    <div class="input-group">
-        <input type="text" name="username" required>
-        <label for="">Username</label>
-    </div>
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
 
-    <!-- Nouveau champ : type_user -->
-    <div class="input-group">
-        <select name="type_user" required>
-        <option value="" disabled selected>Choose user type</option>
-        <option value="client">Client</option>
-        <option value="artisan">Artisan</option>
-        <option value="societe_artisan">Société d'artisan</option>
+    .form-group {
+        margin-bottom: 18px;
+    }
 
-        </select>
-        <!-- <label for="">User Type</label> -->
-    </div>
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
 
-    <div class="input-group">
-        <input type="email" name="email" required>
-        <label for="">Email</label>
-    </div>
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
 
-    <div class="input-group">
-        <input type="password" name="password" required>
-        <label for="">Password</label>
-    </div>
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
 
-    <div class="remember">
-        <label><input type="checkbox" required> I agree to the terms & conditions</label>
-    </div>
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
 
-    <button type="submit">Sign Up</button>
+    .btn-save:hover {
+        background: #e0a800;
+    }
+</style>
 
-    <div class="signUp-link">
-        <p>Already have an account? <a href="" class="signInBtn-link">Sign In</a></p>
-    </div>
-  </form>
-</div>
-
-  </div>
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

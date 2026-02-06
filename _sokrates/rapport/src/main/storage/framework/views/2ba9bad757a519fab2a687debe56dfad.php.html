@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (<b>73</b> lines of code) (<a href="2ba9bad757a519fab2a687debe56dfad.php">raw</a>):</h3>
+<div id="editor">
+
+&lt;?php $__env-&gt;startSection('title', 'Ajouter une Profession'); ?&gt;
+
+&lt;?php $__env-&gt;startSection('content'); ?&gt;
+
+&lt;style&gt;
+    .edit-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
+
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;edit-container&quot;&gt;
+
+    &lt;h1&gt;Ajouter une Profession&lt;/h1&gt;
+
+    &lt;form action=&quot;&lt;?php echo e(route('admin.professions.store')); ?&gt;&quot; method=&quot;POST&quot;&gt;
+        &lt;?php echo csrf_field(); ?&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;Nom de la profession :&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;name&quot; required class=&quot;form-control&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;Description :&lt;/label&gt;
+            &lt;textarea name=&quot;description&quot; class=&quot;form-control&quot; rows=&quot;4&quot;&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;button type=&quot;submit&quot; class=&quot;btn-save&quot;&gt;➕ Ajouter la Profession&lt;/button&gt;
+    &lt;/form&gt;
+
+&lt;/div&gt;
+
+&lt;?php $__env-&gt;stopSection(); ?&gt;
+
+&lt;?php echo $__env-&gt;make('admin.layout', array_diff_key(get_defined_vars(), ['__data' =&gt; 1, '__path' =&gt; 1]))-&gt;render(); ?&gt;&lt;?php /**PATH C:\xampp\htdocs\artisan\resources\views/admin/professions_create.blade.php ENDPATH**/ ?&gt;</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

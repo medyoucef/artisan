@@ -1,133 +1,137 @@
-storage/framework/views/4d7b7cfe77140002739771f8c6c1cd8f.php [1:61]:
+resources/views/admin/users_edit.blade.php [7:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login & Registration Form </title>
-  <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/login.css')); ?>">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
 <style>
-  body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: url('<?php echo e(asset('img/slide1.jpg')); ?>') no-repeat center center fixed;
-  background-size: cover;
-}
+    .edit-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
+
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
 </style>
-<body>
-  <div class="wrapper">
-    <div class="form-wrapper sign-in">
-    <form id="login-form" action="<?php echo e(route('login.custom')); ?>" method="POST">
 
-
-      <?php echo csrf_field(); ?>
-        <h2>Sign-in</h2>
-        <div class="input-group">
-        <input type="email" name="email" required>
-        <label>Email</label>
-
-        </div>
-        <div class="input-group">
-          <input type="password" name="password" required>
-          <label for="">Password</label>
-        </div>
-        <div class="remember">
-          <label><input type="checkbox"> Remember me</label>
-        </div>
-        <button type="submit">Login</button>
-        <div class="signUp-link">
-          <p>Don't have an account? <a href="#" class="signUpBtn-link">Sign Up</a></p>
-        </div>
-      </form>
-    </div>
-    <div class="form-wrapper sign-up">
-    <form id="register-form" action="<?php echo e(route('register.custom')); ?>" method="POST">
-    <?php echo csrf_field(); ?>
-    <h2>Sign Up</h2>
-
-    <div class="input-group">
-        <input type="text" name="username" required>
-        <label for="">Username</label>
-    </div>
-
-    <!-- Nouveau champ : type_user -->
-    <div class="input-group">
-        <select name="type_user" required>
-            <option value="" disabled selected>Choose user type</option>
-            <option value="client">Client</option>
-            <option value="artisan">Artisan</option>
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/8617c48f4ac7905ba1aecc9d9528d27a.php [1:61]:
+storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php [7:69]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login & Registration Form </title>
-  <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/login.css')); ?>">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
 <style>
-  body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: url('<?php echo e(asset('img/slide1.jpg')); ?>') no-repeat center center fixed;
-  background-size: cover;
-}
+    .edit-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
+
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
 </style>
-<body>
-  <div class="wrapper">
-    <div class="form-wrapper sign-in">
-    <form id="login-form" action="<?php echo e(route('login.custom')); ?>" method="POST">
 
-
-      <?php echo csrf_field(); ?>
-        <h2>Sign-in</h2>
-        <div class="input-group">
-        <input type="email" name="email" required>
-        <label>Email</label>
-
-        </div>
-        <div class="input-group">
-          <input type="password" name="password" required>
-          <label for="">Password</label>
-        </div>
-        <div class="remember">
-          <label><input type="checkbox"> Remember me</label>
-        </div>
-        <button type="submit">Login</button>
-        <div class="signUp-link">
-          <p>Don't have an account? <a href="#" class="signUpBtn-link">Sign Up</a></p>
-        </div>
-      </form>
-    </div>
-    <div class="form-wrapper sign-up">
-    <form id="register-form" action="<?php echo e(route('register.custom')); ?>" method="POST">
-    <?php echo csrf_field(); ?>
-    <h2>Sign Up</h2>
-
-    <div class="input-group">
-        <input type="text" name="username" required>
-        <label for="">Username</label>
-    </div>
-
-    <!-- Nouveau champ : type_user -->
-    <div class="input-group">
-        <select name="type_user" required>
-        <option value="" disabled selected>Choose user type</option>
-        <option value="client">Client</option>
-        <option value="artisan">Artisan</option>
+<div class="edit-container">
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

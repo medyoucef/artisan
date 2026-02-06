@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>resources/views/admin/societes_edit.blade.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">resources/views/admin/societes_edit.blade.php (<b>86</b> lines of code) (<a href="societes_edit.blade.php">raw</a>):</h3>
+<div id="editor">@extends('admin.layout')
+
+@section('title', 'Modifier Soci&eacute;t&eacute;')
+
+@section('content')
+
+&lt;style&gt;
+    .edit-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-left: 6px solid var(--accent);
+    }
+
+    .edit-container h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: var(--primary);
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 4px rgba(253,190,51,0.6);
+        outline: none;
+    }
+
+    .btn-save {
+        background: var(--accent);
+        color: var(--primary);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #e0a800;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;edit-container&quot;&gt;
+
+    &lt;h1&gt;Modifier la Soci&eacute;t&eacute;&lt;/h1&gt;
+
+    &lt;form action=&quot;{{ route('admin.societes.update', $societe-&gt;id) }}&quot; method=&quot;POST&quot;&gt;
+        @csrf
+        @method('PUT')
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;Nom :&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;{{ $societe-&gt;name }}&quot; required class=&quot;form-control&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;Email :&lt;/label&gt;
+            &lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;{{ $societe-&gt;email }}&quot; required class=&quot;form-control&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;T&eacute;l&eacute;phone :&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;telephone&quot; value=&quot;{{ $societe-&gt;telephone }}&quot; class=&quot;form-control&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;Adresse :&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;adresse&quot; value=&quot;{{ $societe-&gt;adresse }}&quot; class=&quot;form-control&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;Description :&lt;/label&gt;
+            &lt;textarea name=&quot;description&quot; class=&quot;form-control&quot; rows=&quot;4&quot;&gt;{{ $societe-&gt;description }}&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;button type=&quot;submit&quot; class=&quot;btn-save&quot;&gt;💾 Enregistrer les modifications&lt;/button&gt;
+    &lt;/form&gt;
+
+&lt;/div&gt;
+
+@endsection
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

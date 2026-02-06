@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>app/Models/MessagesUserArt.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Models/MessagesUserArt.php (<b>25</b> lines of code) (<a href="MessagesUserArt.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class MessagesUserArt extends Model
+{
+    protected $table = 'messages_user_art';
+
+    protected $fillable = [
+        'conversation_id',
+        'sender_id',
+        'receiver_id',
+        'message',
+    ];
+
+    public function conversation()
+    {
+        return $this-&gt;belongsTo(Conversation::class);
+    }
+
+    public function sender()
+    {
+        return $this-&gt;belongsTo(User::class, 'sender_id');
+    }
+
+    public function receiver()
+    {
+        return $this-&gt;belongsTo(User::class, 'receiver_id');
+    }
+}
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

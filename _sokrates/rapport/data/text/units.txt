@@ -593,6 +593,15 @@ McCabe index: 2
 number of parameters: 0
 
 id: 67
+unit: public function store()
+file: app/Http/Controllers/DevisController.php
+start line: 25
+end line: 57
+size: 27 LOC
+McCabe index: 2
+number of parameters: 2
+
+id: 68
 unit: Slick.prototype.swipeDirection = function()
 file: public/lib/slick/slick.js
 start line: 2613
@@ -601,7 +610,7 @@ size: 27 LOC
 McCabe index: 12
 number of parameters: 0
 
-id: 68
+id: 69
 unit: Slick.prototype.swipeHandler = function()
 file: public/lib/slick/slick.js
 start line: 2728
@@ -610,7 +619,7 @@ size: 27 LOC
 McCabe index: 12
 number of parameters: 1
 
-id: 69
+id: 70
 unit: $.fn.owlCarousel = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1660
@@ -619,7 +628,7 @@ size: 26 LOC
 McCabe index: 7
 number of parameters: 1
 
-id: 70
+id: 71
 unit: var Animate = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2379
@@ -628,7 +637,7 @@ size: 26 LOC
 McCabe index: 8
 number of parameters: 1
 
-id: 71
+id: 72
 unit: Slick.prototype.init = function()
 file: public/lib/slick/slick.js
 start line: 1262
@@ -637,7 +646,7 @@ size: 26 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 72
+id: 73
 unit: public function up()
 file: database/migrations/0001_01_01_000000_create_users_table.php
 start line: 12
@@ -646,7 +655,7 @@ size: 25 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 73
+id: 74
 unit: Owl.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1396
@@ -655,7 +664,7 @@ size: 25 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 74
+id: 75
 unit: Navigation.prototype.draw = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2947
@@ -664,7 +673,7 @@ size: 25 LOC
 McCabe index: 12
 number of parameters: 0
 
-id: 75
+id: 76
 unit: public function rejoindre()
 file: app/Http/Controllers/ArtisanController.php
 start line: 46
@@ -673,7 +682,7 @@ size: 24 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 76
+id: 77
 unit: proto._transitionTo = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 969
@@ -682,7 +691,7 @@ size: 24 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 77
+id: 78
 unit: proto.transition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1050
@@ -691,7 +700,7 @@ size: 24 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 78
+id: 79
 unit: function Outlayer()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1389
@@ -700,7 +709,7 @@ size: 24 LOC
 McCabe index: 6
 number of parameters: 2
 
-id: 79
+id: 80
 unit: ( function( window, factory )()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2509
@@ -709,7 +718,7 @@ size: 24 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 80
+id: 81
 unit: (function (root, factory)()
 file: public/lib/lightbox/js/lightbox.js
 start line: 16
@@ -718,7 +727,7 @@ size: 24 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 81
+id: 82
 unit: Owl.prototype.trigger = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1494
@@ -727,7 +736,7 @@ size: 24 LOC
 McCabe index: 6
 number of parameters: 5
 
-id: 82
+id: 83
 unit: Slick.prototype.registerBreakpoints = function()
 file: public/lib/slick/slick.js
 start line: 1859
@@ -736,7 +745,7 @@ size: 24 LOC
 McCabe index: 11
 number of parameters: 0
 
-id: 83
+id: 84
 unit: ( function( window, factory )()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 539
@@ -745,7 +754,7 @@ size: 23 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 84
+id: 85
 unit: ( function( window, factory )()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2269
@@ -754,7 +763,7 @@ size: 23 LOC
 McCabe index: 6
 number of parameters: 2
 
-id: 85
+id: 86
 unit: ( function( window, factory )()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2889
@@ -763,7 +772,7 @@ size: 23 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 86
+id: 87
 unit: Owl.prototype.onDragMove = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 768
@@ -772,7 +781,7 @@ size: 23 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 87
+id: 88
 unit: Slick.prototype.removeSlide = Slick.prototype.slickRemove = function()
 file: public/lib/slick/slick.js
 start line: 1963
@@ -781,7 +790,7 @@ size: 23 LOC
 McCabe index: 6
 number of parameters: 3
 
-id: 88
+id: 89
 unit: Slick.prototype.setCSS = function()
 file: public/lib/slick/slick.js
 start line: 1998
@@ -790,7 +799,7 @@ size: 23 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 89
+id: 90
 unit: value: function doSync()
 file: public/lib/wow/wow.js
 start line: 329
@@ -799,7 +808,7 @@ size: 23 LOC
 McCabe index: 9
 number of parameters: 1
 
-id: 90
+id: 91
 unit: proto._getItemLayoutPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2597
@@ -808,7 +817,7 @@ size: 22 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 91
+id: 92
 unit: Lightbox.prototype.keyboardAction = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 480
@@ -817,7 +826,7 @@ size: 22 LOC
 McCabe index: 13
 number of parameters: 1
 
-id: 92
+id: 93
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 325
@@ -826,7 +835,7 @@ size: 22 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 93
+id: 94
 unit: Owl.prototype.onDragEnd = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 804
@@ -835,7 +844,7 @@ size: 22 LOC
 McCabe index: 10
 number of parameters: 1
 
-id: 94
+id: 95
 unit: Owl.prototype.animate = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 884
@@ -844,7 +853,7 @@ size: 22 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 95
+id: 96
 unit: Owl.prototype.coordinates = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1137
@@ -853,7 +862,7 @@ size: 22 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 96
+id: 97
 unit: Slick.prototype.refresh = function()
 file: public/lib/slick/slick.js
 start line: 1820
@@ -862,7 +871,7 @@ size: 22 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 97
+id: 98
 unit: ( function( window, factory )()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 19
@@ -871,7 +880,7 @@ size: 21 LOC
 McCabe index: 7
 number of parameters: 2
 
-id: 98
+id: 99
 unit: utils.filterFindElements = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 649
@@ -880,7 +889,7 @@ size: 21 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 99
+id: 100
 unit: proto.ontransitionend = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1142
@@ -889,7 +898,7 @@ size: 21 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 100
+id: 101
 unit: ( function( window, factory )()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2820
@@ -898,7 +907,7 @@ size: 21 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 101
+id: 102
 unit: proto.insert = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3471
@@ -907,7 +916,7 @@ size: 21 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 102
+id: 103
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 418
@@ -916,7 +925,7 @@ size: 21 LOC
 McCabe index: 9
 number of parameters: 0
 
-id: 103
+id: 104
 unit: imageToLoad.onload = function()
 file: public/lib/slick/slick.js
 start line: 1530
@@ -925,7 +934,7 @@ size: 21 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 104
+id: 105
 unit: Slick.prototype.postSlide = function()
 file: public/lib/slick/slick.js
 start line: 1685
@@ -934,7 +943,7 @@ size: 21 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 105
+id: 106
 unit: Slick.prototype.updateArrows = function()
 file: public/lib/slick/slick.js
 start line: 2919
@@ -943,7 +952,7 @@ size: 21 LOC
 McCabe index: 9
 number of parameters: 0
 
-id: 106
+id: 107
 unit: function methodCall()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 90
@@ -952,7 +961,7 @@ size: 20 LOC
 McCabe index: 6
 number of parameters: 3
 
-id: 107
+id: 108
 unit: proto.layoutPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 925
@@ -961,7 +970,7 @@ size: 20 LOC
 McCabe index: 7
 number of parameters: 0
 
-id: 108
+id: 109
 unit: Owl.prototype.onResize = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 644
@@ -970,7 +979,7 @@ size: 20 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 109
+id: 110
 unit: Owl.prototype.replace = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1289
@@ -979,7 +988,7 @@ size: 20 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 110
+id: 111
 unit: Owl.prototype.add = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1322
@@ -988,7 +997,7 @@ size: 20 LOC
 McCabe index: 10
 number of parameters: 2
 
-id: 111
+id: 112
 unit: Owl.prototype.register = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1552
@@ -997,7 +1006,7 @@ size: 20 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 112
+id: 113
 unit: Slick.prototype.getNavigableIndexes = function()
 file: public/lib/slick/slick.js
 start line: 1192
@@ -1006,7 +1015,7 @@ size: 20 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 113
+id: 114
 unit: Slick.prototype.progressiveLazyLoad = function()
 file: public/lib/slick/slick.js
 start line: 1736
@@ -1015,7 +1024,7 @@ size: 20 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 114
+id: 115
 unit: value: function scrollCallback()
 file: public/lib/wow/wow.js
 start line: 483
@@ -1024,7 +1033,7 @@ size: 20 LOC
 McCabe index: 7
 number of parameters: 0
 
-id: 115
+id: 116
 unit: proto.emitEvent = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 231
@@ -1033,7 +1042,7 @@ size: 19 LOC
 McCabe index: 9
 number of parameters: 2
 
-id: 116
+id: 117
 unit: Owl.prototype.current = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 925
@@ -1042,7 +1051,7 @@ size: 19 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 117
+id: 118
 unit: Slick.prototype.fadeSlide = function()
 file: public/lib/slick/slick.js
 start line: 933
@@ -1051,7 +1060,7 @@ size: 19 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 118
+id: 119
 unit: Slick.prototype.initArrowEvents = function()
 file: public/lib/slick/slick.js
 start line: 1368
@@ -1060,7 +1069,7 @@ size: 19 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 119
+id: 120
 unit: Slick.prototype.keyHandler = function()
 file: public/lib/slick/slick.js
 start line: 1493
@@ -1069,7 +1078,7 @@ size: 19 LOC
 McCabe index: 9
 number of parameters: 1
 
-id: 120
+id: 121
 unit: imageToLoad.onload = function()
 file: public/lib/slick/slick.js
 start line: 1756
@@ -1078,7 +1087,34 @@ size: 19 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 121
+id: 122
+unit: public function updateArtisan()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 151
+end line: 171
+size: 18 LOC
+McCabe index: 1
+number of parameters: 2
+
+id: 123
+unit: public function updateSociete()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 179
+end line: 199
+size: 18 LOC
+McCabe index: 1
+number of parameters: 2
+
+id: 124
+unit: public function send()
+file: app/Http/Controllers/ChatController.php
+start line: 71
+end line: 95
+size: 18 LOC
+McCabe index: 2
+number of parameters: 2
+
+id: 125
 unit: proto.getPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 900
@@ -1087,7 +1123,7 @@ size: 18 LOC
 McCabe index: 9
 number of parameters: 0
 
-id: 122
+id: 126
 unit: proto.measureColumns = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2562
@@ -1096,7 +1132,7 @@ size: 18 LOC
 McCabe index: 8
 number of parameters: 0
 
-id: 123
+id: 127
 unit: proto._manageStamp = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2681
@@ -1105,7 +1141,7 @@ size: 18 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 124
+id: 128
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 300
@@ -1114,7 +1150,7 @@ size: 18 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 125
+id: 129
 unit: Slick.prototype.autoPlayIterator = function()
 file: public/lib/slick/slick.js
 start line: 407
@@ -1123,7 +1159,7 @@ size: 18 LOC
 McCabe index: 9
 number of parameters: 0
 
-id: 126
+id: 130
 unit: Slick.prototype.checkNavigable = function()
 file: public/lib/slick/slick.js
 start line: 732
@@ -1132,7 +1168,7 @@ size: 18 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 127
+id: 131
 unit: index: parseInt()
 file: public/lib/slick/slick.js
 start line: 1256
@@ -1141,7 +1177,7 @@ size: 18 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 128
+id: 132
 unit: public function register()
 file: app/Http/Controllers/AuthController.php
 start line: 18
@@ -1150,7 +1186,7 @@ size: 17 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 129
+id: 133
 unit: function setup()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 375
@@ -1159,7 +1195,7 @@ size: 17 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 130
+id: 134
 unit: Owl.prototype.registerEventHandlers = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 678
@@ -1168,7 +1204,7 @@ size: 17 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 131
+id: 135
 unit: Slick.prototype.getSlideCount = function()
 file: public/lib/slick/slick.js
 start line: 1224
@@ -1177,7 +1213,7 @@ size: 17 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 132
+id: 136
 unit: Slick.prototype.unload = function()
 file: public/lib/slick/slick.js
 start line: 2886
@@ -1186,7 +1222,7 @@ size: 17 LOC
 McCabe index: 6
 number of parameters: 0
 
-id: 133
+id: 137
 unit: value: function customStyle()
 file: public/lib/wow/wow.js
 start line: 403
@@ -1195,7 +1231,7 @@ size: 17 LOC
 McCabe index: 7
 number of parameters: 5
 
-id: 134
+id: 138
 unit: public function store()
 file: app/Http/Controllers/MessageController.php
 start line: 9
@@ -1204,7 +1240,7 @@ size: 16 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 135
+id: 139
 unit: public function up()
 file: database/migrations/2025_06_01_152838_create_artisans_table.php
 start line: 12
@@ -1213,7 +1249,16 @@ size: 16 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 136
+id: 140
+unit: public function up()
+file: database/migrations/2026_02_06_041133_create_devis_table.php
+start line: 12
+end line: 31
+size: 16 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 141
 unit: proto.destroy = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2148
@@ -1222,7 +1267,7 @@ size: 16 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 137
+id: 142
 unit: proto._getItemLayoutPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2855
@@ -1231,7 +1276,7 @@ size: 16 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 138
+id: 143
 unit: proto._bindArrangeComplete = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3149
@@ -1240,7 +1285,7 @@ size: 16 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 139
+id: 144
 unit: Slick.prototype.initDotEvents = function()
 file: public/lib/slick/slick.js
 start line: 1392
@@ -1249,7 +1294,7 @@ size: 16 LOC
 McCabe index: 7
 number of parameters: 0
 
-id: 140
+id: 145
 unit: function createEvent()
 file: public/lib/wow/wow.js
 start line: 71
@@ -1258,7 +1303,25 @@ size: 16 LOC
 McCabe index: 9
 number of parameters: 1
 
-id: 141
+id: 146
+unit: public function accepter()
+file: app/Http/Controllers/DevisController.php
+start line: 59
+end line: 77
+size: 15 LOC
+McCabe index: 2
+number of parameters: 1
+
+id: 147
+unit: public function refuser()
+file: app/Http/Controllers/DevisController.php
+start line: 89
+end line: 107
+size: 15 LOC
+McCabe index: 2
+number of parameters: 1
+
+id: 148
 unit: function getZeroSize()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 332
@@ -1267,7 +1330,7 @@ size: 15 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 142
+id: 149
 unit: proto._getFilterTest = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3213
@@ -1276,7 +1339,7 @@ size: 15 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 143
+id: 150
 unit: function mungeSorter()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3285
@@ -1285,7 +1348,7 @@ size: 15 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 144
+id: 151
 unit: function getItemSorter()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3369
@@ -1294,7 +1357,7 @@ size: 15 LOC
 McCabe index: 7
 number of parameters: 2
 
-id: 145
+id: 152
 unit: Owl.prototype.op = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1435
@@ -1303,7 +1366,7 @@ size: 15 LOC
 McCabe index: 9
 number of parameters: 3
 
-id: 146
+id: 153
 unit: Owl.prototype.pointer = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1610
@@ -1312,7 +1375,7 @@ size: 15 LOC
 McCabe index: 8
 number of parameters: 1
 
-id: 147
+id: 154
 unit: Navigation.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2889
@@ -1321,7 +1384,7 @@ size: 15 LOC
 McCabe index: 6
 number of parameters: 0
 
-id: 148
+id: 155
 unit: Navigation.prototype.getPosition = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3012
@@ -1330,7 +1393,7 @@ size: 15 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 149
+id: 156
 unit: Slick.prototype.fadeSlideOut = function()
 file: public/lib/slick/slick.js
 start line: 969
@@ -1339,7 +1402,7 @@ size: 15 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 150
+id: 157
 unit: Slick.prototype.swipeStart = function()
 file: public/lib/slick/slick.js
 start line: 2845
@@ -1348,7 +1411,7 @@ size: 15 LOC
 McCabe index: 7
 number of parameters: 1
 
-id: 151
+id: 158
 unit: value: function show()
 file: public/lib/wow/wow.js
 start line: 354
@@ -1357,7 +1420,25 @@ size: 15 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 152
+id: 159
+unit: public function startConversation()
+file: app/Http/Controllers/ChatController.php
+start line: 15
+end line: 31
+size: 14 LOC
+McCabe index: 2
+number of parameters: 1
+
+id: 160
+unit: public function up()
+file: database/migrations/2026_01_25_043501_create_messages_user_art_table.php
+start line: 12
+end line: 26
+size: 14 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 161
 unit: utils.makeArray = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 589
@@ -1366,7 +1447,7 @@ size: 14 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 153
+id: 162
 unit: proto.reveal = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1235
@@ -1375,7 +1456,7 @@ size: 14 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 154
+id: 163
 unit: proto.hide = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1279
@@ -1384,7 +1465,7 @@ size: 14 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 155
+id: 164
 unit: proto._getMeasurement = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1587
@@ -1393,7 +1474,7 @@ size: 14 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 156
+id: 165
 unit: proto._layoutItems = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1634
@@ -1402,7 +1483,7 @@ size: 14 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 157
+id: 166
 unit: proto._setContainerMeasure = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1741
@@ -1411,7 +1492,7 @@ size: 14 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 158
+id: 167
 unit: proto.dispatchEvent = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1796
@@ -1420,7 +1501,7 @@ size: 14 LOC
 McCabe index: 5
 number of parameters: 3
 
-id: 159
+id: 168
 unit: Outlayer.create = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2191
@@ -1429,7 +1510,7 @@ size: 14 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 160
+id: 169
 unit: function getMilliseconds()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2241
@@ -1438,7 +1519,7 @@ size: 14 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 161
+id: 170
 unit: proto.updateSortData = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2311
@@ -1447,7 +1528,7 @@ size: 14 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 162
+id: 171
 unit: proto.arrange = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3107
@@ -1456,7 +1537,7 @@ size: 14 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 163
+id: 172
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 353
@@ -1465,7 +1546,7 @@ size: 14 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 164
+id: 173
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 384
@@ -1474,7 +1555,7 @@ size: 14 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 165
+id: 174
 unit: Owl.prototype.update = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 574
@@ -1483,7 +1564,7 @@ size: 14 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 166
+id: 175
 unit: AutoHeight.prototype.update = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2012
@@ -1492,7 +1573,7 @@ size: 14 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 167
+id: 176
 unit: appendArrows: $()
 file: public/lib/slick/slick.js
 start line: 43
@@ -1501,7 +1582,7 @@ size: 14 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 168
+id: 177
 unit: Slick.prototype.applyTransition = function()
 file: public/lib/slick/slick.js
 start line: 366
@@ -1510,7 +1591,7 @@ size: 14 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 169
+id: 178
 unit: Slick.prototype.selectHandler = function()
 file: public/lib/slick/slick.js
 start line: 2448
@@ -1519,7 +1600,16 @@ size: 14 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 170
+id: 179
+unit: public function updateUser()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 85
+end line: 100
+size: 13 LOC
+McCabe index: 1
+number of parameters: 2
+
+id: 180
 unit: public function search()
 file: app/Http/Controllers/ArtisanController.php
 start line: 27
@@ -1528,7 +1618,7 @@ size: 13 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 171
+id: 181
 unit: public function up()
 file: database/migrations/0001_01_01_000001_create_cache_table.php
 start line: 12
@@ -1537,7 +1627,7 @@ size: 13 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 172
+id: 182
 unit: function bounceOut()
 file: public/lib/easing/easing.js
 start line: 38
@@ -1546,7 +1636,7 @@ size: 13 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 173
+id: 183
 unit: proto.enableTransition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1098
@@ -1555,7 +1645,7 @@ size: 13 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 174
+id: 184
 unit: proto.prepended = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2021
@@ -1564,7 +1654,7 @@ size: 13 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 175
+id: 185
 unit: Owl.prototype.viewport = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1270
@@ -1573,7 +1663,7 @@ size: 13 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 176
+id: 186
 unit: appendDots: $()
 file: public/lib/slick/slick.js
 start line: 44
@@ -1582,7 +1672,7 @@ size: 13 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 177
+id: 187
 unit: Slick.prototype.buildDots = function()
 file: public/lib/slick/slick.js
 start line: 482
@@ -1591,7 +1681,7 @@ size: 13 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 178
+id: 188
 unit: Slick.prototype.updateDots = function()
 file: public/lib/slick/slick.js
 start line: 2954
@@ -1600,7 +1690,16 @@ size: 13 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 179
+id: 189
+unit: public function updateProfession()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 108
+end line: 122
+size: 12 LOC
+McCabe index: 1
+number of parameters: 2
+
+id: 190
 unit: public function index()
 file: app/Http/Controllers/ArtisanController.php
 start line: 10
@@ -1609,7 +1708,16 @@ size: 12 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 180
+id: 191
+unit: public function inbox()
+file: app/Http/Controllers/ChatController.php
+start line: 52
+end line: 69
+size: 12 LOC
+McCabe index: 2
+number of parameters: 0
+
+id: 192
 unit: function plainCall()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 118
@@ -1618,7 +1726,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 181
+id: 193
 unit: ( function( global, factory )()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 163
@@ -1627,7 +1735,7 @@ size: 12 LOC
 McCabe index: 6
 number of parameters: 2
 
-id: 182
+id: 194
 unit: _class.prototype[ methodName ] = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 687
@@ -1636,7 +1744,7 @@ size: 12 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 183
+id: 195
 unit: function Item()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 840
@@ -1645,7 +1753,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 184
+id: 196
 unit: proto._getElementOffset = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1924
@@ -1654,7 +1762,7 @@ size: 12 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 185
+id: 197
 unit: proto._resetLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2546
@@ -1663,7 +1771,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 186
+id: 198
 unit: proto._create = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3031
@@ -1672,7 +1780,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 187
+id: 199
 unit: proto.prepended = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3440
@@ -1681,7 +1789,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 188
+id: 200
 unit: Lightbox.prototype.changeImage = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 266
@@ -1690,7 +1798,7 @@ size: 12 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 189
+id: 201
 unit: Lightbox.prototype.end = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 505
@@ -1699,7 +1807,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 190
+id: 202
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 284
@@ -1708,7 +1816,7 @@ size: 12 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 191
+id: 203
 unit: Owl.prototype.onTransitionEnd = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1249
@@ -1717,7 +1825,7 @@ size: 12 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 192
+id: 204
 unit: Owl.prototype.remove = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1356
@@ -1726,7 +1834,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 193
+id: 205
 unit: step: function()
 file: public/lib/slick/slick.js
 start line: 291
@@ -1735,7 +1843,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 194
+id: 206
 unit: Slick.prototype.asNavFor = function()
 file: public/lib/slick/slick.js
 start line: 350
@@ -1744,7 +1852,7 @@ size: 12 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 195
+id: 207
 unit: Slick.prototype.loadSlider = function()
 file: public/lib/slick/slick.js
 start line: 1623
@@ -1753,7 +1861,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 196
+id: 208
 unit: value: function set()
 file: public/lib/wow/wow.js
 start line: 159
@@ -1762,7 +1870,7 @@ size: 12 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 197
+id: 209
 unit: getPropertyValue: function getPropertyValue()
 file: public/lib/wow/wow.js
 start line: 199
@@ -1771,7 +1879,7 @@ size: 12 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 198
+id: 210
 unit: value: function vendorSet()
 file: public/lib/wow/wow.js
 start line: 424
@@ -1780,7 +1888,7 @@ size: 12 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 199
+id: 211
 unit: value: function animationName()
 file: public/lib/wow/wow.js
 start line: 449
@@ -1789,7 +1897,34 @@ size: 12 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 200
+id: 212
+unit: public function index()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 18
+end line: 28
+size: 11 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 213
+unit: public function storeProfession()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 130
+end line: 142
+size: 11 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 214
+unit: public function show()
+file: app/Http/Controllers/ChatController.php
+start line: 35
+end line: 48
+size: 11 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 215
 unit: private function filterSocietes()
 file: app/Http/Controllers/SocieteArtisanController.php
 start line: 33
@@ -1798,7 +1933,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 201
+id: 216
 unit: public function up()
 file: database/migrations/2025_05_27_164600_create_messages_table.php
 start line: 12
@@ -1807,7 +1942,16 @@ size: 11 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 202
+id: 217
+unit: public function up()
+file: database/migrations/2026_01_25_043417_create_conversations_table.php
+start line: 12
+end line: 23
+size: 11 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 218
 unit: proto.on = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 185
@@ -1816,7 +1960,7 @@ size: 11 LOC
 McCabe index: 6
 number of parameters: 2
 
-id: 203
+id: 219
 unit: proto.off = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 218
@@ -1825,7 +1969,7 @@ size: 11 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 204
+id: 220
 unit: proto.destroy = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1309
@@ -1834,7 +1978,7 @@ size: 11 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 205
+id: 221
 unit: proto._itemize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1508
@@ -1843,7 +1987,7 @@ size: 11 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 206
+id: 222
 unit: proto.resizeContainer = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1717
@@ -1852,7 +1996,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 207
+id: 223
 unit: proto.reveal = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2043
@@ -1861,7 +2005,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 208
+id: 224
 unit: proto.hide = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2059
@@ -1870,7 +2014,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 209
+id: 225
 unit: proto.getItems = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2111
@@ -1879,7 +2023,7 @@ size: 11 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 210
+id: 226
 unit: proto.remove = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2128
@@ -1888,7 +2032,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 211
+id: 227
 unit: proto.getSegmentSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2440
@@ -1897,7 +2041,7 @@ size: 11 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 212
+id: 228
 unit: proto._getTopColGroup = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2639
@@ -1906,7 +2050,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 213
+id: 229
 unit: proto._getHorizontalColPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2666
@@ -1915,7 +2059,7 @@ size: 11 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 214
+id: 230
 unit: proto._getContainerFitWidth = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2717
@@ -1924,7 +2068,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 215
+id: 231
 unit: proto.updateSortData = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3238
@@ -1933,7 +2077,7 @@ size: 11 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 216
+id: 232
 unit: function getValueGetter()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3312
@@ -1942,7 +2086,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 217
+id: 233
 unit: proto._sort = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3343
@@ -1951,7 +2095,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 218
+id: 234
 unit: Lightbox.prototype.sizeContainer = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 348
@@ -1960,7 +2104,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 219
+id: 235
 unit: Owl.prototype.refresh = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 613
@@ -1969,7 +2113,7 @@ size: 11 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 220
+id: 236
 unit: Owl.prototype.reset = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 971
@@ -1978,7 +2122,7 @@ size: 11 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 221
+id: 237
 unit: Autoplay.prototype._getNextTimeout = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2622
@@ -1987,7 +2131,7 @@ size: 11 LOC
 McCabe index: 8
 number of parameters: 2
 
-id: 222
+id: 238
 unit: function test()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3239
@@ -1996,7 +2140,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 223
+id: 239
 unit: Slick.prototype.resize = function()
 file: public/lib/slick/slick.js
 start line: 1949
@@ -2005,7 +2149,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 224
+id: 240
 unit: Slick.prototype.setPosition = function()
 file: public/lib/slick/slick.js
 start line: 2208
@@ -2014,7 +2158,7 @@ size: 11 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 225
+id: 241
 unit: Slick.prototype.startLoad = function()
 file: public/lib/slick/slick.js
 start line: 2592
@@ -2023,7 +2167,7 @@ size: 11 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 226
+id: 242
 unit: value: function offsetTop()
 file: public/lib/wow/wow.js
 start line: 505
@@ -2032,7 +2176,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 227
+id: 243
 unit: export default defineConfig()
 file: vite.config.js
 start line: 4
@@ -2041,7 +2185,7 @@ size: 11 LOC
 McCabe index: 1
 number of parameters: 5
 
-id: 228
+id: 244
 unit: public function search()
 file: app/Http/Controllers/SocieteArtisanController.php
 start line: 15
@@ -2050,7 +2194,7 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 229
+id: 245
 unit: public function definition()
 file: database/factories/UserFactory.php
 start line: 24
@@ -2059,7 +2203,7 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 230
+id: 246
 unit: public function up()
 file: database/migrations/2025_06_01_152839_create_professions_table.php
 start line: 12
@@ -2068,7 +2212,7 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 231
+id: 247
 unit: public function up()
 file: database/migrations/2025_06_01_152840_create_services_table.php
 start line: 12
@@ -2077,7 +2221,7 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 232
+id: 248
 unit: public function up()
 file: database/migrations/2025_06_01_152840_create_societe_artisans_table.php
 start line: 12
@@ -2086,7 +2230,7 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 233
+id: 249
 unit: proto.once = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 201
@@ -2095,7 +2239,7 @@ size: 10 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 234
+id: 250
 unit: proto._create = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 860
@@ -2104,7 +2248,7 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 235
+id: 251
 unit: proto.remove = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1221
@@ -2113,7 +2257,7 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 236
+id: 252
 unit: proto._create = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1480
@@ -2122,7 +2266,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 237
+id: 253
 unit: proto.unstamp = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1861
@@ -2131,7 +2275,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 238
+id: 254
 unit: proto._find = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1879
@@ -2140,7 +2284,7 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 239
+id: 255
 unit: proto._getBoundingRect = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1902
@@ -2149,7 +2293,7 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 240
+id: 256
 unit: proto._getContainerSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2704
@@ -2158,7 +2302,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 241
+id: 257
 unit: proto.remove = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3498
@@ -2167,7 +2311,7 @@ size: 10 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 242
+id: 258
 unit: Lightbox.prototype.preloadNeighboringImages = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 461
@@ -2176,7 +2320,7 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 243
+id: 259
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 371
@@ -2185,7 +2329,7 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 244
+id: 260
 unit: Owl.prototype.width = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 598
@@ -2194,7 +2338,7 @@ size: 10 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 245
+id: 261
 unit: $()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 746
@@ -2203,7 +2347,7 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 246
+id: 262
 unit: Owl.prototype.normalize = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 995
@@ -2212,7 +2356,7 @@ size: 10 LOC
 McCabe index: 5
 number of parameters: 2
 
-id: 247
+id: 263
 unit: AutoRefresh.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1794
@@ -2221,7 +2365,7 @@ size: 10 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 248
+id: 264
 unit: create = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2222
@@ -2230,7 +2374,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 249
+id: 265
 unit: Video.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2348
@@ -2239,7 +2383,7 @@ size: 10 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 250
+id: 266
 unit: Autoplay.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2670
@@ -2248,7 +2392,7 @@ size: 10 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 251
+id: 267
 unit: Hash.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3176
@@ -2257,7 +2401,7 @@ size: 10 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 252
+id: 268
 unit: Slick.prototype.disableTransition = function()
 file: public/lib/slick/slick.js
 start line: 918
@@ -2266,7 +2410,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 253
+id: 269
 unit: Slick.prototype.filterSlides = Slick.prototype.slickFilter = function()
 file: public/lib/slick/slick.js
 start line: 993
@@ -2275,7 +2419,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 254
+id: 270
 unit: Slick.prototype.initUI = function()
 file: public/lib/slick/slick.js
 start line: 1474
@@ -2284,7 +2428,7 @@ size: 10 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 255
+id: 271
 unit: Slick.prototype.visibility = function()
 file: public/lib/slick/slick.js
 start line: 2974
@@ -2293,7 +2437,7 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 256
+id: 272
 unit: $()
 file: public/js/main.js
 start line: 23
@@ -2302,7 +2446,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 257
+id: 273
 unit: function getStyle()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 354
@@ -2311,7 +2455,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 258
+id: 274
 unit: proto._nonTransition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1032
@@ -2320,7 +2464,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 259
+id: 275
 unit: proto.getHideRevealTransitionEndProperty = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1267
@@ -2329,7 +2473,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 260
+id: 276
 unit: proto.layout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1548
@@ -2338,7 +2482,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 261
+id: 277
 unit: proto.updateStagger = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1682
@@ -2347,7 +2491,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 262
+id: 278
 unit: function LayoutMode()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2376
@@ -2356,7 +2500,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 263
+id: 279
 unit: proto.getContainerWidth = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2587
@@ -2365,7 +2509,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 264
+id: 280
 unit: proto._itemize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3058
@@ -2374,7 +2518,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 265
+id: 281
 unit: proto._mode = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3390
@@ -2383,7 +2527,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 266
+id: 282
 unit: proto.shuffle = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3513
@@ -2392,7 +2536,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 267
+id: 283
 unit: Owl.prototype.prepare = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 557
@@ -2401,7 +2545,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 268
+id: 284
 unit: Owl.prototype.clones = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1104
@@ -2410,7 +2554,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 269
+id: 285
 unit: Lazy.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1932
@@ -2419,7 +2563,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 270
+id: 286
 unit: AutoHeight.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2030
@@ -2428,7 +2572,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 271
+id: 287
 unit: Animate.prototype.destroy = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2472
@@ -2437,7 +2581,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 272
+id: 288
 unit: Navigation.prototype.onTrigger = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2984
@@ -2446,7 +2590,7 @@ size: 9 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 273
+id: 289
 unit: Navigation.prototype.to = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3055
@@ -2455,7 +2599,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 3
 
-id: 274
+id: 290
 unit: $()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3151
@@ -2464,7 +2608,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 275
+id: 291
 unit: Slick.prototype.animateHeight = function()
 file: public/lib/slick/slick.js
 start line: 247
@@ -2473,7 +2617,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 276
+id: 292
 unit: Slick.prototype.focusHandler = function()
 file: public/lib/slick/slick.js
 start line: 1013
@@ -2482,7 +2626,7 @@ size: 9 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 277
+id: 293
 unit: Slick.prototype.goTo = Slick.prototype.slickGoTo = function()
 file: public/lib/slick/slick.js
 start line: 1249
@@ -2491,7 +2635,7 @@ size: 9 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 278
+id: 294
 unit: Slick.prototype.unfilterSlides = Slick.prototype.slickUnfilter = function()
 file: public/lib/slick/slick.js
 start line: 2868
@@ -2500,7 +2644,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 279
+id: 295
 unit: function defineProperties()
 file: public/lib/wow/wow.js
 start line: 35
@@ -2509,7 +2653,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 280
+id: 296
 unit: function extend()
 file: public/lib/wow/wow.js
 start line: 56
@@ -2518,7 +2662,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 281
+id: 297
 unit: function emitEvent()
 file: public/lib/wow/wow.js
 start line: 92
@@ -2527,7 +2671,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 282
+id: 298
 unit: function addEvent()
 file: public/lib/wow/wow.js
 start line: 103
@@ -2536,7 +2680,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 3
 
-id: 283
+id: 299
 unit: function removeEvent()
 file: public/lib/wow/wow.js
 start line: 116
@@ -2545,7 +2689,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 3
 
-id: 284
+id: 300
 unit: value: function get()
 file: public/lib/wow/wow.js
 start line: 148
@@ -2554,7 +2698,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 285
+id: 301
 unit: value: function init()
 file: public/lib/wow/wow.js
 start line: 261
@@ -2563,7 +2707,7 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 286
+id: 302
 unit: value: function applyStyle()
 file: public/lib/wow/wow.js
 start line: 373
@@ -2572,7 +2716,7 @@ size: 9 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 287
+id: 303
 unit: value: function vendorCSS()
 file: public/lib/wow/wow.js
 start line: 438
@@ -2581,7 +2725,7 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 288
+id: 304
 unit: protected function validator()
 file: app/Http/Controllers/Auth/RegisterController.php
 start line: 49
@@ -2590,7 +2734,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 289
+id: 305
 unit: protected function create()
 file: app/Http/Controllers/Auth/RegisterController.php
 start line: 64
@@ -2599,7 +2743,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 290
+id: 306
 unit: public function login()
 file: app/Http/Controllers/AuthController.php
 start line: 44
@@ -2608,7 +2752,25 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 291
+id: 307
+unit: public function create()
+file: app/Http/Controllers/DevisController.php
+start line: 13
+end line: 23
+size: 8 LOC
+McCabe index: 2
+number of parameters: 1
+
+id: 308
+unit: public function clientDevis()
+file: app/Http/Controllers/DevisController.php
+start line: 78
+end line: 87
+size: 8 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 309
 unit: public function up()
 file: database/migrations/2025_06_20_095950_add_fields_to_users_table.php
 start line: 12
@@ -2617,7 +2779,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 292
+id: 310
 unit: $.fn[ namespace ] = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 77
@@ -2626,7 +2788,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 293
+id: 311
 unit: utils.getParent = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 618
@@ -2635,7 +2797,7 @@ size: 8 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 294
+id: 312
 unit: utils.docReady = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 704
@@ -2644,7 +2806,7 @@ size: 8 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 295
+id: 313
 unit: proto._positionItem = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1699
@@ -2653,7 +2815,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 5
 
-id: 296
+id: 314
 unit: proto.stamp = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1846
@@ -2662,7 +2824,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 297
+id: 315
 unit: proto.appended = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2007
@@ -2671,7 +2833,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 298
+id: 316
 unit: proto.getItem = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2095
@@ -2680,7 +2842,7 @@ size: 8 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 299
+id: 317
 unit: proto._getTopColPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2624
@@ -2689,7 +2851,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 300
+id: 318
 unit: proto._getItemLayoutPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2923
@@ -2698,7 +2860,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 301
+id: 319
 unit: proto._getIsSameSortBy = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3359
@@ -2707,7 +2869,7 @@ size: 8 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 302
+id: 320
 unit: proto.appended = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3428
@@ -2716,7 +2878,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 303
+id: 321
 unit: Lightbox.prototype.showImage = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 376
@@ -2725,7 +2887,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 304
+id: 322
 unit: Owl.prototype.enter = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1527
@@ -2734,7 +2896,7 @@ size: 8 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 305
+id: 323
 unit: AutoRefresh.prototype.refresh = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1779
@@ -2743,7 +2905,7 @@ size: 8 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 306
+id: 324
 unit: Video.prototype.stop = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2281
@@ -2752,7 +2914,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 307
+id: 325
 unit: Autoplay.prototype.play = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2603
@@ -2761,7 +2923,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 308
+id: 326
 unit: Slick.prototype.activateADA = function()
 file: public/lib/slick/slick.js
 start line: 191
@@ -2770,7 +2932,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 309
+id: 327
 unit: Slick.prototype.getNavTarget = function()
 file: public/lib/slick/slick.js
 start line: 337
@@ -2779,7 +2941,7 @@ size: 8 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 310
+id: 328
 unit: Slick.prototype.cleanUpRows = function()
 file: public/lib/slick/slick.js
 start line: 820
@@ -2788,7 +2950,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 311
+id: 329
 unit: Slick.prototype.clickHandler = function()
 file: public/lib/slick/slick.js
 start line: 832
@@ -2797,7 +2959,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 312
+id: 330
 unit: Slick.prototype.next = Slick.prototype.slickNext = function()
 file: public/lib/slick/slick.js
 start line: 1643
@@ -2806,7 +2968,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 313
+id: 331
 unit: Slick.prototype.play = Slick.prototype.slickPlay = function()
 file: public/lib/slick/slick.js
 start line: 1673
@@ -2815,7 +2977,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 314
+id: 332
 unit: Slick.prototype.prev = Slick.prototype.slickPrev = function()
 file: public/lib/slick/slick.js
 start line: 1718
@@ -2824,7 +2986,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 315
+id: 333
 unit: imageToLoad.onerror = function()
 file: public/lib/slick/slick.js
 start line: 1782
@@ -2833,7 +2995,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 316
+id: 334
 unit: value: function stop()
 file: public/lib/wow/wow.js
 start line: 312
@@ -2842,7 +3004,7 @@ size: 8 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 317
+id: 335
 unit: value: function isVisible()
 file: public/lib/wow/wow.js
 start line: 521
@@ -2851,7 +3013,16 @@ size: 8 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 318
+id: 336
+unit: public function index()
+file: app/Http/Controllers/AdminDevisController.php
+start line: 9
+end line: 17
+size: 7 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 337
 unit: public function logout()
 file: app/Http/Controllers/AuthController.php
 start line: 55
@@ -2860,7 +3031,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 319
+id: 338
 unit: protected function casts()
 file: app/Models/User.php
 start line: 40
@@ -2869,7 +3040,25 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 320
+id: 339
+unit: public function up()
+file: database/migrations/2026_01_25_050708_add_user_id_to_artisans_table.php
+start line: 12
+end line: 18
+size: 7 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 340
+unit: public function up()
+file: database/migrations/2026_02_06_043838_fix_devis_foreign_key.php
+start line: 12
+end line: 18
+size: 7 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 341
 unit: public function run()
 file: database/seeders/DatabaseSeeder.php
 start line: 14
@@ -2878,7 +3067,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 321
+id: 342
 unit: $()
 file: public/js/main.js
 start line: 9
@@ -2887,7 +3076,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 322
+id: 343
 unit: function isEmptyObj()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 806
@@ -2896,7 +3085,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 323
+id: 344
 unit: proto.css = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 889
@@ -2905,7 +3094,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 324
+id: 345
 unit: proto.getTranslate = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1002
@@ -2914,7 +3103,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 325
+id: 346
 unit: proto._removeStyles = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1184
@@ -2923,7 +3112,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 326
+id: 347
 unit: proto._manageStamps = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1891
@@ -2932,7 +3121,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 327
+id: 348
 unit: proto.addItems = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1994
@@ -2941,7 +3130,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 328
+id: 349
 unit: LayoutMode.create = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2476
@@ -2950,7 +3139,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 329
+id: 350
 unit: proto._getColGroupY = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2655
@@ -2959,7 +3148,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 330
+id: 351
 unit: proto._getOption = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2804
@@ -2968,7 +3157,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 331
+id: 352
 unit: proto._initLayoutMode = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3072
@@ -2977,7 +3166,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 332
+id: 353
 unit: proto.layout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3084
@@ -2986,7 +3175,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 333
+id: 354
 unit: proto._layout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3094
@@ -2995,7 +3184,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 334
+id: 355
 unit: proto._getIsInstant = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3139
@@ -3004,7 +3193,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 335
+id: 356
 unit: proto._getSorters = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3253
@@ -3013,7 +3202,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 336
+id: 357
 unit: proto._updateItemsSortData = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3265
@@ -3022,7 +3211,7 @@ size: 7 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 337
+id: 358
 unit: proto._filterRevealAdded = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3457
@@ -3031,7 +3220,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 338
+id: 359
 unit: proto._noTransition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3532
@@ -3040,7 +3229,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 339
+id: 360
 unit: function Lightbox()
 file: public/lib/lightbox/js/lightbox.js
 start line: 31
@@ -3049,7 +3238,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 340
+id: 361
 unit: function addToAlbum()
 file: public/lib/lightbox/js/lightbox.js
 start line: 213
@@ -3058,7 +3247,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 341
+id: 362
 unit: Owl.prototype.invalidate = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 958
@@ -3067,7 +3256,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 342
+id: 363
 unit: Owl.prototype.items = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1074
@@ -3076,7 +3265,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 343
+id: 364
 unit: Owl.prototype.mergers = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1089
@@ -3085,7 +3274,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 344
+id: 365
 unit: Owl.prototype.on = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1459
@@ -3094,7 +3283,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 4
 
-id: 345
+id: 366
 unit: Owl.prototype.off = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1475
@@ -3103,7 +3292,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 4
 
-id: 346
+id: 367
 unit: AutoRefresh.prototype.watch = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1767
@@ -3112,7 +3301,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 347
+id: 368
 unit: Animate.prototype.clear = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2460
@@ -3121,7 +3310,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 348
+id: 369
 unit: Autoplay.prototype.stop = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2646
@@ -3130,7 +3319,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 349
+id: 370
 unit: Slick.prototype.autoPlay = function()
 file: public/lib/slick/slick.js
 start line: 385
@@ -3139,7 +3328,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 350
+id: 371
 unit: Slick.prototype.initSlideEvents = function()
 file: public/lib/slick/slick.js
 start line: 1416
@@ -3148,7 +3337,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 351
+id: 372
 unit: imageToLoad.onerror = function()
 file: public/lib/slick/slick.js
 start line: 1557
@@ -3157,7 +3346,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 352
+id: 373
 unit: Slick.prototype.setHeight = function()
 file: public/lib/slick/slick.js
 start line: 2099
@@ -3166,7 +3355,7 @@ size: 7 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 353
+id: 374
 unit: Slick.prototype.interrupt = function()
 file: public/lib/slick/slick.js
 start line: 2437
@@ -3175,7 +3364,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 354
+id: 375
 unit: var _createClass = function()
 file: public/lib/wow/wow.js
 start line: 34
@@ -3184,7 +3373,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 355
+id: 376
 unit: function MutationObserver()
 file: public/lib/wow/wow.js
 start line: 178
@@ -3193,7 +3382,7 @@ size: 7 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 356
+id: 377
 unit: value: function resetStyle()
 file: public/lib/wow/wow.js
 start line: 386
@@ -3202,7 +3391,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 357
+id: 378
 unit: public function __construct()
 file: app/Http/Controllers/Auth/VerificationController.php
 start line: 35
@@ -3211,7 +3400,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 358
+id: 379
 unit: public function index()
 file: app/Http/Controllers/HomeController.php
 start line: 11
@@ -3220,7 +3409,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 359
+id: 380
 unit: public function unverified()
 file: database/factories/UserFactory.php
 start line: 38
@@ -3229,7 +3418,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 360
+id: 381
 unit: public function down()
 file: database/migrations/0001_01_01_000000_create_users_table.php
 start line: 43
@@ -3238,7 +3427,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 361
+id: 382
 unit: public function down()
 file: database/migrations/0001_01_01_000002_create_jobs_table.php
 start line: 51
@@ -3247,7 +3436,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 362
+id: 383
 unit: public function up()
 file: database/migrations/2025_06_01_215847_add_type_user_to_users_table.php
 start line: 12
@@ -3256,7 +3445,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 363
+id: 384
 unit: public function down()
 file: database/migrations/2025_06_01_215847_add_type_user_to_users_table.php
 start line: 19
@@ -3265,7 +3454,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 364
+id: 385
 unit: public function down()
 file: database/migrations/2025_06_20_095950_add_fields_to_users_table.php
 start line: 25
@@ -3274,7 +3463,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 365
+id: 386
 unit: public function up()
 file: database/migrations/2025_06_20_105730_add_updated_at_to_artisans_table.php
 start line: 12
@@ -3283,7 +3472,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 366
+id: 387
 unit: public function down()
 file: database/migrations/2025_06_20_105730_add_updated_at_to_artisans_table.php
 start line: 19
@@ -3292,7 +3481,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 367
+id: 388
 unit: public function up()
 file: database/migrations/2025_06_20_140908_add_telephone_to_users_table.php
 start line: 12
@@ -3301,7 +3490,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 368
+id: 389
 unit: public function down()
 file: database/migrations/2025_06_20_140908_add_telephone_to_users_table.php
 start line: 19
@@ -3310,7 +3499,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 369
+id: 390
 unit: public function up()
 file: database/migrations/2025_06_20_141421_add_updated_at_to_societe_artisan_table.php
 start line: 12
@@ -3319,7 +3508,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 370
+id: 391
 unit: public function down()
 file: database/migrations/2025_06_20_141421_add_updated_at_to_societe_artisan_table.php
 start line: 19
@@ -3328,7 +3517,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 371
+id: 392
 unit: public function up()
 file: database/migrations/2025_06_20_141652_add_created_at_to_societe_artisan_table.php
 start line: 12
@@ -3337,7 +3526,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 372
+id: 393
 unit: public function down()
 file: database/migrations/2025_06_20_141652_add_created_at_to_societe_artisan_table.php
 start line: 19
@@ -3346,7 +3535,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 373
+id: 394
 unit: PluginClass.prototype.option = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 67
@@ -3355,7 +3544,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 374
+id: 395
 unit: function updateJQuery()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 140
@@ -3364,7 +3553,7 @@ size: 6 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 375
+id: 396
 unit: utils.extend = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 573
@@ -3373,7 +3562,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 376
+id: 397
 unit: utils.removeFrom = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 609
@@ -3382,7 +3571,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 377
+id: 398
 unit: utils.getQueryElement = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 630
@@ -3391,7 +3580,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 378
+id: 399
 unit: utils.handleEvent = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 640
@@ -3400,7 +3589,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 379
+id: 400
 unit: proto.handleEvent = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 874
@@ -3409,7 +3598,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 380
+id: 401
 unit: proto.onHideTransitionEnd = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1300
@@ -3418,7 +3607,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 381
+id: 402
 unit: proto._getItemLayoutPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1661
@@ -3427,7 +3616,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 382
+id: 403
 unit: proto._processLayoutQueue = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1674
@@ -3436,7 +3625,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 383
+id: 404
 unit: function tick()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1777
@@ -3445,7 +3634,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 384
+id: 405
 unit: proto.ignore = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1824
@@ -3454,7 +3643,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 385
+id: 406
 unit: proto.unignore = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1835
@@ -3463,7 +3652,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 386
+id: 407
 unit: proto.resize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1965
@@ -3472,7 +3661,7 @@ size: 6 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 387
+id: 408
 unit: proto.destroy = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2330
@@ -3481,7 +3670,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 388
+id: 409
 unit: proto._resetLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2848
@@ -3490,7 +3679,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 389
+id: 410
 unit: top: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 114
@@ -3499,7 +3688,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 390
+id: 411
 unit: top: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 121
@@ -3508,7 +3697,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 391
+id: 412
 unit: function postResize()
 file: public/lib/lightbox/js/lightbox.js
 start line: 356
@@ -3517,7 +3706,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 392
+id: 413
 unit: Owl.prototype.optionsLogic = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 544
@@ -3526,7 +3715,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 393
+id: 414
 unit: Owl.prototype.speed = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1122
@@ -3535,7 +3724,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 394
+id: 415
 unit: Owl.prototype.duration = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1173
@@ -3544,7 +3733,7 @@ size: 6 LOC
 McCabe index: 3
 number of parameters: 3
 
-id: 395
+id: 416
 unit: Owl.prototype.preloadAutoWidthImages = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1379
@@ -3553,7 +3742,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 396
+id: 417
 unit: $()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1383
@@ -3562,7 +3751,7 @@ size: 6 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 397
+id: 418
 unit: $.event.special[object.name]._default = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1560
@@ -3571,7 +3760,7 @@ size: 6 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 398
+id: 419
 unit: Owl.prototype.difference = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1648
@@ -3580,7 +3769,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 399
+id: 420
 unit: Autoplay.prototype.pause = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2659
@@ -3589,7 +3778,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 400
+id: 421
 unit: Navigation.prototype.current = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3000
@@ -3598,7 +3787,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 401
+id: 422
 unit: Slick.prototype.autoPlayClear = function()
 file: public/lib/slick/slick.js
 start line: 397
@@ -3607,7 +3796,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 402
+id: 423
 unit: setTimeout()
 file: public/lib/slick/slick.js
 start line: 1024
@@ -3616,7 +3805,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 403
+id: 424
 unit: function getInnerHeight()
 file: public/lib/wow/wow.js
 start line: 129
@@ -3625,7 +3814,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 404
+id: 425
 unit: value: function resetAnimation()
 file: public/lib/wow/wow.js
 start line: 395
@@ -3634,7 +3823,7 @@ size: 6 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 405
+id: 426
 unit: public function __construct()
 file: app/Http/Controllers/Auth/LoginController.php
 start line: 35
@@ -3643,7 +3832,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 406
+id: 427
 unit: public function index()
 file: app/Http/Controllers/ProfessionController.php
 start line: 10
@@ -3652,7 +3841,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 407
+id: 428
 unit: public function index()
 file: app/Http/Controllers/ProfileController.php
 start line: 13
@@ -3661,7 +3850,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 408
+id: 429
 unit: public function index()
 file: app/Http/Controllers/SocieteArtisanController.php
 start line: 9
@@ -3670,7 +3859,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 409
+id: 430
 unit: public function down()
 file: database/migrations/0001_01_01_000001_create_cache_table.php
 start line: 30
@@ -3679,7 +3868,16 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 410
+id: 431
+unit: public function down()
+file: database/migrations/2026_01_25_050708_add_user_id_to_artisans_table.php
+start line: 24
+end line: 29
+size: 5 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 432
 unit: $()
 file: public/js/main.js
 start line: 38
@@ -3688,7 +3886,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 411
+id: 433
 unit: $()
 file: public/js/main.js
 start line: 129
@@ -3697,7 +3895,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 412
+id: 434
 unit: easeInOutQuad: function()
 file: public/lib/easing/easing.js
 start line: 64
@@ -3706,7 +3904,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 413
+id: 435
 unit: easeInOutCubic: function()
 file: public/lib/easing/easing.js
 start line: 75
@@ -3715,7 +3913,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 414
+id: 436
 unit: easeInOutQuart: function()
 file: public/lib/easing/easing.js
 start line: 86
@@ -3724,7 +3922,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 415
+id: 437
 unit: easeInOutQuint: function()
 file: public/lib/easing/easing.js
 start line: 97
@@ -3733,7 +3931,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 416
+id: 438
 unit: easeInOutExpo: function()
 file: public/lib/easing/easing.js
 start line: 117
@@ -3742,7 +3940,7 @@ size: 5 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 417
+id: 439
 unit: easeInOutCirc: function()
 file: public/lib/easing/easing.js
 start line: 128
@@ -3751,7 +3949,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 418
+id: 440
 unit: easeInOutElastic: function()
 file: public/lib/easing/easing.js
 start line: 141
@@ -3760,7 +3958,7 @@ size: 5 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 419
+id: 441
 unit: easeInOutBack: function()
 file: public/lib/easing/easing.js
 start line: 152
@@ -3769,7 +3967,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 420
+id: 442
 unit: function getStyleSize()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 299
@@ -3778,7 +3976,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 421
+id: 443
 unit: utils.toDashed = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 717
@@ -3787,7 +3985,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 422
+id: 444
 unit: proto.getXValue = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 957
@@ -3796,7 +3994,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 423
+id: 445
 unit: proto.getYValue = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 963
@@ -3805,7 +4003,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 424
+id: 446
 unit: function toDashedAll()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1090
@@ -3814,7 +4012,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 425
+id: 447
 unit: proto.disableTransition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1174
@@ -3823,7 +4021,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 426
+id: 448
 unit: proto.removeElem = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1214
@@ -3832,7 +4030,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 427
+id: 449
 unit: proto.onRevealTransitionEnd = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1254
@@ -3841,7 +4039,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 428
+id: 450
 unit: proto._getOption = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1463
@@ -3850,7 +4048,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 429
+id: 451
 unit: proto.getItemElements = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1537
@@ -3859,7 +4057,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 430
+id: 452
 unit: proto.layoutItems = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1609
@@ -3868,7 +4066,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 431
+id: 453
 unit: proto._getItemsForLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1623
@@ -3877,7 +4075,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 432
+id: 454
 unit: proto.needsResizeLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1979
@@ -3886,7 +4084,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 433
+id: 455
 unit: Outlayer.data = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2178
@@ -3895,7 +4093,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 434
+id: 456
 unit: proto._create = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2304
@@ -3904,7 +4102,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 435
+id: 457
 unit: proto.needsVerticalResizeLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2412
@@ -3913,7 +4111,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 436
+id: 458
 unit: proto.needsResizeLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2731
@@ -3922,7 +4120,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 437
+id: 459
 unit: function arrangeParallelCallback()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3153
@@ -3931,7 +4129,7 @@ size: 5 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 438
+id: 460
 unit: proto.getFilteredItemElements = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3550
@@ -3940,7 +4138,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 439
+id: 461
 unit: right: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 115
@@ -3949,7 +4147,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 440
+id: 462
 unit: right: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 122
@@ -3958,7 +4156,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 441
+id: 463
 unit: Lightbox.prototype.sizeOverlay = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 341
@@ -3967,7 +4165,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 442
+id: 464
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 406
@@ -3976,7 +4174,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 443
+id: 465
 unit: Owl.prototype.leave = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1541
@@ -3985,7 +4183,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 444
+id: 466
 unit: Owl.prototype.suppress = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1586
@@ -3994,7 +4192,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 445
+id: 467
 unit: Owl.prototype.release = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1597
@@ -4003,7 +4201,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 446
+id: 468
 unit: Video.prototype.isInFullScreen = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2338
@@ -4012,7 +4210,7 @@ size: 5 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 447
+id: 469
 unit: complete: function()
 file: public/lib/slick/slick.js
 start line: 303
@@ -4021,7 +4219,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 448
+id: 470
 unit: Slick.prototype.cleanUpSlideEvents = function()
 file: public/lib/slick/slick.js
 start line: 811
@@ -4030,7 +4228,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 449
+id: 471
 unit: Slick.prototype.orientationChange = function()
 file: public/lib/slick/slick.js
 start line: 1655
@@ -4039,7 +4237,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 450
+id: 472
 unit: Slick.prototype.pause = Slick.prototype.slickPause = function()
 file: public/lib/slick/slick.js
 start line: 1664
@@ -4048,7 +4246,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 451
+id: 473
 unit: Slick.prototype.unslick = function()
 file: public/lib/slick/slick.js
 start line: 2911
@@ -4057,7 +4255,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 452
+id: 474
 unit: function _classCallCheck()
 file: public/lib/wow/wow.js
 start line: 28
@@ -4066,7 +4264,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 453
+id: 475
 unit: function WeakMap()
 file: public/lib/wow/wow.js
 start line: 139
@@ -4075,7 +4273,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 454
+id: 476
 unit: var MutationObserver = window.MutationObserver || window.WebkitMutationObserver || window.MozMutationObserver ||()
 file: public/lib/wow/wow.js
 start line: 177
@@ -4084,7 +4282,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 455
+id: 477
 unit: value: function sync()
 file: public/lib/wow/wow.js
 start line: 322
@@ -4093,7 +4291,133 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 456
+id: 478
+unit: public function artisans()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 30
+end line: 33
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 479
+unit: public function societes()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 35
+end line: 38
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 480
+unit: public function users()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 40
+end line: 43
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 481
+unit: public function messages()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 45
+end line: 48
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 482
+unit: public function professions()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 50
+end line: 53
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 483
+unit: public function deleteUser()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 55
+end line: 58
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 484
+unit: public function deleteArtisan()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 60
+end line: 63
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 485
+unit: public function deleteSociete()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 65
+end line: 68
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 486
+unit: public function deleteMessage()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 70
+end line: 73
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 487
+unit: public function deleteProfession()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 75
+end line: 78
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 488
+unit: public function editUser()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 80
+end line: 83
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 489
+unit: public function editProfession()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 102
+end line: 105
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 490
+unit: public function editArtisan()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 145
+end line: 148
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 491
+unit: public function editSociete()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 173
+end line: 176
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 492
 unit: public function __construct()
 file: app/Http/Controllers/Auth/ConfirmPasswordController.php
 start line: 35
@@ -4102,7 +4426,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 457
+id: 493
 unit: public function __construct()
 file: app/Http/Controllers/Auth/RegisterController.php
 start line: 38
@@ -4111,7 +4435,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 458
+id: 494
 unit: public function index()
 file: app/Http/Controllers/AuthController.php
 start line: 13
@@ -4120,7 +4444,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 459
+id: 495
 unit: public function profession()
 file: app/Models/Artisan.php
 start line: 18
@@ -4129,7 +4453,97 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 460
+id: 496
+unit: public function user()
+file: app/Models/Artisan.php
+start line: 22
+end line: 25
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 497
+unit: public function messages()
+file: app/Models/Conversation.php
+start line: 14
+end line: 17
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 498
+unit: public function user()
+file: app/Models/Conversation.php
+start line: 19
+end line: 22
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 499
+unit: public function artisan()
+file: app/Models/Conversation.php
+start line: 24
+end line: 27
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 500
+unit: public function conversation()
+file: app/Models/Devis.php
+start line: 18
+end line: 21
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 501
+unit: public function artisan()
+file: app/Models/Devis.php
+start line: 23
+end line: 26
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 502
+unit: public function client()
+file: app/Models/Devis.php
+start line: 28
+end line: 31
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 503
+unit: public function conversation()
+file: app/Models/MessagesUserArt.php
+start line: 18
+end line: 21
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 504
+unit: public function sender()
+file: app/Models/MessagesUserArt.php
+start line: 23
+end line: 26
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 505
+unit: public function receiver()
+file: app/Models/MessagesUserArt.php
+start line: 28
+end line: 31
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 506
 unit: public function artisans()
 file: app/Models/Profession.php
 start line: 14
@@ -4138,7 +4552,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 461
+id: 507
 unit: public function down()
 file: database/migrations/2025_05_27_164600_create_messages_table.php
 start line: 27
@@ -4147,7 +4561,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 462
+id: 508
 unit: public function down()
 file: database/migrations/2025_06_01_152838_create_artisans_table.php
 start line: 32
@@ -4156,7 +4570,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 463
+id: 509
 unit: public function down()
 file: database/migrations/2025_06_01_152839_create_professions_table.php
 start line: 27
@@ -4165,7 +4579,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 464
+id: 510
 unit: public function down()
 file: database/migrations/2025_06_01_152840_create_services_table.php
 start line: 27
@@ -4174,7 +4588,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 465
+id: 511
 unit: public function down()
 file: database/migrations/2025_06_01_152840_create_societe_artisans_table.php
 start line: 27
@@ -4183,7 +4597,34 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 466
+id: 512
+unit: public function down()
+file: database/migrations/2026_01_25_043417_create_conversations_table.php
+start line: 29
+end line: 32
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 513
+unit: public function down()
+file: database/migrations/2026_01_25_043501_create_messages_user_art_table.php
+start line: 32
+end line: 35
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 514
+unit: public function down()
+file: database/migrations/2026_02_06_041133_create_devis_table.php
+start line: 37
+end line: 40
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 515
 unit: $()
 file: public/js/main.js
 start line: 16
@@ -4192,7 +4633,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 467
+id: 516
 unit: $()
 file: public/js/main.js
 start line: 35
@@ -4201,7 +4642,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 468
+id: 517
 unit: easeInElastic: function()
 file: public/lib/easing/easing.js
 start line: 133
@@ -4210,7 +4651,7 @@ size: 4 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 469
+id: 518
 unit: easeOutElastic: function()
 file: public/lib/easing/easing.js
 start line: 137
@@ -4219,7 +4660,7 @@ size: 4 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 470
+id: 519
 unit: proto.allOff = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 259
@@ -4228,7 +4669,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 471
+id: 520
 unit: utils.debounceMethod = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 682
@@ -4237,7 +4678,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 3
 
-id: 472
+id: 521
 unit: proto.goTo = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1012
@@ -4246,7 +4687,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 473
+id: 522
 unit: proto.setPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1019
@@ -4255,7 +4696,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 474
+id: 523
 unit: proto.stagger = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1206
@@ -4264,7 +4705,7 @@ size: 4 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 475
+id: 524
 unit: proto.bindResize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1946
@@ -4273,7 +4714,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 476
+id: 525
 unit: proto.unbindResize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1954
@@ -4282,7 +4723,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 477
+id: 526
 unit: proto.revealItemElements = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2075
@@ -4291,7 +4732,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 478
+id: 527
 unit: proto.hideItemElements = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2084
@@ -4300,7 +4741,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 479
+id: 528
 unit: proto.getFirstItemSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2456
@@ -4309,7 +4750,7 @@ size: 4 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 480
+id: 529
 unit: proto.getSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2467
@@ -4318,7 +4759,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 481
+id: 530
 unit: proto.measureColumns = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2796
@@ -4327,7 +4768,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 482
+id: 531
 unit: proto.reloadItems = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3051
@@ -4336,7 +4777,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 483
+id: 532
 unit: proto._hideReveal = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3131
@@ -4345,7 +4786,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 484
+id: 533
 unit: proto._resetLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3403
@@ -4354,7 +4795,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 485
+id: 534
 unit: $()
 file: public/lib/lightbox/js/lightbox.js
 start line: 78
@@ -4363,7 +4804,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 486
+id: 535
 unit: $()
 file: public/lib/lightbox/js/lightbox.js
 start line: 88
@@ -4372,7 +4813,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 487
+id: 536
 unit: bottom: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 116
@@ -4381,7 +4822,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 488
+id: 537
 unit: bottom: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 123
@@ -4390,7 +4831,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 489
+id: 538
 unit: Owl.prototype.onThrottledResize = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 635
@@ -4399,7 +4840,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 490
+id: 539
 unit: Owl.prototype.relative = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1014
@@ -4408,7 +4849,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 491
+id: 540
 unit: Owl.prototype.next = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1229
@@ -4417,7 +4858,7 @@ size: 4 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 492
+id: 541
 unit: Owl.prototype.prev = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1239
@@ -4426,7 +4867,7 @@ size: 4 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 493
+id: 542
 unit: success: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2258
@@ -4435,7 +4876,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 494
+id: 543
 unit: success: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2269
@@ -4444,7 +4885,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 495
+id: 544
 unit: setTimeout()
 file: public/lib/slick/slick.js
 start line: 323
@@ -4453,7 +4894,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 496
+id: 545
 unit: setTimeout()
 file: public/lib/slick/slick.js
 start line: 957
@@ -4462,7 +4903,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 497
+id: 546
 unit: Slick.prototype.getCurrent = Slick.prototype.slickCurrentSlide = function()
 file: public/lib/slick/slick.js
 start line: 1036
@@ -4471,7 +4912,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 498
+id: 547
 unit: Slick.prototype.getOption = Slick.prototype.slickGetOption = function()
 file: public/lib/slick/slick.js
 start line: 1184
@@ -4480,7 +4921,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 499
+id: 548
 unit: function isMobile()
 file: public/lib/wow/wow.js
 start line: 66
@@ -4489,7 +4930,16 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 500
+id: 549
+unit: public function createProfession()
+file: app/Http/Controllers/admin/DashboardController.php
+start line: 125
+end line: 127
+size: 3 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 550
 unit: public function about()
 file: app/Http/Controllers/HomeController.php
 start line: 17
@@ -4498,7 +4948,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 501
+id: 551
 unit: public function company()
 file: app/Http/Controllers/HomeController.php
 start line: 21
@@ -4507,7 +4957,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 502
+id: 552
 unit: public function artisan()
 file: app/Http/Controllers/HomeController.php
 start line: 24
@@ -4516,7 +4966,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 503
+id: 553
 unit: public function contact()
 file: app/Http/Controllers/HomeController.php
 start line: 27
@@ -4525,7 +4975,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 504
+id: 554
 unit: public function register()
 file: app/Providers/AppServiceProvider.php
 start line: 12
@@ -4534,7 +4984,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 505
+id: 555
 unit: public function boot()
 file: app/Providers/AppServiceProvider.php
 start line: 20
@@ -4543,7 +4993,16 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 506
+id: 556
+unit: public function down()
+file: database/migrations/2026_02_06_043838_fix_devis_foreign_key.php
+start line: 24
+end line: 27
+size: 3 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 557
 unit: $()
 file: public/js/main.js
 start line: 62
@@ -4552,7 +5011,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 507
+id: 558
 unit: $()
 file: public/js/main.js
 start line: 67
@@ -4561,7 +5020,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 508
+id: 559
 unit: $()
 file: public/js/main.js
 start line: 71
@@ -4570,7 +5029,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 509
+id: 560
 unit: define()
 file: public/lib/easing/easing.js
 start line: 11
@@ -4579,7 +5038,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 510
+id: 561
 unit: swing: function()
 file: public/lib/easing/easing.js
 start line: 55
@@ -4588,7 +5047,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 511
+id: 562
 unit: easeInQuad: function()
 file: public/lib/easing/easing.js
 start line: 58
@@ -4597,7 +5056,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 512
+id: 563
 unit: easeOutQuad: function()
 file: public/lib/easing/easing.js
 start line: 61
@@ -4606,7 +5065,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 513
+id: 564
 unit: easeInCubic: function()
 file: public/lib/easing/easing.js
 start line: 69
@@ -4615,7 +5074,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 514
+id: 565
 unit: easeOutCubic: function()
 file: public/lib/easing/easing.js
 start line: 72
@@ -4624,7 +5083,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 515
+id: 566
 unit: easeInQuart: function()
 file: public/lib/easing/easing.js
 start line: 80
@@ -4633,7 +5092,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 516
+id: 567
 unit: easeOutQuart: function()
 file: public/lib/easing/easing.js
 start line: 83
@@ -4642,7 +5101,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 517
+id: 568
 unit: easeInQuint: function()
 file: public/lib/easing/easing.js
 start line: 91
@@ -4651,7 +5110,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 518
+id: 569
 unit: easeOutQuint: function()
 file: public/lib/easing/easing.js
 start line: 94
@@ -4660,7 +5119,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 519
+id: 570
 unit: easeInSine: function()
 file: public/lib/easing/easing.js
 start line: 102
@@ -4669,7 +5128,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 520
+id: 571
 unit: easeOutSine: function()
 file: public/lib/easing/easing.js
 start line: 105
@@ -4678,7 +5137,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 521
+id: 572
 unit: easeInOutSine: function()
 file: public/lib/easing/easing.js
 start line: 108
@@ -4687,7 +5146,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 522
+id: 573
 unit: easeInExpo: function()
 file: public/lib/easing/easing.js
 start line: 111
@@ -4696,7 +5155,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 523
+id: 574
 unit: easeOutExpo: function()
 file: public/lib/easing/easing.js
 start line: 114
@@ -4705,7 +5164,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 524
+id: 575
 unit: easeInCirc: function()
 file: public/lib/easing/easing.js
 start line: 122
@@ -4714,7 +5173,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 525
+id: 576
 unit: easeOutCirc: function()
 file: public/lib/easing/easing.js
 start line: 125
@@ -4723,7 +5182,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 526
+id: 577
 unit: easeInBack: function()
 file: public/lib/easing/easing.js
 start line: 146
@@ -4732,7 +5191,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 527
+id: 578
 unit: easeOutBack: function()
 file: public/lib/easing/easing.js
 start line: 149
@@ -4741,7 +5200,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 528
+id: 579
 unit: easeInBounce: function()
 file: public/lib/easing/easing.js
 start line: 157
@@ -4750,7 +5209,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 529
+id: 580
 unit: define()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 24
@@ -4759,7 +5218,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 3
 
-id: 530
+id: 581
 unit: function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 52
@@ -4768,7 +5227,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 531
+id: 582
 unit: function jQueryBridget()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 58
@@ -4777,7 +5236,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 3
 
-id: 532
+id: 583
 unit: define()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 282
@@ -4786,7 +5245,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 3
 
-id: 533
+id: 584
 unit: function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 309
@@ -4795,7 +5254,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 534
+id: 585
 unit: utils.modulo = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 582
@@ -4804,7 +5263,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 535
+id: 586
 unit: proto.getSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 881
@@ -4813,7 +5272,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 536
+id: 587
 unit: proto.onwebkitTransitionEnd = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1129
@@ -4822,7 +5281,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 537
+id: 588
 unit: proto.onotransitionend = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1133
@@ -4831,7 +5290,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 538
+id: 589
 unit: proto.removeTransitionStyles = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1199
@@ -4840,7 +5299,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 539
+id: 590
 unit: function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1343
@@ -4849,7 +5308,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 4
 
-id: 540
+id: 591
 unit: proto.option = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1456
@@ -4858,7 +5317,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 541
+id: 592
 unit: proto.reloadItems = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1497
@@ -4867,7 +5326,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 542
+id: 593
 unit: proto._filterFindItemElements = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1529
@@ -4876,7 +5335,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 543
+id: 594
 unit: proto._resetLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1568
@@ -4885,7 +5344,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 544
+id: 595
 unit: proto.getSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1573
@@ -4894,7 +5353,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 545
+id: 596
 unit: proto._postLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1713
@@ -4903,7 +5362,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 546
+id: 597
 unit: proto._emitCompleteOnItems = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1764
@@ -4912,7 +5371,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 547
+id: 598
 unit: function onComplete()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1766
@@ -4921,7 +5380,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 548
+id: 599
 unit: proto.onresize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 1959
@@ -4930,7 +5389,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 549
+id: 600
 unit: function SubClass()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2221
@@ -4939,7 +5398,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 550
+id: 601
 unit: function Item()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2297
@@ -4948,7 +5407,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 551
+id: 602
 unit: proto[ methodName ] = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2404
@@ -4957,7 +5416,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 552
+id: 603
 unit: proto._getMeasurement = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2423
@@ -4966,7 +5425,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 553
+id: 604
 unit: proto.getColumnWidth = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2427
@@ -4975,7 +5434,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 554
+id: 605
 unit: proto.getRowHeight = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2431
@@ -4984,7 +5443,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 555
+id: 606
 unit: proto.layout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2463
@@ -4993,7 +5452,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 556
+id: 607
 unit: function Mode()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2478
@@ -5002,7 +5461,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 557
+id: 608
 unit: proto._getContainerSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2877
@@ -5011,7 +5470,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 558
+id: 609
 unit: proto._resetLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2919
@@ -5020,7 +5479,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 559
+id: 610
 unit: proto._getContainerSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2932
@@ -5029,7 +5488,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 560
+id: 611
 unit: function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2967
@@ -5038,7 +5497,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 6
 
-id: 561
+id: 612
 unit: function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3010
@@ -5047,7 +5506,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 562
+id: 613
 unit: function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3013
@@ -5056,7 +5515,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 563
+id: 614
 unit: function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3304
@@ -5065,7 +5524,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 564
+id: 615
 unit: '': function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3332
@@ -5074,7 +5533,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 565
+id: 616
 unit: '': function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3335
@@ -5083,7 +5542,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 566
+id: 617
 unit: proto._getItemLayoutPosition = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3409
@@ -5092,7 +5551,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 567
+id: 618
 unit: proto._manageStamp = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3413
@@ -5101,7 +5560,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 568
+id: 619
 unit: proto._getContainerSize = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3417
@@ -5110,7 +5569,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 569
+id: 620
 unit: proto.needsResizeLayout = function()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 3421
@@ -5119,7 +5578,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 570
+id: 621
 unit: Lightbox.prototype.option = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 67
@@ -5128,7 +5587,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 571
+id: 622
 unit: Lightbox.prototype.imageCountLabel = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 71
@@ -5137,7 +5596,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 572
+id: 623
 unit: Lightbox.prototype.init = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 75
@@ -5146,7 +5605,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 573
+id: 624
 unit: Lightbox.prototype.enable = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 86
@@ -5155,7 +5614,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 574
+id: 625
 unit: Lightbox.prototype.build = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 96
@@ -5164,7 +5623,7 @@ size: 3 LOC
 McCabe index: 7
 number of parameters: 0
 
-id: 575
+id: 626
 unit: left: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 117
@@ -5173,7 +5632,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 576
+id: 627
 unit: left: parseInt()
 file: public/lib/lightbox/js/lightbox.js
 start line: 124
@@ -5182,7 +5641,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 577
+id: 628
 unit: setTimeout()
 file: public/lib/lightbox/js/lightbox.js
 start line: 183
@@ -5191,7 +5650,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 578
+id: 629
 unit: Lightbox.prototype.enableKeyboardNav = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 472
@@ -5200,7 +5659,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 579
+id: 630
 unit: Lightbox.prototype.disableKeyboardNav = function()
 file: public/lib/lightbox/js/lightbox.js
 start line: 476
@@ -5209,7 +5668,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 580
+id: 631
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 269
@@ -5218,7 +5677,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 581
+id: 632
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 274
@@ -5227,7 +5686,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 582
+id: 633
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 279
@@ -5236,7 +5695,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 583
+id: 634
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 401
@@ -5245,7 +5704,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 584
+id: 635
 unit: run: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 413
@@ -5254,7 +5713,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 585
+id: 636
 unit: Owl.prototype.is = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 915
@@ -5263,7 +5722,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 586
+id: 637
 unit: Owl.prototype.minimum = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1064
@@ -5272,7 +5731,7 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 587
+id: 638
 unit: Owl.prototype.isNumeric = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 1636
@@ -5281,7 +5740,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 588
+id: 639
 unit: Autoplay.prototype._setAutoPlayInterval = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 2638
@@ -5290,7 +5749,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 589
+id: 640
 unit: Navigation.prototype.next = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3035
@@ -5299,7 +5758,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 590
+id: 641
 unit: Navigation.prototype.prev = function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3044
@@ -5308,7 +5767,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 591
+id: 642
 unit: csstransforms: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3225
@@ -5317,7 +5776,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 592
+id: 643
 unit: csstransforms3d: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3228
@@ -5326,7 +5785,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 593
+id: 644
 unit: csstransitions: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3231
@@ -5335,7 +5794,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 594
+id: 645
 unit: cssanimations: function()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3234
@@ -5344,7 +5803,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 595
+id: 646
 unit: function prefixed()
 file: public/lib/owlcarousel/owl.carousel.js
 start line: 3253
@@ -5353,7 +5812,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 596
+id: 647
 unit: customPaging: function()
 file: public/lib/slick/slick.js
 start line: 54
@@ -5362,7 +5821,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 597
+id: 648
 unit: Slick.prototype.getSlick = function()
 file: public/lib/slick/slick.js
 start line: 1218
@@ -5371,7 +5830,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 598
+id: 649
 unit: Slick.prototype.preventDefault = function()
 file: public/lib/slick/slick.js
 start line: 1730
@@ -5380,7 +5839,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 599
+id: 650
 unit: setTimeout()
 file: public/lib/slick/slick.js
 start line: 1791
@@ -5389,7 +5848,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 600
+id: 651
 unit: function isIn()
 file: public/lib/wow/wow.js
 start line: 52
@@ -5398,7 +5857,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 601
+id: 652
 unit: var WOW = function()
 file: public/lib/wow/wow.js
 start line: 215
@@ -5407,7 +5866,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 602
+id: 653
 unit: value: function cacheAnimationName()
 file: public/lib/wow/wow.js
 start line: 466
@@ -5416,7 +5875,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 603
+id: 654
 unit: value: function cachedAnimationName()
 file: public/lib/wow/wow.js
 start line: 473
@@ -5425,7 +5884,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 604
+id: 655
 unit: value: function scrollHandler()
 file: public/lib/wow/wow.js
 start line: 478
@@ -5434,7 +5893,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 605
+id: 656
 unit: value: function disabled()
 file: public/lib/wow/wow.js
 start line: 532
@@ -5443,16 +5902,16 @@ size: 3 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 606
+id: 657
 unit: success: function()
 file: resources/views/front/art_ind.blade.php
-start line: 171
-end line: 173
+start line: 176
+end line: 178
 size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 607
+id: 658
 unit: success: function()
 file: resources/views/front/art_soc.blade.php
 start line: 157
@@ -5461,7 +5920,7 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 608
+id: 659
 unit: error: function()
 file: resources/views/front/art_soc.blade.php
 start line: 160
@@ -5470,61 +5929,34 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 609
+id: 660
 unit: success: function()
-file: storage/framework/views/1639945e2a31000c17c9cec339739cb6.php
-start line: 171
-end line: 173
+file: storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php
+start line: 176
+end line: 178
 size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 610
+id: 661
 unit: success: function()
-file: storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php
-start line: 153
-end line: 155
-size: 3 LOC
-McCabe index: 1
-number of parameters: 1
-
-id: 611
-unit: error: function()
-file: storage/framework/views/4a73ff01ca5ec3fbdad398e7782007da.php
-start line: 156
-end line: 158
-size: 3 LOC
-McCabe index: 1
-number of parameters: 1
-
-id: 612
-unit: success: function()
-file: storage/framework/views/719f5be912f0694a33aeeb86e195c21a.php
-start line: 167
-end line: 169
-size: 3 LOC
-McCabe index: 1
-number of parameters: 1
-
-id: 613
-unit: success: function()
-file: storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php
+file: storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php
 start line: 158
 end line: 160
 size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 614
+id: 662
 unit: error: function()
-file: storage/framework/views/dc86248c4bb86977317901e4d1bc8904.php
+file: storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php
 start line: 161
 end line: 163
 size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 615
+id: 663
 unit: function subclass()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 2220
@@ -5533,7 +5965,7 @@ size: 2 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 616
+id: 664
 unit: function loadImages()
 file: public/lib/slick/slick.js
 start line: 1520
@@ -5542,7 +5974,7 @@ size: 2 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 617
+id: 665
 unit: function toggleNavbarMethod()
 file: public/js/main.js
 start line: 36
@@ -5551,7 +5983,7 @@ size: 1 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 618
+id: 666
 unit: $()
 file: public/js/main.js
 start line: 60
@@ -5560,7 +5992,7 @@ size: 1 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 619
+id: 667
 unit: function EvEmitter()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 181
@@ -5569,7 +6001,7 @@ size: 1 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 620
+id: 668
 unit: function noop()
 file: public/lib/isotope/isotope.pkgd.js
 start line: 306
@@ -5578,7 +6010,7 @@ size: 1 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 621
+id: 669
 unit: $()
 file: public/lib/slick/slick.js
 start line: 1522
@@ -5587,7 +6019,7 @@ size: 1 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 622
+id: 670
 unit: value: function observe()
 file: public/lib/wow/wow.js
 start line: 189

@@ -1,339 +1,255 @@
-storage/framework/views/6aef6bbd263c66e1bc1a72b0549e978c.php [12:175]:
+resources/views/admin/dashboard.blade.php [1:122]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    <div>
-        <span class="text-xl font-bold lg:text-2xl">Request</span>
-    </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin</title>
 
-    <div class="mt-2">
-        <span><?php echo e($exception->request()->method()); ?></span>
-        <span class="text-gray-500"><?php echo e(Str::start($exception->request()->path(), '/')); ?></span>
-    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white">Headers</span>
-    </div>
+    <style>
+        :root {
+            --primary: #030f27;
+            --accent: #fdbe33;
+            --light: #ffffff;
+            --bg: #f4f6f9;
+        }
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
-        <?php $__empty_1 = true; $__currentLoopData = $exception->requestHeaders(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-            <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
-                <span
-                    data-tippy-content="<?php echo e($key); ?>"
-                    class="lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]"
-                >
-                    <?php echo e($key); ?>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+        }
 
-                </span>
-                <span
-                    class="min-w-0 flex-grow"
-                    style="
-                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
-                    "
-                >
-                    <pre class="scrollbar-hidden overflow-y-hidden text-xs lg:text-sm"><code class="px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x"><?php echo e($value); ?></code></pre>
-                </span>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No headers data</code></pre>
-            </span>
-        <?php endif; ?>
-    </dl>
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: var(--primary);
+            color: var(--light);
+            position: fixed;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white">Body</span>
-    </div>
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
 
-    <div class="mt-1 rounded border dark:border-gray-800">
-        <div class="flex items-center">
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x"><?php echo e($exception->requestBody() ?: 'No body data'); ?></code></pre>
-            </span>
-        </div>
-    </div>
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 16px;
+        }
 
- <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980)): ?>
-<?php $attributes = $__attributesOriginal74daf2d0a9c625ad90327a6043d15980; ?>
-<?php unset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal74daf2d0a9c625ad90327a6043d15980)): ?>
-<?php $component = $__componentOriginal74daf2d0a9c625ad90327a6043d15980; ?>
-<?php unset($__componentOriginal74daf2d0a9c625ad90327a6043d15980); ?>
-<?php endif; ?>
+        .sidebar a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
 
-<?php if (isset($component)) { $__componentOriginal74daf2d0a9c625ad90327a6043d15980 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal74daf2d0a9c625ad90327a6043d15980 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'laravel-exceptions-renderer::components.card','data' => ['class' => 'mt-6 overflow-x-auto']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('laravel-exceptions-renderer::card'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['class' => 'mt-6 overflow-x-auto']); ?>
-    <div>
-        <span class="text-xl font-bold lg:text-2xl">Application</span>
-    </div>
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white"> Routing </span>
-    </div>
+        h1 {
+            color: var(--primary);
+        }
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
-        <?php $__empty_1 = true; $__currentLoopData = $exception->applicationRouteContext(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $name => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-            <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
-                <span
-                    data-tippy-content="<?php echo e($name); ?>"
-                    class="lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]"
-                    ><?php echo e($name); ?></span
-                >
-                <span
-                    class="min-w-0 flex-grow"
-                    style="
-                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
-                    "
-                >
-                    <pre class="scrollbar-hidden overflow-y-hidden text-xs lg:text-sm"><code class="px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x"><?php echo e($value); ?></code></pre>
-                </span>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No routing data</code></pre>
-            </span>
-        <?php endif; ?>
-    </dl>
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-    <?php if($routeParametersContext = $exception->applicationRouteParametersContext()): ?>
-        <div class="mt-4">
-            <span class="text-gray-900 dark:text-white text-sm"> Routing Parameters </span>
-        </div>
+        .card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid var(--accent);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
 
-        <div class="mt-1 rounded border dark:border-gray-800">
-            <div class="flex items-center">
-                <span
-                    class="min-w-0 flex-grow"
-                    style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-                >
-                    <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x"><?php echo e($routeParametersContext); ?></code></pre>
-                </span>
-            </div>
-        </div>
-    <?php endif; ?>
+        .card:hover {
+            transform: translateY(-4px);
+        }
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white"> Database Queries </span>
-        <span class="text-xs text-gray-500 dark:text-gray-400">
-            <?php if(count($exception->applicationQueries()) === 100): ?>
-                only the first 100 queries are displayed
-            <?php endif; ?>
-        </span>
-    </div>
+        .card h3 {
+            margin: 0;
+            color: var(--primary);
+        }
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
-        <?php $__empty_1 = true; $__currentLoopData = $exception->applicationQueries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as ['connectionName' => $connectionName, 'sql' => $sql, 'time' => $time]): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-            <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
-                <div class="lg:text-md w-[8rem] flex-none truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]">
-                    <span><?php echo e($connectionName); ?></span>
-                    <span class="hidden text-xs text-gray-500 lg:inline-block">(<?php echo e($time); ?> ms)</span>
-                </div>
-                <span
-                    class="min-w-0 flex-grow"
-                    style="
-                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
-                    "
-                >
-                    <pre class="scrollbar-hidden overflow-y-hidden text-xs lg:text-sm"><code class="px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x"><?php echo e($sql); ?></code></pre>
-                </span>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No query data</code></pre>
-            </span>
-        <?php endif; ?>
-    </dl>
+        .card p {
+            font-size: 28px;
+            margin-top: 10px;
+            color: var(--accent);
+        }
+
+        /* Responsive sidebar */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Admin</h2>
+        <a href="#">Dashboard</a>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/a4c9e41ce8c5dee08cc2762cab59d22f.php [12:175]:
+storage/framework/views/e83e3487037beb8e85372857271fd2d8.php [1:122]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    <div>
-        <span class="text-xl font-bold lg:text-2xl">Request</span>
-    </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin</title>
 
-    <div class="mt-2">
-        <span><?php echo e($exception->request()->method()); ?></span>
-        <span class="text-gray-500"><?php echo e(Str::start($exception->request()->path(), '/')); ?></span>
-    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white">Headers</span>
-    </div>
+    <style>
+        :root {
+            --primary: #030f27;
+            --accent: #fdbe33;
+            --light: #ffffff;
+            --bg: #f4f6f9;
+        }
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
-        <?php $__empty_1 = true; $__currentLoopData = $exception->requestHeaders(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-            <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
-                <span
-                    data-tippy-content="<?php echo e($key); ?>"
-                    class="lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]"
-                >
-                    <?php echo e($key); ?>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+        }
 
-                </span>
-                <span
-                    class="min-w-0 flex-grow"
-                    style="
-                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
-                    "
-                >
-                    <pre class="scrollbar-hidden overflow-y-hidden text-xs lg:text-sm"><code class="px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x"><?php echo e($value); ?></code></pre>
-                </span>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No headers data</code></pre>
-            </span>
-        <?php endif; ?>
-    </dl>
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: var(--primary);
+            color: var(--light);
+            position: fixed;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white">Body</span>
-    </div>
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
 
-    <div class="mt-1 rounded border dark:border-gray-800">
-        <div class="flex items-center">
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x"><?php echo e($exception->requestBody() ?: 'No body data'); ?></code></pre>
-            </span>
-        </div>
-    </div>
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 16px;
+        }
 
- <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980)): ?>
-<?php $attributes = $__attributesOriginal74daf2d0a9c625ad90327a6043d15980; ?>
-<?php unset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal74daf2d0a9c625ad90327a6043d15980)): ?>
-<?php $component = $__componentOriginal74daf2d0a9c625ad90327a6043d15980; ?>
-<?php unset($__componentOriginal74daf2d0a9c625ad90327a6043d15980); ?>
-<?php endif; ?>
+        .sidebar a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
 
-<?php if (isset($component)) { $__componentOriginal74daf2d0a9c625ad90327a6043d15980 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal74daf2d0a9c625ad90327a6043d15980 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'laravel-exceptions-renderer::components.card','data' => ['class' => 'mt-6 overflow-x-auto']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('laravel-exceptions-renderer::card'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['class' => 'mt-6 overflow-x-auto']); ?>
-    <div>
-        <span class="text-xl font-bold lg:text-2xl">Application</span>
-    </div>
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white"> Routing </span>
-    </div>
+        h1 {
+            color: var(--primary);
+        }
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
-        <?php $__empty_1 = true; $__currentLoopData = $exception->applicationRouteContext(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $name => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-            <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
-                <span
-                    data-tippy-content="<?php echo e($name); ?>"
-                    class="lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]"
-                    ><?php echo e($name); ?></span
-                >
-                <span
-                    class="min-w-0 flex-grow"
-                    style="
-                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
-                    "
-                >
-                    <pre class="scrollbar-hidden overflow-y-hidden text-xs lg:text-sm"><code class="px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x"><?php echo e($value); ?></code></pre>
-                </span>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No routing data</code></pre>
-            </span>
-        <?php endif; ?>
-    </dl>
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-    <?php if($routeParametersContext = $exception->applicationRouteParametersContext()): ?>
-        <div class="mt-4">
-            <span class="text-gray-900 dark:text-white text-sm"> Routing Parameters </span>
-        </div>
+        .card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid var(--accent);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
 
-        <div class="mt-1 rounded border dark:border-gray-800">
-            <div class="flex items-center">
-                <span
-                    class="min-w-0 flex-grow"
-                    style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-                >
-                    <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x"><?php echo e($routeParametersContext); ?></code></pre>
-                </span>
-            </div>
-        </div>
-    <?php endif; ?>
+        .card:hover {
+            transform: translateY(-4px);
+        }
 
-    <div class="mt-4">
-        <span class="font-semibold text-gray-900 dark:text-white"> Database Queries </span>
-        <span class="text-xs text-gray-500 dark:text-gray-400">
-            <?php if(count($exception->applicationQueries()) === 100): ?>
-                only the first 100 queries are displayed
-            <?php endif; ?>
-        </span>
-    </div>
+        .card h3 {
+            margin: 0;
+            color: var(--primary);
+        }
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
-        <?php $__empty_1 = true; $__currentLoopData = $exception->applicationQueries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as ['connectionName' => $connectionName, 'sql' => $sql, 'time' => $time]): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-            <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
-                <div class="lg:text-md w-[8rem] flex-none truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]">
-                    <span><?php echo e($connectionName); ?></span>
-                    <span class="hidden text-xs text-gray-500 lg:inline-block">(<?php echo e($time); ?> ms)</span>
-                </div>
-                <span
-                    class="min-w-0 flex-grow"
-                    style="
-                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
-                    "
-                >
-                    <pre class="scrollbar-hidden overflow-y-hidden text-xs lg:text-sm"><code class="px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x"><?php echo e($sql); ?></code></pre>
-                </span>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-            <span
-                class="min-w-0 flex-grow"
-                style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
-            >
-                <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No query data</code></pre>
-            </span>
-        <?php endif; ?>
-    </dl>
+        .card p {
+            font-size: 28px;
+            margin-top: 10px;
+            color: var(--accent);
+        }
+
+        /* Responsive sidebar */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Admin</h2>
+        <a href="#">Dashboard</a>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

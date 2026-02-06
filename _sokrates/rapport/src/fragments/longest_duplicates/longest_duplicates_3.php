@@ -1,285 +1,317 @@
-resources/views/layout/question.blade.php [1:137]:
+resources/views/admin/layout.blade.php [8:160]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-<div class="faqs">
-    <div class="container">
-        <div class="section-header text-center">
-            <p>Foire Aux Questions</p>
-            <h2>Vous vous demandez peut-être</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div id="accordion-1">
-                    <div class="card wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne">
-                                Comment trouver un artisan dans ma ville ?
-                            </a>
-                        </div>
-                        <div id="collapseOne" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Utilisez la barre de recherche sur Khdamli et filtrez par ville et type de service pour trouver un artisan près de chez vous.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseTwo">
-                                Est-ce que les artisans sont vérifiés ?
-                            </a>
-                        </div>
-                        <div id="collapseTwo" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Oui, chaque artisan est vérifié par notre équipe avant d’être publié sur la plateforme. Nous contrôlons leurs coordonnées et compétences.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.3s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseThree">
-                                Puis-je contacter un artisan directement ?
-                            </a>
-                        </div>
-                        <div id="collapseThree" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Oui, vous pouvez contacter l’artisan via téléphone, WhatsApp ou via le formulaire intégré dans son profil.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.4s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseFour">
-                                Quels types de services sont disponibles ?
-                            </a>
-                        </div>
-                        <div id="collapseFour" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Vous trouverez des plombiers, électriciens, coiffeurs, peintres, maçons, soudeurs, mécaniciens et bien d’autres artisans.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.5s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseFive">
-                                Comment laisser un avis sur un artisan ?
-                            </a>
-                        </div>
-                        <div id="collapseFive" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Après avoir collaboré avec un artisan, vous pouvez laisser une note et un avis depuis votre tableau de bord utilisateur.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <style>
+        :root {
+            --primary: #030f27;
+            --accent: #fdbe33;
+            --light: #ffffff;
+            --bg: #f4f6f9;
+        }
 
-            <div class="col-md-6">
-                <div id="accordion-2">
-                    <div class="card wow fadeInRight" data-wow-delay="0.1s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
-                                Khdamli est-il disponible partout dan le pays ?
-                            </a>
-                        </div>
-                        <div id="collapseSix" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Oui, notre plateforme couvre tout le pays. Le nombre d’artisans varie selon les régions.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
-                                Combien coûte l'utilisation de Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Khdamli est totalement gratuit pour les utilisateurs. Vous ne payez que l’artisan pour le service rendu.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseEight">
-                                Puis-je réserver un artisan à l'avance ?
-                            </a>
-                        </div>
-                        <div id="collapseEight" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Oui, certains artisans proposent un calendrier de disponibilité pour permettre les réservations à l’avance.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseNine">
-                                Puis-je signaler un artisan ?
-                            </a>
-                        </div>
-                        <div id="collapseNine" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Bien sûr. Si vous avez eu une mauvaise expérience, vous pouvez signaler un artisan directement depuis son profil.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.5s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseTen">
-                                Comment devenir artisan sur Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseTen" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Cliquez sur "S'inscrire comme artisan", remplissez vos informations, ajoutez votre photo et vos services. Notre équipe vérifiera votre profil avant activation.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: var(--primary);
+            color: var(--light);
+            position: fixed;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+        }
+
+        /* Table styling */
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: var(--primary);
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        .btn-edit {
+            background: #4CAF50;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-delete {
+            background: #e63946;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .action-buttons {
+    display: flex;
+    gap: 10px; /* espace entre les boutons */
+    align-items: center;
+}
+.action-buttons form {
+    margin: 0; /* retire le margin par défaut */
+}
+
+        /* Responsive sidebar */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+
+        .btn-add {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.btn-add:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Admin</h2>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-storage/framework/views/028bce5b410dfba0ce555c594dc621cc.php [1:137]:
+storage/framework/views/3add5ab67003a3b580123d4b75450e14.php [8:160]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-<div class="faqs">
-    <div class="container">
-        <div class="section-header text-center">
-            <p>Foire Aux Questions</p>
-            <h2>Vous vous demandez peut-être</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div id="accordion-1">
-                    <div class="card wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne">
-                                Comment trouver un artisan dans ma ville ?
-                            </a>
-                        </div>
-                        <div id="collapseOne" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Utilisez la barre de recherche sur Khdamli et filtrez par ville et type de service pour trouver un artisan près de chez vous.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseTwo">
-                                Est-ce que les artisans sont vérifiés ?
-                            </a>
-                        </div>
-                        <div id="collapseTwo" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Oui, chaque artisan est vérifié par notre équipe avant d’être publié sur la plateforme. Nous contrôlons leurs coordonnées et compétences.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.3s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseThree">
-                                Puis-je contacter un artisan directement ?
-                            </a>
-                        </div>
-                        <div id="collapseThree" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Oui, vous pouvez contacter l’artisan via téléphone, WhatsApp ou via le formulaire intégré dans son profil.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.4s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseFour">
-                                Quels types de services sont disponibles ?
-                            </a>
-                        </div>
-                        <div id="collapseFour" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Vous trouverez des plombiers, électriciens, coiffeurs, peintres, maçons, soudeurs, mécaniciens et bien d’autres artisans.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInLeft" data-wow-delay="0.5s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseFive">
-                                Comment laisser un avis sur un artisan ?
-                            </a>
-                        </div>
-                        <div id="collapseFive" class="collapse" data-parent="#accordion-1">
-                            <div class="card-body">
-                                Après avoir collaboré avec un artisan, vous pouvez laisser une note et un avis depuis votre tableau de bord utilisateur.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <style>
+        :root {
+            --primary: #030f27;
+            --accent: #fdbe33;
+            --light: #ffffff;
+            --bg: #f4f6f9;
+        }
 
-            <div class="col-md-6">
-                <div id="accordion-2">
-                    <div class="card wow fadeInRight" data-wow-delay="0.1s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
-                                Khdamli est-il disponible partout dan le pays ?
-                            </a>
-                        </div>
-                        <div id="collapseSix" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Oui, notre plateforme couvre tout le pays. Le nombre d’artisans varie selon les régions.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
-                                Combien coûte l'utilisation de Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Khdamli est totalement gratuit pour les utilisateurs. Vous ne payez que l’artisan pour le service rendu.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseEight">
-                                Puis-je réserver un artisan à l'avance ?
-                            </a>
-                        </div>
-                        <div id="collapseEight" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Oui, certains artisans proposent un calendrier de disponibilité pour permettre les réservations à l’avance.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseNine">
-                                Puis-je signaler un artisan ?
-                            </a>
-                        </div>
-                        <div id="collapseNine" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Bien sûr. Si vous avez eu une mauvaise expérience, vous pouvez signaler un artisan directement depuis son profil.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card wow fadeInRight" data-wow-delay="0.5s">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#collapseTen">
-                                Comment devenir artisan sur Khdamli ?
-                            </a>
-                        </div>
-                        <div id="collapseTen" class="collapse" data-parent="#accordion-2">
-                            <div class="card-body">
-                                Cliquez sur "S'inscrire comme artisan", remplissez vos informations, ajoutez votre photo et vos services. Notre équipe vérifiera votre profil avant activation.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: var(--primary);
+            color: var(--light);
+            position: fixed;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+        }
+
+        /* Table styling */
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: var(--primary);
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        .btn-edit {
+            background: #4CAF50;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-delete {
+            background: #e63946;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .action-buttons {
+    display: flex;
+    gap: 10px; /* espace entre les boutons */
+    align-items: center;
+}
+.action-buttons form {
+    margin: 0; /* retire le margin par défaut */
+}
+
+        /* Responsive sidebar */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+
+        .btn-add {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.btn-add:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Admin</h2>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

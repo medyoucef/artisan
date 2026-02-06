@@ -1,0 +1,211 @@
+<html>
+<head>
+    <title>storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (<b>172</b> lines of code) (<a href="a0fee796d5e400644cc0b6076ce42275.php">raw</a>):</h3>
+<div id="editor">&lt;?php use \Illuminate\Support\Str; ?&gt;
+&lt;?php if (isset($component)) { $__componentOriginal74daf2d0a9c625ad90327a6043d15980 = $component; } ?&gt;
+&lt;?php if (isset($attributes)) { $__attributesOriginal74daf2d0a9c625ad90327a6043d15980 = $attributes; } ?&gt;
+&lt;?php $component = Illuminate\View\AnonymousComponent::resolve(['view' =&gt; 'laravel-exceptions-renderer::components.card','data' =&gt; ['class' =&gt; 'mt-6 overflow-x-auto']] + (isset($attributes) &amp;&amp; $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes-&gt;all() : [])); ?&gt;
+&lt;?php $component-&gt;withName('laravel-exceptions-renderer::card'); ?&gt;
+&lt;?php if ($component-&gt;shouldRender()): ?&gt;
+&lt;?php $__env-&gt;startComponent($component-&gt;resolveView(), $component-&gt;data()); ?&gt;
+&lt;?php if (isset($attributes) &amp;&amp; $attributes instanceof Illuminate\View\ComponentAttributeBag): ?&gt;
+&lt;?php $attributes = $attributes-&gt;except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;?php $component-&gt;withAttributes(['class' =&gt; 'mt-6 overflow-x-auto']); ?&gt;
+    &lt;div&gt;
+        &lt;span class=&quot;text-xl font-bold lg:text-2xl&quot;&gt;Request&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;mt-2&quot;&gt;
+        &lt;span&gt;&lt;?php echo e($exception-&gt;request()-&gt;method()); ?&gt;&lt;/span&gt;
+        &lt;span class=&quot;text-gray-500&quot;&gt;&lt;?php echo e(Str::start($exception-&gt;request()-&gt;path(), '/')); ?&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;mt-4&quot;&gt;
+        &lt;span class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;Headers&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;dl class=&quot;mt-1 grid grid-cols-1 rounded border dark:border-gray-800&quot;&gt;
+        &lt;?php $__empty_1 = true; $__currentLoopData = $exception-&gt;requestHeaders(); $__env-&gt;addLoop($__currentLoopData); foreach($__currentLoopData as $key =&gt; $value): $__env-&gt;incrementLoopIndices(); $loop = $__env-&gt;getLastLoop(); $__empty_1 = false; ?&gt;
+            &lt;div class=&quot;flex items-center gap-2 &lt;?php echo e($loop-&gt;first ? '' : 'border-t'); ?&gt; dark:border-gray-800&quot;&gt;
+                &lt;span
+                    data-tippy-content=&quot;&lt;?php echo e($key); ?&gt;&quot;
+                    class=&quot;lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]&quot;
+                &gt;
+                    &lt;?php echo e($key); ?&gt;
+
+                &lt;/span&gt;
+                &lt;span
+                    class=&quot;min-w-0 flex-grow&quot;
+                    style=&quot;
+                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
+                    &quot;
+                &gt;
+                    &lt;pre class=&quot;scrollbar-hidden overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x&quot;&gt;&lt;?php echo e($value); ?&gt;&lt;/code&gt;&lt;/pre&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;?php endforeach; $__env-&gt;popLoop(); $loop = $__env-&gt;getLastLoop(); if ($__empty_1): ?&gt;
+            &lt;span
+                class=&quot;min-w-0 flex-grow&quot;
+                style=&quot;-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))&quot;
+            &gt;
+                &lt;pre class=&quot;scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x&quot;&gt;No headers data&lt;/code&gt;&lt;/pre&gt;
+            &lt;/span&gt;
+        &lt;?php endif; ?&gt;
+    &lt;/dl&gt;
+
+    &lt;div class=&quot;mt-4&quot;&gt;
+        &lt;span class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt;Body&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;mt-1 rounded border dark:border-gray-800&quot;&gt;
+        &lt;div class=&quot;flex items-center&quot;&gt;
+            &lt;span
+                class=&quot;min-w-0 flex-grow&quot;
+                style=&quot;-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))&quot;
+            &gt;
+                &lt;pre class=&quot;scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x&quot;&gt;&lt;?php echo e($exception-&gt;requestBody() ?: 'No body data'); ?&gt;&lt;/code&gt;&lt;/pre&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+ &lt;?php echo $__env-&gt;renderComponent(); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;?php if (isset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980)): ?&gt;
+&lt;?php $attributes = $__attributesOriginal74daf2d0a9c625ad90327a6043d15980; ?&gt;
+&lt;?php unset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;?php if (isset($__componentOriginal74daf2d0a9c625ad90327a6043d15980)): ?&gt;
+&lt;?php $component = $__componentOriginal74daf2d0a9c625ad90327a6043d15980; ?&gt;
+&lt;?php unset($__componentOriginal74daf2d0a9c625ad90327a6043d15980); ?&gt;
+&lt;?php endif; ?&gt;
+
+&lt;?php if (isset($component)) { $__componentOriginal74daf2d0a9c625ad90327a6043d15980 = $component; } ?&gt;
+&lt;?php if (isset($attributes)) { $__attributesOriginal74daf2d0a9c625ad90327a6043d15980 = $attributes; } ?&gt;
+&lt;?php $component = Illuminate\View\AnonymousComponent::resolve(['view' =&gt; 'laravel-exceptions-renderer::components.card','data' =&gt; ['class' =&gt; 'mt-6 overflow-x-auto']] + (isset($attributes) &amp;&amp; $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes-&gt;all() : [])); ?&gt;
+&lt;?php $component-&gt;withName('laravel-exceptions-renderer::card'); ?&gt;
+&lt;?php if ($component-&gt;shouldRender()): ?&gt;
+&lt;?php $__env-&gt;startComponent($component-&gt;resolveView(), $component-&gt;data()); ?&gt;
+&lt;?php if (isset($attributes) &amp;&amp; $attributes instanceof Illuminate\View\ComponentAttributeBag): ?&gt;
+&lt;?php $attributes = $attributes-&gt;except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;?php $component-&gt;withAttributes(['class' =&gt; 'mt-6 overflow-x-auto']); ?&gt;
+    &lt;div&gt;
+        &lt;span class=&quot;text-xl font-bold lg:text-2xl&quot;&gt;Application&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;mt-4&quot;&gt;
+        &lt;span class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt; Routing &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;dl class=&quot;mt-1 grid grid-cols-1 rounded border dark:border-gray-800&quot;&gt;
+        &lt;?php $__empty_1 = true; $__currentLoopData = $exception-&gt;applicationRouteContext(); $__env-&gt;addLoop($__currentLoopData); foreach($__currentLoopData as $name =&gt; $value): $__env-&gt;incrementLoopIndices(); $loop = $__env-&gt;getLastLoop(); $__empty_1 = false; ?&gt;
+            &lt;div class=&quot;flex items-center gap-2 &lt;?php echo e($loop-&gt;first ? '' : 'border-t'); ?&gt; dark:border-gray-800&quot;&gt;
+                &lt;span
+                    data-tippy-content=&quot;&lt;?php echo e($name); ?&gt;&quot;
+                    class=&quot;lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]&quot;
+                    &gt;&lt;?php echo e($name); ?&gt;&lt;/span
+                &gt;
+                &lt;span
+                    class=&quot;min-w-0 flex-grow&quot;
+                    style=&quot;
+                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
+                    &quot;
+                &gt;
+                    &lt;pre class=&quot;scrollbar-hidden overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x&quot;&gt;&lt;?php echo e($value); ?&gt;&lt;/code&gt;&lt;/pre&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;?php endforeach; $__env-&gt;popLoop(); $loop = $__env-&gt;getLastLoop(); if ($__empty_1): ?&gt;
+            &lt;span
+                class=&quot;min-w-0 flex-grow&quot;
+                style=&quot;-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))&quot;
+            &gt;
+                &lt;pre class=&quot;scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x&quot;&gt;No routing data&lt;/code&gt;&lt;/pre&gt;
+            &lt;/span&gt;
+        &lt;?php endif; ?&gt;
+    &lt;/dl&gt;
+
+    &lt;?php if($routeParametersContext = $exception-&gt;applicationRouteParametersContext()): ?&gt;
+        &lt;div class=&quot;mt-4&quot;&gt;
+            &lt;span class=&quot;text-gray-900 dark:text-white text-sm&quot;&gt; Routing Parameters &lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;mt-1 rounded border dark:border-gray-800&quot;&gt;
+            &lt;div class=&quot;flex items-center&quot;&gt;
+                &lt;span
+                    class=&quot;min-w-0 flex-grow&quot;
+                    style=&quot;-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))&quot;
+                &gt;
+                    &lt;pre class=&quot;scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x&quot;&gt;&lt;?php echo e($routeParametersContext); ?&gt;&lt;/code&gt;&lt;/pre&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;div class=&quot;mt-4&quot;&gt;
+        &lt;span class=&quot;font-semibold text-gray-900 dark:text-white&quot;&gt; Database Queries &lt;/span&gt;
+        &lt;span class=&quot;text-xs text-gray-500 dark:text-gray-400&quot;&gt;
+            &lt;?php if(count($exception-&gt;applicationQueries()) === 100): ?&gt;
+                only the first 100 queries are displayed
+            &lt;?php endif; ?&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;dl class=&quot;mt-1 grid grid-cols-1 rounded border dark:border-gray-800&quot;&gt;
+        &lt;?php $__empty_1 = true; $__currentLoopData = $exception-&gt;applicationQueries(); $__env-&gt;addLoop($__currentLoopData); foreach($__currentLoopData as ['connectionName' =&gt; $connectionName, 'sql' =&gt; $sql, 'time' =&gt; $time]): $__env-&gt;incrementLoopIndices(); $loop = $__env-&gt;getLastLoop(); $__empty_1 = false; ?&gt;
+            &lt;div class=&quot;flex items-center gap-2 &lt;?php echo e($loop-&gt;first ? '' : 'border-t'); ?&gt; dark:border-gray-800&quot;&gt;
+                &lt;div class=&quot;lg:text-md w-[8rem] flex-none truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]&quot;&gt;
+                    &lt;span&gt;&lt;?php echo e($connectionName); ?&gt;&lt;/span&gt;
+                    &lt;span class=&quot;hidden text-xs text-gray-500 lg:inline-block&quot;&gt;(&lt;?php echo e($time); ?&gt; ms)&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;span
+                    class=&quot;min-w-0 flex-grow&quot;
+                    style=&quot;
+                        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
+                    &quot;
+                &gt;
+                    &lt;pre class=&quot;scrollbar-hidden overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;px-5 py-3 overflow-y-hidden scrollbar-hidden max-h-32 overflow-x-scroll scrollbar-hidden-x&quot;&gt;&lt;?php echo e($sql); ?&gt;&lt;/code&gt;&lt;/pre&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;?php endforeach; $__env-&gt;popLoop(); $loop = $__env-&gt;getLastLoop(); if ($__empty_1): ?&gt;
+            &lt;span
+                class=&quot;min-w-0 flex-grow&quot;
+                style=&quot;-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))&quot;
+            &gt;
+                &lt;pre class=&quot;scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm&quot;&gt;&lt;code class=&quot;overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x&quot;&gt;No query data&lt;/code&gt;&lt;/pre&gt;
+            &lt;/span&gt;
+        &lt;?php endif; ?&gt;
+    &lt;/dl&gt;
+ &lt;?php echo $__env-&gt;renderComponent(); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;?php if (isset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980)): ?&gt;
+&lt;?php $attributes = $__attributesOriginal74daf2d0a9c625ad90327a6043d15980; ?&gt;
+&lt;?php unset($__attributesOriginal74daf2d0a9c625ad90327a6043d15980); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;?php if (isset($__componentOriginal74daf2d0a9c625ad90327a6043d15980)): ?&gt;
+&lt;?php $component = $__componentOriginal74daf2d0a9c625ad90327a6043d15980; ?&gt;
+&lt;?php unset($__componentOriginal74daf2d0a9c625ad90327a6043d15980); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;?php /**PATH C:\xampp\htdocs\artisan\vendor\laravel\framework\src\Illuminate\Foundation\Providers/../resources/exceptions/renderer/components/context.blade.php ENDPATH**/ ?&gt;</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

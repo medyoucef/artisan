@@ -1,4 +1,5 @@
 Path	Lines of Code
+app/Http/Controllers/AdminDevisController.php	13
 app/Http/Controllers/ArtisanController.php	58
 app/Http/Controllers/Auth/ConfirmPasswordController.php	13
 app/Http/Controllers/Auth/ForgotPasswordController.php	8
@@ -7,16 +8,22 @@ app/Http/Controllers/Auth/RegisterController.php	32
 app/Http/Controllers/Auth/ResetPasswordController.php	9
 app/Http/Controllers/Auth/VerificationController.php	15
 app/Http/Controllers/AuthController.php	46
+app/Http/Controllers/ChatController.php	66
 app/Http/Controllers/Controller.php	5
+app/Http/Controllers/DevisController.php	83
 app/Http/Controllers/HomeController.php	27
 app/Http/Controllers/MessageController.php	23
 app/Http/Controllers/ProfessionController.php	12
 app/Http/Controllers/ProfileController.php	51
 app/Http/Controllers/SocieteArtisanController.php	34
-app/Models/Artisan.php	17
+app/Http/Controllers/admin/DashboardController.php	155
+app/Models/Artisan.php	21
+app/Models/Conversation.php	22
+app/Models/Devis.php	26
 app/Models/Message.php	7
+app/Models/MessagesUserArt.php	25
 app/Models/Profession.php	13
 app/Models/Service.php	9
-app/Models/SocieteArtisan.php	12
+app/Models/SocieteArtisan.php	17
 app/Models/User.php	23
 app/Providers/AppServiceProvider.php	12

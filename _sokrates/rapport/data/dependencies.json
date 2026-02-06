@@ -1,6 +1,193 @@
 [ {
   "fromFiles" : [ {
     "file" : {
+      "relativePath" : "app/Http/Controllers/admin/DashboardController.php",
+      "extension" : "php",
+      "linesOfCode" : 155,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Http\\Controllers\\Controller;"
+  } ],
+  "from" : {
+    "anchor" : "App\\Http\\Controllers\\Admin",
+    "codeFragment" : "namespace App\\Http\\Controllers\\Admin;",
+    "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers\\\\Admin[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\Admin\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Http/Controllers/admin/DashboardController.php",
+      "extension" : "php",
+      "linesOfCode" : 155,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  },
+  "to" : {
+    "anchor" : "App\\Http\\Controllers",
+    "codeFragment" : "namespace App\\Http\\Controllers;",
+    "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Http/Controllers/AdminDevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 58,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/AuthController.php",
+      "extension" : "php",
+      "linesOfCode" : 46,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ChatController.php",
+      "extension" : "php",
+      "linesOfCode" : 66,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/Controller.php",
+      "extension" : "php",
+      "linesOfCode" : 5,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/DevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 83,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/HomeController.php",
+      "extension" : "php",
+      "linesOfCode" : 27,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/MessageController.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ProfessionController.php",
+      "extension" : "php",
+      "linesOfCode" : 12,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/ProfileController.php",
+      "extension" : "php",
+      "linesOfCode" : 51,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/SocieteArtisanController.php",
+      "extension" : "php",
+      "linesOfCode" : 34,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  }
+}, {
+  "fromFiles" : [ {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/admin/DashboardController.php",
+      "extension" : "php",
+      "linesOfCode" : 155,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\User;"
+  } ],
+  "from" : {
+    "anchor" : "App\\Http\\Controllers\\Admin",
+    "codeFragment" : "namespace App\\Http\\Controllers\\Admin;",
+    "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers\\\\Admin[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\Admin\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Http/Controllers/admin/DashboardController.php",
+      "extension" : "php",
+      "linesOfCode" : 155,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  },
+  "to" : {
+    "anchor" : "App\\Models",
+    "codeFragment" : "namespace App\\Models;",
+    "dependencyPatterns" : [ "use.*App\\\\Models[ ]*;", "use.*App\\\\Models\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
+    "files" : [ {
+      "relativePath" : "app/Models/Artisan.php",
+      "extension" : "php",
+      "linesOfCode" : 21,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Conversation.php",
+      "extension" : "php",
+      "linesOfCode" : 22,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Devis.php",
+      "extension" : "php",
+      "linesOfCode" : 26,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Message.php",
+      "extension" : "php",
+      "linesOfCode" : 7,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/MessagesUserArt.php",
+      "extension" : "php",
+      "linesOfCode" : 25,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Profession.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Service.php",
+      "extension" : "php",
+      "linesOfCode" : 9,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/SocieteArtisan.php",
+      "extension" : "php",
+      "linesOfCode" : 17,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/User.php",
+      "extension" : "php",
+      "linesOfCode" : 23,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    } ]
+  }
+}, {
+  "fromFiles" : [ {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/AdminDevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\Devis;"
+  }, {
+    "file" : {
       "relativePath" : "app/Http/Controllers/ArtisanController.php",
       "extension" : "php",
       "linesOfCode" : 58,
@@ -17,6 +204,24 @@
       "concerns" : [ "::Unclassified" ]
     },
     "codeFragment" : "use App\\Models\\User;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/ChatController.php",
+      "extension" : "php",
+      "linesOfCode" : 66,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\Conversation;"
+  }, {
+    "file" : {
+      "relativePath" : "app/Http/Controllers/DevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 83,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    },
+    "codeFragment" : "use App\\Models\\Conversation;"
   }, {
     "file" : {
       "relativePath" : "app/Http/Controllers/HomeController.php",
@@ -68,6 +273,12 @@
     "codeFragment" : "namespace App\\Http\\Controllers;",
     "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
     "files" : [ {
+      "relativePath" : "app/Http/Controllers/AdminDevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
       "relativePath" : "app/Http/Controllers/ArtisanController.php",
       "extension" : "php",
       "linesOfCode" : 58,
@@ -80,9 +291,21 @@
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
+      "relativePath" : "app/Http/Controllers/ChatController.php",
+      "extension" : "php",
+      "linesOfCode" : 66,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
       "relativePath" : "app/Http/Controllers/Controller.php",
       "extension" : "php",
       "linesOfCode" : 5,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/DevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 83,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
@@ -124,13 +347,31 @@
     "files" : [ {
       "relativePath" : "app/Models/Artisan.php",
       "extension" : "php",
-      "linesOfCode" : 17,
+      "linesOfCode" : 21,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Conversation.php",
+      "extension" : "php",
+      "linesOfCode" : 22,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Devis.php",
+      "extension" : "php",
+      "linesOfCode" : 26,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
       "relativePath" : "app/Models/Message.php",
       "extension" : "php",
       "linesOfCode" : 7,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/MessagesUserArt.php",
+      "extension" : "php",
+      "linesOfCode" : 25,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
@@ -148,7 +389,7 @@
     }, {
       "relativePath" : "app/Models/SocieteArtisan.php",
       "extension" : "php",
-      "linesOfCode" : 12,
+      "linesOfCode" : 17,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
@@ -262,6 +503,12 @@
     "codeFragment" : "namespace App\\Http\\Controllers;",
     "dependencyPatterns" : [ "use.*App\\\\Http\\\\Controllers[ ]*;", "use.*App\\\\Http\\\\Controllers\\\\[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*( |,|;|[ ]+as).*" ],
     "files" : [ {
+      "relativePath" : "app/Http/Controllers/AdminDevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 13,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
       "relativePath" : "app/Http/Controllers/ArtisanController.php",
       "extension" : "php",
       "linesOfCode" : 58,
@@ -274,9 +521,21 @@
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
+      "relativePath" : "app/Http/Controllers/ChatController.php",
+      "extension" : "php",
+      "linesOfCode" : 66,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
       "relativePath" : "app/Http/Controllers/Controller.php",
       "extension" : "php",
       "linesOfCode" : 5,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Http/Controllers/DevisController.php",
+      "extension" : "php",
+      "linesOfCode" : 83,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
@@ -371,13 +630,31 @@
     "files" : [ {
       "relativePath" : "app/Models/Artisan.php",
       "extension" : "php",
-      "linesOfCode" : 17,
+      "linesOfCode" : 21,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Conversation.php",
+      "extension" : "php",
+      "linesOfCode" : 22,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Devis.php",
+      "extension" : "php",
+      "linesOfCode" : 26,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
       "relativePath" : "app/Models/Message.php",
       "extension" : "php",
       "linesOfCode" : 7,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/MessagesUserArt.php",
+      "extension" : "php",
+      "linesOfCode" : 25,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
@@ -395,7 +672,7 @@
     }, {
       "relativePath" : "app/Models/SocieteArtisan.php",
       "extension" : "php",
-      "linesOfCode" : 12,
+      "linesOfCode" : 17,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
@@ -436,13 +713,31 @@
     "files" : [ {
       "relativePath" : "app/Models/Artisan.php",
       "extension" : "php",
-      "linesOfCode" : 17,
+      "linesOfCode" : 21,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Conversation.php",
+      "extension" : "php",
+      "linesOfCode" : 22,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/Devis.php",
+      "extension" : "php",
+      "linesOfCode" : 26,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
       "relativePath" : "app/Models/Message.php",
       "extension" : "php",
       "linesOfCode" : 7,
+      "components" : [ "primary::app" ],
+      "concerns" : [ "::Unclassified" ]
+    }, {
+      "relativePath" : "app/Models/MessagesUserArt.php",
+      "extension" : "php",
+      "linesOfCode" : 25,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {
@@ -460,7 +755,7 @@
     }, {
       "relativePath" : "app/Models/SocieteArtisan.php",
       "extension" : "php",
-      "linesOfCode" : 12,
+      "linesOfCode" : 17,
       "components" : [ "primary::app" ],
       "concerns" : [ "::Unclassified" ]
     }, {

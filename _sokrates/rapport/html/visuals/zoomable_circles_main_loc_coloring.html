@@ -62,6 +62,21 @@
       "color" : "#1a9641",
       "size" : 0,
       "children" : [ {
+        "name" : "admin",
+        "color" : "#1a9641",
+        "size" : 0,
+        "children" : [ {
+          "name" : "DashboardController.php (155)",
+          "color" : "#a6d96a",
+          "size" : 155,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "AdminDevisController.php (13)",
+        "color" : "#1a9641",
+        "size" : 13,
+        "children" : [ ]
+      }, {
         "name" : "ArtisanController.php (58)",
         "color" : "#1a9641",
         "size" : 58,
@@ -107,9 +122,19 @@
         "size" : 46,
         "children" : [ ]
       }, {
+        "name" : "ChatController.php (66)",
+        "color" : "#1a9641",
+        "size" : 66,
+        "children" : [ ]
+      }, {
         "name" : "Controller.php (5)",
         "color" : "#1a9641",
         "size" : 5,
+        "children" : [ ]
+      }, {
+        "name" : "DevisController.php (83)",
+        "color" : "#1a9641",
+        "size" : 83,
         "children" : [ ]
       }, {
         "name" : "HomeController.php (27)",
@@ -143,14 +168,29 @@
     "color" : "#1a9641",
     "size" : 0,
     "children" : [ {
-      "name" : "Artisan.php (17)",
+      "name" : "Artisan.php (21)",
       "color" : "#1a9641",
-      "size" : 17,
+      "size" : 21,
+      "children" : [ ]
+    }, {
+      "name" : "Conversation.php (22)",
+      "color" : "#1a9641",
+      "size" : 22,
+      "children" : [ ]
+    }, {
+      "name" : "Devis.php (26)",
+      "color" : "#1a9641",
+      "size" : 26,
       "children" : [ ]
     }, {
       "name" : "Message.php (7)",
       "color" : "#1a9641",
       "size" : 7,
+      "children" : [ ]
+    }, {
+      "name" : "MessagesUserArt.php (25)",
+      "color" : "#1a9641",
+      "size" : 25,
       "children" : [ ]
     }, {
       "name" : "Profession.php (13)",
@@ -163,9 +203,9 @@
       "size" : 9,
       "children" : [ ]
     }, {
-      "name" : "SocieteArtisan.php (12)",
+      "name" : "SocieteArtisan.php (17)",
       "color" : "#1a9641",
-      "size" : 12,
+      "size" : 17,
       "children" : [ ]
     }, {
       "name" : "User.php (23)",
@@ -346,6 +386,31 @@
       "name" : "2025_06_20_141652_add_created_at_to_societe_artisan_table.php (19)",
       "color" : "#1a9641",
       "size" : 19,
+      "children" : [ ]
+    }, {
+      "name" : "2026_01_25_043417_create_conversations_table.php (22)",
+      "color" : "#1a9641",
+      "size" : 22,
+      "children" : [ ]
+    }, {
+      "name" : "2026_01_25_043501_create_messages_user_art_table.php (25)",
+      "color" : "#1a9641",
+      "size" : 25,
+      "children" : [ ]
+    }, {
+      "name" : "2026_01_25_050708_add_user_id_to_artisans_table.php (19)",
+      "color" : "#1a9641",
+      "size" : 19,
+      "children" : [ ]
+    }, {
+      "name" : "2026_02_06_041133_create_devis_table.php (27)",
+      "color" : "#1a9641",
+      "size" : 27,
+      "children" : [ ]
+    }, {
+      "name" : "2026_02_06_043838_fix_devis_foreign_key.php (17)",
+      "color" : "#1a9641",
+      "size" : 17,
       "children" : [ ]
     } ]
   }, {
@@ -633,6 +698,81 @@
     "color" : "#1a9641",
     "size" : 0,
     "children" : [ {
+      "name" : "admin",
+      "color" : "#1a9641",
+      "size" : 0,
+      "children" : [ {
+        "name" : "artisans.blade.php (37)",
+        "color" : "#1a9641",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "artisans_edit.blade.php (86)",
+        "color" : "#1a9641",
+        "size" : 86,
+        "children" : [ ]
+      }, {
+        "name" : "dashboard.blade.php (158)",
+        "color" : "#a6d96a",
+        "size" : 158,
+        "children" : [ ]
+      }, {
+        "name" : "devis",
+        "color" : "#1a9641",
+        "size" : 0,
+        "children" : [ {
+          "name" : "index.blade.php (88)",
+          "color" : "#1a9641",
+          "size" : 88,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "layout.blade.php (154)",
+        "color" : "#a6d96a",
+        "size" : 154,
+        "children" : [ ]
+      }, {
+        "name" : "messages.blade.php (41)",
+        "color" : "#1a9641",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "professions.blade.php (41)",
+        "color" : "#1a9641",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "professions_create.blade.php (73)",
+        "color" : "#1a9641",
+        "size" : 73,
+        "children" : [ ]
+      }, {
+        "name" : "professions_edit.blade.php (74)",
+        "color" : "#1a9641",
+        "size" : 74,
+        "children" : [ ]
+      }, {
+        "name" : "societes.blade.php (40)",
+        "color" : "#1a9641",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "societes_edit.blade.php (86)",
+        "color" : "#1a9641",
+        "size" : 86,
+        "children" : [ ]
+      }, {
+        "name" : "users.blade.php (31)",
+        "color" : "#1a9641",
+        "size" : 31,
+        "children" : [ ]
+      }, {
+        "name" : "users_edit.blade.php (74)",
+        "color" : "#1a9641",
+        "size" : 74,
+        "children" : [ ]
+      } ]
+    }, {
       "name" : "auth",
       "color" : "#1a9641",
       "size" : 0,
@@ -640,6 +780,36 @@
         "name" : "login_register.blade.php (90)",
         "color" : "#1a9641",
         "size" : 90,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "chat",
+      "color" : "#1a9641",
+      "size" : 0,
+      "children" : [ {
+        "name" : "inbox.blade.php (32)",
+        "color" : "#1a9641",
+        "size" : 32,
+        "children" : [ ]
+      }, {
+        "name" : "show.blade.php (76)",
+        "color" : "#1a9641",
+        "size" : 76,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "devis",
+      "color" : "#1a9641",
+      "size" : 0,
+      "children" : [ {
+        "name" : "client.blade.php (73)",
+        "color" : "#1a9641",
+        "size" : 73,
+        "children" : [ ]
+      }, {
+        "name" : "create.blade.php (29)",
+        "color" : "#1a9641",
+        "size" : 29,
         "children" : [ ]
       } ]
     }, {
@@ -652,9 +822,9 @@
         "size" : 122,
         "children" : [ ]
       }, {
-        "name" : "art_ind.blade.php (134)",
+        "name" : "art_ind.blade.php (143)",
         "color" : "#a6d96a",
-        "size" : 134,
+        "size" : 143,
         "children" : [ ]
       }, {
         "name" : "art_soc.blade.php (136)",
@@ -688,9 +858,9 @@
       "size" : 20,
       "children" : [ ]
     }, {
-      "name" : "index.blade.php (380)",
+      "name" : "index.blade.php (392)",
       "color" : "#ffffbf",
-      "size" : 380,
+      "size" : 392,
       "children" : [ ]
     }, {
       "name" : "layout",
@@ -702,9 +872,9 @@
         "size" : 69,
         "children" : [ ]
       }, {
-        "name" : "nav_bar.blade.php (37)",
+        "name" : "nav_bar.blade.php (68)",
         "color" : "#1a9641",
-        "size" : 37,
+        "size" : 68,
         "children" : [ ]
       }, {
         "name" : "question.blade.php (138)",
@@ -737,9 +907,9 @@
       "color" : "#1a9641",
       "size" : 0,
       "children" : [ {
-        "name" : "artisan_cards.blade.php (37)",
+        "name" : "artisan_cards.blade.php (25)",
         "color" : "#1a9641",
-        "size" : 37,
+        "size" : 25,
         "children" : [ ]
       }, {
         "name" : "societes_liste.blade.php (28)",
@@ -764,9 +934,9 @@
     "size" : 6,
     "children" : [ ]
   }, {
-    "name" : "web.php (27)",
+    "name" : "web.php (72)",
     "color" : "#1a9641",
-    "size" : 27,
+    "size" : 72,
     "children" : [ ]
   } ]
 }, {
@@ -782,314 +952,219 @@
       "color" : "#1a9641",
       "size" : 0,
       "children" : [ {
-        "name" : "028bce5b410dfba0ce555c594dc621cc.php (139)",
-        "color" : "#a6d96a",
-        "size" : 139,
-        "children" : [ ]
-      }, {
-        "name" : "0a91049541c8c278d5dc6bc5009db1c0.php (11)",
-        "color" : "#1a9641",
-        "size" : 11,
-        "children" : [ ]
-      }, {
-        "name" : "0be5fbe14e443444bd1f225175f044d2.php (193)",
-        "color" : "#a6d96a",
-        "size" : 193,
-        "children" : [ ]
-      }, {
-        "name" : "1639945e2a31000c17c9cec339739cb6.php (135)",
-        "color" : "#a6d96a",
-        "size" : 135,
-        "children" : [ ]
-      }, {
-        "name" : "176fe7c698dbe36fc15642db0b7fbb3b.php (4)",
-        "color" : "#1a9641",
-        "size" : 4,
-        "children" : [ ]
-      }, {
-        "name" : "18bb04ab7f5f1e808b8ce3ced054efc0.php (11)",
-        "color" : "#1a9641",
-        "size" : 11,
-        "children" : [ ]
-      }, {
-        "name" : "1958f5a5b68f55f06b367f2ce8d0bede.php (156)",
-        "color" : "#a6d96a",
-        "size" : 156,
-        "children" : [ ]
-      }, {
-        "name" : "206938c949e34059fd43d8d3aa0f0ced.php (134)",
-        "color" : "#a6d96a",
-        "size" : 134,
-        "children" : [ ]
-      }, {
-        "name" : "20edb2485ee3b02bee281f0cee523d82.php (380)",
-        "color" : "#ffffbf",
-        "size" : 380,
-        "children" : [ ]
-      }, {
-        "name" : "2737e2ce19580b3fdb70d3726613b4ce.php (4)",
-        "color" : "#1a9641",
-        "size" : 4,
-        "children" : [ ]
-      }, {
-        "name" : "29abc373efe767a2e760fb8b5df9d3fe.php (139)",
-        "color" : "#a6d96a",
-        "size" : 139,
-        "children" : [ ]
-      }, {
-        "name" : "2db556e063e4147cdcf0bd304d565dce.php (183)",
-        "color" : "#a6d96a",
-        "size" : 183,
-        "children" : [ ]
-      }, {
-        "name" : "354e34927a76399b3e64f164eb5443c2.php (38)",
-        "color" : "#1a9641",
-        "size" : 38,
-        "children" : [ ]
-      }, {
-        "name" : "38cb578b1a3b655c1fd8f78fe0f8471d.php (34)",
-        "color" : "#1a9641",
-        "size" : 34,
-        "children" : [ ]
-      }, {
-        "name" : "3c27f935771fc83addd970332eedaf8f.php (380)",
-        "color" : "#ffffbf",
-        "size" : 380,
-        "children" : [ ]
-      }, {
-        "name" : "3d82499e1cc8a9efd19e2310c61d0323.php (6)",
-        "color" : "#1a9641",
-        "size" : 6,
-        "children" : [ ]
-      }, {
-        "name" : "435ac70f5c7d98672ba8747b4a4e2b30.php (134)",
-        "color" : "#a6d96a",
-        "size" : 134,
-        "children" : [ ]
-      }, {
-        "name" : "4750baca37881108ffd5e267b0e3a83c.php (40)",
-        "color" : "#1a9641",
-        "size" : 40,
-        "children" : [ ]
-      }, {
-        "name" : "4a73ff01ca5ec3fbdad398e7782007da.php (130)",
-        "color" : "#a6d96a",
-        "size" : 130,
-        "children" : [ ]
-      }, {
-        "name" : "4d7b7cfe77140002739771f8c6c1cd8f.php (79)",
-        "color" : "#1a9641",
-        "size" : 79,
-        "children" : [ ]
-      }, {
-        "name" : "4fe4f115e577719e2eba2900e8e9fa10.php (51)",
-        "color" : "#1a9641",
-        "size" : 51,
-        "children" : [ ]
-      }, {
-        "name" : "591f51ae5d6223fbe584dc6577d846ae.php (46)",
+        "name" : "004ed925fbe1d09044debc456e62d827.php (46)",
         "color" : "#1a9641",
         "size" : 46,
         "children" : [ ]
       }, {
-        "name" : "5a73bd4198eb32d506f76f5b1bbbcd25.php (29)",
+        "name" : "0c456e314895cb449b8d614e42e49ebf.php (86)",
         "color" : "#1a9641",
-        "size" : 29,
+        "size" : 86,
         "children" : [ ]
       }, {
-        "name" : "5d2f6d06a440297343fafb266f60e9f0.php (31)",
+        "name" : "10f901c7953f4e8ea057ed7b65e682a0.php (31)",
         "color" : "#1a9641",
         "size" : 31,
         "children" : [ ]
       }, {
-        "name" : "5dd5927777b90c5d44c7d4078df3d5ed.php (4)",
-        "color" : "#1a9641",
-        "size" : 4,
+        "name" : "11645604c66a043295727c16c23c5623.php (134)",
+        "color" : "#a6d96a",
+        "size" : 134,
         "children" : [ ]
       }, {
-        "name" : "61fee7ad2d9376e94b9d7a553aefbfbb.php (46)",
+        "name" : "1a79ca30f83d99d5801266a79bab3e2b.php (107)",
+        "color" : "#a6d96a",
+        "size" : 107,
+        "children" : [ ]
+      }, {
+        "name" : "27a0bce4217d61e93e337c865ba09c59.php (11)",
+        "color" : "#1a9641",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "2ba9bad757a519fab2a687debe56dfad.php (73)",
+        "color" : "#1a9641",
+        "size" : 73,
+        "children" : [ ]
+      }, {
+        "name" : "2dad63890ee4ae3835a6dc33f68fd08a.php (11)",
+        "color" : "#1a9641",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "2fdb02cfdf9db42e74a80a071ef0ac56.php (41)",
+        "color" : "#1a9641",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "304f8051e527d7a891c786c0521d648e.php (30)",
+        "color" : "#1a9641",
+        "size" : 30,
+        "children" : [ ]
+      }, {
+        "name" : "363e70e480a2c512b7859cb262374f7b.php (89)",
+        "color" : "#1a9641",
+        "size" : 89,
+        "children" : [ ]
+      }, {
+        "name" : "3add5ab67003a3b580123d4b75450e14.php (155)",
+        "color" : "#a6d96a",
+        "size" : 155,
+        "children" : [ ]
+      }, {
+        "name" : "5342c8c1fe35637bc2db25662910d9b2.php (46)",
         "color" : "#1a9641",
         "size" : 46,
         "children" : [ ]
       }, {
-        "name" : "64ee9777a1b7ef5a7db7a7103f634cd5.php (4)",
-        "color" : "#1a9641",
-        "size" : 4,
-        "children" : [ ]
-      }, {
-        "name" : "66da1bfdd1b1a3897a65c4be0bd29f1a.php (81)",
-        "color" : "#1a9641",
-        "size" : 81,
-        "children" : [ ]
-      }, {
-        "name" : "6968636e3a37f5014d19024fa9a7c5f1.php (81)",
-        "color" : "#1a9641",
-        "size" : 81,
-        "children" : [ ]
-      }, {
-        "name" : "6aef6bbd263c66e1bc1a72b0549e978c.php (172)",
-        "color" : "#a6d96a",
-        "size" : 172,
-        "children" : [ ]
-      }, {
-        "name" : "719f5be912f0694a33aeeb86e195c21a.php (132)",
-        "color" : "#a6d96a",
-        "size" : 132,
-        "children" : [ ]
-      }, {
-        "name" : "71a84f0e8051325082bdb809d2701bae.php (124)",
-        "color" : "#a6d96a",
-        "size" : 124,
-        "children" : [ ]
-      }, {
-        "name" : "761567e2ae87915d7290cfffaa79102f.php (183)",
-        "color" : "#a6d96a",
-        "size" : 183,
-        "children" : [ ]
-      }, {
-        "name" : "7e095807effdbab044619856de57c96f.php (6)",
+        "name" : "57c6e8063f683b8581c20fcd8d2f171f.php (6)",
         "color" : "#1a9641",
         "size" : 6,
         "children" : [ ]
       }, {
-        "name" : "860d9d16399020041a58cd550f201ead.php (46)",
-        "color" : "#1a9641",
-        "size" : 46,
-        "children" : [ ]
-      }, {
-        "name" : "8617c48f4ac7905ba1aecc9d9528d27a.php (90)",
-        "color" : "#1a9641",
-        "size" : 90,
-        "children" : [ ]
-      }, {
-        "name" : "86cccdc7823cee1bd77105d89d8638e8.php (27)",
-        "color" : "#1a9641",
-        "size" : 27,
-        "children" : [ ]
-      }, {
-        "name" : "878ec5161856b73a7bf2e920b2a585ef.php (11)",
-        "color" : "#1a9641",
-        "size" : 11,
-        "children" : [ ]
-      }, {
-        "name" : "89e777edd53aab0d19f28731e67e9450.php (4)",
-        "color" : "#1a9641",
-        "size" : 4,
-        "children" : [ ]
-      }, {
-        "name" : "9a14755e934b97434d5e6fcb9dbfde2c.php (122)",
+        "name" : "58b00bb5c9ae4529a07c852aa2e2432d.php (144)",
         "color" : "#a6d96a",
-        "size" : 122,
+        "size" : 144,
         "children" : [ ]
       }, {
-        "name" : "9ebe68a946f9ddc1f984e077fc35a756.php (4)",
+        "name" : "63ccf8ba014fb693f0b8f031f88d5c96.php (84)",
         "color" : "#1a9641",
-        "size" : 4,
+        "size" : 84,
         "children" : [ ]
       }, {
-        "name" : "9fada826ee00a312e714e63de7f64838.php (51)",
-        "color" : "#1a9641",
-        "size" : 51,
-        "children" : [ ]
-      }, {
-        "name" : "9fcd4be86f466ee2ee9ef0eb806b1eaa.php (4)",
-        "color" : "#1a9641",
-        "size" : 4,
-        "children" : [ ]
-      }, {
-        "name" : "a4c9e41ce8c5dee08cc2762cab59d22f.php (172)",
-        "color" : "#a6d96a",
-        "size" : 172,
-        "children" : [ ]
-      }, {
-        "name" : "a4fc478d5a5c9c18d84b1e8d00e5517a.php (29)",
-        "color" : "#1a9641",
-        "size" : 29,
-        "children" : [ ]
-      }, {
-        "name" : "b404da36b14b476e32e95917365710b3.php (70)",
-        "color" : "#1a9641",
-        "size" : 70,
-        "children" : [ ]
-      }, {
-        "name" : "be8b6d1fdd2fdcae7bb3d6382a0b686a.php (38)",
-        "color" : "#1a9641",
-        "size" : 38,
-        "children" : [ ]
-      }, {
-        "name" : "c9e5719741d06ccda0393a9cb140d4e0.php (156)",
-        "color" : "#a6d96a",
-        "size" : 156,
-        "children" : [ ]
-      }, {
-        "name" : "cdfcbd1a1b754262e95e923bd8a97e47.php (11)",
-        "color" : "#1a9641",
-        "size" : 11,
-        "children" : [ ]
-      }, {
-        "name" : "d04dc44118f96e3dc6fcbfb011438571.php (122)",
-        "color" : "#a6d96a",
-        "size" : 122,
-        "children" : [ ]
-      }, {
-        "name" : "d6cbae0555f95fa24cbc18a1e326f1d2.php (11)",
-        "color" : "#1a9641",
-        "size" : 11,
-        "children" : [ ]
-      }, {
-        "name" : "dc86248c4bb86977317901e4d1bc8904.php (137)",
-        "color" : "#a6d96a",
-        "size" : 137,
-        "children" : [ ]
-      }, {
-        "name" : "e1368f5e5ceb4bd65bc5b1a5af202e46.php (69)",
+        "name" : "6ad0da796f2fd26d59570553557c6b71.php (69)",
         "color" : "#1a9641",
         "size" : 69,
         "children" : [ ]
       }, {
-        "name" : "e66a6fee40923bdcb5094745284b3a7f.php (46)",
+        "name" : "79735874e300024b53ad0cdaee2033e8.php (40)",
         "color" : "#1a9641",
-        "size" : 46,
+        "size" : 40,
         "children" : [ ]
       }, {
-        "name" : "e986e6acf67511cc4c56ba4e1c55b701.php (107)",
-        "color" : "#a6d96a",
-        "size" : 107,
-        "children" : [ ]
-      }, {
-        "name" : "ea1825065bf2b2c4185fbe24b841a7e1.php (107)",
-        "color" : "#a6d96a",
-        "size" : 107,
-        "children" : [ ]
-      }, {
-        "name" : "f4e4640f2959be64e9037ab0087a89a1.php (31)",
+        "name" : "7aa88300e09d948d57b2f2937f376c33.php (90)",
         "color" : "#1a9641",
-        "size" : 31,
+        "size" : 90,
         "children" : [ ]
       }, {
-        "name" : "f71fdad28b672f21335053b9d07474fd.php (29)",
-        "color" : "#1a9641",
-        "size" : 29,
-        "children" : [ ]
-      }, {
-        "name" : "f7bc5e13bbd429c33e0d09648f856847.php (70)",
-        "color" : "#1a9641",
-        "size" : 70,
-        "children" : [ ]
-      }, {
-        "name" : "f86cce6c114517ee6876f4c401b436f2.php (4)",
+        "name" : "858eb0eae45d87ae9a4f0d5af905391f.php (4)",
         "color" : "#1a9641",
         "size" : 4,
         "children" : [ ]
       }, {
-        "name" : "f94507b4499308d70d4e8ffb76b48b40.php (11)",
+        "name" : "8c409b2ffc58b4419d9aac205d3d1608.php (193)",
+        "color" : "#a6d96a",
+        "size" : 193,
+        "children" : [ ]
+      }, {
+        "name" : "9020cdf6d6b39b43d4ae69ef674c085a.php (156)",
+        "color" : "#a6d96a",
+        "size" : 156,
+        "children" : [ ]
+      }, {
+        "name" : "a0fee796d5e400644cc0b6076ce42275.php (172)",
+        "color" : "#a6d96a",
+        "size" : 172,
+        "children" : [ ]
+      }, {
+        "name" : "a676a4e86c9d3a8df5b458911a464d71.php (139)",
+        "color" : "#a6d96a",
+        "size" : 139,
+        "children" : [ ]
+      }, {
+        "name" : "ba3262651b9ba9737acf261241d54870.php (86)",
+        "color" : "#1a9641",
+        "size" : 86,
+        "children" : [ ]
+      }, {
+        "name" : "ba6024d816e0fafd99e84eba11c4bf6d.php (33)",
+        "color" : "#1a9641",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "bc6f3c83cacd630d8afdbd2a802142cf.php (51)",
+        "color" : "#1a9641",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "bdcbdc4c482e821d8522f70e14b44623.php (183)",
+        "color" : "#a6d96a",
+        "size" : 183,
+        "children" : [ ]
+      }, {
+        "name" : "c0d73acd37943e5e6e6cb12d115ff894.php (41)",
+        "color" : "#1a9641",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "c21f0ded99e9e9d26fc9ba186ed1861d.php (70)",
+        "color" : "#1a9641",
+        "size" : 70,
+        "children" : [ ]
+      }, {
+        "name" : "c3f0d25a5c5d77e16aeffba5bf91e595.php (137)",
+        "color" : "#a6d96a",
+        "size" : 137,
+        "children" : [ ]
+      }, {
+        "name" : "ca5c895d99c0c11e055b7a435bd5da49.php (69)",
+        "color" : "#1a9641",
+        "size" : 69,
+        "children" : [ ]
+      }, {
+        "name" : "ca9a508ef47dc23e718892b4aabbad7c.php (4)",
+        "color" : "#1a9641",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "cc8d0eec74aa499f7d0da28447204581.php (74)",
+        "color" : "#1a9641",
+        "size" : 74,
+        "children" : [ ]
+      }, {
+        "name" : "cc94ab1dca712cc6faf2b85441bbfcf0.php (11)",
         "color" : "#1a9641",
         "size" : 11,
         "children" : [ ]
       }, {
-        "name" : "fa7b183079d07f01c4b77b0a222143a4.php (68)",
+        "name" : "cd673d8e3ebf6b27cba7b48b3f549030.php (74)",
         "color" : "#1a9641",
-        "size" : 68,
+        "size" : 74,
+        "children" : [ ]
+      }, {
+        "name" : "d6607d6a59e853dbaea0195dedbfb60a.php (4)",
+        "color" : "#1a9641",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "d83edad1fe926ca403ca8a2b9a7255bb.php (4)",
+        "color" : "#1a9641",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "d8a9d403d8888107e63e337c823d1c6a.php (37)",
+        "color" : "#1a9641",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "dcb36a344db364a89e61f1aafa645c0d.php (74)",
+        "color" : "#1a9641",
+        "size" : 74,
+        "children" : [ ]
+      }, {
+        "name" : "e6feacc5c0b3a528b4ee663b3f902f99.php (393)",
+        "color" : "#ffffbf",
+        "size" : 393,
+        "children" : [ ]
+      }, {
+        "name" : "e83e3487037beb8e85372857271fd2d8.php (159)",
+        "color" : "#a6d96a",
+        "size" : 159,
+        "children" : [ ]
+      }, {
+        "name" : "f8de69c6fee56f52c44947c0b83de2a1.php (40)",
+        "color" : "#1a9641",
+        "size" : 40,
         "children" : [ ]
       } ]
     } ]
