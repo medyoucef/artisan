@@ -122,11 +122,11 @@
         <a href="#">Dashboard</a>
         <a href="{{ route('admin.artisans') }}">Artisans</a>
         <a href="{{ route('admin.societes') }}">Sociétés</a>
-<a href="{{ route('admin.users') }}">Utilisateurs</a>
-<a href="{{ route('admin.messages') }}">Messages</a>
-<a href="{{ route('admin.professions') }}">Professions</a>
-<a href="#">Avis</a>
-<a href="#">Paramètres</a>
+        <a href="{{ route('admin.users') }}">Utilisateurs</a>
+        <a href="{{ route('admin.messages') }}">Messages</a>
+        <a href="{{ route('admin.professions') }}">Professions</a>
+        <a href="{{ route('admin.devis') }}">Devis</a>
+        <a href="#">Paramètres</a>
 
 <a href="#" 
    onclick="event.preventDefault(); document.getElementById('logout-form-admin').submit();">
@@ -179,6 +179,14 @@
                 <p>{{ $categories ?? 0 }}</p>
             </div>
             </a>
+
+            <a href="{{ route('admin.devis') }}">
+    <div class="card">
+        <h3>Devis</h3>
+        <p>{{ $devis ?? 0 }}</p>
+    </div>
+</a>
+
 
             
 

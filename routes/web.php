@@ -10,6 +10,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\DevisController;
+use App\Http\Controllers\AdminDevisController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -99,3 +101,26 @@ Route::put('/admin/artisans/{id}', [DashboardController::class, 'updateArtisan']
 // modifier societe
 Route::get('/admin/societes/{id}/edit', [DashboardController::class, 'editSociete'])->name('admin.societes.edit');
 Route::put('/admin/societes/{id}', [DashboardController::class, 'updateSociete'])->name('admin.societes.update');
+
+// envoie de devis 
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/conversation/{id}/devis/create', [DevisController::class, 'create'])->name('devis.create');
+    Route::post('/conversation/{id}/devis', [DevisController::class, 'store'])->name('devis.store');
+
+    Route::post('/devis/{id}/accepter', [DevisController::class, 'accepter'])->name('devis.accepter');
+    Route::post('/devis/{id}/refuser', [DevisController::class, 'refuser'])->name('devis.refuser');
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+
+    // Page "Mes devis" pour le client
+    Route::get('/mes-devis', [DevisController::class, 'clientDevis'])
+        ->name('client.devis');
+
+});
+
+Route::get('/admin/devis', [AdminDevisController::class, 'index']) ->name('admin.devis');
+

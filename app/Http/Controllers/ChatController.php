@@ -7,6 +7,8 @@ use App\Models\MessagesUserArt;
 use App\Models\Artisan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Devis;
+
 
 class ChatController extends Controller
 {
@@ -28,16 +30,23 @@ class ChatController extends Controller
         return redirect()->route('chat.show', $conversation->id);
     }
 
-    public function show($id)
-    {
-        $conversation = Conversation::findOrFail($id);
+    
 
-        $messages = MessagesUserArt::where('conversation_id', $id)
-            ->orderBy('created_at')
-            ->get();
+public function show($id)
+{
+    $conversation = Conversation::findOrFail($id);
 
-        return view('chat.show', compact('conversation', 'messages'));
-    }
+    $messages = MessagesUserArt::where('conversation_id', $id)
+        ->orderBy('created_at')
+        ->get();
+
+    $devis = Devis::where('conversation_id', $id)
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return view('chat.show', compact('conversation', 'messages', 'devis'));
+}
+
 
 
     public function inbox()

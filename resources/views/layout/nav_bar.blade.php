@@ -30,6 +30,34 @@
                             </a>
                         @endif
 
+                        <!-- Vérifier si l'utilisateur est un client -->
+                        @if(auth()->user()->type_user === 'client')
+                        @php
+    $pendingDevis = \App\Models\Devis::where('client_id', auth()->id())
+                         ->where('statut', 'en_attente')
+                         ->count();
+@endphp
+
+
+    <a href="{{ route('client.devis') }}" class="nav-item nav-link">
+        <i class="fas fa-file-invoice-dollar me-1"></i>
+        Devis 
+        @if($pendingDevis > 0)
+            <span style="
+                background:#fdbe33;
+                color:#030f27;
+                padding:2px 6px;
+                border-radius:10px;
+                font-weight:bold;
+                margin-left:4px;
+            ">
+                {{ $pendingDevis }}
+            </span>
+        @endif
+    </a>
+@endif
+
+
                         <!-- Profil -->
                         <a href="{{ route('profile') }}" class="nav-item nav-link">
                             <i class="fas fa-user-circle me-1"></i> Profile
