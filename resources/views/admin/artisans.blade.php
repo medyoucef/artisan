@@ -41,5 +41,11 @@
             @endforeach
         </tbody>
     </table>
+    <div style="margin-bottom: 20px; text-align: right;">
+    <a href="{{ route('admin.artisans.create') }}" class="btn-add">
+        ➕ Ajouter un Artisan
+    </a>
+</div>
+
 </div>
 @endsection

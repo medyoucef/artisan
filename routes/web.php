@@ -124,3 +124,11 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/admin/devis', [AdminDevisController::class, 'index']) ->name('admin.devis');
 
+// ajout d'un artisan via la dashboard
+Route::get('/admin/artisans/create', [ArtisanController::class, 'create']) ->name('admin.artisans.create');
+Route::post('/admin/artisans/store', [ArtisanController::class, 'store']) ->name('admin.artisans.store');
+
+// ajout d'une societé via la dashboard
+
+Route::get('/admin/societes/create', [SocieteArtisanController::class, 'create']) ->name('admin.societes.create'); 
+Route::post('/admin/societes/store', [SocieteArtisanController::class, 'store']) ->name('admin.societes.store');

@@ -1,12 +1,12 @@
 @extends('admin.layout')
 
-@section('title', 'Modifier Société')
+@section('title', 'Ajouter une Société')
 
 @section('content')
 
 <style>
     .edit-container {
-        max-width: 650px;
+        max-width: 700px;
         margin: 0 auto;
         background: white;
         padding: 25px;
@@ -64,38 +64,48 @@
     .btn-save:hover {
         background: #e0a800;
     }
+
+    .btn-cancel {
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+        color: var(--primary);
+        font-weight: bold;
+        text-decoration: none;
+    }
 </style>
 
 <div class="edit-container">
 
-    <h1>Modifier la Société</h1>
+    <h1>Ajouter une Société</h1>
 
-    <form action="{{ route('admin.societes.update', $societe->id) }}" method="POST">
+    <form action="{{ route('admin.societes.store') }}" 
+          method="POST" 
+          enctype="multipart/form-data">
+
         @csrf
-        @method('PUT')
 
         <div class="form-group">
-            <label>Nom :</label>
-            <input type="text" name="name" value="{{ $societe->name }}" required class="form-control">
-        </div>
-
-
-        <div class="form-group">
-            <label>Téléphone :</label>
-            <input type="text" name="telephone" value="{{ $societe->telephone }}" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Adresse :</label>
-            <input type="text" name="adresse" value="{{ $societe->adresse }}" class="form-control">
+            <label>Nom de la société *</label>
+            <input type="text" name="name" required class="form-control">
         </div>
 
         <div class="form-group">
             <label>Description :</label>
-            <textarea name="description" class="form-control" rows="4">{{ $societe->description }}</textarea>
+            <textarea name="description" class="form-control" rows="4"></textarea>
         </div>
 
-        <button type="submit" class="btn-save">💾 Enregistrer les modifications</button>
+        <div class="form-group">
+            <label>Photo :</label>
+            <input type="file" name="photo" class="form-control">
+        </div>
+
+        <button type="submit" class="btn-save">➕ Ajouter la Société</button>
+
+        <a href="{{ route('admin.societes') }}" class="btn-cancel">
+            Annuler
+        </a>
+
     </form>
 
 </div>

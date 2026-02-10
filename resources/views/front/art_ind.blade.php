@@ -90,9 +90,10 @@
             <div class="team-item">
                 <div class="team-img">
                 <img 
-                src="{{ Str::startsWith($artisan->photo, 'photos/') ? asset('storage/' . $artisan->photo) : asset('img/' . $artisan->photo) }}" 
-                alt="Photo Artisans" 
-                style="width:100%; height:250px; object-fit:cover;">
+    src="{{ asset('storage/' . $artisan->photo) }}" 
+    alt="Photo Artisan"
+    style="width:100%; height:250px; object-fit:cover;">
+
 
                 </div>
                 <div class="team-text">

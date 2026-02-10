@@ -44,5 +44,21 @@ class SocieteArtisanController extends Controller
 
         return $query->get();
     }
-    
+    public function create() 
+    { return view('admin.societes.create'); } 
+    /** Enregistrement */ 
+    public function store(Request $request) 
+    { $request->validate([ 
+        'name' => 'required|string|max:255', 
+        'description' => 'nullable|string', 
+        'photo' => 'nullable|image|max:2048' ]);
+        $data = $request->only(['name', 'description']);
+        if ($request->hasFile('photo'))
+        { $data['photo'] = $request->file('photo')->store('societes', 'public'); } 
+    SocieteArtisan::create($data);
+    return redirect()->route('admin.societes') 
+    ->with('success', 'Société ajoutée avec succès'); 
+} 
 }
+    
+

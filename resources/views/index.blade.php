@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Khdamli</title>
+        <title>MonArtisan</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Construction Company Website Template" name="keywords">
         <meta content="Construction Company Website Template" name="description">
@@ -161,7 +161,7 @@
                         </div>
                         <div class="col-lg-7 col-md-6">
                             <div class="section-header text-left">
-                                <p>Bienvenue chez MonArtisqn</p>
+                                <p>Bienvenue chez MonArtisan</p>
                                 <h2>Trouver un artisan facilement </h2>
                             </div>
                             <div class="about-text">

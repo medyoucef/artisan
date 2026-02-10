@@ -12,7 +12,6 @@
             <tr>
                 <th>ID</th>
                 <th>Nom de la société</th>
-                <th>Email</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
                 <th>Actions</th>
@@ -24,7 +23,6 @@
             <tr>
                 <td>{{ $societe->id }}</td>
                 <td>{{ $societe->name }}</td>
-                <td>{{ $societe->email }}</td>
                 <td>{{ $societe->telephone }}</td>
                 <td>{{ $societe->adresse }}</td>
                 <td class="action-buttons">
@@ -45,6 +43,11 @@
             @endforeach
         </tbody>
     </table>
+    <div style="margin-bottom: 20px; text-align: right;">
+    <a href="{{ route('admin.societes.create') }}" class="btn-add">
+        ➕ Ajouter une societé
+    </a>
+</div>
 </div>
 
 @endsection

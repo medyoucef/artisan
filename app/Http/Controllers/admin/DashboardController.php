@@ -63,7 +63,7 @@ class DashboardController extends Controller
     }
     
     public function deleteSociete($id) {
-        Societe::findOrFail($id)->delete();
+        SocieteArtisan::findOrFail($id)->delete();
         return back()->with('success', 'Société supprimée avec succès');
     }
     
@@ -181,7 +181,6 @@ public function updateSociete(Request $request, $id) {
 
     $request->validate([
         'name' => 'required',
-        'email' => 'required|email',
         'telephone' => 'nullable',
         'adresse' => 'nullable',
         'description' => 'nullable',
@@ -189,7 +188,6 @@ public function updateSociete(Request $request, $id) {
 
     $societe->update([
         'name' => $request->name,
-        'email' => $request->email,
         'telephone' => $request->telephone,
         'adresse' => $request->adresse,
         'description' => $request->description,

@@ -15,7 +15,7 @@
                         </div>
                         <div id="collapseOne" class="collapse" data-parent="#accordion-1">
                             <div class="card-body">
-                                Utilisez la barre de recherche sur Khdamli et filtrez par ville et type de service pour trouver un artisan près de chez vous.
+                                Utilisez la barre de recherche sur MonArtisan et filtrez par ville et type de service pour trouver un artisan près de chez vous.
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="card wow fadeInRight" data-wow-delay="0.1s">
                         <div class="card-header">
                             <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
-                                Khdamli est-il disponible partout dan le pays ?
+                                MonArtisan est-il disponible partout dan le pays ?
                             </a>
                         </div>
                         <div id="collapseSix" class="collapse" data-parent="#accordion-2">
@@ -87,12 +87,12 @@
                     <div class="card wow fadeInRight" data-wow-delay="0.2s">
                         <div class="card-header">
                             <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
-                                Combien coûte l'utilisation de Khdamli ?
+                                Combien coûte l'utilisation de MonArtisan ?
                             </a>
                         </div>
                         <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
                             <div class="card-body">
-                                Khdamli est totalement gratuit pour les utilisateurs. Vous ne payez que l’artisan pour le service rendu.
+                                MonArtisan est totalement gratuit pour les utilisateurs. Vous ne payez que l’artisan pour le service rendu.
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                     <div class="card wow fadeInRight" data-wow-delay="0.5s">
                         <div class="card-header">
                             <a class="card-link collapsed" data-toggle="collapse" href="#collapseTen">
-                                Comment devenir artisan sur Khdamli ?
+                                Comment devenir artisan sur MonArtisan ?
                             </a>
                         </div>
                         <div id="collapseTen" class="collapse" data-parent="#accordion-2">
