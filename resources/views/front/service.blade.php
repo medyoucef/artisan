@@ -72,7 +72,8 @@
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="service-item">
                 <div class="service-img">
-                    <img src="{{ asset('img/' . $profession->photo) }}" alt="Image">
+                <img 
+                src="{{ asset('storage/' . $profession->photo) }}" alt="Image">
                     <div class="service-overlay">
                         <p>{{ $profession->description }}</p>
                     </div>

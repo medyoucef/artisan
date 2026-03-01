@@ -23,11 +23,29 @@
                         @php
                             $isArtisan = \App\Models\Artisan::where('user_id', auth()->id())->exists();
                         @endphp
+                        @php
+    $unreadMessages = \App\Models\MessagesUserArt::where('receiver_id', auth()->id())->count();
+@endphp
+
 
                         @if($isArtisan)
-                            <a href="{{ route('messages.inbox') }}" class="nav-item nav-link">
-                                <i class="fas fa-envelope me-1"></i> Messages
-                            </a>
+                        <a href="{{ route('messages.inbox') }}" class="nav-item nav-link">
+    <i class="fas fa-envelope me-1"></i>
+    Messages
+    @if($unreadMessages > 0)
+        <span style="
+            background:#fdbe33;
+            color:#030f27;
+            padding:2px 6px;
+            border-radius:10px;
+            font-weight:bold;
+            margin-left:4px;
+        ">
+            {{ $unreadMessages }}
+        </span>
+    @endif
+</a>
+
                         @endif
 
                         <!-- Vérifier si l'utilisateur est un client -->

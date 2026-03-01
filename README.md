@@ -1,5 +1,5 @@
-🛠️ Khdamlii – Plateforme de mise en relation entre artisans et clients
-Khdamlii est une plateforme conçue pour aider les particuliers à trouver rapidement un artisan qualifié près de chez eux.
+🛠️ MonArtisan – Plateforme de mise en relation entre artisans et clients
+MonArtisan est une plateforme conçue pour aider les particuliers à trouver rapidement un artisan qualifié près de chez eux.
 Elle permet également aux artisans indépendants et aux sociétés d’artisans de présenter leurs services et d’être contactés facilement.
 
 🎯 Objectif de la plateforme
@@ -21,7 +21,7 @@ Un carrousel mettant en avant différents métiers (plombier, menuisier, électr
 
 Les avantages de la plateforme (travail expert, qualité, support 7/7)
 
-Une section À propos expliquant la mission de Khdamlii
+Une section À propos expliquant la mission de MonArtisan
 
 Des statistiques (nombre d’artisans, sociétés, projets réalisés…)
 
