@@ -15,4 +15,6 @@ RUN composer install --no-dev --optimize-autoloader
 RUN php artisan config:cache \
     && php artisan route:cache
 
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+
 CMD ["php-fpm"]
