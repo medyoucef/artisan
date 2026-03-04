@@ -105,21 +105,36 @@ class DashboardController extends Controller
     }
 
     
-    public function updateProfession(Request $request, $id) {
-        $profession = Profession::findOrFail($id);
+    public function updateProfession(Request $request, $id)
+{
+    $profession = Profession::findOrFail($id);
 
-        $request->validate([
-            'nom' => 'required',
-            'description' => 'nullable',
-        ]);
+    $request->validate([
+        'name' => 'required',
+        'description' => 'nullable',
+        'photo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+    ]);
 
-        $profession->update([
-            'nom' => $request->nom,
-            'description' => $request->description,
-        ]);
+    // Mise à jour des champs texte
+    $profession->name = $request->name;
+    $profession->description = $request->description;
 
-    return redirect()->route('admin.professions')->with('success', 'Profession modifiée avec succès');
+    // Si une nouvelle image est envoyée
+    if ($request->hasFile('photo')) {
+
+        // Stockage dans storage/app/public/img
+        $path = $request->file('photo')->store('img', 'public');
+
+        // Mise à jour du champ photo
+        $profession->photo = $path;
+    }
+
+    $profession->save();
+
+    return redirect()->route('admin.professions')
+        ->with('success', 'Profession modifiée avec succès');
 }
+
 
     // ajouter profession
     public function createProfession() {

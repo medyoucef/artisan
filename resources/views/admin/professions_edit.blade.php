@@ -70,14 +70,28 @@
 
     <h1>Modifier la Profession</h1>
 
-    <form action="{{ route('admin.professions.update', $profession->id) }}" method="POST">
+    <form action="{{ route('admin.professions.update', $profession->id) }}" 
+      method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
         <div class="form-group">
             <label>Nom de la profession :</label>
-            <input type="text" name="nom" value="{{ $profession->nom }}" required class="form-control">
+            <input type="text" name="name" value="{{ $profession->name }}" required class="form-control">
         </div>
+        
+        <div class="form-group">
+    <label>Image de la profession :</label>
+    <input type="file" name="photo" class="form-control">
+</div>
+
+{{-- Affichage de l’image actuelle --}}
+@if($profession->photo)
+    <p>Image actuelle :</p>
+    <img src="{{ asset('storage/' . $profession->photo) }}" 
+         alt="Image" style="width:120px; border-radius:8px;">
+@endif
+
 
         <div class="form-group">
             <label>Description :</label>
