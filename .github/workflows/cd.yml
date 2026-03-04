@@ -3,7 +3,7 @@ name: CD Laravel
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
