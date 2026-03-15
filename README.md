@@ -40,6 +40,8 @@ Rechercher une société d’artisans
 
 Filtrer par ville ou adresse
 
+Contacter un artisan
+
 Voir les informations essentielles :
 
 Nom
