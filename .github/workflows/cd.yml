@@ -49,11 +49,11 @@ jobs:
           server-dir: /public_html/
           exclude: |
             **/.git*
-            **/vendor/*
-            **/_sokrates/*
+            
             **/.github*
             **/node_modules/*
             **/storage/logs/*
             **/storage/framework/cache/*
             **/storage/framework/sessions/*
             **/storage/framework/views/*
+            artisan
