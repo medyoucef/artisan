@@ -27,10 +27,10 @@ jobs:
           coverage: none
 
       # -------------------------
-      # 3. Installation Composer
+      # 3. Installer les dépendances DEV (pour PHPStan)
       # -------------------------
-      - name: Install Composer dependencies (production)
-        run: composer install --no-dev --optimize-autoloader
+      - name: Install Composer dev dependencies
+        run: composer install
 
       # -------------------------
       # 4. Analyse statique PHPStan
@@ -39,7 +39,13 @@ jobs:
         run: vendor/bin/phpstan analyse --memory-limit=1G
 
       # -------------------------
-      # 5. Build frontend (si npm existe)
+      # 5. Installer les dépendances PROD
+      # -------------------------
+      - name: Install Composer dependencies (production)
+        run: composer install --no-dev --optimize-autoloader
+
+      # -------------------------
+      # 6. Build frontend
       # -------------------------
       - name: Build frontend
         run: |
@@ -49,7 +55,7 @@ jobs:
           fi
 
       # -------------------------
-      # 6. Préparation Laravel
+      # 7. Préparation Laravel
       # -------------------------
       - name: Prepare Laravel for production
         run: |
@@ -60,7 +66,7 @@ jobs:
           php artisan view:cache
 
       # -------------------------
-      # 7. Déploiement FTP Hostinger
+      # 8. Déploiement FTP Hostinger
       # -------------------------
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
