@@ -10,9 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # -------------------------
+      # 1. Checkout du code
+      # -------------------------
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # -------------------------
+      # 2. Setup PHP
+      # -------------------------
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -20,16 +26,31 @@ jobs:
           extensions: mbstring, pdo, pdo_mysql, intl
           coverage: none
 
+      # -------------------------
+      # 3. Installation Composer
+      # -------------------------
       - name: Install Composer dependencies (production)
         run: composer install --no-dev --optimize-autoloader
 
-      - name: Build frontend (si tu utilises npm)
+      # -------------------------
+      # 4. Analyse statique PHPStan
+      # -------------------------
+      - name: Run static analysis (PHPStan)
+        run: vendor/bin/phpstan analyse --memory-limit=1G
+
+      # -------------------------
+      # 5. Build frontend (si npm existe)
+      # -------------------------
+      - name: Build frontend
         run: |
           if [ -f package.json ]; then
             npm install
             npm run build
           fi
 
+      # -------------------------
+      # 6. Préparation Laravel
+      # -------------------------
       - name: Prepare Laravel for production
         run: |
           cp .env.example .env
@@ -38,6 +59,9 @@ jobs:
           php artisan route:cache
           php artisan view:cache
 
+      # -------------------------
+      # 7. Déploiement FTP Hostinger
+      # -------------------------
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
