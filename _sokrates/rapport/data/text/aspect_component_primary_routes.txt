@@ -1,3 +1,0 @@
-Path	Lines of Code
-routes/console.php	6
-routes/web.php	72
