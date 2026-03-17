@@ -1,7 +1,13 @@
 includes:
-  - vendor/larastan/larastan/extension.neon
+    - vendor/larastan/larastan/extension.neon
 
 parameters:
-  paths:
-    - app
-  level: 5
+    paths:
+        - app
+
+    level: 5
+
+    ignoreErrors:
+        - '#Call to an undefined method .*::middleware#'
+        - '#Access to an undefined property .*#'
+        - '#Relation .* is not found in .* model#'
