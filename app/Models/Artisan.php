@@ -23,5 +23,10 @@ class Artisan extends Model
 {
     return $this->belongsTo(User::class);
 }
+public function devis()
+{
+    return $this->hasMany(Devis::class, 'artisan_id');
+}
+
 
 }
