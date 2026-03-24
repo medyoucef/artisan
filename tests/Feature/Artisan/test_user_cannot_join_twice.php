@@ -6,7 +6,7 @@ use Tests\TestCase;
 use App\Models\Artisan;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ArtisanE2ETest extends TestCase
+class Test_user_cannot_join_twice extends TestCase
 {
     use RefreshDatabase;
 

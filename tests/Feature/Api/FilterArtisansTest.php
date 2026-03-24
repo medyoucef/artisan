@@ -6,7 +6,7 @@ use Tests\TestCase;
 use App\Models\Artisan;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ArtisanApiTest extends TestCase
+class FilterArtisansTest extends TestCase
 {
     use RefreshDatabase;
 
