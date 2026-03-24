@@ -16,10 +16,7 @@ class BookingService
         return true;
     }
 
-    public function calculateDuration(Carbon $start, Carbon $end): int
-{
-    return $start->diffInMinutes($end);
-}
+    
 
 
 
