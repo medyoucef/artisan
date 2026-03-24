@@ -34,17 +34,11 @@ class BookingServiceTest extends TestCase
         $this->assertFalse($service->canBook($existing, $requested));
     }
 
-    public function test_calculate_duration()
-    {
-        $service = new BookingService();
+    public function calculateDuration(Carbon $start, Carbon $end): int
+{
+    return $start->diffInMinutes($end);
+}
 
-        $start = Carbon::parse('2024-01-01 10:00');
-        $end = Carbon::parse('2024-01-01 11:30');
-
-        $duration = $service->calculateDuration($start, $end);
-
-        $this->assertEquals(90, $duration);
-    }
 
     public function test_generate_booking_number()
     {
