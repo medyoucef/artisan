@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>public function getMissingRequires()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function getMissingRequires()</h3>
+<p style="margin-top: 4px">in <i>vendor/php-http/discovery/src/Composer/Plugin.php [243:367]</i></p>
+<ul>
+    <li><b>99</b> lines of code</li>
+    <li><b>41</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function getMissingRequires(InstalledRepositoryInterface $repo, array $requires, bool $isProject, array $pinnedAbstractions): array
+    {
+        $allPackages = [];
+        $devPackages = method_exists($repo, 'getDevPackageNames') ? array_fill_keys($repo-&gt;getDevPackageNames(), true) : [];
+
+        // One must require &quot;php-http/discovery&quot;
+        // to opt-in for auto-installation of virtual package implementations
+        if (!isset($requires[0]['php-http/discovery'])) {
+            $requires = [[], []];
+        }
+
+        foreach ($repo-&gt;getPackages() as $package) {
+            $allPackages[$package-&gt;getName()] = true;
+
+            if (1 &lt; \count($names = $package-&gt;getNames(false))) {
+                $allPackages += array_fill_keys($names, false);
+
+                if (isset($devPackages[$package-&gt;getName()])) {
+                    $devPackages += $names;
+                }
+            }
+
+            if (isset($package-&gt;getRequires()['php-http/discovery'])) {
+                $requires[(int) isset($devPackages[$package-&gt;getName()])] += $package-&gt;getRequires();
+            }
+        }
+
+        $missingRequires = [[], [], []];
+        $versionParser = new VersionParser();
+
+        if (ClassDiscovery::safeClassExists(\Phalcon\Http\Message\RequestFactory::class, false)) {
+            $missingRequires[0]['psr/http-factory-implementation'] = [];
+            $missingRequires[1]['psr/http-factory-implementation'] = [];
+        }
+
+        foreach ($requires as $dev =&gt; $rules) {
+            $abstractions = [];
+            $rules = array_intersect_key(self::PROVIDE_RULES, $rules);
+
+            while ($rules) {
+                $abstraction = key($rules);
+
+                if (isset($pinnedAbstractions[$abstraction])) {
+                    unset($rules[$abstraction]);
+                    continue;
+                }
+
+                $abstractions[] = $abstraction;
+
+                foreach (array_shift($rules) as $candidate =&gt; $deps) {
+                    [$candidate, $version] = explode(':', $candidate, 2) + [1 =&gt; null];
+
+                    if (!isset($allPackages[$candidate])) {
+                        continue;
+                    }
+                    if (null !== $version &amp;&amp; !$repo-&gt;findPackage($candidate, $versionParser-&gt;parseConstraints($version))) {
+                        continue;
+                    }
+                    if ($isProject &amp;&amp; !$dev &amp;&amp; isset($devPackages[$candidate])) {
+                        $missingRequires[0][$abstraction] = [$candidate];
+                        $missingRequires[2][$abstraction] = [$candidate];
+                    } else {
+                        $missingRequires[$dev][$abstraction] = [];
+                    }
+
+                    foreach ($deps as $dep) {
+                        if (isset(self::PROVIDE_RULES[$dep])) {
+                            $rules[$dep] = self::PROVIDE_RULES[$dep];
+                        } elseif (!isset($allPackages[$dep])) {
+                            $missingRequires[$dev][$abstraction][] = $dep;
+                        } elseif ($isProject &amp;&amp; !$dev &amp;&amp; isset($devPackages[$dep])) {
+                            $missingRequires[0][$abstraction][] = $dep;
+                            $missingRequires[2][$abstraction][] = $dep;
+                        }
+                    }
+                    break;
+                }
+            }
+
+            while ($abstractions) {
+                $abstraction = array_shift($abstractions);
+
+                if (isset($missingRequires[$dev][$abstraction])) {
+                    continue;
+                }
+                $candidates = self::PROVIDE_RULES[$abstraction];
+
+                foreach ($candidates as $candidate =&gt; $deps) {
+                    [$candidate, $version] = explode(':', $candidate, 2) + [1 =&gt; null];
+
+                    if (null !== $version &amp;&amp; !$repo-&gt;findPackage($candidate, $versionParser-&gt;parseConstraints($version))) {
+                        continue;
+                    }
+                    if (isset($allPackages[$candidate]) &amp;&amp; (!$isProject || $dev || !isset($devPackages[$candidate]))) {
+                        continue 2;
+                    }
+                }
+
+                foreach (array_intersect_key(self::STICKYNESS_RULES, $candidates) as $candidate =&gt; $stickyRule) {
+                    [$stickyName, $stickyVersion] = explode(':', $stickyRule, 2) + [1 =&gt; null];
+                    if (!isset($allPackages[$stickyName]) || ($isProject &amp;&amp; !$dev &amp;&amp; isset($devPackages[$stickyName]))) {
+                        continue;
+                    }
+                    if (null !== $stickyVersion &amp;&amp; !$repo-&gt;findPackage($stickyName, $versionParser-&gt;parseConstraints($stickyVersion))) {
+                        continue;
+                    }
+
+                    $candidates = [$candidate =&gt; $candidates[$candidate]];
+                    break;
+                }
+
+                $dep = key($candidates);
+                [$dep] = explode(':', $dep, 2);
+                $missingRequires[$dev][$abstraction] = [$dep];
+
+                if ($isProject &amp;&amp; !$dev &amp;&amp; isset($devPackages[$dep])) {
+                    $missingRequires[2][$abstraction][] = $dep;
+                }
+            }
+        }
+
+        $missingRequires[1] = array_diff_key($missingRequires[1], $missingRequires[0]);
+
+        return $missingRequires;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

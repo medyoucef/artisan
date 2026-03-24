@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Slick.prototype.swipeDirection = function()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Slick.prototype.swipeDirection = function()</h3>
+<p style="margin-top: 4px">in <i>public/lib/slick/slick.js [2613:2645]</i></p>
+<ul>
+    <li><b>27</b> lines of code</li>
+    <li><b>12</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+    Slick.prototype.swipeDirection = function() {
+
+        var xDist, yDist, r, swipeAngle, _ = this;
+
+        xDist = _.touchObject.startX - _.touchObject.curX;
+        yDist = _.touchObject.startY - _.touchObject.curY;
+        r = Math.atan2(yDist, xDist);
+
+        swipeAngle = Math.round(r * 180 / Math.PI);
+        if (swipeAngle &lt; 0) {
+            swipeAngle = 360 - Math.abs(swipeAngle);
+        }
+
+        if ((swipeAngle &lt;= 45) &amp;&amp; (swipeAngle &gt;= 0)) {
+            return (_.options.rtl === false ? 'left' : 'right');
+        }
+        if ((swipeAngle &lt;= 360) &amp;&amp; (swipeAngle &gt;= 315)) {
+            return (_.options.rtl === false ? 'left' : 'right');
+        }
+        if ((swipeAngle &gt;= 135) &amp;&amp; (swipeAngle &lt;= 225)) {
+            return (_.options.rtl === false ? 'right' : 'left');
+        }
+        if (_.options.verticalSwiping === true) {
+            if ((swipeAngle &gt;= 35) &amp;&amp; (swipeAngle &lt;= 135)) {
+                return 'down';
+            } else {
+                return 'up';
+            }
+        }
+
+        return 'vertical';
+
+    };
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

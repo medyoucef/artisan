@@ -1,0 +1,148 @@
+<html>
+<head>
+    <title>private function setReturnType()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function setReturnType()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/error-handler/DebugClassLoader.php [803:928]</i></p>
+<ul>
+    <li><b>102</b> lines of code</li>
+    <li><b>42</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function setReturnType(string $types, string $class, string $method, string $filename, ?string $parent, ?\ReflectionType $returnType = null): void
+    {
+        if ('__construct' === $method) {
+            return;
+        }
+
+        if ('null' === $types) {
+            self::$returnTypes[$class][$method] = ['null', 'null', $class, $filename];
+
+            return;
+        }
+
+        if ($nullable = str_starts_with($types, 'null|')) {
+            $types = substr($types, 5);
+        } elseif ($nullable = str_ends_with($types, '|null')) {
+            $types = substr($types, 0, -5);
+        }
+        $arrayType = ['array' =&gt; 'array'];
+        $typesMap = [];
+        $glue = str_contains($types, '&amp;') ? '&amp;' : '|';
+        foreach (explode($glue, $types) as $t) {
+            $t = self::SPECIAL_RETURN_TYPES[strtolower($t)] ?? $t;
+            $typesMap[$this-&gt;normalizeType($t, $class, $parent, $returnType)][$t] = $t;
+        }
+
+        if (isset($typesMap['array'])) {
+            if (isset($typesMap['Traversable']) || isset($typesMap['\Traversable'])) {
+                $typesMap['iterable'] = $arrayType !== $typesMap['array'] ? $typesMap['array'] : ['iterable'];
+                unset($typesMap['array'], $typesMap['Traversable'], $typesMap['\Traversable']);
+            } elseif ($arrayType !== $typesMap['array'] &amp;&amp; isset(self::$returnTypes[$class][$method]) &amp;&amp; !$returnType) {
+                return;
+            }
+        }
+
+        if (isset($typesMap['array']) &amp;&amp; isset($typesMap['iterable'])) {
+            if ($arrayType !== $typesMap['array']) {
+                $typesMap['iterable'] = $typesMap['array'];
+            }
+            unset($typesMap['array']);
+        }
+
+        $iterable = $object = true;
+        foreach ($typesMap as $n =&gt; $t) {
+            if ('null' !== $n) {
+                $iterable = $iterable &amp;&amp; (\in_array($n, ['array', 'iterable']) || str_contains($n, 'Iterator'));
+                $object = $object &amp;&amp; (\in_array($n, ['callable', 'object', '$this', 'static']) || !isset(self::SPECIAL_RETURN_TYPES[$n]));
+            }
+        }
+
+        $phpTypes = [];
+        $docTypes = [];
+
+        foreach ($typesMap as $n =&gt; $t) {
+            if (str_contains($n, '::')) {
+                [$definingClass, $constantName] = explode('::', $n, 2);
+                $definingClass = match ($definingClass) {
+                    'self', 'static', 'parent' =&gt; $class,
+                    default =&gt; $definingClass,
+                };
+
+                if (!\defined($definingClass.'::'.$constantName)) {
+                    return;
+                }
+
+                $constant = new \ReflectionClassConstant($definingClass, $constantName);
+
+                if (\PHP_VERSION_ID &gt;= 80300 &amp;&amp; $constantType = $constant-&gt;getType()) {
+                    if ($constantType instanceof \ReflectionNamedType) {
+                        $n = $constantType-&gt;getName();
+                    } else {
+                        return;
+                    }
+                } else {
+                    $n = \gettype($constant-&gt;getValue());
+                }
+            }
+
+            if ('null' === $n) {
+                $nullable = true;
+                continue;
+            }
+
+            $docTypes[] = $t;
+
+            if ('mixed' === $n || 'void' === $n) {
+                $nullable = false;
+                $phpTypes = ['' =&gt; $n];
+                continue;
+            }
+
+            if ('resource' === $n) {
+                // there is no native type for &quot;resource&quot;
+                return;
+            }
+
+            if (!preg_match('/^(?:\\\\?[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*)+$/', $n)) {
+                // exclude any invalid PHP class name (e.g. `Cookie::SAMESITE_*`)
+                continue;
+            }
+
+            if (!isset($phpTypes['']) &amp;&amp; !\in_array($n, $phpTypes, true)) {
+                $phpTypes[] = $n;
+            }
+        }
+        $docTypes = array_merge([], ...$docTypes);
+
+        if (!$phpTypes) {
+            return;
+        }
+
+        if (1 &lt; \count($phpTypes)) {
+            if ($iterable &amp;&amp; '8.0' &gt; $this-&gt;patchTypes['php']) {
+                $phpTypes = $docTypes = ['iterable'];
+            } elseif ($object &amp;&amp; 'object' === $this-&gt;patchTypes['force']) {
+                $phpTypes = $docTypes = ['object'];
+            } elseif ('8.0' &gt; $this-&gt;patchTypes['php']) {
+                // ignore multi-types return declarations
+                return;
+            }
+        }
+
+        $phpType = \sprintf($nullable ? (1 &lt; \count($phpTypes) ? '%s|null' : '?%s') : '%s', implode($glue, $phpTypes));
+        $docType = \sprintf($nullable ? '%s|null' : '%s', implode($glue, $docTypes));
+
+        self::$returnTypes[$class][$method] = [$phpType, $docType, $class, $filename];
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

@@ -1,0 +1,279 @@
+<html>
+<head>
+    <title>vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (<b>203</b> lines of code) (<a href="BootstrapErrorHandler.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+declare(strict_types=1);
+
+namespace Larastan\Larastan\Support;
+
+use NunoMaduro\Collision\Provider;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Throwable;
+use Whoops\Inspector\Inspector;
+use Whoops\Inspector\InspectorFactory;
+
+use function array_map;
+use function array_merge;
+use function class_exists;
+use function function_exists;
+use function getcwd;
+use function htmlspecialchars;
+use function implode;
+use function preg_match;
+use function preg_split;
+use function sprintf;
+use function str_contains;
+use function str_replace;
+use function str_starts_with;
+use function substr;
+use function Termwind\render;
+use function Termwind\renderUsing;
+use function trim;
+
+use const ENT_QUOTES;
+use const PHP_EOL;
+
+final class BootstrapErrorHandler
+{
+    private const USER_TITLE      = 'Application bootstrap failed';
+    private const FRAMEWORK_TITLE = 'Laravel framework bootstrap failed';
+
+    public function __construct(
+        private OutputInterface|null $output = null,
+        private bool|null $decorated = null,
+    ) {
+    }
+
+    public function handle(Throwable $throwable): void
+    {
+        $output      = $this-&gt;output ?? new ConsoleOutput();
+        $errorOutput = $output instanceof ConsoleOutput ? $output-&gt;getErrorOutput() : $output;
+
+        if ($this-&gt;decorated !== null) {
+            $output-&gt;setDecorated($this-&gt;decorated);
+            $errorOutput-&gt;setDecorated($this-&gt;decorated);
+        }
+
+        $decorated = $errorOutput-&gt;isDecorated();
+
+        if ($decorated &amp;&amp; $this-&gt;renderWithCollision($throwable, $errorOutput)) {
+            return;
+        }
+
+        $this-&gt;renderWithSymfonyStyle($throwable, $errorOutput);
+    }
+
+    private function renderWithCollision(Throwable $throwable, OutputInterface $output): bool
+    {
+        if (! class_exists(Provider::class) || ! function_exists('Termwind\\render')) {
+            return false;
+        }
+
+        $isUserCodeError = $this-&gt;isUserCodeError($throwable);
+
+        try {
+            $message = $isUserCodeError
+                ? $this-&gt;formatUserCodeError($throwable, includeErrorDetails: false)
+                : $this-&gt;formatFrameworkError($throwable, includeErrorDetails: false);
+
+            $title        = $isUserCodeError ? self::USER_TITLE : self::FRAMEWORK_TITLE;
+            $titleClasses = $isUserCodeError ? 'bg-red-500 text-white font-bold' : 'bg-yellow-500 text-black font-bold';
+
+            $body = $this-&gt;buildCollisionBody($message);
+
+            renderUsing($output);
+
+            render(&lt;&lt;&lt;HTML
+                &lt;div class=&quot;mx-2 mt-1&quot;&gt;
+                    &lt;div class=&quot;px-1 $titleClasses&quot;&gt;
+                        {$title}
+                    &lt;/div&gt;
+                    &lt;div class=&quot;px-1&quot;&gt;
+                        {$body}
+                    &lt;/div&gt;
+                    &lt;div class=&quot;mt-1 text-gray&quot;&gt;Exception Details&lt;/div&gt;
+                    &lt;hr class=&quot;border-t text-gray&quot;/&gt;
+                &lt;/div&gt;
+
+            HTML);
+
+            $provider = new Provider();
+            $handler  = $provider-&gt;register()
+                -&gt;getHandler()
+                -&gt;setOutput($output);
+
+            $inspector = match (true) {
+                class_exists(Inspector::class) =&gt; new Inspector($throwable),
+                class_exists(InspectorFactory::class) =&gt; (new InspectorFactory())-&gt;create($throwable),
+                default =&gt; null,
+            };
+
+            if ($inspector !== null) {
+                $handler-&gt;setInspector($inspector);
+            }
+
+            $handler-&gt;handle($throwable);
+
+            return true;
+        } catch (Throwable) {
+            return false;
+        }
+    }
+
+    private function renderWithSymfonyStyle(Throwable $throwable, OutputInterface $output): void
+    {
+        $decorated       = $output-&gt;isDecorated();
+        $isUserCodeError = $this-&gt;isUserCodeError($throwable);
+        $message         = $isUserCodeError
+            ? $this-&gt;formatUserCodeError($throwable, decorated: $decorated)
+            : $this-&gt;formatFrameworkError($throwable, decorated: $decorated);
+
+        $title = $isUserCodeError ? self::USER_TITLE : self::FRAMEWORK_TITLE;
+        $style = $isUserCodeError ? 'fg=white;bg=red' : 'fg=black;bg=yellow';
+
+        $io = new SymfonyStyle(new ArrayInput([]), $output);
+
+        $io-&gt;block($title, null, $style, ' ', true);
+
+        foreach ($this-&gt;splitLines($message) as $line) {
+            match (true) {
+                $line === '' =&gt; $io-&gt;newLine(),
+                str_starts_with($line, 'Error:') =&gt; $io-&gt;writeln('&lt;error&gt;' . $line . '&lt;/error&gt;'),
+                str_starts_with($line, 'Stack trace:') =&gt; $io-&gt;writeln('&lt;options=bold&gt;' . $line . '&lt;/options=bold&gt;'),
+                preg_match('/^#\d+/', $line) === 1 =&gt; $io-&gt;writeln('&lt;fg=gray&gt;' . $line . '&lt;/fg=gray&gt;'),
+                default =&gt; $io-&gt;writeln($line),
+            };
+        }
+    }
+
+    private function isUserCodeError(Throwable $throwable): bool
+    {
+        $file = $throwable-&gt;getFile();
+
+        if ($file === '') {
+            return false;
+        }
+
+        return ! str_contains($this-&gt;normalizePath($file), '/vendor/');
+    }
+
+    private function formatUserCodeError(Throwable $throwable, bool $includeErrorDetails = true, bool $decorated = true): string
+    {
+        $parts = [
+            'PHPStan was unable to bootstrap your application due to an error in your code.',
+            '',
+            sprintf('%s Fix the misconfiguration in your application code and run PHPStan again.', $this-&gt;getTipSymbol($decorated)),
+        ];
+
+        return $this-&gt;appendErrorDetails($parts, $throwable, $includeErrorDetails);
+    }
+
+    private function formatFrameworkError(Throwable $throwable, bool $includeErrorDetails = true, bool $decorated = true): string
+    {
+        $parts = [
+            'PHPStan was unable to bootstrap your application because Laravel failed to start.',
+            '',
+            'Larastan launches your Laravel application during analysis to provide smarter results.',
+            'The framework reported an error while starting, so the analysis could not continue.',
+            '',
+            sprintf('%s Try the following:', $this-&gt;getTipSymbol($decorated)),
+            ' - Check your environment variables in the .env file',
+            ' - Check the Laravel logs in storage/logs/laravel.log for more details',
+            ' - Run composer dump-autoload to ensure classes are indexed',
+            ' - Verify service provider registration and configuration',
+            ' - Verify the application boots by running php artisan about',
+        ];
+
+        return $this-&gt;appendErrorDetails($parts, $throwable, $includeErrorDetails);
+    }
+
+    /** @param list&lt;string&gt; $parts */
+    private function appendErrorDetails(array $parts, Throwable $throwable, bool $includeErrorDetails): string
+    {
+        if ($includeErrorDetails) {
+            $parts = array_merge($parts, [
+                '',
+                sprintf('Error: %s', $this-&gt;formatErrorMessage($throwable)),
+                '',
+                'Stack trace:',
+                $this-&gt;formatStackTrace($throwable),
+            ]);
+        }
+
+        return implode(PHP_EOL, $parts);
+    }
+
+    private function formatErrorMessage(Throwable $throwable): string
+    {
+        $message = trim($throwable-&gt;getMessage());
+
+        return $message !== '' ? $message : sprintf('Unhandled %s with no message', $throwable::class);
+    }
+
+    private function formatStackTrace(Throwable $throwable): string
+    {
+        $projectRoot = getcwd();
+        $trace       = $this-&gt;normalizePath($throwable-&gt;getTraceAsString());
+
+        return $projectRoot !== false
+            ? str_replace($this-&gt;normalizePath($projectRoot) . '/', '', $trace)
+            : $trace;
+    }
+
+    private function normalizePath(string $path): string
+    {
+        return str_replace('\\', '/', $path);
+    }
+
+    /** @return array&lt;int, string&gt; */
+    private function splitLines(string $message): array
+    {
+        return preg_split('/\r\n|\r|\n/', $message) ?: [];
+    }
+
+    private function buildCollisionBody(string $message): string
+    {
+        return implode('', array_map(fn (string $line): string =&gt; match (true) {
+            $line === '' =&gt; '&lt;div class=&quot;mb-1&quot;&gt;&lt;/div&gt;',
+            str_starts_with($line, ' - ') =&gt; '&lt;div class=&quot;pl-3&quot;&gt;&bull; ' . $this-&gt;escapeForHtml(substr($line, 3)) . '&lt;/div&gt;',
+            default =&gt; '&lt;div&gt;' . $this-&gt;escapeForHtml($line) . '&lt;/div&gt;',
+        }, $this-&gt;splitLines($message)));
+    }
+
+    private function escapeForHtml(string $value): string
+    {
+        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    }
+
+    private function getTipSymbol(bool $decorated): string
+    {
+        return $decorated ? &quot;\u{1F4A1}&quot; : 'Tip:';
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,1087 @@
+<html>
+<head>
+    <title>vendor/nunomaduro/termwind/src/ValueObjects/Styles.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/nunomaduro/termwind/src/ValueObjects/Styles.php (<b>641</b> lines of code) (<a href="Styles.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+declare(strict_types=1);
+
+namespace Termwind\ValueObjects;
+
+use Closure;
+use Termwind\Actions\StyleToMethod;
+use Termwind\Components\Element;
+use Termwind\Components\Hr;
+use Termwind\Components\Li;
+use Termwind\Components\Ol;
+use Termwind\Components\Ul;
+use Termwind\Enums\Color;
+use Termwind\Exceptions\ColorNotFound;
+use Termwind\Exceptions\InvalidStyle;
+use Termwind\Repositories\Styles as StyleRepository;
+
+use function Termwind\terminal;
+
+/**
+ * @internal
+ */
+final class Styles
+{
+    /**
+     * Finds all the styling on a string.
+     */
+    public const STYLING_REGEX = &quot;/\&lt;[\w=#\/\;,:.&amp;,%?-]+\&gt;|\\e\[\d+m/&quot;;
+
+    /** @var array&lt;int, string&gt; */
+    private array $styles = [];
+
+    private ?Element $element = null;
+
+    /**
+     * Creates a Style formatter instance.
+     *
+     * @param  array&lt;string, mixed&gt;  $properties
+     * @param  array&lt;string, Closure(string, array&lt;string, string|int&gt;, array&lt;string, int[]&gt;): string&gt;  $textModifiers
+     * @param  array&lt;string, Closure(string, array&lt;string, string|int&gt;): string&gt;  $styleModifiers
+     * @param  string[]  $defaultStyles
+     */
+    final public function __construct(
+        private array $properties = [
+            'colors' =&gt; [],
+            'options' =&gt; [],
+            'isFirstChild' =&gt; false,
+        ],
+        private array $textModifiers = [],
+        private array $styleModifiers = [],
+        private array $defaultStyles = []
+    ) {}
+
+    /**
+     * @return $this
+     */
+    public function setElement(Element $element): self
+    {
+        $this-&gt;element = $element;
+
+        return $this;
+    }
+
+    /**
+     * Gets default styles.
+     *
+     * @return string[]
+     */
+    public function defaultStyles(): array
+    {
+        return $this-&gt;defaultStyles;
+    }
+
+    /**
+     * Gets the element's style properties.
+     *
+     * @return array&lt;string, mixed&gt;
+     */
+    final public function getProperties(): array
+    {
+        return $this-&gt;properties;
+    }
+
+    /**
+     * Sets the element's style properties.
+     *
+     * @param  array&lt;string, mixed&gt;  $properties
+     */
+    public function setProperties(array $properties): self
+    {
+        $this-&gt;properties = $properties;
+
+        return $this;
+    }
+
+    /**
+     * Sets the styles to the element.
+     */
+    final public function setStyle(string $style): self
+    {
+        $this-&gt;styles = array_unique(array_merge($this-&gt;styles, [$style]));
+
+        return $this;
+    }
+
+    /**
+     * Checks if the element has the style.
+     */
+    final public function hasStyle(string $style): bool
+    {
+        return in_array($style, $this-&gt;styles, true);
+    }
+
+    /**
+     * Adds a style to the element.
+     */
+    final public function addStyle(string $style): self
+    {
+        return StyleToMethod::multiple($this, $style);
+    }
+
+    /**
+     * Inherit styles from given Styles object.
+     */
+    final public function inheritFromStyles(self $styles): self
+    {
+        foreach (['ml', 'mr', 'pl', 'pr', 'width', 'minWidth', 'maxWidth', 'spaceY', 'spaceX'] as $style) {
+            $this-&gt;properties['parentStyles'][$style] = array_merge(
+                $this-&gt;properties['parentStyles'][$style] ?? [],
+                $styles-&gt;properties['parentStyles'][$style] ?? []
+            );
+
+            $this-&gt;properties['parentStyles'][$style][] = $styles-&gt;properties['styles'][$style] ?? 0;
+        }
+
+        $this-&gt;properties['parentStyles']['justifyContent'] = $styles-&gt;properties['styles']['justifyContent'] ?? false;
+
+        foreach (['bg', 'fg'] as $colorType) {
+            $value = (array) ($this-&gt;properties['colors'][$colorType] ?? []);
+            $parentValue = (array) ($styles-&gt;properties['colors'][$colorType] ?? []);
+
+            if ($value === [] &amp;&amp; $parentValue !== []) {
+                $this-&gt;properties['colors'][$colorType] = $styles-&gt;properties['colors'][$colorType];
+            }
+        }
+
+        if (! is_null($this-&gt;properties['options']['bold'] ?? null) ||
+            ! is_null($styles-&gt;properties['options']['bold'] ?? null)) {
+            $this-&gt;properties['options']['bold'] = $this-&gt;properties['options']['bold']
+                ?? $styles-&gt;properties['options']['bold']
+                ?? false;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Adds a background color to the element.
+     */
+    final public function bg(string $color, int $variant = 0): self
+    {
+        return $this-&gt;with(['colors' =&gt; [
+            'bg' =&gt; $this-&gt;getColorVariant($color, $variant),
+        ]]);
+    }
+
+    /**
+     * Adds a bold style to the element.
+     */
+    final public function fontBold(): self
+    {
+        return $this-&gt;with(['options' =&gt; [
+            'bold' =&gt; true,
+        ]]);
+    }
+
+    /**
+     * Removes the bold style on the element.
+     */
+    final public function fontNormal(): self
+    {
+        return $this-&gt;with(['options' =&gt; [
+            'bold' =&gt; false,
+        ]]);
+    }
+
+    /**
+     * Adds a bold style to the element.
+     */
+    final public function strong(): self
+    {
+        $this-&gt;styleModifiers[__METHOD__] = static fn ($text): string =&gt; sprintf(&quot;\e[1m%s\e[0m&quot;, $text);
+
+        return $this;
+    }
+
+    /**
+     * Adds an italic style to the element.
+     */
+    final public function italic(): self
+    {
+        $this-&gt;styleModifiers[__METHOD__] = static fn ($text): string =&gt; sprintf(&quot;\e[3m%s\e[0m&quot;, $text);
+
+        return $this;
+    }
+
+    /**
+     * Adds an underline style.
+     */
+    final public function underline(): self
+    {
+        $this-&gt;styleModifiers[__METHOD__] = static fn ($text): string =&gt; sprintf(&quot;\e[4m%s\e[0m&quot;, $text);
+
+        return $this;
+    }
+
+    /**
+     * Adds the given margin left to the element.
+     */
+    final public function ml(int $margin): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'ml' =&gt; $margin,
+        ]]);
+    }
+
+    /**
+     * Adds the given margin right to the element.
+     */
+    final public function mr(int $margin): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'mr' =&gt; $margin,
+        ]]);
+    }
+
+    /**
+     * Adds the given margin bottom to the element.
+     */
+    final public function mb(int $margin): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'mb' =&gt; $margin,
+        ]]);
+    }
+
+    /**
+     * Adds the given margin top to the element.
+     */
+    final public function mt(int $margin): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'mt' =&gt; $margin,
+        ]]);
+    }
+
+    /**
+     * Adds the given horizontal margin to the element.
+     */
+    final public function mx(int $margin): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'ml' =&gt; $margin,
+            'mr' =&gt; $margin,
+        ]]);
+    }
+
+    /**
+     * Adds the given vertical margin to the element.
+     */
+    final public function my(int $margin): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'mt' =&gt; $margin,
+            'mb' =&gt; $margin,
+        ]]);
+    }
+
+    /**
+     * Adds the given margin to the element.
+     */
+    final public function m(int $margin): self
+    {
+        return $this-&gt;my($margin)-&gt;mx($margin);
+    }
+
+    /**
+     * Adds the given padding left to the element.
+     */
+    final public function pl(int $padding): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'pl' =&gt; $padding,
+        ]]);
+    }
+
+    /**
+     * Adds the given padding right.
+     */
+    final public function pr(int $padding): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'pr' =&gt; $padding,
+        ]]);
+    }
+
+    /**
+     * Adds the given horizontal padding.
+     */
+    final public function px(int $padding): self
+    {
+        return $this-&gt;pl($padding)-&gt;pr($padding);
+    }
+
+    /**
+     * Adds the given padding top.
+     */
+    final public function pt(int $padding): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'pt' =&gt; $padding,
+        ]]);
+    }
+
+    /**
+     * Adds the given padding bottom.
+     */
+    final public function pb(int $padding): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'pb' =&gt; $padding,
+        ]]);
+    }
+
+    /**
+     * Adds the given vertical padding.
+     */
+    final public function py(int $padding): self
+    {
+        return $this-&gt;pt($padding)-&gt;pb($padding);
+    }
+
+    /**
+     * Adds the given padding.
+     */
+    final public function p(int $padding): self
+    {
+        return $this-&gt;pt($padding)-&gt;pr($padding)-&gt;pb($padding)-&gt;pl($padding);
+    }
+
+    /**
+     * Adds the given vertical margin to the childs, ignoring the first child.
+     */
+    final public function spaceY(int $space): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'spaceY' =&gt; $space,
+        ]]);
+    }
+
+    /**
+     * Adds the given horizontal margin to the childs, ignoring the first child.
+     */
+    final public function spaceX(int $space): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'spaceX' =&gt; $space,
+        ]]);
+    }
+
+    /**
+     * Adds a border on top of each element.
+     */
+    final public function borderT(int $width = 1): self
+    {
+        if (! $this-&gt;element instanceof Hr) {
+            throw new InvalidStyle('`border-t` can only be used on an &quot;hr&quot; element.');
+        }
+
+        $this-&gt;styleModifiers[__METHOD__] = function ($text, $styles): string {
+            $length = $this-&gt;getLength($text);
+            if ($length &lt; 1) {
+                $margins = (int) ($styles['ml'] ?? 0) + ($styles['mr'] ?? 0);
+
+                return str_repeat('─', self::getParentWidth($this-&gt;properties['parentStyles'] ?? []) - $margins);
+            }
+
+            return str_repeat('─', $length);
+        };
+
+        return $this;
+    }
+
+    /**
+     * Adds a text alignment or color to the element.
+     */
+    final public function text(string $value, int $variant = 0): self
+    {
+        if (in_array($value, ['left', 'right', 'center'], true)) {
+            return $this-&gt;with(['styles' =&gt; [
+                'text-align' =&gt; $value,
+            ]]);
+        }
+
+        return $this-&gt;with(['colors' =&gt; [
+            'fg' =&gt; $this-&gt;getColorVariant($value, $variant),
+        ]]);
+    }
+
+    /**
+     * Truncates the text of the element.
+     */
+    final public function truncate(int $limit = 0, string $end = '&hellip;'): self
+    {
+        $this-&gt;textModifiers[__METHOD__] = function ($text, $styles) use ($limit, $end): string {
+            $width = $styles['width'] ?? 0;
+
+            if (is_string($width)) {
+                $width = self::calcWidthFromFraction(
+                    $width,
+                    $styles,
+                    $this-&gt;properties['parentStyles'] ?? []
+                );
+            }
+
+            [, $paddingRight, , $paddingLeft] = $this-&gt;getPaddings();
+            $width -= $paddingRight + $paddingLeft;
+
+            $limit = $limit &gt; 0 ? $limit : $width;
+            if ($limit === 0) {
+                return $text;
+            }
+
+            $limit -= mb_strwidth($end, 'UTF-8');
+
+            if ($this-&gt;getLength($text) &lt;= $limit) {
+                return $text;
+            }
+
+            return rtrim(self::trimText($text, $limit).$end);
+        };
+
+        return $this;
+    }
+
+    /**
+     * Forces the width of the element.
+     */
+    final public function w(int|string $width): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'width' =&gt; $width,
+        ]]);
+    }
+
+    /**
+     * Forces the element width to the full width of the terminal.
+     */
+    final public function wFull(): static
+    {
+        return $this-&gt;w('1/1');
+    }
+
+    /**
+     * Removes the width set on the element.
+     */
+    final public function wAuto(): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'width' =&gt; null,
+        ]]);
+    }
+
+    /**
+     * Defines a minimum width of an element.
+     */
+    final public function minW(int|string $width): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'minWidth' =&gt; $width,
+        ]]);
+    }
+
+    /**
+     * Defines a maximum width of an element.
+     */
+    final public function maxW(int|string $width): static
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'maxWidth' =&gt; $width,
+        ]]);
+    }
+
+    /**
+     * Makes the element's content uppercase.
+     */
+    final public function uppercase(): self
+    {
+        $this-&gt;textModifiers[__METHOD__] = static fn ($text): string =&gt; mb_strtoupper($text, 'UTF-8');
+
+        return $this;
+    }
+
+    /**
+     * Makes the element's content lowercase.
+     */
+    final public function lowercase(): self
+    {
+        $this-&gt;textModifiers[__METHOD__] = static fn ($text): string =&gt; mb_strtolower($text, 'UTF-8');
+
+        return $this;
+    }
+
+    /**
+     * Makes the element's content capitalize.
+     */
+    final public function capitalize(): self
+    {
+        $this-&gt;textModifiers[__METHOD__] = static fn ($text): string =&gt; mb_convert_case($text, MB_CASE_TITLE, 'UTF-8');
+
+        return $this;
+    }
+
+    /**
+     * Makes the element's content in snakecase.
+     */
+    final public function snakecase(): self
+    {
+        $this-&gt;textModifiers[__METHOD__] = static fn ($text): string =&gt; mb_strtolower(
+            (string) preg_replace(['/([a-z\d])([A-Z])/', '/([^_])([A-Z][a-z])/'], '$1_$2', $text),
+            'UTF-8'
+        );
+
+        return $this;
+    }
+
+    /**
+     * Makes the element's content with a line through.
+     */
+    final public function lineThrough(): self
+    {
+        $this-&gt;styleModifiers[__METHOD__] = static fn ($text): string =&gt; sprintf(&quot;\e[9m%s\e[0m&quot;, $text);
+
+        return $this;
+    }
+
+    /**
+     * Makes the element's content invisible.
+     */
+    final public function invisible(): self
+    {
+        $this-&gt;styleModifiers[__METHOD__] = static fn ($text): string =&gt; sprintf(&quot;\e[8m%s\e[0m&quot;, $text);
+
+        return $this;
+    }
+
+    /**
+     * Do not display element's content.
+     */
+    final public function hidden(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'display' =&gt; 'hidden',
+        ]]);
+    }
+
+    /**
+     * Makes a line break before the element's content.
+     */
+    final public function block(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'display' =&gt; 'block',
+        ]]);
+    }
+
+    /**
+     * Makes an element eligible to work with flex-1 element's style.
+     */
+    final public function flex(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'display' =&gt; 'flex',
+        ]]);
+    }
+
+    /**
+     * Makes an element grow and shrink as needed, ignoring the initial size.
+     */
+    final public function flex1(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'flex-1' =&gt; true,
+        ]]);
+    }
+
+    /**
+     * Justifies childs along the element with an equal amount of space between.
+     */
+    final public function justifyBetween(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'justifyContent' =&gt; 'between',
+        ]]);
+    }
+
+    /**
+     * Justifies childs along the element with an equal amount of space between
+     * each item and half around.
+     */
+    final public function justifyAround(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'justifyContent' =&gt; 'around',
+        ]]);
+    }
+
+    /**
+     * Justifies childs along the element with an equal amount of space around each item.
+     */
+    final public function justifyEvenly(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'justifyContent' =&gt; 'evenly',
+        ]]);
+    }
+
+    /**
+     * Justifies childs along the center of the container&rsquo;s main axis.
+     */
+    final public function justifyCenter(): self
+    {
+        return $this-&gt;with(['styles' =&gt; [
+            'justifyContent' =&gt; 'center',
+        ]]);
+    }
+
+    /**
+     * Repeats the string given until it fills all the content.
+     */
+    final public function contentRepeat(string $string): self
+    {
+        $string = preg_replace(&quot;/\[?'?([^'|\]]+)'?\]?/&quot;, '$1', $string) ?? '';
+
+        $this-&gt;textModifiers[__METHOD__] = static fn (): string =&gt; str_repeat($string, (int) floor(terminal()-&gt;width() / mb_strlen($string, 'UTF-8')));
+
+        return $this-&gt;with(['styles' =&gt; [
+            'contentRepeat' =&gt; true,
+        ]]);
+    }
+
+    /**
+     * Prepends text to the content.
+     */
+    final public function prepend(string $string): self
+    {
+        $this-&gt;textModifiers[__METHOD__] = static fn ($text): string =&gt; $string.$text;
+
+        return $this;
+    }
+
+    /**
+     * Appends text to the content.
+     */
+    final public function append(string $string): self
+    {
+        $this-&gt;textModifiers[__METHOD__] = static fn ($text): string =&gt; $text.$string;
+
+        return $this;
+    }
+
+    /**
+     * Prepends the list style type to the content.
+     */
+    final public function list(string $type, int $index = 0): self
+    {
+        if (! $this-&gt;element instanceof Ul &amp;&amp; ! $this-&gt;element instanceof Ol &amp;&amp; ! $this-&gt;element instanceof Li) {
+            throw new InvalidStyle(sprintf(
+                'Style list-none cannot be used with %s',
+                $this-&gt;element !== null ? $this-&gt;element::class : 'unknown element'
+            ));
+        }
+
+        if (! $this-&gt;element instanceof Li) {
+            return $this;
+        }
+
+        return match ($type) {
+            'square' =&gt; $this-&gt;prepend('▪ '),
+            'disc' =&gt; $this-&gt;prepend('&bull; '),
+            'decimal' =&gt; $this-&gt;prepend(sprintf('%d. ', $index)),
+            default =&gt; $this,
+        };
+    }
+
+    /**
+     * Adds the given properties to the element.
+     *
+     * @param  array&lt;string, mixed&gt;  $properties
+     */
+    public function with(array $properties): self
+    {
+        $this-&gt;properties = array_replace_recursive($this-&gt;properties, $properties);
+
+        return $this;
+    }
+
+    /**
+     * Sets the href property to the element.
+     */
+    final public function href(string $href): self
+    {
+        $href = str_replace('%', '%%', $href);
+
+        return $this-&gt;with(['href' =&gt; array_filter([$href])]);
+    }
+
+    /**
+     * Formats a given string.
+     */
+    final public function format(string $content): string
+    {
+        foreach ($this-&gt;textModifiers as $modifier) {
+            $content = $modifier(
+                $content,
+                $this-&gt;properties['styles'] ?? [],
+                $this-&gt;properties['parentStyles'] ?? []
+            );
+        }
+
+        $content = $this-&gt;applyWidth($content);
+
+        foreach ($this-&gt;styleModifiers as $modifier) {
+            $content = $modifier($content, $this-&gt;properties['styles'] ?? []);
+        }
+
+        return $this-&gt;applyStyling($content);
+    }
+
+    /**
+     * Get the format string including required styles.
+     */
+    private function getFormatString(): string
+    {
+        $styles = [];
+
+        /** @var array&lt;int, string&gt; $href */
+        $href = $this-&gt;properties['href'] ?? [];
+        if ($href !== []) {
+            $styles[] = sprintf('href=%s', array_pop($href));
+        }
+
+        $colors = $this-&gt;properties['colors'] ?? [];
+
+        foreach ($colors as $option =&gt; $content) {
+            if (in_array($option, ['fg', 'bg'], true)) {
+                $content = is_array($content) ? array_pop($content) : $content;
+
+                $styles[] = &quot;$option=$content&quot;;
+            }
+        }
+
+        $options = $this-&gt;properties['options'] ?? [];
+
+        if ($options !== []) {
+            $options = array_keys(array_filter(
+                $options, fn ($option) =&gt; $option === true
+            ));
+            $styles[] = count($options) &gt; 0
+                ? 'options='.implode(',', $options)
+                : 'options=,';
+        }
+
+        // If there are no styles we don't need extra tags
+        if ($styles === []) {
+            return '%s%s%s%s%s';
+        }
+
+        return '%s&lt;'.implode(';', $styles).'&gt;%s%s%s&lt;/&gt;%s';
+    }
+
+    /**
+     * Get the margins applied to the element.
+     *
+     * @return array{0: int, 1: int, 2: int, 3: int}
+     */
+    private function getMargins(): array
+    {
+        $isFirstChild = (bool) $this-&gt;properties['isFirstChild'];
+
+        $spaceY = $this-&gt;properties['parentStyles']['spaceY'] ?? [];
+        $spaceY = ! $isFirstChild ? end($spaceY) : 0;
+
+        $spaceX = $this-&gt;properties['parentStyles']['spaceX'] ?? [];
+        $spaceX = ! $isFirstChild ? end($spaceX) : 0;
+
+        return [
+            $spaceY &gt; 0 ? $spaceY : $this-&gt;properties['styles']['mt'] ?? 0,
+            $this-&gt;properties['styles']['mr'] ?? 0,
+            $this-&gt;properties['styles']['mb'] ?? 0,
+            $spaceX &gt; 0 ? $spaceX : $this-&gt;properties['styles']['ml'] ?? 0,
+        ];
+    }
+
+    /**
+     * Get the paddings applied to the element.
+     *
+     * @return array{0: int, 1: int, 2: int, 3: int}
+     */
+    private function getPaddings(): array
+    {
+        return [
+            $this-&gt;properties['styles']['pt'] ?? 0,
+            $this-&gt;properties['styles']['pr'] ?? 0,
+            $this-&gt;properties['styles']['pb'] ?? 0,
+            $this-&gt;properties['styles']['pl'] ?? 0,
+        ];
+    }
+
+    /**
+     * It applies the correct width for the content.
+     */
+    private function applyWidth(string $content): string
+    {
+        $styles = $this-&gt;properties['styles'] ?? [];
+        $minWidth = $styles['minWidth'] ?? -1;
+        $width = max($styles['width'] ?? -1, $minWidth);
+        $maxWidth = $styles['maxWidth'] ?? 0;
+
+        if ($width &lt; 0) {
+            return $content;
+        }
+
+        if ($width === 0) {
+            return '';
+        }
+
+        if (is_string($width)) {
+            $width = self::calcWidthFromFraction(
+                $width,
+                $styles,
+                $this-&gt;properties['parentStyles'] ?? []
+            );
+        }
+
+        if ($maxWidth &gt; 0) {
+            $width = min($styles['maxWidth'], $width);
+        }
+
+        $width -= ($styles['pl'] ?? 0) + ($styles['pr'] ?? 0);
+        $length = $this-&gt;getLength($content);
+
+        preg_match_all(&quot;/\n+/&quot;, $content, $matches);
+
+        // @phpstan-ignore-next-line
+        $width *= count($matches[0] ?? []) + 1;
+        $width += mb_strlen($matches[0][0] ?? '', 'UTF-8');
+
+        if ($length &lt;= $width) {
+            $space = $width - $length;
+
+            return match ($styles['text-align'] ?? '') {
+                'right' =&gt; str_repeat(' ', $space).$content,
+                'center' =&gt; str_repeat(' ', (int) floor($space / 2)).$content.str_repeat(' ', (int) ceil($space / 2)),
+                default =&gt; $content.str_repeat(' ', $space),
+            };
+        }
+
+        return self::trimText($content, $width);
+    }
+
+    /**
+     * It applies the styling for the content.
+     */
+    private function applyStyling(string $content): string
+    {
+        $display = $this-&gt;properties['styles']['display'] ?? 'inline';
+
+        if ($display === 'hidden') {
+            return '';
+        }
+
+        $isFirstChild = (bool) $this-&gt;properties['isFirstChild'];
+
+        [$marginTop, $marginRight, $marginBottom, $marginLeft] = $this-&gt;getMargins();
+        [$paddingTop, $paddingRight, $paddingBottom, $paddingLeft] = $this-&gt;getPaddings();
+
+        $content = (string) preg_replace('/\r[ \t]?/', &quot;\n&quot;,
+            (string) preg_replace(
+                '/\n/',
+                str_repeat(' ', $marginRight + $paddingRight)
+                .&quot;\n&quot;.
+                str_repeat(' ', $marginLeft + $paddingLeft),
+                $content)
+        );
+
+        $formatted = sprintf(
+            $this-&gt;getFormatString(),
+            str_repeat(' ', $marginLeft),
+            str_repeat(' ', $paddingLeft),
+            $content,
+            str_repeat(' ', $paddingRight),
+            str_repeat(' ', $marginRight),
+        );
+
+        $empty = str_replace(
+            $content,
+            str_repeat(' ', $this-&gt;getLength($content)),
+            $formatted
+        );
+
+        $items = [];
+
+        if (in_array($display, ['block', 'flex'], true) &amp;&amp; ! $isFirstChild) {
+            $items[] = &quot;\n&quot;;
+        }
+
+        if ($marginTop &gt; 0) {
+            $items[] = str_repeat(&quot;\n&quot;, $marginTop);
+        }
+
+        if ($paddingTop &gt; 0) {
+            $items[] = $empty.&quot;\n&quot;;
+        }
+
+        $items[] = $formatted;
+
+        if ($paddingBottom &gt; 0) {
+            $items[] = &quot;\n&quot;.$empty;
+        }
+
+        if ($marginBottom &gt; 0) {
+            $items[] = str_repeat(&quot;\n&quot;, $marginBottom);
+        }
+
+        return implode('', $items);
+    }
+
+    /**
+     * Get the length of the text provided without the styling tags.
+     */
+    public function getLength(?string $text = null): int
+    {
+        return mb_strlen(preg_replace(
+            self::STYLING_REGEX,
+            '',
+            $text ?? $this-&gt;element?-&gt;toString() ?? ''
+        ) ?? '', 'UTF-8');
+    }
+
+    /**
+     * Get the length of the element without margins.
+     */
+    public function getInnerWidth(): int
+    {
+        $innerLength = $this-&gt;getLength();
+        [, $marginRight, , $marginLeft] = $this-&gt;getMargins();
+
+        return $innerLength - $marginLeft - $marginRight;
+    }
+
+    /**
+     * Get the constant variant color from Color class.
+     */
+    private function getColorVariant(string $color, int $variant): string
+    {
+        if ($variant &gt; 0) {
+            $color .= '-'.$variant;
+        }
+
+        if (StyleRepository::has($color)) {
+            return StyleRepository::get($color)-&gt;getColor();
+        }
+
+        $colorConstant = mb_strtoupper(str_replace('-', '_', $color), 'UTF-8');
+
+        if (! defined(Color::class.&quot;::$colorConstant&quot;)) {
+            throw new ColorNotFound($colorConstant);
+        }
+
+        return constant(Color::class.&quot;::$colorConstant&quot;);
+    }
+
+    /**
+     * Calculates the width based on the fraction provided.
+     *
+     * @param  array&lt;string, int&gt;  $styles
+     * @param  array&lt;string, array&lt;int, int|string&gt;&gt;  $parentStyles
+     */
+    private static function calcWidthFromFraction(string $fraction, array $styles, array $parentStyles): int
+    {
+        $width = self::getParentWidth($parentStyles);
+
+        preg_match('/(\d+)\/(\d+)/', $fraction, $matches);
+
+        if (count($matches) !== 3 || $matches[2] === '0') {
+            throw new InvalidStyle(sprintf('Style [%s] is invalid.', &quot;w-$fraction&quot;));
+        }
+
+        $width = (int) floor($width * $matches[1] / $matches[2]);
+        $width -= ($styles['ml'] ?? 0) + ($styles['mr'] ?? 0);
+
+        return $width;
+    }
+
+    /**
+     * Gets the width of the parent element.
+     *
+     * @param  array&lt;string, array&lt;int|string&gt;&gt;  $styles
+     */
+    public static function getParentWidth(array $styles): int
+    {
+        $width = terminal()-&gt;width();
+        foreach ($styles['width'] ?? [] as $index =&gt; $parentWidth) {
+            $minWidth = (int) $styles['minWidth'][$index];
+            $maxWidth = (int) $styles['maxWidth'][$index];
+            $margins = (int) $styles['ml'][$index] + (int) $styles['mr'][$index];
+
+            $parentWidth = max($parentWidth, $minWidth);
+
+            if ($parentWidth &lt; 1) {
+                $parentWidth = $width;
+            } elseif (is_int($parentWidth)) {
+                $parentWidth += $margins;
+            }
+
+            preg_match('/(\d+)\/(\d+)/', (string) $parentWidth, $matches);
+
+            $width = count($matches) !== 3
+                ? (int) $parentWidth
+                : (int) floor($width * $matches[1] / $matches[2]);
+
+            if ($maxWidth &gt; 0) {
+                $width = min($maxWidth, $width);
+            }
+
+            $width -= $margins;
+            $width -= (int) $styles['pl'][$index] + (int) $styles['pr'][$index];
+        }
+
+        return $width;
+    }
+
+    /**
+     * It trims the text properly ignoring all escape codes and
+     * `&lt;bg;fg;options&gt;` tags.
+     */
+    private static function trimText(string $text, int $width): string
+    {
+        preg_match_all(self::STYLING_REGEX, $text, $matches, PREG_OFFSET_CAPTURE);
+        $text = rtrim(mb_strimwidth(preg_replace(self::STYLING_REGEX, '', $text) ?? '', 0, $width, '', 'UTF-8'));
+
+        // @phpstan-ignore-next-line
+        foreach ($matches[0] ?? [] as [$part, $index]) {
+            $text = substr($text, 0, $index).$part.substr($text, $index, null);
+        }
+
+        return $text;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

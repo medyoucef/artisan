@@ -1,0 +1,3494 @@
+[ {
+  "relativePath" : ".editorconfig",
+  "extension" : "editorconfig",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "composer.json",
+  "extension" : "json",
+  "linesOfCode" : 83,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "INSTALL.md",
+  "extension" : "md",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "package-lock.json",
+  "extension" : "json",
+  "linesOfCode" : 2777,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "package.json",
+  "extension" : "json",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/flaticon/font/Flaticon.svg",
+  "extension" : "svg",
+  "linesOfCode" : 232,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/fonts/slick.svg",
+  "extension" : "svg",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/robots.txt",
+  "extension" : "txt",
+  "linesOfCode" : 2,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "README.md",
+  "extension" : "md",
+  "linesOfCode" : 62,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "TDM.ini",
+  "extension" : "ini",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/brick/math/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 287,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/brick/math/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/carbonphp/carbon-doctrine-types/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/carbonphp/carbon-doctrine-types/README.md",
+  "extension" : "md",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/composer/semver/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 155,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/composer/semver/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 59,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/composer/semver/README.md",
+  "extension" : "md",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/dflydev/dot-access-data/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/dflydev/dot-access-data/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/dflydev/dot-access-data/README.md",
+  "extension" : "md",
+  "linesOfCode" : 116,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/doctrine/inflector/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/doctrine/inflector/README.md",
+  "extension" : "md",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/doctrine/lexer/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 55,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/doctrine/lexer/README.md",
+  "extension" : "md",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/doctrine/lexer/UPGRADE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/dragonmantank/cron-expression/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 177,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/dragonmantank/cron-expression/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/dragonmantank/cron-expression/README.md",
+  "extension" : "md",
+  "linesOfCode" : 104,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/egulias/email-validator/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/egulias/email-validator/CONTRIBUTING.md",
+  "extension" : "md",
+  "linesOfCode" : 111,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/fakerphp/faker/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 163,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/fakerphp/faker/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 56,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/fakerphp/faker/README.md",
+  "extension" : "md",
+  "linesOfCode" : 76,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/filp/whoops/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 89,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/filp/whoops/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/filp/whoops/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/filp/whoops/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/fruitcake/php-cors/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/fruitcake/php-cors/README.md",
+  "extension" : "md",
+  "linesOfCode" : 55,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/README.md",
+  "extension" : "md",
+  "linesOfCode" : 2,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/graham-campbell/result-type/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/guzzle/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 1305,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/guzzle/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 131,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/guzzle/README.md",
+  "extension" : "md",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/guzzle/UPGRADING.md",
+  "extension" : "md",
+  "linesOfCode" : 1009,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/promises/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 87,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/promises/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 58,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/promises/README.md",
+  "extension" : "md",
+  "linesOfCode" : 410,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/psr7/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 283,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/psr7/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 93,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/psr7/README.md",
+  "extension" : "md",
+  "linesOfCode" : 545,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/uri-template/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/uri-template/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 76,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/guzzlehttp/uri-template/README.md",
+  "extension" : "md",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/CHANGES.txt",
+  "extension" : "txt",
+  "linesOfCode" : 111,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/CONTRIBUTING.md",
+  "extension" : "md",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/generator/parts/file_header.txt",
+  "extension" : "txt",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/generator/parts/functions_footer.txt",
+  "extension" : "txt",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/generator/parts/functions_header.txt",
+  "extension" : "txt",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/generator/parts/functions_imports.txt",
+  "extension" : "txt",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/generator/parts/matchers_footer.txt",
+  "extension" : "txt",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/generator/parts/matchers_header.txt",
+  "extension" : "txt",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/generator/parts/matchers_imports.txt",
+  "extension" : "txt",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/LICENSE.txt",
+  "extension" : "txt",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/hamcrest/hamcrest-php/README.md",
+  "extension" : "md",
+  "linesOfCode" : 384,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/iamcal/sql-parser/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/iamcal/sql-parser/README.md",
+  "extension" : "md",
+  "linesOfCode" : 129,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/keepsuit/laravel-opentelemetry/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 175,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/keepsuit/laravel-opentelemetry/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 105,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/keepsuit/laravel-opentelemetry/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/keepsuit/laravel-opentelemetry/README.md",
+  "extension" : "md",
+  "linesOfCode" : 594,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/keepsuit/laravel-opentelemetry/UPGRADE.md",
+  "extension" : "md",
+  "linesOfCode" : 222,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/larastan/larastan/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 83,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/larastan/larastan/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 212,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/pint.json",
+  "extension" : "json",
+  "linesOfCode" : 211,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/README.md",
+  "extension" : "md",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Auth/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Auth/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Broadcasting/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Broadcasting/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Bus/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Bus/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Cache/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Cache/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Collections/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Collections/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Concurrency/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Concurrency/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Conditionable/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Conditionable/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Config/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Config/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Console/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Console/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Container/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Container/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Contracts/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Contracts/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Cookie/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Cookie/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Database/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Database/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Database/README.md",
+  "extension" : "md",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Encryption/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Encryption/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Events/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Events/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Filesystem/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Filesystem/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/package-lock.json",
+  "extension" : "json",
+  "linesOfCode" : 2297,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/package.json",
+  "extension" : "json",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Hashing/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Hashing/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Http/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Http/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Log/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Log/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Macroable/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Macroable/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Mail/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Mail/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Notifications/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Notifications/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Pagination/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Pagination/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Pipeline/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Pipeline/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Process/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Process/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Queue/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Queue/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Queue/README.md",
+  "extension" : "md",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Redis/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Redis/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Routing/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Routing/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Session/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Session/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Support/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Support/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Testing/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Testing/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Translation/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Translation/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Validation/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Validation/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/View/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/View/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/pail/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/pail/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/pint/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/pint/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/prompts/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/prompts/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/prompts/README.md",
+  "extension" : "md",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/README.md",
+  "extension" : "md",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/runtimes/8.0/php.ini",
+  "extension" : "ini",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/runtimes/8.1/php.ini",
+  "extension" : "ini",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/runtimes/8.2/php.ini",
+  "extension" : "ini",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/runtimes/8.3/php.ini",
+  "extension" : "ini",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/runtimes/8.4/php.ini",
+  "extension" : "ini",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sentinel/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/serializable-closure/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/serializable-closure/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/serializable-closure/README.md",
+  "extension" : "md",
+  "linesOfCode" : 47,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/telescope/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 76,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/telescope/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/telescope/package.json",
+  "extension" : "json",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/telescope/README.md",
+  "extension" : "md",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/tinker/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/tinker/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/tinker/README.md",
+  "extension" : "md",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/ui/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/ui/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/ui/README.md",
+  "extension" : "md",
+  "linesOfCode" : 103,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/commonmark/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 570,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/commonmark/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 128,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/commonmark/README.md",
+  "extension" : "md",
+  "linesOfCode" : 147,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/config/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/config/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/config/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/config/README.md",
+  "extension" : "md",
+  "linesOfCode" : 113,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/flysystem/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 72,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/flysystem/INFO.md",
+  "extension" : "md",
+  "linesOfCode" : 2,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/flysystem/readme.md",
+  "extension" : "md",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/flysystem-local/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/mime-type-detection/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/mime-type-detection/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/uri/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 76,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/league/uri-interfaces/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 70,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 324,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 119,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/CONTRIBUTING.md",
+  "extension" : "md",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/COPYRIGHT.md",
+  "extension" : "md",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/README.md",
+  "extension" : "md",
+  "linesOfCode" : 221,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/monolog/monolog/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 623,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/monolog/monolog/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 82,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/monolog/monolog/README.md",
+  "extension" : "md",
+  "linesOfCode" : 99,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/myclabs/deep-copy/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/myclabs/deep-copy/README.md",
+  "extension" : "md",
+  "linesOfCode" : 258,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nesbot/carbon/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 126,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nesbot/carbon/readme.md",
+  "extension" : "md",
+  "linesOfCode" : 141,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nette/schema/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nette/schema/license.md",
+  "extension" : "md",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nette/schema/readme.md",
+  "extension" : "md",
+  "linesOfCode" : 371,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nette/utils/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nette/utils/license.md",
+  "extension" : "md",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nette/utils/readme.md",
+  "extension" : "md",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nikic/php-parser/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nikic/php-parser/README.md",
+  "extension" : "md",
+  "linesOfCode" : 197,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nunomaduro/collision/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 93,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nunomaduro/collision/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nunomaduro/collision/README.md",
+  "extension" : "md",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nunomaduro/larastan/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 83,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nunomaduro/larastan/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nunomaduro/termwind/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 70,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nunomaduro/termwind/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nyholm/psr7-server/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nyholm/psr7-server/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/nyholm/psr7-server/README.md",
+  "extension" : "md",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 2,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 76,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/CONTRIBUTING.md",
+  "extension" : "md",
+  "linesOfCode" : 117,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/mix-manifest.json",
+  "extension" : "json",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/package.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/pint.json",
+  "extension" : "json",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/public/app.js.LICENSE.txt",
+  "extension" : "txt",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/public/mix-manifest.json",
+  "extension" : "json",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/README.md",
+  "extension" : "md",
+  "linesOfCode" : 80,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/README.md",
+  "extension" : "md",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/api/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/api/Logs/README.md",
+  "extension" : "md",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/api/README.md",
+  "extension" : "md",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/context/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/context/README.md",
+  "extension" : "md",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/exporter-otlp/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/exporter-otlp/README.md",
+  "extension" : "md",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/README.md",
+  "extension" : "md",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/sdk/Common/Dev/Compatibility/README.md",
+  "extension" : "md",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/sdk/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 73,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/sdk/README.md",
+  "extension" : "md",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/sem-conv/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/sem-conv/README.md",
+  "extension" : "md",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phar-io/manifest/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phar-io/manifest/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phar-io/manifest/README.md",
+  "extension" : "md",
+  "linesOfCode" : 158,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phar-io/manifest/tools/php-cs-fixer.d/header.txt",
+  "extension" : "txt",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phar-io/version/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 80,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phar-io/version/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phar-io/version/README.md",
+  "extension" : "md",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/php-http/discovery/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 206,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/php-http/discovery/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/php-http/discovery/README.md",
+  "extension" : "md",
+  "linesOfCode" : 80,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpoption/phpoption/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpstan/phpstan/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpstan/phpstan/README.md",
+  "extension" : "md",
+  "linesOfCode" : 88,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpstan/phpstan/UPGRADING.md",
+  "extension" : "md",
+  "linesOfCode" : 248,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-code-coverage/ChangeLog-11.0.md",
+  "extension" : "md",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-code-coverage/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 68,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-code-coverage/README.md",
+  "extension" : "md",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-code-coverage/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/icons/file-code.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/icons/file-directory.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-file-iterator/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 111,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-file-iterator/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-file-iterator/README.md",
+  "extension" : "md",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-file-iterator/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-invoker/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-invoker/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-invoker/README.md",
+  "extension" : "md",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-invoker/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-text-template/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-text-template/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-text-template/README.md",
+  "extension" : "md",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-text-template/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-timer/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 92,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-timer/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-timer/README.md",
+  "extension" : "md",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/php-timer/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/ChangeLog-11.5.md",
+  "extension" : "md",
+  "linesOfCode" : 139,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 122,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/DEPRECATIONS.md",
+  "extension" : "md",
+  "linesOfCode" : 59,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/README.md",
+  "extension" : "md",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/clock/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/clock/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/clock/README.md",
+  "extension" : "md",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/container/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/container/README.md",
+  "extension" : "md",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/event-dispatcher/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/event-dispatcher/README.md",
+  "extension" : "md",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-client/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-client/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-client/README.md",
+  "extension" : "md",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-factory/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-factory/README.md",
+  "extension" : "md",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-message/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-message/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/http-message/README.md",
+  "extension" : "md",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/log/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/log/README.md",
+  "extension" : "md",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/simple-cache/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/simple-cache/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psr/simple-cache/README.md",
+  "extension" : "md",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psy/psysh/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 60,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/psy/psysh/README.md",
+  "extension" : "md",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/ralouphie/getallheaders/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/ralouphie/getallheaders/README.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/ramsey/collection/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 108,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/ramsey/collection/README.md",
+  "extension" : "md",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/ramsey/collection/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 140,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/ramsey/uuid/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 108,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/ramsey/uuid/README.md",
+  "extension" : "md",
+  "linesOfCode" : 60,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/cli-parser/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/cli-parser/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/cli-parser/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/cli-parser/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit/README.md",
+  "extension" : "md",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit-reverse-lookup/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit-reverse-lookup/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit-reverse-lookup/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/code-unit-reverse-lookup/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/comparator/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 142,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/comparator/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 65,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/comparator/README.md",
+  "extension" : "md",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/comparator/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/complexity/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/complexity/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/complexity/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/complexity/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/diff/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 100,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/diff/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/diff/README.md",
+  "extension" : "md",
+  "linesOfCode" : 154,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/diff/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/environment/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 143,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/environment/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/environment/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/environment/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/exporter/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 116,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/exporter/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/exporter/README.md",
+  "extension" : "md",
+  "linesOfCode" : 132,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/exporter/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/global-state/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 74,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/global-state/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/global-state/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/global-state/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/lines-of-code/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/lines-of-code/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/lines-of-code/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/lines-of-code/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-enumerator/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-enumerator/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 47,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-enumerator/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-enumerator/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-reflector/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-reflector/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-reflector/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/object-reflector/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/recursion-context/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/recursion-context/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/recursion-context/README.md",
+  "extension" : "md",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/recursion-context/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/type/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 126,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/type/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/type/infection.json",
+  "extension" : "json",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/type/README.md",
+  "extension" : "md",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/type/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/version/ChangeLog.md",
+  "extension" : "md",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/version/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/version/README.md",
+  "extension" : "md",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/sebastian/version/SECURITY.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/spatie/laravel-package-tools/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/spatie/laravel-package-tools/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/spatie/laravel-package-tools/README.md",
+  "extension" : "md",
+  "linesOfCode" : 505,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/staabm/side-effects-detector/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/staabm/side-effects-detector/README.md",
+  "extension" : "md",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/clock/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/clock/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/clock/README.md",
+  "extension" : "md",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/console/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 224,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/console/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/console/README.md",
+  "extension" : "md",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/css-selector/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/css-selector/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/css-selector/README.md",
+  "extension" : "md",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/deprecation-contracts/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/deprecation-contracts/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/deprecation-contracts/README.md",
+  "extension" : "md",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/README.md",
+  "extension" : "md",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/chevron-right.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/icon-book.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/icon-copy.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/icon-minus-square-o.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/icon-minus-square.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/icon-plus-square-o.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/icon-plus-square.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/icon-support.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/error-handler/Resources/assets/images/symfony-logo.svg",
+  "extension" : "svg",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/event-dispatcher/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 68,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/event-dispatcher/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 47,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/event-dispatcher/README.md",
+  "extension" : "md",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/event-dispatcher-contracts/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/event-dispatcher-contracts/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/event-dispatcher-contracts/README.md",
+  "extension" : "md",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/finder/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 72,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/finder/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/finder/README.md",
+  "extension" : "md",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 326,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/README.md",
+  "extension" : "md",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-kernel/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 358,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-kernel/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 81,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-kernel/README.md",
+  "extension" : "md",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 86,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 47,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/README.md",
+  "extension" : "md",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 47,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/README.md",
+  "extension" : "md",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-ctype/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-ctype/README.md",
+  "extension" : "md",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-intl-grapheme/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-intl-grapheme/README.md",
+  "extension" : "md",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-intl-idn/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-intl-idn/README.md",
+  "extension" : "md",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-intl-normalizer/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-intl-normalizer/README.md",
+  "extension" : "md",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-mbstring/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-mbstring/README.md",
+  "extension" : "md",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-php80/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-php80/README.md",
+  "extension" : "md",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-php82/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-php82/README.md",
+  "extension" : "md",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-php83/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-php83/README.md",
+  "extension" : "md",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-uuid/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/polyfill-uuid/README.md",
+  "extension" : "md",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/process/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 96,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/process/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/process/README.md",
+  "extension" : "md",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/routing/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 280,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/routing/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/routing/README.md",
+  "extension" : "md",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/service-contracts/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/service-contracts/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/service-contracts/README.md",
+  "extension" : "md",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/string/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/string/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/string/README.md",
+  "extension" : "md",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 172,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 60,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/README.md",
+  "extension" : "md",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/Resources/data/parents.json",
+  "extension" : "json",
+  "linesOfCode" : 153,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation-contracts/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation-contracts/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation-contracts/README.md",
+  "extension" : "md",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/uid/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/uid/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/uid/README.md",
+  "extension" : "md",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/var-dumper/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 77,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/var-dumper/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/var-dumper/README.md",
+  "extension" : "md",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/yaml/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 185,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/yaml/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/yaml/README.md",
+  "extension" : "md",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/tbachert/spi/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/tbachert/spi/README.md",
+  "extension" : "md",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 111,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/README.md",
+  "extension" : "md",
+  "linesOfCode" : 120,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/theseer/tokenizer/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/theseer/tokenizer/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/theseer/tokenizer/README.md",
+  "extension" : "md",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/tijsverkoyen/css-to-inline-styles/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/tijsverkoyen/css-to-inline-styles/LICENSE.md",
+  "extension" : "md",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/vlucas/phpdotenv/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 60,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/voku/portable-ascii/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 134,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/voku/portable-ascii/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/voku/portable-ascii/LICENSE.txt",
+  "extension" : "txt",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/voku/portable-ascii/README.md",
+  "extension" : "md",
+  "linesOfCode" : 335,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/webmozart/assert/CHANGELOG.md",
+  "extension" : "md",
+  "linesOfCode" : 136,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/webmozart/assert/composer.json",
+  "extension" : "json",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/webmozart/assert/README.md",
+  "extension" : "md",
+  "linesOfCode" : 229,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "_sokrates_2/analysis_config.json",
+  "extension" : "json",
+  "linesOfCode" : 522,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

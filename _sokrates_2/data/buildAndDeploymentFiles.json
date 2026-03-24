@@ -1,0 +1,43 @@
+[ {
+  "relativePath" : ".gitattributes",
+  "extension" : "gitattributes",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : ".gitignore",
+  "extension" : "gitignore",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/database/mariadb/create-testing-database.sh",
+  "extension" : "sh",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/sail/database/mysql/create-testing-database.sh",
+  "extension" : "sh",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/telescope/webpack.mix.js",
+  "extension" : "js",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/log-viewer/webpack.mix.js",
+  "extension" : "js",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

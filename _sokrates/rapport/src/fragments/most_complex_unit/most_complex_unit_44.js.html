@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>value: function start()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">value: function start()</h3>
+<p style="margin-top: 4px">in <i>public/lib/wow/wow.js [272:309]</i></p>
+<ul>
+    <li><b>37</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+      value: function start() {
+        var _this = this;
+
+        this.stopped = false;
+        this.boxes = [].slice.call(this.element.querySelectorAll('.' + this.config.boxClass));
+        this.all = this.boxes.slice(0);
+        if (this.boxes.length) {
+          if (this.disabled()) {
+            this.resetStyle();
+          } else {
+            for (var i = 0; i &lt; this.boxes.length; i++) {
+              var box = this.boxes[i];
+              this.applyStyle(box, true);
+            }
+          }
+        }
+        if (!this.disabled()) {
+          addEvent(this.config.scrollContainer || window, 'scroll', this.scrollHandler);
+          addEvent(window, 'resize', this.scrollHandler);
+          this.interval = setInterval(this.scrollCallback, 50);
+        }
+        if (this.config.live) {
+          var mut = new MutationObserver(function (records) {
+            for (var j = 0; j &lt; records.length; j++) {
+              var record = records[j];
+              for (var k = 0; k &lt; record.addedNodes.length; k++) {
+                var node = record.addedNodes[k];
+                _this.doSync(node);
+              }
+            }
+            return undefined;
+          });
+          mut.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        }
+      }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

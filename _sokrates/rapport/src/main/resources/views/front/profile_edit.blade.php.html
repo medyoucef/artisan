@@ -1,0 +1,143 @@
+<html>
+<head>
+    <title>resources/views/front/profile_edit.blade.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">resources/views/front/profile_edit.blade.php (<b>88</b> lines of code) (<a href="profile_edit.blade.php">raw</a>):</h3>
+<div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Modifier le profil&lt;/title&gt;
+    &lt;meta content=&quot;width=device-width, initial-scale=1.0&quot; name=&quot;viewport&quot;&gt;
+
+    &lt;!-- Google Fonts &amp; CSS Libraries --&gt;
+    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;{{ asset('lib/animate/animate.min.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;{{ asset('css/style.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;!-- Top Bar --&gt;
+        @include('layout.topbar')
+
+        &lt;!-- Navigation --&gt;
+        @include('layout.nav_bar')
+
+        &lt;!-- Page Header --&gt;
+        &lt;div class=&quot;page-header&quot;&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-12&quot;&gt;
+                        &lt;h2&gt;Modifier le profil&lt;/h2&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col-12&quot;&gt;
+                        &lt;a href=&quot;{{ route('home') }}&quot;&gt;Accueil&lt;/a&gt;
+                        &lt;a href=&quot;{{ route('profile') }}&quot;&gt;Profil&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Modifier&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Formulaire de modification --&gt;
+        &lt;div class=&quot;container py-5&quot;&gt;
+            &lt;div class=&quot;row justify-content-center&quot;&gt;
+                &lt;div class=&quot;col-md-8&quot;&gt;
+                    @if (session('success'))
+                        &lt;div class=&quot;alert alert-success&quot;&gt;{{ session('success') }}&lt;/div&gt;
+                    @endif
+
+                    &lt;div class=&quot;card shadow rounded-4&quot;&gt;
+                        &lt;div class=&quot;card-body px-5 py-4&quot;&gt;
+                            &lt;h4 class=&quot;mb-4 text-center&quot;&gt;📝 Mise &agrave; jour des informations&lt;/h4&gt;
+
+                            &lt;form action=&quot;{{ route('profile.update') }}&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    @csrf
+
+    &lt;!-- Nom --&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;name&quot;&gt;Nom complet&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;form-control&quot; value=&quot;{{ old('name', $user-&gt;name) }}&quot;&gt;
+        @error('name') &lt;small class=&quot;text-danger&quot;&gt;{{ $message }}&lt;/small&gt; @enderror
+    &lt;/div&gt;
+
+    &lt;!-- Email --&gt;
+    &lt;div class=&quot;form-group mt-3&quot;&gt;
+        &lt;label for=&quot;email&quot;&gt;Adresse e-mail&lt;/label&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; class=&quot;form-control&quot; value=&quot;{{ old('email', $user-&gt;email) }}&quot;&gt;
+        @error('email') &lt;small class=&quot;text-danger&quot;&gt;{{ $message }}&lt;/small&gt; @enderror
+    &lt;/div&gt;
+
+    &lt;!-- Adresse --&gt;
+    &lt;div class=&quot;form-group mt-3&quot;&gt;
+        &lt;label for=&quot;adresse&quot;&gt;Adresse&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;adresse&quot; class=&quot;form-control&quot; value=&quot;{{ old('adresse', $user-&gt;adresse) }}&quot;&gt;
+        @error('adresse') &lt;small class=&quot;text-danger&quot;&gt;{{ $message }}&lt;/small&gt; @enderror
+    &lt;/div&gt;
+
+    &lt;!-- Ville --&gt;
+    &lt;div class=&quot;form-group mt-3&quot;&gt;
+        &lt;label for=&quot;ville&quot;&gt;Ville&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;ville&quot; class=&quot;form-control&quot; value=&quot;{{ old('ville', $user-&gt;ville) }}&quot;&gt;
+        @error('ville') &lt;small class=&quot;text-danger&quot;&gt;{{ $message }}&lt;/small&gt; @enderror
+    &lt;/div&gt;
+
+    &lt;!-- Photo de profil --&gt;
+    &lt;div class=&quot;form-group mt-3&quot;&gt;
+        &lt;label for=&quot;photo&quot;&gt;Photo de profil&lt;/label&gt;&lt;br&gt;
+        @if($user-&gt;photo)
+            &lt;img src=&quot;{{ asset('storage/' . $user-&gt;photo) }}&quot; alt=&quot;photo&quot; width=&quot;100&quot; class=&quot;mb-2 rounded&quot;&gt;
+        @endif
+        &lt;input type=&quot;file&quot; name=&quot;photo&quot; class=&quot;form-control-file&quot;&gt;
+        @error('photo') &lt;small class=&quot;text-danger&quot;&gt;{{ $message }}&lt;/small&gt; @enderror
+    &lt;/div&gt;
+
+    &lt;div class=&quot;mt-4 d-flex justify-content-between&quot;&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;btn btn-success&quot;&gt;💾 Enregistrer&lt;/button&gt;
+        &lt;a href=&quot;{{ route('profile') }}&quot; class=&quot;btn btn-secondary&quot;&gt;⬅️ Annuler&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Footer --&gt;
+        @include('layout.footer')
+
+        &lt;a href=&quot;#&quot; class=&quot;back-to-top&quot;&gt;&lt;i class=&quot;fa fa-chevron-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- JS Scripts --&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.4.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;{{ asset('lib/wow/wow.min.js') }}&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;{{ asset('js/main.js') }}&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

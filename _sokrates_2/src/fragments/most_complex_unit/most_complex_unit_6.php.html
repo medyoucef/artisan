@@ -1,0 +1,327 @@
+<html>
+<head>
+    <title>public function checkAnnotations()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function checkAnnotations()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/error-handler/DebugClassLoader.php [366:670]</i></p>
+<ul>
+    <li><b>252</b> lines of code</li>
+    <li><b>142</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function checkAnnotations(\ReflectionClass $refl, string $class): array
+    {
+        if (
+            'Symfony\Bridge\PhpUnit\Legacy\SymfonyTestsListenerForV7' === $class
+            || 'Symfony\Bridge\PhpUnit\Legacy\SymfonyTestsListenerForV6' === $class
+        ) {
+            return [];
+        }
+        $deprecations = [];
+
+        $className = str_contains($class, &quot;@anonymous\0&quot;) ? (get_parent_class($class) ?: key(class_implements($class)) ?: 'class').'@anonymous' : $class;
+
+        // Don't trigger deprecations for classes in the same vendor
+        if ($class !== $className) {
+            $vendor = preg_match('/^namespace ([^;\\\\\s]++)[;\\\\]/m', @file_get_contents($refl-&gt;getFileName()), $vendor) ? $vendor[1].'\\' : '';
+            $vendorLen = \strlen($vendor);
+        } elseif (2 &gt; $vendorLen = 1 + (strpos($class, '\\') ?: strpos($class, '_'))) {
+            $vendorLen = 0;
+            $vendor = '';
+        } else {
+            $vendor = str_replace('_', '\\', substr($class, 0, $vendorLen));
+        }
+
+        $parent = get_parent_class($class) ?: null;
+        self::$returnTypes[$class] = [];
+        $classIsTemplate = false;
+
+        // Detect annotations on the class
+        if ($doc = $this-&gt;parsePhpDoc($refl)) {
+            $classIsTemplate = isset($doc['template']) || isset($doc['template-covariant']);
+
+            foreach (['final', 'deprecated', 'internal'] as $annotation) {
+                if (null !== $description = $doc[$annotation][0] ?? null) {
+                    self::${$annotation}[$class] = '' !== $description ? ' '.$description.(preg_match('/[.!]$/', $description) ? '' : '.') : '.';
+                }
+            }
+
+            if ($refl-&gt;isInterface() &amp;&amp; isset($doc['method'])) {
+                foreach ($doc['method'] as $name =&gt; [$static, $returnType, $signature, $description]) {
+                    self::$method[$class][] = [$class, $static, $returnType, $name.$signature, $description];
+
+                    if ('' !== $returnType) {
+                        $this-&gt;setReturnType($returnType, $refl-&gt;name, $name, $refl-&gt;getFileName(), $parent);
+                    }
+                }
+            }
+        }
+
+        $parentAndOwnInterfaces = $this-&gt;getOwnInterfaces($class, $parent);
+        if ($parent) {
+            $parentAndOwnInterfaces[$parent] = $parent;
+
+            if (!isset(self::$checkedClasses[$parent])) {
+                $this-&gt;checkClass($parent);
+            }
+
+            if (isset(self::$final[$parent])) {
+                $deprecations[] = \sprintf('The &quot;%s&quot; class is considered final%s It may change without further notice as of its next major version. You should not extend it from &quot;%s&quot;.', $parent, self::$final[$parent], $className);
+            }
+        }
+
+        // Detect if the parent is annotated
+        foreach ($parentAndOwnInterfaces + class_uses($class, false) as $use) {
+            if (!isset(self::$checkedClasses[$use])) {
+                $this-&gt;checkClass($use);
+            }
+            if (isset(self::$deprecated[$use]) &amp;&amp; strncmp($vendor, str_replace('_', '\\', $use), $vendorLen) &amp;&amp; !isset(self::$deprecated[$class])) {
+                $type = class_exists($class, false) ? 'class' : (interface_exists($class, false) ? 'interface' : 'trait');
+                $verb = class_exists($use, false) || interface_exists($class, false) ? 'extends' : (interface_exists($use, false) ? 'implements' : 'uses');
+
+                $deprecations[] = \sprintf('The &quot;%s&quot; %s %s &quot;%s&quot; that is deprecated%s', $className, $type, $verb, $use, self::$deprecated[$use]);
+            }
+            if (isset(self::$internal[$use]) &amp;&amp; strncmp($vendor, str_replace('_', '\\', $use), $vendorLen)) {
+                $deprecations[] = \sprintf('The &quot;%s&quot; %s is considered internal%s It may change without further notice. You should not use it from &quot;%s&quot;.', $use, class_exists($use, false) ? 'class' : (interface_exists($use, false) ? 'interface' : 'trait'), self::$internal[$use], $className);
+            }
+            if (isset(self::$method[$use])) {
+                if ($refl-&gt;isAbstract()) {
+                    if (isset(self::$method[$class])) {
+                        self::$method[$class] = array_merge(self::$method[$class], self::$method[$use]);
+                    } else {
+                        self::$method[$class] = self::$method[$use];
+                    }
+                } elseif (!$refl-&gt;isInterface()) {
+                    if (!strncmp($vendor, str_replace('_', '\\', $use), $vendorLen)
+                        &amp;&amp; str_starts_with($className, 'Symfony\\')
+                        &amp;&amp; (!class_exists(InstalledVersions::class)
+                            || 'symfony/symfony' !== InstalledVersions::getRootPackage()['name'])
+                    ) {
+                        // skip &quot;same vendor&quot; @method deprecations for Symfony\* classes unless symfony/symfony is being tested
+                        continue;
+                    }
+                    $hasCall = $refl-&gt;hasMethod('__call');
+                    $hasStaticCall = $refl-&gt;hasMethod('__callStatic');
+                    foreach (self::$method[$use] as [$interface, $static, $returnType, $name, $description]) {
+                        if ($static ? $hasStaticCall : $hasCall) {
+                            continue;
+                        }
+                        $realName = substr($name, 0, strpos($name, '('));
+                        if (!$refl-&gt;hasMethod($realName) || !($methodRefl = $refl-&gt;getMethod($realName))-&gt;isPublic() || ($static &amp;&amp; !$methodRefl-&gt;isStatic()) || (!$static &amp;&amp; $methodRefl-&gt;isStatic())) {
+                            $deprecations[] = \sprintf('Class &quot;%s&quot; should implement method &quot;%s::%s%s&quot;%s', $className, ($static ? 'static ' : '').$interface, $name, $returnType ? ': '.$returnType : '', null === $description ? '.' : ': '.$description);
+                        }
+                    }
+                }
+            }
+        }
+
+        if (trait_exists($class)) {
+            $file = $refl-&gt;getFileName();
+
+            foreach ($refl-&gt;getMethods() as $method) {
+                if ($method-&gt;getFileName() === $file) {
+                    self::$methodTraits[$file][$method-&gt;getStartLine()] = $class;
+                }
+            }
+
+            return $deprecations;
+        }
+
+        // Inherit @final, @internal, @param and @return annotations for methods
+        self::$finalMethods[$class] = [];
+        self::$internalMethods[$class] = [];
+        self::$annotatedParameters[$class] = [];
+        self::$finalProperties[$class] = [];
+        self::$finalConstants[$class] = [];
+        foreach ($parentAndOwnInterfaces as $use) {
+            foreach (['finalMethods', 'internalMethods', 'annotatedParameters', 'returnTypes', 'finalProperties', 'finalConstants'] as $property) {
+                if (isset(self::${$property}[$use])) {
+                    self::${$property}[$class] = self::${$property}[$class] ? self::${$property}[$use] + self::${$property}[$class] : self::${$property}[$use];
+                }
+            }
+
+            if (null !== (TentativeTypes::RETURN_TYPES[$use] ?? null)) {
+                foreach (TentativeTypes::RETURN_TYPES[$use] as $method =&gt; $returnType) {
+                    $returnType = explode('|', $returnType);
+                    foreach ($returnType as $i =&gt; $t) {
+                        if ('?' !== $t &amp;&amp; !isset(self::BUILTIN_RETURN_TYPES[$t])) {
+                            $returnType[$i] = '\\'.$t;
+                        }
+                    }
+                    $returnType = implode('|', $returnType);
+
+                    self::$returnTypes[$class] += [$method =&gt; [$returnType, str_starts_with($returnType, '?') ? substr($returnType, 1).'|null' : $returnType, $use, '']];
+                }
+            }
+        }
+
+        foreach ($refl-&gt;getMethods() as $method) {
+            if ($method-&gt;class !== $class) {
+                continue;
+            }
+
+            if (null === $ns = self::$methodTraits[$method-&gt;getFileName()][$method-&gt;getStartLine()] ?? null) {
+                $ns = $vendor;
+                $len = $vendorLen;
+            } elseif (2 &gt; $len = 1 + (strpos($ns, '\\') ?: strpos($ns, '_'))) {
+                $len = 0;
+                $ns = '';
+            } else {
+                $ns = str_replace('_', '\\', substr($ns, 0, $len));
+            }
+
+            if ($parent &amp;&amp; isset(self::$finalMethods[$parent][$method-&gt;name])) {
+                [$declaringClass, $message] = self::$finalMethods[$parent][$method-&gt;name];
+                $deprecations[] = \sprintf('The &quot;%s::%s()&quot; method is considered final%s It may change without further notice as of its next major version. You should not extend it from &quot;%s&quot;.', $declaringClass, $method-&gt;name, $message, $className);
+            }
+
+            if (isset(self::$internalMethods[$class][$method-&gt;name])) {
+                [$declaringClass, $message] = self::$internalMethods[$class][$method-&gt;name];
+                if (strncmp($ns, $declaringClass, $len)) {
+                    $deprecations[] = \sprintf('The &quot;%s::%s()&quot; method is considered internal%s It may change without further notice. You should not extend it from &quot;%s&quot;.', $declaringClass, $method-&gt;name, $message, $className);
+                }
+            }
+
+            // To read method annotations
+            $doc = $this-&gt;parsePhpDoc($method);
+
+            if (($classIsTemplate || isset($doc['template']) || isset($doc['template-covariant'])) &amp;&amp; $method-&gt;hasReturnType()) {
+                unset($doc['return']);
+            }
+
+            if (isset(self::$annotatedParameters[$class][$method-&gt;name])) {
+                $definedParameters = [];
+                foreach ($method-&gt;getParameters() as $parameter) {
+                    $definedParameters[$parameter-&gt;name] = true;
+                }
+
+                foreach (self::$annotatedParameters[$class][$method-&gt;name] as $parameterName =&gt; $deprecation) {
+                    if (!isset($definedParameters[$parameterName]) &amp;&amp; !isset($doc['param'][$parameterName])) {
+                        $deprecations[] = \sprintf($deprecation, $className);
+                    }
+                }
+            }
+
+            $forcePatchTypes = $this-&gt;patchTypes['force'];
+
+            if ($canAddReturnType = null !== $forcePatchTypes &amp;&amp; !str_contains($method-&gt;getFileName(), \DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR)) {
+                $this-&gt;patchTypes['force'] = $forcePatchTypes ?: 'docblock';
+
+                $canAddReturnType = 2 === (int) $forcePatchTypes
+                    || false !== stripos($method-&gt;getFileName(), \DIRECTORY_SEPARATOR.'Tests'.\DIRECTORY_SEPARATOR)
+                    || $refl-&gt;isFinal()
+                    || $method-&gt;isFinal()
+                    || $method-&gt;isPrivate()
+                    || ('.' === (self::$internal[$class] ?? null) &amp;&amp; !$refl-&gt;isAbstract())
+                    || '.' === (self::$final[$class] ?? null)
+                    || '' === ($doc['final'][0] ?? null)
+                    || '' === ($doc['internal'][0] ?? null)
+                ;
+            }
+
+            if (null !== ($returnType = self::$returnTypes[$class][$method-&gt;name] ?? null) &amp;&amp; 'docblock' === $this-&gt;patchTypes['force'] &amp;&amp; !$method-&gt;hasReturnType() &amp;&amp; isset(TentativeTypes::RETURN_TYPES[$returnType[2]][$method-&gt;name])) {
+                $this-&gt;patchReturnTypeWillChange($method);
+            }
+
+            if (null !== ($returnType ??= self::MAGIC_METHODS[$method-&gt;name] ?? null) &amp;&amp; !$method-&gt;hasReturnType() &amp;&amp; !isset($doc['return'])) {
+                [$normalizedType, $returnType, $declaringClass, $declaringFile] = \is_string($returnType) ? [$returnType, $returnType, '', ''] : $returnType;
+
+                if ($canAddReturnType &amp;&amp; 'docblock' !== $this-&gt;patchTypes['force']) {
+                    $this-&gt;patchMethod($method, $returnType, $declaringFile, $normalizedType);
+                }
+                if (!isset($doc['deprecated']) &amp;&amp; strncmp($ns, $declaringClass, $len)) {
+                    if ('docblock' === $this-&gt;patchTypes['force']) {
+                        $this-&gt;patchMethod($method, $returnType, $declaringFile, $normalizedType);
+                    } elseif ('' !== $declaringClass &amp;&amp; $this-&gt;patchTypes['deprecations']) {
+                        $deprecations[] = \sprintf('Method &quot;%s::%s()&quot; might add &quot;%s&quot; as a native return type declaration in the future. Do the same in %s &quot;%s&quot; now to avoid errors or add an explicit @return annotation to suppress this message.', $declaringClass, $method-&gt;name, $normalizedType, interface_exists($declaringClass) ? 'implementation' : 'child class', $className);
+                    }
+                }
+            }
+
+            if (!$doc) {
+                $this-&gt;patchTypes['force'] = $forcePatchTypes;
+
+                continue;
+            }
+
+            if (isset($doc['return'])) {
+                $this-&gt;setReturnType($doc['return'] ?? self::MAGIC_METHODS[$method-&gt;name], $method-&gt;class, $method-&gt;name, $method-&gt;getFileName(), $parent, $method-&gt;getReturnType());
+
+                if (isset(self::$returnTypes[$class][$method-&gt;name][0]) &amp;&amp; $canAddReturnType) {
+                    $this-&gt;fixReturnStatements($method, self::$returnTypes[$class][$method-&gt;name][0]);
+                }
+
+                if ($method-&gt;isPrivate()) {
+                    unset(self::$returnTypes[$class][$method-&gt;name]);
+                }
+            }
+
+            $this-&gt;patchTypes['force'] = $forcePatchTypes;
+
+            if ($method-&gt;isPrivate()) {
+                continue;
+            }
+
+            $finalOrInternal = false;
+
+            foreach (['final', 'internal'] as $annotation) {
+                if (null !== $description = $doc[$annotation][0] ?? null) {
+                    self::${$annotation.'Methods'}[$class][$method-&gt;name] = [$class, '' !== $description ? ' '.$description.(preg_match('/[[:punct:]]$/', $description) ? '' : '.') : '.'];
+                    $finalOrInternal = true;
+                }
+            }
+
+            if ($finalOrInternal || $method-&gt;isConstructor() || !isset($doc['param']) || StatelessInvocation::class === $class) {
+                continue;
+            }
+            if (!isset(self::$annotatedParameters[$class][$method-&gt;name])) {
+                $definedParameters = [];
+                foreach ($method-&gt;getParameters() as $parameter) {
+                    $definedParameters[$parameter-&gt;name] = true;
+                }
+            }
+            foreach ($doc['param'] as $parameterName =&gt; $parameterType) {
+                if (!isset($definedParameters[$parameterName])) {
+                    self::$annotatedParameters[$class][$method-&gt;name][$parameterName] = \sprintf('The &quot;%%s::%s()&quot; method will require a new &quot;%s$%s&quot; argument in the next major version of its %s &quot;%s&quot;, not defining it is deprecated.', $method-&gt;name, $parameterType ? $parameterType.' ' : '', $parameterName, interface_exists($className) ? 'interface' : 'parent class', $className);
+                }
+            }
+        }
+
+        $finals = isset(self::$final[$class]) || $refl-&gt;isFinal() ? [] : [
+            'finalConstants' =&gt; $refl-&gt;getReflectionConstants(\ReflectionClassConstant::IS_PUBLIC | \ReflectionClassConstant::IS_PROTECTED),
+            'finalProperties' =&gt; $refl-&gt;getProperties(\ReflectionProperty::IS_PUBLIC | \ReflectionProperty::IS_PROTECTED),
+        ];
+        foreach ($finals as $type =&gt; $reflectors) {
+            foreach ($reflectors as $r) {
+                if ($r-&gt;class !== $class) {
+                    continue;
+                }
+
+                $doc = $this-&gt;parsePhpDoc($r);
+
+                foreach ($parentAndOwnInterfaces as $use) {
+                    if (isset(self::${$type}[$use][$r-&gt;name]) &amp;&amp; !isset($doc['deprecated']) &amp;&amp; ('finalConstants' === $type || substr($use, 0, strrpos($use, '\\')) !== substr($use, 0, strrpos($class, '\\')))) {
+                        $msg = 'finalConstants' === $type ? '%s&quot; constant' : '$%s&quot; property';
+                        $deprecations[] = \sprintf('The &quot;%s::'.$msg.' is considered final. You should not override it in &quot;%s&quot;.', self::${$type}[$use][$r-&gt;name], $r-&gt;name, $class);
+                    }
+                }
+
+                if (isset($doc['final']) || ('finalProperties' === $type &amp;&amp; str_starts_with($class, 'Symfony\\') &amp;&amp; !$r-&gt;hasType())) {
+                    self::${$type}[$class][$r-&gt;name] = $class;
+                }
+            }
+        }
+
+        return $deprecations;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

@@ -1,0 +1,216 @@
+<html>
+<head>
+    <title>function parse_field()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">function parse_field()</h3>
+<p style="margin-top: 4px">in <i>vendor/iamcal/sql-parser/src/SQLParser.php [587:780]</i></p>
+<ul>
+    <li><b>129</b> lines of code</li>
+    <li><b>63</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+	function parse_field($tokens){
+
+		$f = array(
+			'name'	=&gt; $this-&gt;decode_identifier(array_shift($tokens)),
+			'type'	=&gt; StrToUpper(array_shift($tokens)),
+		);
+
+		switch ($f['type']){
+
+			# DATE
+			case 'DATE':
+			case 'YEAR':
+			case 'TINYBLOB':
+			case 'BLOB':
+			case 'MEDIUMBLOB':
+			case 'LONGBLOB':
+			case 'JSON':
+			case 'GEOMETRY':
+			case 'POINT':
+			case 'LINESTRING':
+			case 'POLYGON':
+			case 'MULTIPOINT':
+			case 'MULTILINESTRING':
+			case 'MULTIPOLYGON':
+			case 'GEOMETRYCOLLECTION':
+			case 'BOOLEAN':
+			case 'BOOL':
+
+				# nothing more to read
+				break;
+
+
+			# TIME[(fsp)]
+			case 'TIME':
+			case 'TIMESTAMP':
+			case 'DATETIME':
+
+				# optional fractional seconds precision
+				if (count($tokens) &gt;= 3){
+					if ($tokens[0] == '(' &amp;&amp; $tokens[2] == ')'){
+						$f['fsp'] = $tokens[1];
+						array_shift($tokens);
+						array_shift($tokens);
+						array_shift($tokens);
+					}
+				}
+				break;
+
+
+			# TINYINT[(length)] [UNSIGNED] [ZEROFILL]
+			case 'TINYINT':
+			case 'SMALLINT':
+			case 'MEDIUMINT':
+			case 'INT':
+			case 'INTEGER':
+			case 'BIGINT':
+
+				$this-&gt;parse_field_length($tokens, $f);
+				$this-&gt;parse_field_unsigned($tokens, $f);
+				$this-&gt;parse_field_zerofill($tokens, $f);
+				break;
+
+
+			# REAL[(length,decimals)] [UNSIGNED] [ZEROFILL]
+			case 'REAL':
+			case 'DOUBLE':
+			case 'DOUBLE PRECISION':
+			case 'FLOAT':
+
+				$this-&gt;parse_field_length_decimals($tokens, $f);
+				$this-&gt;parse_field_unsigned($tokens, $f);
+				$this-&gt;parse_field_zerofill($tokens, $f);
+				break;
+
+
+			# DECIMAL[(length[,decimals])] [UNSIGNED] [ZEROFILL]
+			case 'DECIMAL':
+			case 'NUMERIC':
+			case 'DEC':
+			case 'FIXED':
+
+				$this-&gt;parse_field_length_decimals($tokens, $f);
+				$this-&gt;parse_field_length($tokens, $f);
+				$this-&gt;parse_field_unsigned($tokens, $f);
+				$this-&gt;parse_field_zerofill($tokens, $f);
+				break;
+
+
+			# BIT[(length)]
+			# BINARY[(length)]
+			case 'BIT':
+			case 'BINARY':
+
+				$this-&gt;parse_field_length($tokens, $f);
+				break;
+
+
+			# VARBINARY(length)
+			case 'VARBINARY':
+
+				$this-&gt;parse_field_length($tokens, $f);
+				break;
+
+			# CHAR[(length)] [BINARY] [CHARACTER SET charset_name] [COLLATE collation_name]
+			case 'CHAR':
+
+				$this-&gt;parse_field_binary($tokens, $f);
+				$this-&gt;parse_field_length($tokens, $f);
+				$this-&gt;parse_field_charset($tokens, $f);
+				$this-&gt;parse_field_collate($tokens, $f);
+				break;
+
+			# VARCHAR(length) [BINARY] [CHARACTER SET charset_name] [COLLATE collation_name]
+			case 'VARCHAR':
+			case 'CHARACTER VARYING':
+
+				$this-&gt;parse_field_binary($tokens, $f);
+				$this-&gt;parse_field_length($tokens, $f);
+				$this-&gt;parse_field_charset($tokens, $f);
+				$this-&gt;parse_field_collate($tokens, $f);
+				break;
+
+			# TINYTEXT   [BINARY] [CHARACTER SET charset_name] [COLLATE collation_name]
+			# TEXT       [BINARY] [CHARACTER SET charset_name] [COLLATE collation_name]
+			# MEDIUMTEXT [BINARY] [CHARACTER SET charset_name] [COLLATE collation_name]
+			# LONGTEXT   [BINARY] [CHARACTER SET charset_name] [COLLATE collation_name]
+			case 'TINYTEXT':
+			case 'TEXT':
+			case 'MEDIUMTEXT':
+			case 'LONGTEXT':
+			case 'JSON':
+
+				$this-&gt;parse_field_binary($tokens, $f);
+				$this-&gt;parse_field_charset($tokens, $f);
+				$this-&gt;parse_field_collate($tokens, $f);
+				break;
+
+			# ENUM(value1,value2,value3,...) [CHARACTER SET charset_name] [COLLATE collation_name]
+			# SET (value1,value2,value3,...) [CHARACTER SET charset_name] [COLLATE collation_name]
+			case 'ENUM':
+			case 'SET':
+
+				$f['values'] = $this-&gt;parse_value_list($tokens);
+				$this-&gt;parse_field_charset($tokens, $f);
+				$this-&gt;parse_field_collate($tokens, $f);
+				break;
+
+			default:
+				throw new SQLParserSyntaxException(&quot;Unsupported field type: {$f['type']}&quot;);
+		}
+
+
+		# [NOT NULL | NULL]
+		if (count($tokens) &gt;= 1 &amp;&amp; StrToUpper($tokens[0]) == 'NOT NULL'){
+			$f['null'] = false;
+			array_shift($tokens);
+		}
+		if (count($tokens) &gt;= 1 &amp;&amp; StrToUpper($tokens[0]) == 'NULL'){
+			$f['null'] = true;
+			array_shift($tokens);
+		}
+
+		# [DEFAULT default_value]
+		if (count($tokens) &gt;= 1 &amp;&amp; StrToUpper($tokens[0]) == 'DEFAULT'){
+			$f['default'] = $this-&gt;decode_value($tokens[1]);
+			if ($f['default'] === 'NULL'){
+				$f['null'] = true;
+			}
+
+			array_shift($tokens);
+			array_shift($tokens);
+		}
+
+		# [AUTO_INCREMENT]
+		if (count($tokens) &gt;= 1 &amp;&amp; StrToUpper($tokens[0]) == 'AUTO_INCREMENT'){
+			$f['auto_increment'] = true;
+			array_shift($tokens);
+		}
+
+		# [UNIQUE [KEY] | [PRIMARY] KEY]
+		# [COMMENT 'string']
+		if (count($tokens) &gt;= 1 &amp;&amp; StrToUpper($tokens[0]) == 'COMMENT'){
+			$f['comment'] = $this-&gt;decode_value($tokens[1]);
+			array_shift($tokens);
+			array_shift($tokens);
+		}
+		# [COLUMN_FORMAT {FIXED|DYNAMIC|DEFAULT}]
+		# [STORAGE {DISK|MEMORY|DEFAULT}]
+		# [reference_definition]
+
+		if (count($tokens)) $f['more'] = $tokens;
+
+		return $f;
+	}
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

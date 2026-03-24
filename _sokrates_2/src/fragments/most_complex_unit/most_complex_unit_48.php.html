@@ -1,0 +1,180 @@
+<html>
+<head>
+    <title>public function set()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function set()</h3>
+<p style="margin-top: 4px">in <i>vendor/nesbot/carbon/src/Carbon/Traits/Date.php [1398:1555]</i></p>
+<ul>
+    <li><b>110</b> lines of code</li>
+    <li><b>38</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function set(Unit|array|string $name, DateTimeZone|Month|string|int|float|null $value = null): static
+    {
+        if ($this-&gt;isImmutable()) {
+            throw new ImmutableException(\sprintf('%s class', static::class));
+        }
+
+        if (\is_array($name)) {
+            foreach ($name as $key =&gt; $value) {
+                $this-&gt;set($key, $value);
+            }
+
+            return $this;
+        }
+
+        $name = Unit::toName($name);
+
+        switch ($name) {
+            case 'milliseconds':
+            case 'millisecond':
+            case 'milli':
+            case 'microseconds':
+            case 'microsecond':
+            case 'micro':
+                if (str_starts_with($name, 'milli')) {
+                    $value *= 1000;
+                }
+
+                while ($value &lt; 0) {
+                    $this-&gt;subSecond();
+                    $value += static::MICROSECONDS_PER_SECOND;
+                }
+
+                while ($value &gt;= static::MICROSECONDS_PER_SECOND) {
+                    $this-&gt;addSecond();
+                    $value -= static::MICROSECONDS_PER_SECOND;
+                }
+
+                $this-&gt;modify($this-&gt;rawFormat('H:i:s.').str_pad((string) round($value), 6, '0', STR_PAD_LEFT));
+
+                break;
+
+            case 'year':
+            case 'month':
+            case 'day':
+            case 'hour':
+            case 'minute':
+            case 'second':
+                [$year, $month, $day, $hour, $minute, $second] = array_map('intval', explode('-', $this-&gt;rawFormat('Y-n-j-G-i-s')));
+                $$name = self::monthToInt($value, $name);
+                $this-&gt;setDateTime($year, $month, $day, $hour, $minute, $second);
+
+                break;
+
+            case 'week':
+                $this-&gt;week($value);
+
+                break;
+
+            case 'isoWeek':
+                $this-&gt;isoWeek($value);
+
+                break;
+
+            case 'weekYear':
+                $this-&gt;weekYear($value);
+
+                break;
+
+            case 'isoWeekYear':
+                $this-&gt;isoWeekYear($value);
+
+                break;
+
+            case 'dayOfYear':
+                $this-&gt;addDays($value - $this-&gt;dayOfYear);
+
+                break;
+
+            case 'dayOfWeek':
+                $this-&gt;addDays($value - $this-&gt;dayOfWeek);
+
+                break;
+
+            case 'dayOfWeekIso':
+                $this-&gt;addDays($value - $this-&gt;dayOfWeekIso);
+
+                break;
+
+            case 'timestamp':
+                $this-&gt;setTimestamp($value);
+
+                break;
+
+            case 'offset':
+                $this-&gt;setTimezone(static::safeCreateDateTimeZone($value / static::SECONDS_PER_MINUTE / static::MINUTES_PER_HOUR));
+
+                break;
+
+            case 'offsetMinutes':
+                $this-&gt;setTimezone(static::safeCreateDateTimeZone($value / static::MINUTES_PER_HOUR));
+
+                break;
+
+            case 'offsetHours':
+                $this-&gt;setTimezone(static::safeCreateDateTimeZone($value));
+
+                break;
+
+            case 'timezone':
+            case 'tz':
+                $this-&gt;setTimezone($value);
+
+                break;
+
+            default:
+                if (preg_match('/^([a-z]{2,})Of([A-Z][a-z]+)$/', $name, $match)) {
+                    [, $firstUnit, $secondUnit] = $match;
+
+                    try {
+                        $start = $this-&gt;avoidMutation()-&gt;startOf($secondUnit);
+                        $currentValue = (\in_array($firstUnit, [
+                            // Unit with indexes starting at 1 (other units start at 0)
+                            'day',
+                            'week',
+                            'month',
+                            'quarter',
+                        ], true) ? 1 : 0) + (int) floor($start-&gt;diffInUnit($firstUnit, $this));
+
+                        // We check $value a posteriori to give precedence to UnknownUnitException
+                        if (!\is_int($value)) {
+                            throw new UnitException(&quot;-&gt;$name expects integer value&quot;);
+                        }
+
+                        $this-&gt;addUnit($firstUnit, $value - $currentValue);
+
+                        break;
+                    } catch (UnknownUnitException) {
+                        // default to macro
+                    }
+                }
+
+                $macro = $this-&gt;getLocalMacro('set'.ucfirst($name));
+
+                if ($macro) {
+                    $this-&gt;executeCallableWithContext($macro, $value);
+
+                    break;
+                }
+
+                if ($this-&gt;isLocalStrictModeEnabled()) {
+                    throw new UnknownSetterException($name);
+                }
+
+                $this-&gt;$name = $value;
+        }
+
+        return $this;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

@@ -1,0 +1,1821 @@
+[ {
+  "relativePath" : "vendor/laravel/ui/tests/AuthBackend/AuthenticatesUsersTest.php",
+  "extension" : "php",
+  "linesOfCode" : 139,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/ui/tests/AuthBackend/RegistersUsersTest.php",
+  "extension" : "php",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/ui/tests/AuthBackend/ThrottleLoginsTest.php",
+  "extension" : "php",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/helpers.php",
+  "extension" : "php",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php",
+  "extension" : "php",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCaseSetUp.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListenerTrait.php",
+  "extension" : "php",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/ClosureWrapper.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/CompositeExpectation.php",
+  "extension" : "php",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Configuration.php",
+  "extension" : "php",
+  "linesOfCode" : 165,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Container.php",
+  "extension" : "php",
+  "linesOfCode" : 368,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/CountValidator/AtLeast.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/CountValidator/AtMost.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/CountValidator/CountValidatorAbstract.php",
+  "extension" : "php",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/CountValidator/CountValidatorInterface.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/CountValidator/Exact.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/CountValidator/Exception.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception/BadMethodCallException.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception/InvalidArgumentException.php",
+  "extension" : "php",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception/InvalidCountException.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception/InvalidOrderException.php",
+  "extension" : "php",
+  "linesOfCode" : 55,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception/MockeryExceptionInterface.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception/NoMatchingExpectationException.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception/RuntimeException.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Exception.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Expectation.php",
+  "extension" : "php",
+  "linesOfCode" : 497,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/ExpectationDirector.php",
+  "extension" : "php",
+  "linesOfCode" : 117,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/ExpectationInterface.php",
+  "extension" : "php",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/ExpectsHigherOrderMessage.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/CachingGenerator.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/DefinedTargetClass.php",
+  "extension" : "php",
+  "linesOfCode" : 104,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/Generator.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/Method.php",
+  "extension" : "php",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/MockConfiguration.php",
+  "extension" : "php",
+  "linesOfCode" : 398,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/MockConfigurationBuilder.php",
+  "extension" : "php",
+  "linesOfCode" : 135,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/MockDefinition.php",
+  "extension" : "php",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/MockNameBuilder.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/Parameter.php",
+  "extension" : "php",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/AvoidMethodClashPass.php",
+  "extension" : "php",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/CallTypeHintPass.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassAttributesPass.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassNamePass.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassPass.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ConstantsPass.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/InstanceMockPass.php",
+  "extension" : "php",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/InterfacePass.php",
+  "extension" : "php",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/MagicMethodTypeHintsPass.php",
+  "extension" : "php",
+  "linesOfCode" : 111,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/MethodDefinitionPass.php",
+  "extension" : "php",
+  "linesOfCode" : 154,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/Pass.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/RemoveBuiltinMethodsThatAreFinalPass.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/RemoveDestructorPass.php",
+  "extension" : "php",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/RemoveUnserializeForInternalSerializableClassesPass.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/TraitPass.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/StringManipulationGenerator.php",
+  "extension" : "php",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/TargetClassInterface.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Generator/UndefinedTargetClass.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/HigherOrderMessage.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Instantiator.php",
+  "extension" : "php",
+  "linesOfCode" : 89,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/LegacyMockInterface.php",
+  "extension" : "php",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Loader/EvalLoader.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Loader/Loader.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Loader/RequireLoader.php",
+  "extension" : "php",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Any.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/ArgumentListMatcher.php",
+  "extension" : "php",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Closure.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Contains.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php",
+  "extension" : "php",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/MatcherInterface.php",
+  "extension" : "php",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Not.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php",
+  "extension" : "php",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Subset.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Matcher/Type.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/MethodCall.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Mock.php",
+  "extension" : "php",
+  "linesOfCode" : 551,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/MockInterface.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/QuickDefinitionsConfiguration.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/ReceivedMethodCalls.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Reflector.php",
+  "extension" : "php",
+  "linesOfCode" : 186,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/Undefined.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/VerificationDirector.php",
+  "extension" : "php",
+  "linesOfCode" : 73,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery/VerificationExpectation.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/mockery/mockery/library/Mockery.php",
+  "extension" : "php",
+  "linesOfCode" : 489,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/monolog/monolog/src/Monolog/Test/TestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/tests/Fixtures/complex_email.eml",
+  "extension" : "eml",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/tests/Fixtures/complex_email_2.eml",
+  "extension" : "eml",
+  "linesOfCode" : 79,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/tests/Fixtures/multiformat_email.eml",
+  "extension" : "eml",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/tests/Fixtures/multiformat_email_2.eml",
+  "extension" : "eml",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/tests/Pest.php",
+  "extension" : "php",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/tests/TestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/opcodesio/mail-parser/tests/Unit/MessageTest.php",
+  "extension" : "php",
+  "linesOfCode" : 348,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/ComparatorRegistered.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/ComparatorRegisteredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterLastTestMethodCalled.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterLastTestMethodCalledSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterLastTestMethodErrored.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterLastTestMethodErroredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterLastTestMethodFinished.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterLastTestMethodFinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodCalled.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodCalledSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodErrored.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodErroredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodFinished.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/AfterTestMethodFinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeFirstTestMethodCalled.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeFirstTestMethodCalledSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeFirstTestMethodErrored.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeFirstTestMethodErroredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeFirstTestMethodFinished.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeFirstTestMethodFinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodCalled.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodCalledSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodErrored.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodErroredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodFinished.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/BeforeTestMethodFinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionCalled.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionCalledSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionErrored.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionErroredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionFinished.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PostConditionFinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionCalled.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionCalledSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionErrored.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionErroredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionFinished.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/HookMethod/PreConditionFinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/ConsideredRisky.php",
+  "extension" : "php",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/ConsideredRiskySubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/DeprecationTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 99,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/DeprecationTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/ErrorTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 68,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/ErrorTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/NoticeTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 77,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/NoticeTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpDeprecationTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 93,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpDeprecationTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpNoticeTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 77,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpNoticeTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpunitDeprecationTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpunitDeprecationTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpunitErrorTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpunitErrorTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpunitWarningTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpunitWarningTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpWarningTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 77,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/PhpWarningTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/WarningTriggered.php",
+  "extension" : "php",
+  "linesOfCode" : 77,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Issue/WarningTriggeredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodCalled.php",
+  "extension" : "php",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodCalledSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodFinished.php",
+  "extension" : "php",
+  "linesOfCode" : 47,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodFinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/Finished.php",
+  "extension" : "php",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/FinishedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/PreparationFailed.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/PreparationFailedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/PreparationStarted.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/PreparationStartedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/Prepared.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Lifecycle/PreparedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/Errored.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/ErroredSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/Failed.php",
+  "extension" : "php",
+  "linesOfCode" : 59,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/FailedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/MarkedIncomplete.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/MarkedIncompleteSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/Passed.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/PassedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/Skipped.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/Outcome/SkippedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/PrintedUnexpectedOutput.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/PrintedUnexpectedOutputSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectForAbstractClassCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectForAbstractClassCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectForIntersectionOfInterfacesCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectForIntersectionOfInterfacesCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectForTraitCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectForTraitCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectFromWsdlCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 60,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/MockObjectFromWsdlCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/PartialMockObjectCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/PartialMockObjectCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/TestProxyCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/TestProxyCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/TestStubCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/TestStubCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/TestStubForIntersectionOfInterfacesCreated.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Events/Test/TestDouble/TestStubForIntersectionOfInterfacesCreatedSubscriber.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Issue/DirectTrigger.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Issue/IndirectTrigger.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Issue/IssueTrigger.php",
+  "extension" : "php",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Issue/SelfTrigger.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Issue/TestTrigger.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Issue/UnknownTrigger.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Phpt.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/Test.php",
+  "extension" : "php",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestCollection.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestCollectionIterator.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromDataProvider.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromTestDependency.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestData/TestData.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestData/TestDataCollection.php",
+  "extension" : "php",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestData/TestDataCollectionIterator.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestDox.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestDoxBuilder.php",
+  "extension" : "php",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestMethod.php",
+  "extension" : "php",
+  "linesOfCode" : 84,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Event/Value/Test/TestMethodBuilder.php",
+  "extension" : "php",
+  "linesOfCode" : 55,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/phpunit/phpunit/src/Framework/MockObject/Generator/templates/test_double_class.tpl",
+  "extension" : "tpl",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/clock/Test/ClockSensitiveTrait.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/RequestAttributeValueSame.php",
+  "extension" : "php",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseCookieValueSame.php",
+  "extension" : "php",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseFormatSame.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseHasCookie.php",
+  "extension" : "php",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseHasHeader.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseHeaderLocationSame.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseHeaderSame.php",
+  "extension" : "php",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseIsRedirected.php",
+  "extension" : "php",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseIsSuccessful.php",
+  "extension" : "php",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseIsUnprocessable.php",
+  "extension" : "php",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/http-foundation/Test/Constraint/ResponseStatusCodeSame.php",
+  "extension" : "php",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/Test/AbstractTransportFactoryTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/Test/Constraint/EmailCount.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/Test/Constraint/EmailIsQueued.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/Test/IncompleteDsnTestTrait.php",
+  "extension" : "php",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mailer/Test/TransportFactoryTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/Test/Constraint/EmailAddressContains.php",
+  "extension" : "php",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/Test/Constraint/EmailAttachmentCount.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/Test/Constraint/EmailHasHeader.php",
+  "extension" : "php",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/Test/Constraint/EmailHeaderSame.php",
+  "extension" : "php",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/Test/Constraint/EmailHtmlBodyContains.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/Test/Constraint/EmailSubjectContains.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/mime/Test/Constraint/EmailTextBodyContains.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/service-contracts/Test/ServiceLocatorTest.php",
+  "extension" : "php",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/service-contracts/Test/ServiceLocatorTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/Test/AbstractProviderFactoryTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/Test/IncompleteDsnTestTrait.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/Test/ProviderFactoryTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation/Test/ProviderTestCase.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/translation-contracts/Test/TranslatorTest.php",
+  "extension" : "php",
+  "linesOfCode" : 247,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/symfony/var-dumper/Test/VarDumperTestTrait.php",
+  "extension" : "php",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

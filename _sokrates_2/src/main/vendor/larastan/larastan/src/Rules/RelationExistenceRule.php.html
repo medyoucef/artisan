@@ -1,0 +1,216 @@
+<html>
+<head>
+    <title>vendor/larastan/larastan/src/Rules/RelationExistenceRule.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/larastan/larastan/src/Rules/RelationExistenceRule.php (<b>147</b> lines of code) (<a href="RelationExistenceRule.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+declare(strict_types=1);
+
+namespace Larastan\Larastan\Rules;
+
+use Illuminate\Database\Eloquent\Relations\Relation;
+use PhpParser\Node;
+use PhpParser\Node\Expr\MethodCall;
+use PHPStan\Analyser\Scope;
+use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\ParametersAcceptorSelector;
+use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleError;
+use PHPStan\Rules\RuleErrorBuilder;
+use PHPStan\Type\Constant\ConstantStringType;
+use PHPStan\Type\ObjectType;
+use PHPStan\Type\Type;
+
+use function array_map;
+use function array_merge;
+use function count;
+use function explode;
+use function in_array;
+use function sprintf;
+use function str_contains;
+
+/** @implements Rule&lt;Node\Expr\CallLike&gt; */
+class RelationExistenceRule implements Rule
+{
+    public function __construct(private ModelRuleHelper $modelRuleHelper)
+    {
+    }
+
+    public function getNodeType(): string
+    {
+        return Node\Expr\CallLike::class;
+    }
+
+    /** @return RuleError[] */
+    public function processNode(Node $node, Scope $scope): array
+    {
+        if (! $node instanceof MethodCall &amp;&amp; ! $node instanceof Node\Expr\StaticCall) {
+            return [];
+        }
+
+        if (! $node-&gt;name instanceof Node\Identifier) {
+            return [];
+        }
+
+        if (
+            ! in_array(
+                $node-&gt;name-&gt;name,
+                [
+                    'has',
+                    'with',
+                    'orHas',
+                    'doesntHave',
+                    'orDoesntHave',
+                    'whereHas',
+                    'withWhereHas',
+                    'orWhereHas',
+                    'whereDoesntHave',
+                    'orWhereDoesntHave',
+                    'whereRelation',
+                ],
+                true,
+            )
+        ) {
+            return [];
+        }
+
+        $args = $node-&gt;getArgs();
+
+        if (count($args) &lt; 1) {
+            return [];
+        }
+
+        $valueType = $scope-&gt;getType($args[0]-&gt;value);
+
+        /** @var ConstantStringType[] $relations */
+        $relations = [];
+
+        if ($valueType-&gt;isConstantArray()-&gt;yes()) {
+            $arrays = $valueType-&gt;getConstantArrays();
+
+            foreach ($arrays as $array) {
+                $relations = array_merge(
+                    $relations,
+                    ...array_map(static function (Type $type) {
+                        return $type-&gt;getConstantStrings();
+                    }, $array-&gt;getKeyTypes()),
+                    ...array_map(static function (Type $type) {
+                        return $type-&gt;getConstantStrings();
+                    }, $array-&gt;getValueTypes()),
+                );
+            }
+        } else {
+            $constants = $valueType-&gt;getConstantStrings();
+
+            if ($constants === []) {
+                return [];
+            }
+
+            $relations = $constants;
+        }
+
+        $errors = [];
+
+        foreach ($relations as $relationType) {
+            $relationName = explode(':', $relationType-&gt;getValue())[0];
+
+            $calledOnNode = $node instanceof MethodCall ? $node-&gt;var : $node-&gt;class;
+
+            if ($calledOnNode instanceof Node\Name) {
+                $calledOnType = new ObjectType($calledOnNode-&gt;toString());
+            } else {
+                $calledOnType = $scope-&gt;getType($calledOnNode);
+            }
+
+            $closure = function (Type $calledOnType, string $relationName, Node\Expr\CallLike $node) use ($scope): array {
+                $modelReflection = $this-&gt;modelRuleHelper-&gt;findModelReflectionFromType($calledOnType);
+
+                if ($modelReflection === null) {
+                    return [];
+                }
+
+                if (! $modelReflection-&gt;hasMethod($relationName)) {
+                    return [
+                        $this-&gt;getRuleError($relationName, $modelReflection, $node),
+                    ];
+                }
+
+                $relationMethod = $modelReflection-&gt;getMethod($relationName, $scope);
+
+                if (! (new ObjectType(Relation::class))-&gt;isSuperTypeOf(ParametersAcceptorSelector::selectFromArgs($scope, $node-&gt;getArgs(), $relationMethod-&gt;getVariants())-&gt;getReturnType())-&gt;yes()) {
+                    return [
+                        $this-&gt;getRuleError($relationName, $modelReflection, $node),
+                    ];
+                }
+
+                return [];
+            };
+
+            if (str_contains($relationName, '.')) {
+                // Nested relations
+                $relations = explode('.', $relationName);
+
+                foreach ($relations as $relation) {
+                    $result = $closure($calledOnType, $relation, $node);
+
+                    if ($result !== []) {
+                        return $result;
+                    }
+
+                    $modelReflection = $this-&gt;modelRuleHelper-&gt;findModelReflectionFromType($calledOnType);
+
+                    if ($modelReflection === null) {
+                        return [];
+                    }
+
+                    // Dynamic method return type extensions are not taken into account here.
+                    // So we simulate a method call to the relation here to get the return type.
+                    $calledOnType = $scope-&gt;getType(new MethodCall(new Node\Expr\New_(new Node\Name($modelReflection-&gt;getName())), new Node\Identifier($relation)));
+                }
+
+                return [];
+            }
+
+            $errors = array_merge($errors, $closure($calledOnType, $relationName, $node));
+        }
+
+        return $errors;
+    }
+
+    private function getRuleError(
+        string $relationName,
+        ClassReflection $modelReflection,
+        Node $node,
+    ): RuleError {
+        return RuleErrorBuilder::message(sprintf(
+            &quot;Relation '%s' is not found in %s model.&quot;,
+            $relationName,
+            $modelReflection-&gt;getName(),
+        ))
+            -&gt;identifier('larastan.relationExistence')
+            -&gt;line($node-&gt;getAttribute('startLine'))
+            -&gt;build();
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,115 @@
+<html>
+<head>
+    <title>public function dump()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function dump()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/yaml/Dumper.php [43:135]</i></p>
+<ul>
+    <li><b>73</b> lines of code</li>
+    <li><b>45</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function dump(mixed $input, int $inline = 0, int $indent = 0, int $flags = 0): string
+    {
+        $output = '';
+        $prefix = $indent ? str_repeat(' ', $indent) : '';
+        $dumpObjectAsInlineMap = true;
+
+        if (Yaml::DUMP_OBJECT_AS_MAP &amp; $flags &amp;&amp; ($input instanceof \ArrayObject || $input instanceof \stdClass)) {
+            $dumpObjectAsInlineMap = !(array) $input;
+        }
+
+        if ($inline &lt;= 0 || (!\is_array($input) &amp;&amp; !$input instanceof TaggedValue &amp;&amp; $dumpObjectAsInlineMap) || !$input) {
+            $output .= $prefix.Inline::dump($input, $flags);
+        } elseif ($input instanceof TaggedValue) {
+            $output .= $this-&gt;dumpTaggedValue($input, $inline, $indent, $flags, $prefix);
+        } else {
+            $dumpAsMap = Inline::isHash($input);
+
+            foreach ($input as $key =&gt; $value) {
+                if ('' !== $output &amp;&amp; &quot;\n&quot; !== $output[-1]) {
+                    $output .= &quot;\n&quot;;
+                }
+
+                if (\is_int($key) &amp;&amp; Yaml::DUMP_NUMERIC_KEY_AS_STRING &amp; $flags) {
+                    $key = (string) $key;
+                }
+
+                if (Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK &amp; $flags &amp;&amp; \is_string($value) &amp;&amp; str_contains($value, &quot;\n&quot;) &amp;&amp; !str_contains($value, &quot;\r&quot;)) {
+                    $blockIndentationIndicator = $this-&gt;getBlockIndentationIndicator($value);
+
+                    if (isset($value[-2]) &amp;&amp; &quot;\n&quot; === $value[-2] &amp;&amp; &quot;\n&quot; === $value[-1]) {
+                        $blockChompingIndicator = '+';
+                    } elseif (&quot;\n&quot; === $value[-1]) {
+                        $blockChompingIndicator = '';
+                    } else {
+                        $blockChompingIndicator = '-';
+                    }
+
+                    $output .= \sprintf('%s%s%s |%s%s', $prefix, $dumpAsMap ? Inline::dump($key, $flags).':' : '-', '', $blockIndentationIndicator, $blockChompingIndicator);
+
+                    foreach (explode(&quot;\n&quot;, $value) as $row) {
+                        if ('' === $row) {
+                            $output .= &quot;\n&quot;;
+                        } else {
+                            $output .= \sprintf(&quot;\n%s%s%s&quot;, $prefix, str_repeat(' ', $this-&gt;indentation), $row);
+                        }
+                    }
+
+                    continue;
+                }
+
+                if ($value instanceof TaggedValue) {
+                    $output .= \sprintf('%s%s !%s', $prefix, $dumpAsMap ? Inline::dump($key, $flags).':' : '-', $value-&gt;getTag());
+
+                    if (Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK &amp; $flags &amp;&amp; \is_string($value-&gt;getValue()) &amp;&amp; str_contains($value-&gt;getValue(), &quot;\n&quot;) &amp;&amp; !str_contains($value-&gt;getValue(), &quot;\r\n&quot;)) {
+                        $blockIndentationIndicator = $this-&gt;getBlockIndentationIndicator($value-&gt;getValue());
+                        $output .= \sprintf(' |%s', $blockIndentationIndicator);
+
+                        foreach (explode(&quot;\n&quot;, $value-&gt;getValue()) as $row) {
+                            $output .= \sprintf(&quot;\n%s%s%s&quot;, $prefix, str_repeat(' ', $this-&gt;indentation), $row);
+                        }
+
+                        continue;
+                    }
+
+                    if ($inline - 1 &lt;= 0 || null === $value-&gt;getValue() || \is_scalar($value-&gt;getValue())) {
+                        $output .= ' '.$this-&gt;dump($value-&gt;getValue(), $inline - 1, 0, $flags).&quot;\n&quot;;
+                    } else {
+                        $output .= &quot;\n&quot;;
+                        $output .= $this-&gt;dump($value-&gt;getValue(), $inline - 1, $dumpAsMap ? $indent + $this-&gt;indentation : $indent + 2, $flags);
+                    }
+
+                    continue;
+                }
+
+                $dumpObjectAsInlineMap = true;
+
+                if (Yaml::DUMP_OBJECT_AS_MAP &amp; $flags &amp;&amp; ($value instanceof \ArrayObject || $value instanceof \stdClass)) {
+                    $dumpObjectAsInlineMap = !(array) $value;
+                }
+
+                $willBeInlined = $inline - 1 &lt;= 0 || !\is_array($value) &amp;&amp; $dumpObjectAsInlineMap || !$value;
+
+                $output .= \sprintf('%s%s%s%s',
+                    $prefix,
+                    $dumpAsMap ? Inline::dump($key, $flags).':' : '-',
+                    $willBeInlined ? ' ' : &quot;\n&quot;,
+                    $this-&gt;dump($value, $inline - 1, $willBeInlined ? 0 : $indent + $this-&gt;indentation, $flags)
+                ).($willBeInlined ? &quot;\n&quot; : '');
+            }
+        }
+
+        return $output;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

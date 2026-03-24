@@ -1,0 +1,194 @@
+<html>
+<head>
+    <title>private function processColumnUpdates()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function processColumnUpdates()</h3>
+<p style="margin-top: 4px">in <i>vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php [176:347]</i></p>
+<ul>
+    <li><b>144</b> lines of code</li>
+    <li><b>41</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function processColumnUpdates(string $tableName, string $argName, array $stmts): void
+    {
+        if (! isset($this-&gt;tables[$tableName])) {
+            return;
+        }
+
+        $table = $this-&gt;tables[$tableName];
+
+        foreach ($stmts as $stmt) {
+            if (
+                ! ($stmt instanceof PhpParser\Node\Stmt\Expression)
+                || ! ($stmt-&gt;expr instanceof PhpParser\Node\Expr\MethodCall)
+                || ! ($stmt-&gt;expr-&gt;name instanceof PhpParser\Node\Identifier)
+            ) {
+                continue;
+            }
+
+            $rootVar = $stmt-&gt;expr;
+
+            $firstMethodCall = $rootVar;
+
+            $nullable = false;
+            $unsigned = false;
+
+            while ($rootVar instanceof PhpParser\Node\Expr\MethodCall) {
+                if ($rootVar-&gt;name instanceof PhpParser\Node\Identifier) {
+                    if (
+                        $rootVar-&gt;name-&gt;name === 'nullable'
+                        &amp;&amp; $this-&gt;getNullableArgumentValue($rootVar) === true
+                    ) {
+                        $nullable = true;
+                    } elseif ($rootVar-&gt;name-&gt;name === 'unsigned') {
+                        $unsigned = true;
+                    }
+                }
+
+                $firstMethodCall = $rootVar;
+                $rootVar         = $rootVar-&gt;var;
+            }
+
+            if (
+                ! ($rootVar instanceof PhpParser\Node\Expr\Variable)
+                || $rootVar-&gt;name !== $argName
+                || ! ($firstMethodCall-&gt;name instanceof PhpParser\Node\Identifier)
+            ) {
+                continue;
+            }
+
+            $firstArg  = $firstMethodCall-&gt;getArgs()[0]-&gt;value ?? null;
+            $secondArg = $firstMethodCall-&gt;getArgs()[1]-&gt;value ?? null;
+
+            if ($firstMethodCall-&gt;name-&gt;name === 'foreignIdFor') {
+                if (
+                    $firstArg instanceof PhpParser\Node\Expr\ClassConstFetch
+                    &amp;&amp; $firstArg-&gt;class instanceof PhpParser\Node\Name
+                ) {
+                    $modelClass = $firstArg-&gt;class-&gt;toCodeString();
+                } elseif ($firstArg instanceof PhpParser\Node\Scalar\String_) {
+                    $modelClass = $firstArg-&gt;value;
+                } else {
+                    continue;
+                }
+
+                $columnName = Str::snake(class_basename($modelClass)) . '_id';
+                if ($secondArg instanceof PhpParser\Node\Scalar\String_) {
+                    $columnName = $secondArg-&gt;value;
+                }
+
+                $type = $this-&gt;getModelReferenceType($modelClass);
+                if ($unsigned &amp;&amp; ($type === null || $type === 'int')) {
+                    $type = 'non-negative-int';
+                }
+
+                $table-&gt;setColumn(new SchemaColumn($columnName, $type ?? 'int', $nullable));
+
+                continue;
+            }
+
+            if (! $firstArg instanceof PhpParser\Node\Scalar\String_) {
+                if ($firstArg instanceof PhpParser\Node\Expr\Array_ &amp;&amp; $firstMethodCall-&gt;name-&gt;name === 'dropColumn') {
+                    foreach ($firstArg-&gt;items as $arrayItem) {
+                        if (! $arrayItem-&gt;value instanceof PhpParser\Node\Scalar\String_) {
+                            continue;
+                        }
+
+                        $table-&gt;dropColumn($arrayItem-&gt;value-&gt;value);
+                    }
+                }
+
+                if (
+                    $firstMethodCall-&gt;name-&gt;name === 'timestamps'
+                    || $firstMethodCall-&gt;name-&gt;name === 'timestampsTz'
+                    || $firstMethodCall-&gt;name-&gt;name === 'nullableTimestamps'
+                    || $firstMethodCall-&gt;name-&gt;name === 'nullableTimestampsTz'
+                    || $firstMethodCall-&gt;name-&gt;name === 'rememberToken'
+                ) {
+                    switch (strtolower($firstMethodCall-&gt;name-&gt;name)) {
+                        case 'droptimestamps':
+                        case 'droptimestampstz':
+                            $table-&gt;dropColumn('created_at');
+                            $table-&gt;dropColumn('updated_at');
+                            break;
+
+                        case 'remembertoken':
+                            $table-&gt;setColumn(new SchemaColumn('remember_token', 'string', $nullable));
+                            break;
+
+                        case 'dropremembertoken':
+                            $table-&gt;dropColumn('remember_token');
+                            break;
+
+                        case 'timestamps':
+                        case 'timestampstz':
+                        case 'nullabletimestamps':
+                            $table-&gt;setColumn(new SchemaColumn('created_at', 'string', true));
+                            $table-&gt;setColumn(new SchemaColumn('updated_at', 'string', true));
+                            break;
+                    }
+
+                    continue;
+                }
+
+                $defaultsMap = [
+                    'softDeletes' =&gt; 'deleted_at',
+                    'softDeletesTz' =&gt; 'deleted_at',
+                    'softDeletesDatetime' =&gt; 'deleted_at',
+                    'dropSoftDeletes' =&gt; 'deleted_at',
+                    'dropSoftDeletesTz' =&gt; 'deleted_at',
+                    'uuid' =&gt; 'uuid',
+                    'id' =&gt; 'id',
+                    'ulid' =&gt; 'ulid',
+                    'ipAddress' =&gt; 'ip_address',
+                    'macAddress' =&gt; 'mac_address',
+                ];
+                if (! array_key_exists($firstMethodCall-&gt;name-&gt;name, $defaultsMap)) {
+                    continue;
+                }
+
+                $columnName = $defaultsMap[$firstMethodCall-&gt;name-&gt;name];
+            } else {
+                $columnName = $firstArg-&gt;value;
+            }
+
+            $secondArgArray = null;
+
+            if ($secondArg instanceof PhpParser\Node\Expr\Array_) {
+                $secondArgArray = [];
+
+                foreach ($secondArg-&gt;items as $arrayItem) {
+                    if (! $arrayItem-&gt;value instanceof PhpParser\Node\Scalar\String_) {
+                        continue;
+                    }
+
+                    $secondArgArray[] = $arrayItem-&gt;value-&gt;value;
+                }
+            }
+
+            $this-&gt;processStatementAlterMethod(
+                strtolower($firstMethodCall-&gt;name-&gt;name),
+                $firstMethodCall,
+                $table,
+                $columnName,
+                $nullable,
+                $unsigned,
+                $secondArg,
+                $argName,
+                $tableName,
+                $secondArgArray,
+                $stmt,
+            );
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

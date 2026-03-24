@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>public function up()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function up()</h3>
+<p style="margin-top: 4px">in <i>database/migrations/0001_01_01_000002_create_jobs_table.php [12:46]</i></p>
+<ul>
+    <li><b>33</b> lines of code</li>
+    <li><b>1</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function up(): void
+    {
+        Schema::create('jobs', function (Blueprint $table) {
+            $table-&gt;id();
+            $table-&gt;string('queue')-&gt;index();
+            $table-&gt;longText('payload');
+            $table-&gt;unsignedTinyInteger('attempts');
+            $table-&gt;unsignedInteger('reserved_at')-&gt;nullable();
+            $table-&gt;unsignedInteger('available_at');
+            $table-&gt;unsignedInteger('created_at');
+        });
+
+        Schema::create('job_batches', function (Blueprint $table) {
+            $table-&gt;string('id')-&gt;primary();
+            $table-&gt;string('name');
+            $table-&gt;integer('total_jobs');
+            $table-&gt;integer('pending_jobs');
+            $table-&gt;integer('failed_jobs');
+            $table-&gt;longText('failed_job_ids');
+            $table-&gt;mediumText('options')-&gt;nullable();
+            $table-&gt;integer('cancelled_at')-&gt;nullable();
+            $table-&gt;integer('created_at');
+            $table-&gt;integer('finished_at')-&gt;nullable();
+        });
+
+        Schema::create('failed_jobs', function (Blueprint $table) {
+            $table-&gt;id();
+            $table-&gt;string('uuid')-&gt;unique();
+            $table-&gt;text('connection');
+            $table-&gt;text('queue');
+            $table-&gt;longText('payload');
+            $table-&gt;longText('exception');
+            $table-&gt;timestamp('failed_at')-&gt;useCurrent();
+        });
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

@@ -1,0 +1,57 @@
+[ {
+  "relativePath" : "composer.json",
+  "extension" : "json",
+  "linesOfCode" : 76,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "INSTALL.md",
+  "extension" : "md",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "package-lock.json",
+  "extension" : "json",
+  "linesOfCode" : 2777,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "package.json",
+  "extension" : "json",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/flaticon/font/Flaticon.svg",
+  "extension" : "svg",
+  "linesOfCode" : 232,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/lib/slick/fonts/slick.svg",
+  "extension" : "svg",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "public/robots.txt",
+  "extension" : "txt",
+  "linesOfCode" : 2,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "README.md",
+  "extension" : "md",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

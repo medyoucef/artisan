@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>app/Models/User.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Models/User.php (<b>23</b> lines of code) (<a href="User.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+class User extends Authenticatable
+{
+    /** @use HasFactory&lt;\Database\Factories\UserFactory&gt; */
+    use HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list&lt;string&gt;
+     */
+    protected $fillable = [
+        'name', 'email', 'password', 'type_user', 'adresse', 'ville', 'telephone', 'photo'
+    ];
+    
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list&lt;string&gt;
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array&lt;string, string&gt;
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' =&gt; 'datetime',
+            'password' =&gt; 'hashed',
+        ];
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

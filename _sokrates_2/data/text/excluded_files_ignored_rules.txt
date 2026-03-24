@@ -1,0 +1,522 @@
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Too long lines (1000+ characters)
+292 files:
+
+public/lib/animate/animate.min.css
+public/lib/counterup/counterup.min.js
+public/lib/easing/easing.min.js
+public/lib/flaticon/backup.txt
+public/lib/isotope/isotope.pkgd.min.js
+public/lib/lightbox/css/lightbox.min.css
+public/lib/lightbox/js/lightbox.min.js
+public/lib/owlcarousel/assets/owl.carousel.min.css
+public/lib/owlcarousel/owl.carousel.min.js
+public/lib/slick/slick.min.js
+public/lib/waypoints/waypoints.min.js
+public/lib/wow/wow.min.js
+resources/views/welcome.blade.php
+storage/framework/views/63a8b13d788a9abb219c6a8fc83c4213.php
+storage/framework/views/c477a189aeb037b4f513947e231d2127.php
+storage/framework/views/ec261521f9dbac3d0b3a7abb43825277.php
+vendor/fakerphp/faker/src/Faker/Provider/ar_EG/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/ar_JO/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/ar_JO/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/ar_SA/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/de_DE/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/el_GR/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/el_GR/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/en_AU/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/en_GB/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/en_US/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/en_US/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/en_US/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/es_AR/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/es_ES/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/es_ES/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/es_ES/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/es_PE/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/fa_IR/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/fa_IR/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/fi_FI/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/fr_FR/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/fr_FR/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/hr_HR/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/hu_HU/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/is_IS/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/it_IT/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/it_IT/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/ja_JP/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/ka_GE/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/ko_KR/Text.php
+vendor/fakerphp/faker/src/Faker/Provider/lv_LV/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/me_ME/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/ms_MY/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/ms_MY/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/nb_NO/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/ne_NP/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/ru_RU/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/sk_SK/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/sk_SK/Company.php
+vendor/fakerphp/faker/src/Faker/Provider/sr_Cyrl_RS/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/sr_Cyrl_RS/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/sr_Latn_RS/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/sr_Latn_RS/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/sr_RS/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/sr_RS/Person.php
+vendor/fakerphp/faker/src/Faker/Provider/sv_SE/Address.php
+vendor/fakerphp/faker/src/Faker/Provider/sv_SE/Municipality.php
+vendor/filp/whoops/src/Whoops/Resources/css/prism.css
+vendor/filp/whoops/src/Whoops/Resources/js/clipboard.min.js
+vendor/filp/whoops/src/Whoops/Resources/js/prism.js
+vendor/filp/whoops/src/Whoops/Resources/js/zepto.min.js
+vendor/filp/whoops/src/Whoops/Resources/views/header.html.php
+vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Api.php
+vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Struct.php
+vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Type.php
+vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/minimal.blade.php
+vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/components/layout.blade.php
+vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/dist/scripts.js
+vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/dist/styles.css
+vendor/laravel/framework/src/Illuminate/Support/Str.php
+vendor/laravel/telescope/art/logo.svg
+vendor/laravel/telescope/dist/app.css
+vendor/laravel/telescope/dist/styles-dark.css
+vendor/laravel/telescope/dist/styles.css
+vendor/laravel/telescope/resources/views/layout.blade.php
+vendor/league/commonmark/src/Extension/Autolink/UrlAutolinkParser.php
+vendor/opcodesio/log-viewer/public/app.css
+vendor/opcodesio/log-viewer/public/app.js
+vendor/opcodesio/log-viewer/resources/js/components/BmcIcon.vue
+vendor/opcodesio/log-viewer/resources/js/components/BmcLogo.vue
+vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/css/bootstrap.min.css
+vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/css/nv.d3.min.css
+vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/js/bootstrap.bundle.min.js
+vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/js/d3.min.js
+vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/js/jquery.min.js
+vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/js/nv.d3.min.js
+vendor/phpunit/phpunit/src/TextUI/Configuration/Cli/Configuration.php
+vendor/phpunit/phpunit/src/TextUI/Configuration/Configuration.php
+vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/PHPUnit.php
+vendor/symfony/error-handler/ErrorRenderer/HtmlErrorRenderer.php
+vendor/symfony/error-handler/Resources/assets/css/exception.css
+vendor/symfony/error-handler/Resources/assets/images/symfony-ghost.svg.php
+vendor/symfony/http-kernel/Resources/welcome.html.php
+vendor/symfony/mime/Header/AbstractHeader.php
+vendor/symfony/polyfill-intl-idn/Resources/unidata/Regex.php
+vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
+vendor/symfony/string/AbstractUnicodeString.php
+vendor/voku/portable-ascii/src/voku/helper/data/ascii_ord.php
+vendor/voku/portable-ascii/src/voku/helper/data/x001.php
+vendor/voku/portable-ascii/src/voku/helper/data/x002.php
+vendor/voku/portable-ascii/src/voku/helper/data/x003.php
+vendor/voku/portable-ascii/src/voku/helper/data/x004.php
+vendor/voku/portable-ascii/src/voku/helper/data/x005.php
+vendor/voku/portable-ascii/src/voku/helper/data/x006.php
+vendor/voku/portable-ascii/src/voku/helper/data/x007.php
+vendor/voku/portable-ascii/src/voku/helper/data/x009.php
+vendor/voku/portable-ascii/src/voku/helper/data/x00a.php
+vendor/voku/portable-ascii/src/voku/helper/data/x00b.php
+vendor/voku/portable-ascii/src/voku/helper/data/x00c.php
+vendor/voku/portable-ascii/src/voku/helper/data/x00d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x00e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x00f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x010.php
+vendor/voku/portable-ascii/src/voku/helper/data/x011.php
+vendor/voku/portable-ascii/src/voku/helper/data/x012.php
+vendor/voku/portable-ascii/src/voku/helper/data/x013.php
+vendor/voku/portable-ascii/src/voku/helper/data/x014.php
+vendor/voku/portable-ascii/src/voku/helper/data/x015.php
+vendor/voku/portable-ascii/src/voku/helper/data/x016.php
+vendor/voku/portable-ascii/src/voku/helper/data/x017.php
+vendor/voku/portable-ascii/src/voku/helper/data/x018.php
+vendor/voku/portable-ascii/src/voku/helper/data/x01d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x01e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x01f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x021.php
+vendor/voku/portable-ascii/src/voku/helper/data/x022.php
+vendor/voku/portable-ascii/src/voku/helper/data/x023.php
+vendor/voku/portable-ascii/src/voku/helper/data/x024.php
+vendor/voku/portable-ascii/src/voku/helper/data/x025.php
+vendor/voku/portable-ascii/src/voku/helper/data/x026.php
+vendor/voku/portable-ascii/src/voku/helper/data/x027.php
+vendor/voku/portable-ascii/src/voku/helper/data/x028.php
+vendor/voku/portable-ascii/src/voku/helper/data/x029.php
+vendor/voku/portable-ascii/src/voku/helper/data/x02a.php
+vendor/voku/portable-ascii/src/voku/helper/data/x02c.php
+vendor/voku/portable-ascii/src/voku/helper/data/x02e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x02f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x031.php
+vendor/voku/portable-ascii/src/voku/helper/data/x032.php
+vendor/voku/portable-ascii/src/voku/helper/data/x033.php
+vendor/voku/portable-ascii/src/voku/helper/data/x04d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x04e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x04f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x050.php
+vendor/voku/portable-ascii/src/voku/helper/data/x051.php
+vendor/voku/portable-ascii/src/voku/helper/data/x052.php
+vendor/voku/portable-ascii/src/voku/helper/data/x053.php
+vendor/voku/portable-ascii/src/voku/helper/data/x054.php
+vendor/voku/portable-ascii/src/voku/helper/data/x055.php
+vendor/voku/portable-ascii/src/voku/helper/data/x056.php
+vendor/voku/portable-ascii/src/voku/helper/data/x057.php
+vendor/voku/portable-ascii/src/voku/helper/data/x058.php
+vendor/voku/portable-ascii/src/voku/helper/data/x059.php
+vendor/voku/portable-ascii/src/voku/helper/data/x05a.php
+vendor/voku/portable-ascii/src/voku/helper/data/x05b.php
+vendor/voku/portable-ascii/src/voku/helper/data/x05c.php
+vendor/voku/portable-ascii/src/voku/helper/data/x05d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x05e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x05f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x060.php
+vendor/voku/portable-ascii/src/voku/helper/data/x061.php
+vendor/voku/portable-ascii/src/voku/helper/data/x062.php
+vendor/voku/portable-ascii/src/voku/helper/data/x063.php
+vendor/voku/portable-ascii/src/voku/helper/data/x064.php
+vendor/voku/portable-ascii/src/voku/helper/data/x065.php
+vendor/voku/portable-ascii/src/voku/helper/data/x066.php
+vendor/voku/portable-ascii/src/voku/helper/data/x067.php
+vendor/voku/portable-ascii/src/voku/helper/data/x068.php
+vendor/voku/portable-ascii/src/voku/helper/data/x069.php
+vendor/voku/portable-ascii/src/voku/helper/data/x06a.php
+vendor/voku/portable-ascii/src/voku/helper/data/x06b.php
+vendor/voku/portable-ascii/src/voku/helper/data/x06c.php
+vendor/voku/portable-ascii/src/voku/helper/data/x06d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x06e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x06f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x070.php
+vendor/voku/portable-ascii/src/voku/helper/data/x071.php
+vendor/voku/portable-ascii/src/voku/helper/data/x072.php
+vendor/voku/portable-ascii/src/voku/helper/data/x073.php
+vendor/voku/portable-ascii/src/voku/helper/data/x074.php
+vendor/voku/portable-ascii/src/voku/helper/data/x075.php
+vendor/voku/portable-ascii/src/voku/helper/data/x076.php
+vendor/voku/portable-ascii/src/voku/helper/data/x077.php
+vendor/voku/portable-ascii/src/voku/helper/data/x078.php
+vendor/voku/portable-ascii/src/voku/helper/data/x079.php
+vendor/voku/portable-ascii/src/voku/helper/data/x07a.php
+vendor/voku/portable-ascii/src/voku/helper/data/x07b.php
+vendor/voku/portable-ascii/src/voku/helper/data/x07c.php
+vendor/voku/portable-ascii/src/voku/helper/data/x07d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x07e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x07f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x080.php
+vendor/voku/portable-ascii/src/voku/helper/data/x081.php
+vendor/voku/portable-ascii/src/voku/helper/data/x082.php
+vendor/voku/portable-ascii/src/voku/helper/data/x083.php
+vendor/voku/portable-ascii/src/voku/helper/data/x084.php
+vendor/voku/portable-ascii/src/voku/helper/data/x085.php
+vendor/voku/portable-ascii/src/voku/helper/data/x086.php
+vendor/voku/portable-ascii/src/voku/helper/data/x087.php
+vendor/voku/portable-ascii/src/voku/helper/data/x088.php
+vendor/voku/portable-ascii/src/voku/helper/data/x089.php
+vendor/voku/portable-ascii/src/voku/helper/data/x08a.php
+vendor/voku/portable-ascii/src/voku/helper/data/x08b.php
+vendor/voku/portable-ascii/src/voku/helper/data/x08c.php
+vendor/voku/portable-ascii/src/voku/helper/data/x08d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x08e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x08f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x090.php
+vendor/voku/portable-ascii/src/voku/helper/data/x091.php
+vendor/voku/portable-ascii/src/voku/helper/data/x092.php
+vendor/voku/portable-ascii/src/voku/helper/data/x093.php
+vendor/voku/portable-ascii/src/voku/helper/data/x094.php
+vendor/voku/portable-ascii/src/voku/helper/data/x095.php
+vendor/voku/portable-ascii/src/voku/helper/data/x096.php
+vendor/voku/portable-ascii/src/voku/helper/data/x097.php
+vendor/voku/portable-ascii/src/voku/helper/data/x098.php
+vendor/voku/portable-ascii/src/voku/helper/data/x099.php
+vendor/voku/portable-ascii/src/voku/helper/data/x09a.php
+vendor/voku/portable-ascii/src/voku/helper/data/x09b.php
+vendor/voku/portable-ascii/src/voku/helper/data/x09c.php
+vendor/voku/portable-ascii/src/voku/helper/data/x09d.php
+vendor/voku/portable-ascii/src/voku/helper/data/x09e.php
+vendor/voku/portable-ascii/src/voku/helper/data/x09f.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0a0.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0a1.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0a2.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0a3.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0a4.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0ac.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0ad.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0ae.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0af.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b0.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b1.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b2.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b3.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b4.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b5.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b6.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b7.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b8.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0b9.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0ba.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0bb.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0bc.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0bd.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0be.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0bf.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c0.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c1.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c2.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c3.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c4.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c5.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c6.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c7.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c8.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0c9.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0ca.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0cb.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0cc.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0cd.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0ce.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0cf.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d0.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d1.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d2.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d3.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d4.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d5.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d6.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0d7.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0f9.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0fa.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0fb.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0fc.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0fd.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0fe.php
+vendor/voku/portable-ascii/src/voku/helper/data/x0ff.php
+vendor/voku/portable-ascii/src/voku/helper/data/x1d4.php
+vendor/voku/portable-ascii/src/voku/helper/data/x1d5.php
+vendor/voku/portable-ascii/src/voku/helper/data/x1d6.php
+vendor/voku/portable-ascii/src/voku/helper/data/x1d7.php
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Documentation
+path like ".*/docs/.*"
+46 files:
+
+vendor/doctrine/inflector/docs/en/index.rst
+vendor/mockery/mockery/docs/conf.py
+vendor/mockery/mockery/docs/cookbook/big_parent_class.rst
+vendor/mockery/mockery/docs/cookbook/class_constants.rst
+vendor/mockery/mockery/docs/cookbook/default_expectations.rst
+vendor/mockery/mockery/docs/cookbook/detecting_mock_objects.rst
+vendor/mockery/mockery/docs/cookbook/index.rst
+vendor/mockery/mockery/docs/cookbook/map.rst.inc
+vendor/mockery/mockery/docs/cookbook/mockery_on.rst
+vendor/mockery/mockery/docs/cookbook/mocking_class_within_class.rst
+vendor/mockery/mockery/docs/cookbook/mocking_hard_dependencies.rst
+vendor/mockery/mockery/docs/cookbook/not_calling_the_constructor.rst
+vendor/mockery/mockery/docs/getting_started/index.rst
+vendor/mockery/mockery/docs/getting_started/installation.rst
+vendor/mockery/mockery/docs/getting_started/map.rst.inc
+vendor/mockery/mockery/docs/getting_started/quick_reference.rst
+vendor/mockery/mockery/docs/getting_started/simple_example.rst
+vendor/mockery/mockery/docs/getting_started/upgrading.rst
+vendor/mockery/mockery/docs/index.rst
+vendor/mockery/mockery/docs/mockery/configuration.rst
+vendor/mockery/mockery/docs/mockery/exceptions.rst
+vendor/mockery/mockery/docs/mockery/gotchas.rst
+vendor/mockery/mockery/docs/mockery/index.rst
+vendor/mockery/mockery/docs/mockery/map.rst.inc
+vendor/mockery/mockery/docs/mockery/reserved_method_names.rst
+vendor/mockery/mockery/docs/README.md
+vendor/mockery/mockery/docs/reference/alternative_should_receive_syntax.rst
+vendor/mockery/mockery/docs/reference/argument_validation.rst
+vendor/mockery/mockery/docs/reference/creating_test_doubles.rst
+vendor/mockery/mockery/docs/reference/demeter_chains.rst
+vendor/mockery/mockery/docs/reference/expectations.rst
+vendor/mockery/mockery/docs/reference/final_methods_classes.rst
+vendor/mockery/mockery/docs/reference/index.rst
+vendor/mockery/mockery/docs/reference/instance_mocking.rst
+vendor/mockery/mockery/docs/reference/magic_methods.rst
+vendor/mockery/mockery/docs/reference/map.rst.inc
+vendor/mockery/mockery/docs/reference/partial_mocks.rst
+vendor/mockery/mockery/docs/reference/pass_by_reference_behaviours.rst
+vendor/mockery/mockery/docs/reference/phpunit_integration.rst
+vendor/mockery/mockery/docs/reference/protected_methods.rst
+vendor/mockery/mockery/docs/reference/public_properties.rst
+vendor/mockery/mockery/docs/reference/public_static_properties.rst
+vendor/mockery/mockery/docs/reference/spies.rst
+vendor/mockery/mockery/docs/requirements.txt
+vendor/psr/http-message/docs/PSR7-Interfaces.md
+vendor/psr/http-message/docs/PSR7-Usage.md
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Hidden files and folders
+path like ".*/[.][a-zA-Z0-9_]+.*"
+34 files:
+
+bootstrap/cache/.gitignore
+database/.gitignore
+public/.htaccess
+public/storage/.gitignore
+storage/app/.gitignore
+storage/app/private/.gitignore
+storage/app/public/.gitignore
+storage/framework/.gitignore
+storage/framework/cache/.gitignore
+storage/framework/cache/data/.gitignore
+storage/framework/sessions/.gitignore
+storage/framework/testing/.gitignore
+storage/framework/views/.gitignore
+storage/logs/.gitignore
+vendor/hamcrest/hamcrest-php/.gitattributes
+vendor/hamcrest/hamcrest-php/.gitignore
+vendor/league/commonmark/.phpstorm.meta.php
+vendor/mockery/mockery/.phpstorm.meta.php
+vendor/mockery/mockery/docs/.gitignore
+vendor/nesbot/carbon/.phpstorm.meta.php
+vendor/nette/utils/.phpstorm.meta.php
+vendor/opcodesio/mail-parser/.editorconfig
+vendor/opcodesio/mail-parser/.gitignore
+vendor/open-telemetry/gen-otlp-protobuf/.gitignore
+vendor/phar-io/manifest/.php-cs-fixer.dist.php
+vendor/php-http/discovery/.php-cs-fixer.php
+vendor/phpunit/php-text-template/.psalm/baseline.xml
+vendor/phpunit/php-text-template/.psalm/config.xml
+vendor/psr/container/.gitignore
+vendor/psr/event-dispatcher/.editorconfig
+vendor/psr/event-dispatcher/.gitignore
+vendor/psr/simple-cache/.editorconfig
+vendor/tbachert/spi/.gitattributes
+vendor/voku/portable-ascii/.deepsource.toml
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Binaries for distribution
+path like ".*/bin/.*"
+14 files:
+
+vendor/bin/carbon.bat
+vendor/bin/patch-type-declarations.bat
+vendor/bin/php-parse.bat
+vendor/bin/phpstan.bat
+vendor/bin/phpstan.phar.bat
+vendor/bin/phpunit.bat
+vendor/bin/pint.bat
+vendor/bin/psysh.bat
+vendor/bin/sail.bat
+vendor/bin/var-dump-server.bat
+vendor/bin/yaml-lint.bat
+vendor/nesbot/carbon/bin/carbon.bat
+vendor/symfony/error-handler/Resources/bin/extract-tentative-return-types.php
+vendor/symfony/translation/Resources/bin/translation-status.php
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Caches
+path like ".*/cache/.*"
+4 files:
+
+bootstrap/cache/packages.php
+bootstrap/cache/services.php
+vendor/laravel/telescope/resources/js/screens/cache/index.vue
+vendor/laravel/telescope/resources/js/screens/cache/preview.vue
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Bootstrap
+path like ".*/bootstrap[-][a-z]+/.*"
+3 files:
+
+vendor/laravel/ui/src/Presets/bootstrap-stubs/app.scss
+vendor/laravel/ui/src/Presets/bootstrap-stubs/vite.config.js
+vendor/laravel/ui/src/Presets/bootstrap-stubs/_variables.scss
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Too long file (1000000+ bytes)
+3 files:
+
+vendor/composer/autoload_static.php
+vendor/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php
+vendor/laravel/telescope/dist/app.js
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Distributions
+path like ".*/dist/.*"
+2 files:
+
+vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/dist/dark-mode.css
+vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/dist/light-mode.css
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Bootstrap
+path like ".*/bootstrap[.](js|css|less|scss|styl)"
+2 files:
+
+resources/js/bootstrap.js
+vendor/laravel/ui/src/Presets/bootstrap-stubs/bootstrap.js
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Too many lines (10000)
+2 files:
+
+vendor/composer/installed.json
+vendor/fakerphp/faker/src/Faker/Provider/fr_FR/Text.php
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+React
+path like ".*/react(-[^.]*)?\.js"
+1 files:
+
+vendor/laravel/ui/src/Presets/react-stubs/app.js
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Animate css
+path like ".*/animate[.](css|less|scss|styl)"
+1 files:
+
+public/lib/animate/animate.css
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Octicons
+path like ".*/octicons[.]css"
+1 files:
+
+vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/css/octicons.css
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+

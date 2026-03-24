@@ -1,0 +1,228 @@
+<html>
+<head>
+    <title>function info()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">function info()</h3>
+<p style="margin-top: 4px">in <i>vendor/psy/psysh/src/functions.php [131:336]</i></p>
+<ul>
+    <li><b>166</b> lines of code</li>
+    <li><b>27</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    function info(?Configuration $config = null)
+    {
+        static $lastConfig;
+        if ($config !== null) {
+            $lastConfig = $config;
+
+            return;
+        }
+
+        $prettyPath = function ($path) {
+            return $path;
+        };
+
+        $homeDir = (new ConfigPaths())-&gt;homeDir();
+        if ($homeDir &amp;&amp; $homeDir = \rtrim($homeDir, '/')) {
+            $homePattern = '#^'.\preg_quote($homeDir, '#').'/#';
+            $prettyPath = function ($path) use ($homePattern) {
+                if (\is_string($path)) {
+                    return \preg_replace($homePattern, '~/', $path);
+                } else {
+                    return $path;
+                }
+            };
+        }
+
+        $config = $lastConfig ?: new Configuration();
+        $configEnv = (isset($_SERVER['PSYSH_CONFIG']) &amp;&amp; $_SERVER['PSYSH_CONFIG']) ? $_SERVER['PSYSH_CONFIG'] : false;
+        if ($configEnv === false &amp;&amp; \PHP_SAPI === 'cli-server') {
+            $configEnv = \getenv('PSYSH_CONFIG');
+        }
+
+        $shellInfo = [
+            'PsySH version' =&gt; Shell::VERSION,
+        ];
+
+        $core = [
+            'PHP version'         =&gt; \PHP_VERSION,
+            'OS'                  =&gt; \PHP_OS,
+            'default includes'    =&gt; $config-&gt;getDefaultIncludes(),
+            'require semicolons'  =&gt; $config-&gt;requireSemicolons(),
+            'strict types'        =&gt; $config-&gt;strictTypes(),
+            'error logging level' =&gt; $config-&gt;errorLoggingLevel(),
+            'config file'         =&gt; [
+                'default config file' =&gt; $prettyPath($config-&gt;getConfigFile()),
+                'local config file'   =&gt; $prettyPath($config-&gt;getLocalConfigFile()),
+                'PSYSH_CONFIG env'    =&gt; $prettyPath($configEnv),
+            ],
+            // 'config dir'  =&gt; $config-&gt;getConfigDir(),
+            // 'data dir'    =&gt; $config-&gt;getDataDir(),
+            // 'runtime dir' =&gt; $config-&gt;getRuntimeDir(),
+        ];
+
+        // Use an explicit, fresh update check here, rather than relying on whatever is in $config.
+        $checker = new GitHubChecker();
+        $updateAvailable = null;
+        $latest = null;
+        try {
+            $updateAvailable = !$checker-&gt;isLatest();
+            $latest = $checker-&gt;getLatest();
+        } catch (\Throwable $e) {
+        }
+
+        $updates = [
+            'update available'       =&gt; $updateAvailable,
+            'latest release version' =&gt; $latest,
+            'update check interval'  =&gt; $config-&gt;getUpdateCheck(),
+            'update cache file'      =&gt; $prettyPath($config-&gt;getUpdateCheckCacheFile()),
+        ];
+
+        $input = [
+            'interactive mode'  =&gt; $config-&gt;interactiveMode(),
+            'input interactive' =&gt; $config-&gt;getInputInteractive(),
+            'yolo'              =&gt; $config-&gt;yolo(),
+        ];
+
+        if ($config-&gt;hasReadline()) {
+            $info = \readline_info();
+
+            $readline = [
+                'readline available' =&gt; true,
+                'readline enabled'   =&gt; $config-&gt;useReadline(),
+                'readline service'   =&gt; \get_class($config-&gt;getReadline()),
+            ];
+
+            if (isset($info['library_version'])) {
+                $readline['readline library'] = $info['library_version'];
+            }
+
+            if (isset($info['readline_name']) &amp;&amp; $info['readline_name'] !== '') {
+                $readline['readline name'] = $info['readline_name'];
+            }
+        } else {
+            $readline = [
+                'readline available' =&gt; false,
+            ];
+        }
+
+        $output = [
+            'color mode'       =&gt; $config-&gt;colorMode(),
+            'output decorated' =&gt; $config-&gt;getOutputDecorated(),
+            'output verbosity' =&gt; $config-&gt;verbosity(),
+            'output pager'     =&gt; $config-&gt;getPager(),
+        ];
+
+        $theme = $config-&gt;theme();
+        // @todo show styles (but only if they're different than default?)
+        $output['theme'] = [
+            'compact'      =&gt; $theme-&gt;compact(),
+            'prompt'       =&gt; $theme-&gt;prompt(),
+            'bufferPrompt' =&gt; $theme-&gt;bufferPrompt(),
+            'replayPrompt' =&gt; $theme-&gt;replayPrompt(),
+            'returnValue'  =&gt; $theme-&gt;returnValue(),
+        ];
+
+        $pcntl = [
+            'pcntl available' =&gt; ProcessForker::isPcntlSupported(),
+            'posix available' =&gt; ProcessForker::isPosixSupported(),
+        ];
+
+        if ($disabledPcntl = ProcessForker::disabledPcntlFunctions()) {
+            $pcntl['disabled pcntl functions'] = $disabledPcntl;
+        }
+
+        if ($disabledPosix = ProcessForker::disabledPosixFunctions()) {
+            $pcntl['disabled posix functions'] = $disabledPosix;
+        }
+
+        $pcntl['use pcntl'] = $config-&gt;usePcntl();
+
+        $history = [
+            'history file'     =&gt; $prettyPath($config-&gt;getHistoryFile()),
+            'history size'     =&gt; $config-&gt;getHistorySize(),
+            'erase duplicates' =&gt; $config-&gt;getEraseDuplicates(),
+        ];
+
+        $docs = [
+            'manual db file'   =&gt; $prettyPath($config-&gt;getManualDbFile()),
+            'sqlite available' =&gt; true,
+        ];
+
+        try {
+            if ($db = $config-&gt;getManualDb()) {
+                if ($q = $db-&gt;query('SELECT * FROM meta;')) {
+                    $q-&gt;setFetchMode(\PDO::FETCH_KEY_PAIR);
+                    $meta = $q-&gt;fetchAll();
+
+                    foreach ($meta as $key =&gt; $val) {
+                        switch ($key) {
+                            case 'built_at':
+                                $d = new \DateTime('@'.$val);
+                                $val = $d-&gt;format(\DateTime::RFC2822);
+                                break;
+                        }
+                        $key = 'db '.\str_replace('_', ' ', $key);
+                        $docs[$key] = $val;
+                    }
+                } else {
+                    $docs['db schema'] = '0.1.0';
+                }
+            }
+        } catch (Exception\RuntimeException $e) {
+            if ($e-&gt;getMessage() === 'SQLite PDO driver not found') {
+                $docs['sqlite available'] = false;
+            } else {
+                throw $e;
+            }
+        }
+
+        $autocomplete = [
+            'tab completion enabled' =&gt; $config-&gt;useTabCompletion(),
+            'bracketed paste'        =&gt; $config-&gt;useBracketedPaste(),
+        ];
+
+        // Shenanigans, but totally justified.
+        try {
+            if ($shell = Sudo::fetchProperty($config, 'shell')) {
+                $shellClass = \get_class($shell);
+                if ($shellClass !== 'Psy\\Shell') {
+                    $shellInfo = [
+                        'PsySH version' =&gt; $shell::VERSION,
+                        'Shell class'   =&gt; $shellClass,
+                    ];
+                }
+
+                try {
+                    $core['loop listeners'] = \array_map('get_class', Sudo::fetchProperty($shell, 'loopListeners'));
+                } catch (\ReflectionException $e) {
+                    // shrug
+                }
+
+                $core['commands'] = \array_map('get_class', $shell-&gt;all());
+
+                try {
+                    $autocomplete['custom matchers'] = \array_map('get_class', Sudo::fetchProperty($shell, 'matchers'));
+                } catch (\ReflectionException $e) {
+                    // shrug
+                }
+            }
+        } catch (\ReflectionException $e) {
+            // shrug
+        }
+
+        // @todo Show Presenter / custom casters.
+
+        return \array_merge($shellInfo, $core, \compact('updates', 'pcntl', 'input', 'readline', 'output', 'history', 'docs', 'autocomplete'));
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

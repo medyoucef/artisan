@@ -1,0 +1,3923 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    .node {
+        cursor: pointer;
+    }
+
+    .node:hover {
+        stroke: #000;
+        stroke-width: 1.5px;
+    }
+
+    .node--leaf {
+        fill: white;
+    }
+
+    .label {
+        font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-anchor: middle;
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    }
+
+    .label,
+    .node--root,
+    .node--leaf {
+        pointer-events: none;
+    }
+
+</style>
+<svg width="960" height="960"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+    var svg = d3.select("svg"),
+        margin = 20,
+        diameter = +svg.attr("width"),
+        g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+    var color = d3.scaleLinear()
+        .domain([-1, 5])
+        .range(["hsl(152,80%,100%)", "hsl(228,30%,40%)"])
+        .interpolate(d3.interpolateHcl);
+
+    var pack = d3.pack()
+        .size([diameter - margin, diameter - margin])
+        .padding(2);
+
+
+    var root = {
+        "name": "cluster",
+        "children": [ {
+  "name" : ".editorconfig",
+  "color" : "",
+  "size" : 14,
+  "children" : [ ]
+}, {
+  "name" : "composer.json",
+  "color" : "",
+  "size" : 83,
+  "children" : [ ]
+}, {
+  "name" : "INSTALL.md",
+  "color" : "",
+  "size" : 42,
+  "children" : [ ]
+}, {
+  "name" : "package-lock.json",
+  "color" : "",
+  "size" : 2777,
+  "children" : [ ]
+}, {
+  "name" : "package.json",
+  "color" : "",
+  "size" : 19,
+  "children" : [ ]
+}, {
+  "name" : "public",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "lib",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "flaticon",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "font",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Flaticon.svg",
+          "color" : "",
+          "size" : 232,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "slick",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "fonts",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "slick.svg",
+          "color" : "",
+          "size" : 13,
+          "children" : [ ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "robots.txt",
+    "color" : "",
+    "size" : 2,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "README.md",
+  "color" : "",
+  "size" : 62,
+  "children" : [ ]
+}, {
+  "name" : "TDM.ini",
+  "color" : "",
+  "size" : 11,
+  "children" : [ ]
+}, {
+  "name" : "vendor",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "brick",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "math",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 287,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "carbonphp",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "carbon-doctrine-types",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 36,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "composer",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "semver",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 155,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 59,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 64,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "dflydev",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "dot-access-data",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 49,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 67,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 116,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "doctrine",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "inflector",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 5,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "lexer",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 55,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 5,
+        "children" : [ ]
+      }, {
+        "name" : "UPGRADE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "dragonmantank",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "cron-expression",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 177,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 104,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "egulias",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "email-validator",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "CONTRIBUTING.md",
+        "color" : "",
+        "size" : 111,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "fakerphp",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "faker",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 163,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 56,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 76,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "filp",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "whoops",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 89,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 16,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "fruitcake",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "php-cors",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 49,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 55,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "google",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "protobuf",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 23,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 2,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "graham-campbell",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "result-type",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "guzzlehttp",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "guzzle",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 1305,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 131,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 67,
+        "children" : [ ]
+      }, {
+        "name" : "UPGRADING.md",
+        "color" : "",
+        "size" : 1009,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "promises",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 87,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 58,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 410,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "psr7",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 283,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 93,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 545,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "uri-template",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 34,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 76,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "hamcrest",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "hamcrest-php",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGES.txt",
+        "color" : "",
+        "size" : 111,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 32,
+        "children" : [ ]
+      }, {
+        "name" : "CONTRIBUTING.md",
+        "color" : "",
+        "size" : 24,
+        "children" : [ ]
+      }, {
+        "name" : "generator",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "parts",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "file_header.txt",
+            "color" : "",
+            "size" : 5,
+            "children" : [ ]
+          }, {
+            "name" : "functions_footer.txt",
+            "color" : "",
+            "size" : 1,
+            "children" : [ ]
+          }, {
+            "name" : "functions_header.txt",
+            "color" : "",
+            "size" : 23,
+            "children" : [ ]
+          }, {
+            "name" : "functions_imports.txt",
+            "color" : "",
+            "size" : 1,
+            "children" : [ ]
+          }, {
+            "name" : "matchers_footer.txt",
+            "color" : "",
+            "size" : 1,
+            "children" : [ ]
+          }, {
+            "name" : "matchers_header.txt",
+            "color" : "",
+            "size" : 5,
+            "children" : [ ]
+          }, {
+            "name" : "matchers_imports.txt",
+            "color" : "",
+            "size" : 1,
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "LICENSE.txt",
+        "color" : "",
+        "size" : 22,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 384,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "iamcal",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "sql-parser",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 129,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "keepsuit",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "laravel-opentelemetry",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 175,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 105,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 594,
+        "children" : [ ]
+      }, {
+        "name" : "UPGRADE.md",
+        "color" : "",
+        "size" : 222,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "larastan",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "larastan",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 83,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "laravel",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "framework",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 212,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "pint.json",
+        "color" : "",
+        "size" : 211,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "src",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Illuminate",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Auth",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 45,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Broadcasting",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 45,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Bus",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 40,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Cache",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 49,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Collections",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 44,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Concurrency",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Conditionable",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 33,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Config",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 35,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Console",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 53,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Container",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Contracts",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 35,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Cookie",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 40,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Database",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            }, {
+              "name" : "README.md",
+              "color" : "",
+              "size" : 50,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Encryption",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Events",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 42,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Filesystem",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Foundation",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "resources",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "exceptions",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "renderer",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "package-lock.json",
+                    "color" : "",
+                    "size" : 2297,
+                    "children" : [ ]
+                  }, {
+                    "name" : "package.json",
+                    "color" : "",
+                    "size" : 18,
+                    "children" : [ ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          }, {
+            "name" : "Hashing",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 35,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Http",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 48,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Log",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 40,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Macroable",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 33,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Mail",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 49,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Notifications",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 45,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Pagination",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 37,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Pipeline",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 35,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Process",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Queue",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            }, {
+              "name" : "README.md",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Redis",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 41,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Routing",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Session",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 44,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Support",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 64,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Testing",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 46,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Translation",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Validation",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 49,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "View",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "composer.json",
+              "color" : "",
+              "size" : 41,
+              "children" : [ ]
+            }, {
+              "name" : "LICENSE.md",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "pail",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 69,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "pint",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 61,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "prompts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 20,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "sail",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 48,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 20,
+        "children" : [ ]
+      }, {
+        "name" : "runtimes",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "8.0",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "php.ini",
+            "color" : "",
+            "size" : 5,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.1",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "php.ini",
+            "color" : "",
+            "size" : 5,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.2",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "php.ini",
+            "color" : "",
+            "size" : 5,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.3",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "php.ini",
+            "color" : "",
+            "size" : 5,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.4",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "php.ini",
+            "color" : "",
+            "size" : 5,
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "sentinel",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 69,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "serializable-closure",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 53,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 47,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "telescope",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 76,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 27,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 22,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "tinker",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 52,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "ui",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 103,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "league",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "commonmark",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 570,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 128,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 147,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "config",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 69,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 22,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 113,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "flysystem",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 72,
+        "children" : [ ]
+      }, {
+        "name" : "INFO.md",
+        "color" : "",
+        "size" : 2,
+        "children" : [ ]
+      }, {
+        "name" : "readme.md",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "flysystem-local",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 25,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "mime-type-detection",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 34,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "uri",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 76,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "uri-interfaces",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 70,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "mockery",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "mockery",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 324,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 119,
+        "children" : [ ]
+      }, {
+        "name" : "CONTRIBUTING.md",
+        "color" : "",
+        "size" : 53,
+        "children" : [ ]
+      }, {
+        "name" : "COPYRIGHT.md",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 221,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "monolog",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "monolog",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 623,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 82,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 99,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "myclabs",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "deep-copy",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 43,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 258,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "nesbot",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "carbon",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 126,
+        "children" : [ ]
+      }, {
+        "name" : "readme.md",
+        "color" : "",
+        "size" : 141,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "nette",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "schema",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      }, {
+        "name" : "license.md",
+        "color" : "",
+        "size" : 44,
+        "children" : [ ]
+      }, {
+        "name" : "readme.md",
+        "color" : "",
+        "size" : 371,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "utils",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "license.md",
+        "color" : "",
+        "size" : 44,
+        "children" : [ ]
+      }, {
+        "name" : "readme.md",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "nikic",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "php-parser",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 43,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 197,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "nunomaduro",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "collision",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 93,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 54,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "larastan",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 83,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "termwind",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 70,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "nyholm",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "psr7-server",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 28,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "opcodesio",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "log-viewer",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 2,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 76,
+        "children" : [ ]
+      }, {
+        "name" : "CONTRIBUTING.md",
+        "color" : "",
+        "size" : 117,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "mix-manifest.json",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "pint.json",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "public",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "app.js.LICENSE.txt",
+          "color" : "",
+          "size" : 27,
+          "children" : [ ]
+        }, {
+          "name" : "mix-manifest.json",
+          "color" : "",
+          "size" : 7,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 80,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "mail-parser",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 61,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "open-telemetry",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "api",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "Logs",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "README.md",
+          "color" : "",
+          "size" : 13,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "context",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 50,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "exporter-otlp",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "gen-otlp-protobuf",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 21,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "sdk",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Common",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Dev",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Compatibility",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "README.md",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 73,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 30,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "sem-conv",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 32,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "phar-io",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "manifest",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 43,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 158,
+        "children" : [ ]
+      }, {
+        "name" : "tools",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "php-cs-fixer.d",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "header.txt",
+            "color" : "",
+            "size" : 4,
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "version",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 80,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 36,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "php-http",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "discovery",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 206,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 64,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 80,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "phpoption",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "phpoption",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 50,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "phpstan",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "phpstan",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 31,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 88,
+        "children" : [ ]
+      }, {
+        "name" : "UPGRADING.md",
+        "color" : "",
+        "size" : 248,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "phpunit",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "php-code-coverage",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog-11.0.md",
+        "color" : "",
+        "size" : 50,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 68,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      }, {
+        "name" : "src",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Report",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Html",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Renderer",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Template",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "icons",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "file-code.svg",
+                    "color" : "",
+                    "size" : 1,
+                    "children" : [ ]
+                  }, {
+                    "name" : "file-directory.svg",
+                    "color" : "",
+                    "size" : 1,
+                    "children" : [ ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "php-file-iterator",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 111,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 46,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "php-invoker",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 54,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "php-text-template",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "php-timer",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 92,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 71,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "phpunit",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog-11.5.md",
+        "color" : "",
+        "size" : 139,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 122,
+        "children" : [ ]
+      }, {
+        "name" : "DEPRECATIONS.md",
+        "color" : "",
+        "size" : 59,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 20,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 20,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "psr",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "clock",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 21,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 44,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "container",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 27,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "event-dispatcher",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "http-client",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 16,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 30,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "http-factory",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "http-message",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 24,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "log",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 43,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "simple-cache",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 25,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 5,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "psy",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "psysh",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 60,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 24,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "ralouphie",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "getallheaders",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "ramsey",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "collection",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 108,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 140,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "uuid",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 108,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 60,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "sebastian",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "cli-parser",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 42,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "code-unit",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 61,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 52,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 16,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "code-unit-reverse-lookup",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "comparator",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 142,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 65,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 30,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "complexity",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 49,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 43,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "diff",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 100,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 154,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "environment",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 143,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 44,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "exporter",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 116,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 64,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 132,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "global-state",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 74,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 52,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "lines-of-code",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 43,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "object-enumerator",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 61,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 47,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "object-reflector",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "recursion-context",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 48,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "type",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 126,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      }, {
+        "name" : "infection.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "version",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ChangeLog.md",
+        "color" : "",
+        "size" : 36,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "SECURITY.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "spatie",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "laravel-package-tools",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 52,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 505,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "staabm",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "side-effects-detector",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 36,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "symfony",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "clock",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 34,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "console",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 224,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 54,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "css-selector",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 32,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 15,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "deprecation-contracts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 35,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "error-handler",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 42,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "Resources",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "assets",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "images",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "chevron-right.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "icon-book.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "icon-copy.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "icon-minus-square-o.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "icon-minus-square.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "icon-plus-square-o.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "icon-plus-square.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "icon-support.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            }, {
+              "name" : "symfony-logo.svg",
+              "color" : "",
+              "size" : 1,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "event-dispatcher",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 68,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 47,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "event-dispatcher-contracts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 35,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "finder",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 72,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 31,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "http-foundation",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 326,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "http-kernel",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 358,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 81,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "mailer",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 86,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 47,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 67,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "mime",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 47,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-ctype",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-intl-grapheme",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 35,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-intl-idn",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-intl-normalizer",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 36,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-mbstring",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-php80",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 20,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-php82",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-php83",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 17,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "polyfill-uuid",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "process",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 96,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 28,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "routing",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 280,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 42,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 51,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "service-contracts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 42,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "string",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 35,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 44,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "translation",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 172,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 60,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "Resources",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "data",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "parents.json",
+            "color" : "",
+            "size" : 153,
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "translation-contracts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "uid",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 35,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 36,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "var-dumper",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 77,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 44,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "yaml",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 185,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 39,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "tbachert",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "spi",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 61,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "thecodingmachine",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "safe",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 111,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 120,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "theseer",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "tokenizer",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 45,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 34,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "tijsverkoyen",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "css-to-inline-styles",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.md",
+        "color" : "",
+        "size" : 21,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "vlucas",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "phpdotenv",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 60,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "voku",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "portable-ascii",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 134,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 37,
+        "children" : [ ]
+      }, {
+        "name" : "LICENSE.txt",
+        "color" : "",
+        "size" : 16,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 335,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "webmozart",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "assert",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "CHANGELOG.md",
+        "color" : "",
+        "size" : 136,
+        "children" : [ ]
+      }, {
+        "name" : "composer.json",
+        "color" : "",
+        "size" : 43,
+        "children" : [ ]
+      }, {
+        "name" : "README.md",
+        "color" : "",
+        "size" : 229,
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+}, {
+  "name" : "_sokrates_2",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "analysis_config.json",
+    "color" : "",
+    "size" : 522,
+    "children" : [ ]
+  } ]
+} ]
+    }
+
+    root = d3.hierarchy(root)
+        .sum(function (d) {
+            return d.size;
+        })
+        .sort(function (a, b) {
+            return b.value - a.value;
+        });
+
+    var focus = root,
+        nodes = pack(root).descendants(),
+        view;
+
+    var circle = g.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+        .attr("class", function (d) {
+            return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
+        })
+        .style("fill", function (d) {
+            return d.children ? color(d.depth) : (d.data.color ? d.data.color : null);
+        })
+        .on("click", function (d) {
+            if (focus !== d) zoom(d), d3.event.stopPropagation();
+        });
+
+    var text = g.selectAll("text")
+        .data(nodes)
+        .enter().append("text")
+        .attr("class", "label")
+        .style("fill-opacity", function (d) {
+            return d.parent === root ? 1 : 0;
+        })
+        .style("display", function (d) {
+            return d.parent === root ? "inline" : "none";
+        })
+        .text(function (d) {
+            return d.data.name.length > 33 ? (d.data.name.substr(0, 14) + "..." + d.data.name.substr(d.data.name.length - 14))  : d.data.name;
+        });
+
+    var node = g.selectAll("circle,text");
+
+    svg
+        .style("background", color(-1))
+        .on("click", function () {
+            zoom(root);
+        });
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+        var focus0 = focus;
+        focus = d;
+
+        var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function (d) {
+                var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+                return function (t) {
+                    zoomTo(i(t));
+                };
+            });
+
+        transition.selectAll("text")
+            .filter(function (d) {
+                return d.parent === focus || this.style.display === "inline";
+            })
+            .style("fill-opacity", function (d) {
+                return d.parent === focus ? 1 : 0;
+            })
+            .on("start", function (d) {
+                if (d.parent === focus) this.style.display = "inline";
+            })
+            .on("end", function (d) {
+                if (d.parent !== focus) this.style.display = "none";
+            });
+    }
+
+    function zoomTo(v) {
+        var k = diameter / v[2];
+        view = v;
+        node.attr("transform", function (d) {
+            return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+        });
+        circle.attr("r", function (d) {
+            return d.r * k;
+        });
+    }
+
+</script>

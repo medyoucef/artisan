@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>function createEvent()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">function createEvent()</h3>
+<p style="margin-top: 4px">in <i>public/lib/wow/wow.js [71:90]</i></p>
+<ul>
+    <li><b>16</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+  function createEvent(event) {
+    var bubble = arguments.length &lt;= 1 || arguments[1] === undefined ? false : arguments[1];
+    var cancel = arguments.length &lt;= 2 || arguments[2] === undefined ? false : arguments[2];
+    var detail = arguments.length &lt;= 3 || arguments[3] === undefined ? null : arguments[3];
+
+    var customEvent = void 0;
+    if (document.createEvent != null) {
+      // W3C DOM
+      customEvent = document.createEvent('CustomEvent');
+      customEvent.initCustomEvent(event, bubble, cancel, detail);
+    } else if (document.createEventObject != null) {
+      // IE DOM &lt; 9
+      customEvent = document.createEventObject();
+      customEvent.eventType = event;
+    } else {
+      customEvent.eventName = event;
+    }
+
+    return customEvent;
+  }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

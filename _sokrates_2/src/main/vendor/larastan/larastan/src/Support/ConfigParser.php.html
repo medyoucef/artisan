@@ -1,0 +1,262 @@
+<html>
+<head>
+    <title>vendor/larastan/larastan/src/Support/ConfigParser.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/larastan/larastan/src/Support/ConfigParser.php (<b>168</b> lines of code) (<a href="ConfigParser.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+declare(strict_types=1);
+
+namespace Larastan\Larastan\Support;
+
+use PhpParser\Node;
+use PhpParser\Node\Expr\Array_;
+use PhpParser\NodeFinder;
+use PHPStan\Analyser\Scope;
+use PHPStan\DependencyInjection\AutowiredParameter;
+use PHPStan\File\FileHelper;
+use PHPStan\Parser\Parser;
+use PHPStan\Parser\ParserErrorsException;
+use PHPStan\Type\Constant\ConstantIntegerType;
+use PHPStan\Type\Constant\ConstantStringType;
+use PHPStan\Type\FileTypeMapper;
+use PHPStan\Type\Type;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+use RegexIterator;
+use SplFileInfo;
+
+use function array_key_exists;
+use function array_shift;
+use function config_path;
+use function explode;
+use function is_dir;
+use function is_numeric;
+use function iterator_to_array;
+use function property_exists;
+use function str_ends_with;
+
+final class ConfigParser
+{
+    /** @var list&lt;string&gt; */
+    private array $configPaths = [];
+
+    /** @var array&lt;string, SplFileInfo&gt; */
+    private array $configFiles = [];
+
+    /** @var array&lt;string, Type&gt; */
+    private array $parsedConfigs = [];
+
+    /** @var array&lt;string, Node\Stmt\Return_&gt; */
+    private array $parsedConfigFiles = [];
+
+    /** @param list&lt;non-empty-string&gt; $configPaths */
+    public function __construct(
+        private FileHelper $fileHelper,
+        private Parser $parser,
+        private FileTypeMapper $fileTypeMapper,
+        array $configPaths,
+        #[AutowiredParameter]
+        private bool $treatPhpDocTypesAsCertain,
+    ) {
+        foreach ($configPaths as $configPath) {
+            $this-&gt;configPaths[] = $this-&gt;fileHelper-&gt;absolutizePath($configPath);
+        }
+
+        $this-&gt;configFiles = $this-&gt;getConfigFiles();
+    }
+
+    /**
+     * @param ConstantStringType[] $constantStrings
+     *
+     * @return Type[]
+     */
+    public function getTypes(array $constantStrings, Scope $scope): array
+    {
+        $returnTypes = [];
+
+        foreach ($constantStrings as $constantString) {
+            $key = $constantString-&gt;getValue();
+
+            if (array_key_exists($key, $this-&gt;parsedConfigs)) {
+                $returnTypes[] = $this-&gt;parsedConfigs[$key];
+                continue;
+            }
+
+            $configKeyParts = explode('.', $key);
+            $configFileName = array_shift($configKeyParts);
+
+            if (array_key_exists($configFileName, $this-&gt;parsedConfigFiles)) {
+                $cachedConfigFile = $this-&gt;parsedConfigFiles[$configFileName];
+            } else {
+                $cachedConfigFile = $this-&gt;parseConfigFile($configFileName);
+
+                // We could not parse the file or couldn't find the return array
+                if ($cachedConfigFile === null) {
+                    return [];
+                }
+
+                $this-&gt;parsedConfigFiles[$configFileName] = $cachedConfigFile;
+            }
+
+            // Check if we have a type from the docblock
+            $docComment = $cachedConfigFile-&gt;getDocComment();
+
+            if ($docComment !== null &amp;&amp; $this-&gt;treatPhpDocTypesAsCertain) {
+                $resolvedPhpDoc = $this-&gt;fileTypeMapper-&gt;getResolvedPhpDoc(
+                    $scope-&gt;getFile(),
+                    $scope-&gt;getClassReflection()?-&gt;getName(),
+                    $scope-&gt;getTraitReflection()?-&gt;getName(),
+                    $scope-&gt;getFunctionName(),
+                    $docComment-&gt;getText(),
+                );
+
+                $returnTag = $resolvedPhpDoc-&gt;getReturnTag();
+
+                if ($returnTag !== null) {
+                    $type = $returnTag-&gt;getType();
+
+                    foreach ($configKeyParts as $part) {
+                        $offset = is_numeric($part) ? new ConstantIntegerType((int) $part) : new ConstantStringType($part);
+
+                        $type = $type-&gt;getOffsetValueType($offset);
+                    }
+
+                    $this-&gt;parsedConfigs[$key] = $type;
+                    $returnTypes[]             = $type;
+                    continue;
+                }
+            }
+
+            if (! $cachedConfigFile-&gt;expr instanceof Array_) {
+                continue;
+            }
+
+            $arrayNode = $cachedConfigFile-&gt;expr;
+
+            if ($configKeyParts === []) {
+                $type = $scope-&gt;getType($arrayNode);
+
+                $this-&gt;parsedConfigs[$key] = $type;
+                $returnTypes[]             = $type;
+
+                continue;
+            }
+
+            $ret   = null;
+            $items = $arrayNode-&gt;items;
+
+            foreach ($configKeyParts as $configKeyPart) {
+                foreach ($items as $item) {
+                    if (! $item-&gt;key instanceof Node\Scalar) {
+                        continue 3;
+                    }
+
+                    if (! property_exists($item-&gt;key, 'value')) {
+                        continue;
+                    }
+
+                    $itemKey = (string) $item-&gt;key-&gt;value;
+                    if ($itemKey !== $configKeyPart) {
+                        continue;
+                    }
+
+                    if ($item-&gt;value instanceof Array_) {
+                        $items = $item-&gt;value-&gt;items;
+                    }
+
+                    $ret = $item-&gt;value;
+                }
+            }
+
+            if ($ret === null) {
+                continue;
+            }
+
+            $returnTypes[] = $scope-&gt;getType($ret);
+        }
+
+        return $returnTypes;
+    }
+
+    /** @return array&lt;string, SplFileInfo&gt; */
+    private function getConfigFiles(): array
+    {
+        /** @var array&lt;string, SplFileInfo&gt; $configFiles */
+        $configFiles = [];
+
+        foreach ($this-&gt;configPaths as $configPath) {
+            if (! is_dir($configPath)) {
+                continue;
+            }
+
+            $configFiles += iterator_to_array(
+                new RegexIterator(
+                    new RecursiveIteratorIterator(new RecursiveDirectoryIterator($configPath)),
+                    '/\.php$/i',
+                ),
+            );
+        }
+
+        return $configFiles;
+    }
+
+    private function parseConfigFile(string $configFileName): Node\Stmt\Return_|null
+    {
+        foreach ($this-&gt;configFiles as $configFile) {
+            if (str_ends_with($configFile-&gt;getPathname(), $configFileName . '.php')) {
+                try {
+                    $stmts = $this-&gt;parser-&gt;parseFile($configFile-&gt;getPathname());
+                } catch (ParserErrorsException) {
+                    continue;
+                }
+
+                /** @var Node\Stmt\Return_|null $returnNode */
+                $returnNode = (new NodeFinder())-&gt;findFirstInstanceOf($stmts, Node\Stmt\Return_::class);
+
+                if ($returnNode === null) {
+                    continue;
+                }
+
+                $this-&gt;parsedConfigFiles[$configFileName] = $returnNode;
+
+                return $returnNode;
+            }
+        }
+
+        return null;
+    }
+
+    /** @return list&lt;string&gt; */
+    public function getConfigPaths(): array
+    {
+        // Fallback to default config path if no config paths are set
+        if ($this-&gt;configFiles === []) {
+            $this-&gt;configPaths = [config_path()];
+            $this-&gt;configFiles = $this-&gt;getConfigFiles();
+        }
+
+        return $this-&gt;configPaths;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

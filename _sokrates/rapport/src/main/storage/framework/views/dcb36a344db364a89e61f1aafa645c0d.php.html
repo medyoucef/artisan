@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>storage/framework/views/dcb36a344db364a89e61f1aafa645c0d.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">storage/framework/views/dcb36a344db364a89e61f1aafa645c0d.php (<b>74</b> lines of code) (<a href="dcb36a344db364a89e61f1aafa645c0d.php">raw</a>):</h3>
+<div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Mes devis&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+    &lt;style&gt;
+        body { background:#f4f6f9; font-family:Arial; padding:30px; }
+        .container { max-width:900px; margin:auto; }
+        .title { color:#030f27; margin-bottom:25px; }
+
+        .devis-card {
+            background:white;
+            border-radius:12px;
+            padding:20px;
+            margin-bottom:20px;
+            border-left:6px solid #030f27;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .devis-header {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:10px;
+        }
+
+        .status {
+            padding:6px 12px;
+            border-radius:8px;
+            font-weight:bold;
+            font-size:14px;
+        }
+
+        .pending { background:#fdbe33; color:#030f27; }
+        .accepted { background:green; color:white; }
+        .refused { background:red; color:white; }
+
+        .btn-chat {
+            display:inline-block;
+            margin-top:10px;
+            padding:8px 14px;
+            background:#030f27;
+            color:white;
+            border-radius:6px;
+            text-decoration:none;
+        }
+        .btn-chat:hover { background:#fdbe33; color:#030f27; }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h2 class=&quot;title&quot;&gt;Mes devis&lt;/h2&gt;
+
+    &lt;?php $__empty_1 = true; $__currentLoopData = $devis; $__env-&gt;addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env-&gt;incrementLoopIndices(); $loop = $__env-&gt;getLastLoop(); $__empty_1 = false; ?&gt;
+        &lt;div class=&quot;devis-card&quot;&gt;
+
+            &lt;div class=&quot;devis-header&quot;&gt;
+                &lt;h3 style=&quot;margin:0;&quot;&gt;Devis #&lt;?php echo e($d-&gt;id); ?&gt;&lt;/h3&gt;
+
+                &lt;span class=&quot;status 
+                    &lt;?php if($d-&gt;statut === 'en_attente'): ?&gt; pending 
+                    &lt;?php elseif($d-&gt;statut === 'accept&eacute;'): ?&gt; accepted 
+                    &lt;?php else: ?&gt; refused 
+                    &lt;?php endif; ?&gt;&quot;&gt;
+                    &lt;?php echo e(ucfirst($d-&gt;statut)); ?&gt;
+
+                &lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;p&gt;&lt;strong&gt;Artisan :&lt;/strong&gt; &lt;?php echo e($d-&gt;artisan-&gt;name); ?&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Montant :&lt;/strong&gt; &lt;?php echo e($d-&gt;montant); ?&gt; &euro;&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Description :&lt;/strong&gt; &lt;?php echo e($d-&gt;description); ?&gt;&lt;/p&gt;
+
+            &lt;a href=&quot;&lt;?php echo e(route('chat.show', $d-&gt;conversation_id)); ?&gt;&quot; class=&quot;btn-chat&quot;&gt;
+                Voir la conversation
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;?php endforeach; $__env-&gt;popLoop(); $loop = $__env-&gt;getLastLoop(); if ($__empty_1): ?&gt;
+        &lt;p&gt;Aucun devis pour le moment.&lt;/p&gt;
+    &lt;?php endif; ?&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;?php /**PATH C:\xampp\htdocs\artisan\resources\views/devis/client.blade.php ENDPATH**/ ?&gt;</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

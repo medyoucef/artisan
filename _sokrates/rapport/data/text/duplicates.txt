@@ -1,0 +1,2292 @@
+duplicated block id: 1
+size: 136 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (1:137)
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (1:137)
+
+duplicated block id: 2
+size: 111 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (45:173)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (45:173)
+
+duplicated block id: 3
+size: 102 cleaned lines of code
+in 2 files:
+ - resources/views/admin/layout.blade.php (8:160)
+ - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (8:160)
+
+duplicated block id: 4
+size: 87 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick.less (3:100)
+ - public/lib/slick/slick.scss (3:100)
+
+duplicated block id: 5
+size: 81 cleaned lines of code
+in 2 files:
+ - resources/views/admin/dashboard.blade.php (1:122)
+ - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (1:122)
+
+duplicated block id: 6
+size: 58 cleaned lines of code
+in 2 files:
+ - resources/views/admin/devis/index.blade.php (1:79)
+ - storage/framework/views/363e70e480a2c512b7859cb262374f7b.php (1:79)
+
+duplicated block id: 7
+size: 55 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (313:371)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (313:371)
+
+duplicated block id: 8
+size: 54 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (176:236)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (176:236)
+
+duplicated block id: 9
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (2:50)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (2:50)
+
+duplicated block id: 10
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (5:69)
+ - resources/views/admin/societes_edit.blade.php (5:69)
+
+duplicated block id: 11
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/societes_edit.blade.php (5:69)
+ - resources/views/admin/users_edit.blade.php (5:69)
+
+duplicated block id: 12
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_edit.blade.php (7:71)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (7:71)
+
+duplicated block id: 13
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (5:69)
+ - resources/views/admin/professions_edit.blade.php (5:69)
+
+duplicated block id: 14
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (7:71)
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:71)
+
+duplicated block id: 15
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (5:69)
+ - resources/views/admin/users_edit.blade.php (5:69)
+
+duplicated block id: 16
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (7:71)
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (7:71)
+
+duplicated block id: 17
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/societes_edit.blade.php (7:71)
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:71)
+
+duplicated block id: 18
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/admin/users_edit.blade.php (7:71)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:71)
+
+duplicated block id: 19
+size: 48 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (46:97)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (46:97)
+
+duplicated block id: 20
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (7:69)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:69)
+
+duplicated block id: 21
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/societes_edit.blade.php (7:69)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:69)
+
+duplicated block id: 22
+size: 47 cleaned lines of code
+in 2 files:
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:69)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:69)
+
+duplicated block id: 23
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/users_edit.blade.php (7:69)
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:69)
+
+duplicated block id: 24
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/users_edit.blade.php (7:69)
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:69)
+
+duplicated block id: 25
+size: 47 cleaned lines of code
+in 2 files:
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:69)
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:69)
+
+duplicated block id: 26
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (7:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (7:69)
+
+duplicated block id: 27
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (7:69)
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:69)
+
+duplicated block id: 28
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/societes_edit.blade.php (7:69)
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (7:69)
+
+duplicated block id: 29
+size: 47 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (7:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (7:69)
+
+duplicated block id: 30
+size: 47 cleaned lines of code
+in 2 files:
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (7:69)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (7:69)
+
+duplicated block id: 31
+size: 47 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_edit.blade.php (7:69)
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (7:69)
+
+duplicated block id: 32
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_edit.blade.php (10:69)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (10:69)
+
+duplicated block id: 33
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (10:69)
+ - resources/views/admin/societes_edit.blade.php (10:69)
+
+duplicated block id: 34
+size: 44 cleaned lines of code
+in 2 files:
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (10:69)
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69)
+
+duplicated block id: 35
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (10:69)
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69)
+
+duplicated block id: 36
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_edit.blade.php (10:69)
+ - resources/views/admin/societes_edit.blade.php (10:69)
+
+duplicated block id: 37
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (10:69)
+ - resources/views/admin/users_edit.blade.php (10:69)
+
+duplicated block id: 38
+size: 44 cleaned lines of code
+in 2 files:
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (10:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69)
+
+duplicated block id: 39
+size: 44 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (10:69)
+
+duplicated block id: 40
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (10:69)
+ - resources/views/admin/professions_edit.blade.php (10:69)
+
+duplicated block id: 41
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/users_edit.blade.php (10:69)
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69)
+
+duplicated block id: 42
+size: 44 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69)
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (10:69)
+
+duplicated block id: 43
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_edit.blade.php (10:69)
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (10:69)
+
+duplicated block id: 44
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/societes_edit.blade.php (10:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69)
+
+duplicated block id: 45
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_edit.blade.php (10:69)
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (10:69)
+
+duplicated block id: 46
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (10:69)
+ - resources/views/admin/professions_create.blade.php (10:69)
+
+duplicated block id: 47
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (10:69)
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (10:69)
+
+duplicated block id: 48
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/societes_edit.blade.php (10:69)
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (10:69)
+
+duplicated block id: 49
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/devis/client.blade.php (1:56)
+ - storage/framework/views/dcb36a344db364a89e61f1aafa645c0d.php (1:56)
+
+duplicated block id: 50
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (10:69)
+ - storage/framework/views/ba3262651b9ba9737acf261241d54870.php (10:69)
+
+duplicated block id: 51
+size: 44 cleaned lines of code
+in 2 files:
+ - storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php (10:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69)
+
+duplicated block id: 52
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans_edit.blade.php (10:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69)
+
+duplicated block id: 53
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/users_edit.blade.php (10:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69)
+
+duplicated block id: 54
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (10:69)
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (10:69)
+
+duplicated block id: 55
+size: 44 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_edit.blade.php (10:69)
+ - resources/views/admin/users_edit.blade.php (10:69)
+
+duplicated block id: 56
+size: 44 cleaned lines of code
+in 2 files:
+ - storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php (10:69)
+ - storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php (10:69)
+
+duplicated block id: 57
+size: 36 cleaned lines of code
+in 2 files:
+ - resources/views/layout/footer.blade.php (35:71)
+ - storage/framework/views/6ad0da796f2fd26d59570553557c6b71.php (35:71)
+
+duplicated block id: 58
+size: 36 cleaned lines of code
+in 2 files:
+ - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (8:59)
+ - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (9:60)
+
+duplicated block id: 59
+size: 36 cleaned lines of code
+in 2 files:
+ - resources/views/chat/show.blade.php (1:44)
+ - storage/framework/views/63ccf8ba014fb693f0b8f031f88d5c96.php (1:44)
+
+duplicated block id: 60
+size: 36 cleaned lines of code
+in 2 files:
+ - resources/views/admin/dashboard.blade.php (9:60)
+ - resources/views/admin/layout.blade.php (8:59)
+
+duplicated block id: 61
+size: 36 cleaned lines of code
+in 2 files:
+ - resources/views/admin/dashboard.blade.php (9:60)
+ - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (8:59)
+
+duplicated block id: 62
+size: 36 cleaned lines of code
+in 2 files:
+ - resources/views/admin/layout.blade.php (8:59)
+ - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (9:60)
+
+duplicated block id: 63
+size: 34 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick-theme.less (108:142)
+ - public/lib/slick/slick-theme.scss (134:168)
+
+duplicated block id: 64
+size: 32 cleaned lines of code
+in 2 files:
+ - resources/views/auth/login_register.blade.php (49:90)
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (49:90)
+
+duplicated block id: 65
+size: 32 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (46:83)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (46:83)
+
+duplicated block id: 66
+size: 31 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (42:81)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (42:81)
+
+duplicated block id: 67
+size: 29 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (265:297)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (265:297)
+
+duplicated block id: 68
+size: 28 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (1:32)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (1:32)
+
+duplicated block id: 69
+size: 24 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/assets/owl.theme.default.css (24:49)
+ - public/lib/owlcarousel/assets/owl.theme.green.css (24:49)
+
+duplicated block id: 70
+size: 24 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick-theme.less (22:47)
+ - public/lib/slick/slick-theme.scss (59:85)
+
+duplicated block id: 71
+size: 23 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (6:49)
+ - resources/views/front/contact.blade.php (6:49)
+
+duplicated block id: 72
+size: 23 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (6:49)
+ - resources/views/front/service.blade.php (6:50)
+
+duplicated block id: 73
+size: 23 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (1:31)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (1:31)
+
+duplicated block id: 74
+size: 23 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (6:49)
+ - resources/views/front/service.blade.php (6:50)
+
+duplicated block id: 75
+size: 22 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (144:169)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (144:169)
+
+duplicated block id: 76
+size: 22 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (1:31)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (1:31)
+
+duplicated block id: 77
+size: 21 cleaned lines of code
+in 2 files:
+ - resources/views/layout/footer.blade.php (1:21)
+ - storage/framework/views/6ad0da796f2fd26d59570553557c6b71.php (1:21)
+
+duplicated block id: 78
+size: 20 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (131:159)
+ - resources/views/front/art_soc.blade.php (115:144)
+
+duplicated block id: 79
+size: 20 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (129:153)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (130:154)
+
+duplicated block id: 80
+size: 19 cleaned lines of code
+in 2 files:
+ - resources/views/auth/login_register.blade.php (27:46)
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (27:46)
+
+duplicated block id: 81
+size: 19 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (100:118)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (100:118)
+
+duplicated block id: 82
+size: 19 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (55:77)
+ - resources/views/index.blade.php (146:168)
+
+duplicated block id: 83
+size: 19 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (55:77)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (146:168)
+
+duplicated block id: 84
+size: 18 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (17:49)
+ - resources/views/front/art_ind.blade.php (17:49)
+
+duplicated block id: 85
+size: 18 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (17:49)
+ - resources/views/front/contact.blade.php (17:49)
+
+duplicated block id: 86
+size: 18 cleaned lines of code
+in 2 files:
+ - resources/views/devis/create.blade.php (1:18)
+ - storage/framework/views/304f8051e527d7a891c786c0521d648e.php (1:18)
+
+duplicated block id: 87
+size: 18 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (17:49)
+ - resources/views/front/service.blade.php (17:50)
+
+duplicated block id: 88
+size: 18 cleaned lines of code
+in 2 files:
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (131:159)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (116:145)
+
+duplicated block id: 89
+size: 17 cleaned lines of code
+in 2 files:
+ - config/database.php (47:63)
+ - config/database.php (67:83)
+
+duplicated block id: 90
+size: 17 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (6:31)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (6:31)
+
+duplicated block id: 91
+size: 17 cleaned lines of code
+in 2 files:
+ - public/lib/flaticon/font/_flaticon.scss (6:23)
+ - public/lib/flaticon/font/flaticon.css (6:23)
+
+duplicated block id: 92
+size: 17 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (115:131)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (206:224)
+
+duplicated block id: 93
+size: 17 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (6:31)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (6:31)
+
+duplicated block id: 94
+size: 17 cleaned lines of code
+in 2 files:
+ - resources/views/chat/inbox.blade.php (1:20)
+ - storage/framework/views/ba6024d816e0fafd99e84eba11c4bf6d.php (1:20)
+
+duplicated block id: 95
+size: 17 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (152:174)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (153:175)
+
+duplicated block id: 96
+size: 17 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (115:131)
+ - resources/views/index.blade.php (206:224)
+
+duplicated block id: 97
+size: 16 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (155:174)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (156:175)
+
+duplicated block id: 98
+size: 16 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (17:49)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:49)
+
+duplicated block id: 99
+size: 15 cleaned lines of code
+in 2 files:
+ - resources/views/admin/messages.blade.php (7:23)
+ - storage/framework/views/c0d73acd37943e5e6e6cb12d115ff894.php (7:23)
+
+duplicated block id: 100
+size: 15 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (6:30)
+ - resources/views/front/profile_edit.blade.php (6:27)
+
+duplicated block id: 101
+size: 14 cleaned lines of code
+in 2 files:
+ - public/css/style.css (786:799)
+ - public/css/style.css (1273:1286)
+
+duplicated block id: 102
+size: 14 cleaned lines of code
+in 2 files:
+ - resources/views/admin/societes.blade.php (7:22)
+ - storage/framework/views/f8de69c6fee56f52c44947c0b83de2a1.php (7:22)
+
+duplicated block id: 103
+size: 14 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (233:248)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (233:248)
+
+duplicated block id: 104
+size: 14 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (129:144)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (144:159)
+
+duplicated block id: 105
+size: 14 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/assets/owl.theme.default.css (9:22)
+ - public/lib/owlcarousel/assets/owl.theme.green.css (9:22)
+
+duplicated block id: 106
+size: 14 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (76:91)
+ - resources/views/index.blade.php (254:267)
+
+duplicated block id: 107
+size: 14 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (144:159)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (130:145)
+
+duplicated block id: 108
+size: 14 cleaned lines of code
+in 2 files:
+ - resources/views/admin/users.blade.php (7:22)
+ - storage/framework/views/79735874e300024b53ad0cdaee2033e8.php (7:22)
+
+duplicated block id: 109
+size: 13 cleaned lines of code
+in 2 files:
+ - public/css/style.css (739:751)
+ - public/css/style.css (1856:1868)
+
+duplicated block id: 110
+size: 13 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (148:165)
+ - resources/views/front/service.blade.php (102:119)
+
+duplicated block id: 111
+size: 13 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans.blade.php (4:18)
+ - storage/framework/views/d8a9d403d8888107e63e337c823d1c6a.php (4:18)
+
+duplicated block id: 112
+size: 13 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (35:48)
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (106:119)
+
+duplicated block id: 113
+size: 13 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (171:185)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (171:185)
+
+duplicated block id: 114
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (17:31)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:31)
+
+duplicated block id: 115
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (106:119)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (153:166)
+
+duplicated block id: 116
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/admin/dashboard.blade.php (96:112)
+ - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (116:132)
+
+duplicated block id: 117
+size: 12 cleaned lines of code
+in 2 files:
+ - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (116:132)
+ - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (96:112)
+
+duplicated block id: 118
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (162:181)
+ - resources/views/front/profile_edit.blade.php (101:117)
+
+duplicated block id: 119
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (17:31)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:31)
+
+duplicated block id: 120
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (17:31)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:31)
+
+duplicated block id: 121
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions.blade.php (7:20)
+ - storage/framework/views/2fdb02cfdf9db42e74a80a071ef0ac56.php (7:20)
+
+duplicated block id: 122
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/admin/layout.blade.php (116:132)
+ - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (96:112)
+
+duplicated block id: 123
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (17:31)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (17:31)
+
+duplicated block id: 124
+size: 12 cleaned lines of code
+in 2 files:
+ - resources/views/admin/dashboard.blade.php (96:112)
+ - resources/views/admin/layout.blade.php (116:132)
+
+duplicated block id: 125
+size: 11 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (110:122)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (136:148)
+
+duplicated block id: 126
+size: 11 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (135:147)
+ - resources/views/front/service.blade.php (110:122)
+
+duplicated block id: 127
+size: 11 cleaned lines of code
+in 2 files:
+ - public/lib/flaticon/font/_flaticon.scss (38:49)
+ - public/lib/flaticon/font/flaticon.css (31:42)
+
+duplicated block id: 128
+size: 11 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans.blade.php (32:45)
+ - resources/views/admin/societes.blade.php (37:50)
+
+duplicated block id: 129
+size: 11 cleaned lines of code
+in 2 files:
+ - resources/views/admin/messages.blade.php (39:51)
+ - resources/views/admin/societes.blade.php (37:50)
+
+duplicated block id: 130
+size: 11 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans.blade.php (32:45)
+ - resources/views/admin/messages.blade.php (39:51)
+
+duplicated block id: 131
+size: 11 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick.js (635:648)
+ - public/lib/slick/slick.js (650:663)
+
+duplicated block id: 132
+size: 11 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions_create.blade.php (76:89)
+ - storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php (76:89)
+
+duplicated block id: 133
+size: 10 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick-theme.less (87:97)
+ - public/lib/slick/slick-theme.scss (113:123)
+
+duplicated block id: 134
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (150:159)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (157:166)
+
+duplicated block id: 135
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (150:159)
+ - resources/views/front/contact.blade.php (156:165)
+
+duplicated block id: 136
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (135:144)
+ - resources/views/front/contact.blade.php (156:165)
+
+duplicated block id: 137
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (156:165)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (150:159)
+
+duplicated block id: 138
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (94:103)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (185:194)
+
+duplicated block id: 139
+size: 10 cleaned lines of code
+in 2 files:
+ - public/css/style.css (1273:1282)
+ - public/css/style.css (1903:1912)
+
+duplicated block id: 140
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (150:159)
+ - resources/views/front/service.blade.php (110:119)
+
+duplicated block id: 141
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (156:165)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (136:145)
+
+duplicated block id: 142
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/admin/dashboard.blade.php (129:142)
+ - resources/views/admin/layout.blade.php (168:181)
+
+duplicated block id: 143
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (138:157)
+ - resources/views/front/profile_edit.blade.php (98:113)
+
+duplicated block id: 144
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (110:119)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (150:159)
+
+duplicated block id: 145
+size: 10 cleaned lines of code
+in 2 files:
+ - public/css/style.css (786:795)
+ - public/css/style.css (1903:1912)
+
+duplicated block id: 146
+size: 10 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (157:166)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (150:159)
+
+duplicated block id: 147
+size: 10 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (157:166)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (136:145)
+
+duplicated block id: 148
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (94:103)
+ - resources/views/index.blade.php (185:194)
+
+duplicated block id: 149
+size: 10 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (135:144)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (157:166)
+
+duplicated block id: 150
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/devis/create.blade.php (23:33)
+ - storage/framework/views/304f8051e527d7a891c786c0521d648e.php (23:33)
+
+duplicated block id: 151
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/layout/nav_bar.blade.php (1:11)
+ - storage/framework/views/ca5c895d99c0c11e055b7a435bd5da49.php (1:11)
+
+duplicated block id: 152
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (99:107)
+ - resources/views/partials/societes_liste.blade.php (22:30)
+
+duplicated block id: 153
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile_edit.blade.php (14:27)
+ - resources/views/front/service.blade.php (28:50)
+
+duplicated block id: 154
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (1:13)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (1:13)
+
+duplicated block id: 155
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/admin/professions.blade.php (33:43)
+ - resources/views/admin/societes.blade.php (37:47)
+
+duplicated block id: 156
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (28:49)
+ - resources/views/front/profile.blade.php (17:30)
+
+duplicated block id: 157
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/admin/messages.blade.php (39:48)
+ - resources/views/admin/professions.blade.php (33:43)
+
+duplicated block id: 158
+size: 9 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (79:88)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (111:120)
+
+duplicated block id: 159
+size: 9 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick-theme.less (74:83)
+ - public/lib/slick/slick-theme.scss (100:109)
+
+duplicated block id: 160
+size: 9 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (79:88)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (98:107)
+
+duplicated block id: 161
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/admin/artisans.blade.php (32:43)
+ - resources/views/admin/professions.blade.php (33:43)
+
+duplicated block id: 162
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (95:104)
+ - resources/views/partials/artisan_cards.blade.php (19:28)
+
+duplicated block id: 163
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (17:30)
+ - resources/views/front/service.blade.php (28:50)
+
+duplicated block id: 164
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (28:49)
+ - resources/views/front/profile_edit.blade.php (14:27)
+
+duplicated block id: 165
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (28:49)
+ - resources/views/front/profile.blade.php (17:30)
+
+duplicated block id: 166
+size: 9 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick.js (2498:2508)
+ - public/lib/slick/slick.js (2510:2520)
+
+duplicated block id: 167
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (28:49)
+ - resources/views/front/profile_edit.blade.php (14:27)
+
+duplicated block id: 168
+size: 9 cleaned lines of code
+in 2 files:
+ - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (168:181)
+ - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (129:142)
+
+duplicated block id: 169
+size: 9 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (66:75)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (79:88)
+
+duplicated block id: 170
+size: 9 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (66:75)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (98:107)
+
+duplicated block id: 171
+size: 9 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (66:75)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (111:120)
+
+duplicated block id: 172
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (28:49)
+ - resources/views/front/profile_edit.blade.php (14:27)
+
+duplicated block id: 173
+size: 9 cleaned lines of code
+in 2 files:
+ - public/lib/isotope/isotope.pkgd.js (2831:2842)
+ - public/lib/isotope/isotope.pkgd.js (2900:2911)
+
+duplicated block id: 174
+size: 9 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (28:49)
+ - resources/views/front/profile.blade.php (17:30)
+
+duplicated block id: 175
+size: 9 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (98:107)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (111:120)
+
+duplicated block id: 176
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (17:24)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24)
+
+duplicated block id: 177
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (35:43)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (35:43)
+
+duplicated block id: 178
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (124:131)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (139:146)
+
+duplicated block id: 179
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (17:24)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24)
+
+duplicated block id: 180
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (17:24)
+ - resources/views/front/contact.blade.php (17:24)
+
+duplicated block id: 181
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (17:24)
+ - resources/views/front/art_soc.blade.php (17:24)
+
+duplicated block id: 182
+size: 8 cleaned lines of code
+in 2 files:
+ - public/css/style.css (1250:1257)
+ - public/css/style.css (1880:1887)
+
+duplicated block id: 183
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (140:157)
+ - resources/views/front/profile.blade.php (162:177)
+
+duplicated block id: 184
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (17:24)
+ - resources/views/front/service.blade.php (17:24)
+
+duplicated block id: 185
+size: 8 cleaned lines of code
+in 2 files:
+ - public/css/style.css (763:770)
+ - public/css/style.css (1880:1887)
+
+duplicated block id: 186
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/partials/societe_cards.blade.php (33:41)
+ - resources/views/partials/societes_liste.blade.php (23:30)
+
+duplicated block id: 187
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (79:86)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (124:131)
+
+duplicated block id: 188
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (17:24)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (17:24)
+
+duplicated block id: 189
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (17:24)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24)
+
+duplicated block id: 190
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (17:24)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:24)
+
+duplicated block id: 191
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (111:118)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (139:146)
+
+duplicated block id: 192
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (17:24)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24)
+
+duplicated block id: 193
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/layout/nav_bar.blade.php (46:53)
+ - storage/framework/views/ca5c895d99c0c11e055b7a435bd5da49.php (46:53)
+
+duplicated block id: 194
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (79:86)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (139:146)
+
+duplicated block id: 195
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (111:118)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (124:131)
+
+duplicated block id: 196
+size: 8 cleaned lines of code
+in 2 files:
+ - public/css/style.css (841:848)
+ - public/css/style.css (856:863)
+
+duplicated block id: 197
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (17:24)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24)
+
+duplicated block id: 198
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (100:107)
+ - resources/views/partials/societe_cards.blade.php (33:41)
+
+duplicated block id: 199
+size: 8 cleaned lines of code
+in 2 files:
+ - public/css/style.css (763:770)
+ - public/css/style.css (1250:1257)
+
+duplicated block id: 200
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (17:24)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (17:24)
+
+duplicated block id: 201
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (1:8)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (1:8)
+
+duplicated block id: 202
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (66:73)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (124:131)
+
+duplicated block id: 203
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (140:158)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (207:226)
+
+duplicated block id: 204
+size: 8 cleaned lines of code
+in 2 files:
+ - public/css/style.css (1375:1382)
+ - public/css/style.css (1751:1758)
+
+duplicated block id: 205
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (98:105)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (139:146)
+
+duplicated block id: 206
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (17:24)
+ - resources/views/front/art_soc.blade.php (17:24)
+
+duplicated block id: 207
+size: 8 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (64:71)
+ - resources/views/index.blade.php (242:249)
+
+duplicated block id: 208
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (98:105)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (124:131)
+
+duplicated block id: 209
+size: 8 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (66:73)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (139:146)
+
+duplicated block id: 210
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (299:306)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (299:306)
+
+duplicated block id: 211
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/auth/login_register.blade.php (9:15)
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (9:15)
+
+duplicated block id: 212
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick.js (1149:1156)
+ - public/lib/slick/slick.js (1166:1173)
+
+duplicated block id: 213
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (28:49)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (17:30)
+
+duplicated block id: 214
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (106:112)
+ - resources/views/index.blade.php (220:227)
+
+duplicated block id: 215
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (55:67)
+ - resources/views/front/art_soc.blade.php (55:67)
+
+duplicated block id: 216
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1813:1820)
+ - public/lib/owlcarousel/owl.carousel.js (1949:1956)
+
+duplicated block id: 217
+size: 7 cleaned lines of code
+in 2 files:
+ - database/migrations/2025_06_01_152839_create_professions_table.php (15:27)
+ - database/migrations/2025_06_01_152840_create_services_table.php (15:27)
+
+duplicated block id: 218
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1813:1820)
+ - public/lib/owlcarousel/owl.carousel.js (2047:2054)
+
+duplicated block id: 219
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1714:1721)
+ - public/lib/owlcarousel/owl.carousel.js (1827:1834)
+
+duplicated block id: 220
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/d8a9d403d8888107e63e337c823d1c6a.php (34:44)
+ - storage/framework/views/f8de69c6fee56f52c44947c0b83de2a1.php (39:48)
+
+duplicated block id: 221
+size: 7 cleaned lines of code
+in 2 files:
+ - database/migrations/2025_06_01_152839_create_professions_table.php (15:27)
+ - database/migrations/2025_06_01_152840_create_societe_artisans_table.php (15:27)
+
+duplicated block id: 222
+size: 7 cleaned lines of code
+in 2 files:
+ - database/migrations/2025_06_01_152840_create_services_table.php (15:27)
+ - database/migrations/2025_06_01_152840_create_societe_artisans_table.php (15:27)
+
+duplicated block id: 223
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (106:112)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (220:227)
+
+duplicated block id: 224
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1827:1834)
+ - public/lib/owlcarousel/owl.carousel.js (2060:2067)
+
+duplicated block id: 225
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/c0d73acd37943e5e6e6cb12d115ff894.php (41:49)
+ - storage/framework/views/f8de69c6fee56f52c44947c0b83de2a1.php (39:48)
+
+duplicated block id: 226
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (64:70)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (242:248)
+
+duplicated block id: 227
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/admin/devis/index.blade.php (88:94)
+ - resources/views/devis/client.blade.php (64:70)
+
+duplicated block id: 228
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1962:1969)
+ - public/lib/owlcarousel/owl.carousel.js (2060:2067)
+
+duplicated block id: 229
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1827:1834)
+ - public/lib/owlcarousel/owl.carousel.js (1962:1969)
+
+duplicated block id: 230
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (55:67)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (55:67)
+
+duplicated block id: 231
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick.js (1535:1545)
+ - public/lib/slick/slick.js (1758:1768)
+
+duplicated block id: 232
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/27a0bce4217d61e93e337c865ba09c59.php (1:9)
+ - storage/framework/views/cc94ab1dca712cc6faf2b85441bbfcf0.php (1:9)
+
+duplicated block id: 233
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/c0d73acd37943e5e6e6cb12d115ff894.php (41:49)
+ - storage/framework/views/d8a9d403d8888107e63e337c823d1c6a.php (34:44)
+
+duplicated block id: 234
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (119:126)
+ - resources/views/front/art_soc.blade.php (104:112)
+
+duplicated block id: 235
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1949:1956)
+ - public/lib/owlcarousel/owl.carousel.js (2047:2054)
+
+duplicated block id: 236
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2dad63890ee4ae3835a6dc33f68fd08a.php (1:9)
+ - storage/framework/views/cc94ab1dca712cc6faf2b85441bbfcf0.php (1:9)
+
+duplicated block id: 237
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/79735874e300024b53ad0cdaee2033e8.php (39:48)
+ - storage/framework/views/f8de69c6fee56f52c44947c0b83de2a1.php (39:48)
+
+duplicated block id: 238
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (78:85)
+ - resources/views/front/art_soc.blade.php (76:84)
+
+duplicated block id: 239
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/lightbox/css/lightbox.css (111:117)
+ - public/lib/lightbox/css/lightbox.css (129:135)
+
+duplicated block id: 240
+size: 7 cleaned lines of code
+in 2 files:
+ - public/css/style.css (777:783)
+ - public/css/style.css (1264:1270)
+
+duplicated block id: 241
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (55:67)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (55:67)
+
+duplicated block id: 242
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1751:1758)
+ - public/lib/owlcarousel/owl.carousel.js (1996:2003)
+
+duplicated block id: 243
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1066:1073)
+ - public/lib/owlcarousel/owl.carousel.js (1081:1088)
+
+duplicated block id: 244
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1714:1721)
+ - public/lib/owlcarousel/owl.carousel.js (1962:1969)
+
+duplicated block id: 245
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (28:49)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (17:30)
+
+duplicated block id: 246
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/27a0bce4217d61e93e337c865ba09c59.php (1:9)
+ - storage/framework/views/2dad63890ee4ae3835a6dc33f68fd08a.php (1:9)
+
+duplicated block id: 247
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (55:67)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (55:67)
+
+duplicated block id: 248
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (128:134)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (197:203)
+
+duplicated block id: 249
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (128:134)
+ - resources/views/index.blade.php (197:203)
+
+duplicated block id: 250
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/auth/login_register.blade.php (1:7)
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (1:7)
+
+duplicated block id: 251
+size: 7 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (27:33)
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (27:33)
+
+duplicated block id: 252
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (56:63)
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (128:135)
+
+duplicated block id: 253
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/79735874e300024b53ad0cdaee2033e8.php (39:48)
+ - storage/framework/views/d8a9d403d8888107e63e337c823d1c6a.php (34:44)
+
+duplicated block id: 254
+size: 7 cleaned lines of code
+in 2 files:
+ - storage/framework/views/79735874e300024b53ad0cdaee2033e8.php (39:48)
+ - storage/framework/views/c0d73acd37943e5e6e6cb12d115ff894.php (41:49)
+
+duplicated block id: 255
+size: 7 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1714:1721)
+ - public/lib/owlcarousel/owl.carousel.js (2060:2067)
+
+duplicated block id: 256
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 257
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/nav_bar.blade.php (63:70)
+ - storage/framework/views/ca5c895d99c0c11e055b7a435bd5da49.php (64:71)
+
+duplicated block id: 258
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - resources/views/index.blade.php (230:236)
+
+duplicated block id: 259
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (23:28)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (34:39)
+
+duplicated block id: 260
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+
+duplicated block id: 261
+size: 6 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1735:1740)
+ - public/lib/owlcarousel/owl.carousel.js (1969:1974)
+
+duplicated block id: 262
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php (212:226)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (432:452)
+
+duplicated block id: 263
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 264
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 265
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (32:37)
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (71:78)
+
+duplicated block id: 266
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 267
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 268
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (34:39)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (23:28)
+
+duplicated block id: 269
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 270
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 271
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 272
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (139:144)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (233:238)
+
+duplicated block id: 273
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 274
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_soc.blade.php (76:81)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (78:83)
+
+duplicated block id: 275
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (164:177)
+ - resources/views/index.blade.php (436:452)
+
+duplicated block id: 276
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - resources/views/index.blade.php (144:149)
+
+duplicated block id: 277
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+
+duplicated block id: 278
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - resources/views/layout/question.blade.php (132:137)
+
+duplicated block id: 279
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 280
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (78:83)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (76:81)
+
+duplicated block id: 281
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2fdb02cfdf9db42e74a80a071ef0ac56.php (35:43)
+ - storage/framework/views/f8de69c6fee56f52c44947c0b83de2a1.php (39:47)
+
+duplicated block id: 282
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 283
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile_edit.blade.php (13:21)
+ - resources/views/index.blade.php (28:39)
+
+duplicated block id: 284
+size: 6 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1752:1758)
+ - public/lib/owlcarousel/owl.carousel.js (1877:1883)
+
+duplicated block id: 285
+size: 6 cleaned lines of code
+in 2 files:
+ - public/lib/owlcarousel/owl.carousel.js (1877:1883)
+ - public/lib/owlcarousel/owl.carousel.js (1997:2003)
+
+duplicated block id: 286
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 287
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 288
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/004ed925fbe1d09044debc456e62d827.php (6:11)
+ - storage/framework/views/2dad63890ee4ae3835a6dc33f68fd08a.php (1:6)
+
+duplicated block id: 289
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+
+duplicated block id: 290
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (132:137)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+
+duplicated block id: 291
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 292
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 293
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 294
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - resources/views/layout/question.blade.php (132:137)
+
+duplicated block id: 295
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/004ed925fbe1d09044debc456e62d827.php (6:11)
+ - storage/framework/views/cc94ab1dca712cc6faf2b85441bbfcf0.php (1:6)
+
+duplicated block id: 296
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2fdb02cfdf9db42e74a80a071ef0ac56.php (35:43)
+ - storage/framework/views/79735874e300024b53ad0cdaee2033e8.php (39:47)
+
+duplicated block id: 297
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+
+duplicated block id: 298
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/auth/login_register.blade.php (32:37)
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (71:78)
+
+duplicated block id: 299
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 300
+size: 6 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick-theme.less (144:149)
+ - public/lib/slick/slick-theme.scss (170:175)
+
+duplicated block id: 301
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 302
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/admin/layout.blade.php (167:173)
+ - storage/framework/views/3add5ab67003a3b580123d4b75450e14.php (167:173)
+
+duplicated block id: 303
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - resources/views/layout/topbar.blade.php (45:50)
+
+duplicated block id: 304
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - resources/views/layout/question.blade.php (132:137)
+
+duplicated block id: 305
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (132:137)
+ - resources/views/layout/topbar.blade.php (45:50)
+
+duplicated block id: 306
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - resources/views/index.blade.php (354:359)
+
+duplicated block id: 307
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (122:127)
+ - resources/views/index.blade.php (133:138)
+
+duplicated block id: 308
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - resources/views/index.blade.php (354:359)
+
+duplicated block id: 309
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+
+duplicated block id: 310
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 311
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+
+duplicated block id: 312
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (113:119)
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (165:171)
+
+duplicated block id: 313
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 314
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (35:40)
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (158:163)
+
+duplicated block id: 315
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 316
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - resources/views/index.blade.php (230:236)
+
+duplicated block id: 317
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (106:111)
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (158:163)
+
+duplicated block id: 318
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 319
+size: 6 cleaned lines of code
+in 2 files:
+ - database/migrations/2025_06_20_141421_add_updated_at_to_societe_artisan_table.php (3:14)
+ - database/migrations/2025_06_20_141652_add_created_at_to_societe_artisan_table.php (3:14)
+
+duplicated block id: 320
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+
+duplicated block id: 321
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 322
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (122:127)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (133:138)
+
+duplicated block id: 323
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+
+duplicated block id: 324
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+
+duplicated block id: 325
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (261:266)
+ - resources/views/index.blade.php (420:425)
+
+duplicated block id: 326
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 327
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - resources/views/layout/topbar.blade.php (45:50)
+
+duplicated block id: 328
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 329
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - resources/views/index.blade.php (354:359)
+
+duplicated block id: 330
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+
+duplicated block id: 331
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 332
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 333
+size: 6 cleaned lines of code
+in 2 files:
+ - database/migrations/2025_06_01_215847_add_type_user_to_users_table.php (3:14)
+ - database/migrations/2025_06_20_095950_add_fields_to_users_table.php (3:14)
+
+duplicated block id: 334
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/question.blade.php (132:137)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+
+duplicated block id: 335
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 336
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 337
+size: 6 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick.css (44:49)
+ - public/lib/slick/slick.scss (35:40)
+
+duplicated block id: 338
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 339
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (122:127)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (133:138)
+
+duplicated block id: 340
+size: 6 cleaned lines of code
+in 2 files:
+ - public/css/style.css (773:778)
+ - public/css/style.css (1890:1895)
+
+duplicated block id: 341
+size: 6 cleaned lines of code
+in 2 files:
+ - public/lib/slick/slick.css (44:49)
+ - public/lib/slick/slick.less (35:40)
+
+duplicated block id: 342
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 343
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+
+duplicated block id: 344
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile.blade.php (15:24)
+ - resources/views/index.blade.php (28:39)
+
+duplicated block id: 345
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 346
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/service.blade.php (83:90)
+ - resources/views/index.blade.php (420:425)
+
+duplicated block id: 347
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/auth/login_register.blade.php (32:37)
+ - resources/views/auth/login_register.blade.php (71:78)
+
+duplicated block id: 348
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+
+duplicated block id: 349
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+
+duplicated block id: 350
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 351
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (144:149)
+ - resources/views/layout/topbar.blade.php (45:50)
+
+duplicated block id: 352
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 353
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (230:236)
+
+duplicated block id: 354
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2fdb02cfdf9db42e74a80a071ef0ac56.php (35:43)
+ - storage/framework/views/d8a9d403d8888107e63e337c823d1c6a.php (34:43)
+
+duplicated block id: 355
+size: 6 cleaned lines of code
+in 2 files:
+ - public/css/style.css (1309:1314)
+ - public/css/style.css (1468:1473)
+
+duplicated block id: 356
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (230:236)
+ - resources/views/layout/topbar.blade.php (45:50)
+
+duplicated block id: 357
+size: 6 cleaned lines of code
+in 2 files:
+ - database/migrations/2025_06_01_215847_add_type_user_to_users_table.php (3:14)
+ - database/migrations/2025_06_20_140908_add_telephone_to_users_table.php (3:14)
+
+duplicated block id: 358
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/2fdb02cfdf9db42e74a80a071ef0ac56.php (35:43)
+ - storage/framework/views/c0d73acd37943e5e6e6cb12d115ff894.php (41:48)
+
+duplicated block id: 359
+size: 6 cleaned lines of code
+in 2 files:
+ - config/database.php (90:95)
+ - config/database.php (105:110)
+
+duplicated block id: 360
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (45:50)
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+
+duplicated block id: 361
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/004ed925fbe1d09044debc456e62d827.php (6:11)
+ - storage/framework/views/27a0bce4217d61e93e337c865ba09c59.php (1:6)
+
+duplicated block id: 362
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/contact.blade.php (142:157)
+ - resources/views/index.blade.php (436:452)
+
+duplicated block id: 363
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (133:138)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (122:127)
+
+duplicated block id: 364
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (45:50)
+
+duplicated block id: 365
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 366
+size: 6 cleaned lines of code
+in 2 files:
+ - database/migrations/2025_06_20_095950_add_fields_to_users_table.php (3:14)
+ - database/migrations/2025_06_20_140908_add_telephone_to_users_table.php (3:14)
+
+duplicated block id: 367
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/index.blade.php (354:359)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (144:149)
+
+duplicated block id: 368
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (142:158)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (432:452)
+
+duplicated block id: 369
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (23:28)
+ - storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php (34:39)
+
+duplicated block id: 370
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (45:50)
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+
+duplicated block id: 371
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/profile_edit.blade.php (103:113)
+ - resources/views/index.blade.php (436:452)
+
+duplicated block id: 372
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/auth/login_register.blade.php (71:78)
+ - storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php (32:37)
+
+duplicated block id: 373
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/11645604c66a043295727c16c23c5623.php (135:143)
+ - storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php (132:137)
+
+duplicated block id: 374
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (23:28)
+ - resources/views/layout/topbar.blade.php (34:39)
+
+duplicated block id: 375
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (78:83)
+ - storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php (76:81)
+
+duplicated block id: 376
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (261:267)
+
+duplicated block id: 377
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (137:142)
+ - resources/views/layout/question.blade.php (132:137)
+
+duplicated block id: 378
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/art_ind.blade.php (103:109)
+ - storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php (103:109)
+
+duplicated block id: 379
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/layout/topbar.blade.php (45:50)
+ - storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php (354:359)
+
+duplicated block id: 380
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/front/about.blade.php (139:144)
+ - resources/views/index.blade.php (233:238)
+
+duplicated block id: 381
+size: 6 cleaned lines of code
+in 2 files:
+ - resources/views/admin/dashboard.blade.php (187:197)
+ - storage/framework/views/e83e3487037beb8e85372857271fd2d8.php (187:197)
+
+duplicated block id: 382
+size: 6 cleaned lines of code
+in 2 files:
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (42:48)
+ - storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php (165:171)
+

@@ -1,0 +1,172 @@
+<html>
+<head>
+    <title>protected function doGenerate()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">protected function doGenerate()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/routing/Generator/UrlGenerator.php [143:292]</i></p>
+<ul>
+    <li><b>113</b> lines of code</li>
+    <li><b>45</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    protected function doGenerate(array $variables, array $defaults, array $requirements, array $tokens, array $parameters, string $name, int $referenceType, array $hostTokens, array $requiredSchemes = []): string
+    {
+        $variables = array_flip($variables);
+        $mergedParams = array_replace($defaults, $this-&gt;context-&gt;getParameters(), $parameters);
+
+        // all params must be given
+        if ($diff = array_diff_key($variables, $mergedParams)) {
+            throw new MissingMandatoryParametersException($name, array_keys($diff));
+        }
+
+        $url = '';
+        $optional = true;
+        $message = 'Parameter &quot;{parameter}&quot; for route &quot;{route}&quot; must match &quot;{expected}&quot; (&quot;{given}&quot; given) to generate a corresponding URL.';
+        foreach ($tokens as $token) {
+            if ('variable' === $token[0]) {
+                $varName = $token[3];
+                // variable is not important by default
+                $important = $token[5] ?? false;
+
+                if (!$optional || $important || !\array_key_exists($varName, $defaults) || (null !== $mergedParams[$varName] &amp;&amp; (string) $mergedParams[$varName] !== (string) $defaults[$varName])) {
+                    // check requirement (while ignoring look-around patterns)
+                    if (null !== $this-&gt;strictRequirements &amp;&amp; !preg_match('#^'.preg_replace('/\(\?(?:=|&lt;=|!|&lt;!)((?:[^()\\\\]+|\\\\.|\((?1)\))*)\)/', '', $token[2]).'$#i'.(empty($token[4]) ? '' : 'u'), $mergedParams[$token[3]] ?? '')) {
+                        if ($this-&gt;strictRequirements) {
+                            throw new InvalidParameterException(strtr($message, ['{parameter}' =&gt; $varName, '{route}' =&gt; $name, '{expected}' =&gt; $token[2], '{given}' =&gt; $mergedParams[$varName]]));
+                        }
+
+                        $this-&gt;logger?-&gt;error($message, ['parameter' =&gt; $varName, 'route' =&gt; $name, 'expected' =&gt; $token[2], 'given' =&gt; $mergedParams[$varName]]);
+
+                        return '';
+                    }
+
+                    $url = $token[1].$mergedParams[$varName].$url;
+                    $optional = false;
+                }
+            } else {
+                // static text
+                $url = $token[1].$url;
+                $optional = false;
+            }
+        }
+
+        if ('' === $url) {
+            $url = '/';
+        }
+
+        // the contexts base URL is already encoded (see Symfony\Component\HttpFoundation\Request)
+        $url = strtr(rawurlencode($url), $this-&gt;decodedChars);
+
+        // the path segments &quot;.&quot; and &quot;..&quot; are interpreted as relative reference when resolving a URI; see http://tools.ietf.org/html/rfc3986#section-3.3
+        // so we need to encode them as they are not used for this purpose here
+        // otherwise we would generate a URI that, when followed by a user agent (e.g. browser), does not match this route
+        $url = strtr($url, ['/../' =&gt; '/%2E%2E/', '/./' =&gt; '/%2E/']);
+        if (str_ends_with($url, '/..')) {
+            $url = substr($url, 0, -2).'%2E%2E';
+        } elseif (str_ends_with($url, '/.')) {
+            $url = substr($url, 0, -1).'%2E';
+        }
+
+        $schemeAuthority = '';
+        $host = $this-&gt;context-&gt;getHost();
+        $scheme = $this-&gt;context-&gt;getScheme();
+
+        if ($requiredSchemes) {
+            if (!\in_array($scheme, $requiredSchemes, true)) {
+                $referenceType = self::ABSOLUTE_URL;
+                $scheme = current($requiredSchemes);
+            }
+        }
+
+        if ($hostTokens) {
+            $routeHost = '';
+            foreach ($hostTokens as $token) {
+                if ('variable' === $token[0]) {
+                    // check requirement (while ignoring look-around patterns)
+                    if (null !== $this-&gt;strictRequirements &amp;&amp; !preg_match('#^'.preg_replace('/\(\?(?:=|&lt;=|!|&lt;!)((?:[^()\\\\]+|\\\\.|\((?1)\))*)\)/', '', $token[2]).'$#i'.(empty($token[4]) ? '' : 'u'), $mergedParams[$token[3]])) {
+                        if ($this-&gt;strictRequirements) {
+                            throw new InvalidParameterException(strtr($message, ['{parameter}' =&gt; $token[3], '{route}' =&gt; $name, '{expected}' =&gt; $token[2], '{given}' =&gt; $mergedParams[$token[3]]]));
+                        }
+
+                        $this-&gt;logger?-&gt;error($message, ['parameter' =&gt; $token[3], 'route' =&gt; $name, 'expected' =&gt; $token[2], 'given' =&gt; $mergedParams[$token[3]]]);
+
+                        return '';
+                    }
+
+                    $routeHost = $token[1].$mergedParams[$token[3]].$routeHost;
+                } else {
+                    $routeHost = $token[1].$routeHost;
+                }
+            }
+
+            if ($routeHost !== $host) {
+                $host = $routeHost;
+                if (self::ABSOLUTE_URL !== $referenceType) {
+                    $referenceType = self::NETWORK_PATH;
+                }
+            }
+        }
+
+        if (self::ABSOLUTE_URL === $referenceType || self::NETWORK_PATH === $referenceType) {
+            if ('' !== $host || ('' !== $scheme &amp;&amp; 'http' !== $scheme &amp;&amp; 'https' !== $scheme)) {
+                $port = '';
+                if ('http' === $scheme &amp;&amp; 80 !== $this-&gt;context-&gt;getHttpPort()) {
+                    $port = ':'.$this-&gt;context-&gt;getHttpPort();
+                } elseif ('https' === $scheme &amp;&amp; 443 !== $this-&gt;context-&gt;getHttpsPort()) {
+                    $port = ':'.$this-&gt;context-&gt;getHttpsPort();
+                }
+
+                $schemeAuthority = self::NETWORK_PATH === $referenceType || '' === $scheme ? '//' : &quot;$scheme://&quot;;
+                $schemeAuthority .= $host.$port;
+            }
+        }
+
+        if (self::RELATIVE_PATH === $referenceType) {
+            $url = self::getRelativePath($this-&gt;context-&gt;getPathInfo(), $url);
+        } else {
+            $url = $schemeAuthority.$this-&gt;context-&gt;getBaseUrl().$url;
+        }
+
+        // add a query string if needed
+        $extra = array_udiff_assoc(array_diff_key($parameters, $variables), $defaults, fn ($a, $b) =&gt; $a == $b ? 0 : 1);
+
+        array_walk_recursive($extra, $caster = static function (&amp;$v) use (&amp;$caster) {
+            if (\is_object($v)) {
+                if ($vars = get_object_vars($v)) {
+                    array_walk_recursive($vars, $caster);
+                    $v = $vars;
+                } elseif ($v instanceof \Stringable) {
+                    $v = (string) $v;
+                }
+            }
+        });
+
+        // extract fragment
+        $fragment = $defaults['_fragment'] ?? '';
+
+        if (isset($extra['_fragment'])) {
+            $fragment = $extra['_fragment'];
+            unset($extra['_fragment']);
+        }
+
+        if ($extra &amp;&amp; $query = http_build_query($extra, '', '&amp;', \PHP_QUERY_RFC3986)) {
+            $url .= '?'.strtr($query, self::QUERY_FRAGMENT_DECODED);
+        }
+
+        if ('' !== $fragment) {
+            $url .= '#'.strtr(rawurlencode($fragment), self::QUERY_FRAGMENT_DECODED);
+        }
+
+        return $url;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

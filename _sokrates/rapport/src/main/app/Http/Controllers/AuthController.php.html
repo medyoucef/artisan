@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>app/Http/Controllers/AuthController.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Http/Controllers/AuthController.php (<b>46</b> lines of code) (<a href="AuthController.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
+class AuthController extends Controller
+{
+    public function index()
+    {
+        return view('auth.login_register');
+    }
+
+    public function register(Request $request)
+    {
+        // Validation des champs
+        $request-&gt;validate([
+            'username' =&gt; 'required|string|max:255',
+            'type_user' =&gt; 'required|string|in:client,artisan,societe_artisan',
+            'email' =&gt; 'required|string|email|max:255|unique:users',
+            'password' =&gt; 'required|string|min:6',
+        ]);
+        
+
+        // Cr&eacute;ation de l'utilisateur
+        $user = User::create([
+            'name' =&gt; $request-&gt;username,
+            'type_user' =&gt; $request-&gt;type_user,
+            'email' =&gt; $request-&gt;email,
+            'password' =&gt; Hash::make($request-&gt;password),
+        ]);
+        // dd($user);
+        // Connexion automatique
+        Auth::login($user);
+
+        // Redirection vers la page home
+        return redirect()-&gt;route('home')-&gt;with('success', 'Inscription r&eacute;ussie, bienvenue !');
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request-&gt;only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()-&gt;route('home');
+        }
+
+        return back()-&gt;with('login_error', 'Email ou mot de passe incorrect');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request-&gt;session()-&gt;invalidate();
+        $request-&gt;session()-&gt;regenerateToken();
+
+        return redirect('/');
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

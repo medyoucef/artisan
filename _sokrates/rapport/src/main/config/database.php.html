@@ -1,0 +1,200 @@
+<html>
+<head>
+    <title>config/database.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">config/database.php (<b>109</b> lines of code) (<a href="database.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+use Illuminate\Support\Str;
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Database Connection Name
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify which of the database connections below you wish
+    | to use as your default connection for database operations. This is
+    | the connection which will be utilized unless another connection
+    | is explicitly specified when you execute a query / statement.
+    |
+    */
+
+    'default' =&gt; env('DB_CONNECTION', 'sqlite'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Database Connections
+    |--------------------------------------------------------------------------
+    |
+    | Below are all of the database connections defined for your application.
+    | An example configuration is provided for each database system which
+    | is supported by Laravel. You're free to add / remove connections.
+    |
+    */
+
+    'connections' =&gt; [
+
+        'sqlite' =&gt; [
+            'driver' =&gt; 'sqlite',
+            'url' =&gt; env('DB_URL'),
+            'database' =&gt; env('DB_DATABASE', database_path('database.sqlite')),
+            'prefix' =&gt; '',
+            'foreign_key_constraints' =&gt; env('DB_FOREIGN_KEYS', true),
+            'busy_timeout' =&gt; null,
+            'journal_mode' =&gt; null,
+            'synchronous' =&gt; null,
+        ],
+
+        'mysql' =&gt; [
+            'driver' =&gt; 'mysql',
+            'url' =&gt; env('DB_URL'),
+            'host' =&gt; env('DB_HOST', '127.0.0.1'),
+            'port' =&gt; env('DB_PORT', '3306'),
+            'database' =&gt; env('DB_DATABASE', 'laravel'),
+            'username' =&gt; env('DB_USERNAME', 'root'),
+            'password' =&gt; env('DB_PASSWORD', ''),
+            'unix_socket' =&gt; env('DB_SOCKET', ''),
+            'charset' =&gt; env('DB_CHARSET', 'utf8mb4'),
+            'collation' =&gt; env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix' =&gt; '',
+            'prefix_indexes' =&gt; true,
+            'strict' =&gt; true,
+            'engine' =&gt; null,
+            'options' =&gt; extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA =&gt; env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+        'mariadb' =&gt; [
+            'driver' =&gt; 'mariadb',
+            'url' =&gt; env('DB_URL'),
+            'host' =&gt; env('DB_HOST', '127.0.0.1'),
+            'port' =&gt; env('DB_PORT', '3306'),
+            'database' =&gt; env('DB_DATABASE', 'laravel'),
+            'username' =&gt; env('DB_USERNAME', 'root'),
+            'password' =&gt; env('DB_PASSWORD', ''),
+            'unix_socket' =&gt; env('DB_SOCKET', ''),
+            'charset' =&gt; env('DB_CHARSET', 'utf8mb4'),
+            'collation' =&gt; env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix' =&gt; '',
+            'prefix_indexes' =&gt; true,
+            'strict' =&gt; true,
+            'engine' =&gt; null,
+            'options' =&gt; extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA =&gt; env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+        'pgsql' =&gt; [
+            'driver' =&gt; 'pgsql',
+            'url' =&gt; env('DB_URL'),
+            'host' =&gt; env('DB_HOST', '127.0.0.1'),
+            'port' =&gt; env('DB_PORT', '5432'),
+            'database' =&gt; env('DB_DATABASE', 'laravel'),
+            'username' =&gt; env('DB_USERNAME', 'root'),
+            'password' =&gt; env('DB_PASSWORD', ''),
+            'charset' =&gt; env('DB_CHARSET', 'utf8'),
+            'prefix' =&gt; '',
+            'prefix_indexes' =&gt; true,
+            'search_path' =&gt; 'public',
+            'sslmode' =&gt; 'prefer',
+        ],
+
+        'sqlsrv' =&gt; [
+            'driver' =&gt; 'sqlsrv',
+            'url' =&gt; env('DB_URL'),
+            'host' =&gt; env('DB_HOST', 'localhost'),
+            'port' =&gt; env('DB_PORT', '1433'),
+            'database' =&gt; env('DB_DATABASE', 'laravel'),
+            'username' =&gt; env('DB_USERNAME', 'root'),
+            'password' =&gt; env('DB_PASSWORD', ''),
+            'charset' =&gt; env('DB_CHARSET', 'utf8'),
+            'prefix' =&gt; '',
+            'prefix_indexes' =&gt; true,
+            // 'encrypt' =&gt; env('DB_ENCRYPT', 'yes'),
+            // 'trust_server_certificate' =&gt; env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
+        ],
+
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Migration Repository Table
+    |--------------------------------------------------------------------------
+    |
+    | This table keeps track of all the migrations that have already run for
+    | your application. Using this information, we can determine which of
+    | the migrations on disk haven't actually been run on the database.
+    |
+    */
+
+    'migrations' =&gt; [
+        'table' =&gt; 'migrations',
+        'update_date_on_publish' =&gt; true,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Redis Databases
+    |--------------------------------------------------------------------------
+    |
+    | Redis is an open source, fast, and advanced key-value store that also
+    | provides a richer body of commands than a typical key-value system
+    | such as Memcached. You may define your connection settings here.
+    |
+    */
+
+    'redis' =&gt; [
+
+        'client' =&gt; env('REDIS_CLIENT', 'phpredis'),
+
+        'options' =&gt; [
+            'cluster' =&gt; env('REDIS_CLUSTER', 'redis'),
+            'prefix' =&gt; env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'persistent' =&gt; env('REDIS_PERSISTENT', false),
+        ],
+
+        'default' =&gt; [
+            'url' =&gt; env('REDIS_URL'),
+            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
+            'username' =&gt; env('REDIS_USERNAME'),
+            'password' =&gt; env('REDIS_PASSWORD'),
+            'port' =&gt; env('REDIS_PORT', '6379'),
+            'database' =&gt; env('REDIS_DB', '0'),
+        ],
+
+        'cache' =&gt; [
+            'url' =&gt; env('REDIS_URL'),
+            'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
+            'username' =&gt; env('REDIS_USERNAME'),
+            'password' =&gt; env('REDIS_PASSWORD'),
+            'port' =&gt; env('REDIS_PORT', '6379'),
+            'database' =&gt; env('REDIS_CACHE_DB', '1'),
+        ],
+
+    ],
+
+];
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

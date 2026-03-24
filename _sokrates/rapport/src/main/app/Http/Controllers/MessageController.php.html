@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>app/Http/Controllers/MessageController.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Http/Controllers/MessageController.php (<b>23</b> lines of code) (<a href="MessageController.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Message;
+class MessageController extends Controller
+{
+    public function store(Request $request)
+    {
+        $validated = $request-&gt;validate([
+            'name' =&gt; 'required|string|max:255',
+            'email' =&gt; 'required|email',
+            'subject' =&gt; 'required|string|max:255',
+            'message' =&gt; 'required|string',
+        ]);
+
+        Message::create([
+            'nom' =&gt; $validated['name'],
+            'email' =&gt; $validated['email'],
+            'sujet' =&gt; $validated['subject'],
+            'message' =&gt; $validated['message'],
+        ]);
+
+        return redirect()-&gt;back()-&gt;with('success', 'Message envoy&eacute; avec succ&egrave;s !');
+    }
+
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

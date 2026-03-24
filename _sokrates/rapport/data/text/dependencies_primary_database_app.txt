@@ -1,0 +1,6 @@
+from: database
+to: app
+evidence:
+ - file: "database/seeders/DatabaseSeeder.php"
+   contains "use App\Models\User;"
+

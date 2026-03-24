@@ -1,0 +1,221 @@
+<html>
+<head>
+    <title>public static function to_ascii()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public static function to_ascii()</h3>
+<p style="margin-top: 4px">in <i>vendor/voku/portable-ascii/src/voku/helper/ASCII.php [760:958]</i></p>
+<ul>
+    <li><b>150</b> lines of code</li>
+    <li><b>45</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public static function to_ascii(
+        string $str,
+        string $language = self::ENGLISH_LANGUAGE_CODE,
+        bool $remove_unsupported_chars = true,
+        bool $replace_extra_symbols = false,
+        bool $use_transliterate = false,
+        bool $replace_single_chars_only = false
+    ): string {
+        if ($str === '') {
+            return '';
+        }
+
+        /** @phpstan-var ASCII::*_LANGUAGE_CODE $language - hack for phpstan */
+        $language = self::get_language($language);
+
+        static $EXTRA_SYMBOLS_CACHE = null;
+
+        static $REPLACE_HELPER_CACHE = [];
+        $cacheKey = $language . '-' . $replace_extra_symbols;
+
+        if (!isset($REPLACE_HELPER_CACHE[$cacheKey])) {
+            $langAll = self::charsArrayWithSingleLanguageValues($replace_extra_symbols, false);
+
+            $langSpecific = self::charsArrayWithOneLanguage($language, $replace_extra_symbols, false);
+
+            if ($langSpecific === []) {
+                $REPLACE_HELPER_CACHE[$cacheKey] = $langAll;
+            } else {
+                $REPLACE_HELPER_CACHE[$cacheKey] = \array_merge([], $langAll, $langSpecific);
+            }
+        }
+
+        if (
+            $replace_extra_symbols
+            &amp;&amp;
+            $EXTRA_SYMBOLS_CACHE === null
+        ) {
+            $EXTRA_SYMBOLS_CACHE = [];
+            foreach (self::$ASCII_EXTRAS ?? [] as $extrasDataTmp) {
+                foreach ($extrasDataTmp as $extrasDataKeyTmp =&gt; $extrasDataValueTmp) {
+                    $EXTRA_SYMBOLS_CACHE[$extrasDataKeyTmp] = $extrasDataKeyTmp;
+                }
+            }
+            $EXTRA_SYMBOLS_CACHE = \implode('', $EXTRA_SYMBOLS_CACHE);
+        }
+
+        $charDone = [];
+        if (\preg_match_all('/' . self::$REGEX_ASCII . ($replace_extra_symbols ? '|[' . $EXTRA_SYMBOLS_CACHE . ']' : '') . '/u', $str, $matches)) {
+            if (!$replace_single_chars_only) {
+                if (self::$LANGUAGE_MAX_KEY === null) {
+                    self::$LANGUAGE_MAX_KEY = self::getData('ascii_language_max_key');
+                }
+
+                $maxKeyLength = self::$LANGUAGE_MAX_KEY[$language] ?? 0;
+
+                if ($maxKeyLength &gt;= 5) {
+                    foreach ($matches[0] as $keyTmp =&gt; $char) {
+                        if (isset($matches[0][$keyTmp + 4])) {
+                            $fiveChars = $matches[0][$keyTmp + 0] . $matches[0][$keyTmp + 1] . $matches[0][$keyTmp + 2] . $matches[0][$keyTmp + 3] . $matches[0][$keyTmp + 4];
+                        } else {
+                            $fiveChars = null;
+                        }
+                        if (
+                            $fiveChars
+                            &amp;&amp;
+                            !isset($charDone[$fiveChars])
+                            &amp;&amp;
+                            isset($REPLACE_HELPER_CACHE[$cacheKey][$fiveChars])
+                            &amp;&amp;
+                            \strpos($str, $fiveChars) !== false
+                        ) {
+                            // DEBUG
+                            //\var_dump($str, $fiveChars, $REPLACE_HELPER_CACHE[$cacheKey][$fiveChars]);
+
+                            $charDone[$fiveChars] = true;
+                            $str = \str_replace($fiveChars, $REPLACE_HELPER_CACHE[$cacheKey][$fiveChars], $str);
+
+                            // DEBUG
+                            //\var_dump($str, &quot;\n&quot;);
+                        }
+                    }
+                }
+
+                if ($maxKeyLength &gt;= 4) {
+                    foreach ($matches[0] as $keyTmp =&gt; $char) {
+                        if (isset($matches[0][$keyTmp + 3])) {
+                            $fourChars = $matches[0][$keyTmp + 0] . $matches[0][$keyTmp + 1] . $matches[0][$keyTmp + 2] . $matches[0][$keyTmp + 3];
+                        } else {
+                            $fourChars = null;
+                        }
+                        if (
+                            $fourChars
+                            &amp;&amp;
+                            !isset($charDone[$fourChars])
+                            &amp;&amp;
+                            isset($REPLACE_HELPER_CACHE[$cacheKey][$fourChars])
+                            &amp;&amp;
+                            \strpos($str, $fourChars) !== false
+                        ) {
+                            // DEBUG
+                            //\var_dump($str, $fourChars, $REPLACE_HELPER_CACHE[$cacheKey][$fourChars]);
+
+                            $charDone[$fourChars] = true;
+                            $str = \str_replace($fourChars, $REPLACE_HELPER_CACHE[$cacheKey][$fourChars], $str);
+
+                            // DEBUG
+                            //\var_dump($str, &quot;\n&quot;);
+                        }
+                    }
+                }
+
+                foreach ($matches[0] as $keyTmp =&gt; $char) {
+                    if (isset($matches[0][$keyTmp + 2])) {
+                        $threeChars = $matches[0][$keyTmp + 0] . $matches[0][$keyTmp + 1] . $matches[0][$keyTmp + 2];
+                    } else {
+                        $threeChars = null;
+                    }
+                    if (
+                        $threeChars
+                        &amp;&amp;
+                        !isset($charDone[$threeChars])
+                        &amp;&amp;
+                        isset($REPLACE_HELPER_CACHE[$cacheKey][$threeChars])
+                        &amp;&amp;
+                        \strpos($str, $threeChars) !== false
+                    ) {
+                        // DEBUG
+                        //\var_dump($str, $threeChars, $REPLACE_HELPER_CACHE[$cacheKey][$threeChars]);
+
+                        $charDone[$threeChars] = true;
+                        $str = \str_replace($threeChars, $REPLACE_HELPER_CACHE[$cacheKey][$threeChars], $str);
+
+                        // DEBUG
+                        //\var_dump($str, &quot;\n&quot;);
+                    }
+                }
+
+                foreach ($matches[0] as $keyTmp =&gt; $char) {
+                    if (isset($matches[0][$keyTmp + 1])) {
+                        $twoChars = $matches[0][$keyTmp + 0] . $matches[0][$keyTmp + 1];
+                    } else {
+                        $twoChars = null;
+                    }
+                    if (
+                        $twoChars
+                        &amp;&amp;
+                        !isset($charDone[$twoChars])
+                        &amp;&amp;
+                        isset($REPLACE_HELPER_CACHE[$cacheKey][$twoChars])
+                        &amp;&amp;
+                        \strpos($str, $twoChars) !== false
+                    ) {
+                        // DEBUG
+                        //\var_dump($str, $twoChars, $REPLACE_HELPER_CACHE[$cacheKey][$twoChars]);
+
+                        $charDone[$twoChars] = true;
+                        $str = \str_replace($twoChars, $REPLACE_HELPER_CACHE[$cacheKey][$twoChars], $str);
+
+                        // DEBUG
+                        //\var_dump($str, &quot;\n&quot;);
+                    }
+                }
+            }
+
+            foreach ($matches[0] as $char) {
+                if (
+                    !isset($charDone[$char])
+                    &amp;&amp;
+                    isset($REPLACE_HELPER_CACHE[$cacheKey][$char])
+                    &amp;&amp;
+                    \strpos($str, $char) !== false
+                ) {
+                    // DEBUG
+                    //\var_dump($str, $char, $REPLACE_HELPER_CACHE[$cacheKey][$char]);
+
+                    $charDone[$char] = true;
+                    $str = \str_replace($char, $REPLACE_HELPER_CACHE[$cacheKey][$char], $str);
+
+                    // DEBUG
+                    //\var_dump($str, &quot;\n&quot;);
+                }
+            }
+        }
+
+        if (!isset(self::$ASCII_MAPS[$language])) {
+            $use_transliterate = true;
+        }
+
+        if ($use_transliterate) {
+            $str = self::to_transliterate($str, null, false);
+        }
+
+        if ($remove_unsupported_chars) {
+            $str = (string) \str_replace([&quot;\n\r&quot;, &quot;\n&quot;, &quot;\r&quot;, &quot;\t&quot;], ' ', $str);
+            $str = (string) \preg_replace('/' . self::$REGEX_ASCII . '/', '', $str);
+        }
+
+        return $str;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

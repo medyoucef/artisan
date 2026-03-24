@@ -1,0 +1,217 @@
+<html>
+<head>
+    <title>protected function doParse()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">protected function doParse()</h3>
+<p style="margin-top: 4px">in <i>vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php [221:415]</i></p>
+<ul>
+    <li><b>132</b> lines of code</li>
+    <li><b>42</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    protected function doParse(): ?array {
+        // We start off with no lookahead-token
+        $symbol = self::SYMBOL_NONE;
+        $tokenValue = null;
+        $this-&gt;tokenPos = -1;
+
+        // Keep stack of start and end attributes
+        $this-&gt;tokenStartStack = [];
+        $this-&gt;tokenEndStack = [0];
+
+        // Start off in the initial state and keep a stack of previous states
+        $state = 0;
+        $stateStack = [$state];
+
+        // Semantic value stack (contains values of tokens and semantic action results)
+        $this-&gt;semStack = [];
+
+        // Current position in the stack(s)
+        $stackPos = 0;
+
+        $this-&gt;errorState = 0;
+
+        for (;;) {
+            //$this-&gt;traceNewState($state, $symbol);
+
+            if ($this-&gt;actionBase[$state] === 0) {
+                $rule = $this-&gt;actionDefault[$state];
+            } else {
+                if ($symbol === self::SYMBOL_NONE) {
+                    do {
+                        $token = $this-&gt;tokens[++$this-&gt;tokenPos];
+                        $tokenId = $token-&gt;id;
+                    } while (isset($this-&gt;dropTokens[$tokenId]));
+
+                    // Map the lexer token id to the internally used symbols.
+                    $tokenValue = $token-&gt;text;
+                    if (!isset($this-&gt;phpTokenToSymbol[$tokenId])) {
+                        throw new \RangeException(sprintf(
+                            'The lexer returned an invalid token (id=%d, value=%s)',
+                            $tokenId, $tokenValue
+                        ));
+                    }
+                    $symbol = $this-&gt;phpTokenToSymbol[$tokenId];
+
+                    //$this-&gt;traceRead($symbol);
+                }
+
+                $idx = $this-&gt;actionBase[$state] + $symbol;
+                if ((($idx &gt;= 0 &amp;&amp; $idx &lt; $this-&gt;actionTableSize &amp;&amp; $this-&gt;actionCheck[$idx] === $symbol)
+                     || ($state &lt; $this-&gt;YY2TBLSTATE
+                         &amp;&amp; ($idx = $this-&gt;actionBase[$state + $this-&gt;numNonLeafStates] + $symbol) &gt;= 0
+                         &amp;&amp; $idx &lt; $this-&gt;actionTableSize &amp;&amp; $this-&gt;actionCheck[$idx] === $symbol))
+                    &amp;&amp; ($action = $this-&gt;action[$idx]) !== $this-&gt;defaultAction) {
+                    /*
+                     * &gt;= numNonLeafStates: shift and reduce
+                     * &gt; 0: shift
+                     * = 0: accept
+                     * &lt; 0: reduce
+                     * = -YYUNEXPECTED: error
+                     */
+                    if ($action &gt; 0) {
+                        /* shift */
+                        //$this-&gt;traceShift($symbol);
+
+                        ++$stackPos;
+                        $stateStack[$stackPos] = $state = $action;
+                        $this-&gt;semStack[$stackPos] = $tokenValue;
+                        $this-&gt;tokenStartStack[$stackPos] = $this-&gt;tokenPos;
+                        $this-&gt;tokenEndStack[$stackPos] = $this-&gt;tokenPos;
+                        $symbol = self::SYMBOL_NONE;
+
+                        if ($this-&gt;errorState) {
+                            --$this-&gt;errorState;
+                        }
+
+                        if ($action &lt; $this-&gt;numNonLeafStates) {
+                            continue;
+                        }
+
+                        /* $yyn &gt;= numNonLeafStates means shift-and-reduce */
+                        $rule = $action - $this-&gt;numNonLeafStates;
+                    } else {
+                        $rule = -$action;
+                    }
+                } else {
+                    $rule = $this-&gt;actionDefault[$state];
+                }
+            }
+
+            for (;;) {
+                if ($rule === 0) {
+                    /* accept */
+                    //$this-&gt;traceAccept();
+                    return $this-&gt;semValue;
+                }
+                if ($rule !== $this-&gt;unexpectedTokenRule) {
+                    /* reduce */
+                    //$this-&gt;traceReduce($rule);
+
+                    $ruleLength = $this-&gt;ruleToLength[$rule];
+                    try {
+                        $callback = $this-&gt;reduceCallbacks[$rule];
+                        if ($callback !== null) {
+                            $callback($this, $stackPos);
+                        } elseif ($ruleLength &gt; 0) {
+                            $this-&gt;semValue = $this-&gt;semStack[$stackPos - $ruleLength + 1];
+                        }
+                    } catch (Error $e) {
+                        if (-1 === $e-&gt;getStartLine()) {
+                            $e-&gt;setStartLine($this-&gt;tokens[$this-&gt;tokenPos]-&gt;line);
+                        }
+
+                        $this-&gt;emitError($e);
+                        // Can't recover from this type of error
+                        return null;
+                    }
+
+                    /* Goto - shift nonterminal */
+                    $lastTokenEnd = $this-&gt;tokenEndStack[$stackPos];
+                    $stackPos -= $ruleLength;
+                    $nonTerminal = $this-&gt;ruleToNonTerminal[$rule];
+                    $idx = $this-&gt;gotoBase[$nonTerminal] + $stateStack[$stackPos];
+                    if ($idx &gt;= 0 &amp;&amp; $idx &lt; $this-&gt;gotoTableSize &amp;&amp; $this-&gt;gotoCheck[$idx] === $nonTerminal) {
+                        $state = $this-&gt;goto[$idx];
+                    } else {
+                        $state = $this-&gt;gotoDefault[$nonTerminal];
+                    }
+
+                    ++$stackPos;
+                    $stateStack[$stackPos]     = $state;
+                    $this-&gt;semStack[$stackPos] = $this-&gt;semValue;
+                    $this-&gt;tokenEndStack[$stackPos] = $lastTokenEnd;
+                    if ($ruleLength === 0) {
+                        // Empty productions use the start attributes of the lookahead token.
+                        $this-&gt;tokenStartStack[$stackPos] = $this-&gt;tokenPos;
+                    }
+                } else {
+                    /* error */
+                    switch ($this-&gt;errorState) {
+                        case 0:
+                            $msg = $this-&gt;getErrorMessage($symbol, $state);
+                            $this-&gt;emitError(new Error($msg, $this-&gt;getAttributesForToken($this-&gt;tokenPos)));
+                            // Break missing intentionally
+                            // no break
+                        case 1:
+                        case 2:
+                            $this-&gt;errorState = 3;
+
+                            // Pop until error-expecting state uncovered
+                            while (!(
+                                (($idx = $this-&gt;actionBase[$state] + $this-&gt;errorSymbol) &gt;= 0
+                                    &amp;&amp; $idx &lt; $this-&gt;actionTableSize &amp;&amp; $this-&gt;actionCheck[$idx] === $this-&gt;errorSymbol)
+                                || ($state &lt; $this-&gt;YY2TBLSTATE
+                                    &amp;&amp; ($idx = $this-&gt;actionBase[$state + $this-&gt;numNonLeafStates] + $this-&gt;errorSymbol) &gt;= 0
+                                    &amp;&amp; $idx &lt; $this-&gt;actionTableSize &amp;&amp; $this-&gt;actionCheck[$idx] === $this-&gt;errorSymbol)
+                            ) || ($action = $this-&gt;action[$idx]) === $this-&gt;defaultAction) { // Not totally sure about this
+                                if ($stackPos &lt;= 0) {
+                                    // Could not recover from error
+                                    return null;
+                                }
+                                $state = $stateStack[--$stackPos];
+                                //$this-&gt;tracePop($state);
+                            }
+
+                            //$this-&gt;traceShift($this-&gt;errorSymbol);
+                            ++$stackPos;
+                            $stateStack[$stackPos] = $state = $action;
+
+                            // We treat the error symbol as being empty, so we reset the end attributes
+                            // to the end attributes of the last non-error symbol
+                            $this-&gt;tokenStartStack[$stackPos] = $this-&gt;tokenPos;
+                            $this-&gt;tokenEndStack[$stackPos] = $this-&gt;tokenEndStack[$stackPos - 1];
+                            break;
+
+                        case 3:
+                            if ($symbol === 0) {
+                                // Reached EOF without recovering from error
+                                return null;
+                            }
+
+                            //$this-&gt;traceDiscard($symbol);
+                            $symbol = self::SYMBOL_NONE;
+                            break 2;
+                    }
+                }
+
+                if ($state &lt; $this-&gt;numNonLeafStates) {
+                    break;
+                }
+
+                /* &gt;= numNonLeafStates means shift-and-reduce */
+                $rule = $state - $this-&gt;numNonLeafStates;
+            }
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

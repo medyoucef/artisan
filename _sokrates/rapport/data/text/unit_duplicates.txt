@@ -1,0 +1,7 @@
+duplicated block id: 1
+size: 8 cleaned lines of code
+in 3 files:
+ - database/migrations/2025_06_01_152839_create_professions_table.php (12:22)
+ - database/migrations/2025_06_01_152840_create_services_table.php (12:22)
+ - database/migrations/2025_06_01_152840_create_societe_artisans_table.php (12:22)
+

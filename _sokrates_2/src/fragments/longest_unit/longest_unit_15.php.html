@@ -1,0 +1,241 @@
+<html>
+<head>
+    <title>private function convertJsonValueToProtoValue()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function convertJsonValueToProtoValue()</h3>
+<p style="margin-top: 4px">in <i>vendor/google/protobuf/src/Google/Protobuf/Internal/Message.php [795:1013]</i></p>
+<ul>
+    <li><b>217</b> lines of code</li>
+    <li><b>74</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function convertJsonValueToProtoValue(
+        $value,
+        $field,
+        $ignore_unknown,
+        $is_map_key = false)
+    {
+        switch ($field-&gt;getType()) {
+            case GPBType::MESSAGE:
+                $klass = $field-&gt;getMessageType()-&gt;getClass();
+                $submsg = new $klass;
+
+                if (is_a($submsg, &quot;Google\Protobuf\Duration&quot;)) {
+                    if (is_null($value)) {
+                        return $this-&gt;defaultValue($field);
+                    } else if (!is_string($value)) {
+                        throw new GPBDecodeException(&quot;Expect string.&quot;);
+                    }
+                    return GPBUtil::parseDuration($value);
+                } else if ($field-&gt;isTimestamp()) {
+                    if (is_null($value)) {
+                        return $this-&gt;defaultValue($field);
+                    } else if (!is_string($value)) {
+                        throw new GPBDecodeException(&quot;Expect string.&quot;);
+                    }
+                    try {
+                        $timestamp = GPBUtil::parseTimestamp($value);
+                    } catch (\Exception $e) {
+                        throw new GPBDecodeException(
+                            &quot;Invalid RFC 3339 timestamp: &quot;.$e-&gt;getMessage());
+                    }
+
+                    $submsg-&gt;setSeconds($timestamp-&gt;getSeconds());
+                    $submsg-&gt;setNanos($timestamp-&gt;getNanos());
+                } else if (is_a($submsg, &quot;Google\Protobuf\FieldMask&quot;)) {
+                    if (is_null($value)) {
+                        return $this-&gt;defaultValue($field);
+                    }
+                    try {
+                        return GPBUtil::parseFieldMask($value);
+                    } catch (\Exception $e) {
+                        throw new GPBDecodeException(
+                            &quot;Invalid FieldMask: &quot;.$e-&gt;getMessage());
+                    }
+                } else {
+                    if (is_null($value) &amp;&amp;
+                        !is_a($submsg, &quot;Google\Protobuf\Value&quot;)) {
+                        return $this-&gt;defaultValue($field);
+                    }
+                    if (GPBUtil::hasSpecialJsonMapping($submsg)) {
+                    } elseif (!is_object($value) &amp;&amp; !is_array($value)) {
+                        throw new GPBDecodeException(&quot;Expect message.&quot;);
+                    }
+                    $submsg-&gt;mergeFromJsonArray($value, $ignore_unknown);
+                }
+                return $submsg;
+            case GPBType::ENUM:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if (is_integer($value)) {
+                    return $value;
+                }
+                $enum_value = $field-&gt;getEnumType()-&gt;getValueByName($value);
+                if (!is_null($enum_value)) {
+                    return $enum_value-&gt;getNumber();
+                } else if ($ignore_unknown) {
+                    return $this-&gt;defaultValue($field);
+                } else {
+                  throw new GPBDecodeException(
+                          &quot;Enum field only accepts integer or enum value name&quot;);
+                }
+            case GPBType::STRING:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if (is_numeric($value)) {
+                    return strval($value);
+                }
+                if (!is_string($value)) {
+                    throw new GPBDecodeException(
+                        &quot;String field only accepts string value&quot;);
+                }
+                return $value;
+            case GPBType::BYTES:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if (!is_string($value)) {
+                    throw new GPBDecodeException(
+                        &quot;Byte field only accepts string value&quot;);
+                }
+                $proto_value = base64_decode($value, true);
+                if ($proto_value === false) {
+                    throw new GPBDecodeException(&quot;Invalid base64 characters&quot;);
+                }
+                return $proto_value;
+            case GPBType::BOOL:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if ($is_map_key) {
+                    if ($value === &quot;true&quot;) {
+                        return true;
+                    }
+                    if ($value === &quot;false&quot;) {
+                        return false;
+                    }
+                    throw new GPBDecodeException(
+                        &quot;Bool field only accepts bool value&quot;);
+                }
+                if (!is_bool($value)) {
+                    throw new GPBDecodeException(
+                        &quot;Bool field only accepts bool value&quot;);
+                }
+                return $value;
+            case GPBType::FLOAT:
+            case GPBType::DOUBLE:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if ($value === &quot;Infinity&quot;) {
+                    return INF;
+                }
+                if ($value === &quot;-Infinity&quot;) {
+                    return -INF;
+                }
+                if ($value === &quot;NaN&quot;) {
+                    return NAN;
+                }
+                return $value;
+            case GPBType::INT32:
+            case GPBType::SINT32:
+            case GPBType::SFIXED32:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if (!is_numeric($value)) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for int32 field&quot;);
+                }
+                if (is_string($value) &amp;&amp; trim($value) !== $value) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for int32 field&quot;);
+                }
+                if (bccomp($value, &quot;2147483647&quot;) &gt; 0) {
+                   throw new GPBDecodeException(
+                       &quot;Int32 too large&quot;);
+                }
+                if (bccomp($value, &quot;-2147483648&quot;) &lt; 0) {
+                   throw new GPBDecodeException(
+                       &quot;Int32 too small&quot;);
+                }
+                return $value;
+            case GPBType::UINT32:
+            case GPBType::FIXED32:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if (!is_numeric($value)) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for uint32 field&quot;);
+                }
+                if (is_string($value) &amp;&amp; trim($value) !== $value) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for int32 field&quot;);
+                }
+                if (bccomp($value, 4294967295) &gt; 0) {
+                    throw new GPBDecodeException(
+                        &quot;Uint32 too large&quot;);
+                }
+                return $value;
+            case GPBType::INT64:
+            case GPBType::SINT64:
+            case GPBType::SFIXED64:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if (!is_numeric($value)) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for int64 field&quot;);
+                }
+                if (is_string($value) &amp;&amp; trim($value) !== $value) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for int64 field&quot;);
+                }
+                if (bccomp($value, &quot;9223372036854775807&quot;) &gt; 0) {
+                    throw new GPBDecodeException(
+                        &quot;Int64 too large&quot;);
+                }
+                if (bccomp($value, &quot;-9223372036854775808&quot;) &lt; 0) {
+                    throw new GPBDecodeException(
+                        &quot;Int64 too small&quot;);
+                }
+                return $value;
+            case GPBType::UINT64:
+            case GPBType::FIXED64:
+                if (is_null($value)) {
+                    return $this-&gt;defaultValue($field);
+                }
+                if (!is_numeric($value)) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for int64 field&quot;);
+                }
+                if (is_string($value) &amp;&amp; trim($value) !== $value) {
+                   throw new GPBDecodeException(
+                       &quot;Invalid data type for int64 field&quot;);
+                }
+                if (bccomp($value, &quot;18446744073709551615&quot;) &gt; 0) {
+                    throw new GPBDecodeException(
+                        &quot;Uint64 too large&quot;);
+                }
+                if (bccomp($value, &quot;9223372036854775807&quot;) &gt; 0) {
+                    $value = bcsub($value, &quot;18446744073709551616&quot;);
+                }
+                return $value;
+            default:
+                return $value;
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

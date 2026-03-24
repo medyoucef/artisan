@@ -1,0 +1,208 @@
+[ {
+  "key" : "primary",
+  "components" : [ {
+    "name" : "Unclassified",
+    "filesCount" : 8423,
+    "linesOfCode" : 580821,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 8228,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 42,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xsd",
+      "value" : 24,
+      "description" : [ ]
+    }, {
+      "name" : "  *.vue",
+      "value" : 66,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 22,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 12,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.tpl",
+      "value" : 11,
+      "description" : [ ]
+    }, {
+      "name" : "  *.less",
+      "value" : 2,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xml",
+      "value" : 5,
+      "description" : [ ]
+    }, {
+      "name" : "  *.sql",
+      "value" : 2,
+      "description" : [ ]
+    }, {
+      "name" : "  *.bash",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.zsh",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.jsx",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.fish",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.asc",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.yaml",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.rb",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.h",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.php",
+      "value" : 548732,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 10465,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xsd",
+      "value" : 9084,
+      "description" : [ ]
+    }, {
+      "name" : "  *.vue",
+      "value" : 5679,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 3858,
+      "description" : [ ]
+    }, {
+      "name" : "  *.scss",
+      "value" : 1518,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 457,
+      "description" : [ ]
+    }, {
+      "name" : "  *.tpl",
+      "value" : 330,
+      "description" : [ ]
+    }, {
+      "name" : "  *.less",
+      "value" : 239,
+      "description" : [ ]
+    }, {
+      "name" : "  *.xml",
+      "value" : 143,
+      "description" : [ ]
+    }, {
+      "name" : "  *.sql",
+      "value" : 113,
+      "description" : [ ]
+    }, {
+      "name" : "  *.bash",
+      "value" : 71,
+      "description" : [ ]
+    }, {
+      "name" : "  *.zsh",
+      "value" : 47,
+      "description" : [ ]
+    }, {
+      "name" : "  *.jsx",
+      "value" : 25,
+      "description" : [ ]
+    }, {
+      "name" : "  *.fish",
+      "value" : 19,
+      "description" : [ ]
+    }, {
+      "name" : "  *.asc",
+      "value" : 15,
+      "description" : [ ]
+    }, {
+      "name" : "  *.yaml",
+      "value" : 11,
+      "description" : [ ]
+    }, {
+      "name" : "  *.rb",
+      "value" : 8,
+      "description" : [ ]
+    }, {
+      "name" : "  *.h",
+      "value" : 7,
+      "description" : [ ]
+    } ]
+  } ],
+  "componentDependencies" : [ ],
+  "componentDependenciesErrors" : [ ],
+  "logicalDecomposition" : {
+    "name" : "primary",
+    "scope" : "main",
+    "filters" : [ ],
+    "componentsFolderDepth" : 1,
+    "minComponentsCount" : 0,
+    "components" : [ {
+      "name" : "Unclassified",
+      "sourceFileFilters" : [ ],
+      "files" : [ ]
+    } ],
+    "metaComponents" : [ ],
+    "groups" : [ ],
+    "includeRemainingFiles" : true,
+    "dependenciesFinder" : {
+      "useBuiltInDependencyFinders" : true,
+      "rules" : [ ],
+      "metaRules" : [ ]
+    },
+    "renderingOptions" : {
+      "orientation" : "TB",
+      "maxNumberOfDependencies" : 100,
+      "renderComponentsWithoutDependencies" : true,
+      "renderIndirectDependencies" : false,
+      "renderInternalIndirectDependencies" : false,
+      "reverseDirection" : false
+    },
+    "includeExternalComponents" : true,
+    "dependencyLinkThreshold" : 1,
+    "duplicationLinkThreshold" : 50,
+    "temporalLinkThreshold" : 1,
+    "maxSearchDepthLines" : 200
+  },
+  "fileCountPerComponent" : [ {
+    "name" : "Unclassified",
+    "value" : 8423,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerComponent" : [ {
+    "name" : "Unclassified",
+    "value" : 580821,
+    "description" : [ ]
+  } ]
+} ]

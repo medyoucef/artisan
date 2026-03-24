@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>app/Http/Controllers/DevisController.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">app/Http/Controllers/DevisController.php (<b>83</b> lines of code) (<a href="DevisController.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Conversation;
+use App\Models\Devis;
+use App\Models\MessagesUserArt;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class DevisController extends Controller
+{
+    public function create($conversationId)
+    {
+        $conversation = Conversation::findOrFail($conversationId);
+
+        // Optionnel : v&eacute;rifier que l'utilisateur est bien l'artisan de cette conversation
+        if (Auth::id() !== $conversation-&gt;artisan-&gt;user_id) {
+            abort(403, &quot;Vous n'&ecirc;tes pas l'artisan de cette conversation.&quot;);
+        }
+
+        return view('devis.create', compact('conversation'));
+    }
+
+    public function store(Request $request, $conversationId)
+    {
+        $conversation = Conversation::findOrFail($conversationId);
+
+        if (Auth::id() !== $conversation-&gt;artisan-&gt;user_id) {
+            abort(403, &quot;Vous n'&ecirc;tes pas l'artisan de cette conversation.&quot;);
+        }
+
+        $request-&gt;validate([
+            'montant' =&gt; 'required|numeric',
+            'description' =&gt; 'required|string',
+        ]);
+
+        $devis = Devis::create([
+            'conversation_id' =&gt; $conversationId,
+            'artisan_id'      =&gt; Auth::id(),
+            'client_id'       =&gt; $conversation-&gt;user_id,
+            'montant'         =&gt; $request-&gt;montant,
+            'description'     =&gt; $request-&gt;description,
+            'statut'          =&gt; 'en_attente',
+        ]);
+
+        // Message automatique dans le chat
+        MessagesUserArt::create([
+            'conversation_id' =&gt; $conversationId,
+            'sender_id'       =&gt; Auth::id(),
+            'receiver_id'     =&gt; $conversation-&gt;user_id,
+            'message'         =&gt; &quot;J'ai envoy&eacute; un devis de {$devis-&gt;montant} &euro;.&quot;,
+        ]);
+
+        return redirect()-&gt;route('chat.show', $conversationId)
+                         -&gt;with('success', 'Devis envoy&eacute; avec succ&egrave;s.');
+    }
+
+    public function accepter($id)
+    {
+        $devis = Devis::findOrFail($id);
+
+        if (Auth::id() !== $devis-&gt;client_id) {
+            abort(403, &quot;Vous n'&ecirc;tes pas le client de ce devis.&quot;);
+        }
+
+        $devis-&gt;update(['statut' =&gt; 'accept&eacute;']);
+
+        MessagesUserArt::create([
+            'conversation_id' =&gt; $devis-&gt;conversation_id,
+            'sender_id'       =&gt; Auth::id(),
+            'receiver_id'     =&gt; $devis-&gt;artisan_id,
+            'message'         =&gt; &quot;J'ai accept&eacute; votre devis de {$devis-&gt;montant} &euro;.&quot;,
+        ]);
+
+        return back()-&gt;with('success', 'Devis accept&eacute;.');
+    }
+    public function clientDevis()
+{
+    $clientId = Auth::id();
+
+    $devis = Devis::where('client_id', $clientId)
+                  -&gt;orderBy('created_at', 'desc')
+                  -&gt;get();
+
+    return view('devis.client', compact('devis'));
+}
+
+    public function refuser($id)
+    {
+        $devis = Devis::findOrFail($id);
+
+        if (Auth::id() !== $devis-&gt;client_id) {
+            abort(403, &quot;Vous n\'&ecirc;tes pas le client de ce devis.&quot;);
+        }
+
+        $devis-&gt;update(['statut' =&gt; 'refus&eacute;']);
+
+        MessagesUserArt::create([
+            'conversation_id' =&gt; $devis-&gt;conversation_id,
+            'sender_id'       =&gt; Auth::id(),
+            'receiver_id'     =&gt; $devis-&gt;artisan_id,
+            'message'         =&gt; &quot;J'ai refus&eacute; votre devis de {$devis-&gt;montant} &euro;.&quot;,
+        ]);
+
+        return back()-&gt;with('success', 'Devis refus&eacute;.');
+    }
+}
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

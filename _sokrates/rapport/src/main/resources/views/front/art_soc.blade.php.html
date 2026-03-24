@@ -1,0 +1,200 @@
+<html>
+<head>
+    <title>resources/views/front/art_soc.blade.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">resources/views/front/art_soc.blade.php (<b>136</b> lines of code) (<a href="art_soc.blade.php">raw</a>):</h3>
+<div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;entreprise d'artisans&lt;/title&gt;
+        &lt;meta content=&quot;width=device-width, initial-scale=1.0&quot; name=&quot;viewport&quot;&gt;
+        &lt;meta content=&quot;Construction Company Website Template&quot; name=&quot;keywords&quot;&gt;
+        &lt;meta content=&quot;Construction Company Website Template&quot; name=&quot;description&quot;&gt;
+
+        &lt;!-- Favicon --&gt;
+        &lt;link href=&quot;img/favicon.ico&quot; rel=&quot;icon&quot;&gt;
+
+        &lt;!-- Google Font --&gt;
+        &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css&quot;&gt;
+        &lt;!-- CSS Libraries --&gt;
+        &lt;link href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/flaticon/font/flaticon.css&quot; rel=&quot;stylesheet&quot;&gt; 
+        &lt;link href=&quot;lib/animate/animate.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/owlcarousel/assets/owl.carousel.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/lightbox/css/lightbox.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/slick/slick.css&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link href=&quot;lib/slick/slick-theme.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+        &lt;!-- Template Stylesheet --&gt;
+        &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;div class=&quot;wrapper&quot;&gt;
+            &lt;!-- Top Bar Start --&gt;
+            
+            @include('layout.topbar')
+            
+            &lt;!-- Top Bar End --&gt;
+
+            &lt;!-- Nav Bar Start --&gt;
+            
+            @include('layout.nav_bar')
+            
+            &lt;!-- Nav Bar End --&gt;
+            
+            
+            &lt;!-- Page Header Start --&gt;
+            &lt;div class=&quot;page-header&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;col-12&quot;&gt;
+                            &lt;h2&gt;Les entreprises d'artisans&lt;/h2&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-12&quot;&gt;
+                            &lt;a href=&quot;&quot;&gt;entreprise&lt;/a&gt;
+                            &lt;a href=&quot;&quot;&gt;artisans&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Page Header End --&gt;
+
+
+            
+            
+
+    &lt;div class=&quot;team&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;section-header text-center&quot;&gt;
+            &lt;p&gt;Les entreprises qui traitent avec nous&lt;/p&gt;
+            &lt;h2&gt;Choisissez l'entreprise que vous souhaitez&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;container mb-4&quot;&gt;
+    &lt;form method=&quot;GET&quot; class=&quot;row&quot; id=&quot;searchSocieteForm&quot;&gt;
+        
+        &lt;div class=&quot;col-md-5&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;adresse&quot; class=&quot;form-control&quot; placeholder=&quot;Rechercher par ville (ex: Montr&eacute;al)&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-2&quot;&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary w-100&quot;&gt;Rechercher&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+
+
+@auth
+&lt;!-- Affichage des soci&eacute;t&eacute;s si l'utilisateur est connect&eacute; --&gt;
+&lt;div class=&quot;row&quot; id=&quot;societeResults&quot;&gt;
+    @foreach ($societes as $societe)
+        &lt;div class=&quot;col-lg-3 col-md-6&quot;&gt;
+            &lt;div class=&quot;team-item&quot;&gt;
+                &lt;div class=&quot;team-img&quot;&gt;
+                    &lt;img 
+                        src=&quot;{{ Str::startsWith($societe-&gt;photo, 'photos/') ? asset('storage/' . $societe-&gt;photo) : asset('img/' . $societe-&gt;photo) }}&quot; 
+                        alt=&quot;Photo Soci&eacute;t&eacute;&quot; 
+                        style=&quot;width:100%; height:250px; object-fit:cover;&quot;&gt;
+                &lt;/div&gt;
+                    &lt;div class=&quot;team-text&quot;&gt;
+                        &lt;h2&gt;{{ $societe-&gt;name }}&lt;/h2&gt;
+                        &lt;p&gt;&lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt;  {{ $societe-&gt;adresse }}&lt;/p&gt;
+                        &lt;p&gt;&lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                            &lt;a href=&quot;https://wa.me/{{ preg_replace('/\D+/', '', $societe-&gt;telephone) }}&quot; target=&quot;_blank&quot;&gt;
+                                {{ $societe-&gt;telephone }}
+                            &lt;/a&gt;
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        @endforeach
+    &lt;/div&gt;
+@endauth
+
+
+@guest
+    &lt;div class=&quot;alert alert-warning w-100 text-center&quot;&gt;
+        Vous devez &lt;a href=&quot;{{ route('auth') }}&quot;&gt;vous connecter&lt;/a&gt; pour voir les entreprises d'artisans.
+    &lt;/div&gt;
+@endguest
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+            
+
+
+           &lt;!-- Footer Start --&gt;
+           
+            @include('layout.footer')
+            
+            &lt;!-- Footer End --&gt;
+
+            &lt;a href=&quot;#&quot; class=&quot;back-to-top&quot;&gt;&lt;i class=&quot;fa fa-chevron-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;!-- JavaScript Libraries --&gt;
+        &lt;script src=&quot;https://code.jquery.com/jquery-3.4.1.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/easing/easing.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/wow/wow.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/owlcarousel/owl.carousel.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/isotope/isotope.pkgd.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/lightbox/js/lightbox.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/waypoints/waypoints.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/counterup/counterup.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;lib/slick/slick.min.js&quot;&gt;&lt;/script&gt;
+
+        
+        &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+$(document).ready(function() {
+    $('#searchSocieteForm input').on('keyup', function() {
+        var formData = $('#searchSocieteForm').serialize();
+
+        $.ajax({
+            url: &quot;{{ route('societes.search') }}&quot;,
+            method: &quot;GET&quot;,
+            data: formData,
+            success: function(response) {
+                $('#societeResults').html(response.html);
+            },
+            error: function(xhr) {
+                console.error('Erreur AJAX:', xhr.responseText);
+            }
+        });
+    });
+
+    $('#searchSocieteForm').on('submit', function(e) {
+        e.preventDefault();
+    });
+});
+&lt;/script&gt;
+
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

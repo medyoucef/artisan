@@ -1,0 +1,117 @@
+Start of analysis
+Found 10728 files
+8423 are in the main's scope  (580821 lines of code)
+  *.php: 8228 files, (548732 lines of code)
+  *.js: 42 files, (10465 lines of code)
+  *.xsd: 24 files, (9084 lines of code)
+  *.vue: 66 files, (5679 lines of code)
+  *.css: 22 files, (3858 lines of code)
+  *.scss: 12 files, (1518 lines of code)
+  *.html: 1 files, (457 lines of code)
+  *.tpl: 11 files, (330 lines of code)
+  *.less: 2 files, (239 lines of code)
+  *.xml: 5 files, (143 lines of code)
+  *.sql: 2 files, (113 lines of code)
+  *.bash: 1 files, (71 lines of code)
+  *.zsh: 1 files, (47 lines of code)
+  *.jsx: 1 files, (25 lines of code)
+  *.fish: 1 files, (19 lines of code)
+  *.asc: 1 files, (15 lines of code)
+  *.yaml: 1 files, (11 lines of code)
+  *.rb: 1 files, (8 lines of code)
+  *.h: 1 files, (7 lines of code)
+260 are in the test's scope  (10627 lines of code)
+  *.php: 255 files, (10445 lines of code)
+  *.eml: 4 files, (178 lines of code)
+  *.tpl: 1 files, (4 lines of code)
+499 are in the generated's scope  (50965 lines of code)
+  *.php: 498 files, (48668 lines of code)
+  *.json: 1 files, (2297 lines of code)
+6 are in the build and deployment's scope  (99 lines of code)
+  *.js: 2 files, (59 lines of code)
+  *.gitignore: 1 files, (23 lines of code)
+  *.gitattributes: 1 files, (9 lines of code)
+  *.sh: 2 files, (8 lines of code)
+499 are in the other's scope  (35743 lines of code)
+  *.md: 284 files, (20450 lines of code)
+  *.json: 182 files, (14768 lines of code)
+  *.svg: 13 files, (256 lines of code)
+  *.txt: 13 files, (219 lines of code)
+  *.ini: 6 files, (36 lines of code)
+  *.editorconfig: 1 files, (14 lines of code)
+Excluded from analyses 1042 files
+Analysing dependencies...
+8423 are in the DECOMPOSITION_primary\Unclassified's scope  (580821 lines of code)
+  *.php: 8228 files, (548732 lines of code)
+  *.js: 42 files, (10465 lines of code)
+  *.xsd: 24 files, (9084 lines of code)
+  *.vue: 66 files, (5679 lines of code)
+  *.css: 22 files, (3858 lines of code)
+  *.scss: 12 files, (1518 lines of code)
+  *.html: 1 files, (457 lines of code)
+  *.tpl: 11 files, (330 lines of code)
+  *.less: 2 files, (239 lines of code)
+  *.xml: 5 files, (143 lines of code)
+  *.sql: 2 files, (113 lines of code)
+  *.bash: 1 files, (71 lines of code)
+  *.zsh: 1 files, (47 lines of code)
+  *.jsx: 1 files, (25 lines of code)
+  *.fish: 1 files, (19 lines of code)
+  *.asc: 1 files, (15 lines of code)
+  *.yaml: 1 files, (11 lines of code)
+  *.rb: 1 files, (8 lines of code)
+  *.h: 1 files, (7 lines of code)
+  - "primary", found 4450 dependencies (0 component dependencies)
+35 are in the CONCERN_general\TODOs's scope  (11985 lines of code)
+  *.php: 33 files, (7372 lines of code)
+  *.js: 2 files, (4613 lines of code)
+8388 are in the CONCERN_general\Unclassified's scope  (568836 lines of code)
+  *.php: 8195 files, (541360 lines of code)
+  *.xsd: 24 files, (9084 lines of code)
+  *.js: 40 files, (5852 lines of code)
+  *.vue: 66 files, (5679 lines of code)
+  *.css: 22 files, (3858 lines of code)
+  *.scss: 12 files, (1518 lines of code)
+  *.html: 1 files, (457 lines of code)
+  *.tpl: 11 files, (330 lines of code)
+  *.less: 2 files, (239 lines of code)
+  *.xml: 5 files, (143 lines of code)
+  *.sql: 2 files, (113 lines of code)
+  *.bash: 1 files, (71 lines of code)
+  *.zsh: 1 files, (47 lines of code)
+  *.jsx: 1 files, (25 lines of code)
+  *.fish: 1 files, (19 lines of code)
+  *.asc: 1 files, (15 lines of code)
+  *.yaml: 1 files, (11 lines of code)
+  *.rb: 1 files, (8 lines of code)
+  *.h: 1 files, (7 lines of code)
+Analysing units...
+Basic unit metrics...
+  - found 36983 units (341817 lines of code in units)
+Unit size 151631 / 77049 / 71668 / 23076 / 18393
+Unit size per component:
+Unit Size Component Unclassified: 151631 / 77049 / 71668 / 23076 / 18393
+Unit size per extension:
+Unit Size Extension php: 149259 / 75095 / 68869 / 21937 / 17978
+Unit Size Extension js: 2372 / 1954 / 2799 / 1139 / 415
+Conditional complexity: 245736 / 47205 / 32863 / 9761 / 6252
+Conditional complexity per component:
+Conditional Complexity Component Unclassified 245736 / 47205 / 32863 / 9761 / 6252
+Conditional complexity per extension:
+Conditional Complexity Component php: 241018 / 44917 / 31745 / 9206 / 6252
+Conditional Complexity Component js: 4718 / 2288 / 1118 / 555 / 0
+Analysing duplication...
+  - found 6682 duplicates (62009 duplicated lines vs. 450874 cleaned lines) in 1859 files
+  - per component:primary
+     - "Unclassified": 62009 duplicated lines vs. 450874 total lines
+  - per extension:
+     - "php": 54740 duplicated lines vs. 423571 total lines
+     - "tpl": 250 duplicated lines vs. 330 total lines
+     - "css": 286 duplicated lines vs. 3858 total lines
+     - "scss": 274 duplicated lines vs. 1518 total lines
+     - "xsd": 4740 duplicated lines vs. 6723 total lines
+     - "less": 170 duplicated lines vs. 239 total lines
+     - "js": 419 duplicated lines vs. 9268 total lines
+     - "vue": 1130 duplicated lines vs. 4540 total lines
+Total analysis time: 54271.87s
+

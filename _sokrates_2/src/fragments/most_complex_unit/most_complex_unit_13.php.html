@@ -1,0 +1,304 @@
+<html>
+<head>
+    <title>public static function ini_parse_quantity()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public static function ini_parse_quantity()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/polyfill-php82/Php82.php [82:363]</i></p>
+<ul>
+    <li><b>221</b> lines of code</li>
+    <li><b>67</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public static function ini_parse_quantity(string $value): int
+    {
+        // Avoid dependency on ctype_space()
+        $ctype_space = &quot; \t\v\r\n\f&quot;;
+
+        $str = 0;
+        $str_end = \strlen($value);
+        $digits = $str;
+        $overflow = false;
+
+        /* Ignore leading whitespace, but keep it for error messages. */
+        while ($digits &lt; $str_end &amp;&amp; false !== strpos($ctype_space, $value[$digits])) {
+            ++$digits;
+        }
+
+        /* Ignore trailing whitespace, but keep it for error messages. */
+        while ($digits &lt; $str_end &amp;&amp; false !== strpos($ctype_space, $value[$str_end - 1])) {
+            --$str_end;
+        }
+
+        if ($digits === $str_end) {
+            return 0;
+        }
+
+        $is_negative = false;
+
+        if ('+' === $value[$digits]) {
+            ++$digits;
+        } elseif ('-' === $value[$digits]) {
+            $is_negative = true;
+            ++$digits;
+        }
+
+        if ($value[$digits] &lt; '0' || $value[$digits] &gt; 9) {
+            $message = sprintf(
+                'Invalid quantity &quot;%s&quot;: no valid leading digits, interpreting as &quot;0&quot; for backwards compatibility',
+                self::escapeString($value)
+            );
+
+            trigger_error($message, \E_USER_WARNING);
+
+            return 0;
+        }
+
+        $base = 10;
+        $allowed_digits = '0123456789';
+
+        if ('0' === $value[$digits] &amp;&amp; ($digits + 1 === $str_end || false === strpos($allowed_digits, $value[$digits + 1]))) {
+            if ($digits + 1 === $str_end) {
+                return 0;
+            }
+
+            switch ($value[$digits + 1]) {
+                case 'g':
+                case 'G':
+                case 'm':
+                case 'M':
+                case 'k':
+                case 'K':
+                    goto evaluation;
+                case 'x':
+                case 'X':
+                    $base = 16;
+                    $allowed_digits = '0123456789abcdefABCDEF';
+                    break;
+                case 'o':
+                case 'O':
+                    $base = 8;
+                    $allowed_digits = '01234567';
+                    break;
+                case 'b':
+                case 'B':
+                    $base = 2;
+                    $allowed_digits = '01';
+                    break;
+                default:
+                    $message = sprintf(
+                        'Invalid prefix &quot;0%s&quot;, interpreting as &quot;0&quot; for backwards compatibility',
+                        $value[$digits + 1]
+                    );
+                    trigger_error($message, \E_USER_WARNING);
+
+                    return 0;
+            }
+
+            $digits += 2;
+            if ($digits === $str_end) {
+                $message = sprintf(
+                    'Invalid quantity &quot;%s&quot;: no digits after base prefix, interpreting as &quot;0&quot; for backwards compatibility',
+                    self::escapeString($value)
+                );
+                trigger_error($message, \E_USER_WARNING);
+
+                return 0;
+            }
+
+            $digits_consumed = $digits;
+            /* Ignore leading whitespace. */
+            while ($digits_consumed &lt; $str_end &amp;&amp; false !== strpos($ctype_space, $value[$digits_consumed])) {
+                ++$digits_consumed;
+            }
+            if ($digits_consumed !== $str_end &amp;&amp; ('+' === $value[$digits_consumed] || '-' === $value[$digits_consumed])) {
+                ++$digits_consumed;
+            }
+
+            if ('0' === $value[$digits_consumed]) {
+                /* Value is just 0 */
+                if ($digits_consumed + 1 === $str_end) {
+                    goto evaluation;
+                }
+                switch ($value[$digits_consumed + 1]) {
+                    case 'x':
+                    case 'X':
+                    case 'o':
+                    case 'O':
+                    case 'b':
+                    case 'B':
+                        $digits_consumed += 2;
+                        break;
+                }
+            }
+
+            if ($digits !== $digits_consumed) {
+                $message = sprintf(
+                    'Invalid quantity &quot;%s&quot;: no digits after base prefix, interpreting as &quot;0&quot; for backwards compatibility',
+                    self::escapeString($value)
+                );
+                trigger_error($message, \E_USER_WARNING);
+
+                return 0;
+            }
+        }
+
+        evaluation:
+
+        if (10 === $base &amp;&amp; '0' === $value[$digits]) {
+            $base = 8;
+            $allowed_digits = '01234567';
+        }
+
+        while ($digits &lt; $str_end &amp;&amp; ' ' === $value[$digits]) {
+            ++$digits;
+        }
+
+        if ($digits &lt; $str_end &amp;&amp; '+' === $value[$digits]) {
+            ++$digits;
+        } elseif ($digits &lt; $str_end &amp;&amp; '-' === $value[$digits]) {
+            $is_negative = true;
+            $overflow = true;
+            ++$digits;
+        }
+
+        $digits_end = $digits;
+
+        while ($digits_end &lt; $str_end &amp;&amp; false !== strpos($allowed_digits, $value[$digits_end])) {
+            ++$digits_end;
+        }
+
+        $retval = base_convert(substr($value, $digits, $digits_end - $digits), $base, 10);
+
+        if ($is_negative &amp;&amp; '0' === $retval) {
+            $is_negative = false;
+            $overflow = false;
+        }
+
+        // Check for overflow - remember that -PHP_INT_MIN = 1 + PHP_INT_MAX
+        if ($is_negative) {
+            $signed_max = strtr((string) \PHP_INT_MIN, ['-' =&gt; '']);
+        } else {
+            $signed_max = (string) \PHP_INT_MAX;
+        }
+
+        $max_length = max(\strlen($retval), \strlen($signed_max));
+
+        $tmp1 = str_pad($retval, $max_length, '0', \STR_PAD_LEFT);
+        $tmp2 = str_pad($signed_max, $max_length, '0', \STR_PAD_LEFT);
+
+        if ($tmp1 &gt; $tmp2) {
+            $retval = -1;
+            $overflow = true;
+        } elseif ($is_negative) {
+            $retval = '-'.$retval;
+        }
+
+        $retval = (int) $retval;
+
+        if ($digits_end === $digits) {
+            $message = sprintf(
+                'Invalid quantity &quot;%s&quot;: no valid leading digits, interpreting as &quot;0&quot; for backwards compatibility',
+                self::escapeString($value)
+            );
+            trigger_error($message, \E_USER_WARNING);
+
+            return 0;
+        }
+
+        /* Allow for whitespace between integer portion and any suffix character */
+        while ($digits_end &lt; $str_end &amp;&amp; false !== strpos($ctype_space, $value[$digits_end])) {
+            ++$digits_end;
+        }
+
+        /* No exponent suffix. */
+        if ($digits_end === $str_end) {
+            goto end;
+        }
+
+        switch ($value[$str_end - 1]) {
+            case 'g':
+            case 'G':
+                $shift = 30;
+                break;
+            case 'm':
+            case 'M':
+                $shift = 20;
+                break;
+            case 'k':
+            case 'K':
+                $shift = 10;
+                break;
+            default:
+                /* Unknown suffix */
+                $invalid = self::escapeString($value);
+                $interpreted = self::escapeString(substr($value, $str, $digits_end - $str));
+                $chr = self::escapeString($value[$str_end - 1]);
+
+                $message = sprintf(
+                    'Invalid quantity &quot;%s&quot;: unknown multiplier &quot;%s&quot;, interpreting as &quot;%s&quot; for backwards compatibility',
+                    $invalid,
+                    $chr,
+                    $interpreted
+                );
+
+                trigger_error($message, \E_USER_WARNING);
+
+                return $retval;
+        }
+
+        $factor = 1 &lt;&lt; $shift;
+
+        if (!$overflow) {
+            if ($retval &gt; 0) {
+                $overflow = $retval &gt; \PHP_INT_MAX / $factor;
+            } else {
+                $overflow = $retval &lt; \PHP_INT_MIN / $factor;
+            }
+        }
+
+        if (\is_float($retval * $factor)) {
+            $overflow = true;
+            $retval &lt;&lt;= $shift;
+        } else {
+            $retval *= $factor;
+        }
+
+        if ($digits_end !== $str_end - 1) {
+            /* More than one character in suffix */
+            $message = sprintf(
+                'Invalid quantity &quot;%s&quot;, interpreting as &quot;%s%s&quot; for backwards compatibility',
+                self::escapeString($value),
+                self::escapeString(substr($value, $str, $digits_end - $str)),
+                self::escapeString($value[$str_end - 1])
+            );
+            trigger_error($message, \E_USER_WARNING);
+
+            return $retval;
+        }
+
+        end:
+
+        if ($overflow) {
+            /* Not specifying the resulting value here because the caller may make
+             * additional conversions. Not specifying the allowed range
+             * because the caller may do narrower range checks. */
+            $message = sprintf(
+                'Invalid quantity &quot;%s&quot;: value is out of range, using overflow result for backwards compatibility',
+                self::escapeString($value)
+            );
+            trigger_error($message, \E_USER_WARNING);
+        }
+
+        return $retval;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

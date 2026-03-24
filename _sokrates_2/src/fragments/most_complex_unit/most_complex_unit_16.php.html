@@ -1,0 +1,222 @@
+<html>
+<head>
+    <title>public function process()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function process()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/http-kernel/DependencyInjection/RegisterControllerArgumentLocatorsPass.php [37:236]</i></p>
+<ul>
+    <li><b>160</b> lines of code</li>
+    <li><b>58</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function process(ContainerBuilder $container): void
+    {
+        if (!$container-&gt;hasDefinition('argument_resolver.service') &amp;&amp; !$container-&gt;hasDefinition('argument_resolver.not_tagged_controller')) {
+            return;
+        }
+
+        $parameterBag = $container-&gt;getParameterBag();
+        $controllers = [];
+        $controllerClasses = [];
+
+        $publicAliases = [];
+        foreach ($container-&gt;getAliases() as $id =&gt; $alias) {
+            if ($alias-&gt;isPublic() &amp;&amp; !$alias-&gt;isPrivate()) {
+                $publicAliases[(string) $alias][] = $id;
+            }
+        }
+
+        $emptyAutowireAttributes = class_exists(Autowire::class) ? null : [];
+
+        foreach ($container-&gt;findTaggedServiceIds('controller.service_arguments', true) as $id =&gt; $tags) {
+            $def = $container-&gt;getDefinition($id);
+            $def-&gt;setPublic(true);
+            $def-&gt;setLazy(false);
+            $class = $def-&gt;getClass();
+            $autowire = $def-&gt;isAutowired();
+            $bindings = $def-&gt;getBindings();
+
+            // resolve service class, taking parent definitions into account
+            while ($def instanceof ChildDefinition) {
+                $def = $container-&gt;findDefinition($def-&gt;getParent());
+                $class = $class ?: $def-&gt;getClass();
+                $bindings += $def-&gt;getBindings();
+            }
+            $class = $parameterBag-&gt;resolveValue($class);
+
+            if (!$r = $container-&gt;getReflectionClass($class)) {
+                throw new InvalidArgumentException(\sprintf('Class &quot;%s&quot; used for service &quot;%s&quot; cannot be found.', $class, $id));
+            }
+
+            $controllerClasses[] = $class;
+
+            // get regular public methods
+            $methods = [];
+            $arguments = [];
+            foreach ($r-&gt;getMethods(\ReflectionMethod::IS_PUBLIC) as $r) {
+                if ('setContainer' === $r-&gt;name) {
+                    continue;
+                }
+                if (!$r-&gt;isConstructor() &amp;&amp; !$r-&gt;isDestructor() &amp;&amp; !$r-&gt;isAbstract()) {
+                    $methods[strtolower($r-&gt;name)] = [$r, $r-&gt;getParameters()];
+                }
+            }
+
+            // validate and collect explicit per-actions and per-arguments service references
+            foreach ($tags as $attributes) {
+                if (!isset($attributes['action']) &amp;&amp; !isset($attributes['argument']) &amp;&amp; !isset($attributes['id'])) {
+                    $autowire = true;
+                    continue;
+                }
+                foreach (['action', 'argument', 'id'] as $k) {
+                    if (!isset($attributes[$k][0])) {
+                        throw new InvalidArgumentException(\sprintf('Missing &quot;%s&quot; attribute on tag &quot;controller.service_arguments&quot; %s for service &quot;%s&quot;.', $k, json_encode($attributes, \JSON_UNESCAPED_UNICODE), $id));
+                    }
+                }
+                if (!isset($methods[$action = strtolower($attributes['action'])])) {
+                    throw new InvalidArgumentException(\sprintf('Invalid &quot;action&quot; attribute on tag &quot;controller.service_arguments&quot; for service &quot;%s&quot;: no public &quot;%s()&quot; method found on class &quot;%s&quot;.', $id, $attributes['action'], $class));
+                }
+                [$r, $parameters] = $methods[$action];
+                $found = false;
+
+                foreach ($parameters as $p) {
+                    if ($attributes['argument'] === $p-&gt;name) {
+                        if (!isset($arguments[$r-&gt;name][$p-&gt;name])) {
+                            $arguments[$r-&gt;name][$p-&gt;name] = $attributes['id'];
+                        }
+                        $found = true;
+                        break;
+                    }
+                }
+
+                if (!$found) {
+                    throw new InvalidArgumentException(\sprintf('Invalid &quot;controller.service_arguments&quot; tag for service &quot;%s&quot;: method &quot;%s()&quot; has no &quot;%s&quot; argument on class &quot;%s&quot;.', $id, $r-&gt;name, $attributes['argument'], $class));
+                }
+            }
+
+            foreach ($methods as [$r, $parameters]) {
+                /** @var \ReflectionMethod $r */
+
+                // create a per-method map of argument-names to service/type-references
+                $args = [];
+                $erroredIds = 0;
+                foreach ($parameters as $p) {
+                    /** @var \ReflectionParameter $p */
+                    $type = preg_replace('/(^|[(|&amp;])\\\\/', '\1', $target = ltrim(ProxyHelper::exportType($p) ?? '', '?'));
+                    $invalidBehavior = ContainerInterface::IGNORE_ON_INVALID_REFERENCE;
+                    $autowireAttributes = $autowire ? $emptyAutowireAttributes : [];
+                    $parsedName = $p-&gt;name;
+                    $k = null;
+
+                    if (isset($arguments[$r-&gt;name][$p-&gt;name])) {
+                        $target = $arguments[$r-&gt;name][$p-&gt;name];
+                        if ('?' !== $target[0]) {
+                            $invalidBehavior = ContainerInterface::RUNTIME_EXCEPTION_ON_INVALID_REFERENCE;
+                        } elseif ('' === $target = substr($target, 1)) {
+                            throw new InvalidArgumentException(\sprintf('A &quot;controller.service_arguments&quot; tag must have non-empty &quot;id&quot; attributes for service &quot;%s&quot;.', $id));
+                        } elseif ($p-&gt;allowsNull() &amp;&amp; !$p-&gt;isOptional()) {
+                            $invalidBehavior = ContainerInterface::NULL_ON_INVALID_REFERENCE;
+                        }
+                    } elseif (isset($bindings[$bindingName = $type.' $'.$name = Target::parseName($p, $k, $parsedName)])
+                        || isset($bindings[$bindingName = $type.' $'.$parsedName])
+                        || isset($bindings[$bindingName = '$'.$name])
+                        || isset($bindings[$bindingName = $type])
+                    ) {
+                        $binding = $bindings[$bindingName];
+
+                        [$bindingValue, $bindingId, , $bindingType, $bindingFile] = $binding-&gt;getValues();
+                        $binding-&gt;setValues([$bindingValue, $bindingId, true, $bindingType, $bindingFile]);
+
+                        $args[$p-&gt;name] = $bindingValue;
+
+                        continue;
+                    } elseif (!$autowire || (!($autowireAttributes ??= $p-&gt;getAttributes(Autowire::class, \ReflectionAttribute::IS_INSTANCEOF)) &amp;&amp; (!$type || '\\' !== $target[0]))) {
+                        continue;
+                    } elseif (!$autowireAttributes &amp;&amp; is_subclass_of($type, \UnitEnum::class)) {
+                        // do not attempt to register enum typed arguments if not already present in bindings
+                        continue;
+                    } elseif (!$p-&gt;allowsNull()) {
+                        $invalidBehavior = ContainerInterface::RUNTIME_EXCEPTION_ON_INVALID_REFERENCE;
+                    }
+
+                    if (Request::class === $type || SessionInterface::class === $type || Response::class === $type) {
+                        continue;
+                    }
+
+                    if ($autowireAttributes) {
+                        $attribute = $autowireAttributes[0]-&gt;newInstance();
+                        $value = $parameterBag-&gt;resolveValue($attribute-&gt;value);
+
+                        if ($attribute instanceof AutowireCallable) {
+                            $args[$p-&gt;name] = $attribute-&gt;buildDefinition($value, $type, $p);
+                        } elseif ($value instanceof Reference) {
+                            $args[$p-&gt;name] = $type ? new TypedReference($value, $type, $invalidBehavior, $p-&gt;name) : new Reference($value, $invalidBehavior);
+                        } else {
+                            $args[$p-&gt;name] = new Reference('.value.'.$container-&gt;hash($value));
+                            $container-&gt;register((string) $args[$p-&gt;name], 'mixed')
+                                -&gt;setFactory('current')
+                                -&gt;addArgument([$value]);
+                        }
+
+                        continue;
+                    }
+
+                    if ($type &amp;&amp; !$p-&gt;isOptional() &amp;&amp; !$p-&gt;allowsNull() &amp;&amp; !class_exists($type) &amp;&amp; !interface_exists($type, false)) {
+                        $message = \sprintf('Cannot determine controller argument for &quot;%s::%s()&quot;: the $%s argument is type-hinted with the non-existent class or interface: &quot;%s&quot;.', $class, $r-&gt;name, $p-&gt;name, $type);
+
+                        // see if the type-hint lives in the same namespace as the controller
+                        if (0 === strncmp($type, $class, strrpos($class, '\\'))) {
+                            $message .= ' Did you forget to add a use statement?';
+                        }
+
+                        $container-&gt;register($erroredId = '.errored.'.$container-&gt;hash($message), $type)
+                            -&gt;addError($message);
+
+                        $args[$p-&gt;name] = new Reference($erroredId, ContainerInterface::RUNTIME_EXCEPTION_ON_INVALID_REFERENCE);
+                        ++$erroredIds;
+                    } else {
+                        $target = preg_replace('/(^|[(|&amp;])\\\\/', '\1', $target);
+                        $args[$p-&gt;name] = $type ? new TypedReference($target, $type, $invalidBehavior, Target::parseName($p)) : new Reference($target, $invalidBehavior);
+                    }
+                }
+                // register the maps as a per-method service-locators
+                if ($args) {
+                    $controllers[$id.'::'.$r-&gt;name] = ServiceLocatorTagPass::register($container, $args, \count($args) !== $erroredIds ? $id.'::'.$r-&gt;name.'()' : null);
+
+                    foreach ($publicAliases[$id] ?? [] as $alias) {
+                        $controllers[$alias.'::'.$r-&gt;name] = clone $controllers[$id.'::'.$r-&gt;name];
+                    }
+                }
+            }
+        }
+
+        $controllerLocatorRef = ServiceLocatorTagPass::register($container, $controllers);
+
+        if ($container-&gt;hasDefinition('argument_resolver.service')) {
+            $container-&gt;getDefinition('argument_resolver.service')
+                -&gt;replaceArgument(0, $controllerLocatorRef);
+        }
+
+        if ($container-&gt;hasDefinition('argument_resolver.not_tagged_controller')) {
+            $container-&gt;getDefinition('argument_resolver.not_tagged_controller')
+                -&gt;replaceArgument(0, $controllerLocatorRef);
+        }
+
+        $container-&gt;setAlias('argument_resolver.controller_locator', (string) $controllerLocatorRef);
+
+        if ($container-&gt;hasDefinition('controller_resolver')) {
+            $container-&gt;getDefinition('controller_resolver')
+                -&gt;addMethodCall('allowControllers', [array_unique($controllerClasses)]);
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

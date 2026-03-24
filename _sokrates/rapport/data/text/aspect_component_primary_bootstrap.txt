@@ -1,0 +1,3 @@
+Path	Lines of Code
+bootstrap/app.php	14
+bootstrap/providers.php	4

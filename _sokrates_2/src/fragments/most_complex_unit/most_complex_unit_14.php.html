@@ -1,0 +1,241 @@
+<html>
+<head>
+    <title>private function parseConstraint()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function parseConstraint()</h3>
+<p style="margin-top: 4px">in <i>vendor/composer/semver/src/VersionParser.php [309:527]</i></p>
+<ul>
+    <li><b>148</b> lines of code</li>
+    <li><b>63</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function parseConstraint($constraint)
+    {
+        // strip off aliasing
+        if (preg_match('{^([^,\s]++) ++as ++([^,\s]++)$}', $constraint, $match)) {
+            $constraint = $match[1];
+        }
+
+        // strip @stability flags, and keep it for later use
+        if (preg_match('{^([^,\s]*?)@(' . self::$stabilitiesRegex . ')$}i', $constraint, $match)) {
+            $constraint = '' !== $match[1] ? $match[1] : '*';
+            if ($match[2] !== 'stable') {
+                $stabilityModifier = $match[2];
+            }
+        }
+
+        // get rid of #refs as those are used by composer only
+        if (preg_match('{^(dev-[^,\s@]+?|[^,\s@]+?\.x-dev)#.+$}i', $constraint, $match)) {
+            $constraint = $match[1];
+        }
+
+        if (preg_match('{^(v)?[xX*](\.[xX*])*$}i', $constraint, $match)) {
+            if (!empty($match[1]) || !empty($match[2])) {
+                return array(new Constraint('&gt;=', '0.0.0.0-dev'));
+            }
+
+            return array(new MatchAllConstraint());
+        }
+
+        $versionRegex = 'v?(\d++)(?:\.(\d++))?(?:\.(\d++))?(?:\.(\d++))?(?:' . self::$modifierRegex . '|\.([xX*][.-]?dev))(?:\+[^\s]+)?';
+
+        // Tilde Range
+        //
+        // Like wildcard constraints, unsuffixed tilde constraints say that they must be greater than the previous
+        // version, to ensure that unstable instances of the current version are allowed. However, if a stability
+        // suffix is added to the constraint, then a &gt;= match on the current version is used instead.
+        if (preg_match('{^~&gt;?' . $versionRegex . '$}i', $constraint, $matches)) {
+            if (strpos($constraint, '~&gt;') === 0) {
+                throw new \UnexpectedValueException(
+                    'Could not parse version constraint ' . $constraint . ': ' .
+                    'Invalid operator &quot;~&gt;&quot;, you probably meant to use the &quot;~&quot; operator'
+                );
+            }
+
+            // Work out which position in the version we are operating at
+            if (isset($matches[4]) &amp;&amp; '' !== $matches[4] &amp;&amp; null !== $matches[4]) {
+                $position = 4;
+            } elseif (isset($matches[3]) &amp;&amp; '' !== $matches[3] &amp;&amp; null !== $matches[3]) {
+                $position = 3;
+            } elseif (isset($matches[2]) &amp;&amp; '' !== $matches[2] &amp;&amp; null !== $matches[2]) {
+                $position = 2;
+            } else {
+                $position = 1;
+            }
+
+            // when matching 2.x-dev or 3.0.x-dev we have to shift the second or third number, despite no second/third number matching above
+            if (!empty($matches[8])) {
+                $position++;
+            }
+
+            // Calculate the stability suffix
+            $stabilitySuffix = '';
+            if (empty($matches[5]) &amp;&amp; empty($matches[7]) &amp;&amp; empty($matches[8])) {
+                $stabilitySuffix .= '-dev';
+            }
+
+            $lowVersion = $this-&gt;normalize(substr($constraint . $stabilitySuffix, 1));
+            $lowerBound = new Constraint('&gt;=', $lowVersion);
+
+            // For upper bound, we increment the position of one more significance,
+            // but highPosition = 0 would be illegal
+            $highPosition = max(1, $position - 1);
+            $highVersion = $this-&gt;manipulateVersionString($matches, $highPosition, 1) . '-dev';
+            $upperBound = new Constraint('&lt;', $highVersion);
+
+            return array(
+                $lowerBound,
+                $upperBound,
+            );
+        }
+
+        // Caret Range
+        //
+        // Allows changes that do not modify the left-most non-zero digit in the [major, minor, patch] tuple.
+        // In other words, this allows patch and minor updates for versions 1.0.0 and above, patch updates for
+        // versions 0.X &gt;=0.1.0, and no updates for versions 0.0.X
+        if (preg_match('{^\^' . $versionRegex . '($)}i', $constraint, $matches)) {
+            // Work out which position in the version we are operating at
+            if ('0' !== $matches[1] || '' === $matches[2] || null === $matches[2]) {
+                $position = 1;
+            } elseif ('0' !== $matches[2] || '' === $matches[3] || null === $matches[3]) {
+                $position = 2;
+            } else {
+                $position = 3;
+            }
+
+            // Calculate the stability suffix
+            $stabilitySuffix = '';
+            if (empty($matches[5]) &amp;&amp; empty($matches[7]) &amp;&amp; empty($matches[8])) {
+                $stabilitySuffix .= '-dev';
+            }
+
+            $lowVersion = $this-&gt;normalize(substr($constraint . $stabilitySuffix, 1));
+            $lowerBound = new Constraint('&gt;=', $lowVersion);
+
+            // For upper bound, we increment the position of one more significance,
+            // but highPosition = 0 would be illegal
+            $highVersion = $this-&gt;manipulateVersionString($matches, $position, 1) . '-dev';
+            $upperBound = new Constraint('&lt;', $highVersion);
+
+            return array(
+                $lowerBound,
+                $upperBound,
+            );
+        }
+
+        // X Range
+        //
+        // Any of X, x, or * may be used to &quot;stand in&quot; for one of the numeric values in the [major, minor, patch] tuple.
+        // A partial version range is treated as an X-Range, so the special character is in fact optional.
+        if (preg_match('{^v?(\d++)(?:\.(\d++))?(?:\.(\d++))?(?:\.[xX*])++$}', $constraint, $matches)) {
+            if (isset($matches[3]) &amp;&amp; '' !== $matches[3] &amp;&amp; null !== $matches[3]) {
+                $position = 3;
+            } elseif (isset($matches[2]) &amp;&amp; '' !== $matches[2] &amp;&amp; null !== $matches[2]) {
+                $position = 2;
+            } else {
+                $position = 1;
+            }
+
+            $lowVersion = $this-&gt;manipulateVersionString($matches, $position) . '-dev';
+            $highVersion = $this-&gt;manipulateVersionString($matches, $position, 1) . '-dev';
+
+            if ($lowVersion === '0.0.0.0-dev') {
+                return array(new Constraint('&lt;', $highVersion));
+            }
+
+            return array(
+                new Constraint('&gt;=', $lowVersion),
+                new Constraint('&lt;', $highVersion),
+            );
+        }
+
+        // Hyphen Range
+        //
+        // Specifies an inclusive set. If a partial version is provided as the first version in the inclusive range,
+        // then the missing pieces are replaced with zeroes. If a partial version is provided as the second version in
+        // the inclusive range, then all versions that start with the supplied parts of the tuple are accepted, but
+        // nothing that would be greater than the provided tuple parts.
+        if (preg_match('{^(?P&lt;from&gt;' . $versionRegex . ') +- +(?P&lt;to&gt;' . $versionRegex . ')($)}i', $constraint, $matches)) {
+            // Calculate the stability suffix
+            $lowStabilitySuffix = '';
+            if (empty($matches[6]) &amp;&amp; empty($matches[8]) &amp;&amp; empty($matches[9])) {
+                $lowStabilitySuffix = '-dev';
+            }
+
+            $lowVersion = $this-&gt;normalize($matches['from']);
+            $lowerBound = new Constraint('&gt;=', $lowVersion . $lowStabilitySuffix);
+
+            $empty = function ($x) {
+                return ($x === 0 || $x === '0') ? false : empty($x);
+            };
+
+            if ((!$empty($matches[12]) &amp;&amp; !$empty($matches[13])) || !empty($matches[15]) || !empty($matches[17]) || !empty($matches[18])) {
+                $highVersion = $this-&gt;normalize($matches['to']);
+                $upperBound = new Constraint('&lt;=', $highVersion);
+            } else {
+                $highMatch = array('', $matches[11], $matches[12], $matches[13], $matches[14]);
+
+                // validate to version
+                $this-&gt;normalize($matches['to']);
+
+                $highVersion = $this-&gt;manipulateVersionString($highMatch, $empty($matches[12]) ? 1 : 2, 1) . '-dev';
+                $upperBound = new Constraint('&lt;', $highVersion);
+            }
+
+            return array(
+                $lowerBound,
+                $upperBound,
+            );
+        }
+
+        // Basic Comparators
+        if (preg_match('{^(&lt;&gt;|!=|&gt;=?|&lt;=?|==?)?\s*(.*)}', $constraint, $matches)) {
+            try {
+                try {
+                    $version = $this-&gt;normalize($matches[2]);
+                } catch (\UnexpectedValueException $e) {
+                    // recover from an invalid constraint like foobar-dev which should be dev-foobar
+                    // except if the constraint uses a known operator, in which case it must be a parse error
+                    if (substr($matches[2], -4) === '-dev' &amp;&amp; preg_match('{^[0-9a-zA-Z-./]+$}', $matches[2])) {
+                        $version = $this-&gt;normalize('dev-'.substr($matches[2], 0, -4));
+                    } else {
+                        throw $e;
+                    }
+                }
+
+                $op = $matches[1] ?: '=';
+
+                if ($op !== '==' &amp;&amp; $op !== '=' &amp;&amp; !empty($stabilityModifier) &amp;&amp; self::parseStability($version) === 'stable') {
+                    $version .= '-' . $stabilityModifier;
+                } elseif ('&lt;' === $op || '&gt;=' === $op) {
+                    if (!preg_match('/-' . self::$modifierRegex . '$/', strtolower($matches[2]))) {
+                        if (strpos($matches[2], 'dev-') !== 0) {
+                            $version .= '-dev';
+                        }
+                    }
+                }
+
+                return array(new Constraint($matches[1] ?: '=', $version));
+            } catch (\Exception $e) {
+            }
+        }
+
+        $message = 'Could not parse version constraint ' . $constraint;
+        if (isset($e)) {
+            $message .= ': ' . $e-&gt;getMessage();
+        }
+
+        throw new \UnexpectedValueException($message);
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

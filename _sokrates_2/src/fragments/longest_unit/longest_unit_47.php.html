@@ -1,0 +1,183 @@
+<html>
+<head>
+    <title>private function codeCoverage()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function codeCoverage()</h3>
+<p style="margin-top: 4px">in <i>vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Loader.php [354:514]</i></p>
+<ul>
+    <li><b>140</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function codeCoverage(string $filename, DOMXPath $xpath): CodeCoverage
+    {
+        $pathCoverage              = false;
+        $includeUncoveredFiles     = true;
+        $ignoreDeprecatedCodeUnits = false;
+        $disableCodeCoverageIgnore = false;
+
+        $element = $this-&gt;element($xpath, 'coverage');
+
+        if ($element) {
+            $pathCoverage = $this-&gt;parseBooleanAttribute(
+                $element,
+                'pathCoverage',
+                false,
+            );
+
+            $includeUncoveredFiles = $this-&gt;parseBooleanAttribute(
+                $element,
+                'includeUncoveredFiles',
+                true,
+            );
+
+            $ignoreDeprecatedCodeUnits = $this-&gt;parseBooleanAttribute(
+                $element,
+                'ignoreDeprecatedCodeUnits',
+                false,
+            );
+
+            $disableCodeCoverageIgnore = $this-&gt;parseBooleanAttribute(
+                $element,
+                'disableCodeCoverageIgnore',
+                false,
+            );
+        }
+
+        $clover  = null;
+        $element = $this-&gt;element($xpath, 'coverage/report/clover');
+
+        if ($element) {
+            $clover = new Clover(
+                new File(
+                    $this-&gt;toAbsolutePath(
+                        $filename,
+                        (string) $this-&gt;parseStringAttribute($element, 'outputFile'),
+                    ),
+                ),
+            );
+        }
+
+        $cobertura = null;
+        $element   = $this-&gt;element($xpath, 'coverage/report/cobertura');
+
+        if ($element) {
+            $cobertura = new Cobertura(
+                new File(
+                    $this-&gt;toAbsolutePath(
+                        $filename,
+                        (string) $this-&gt;parseStringAttribute($element, 'outputFile'),
+                    ),
+                ),
+            );
+        }
+
+        $crap4j  = null;
+        $element = $this-&gt;element($xpath, 'coverage/report/crap4j');
+
+        if ($element) {
+            $crap4j = new Crap4j(
+                new File(
+                    $this-&gt;toAbsolutePath(
+                        $filename,
+                        (string) $this-&gt;parseStringAttribute($element, 'outputFile'),
+                    ),
+                ),
+                $this-&gt;parseIntegerAttribute($element, 'threshold', 30),
+            );
+        }
+
+        $html    = null;
+        $element = $this-&gt;element($xpath, 'coverage/report/html');
+
+        if ($element) {
+            $defaultColors     = Colors::default();
+            $defaultThresholds = Thresholds::default();
+
+            $html = new CodeCoverageHtml(
+                new Directory(
+                    $this-&gt;toAbsolutePath(
+                        $filename,
+                        (string) $this-&gt;parseStringAttribute($element, 'outputDirectory'),
+                    ),
+                ),
+                $this-&gt;parseIntegerAttribute($element, 'lowUpperBound', $defaultThresholds-&gt;lowUpperBound()),
+                $this-&gt;parseIntegerAttribute($element, 'highLowerBound', $defaultThresholds-&gt;highLowerBound()),
+                $this-&gt;parseStringAttributeWithDefault($element, 'colorSuccessLow', $defaultColors-&gt;successLow()),
+                $this-&gt;parseStringAttributeWithDefault($element, 'colorSuccessMedium', $defaultColors-&gt;successMedium()),
+                $this-&gt;parseStringAttributeWithDefault($element, 'colorSuccessHigh', $defaultColors-&gt;successHigh()),
+                $this-&gt;parseStringAttributeWithDefault($element, 'colorWarning', $defaultColors-&gt;warning()),
+                $this-&gt;parseStringAttributeWithDefault($element, 'colorDanger', $defaultColors-&gt;danger()),
+                $this-&gt;parseStringAttribute($element, 'customCssFile'),
+            );
+        }
+
+        $php     = null;
+        $element = $this-&gt;element($xpath, 'coverage/report/php');
+
+        if ($element) {
+            $php = new CodeCoveragePhp(
+                new File(
+                    $this-&gt;toAbsolutePath(
+                        $filename,
+                        (string) $this-&gt;parseStringAttribute($element, 'outputFile'),
+                    ),
+                ),
+            );
+        }
+
+        $text    = null;
+        $element = $this-&gt;element($xpath, 'coverage/report/text');
+
+        if ($element) {
+            $text = new CodeCoverageText(
+                new File(
+                    $this-&gt;toAbsolutePath(
+                        $filename,
+                        (string) $this-&gt;parseStringAttribute($element, 'outputFile'),
+                    ),
+                ),
+                $this-&gt;parseBooleanAttribute($element, 'showUncoveredFiles', false),
+                $this-&gt;parseBooleanAttribute($element, 'showOnlySummary', false),
+            );
+        }
+
+        $xml     = null;
+        $element = $this-&gt;element($xpath, 'coverage/report/xml');
+
+        if ($element) {
+            $xml = new CodeCoverageXml(
+                new Directory(
+                    $this-&gt;toAbsolutePath(
+                        $filename,
+                        (string) $this-&gt;parseStringAttribute($element, 'outputDirectory'),
+                    ),
+                ),
+            );
+        }
+
+        return new CodeCoverage(
+            $pathCoverage,
+            $includeUncoveredFiles,
+            $ignoreDeprecatedCodeUnits,
+            $disableCodeCoverageIgnore,
+            $clover,
+            $cobertura,
+            $crap4j,
+            $html,
+            $php,
+            $text,
+            $xml,
+        );
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

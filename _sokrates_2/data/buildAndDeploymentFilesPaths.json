@@ -1,0 +1,1 @@
+[ ".gitattributes", ".gitignore", "vendor/laravel/sail/database/mariadb/create-testing-database.sh", "vendor/laravel/sail/database/mysql/create-testing-database.sh", "vendor/laravel/telescope/webpack.mix.js", "vendor/opcodesio/log-viewer/webpack.mix.js" ]

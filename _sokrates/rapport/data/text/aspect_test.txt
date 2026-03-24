@@ -1,0 +1,4 @@
+Path	Lines of Code
+tests/Feature/ExampleTest.php	11
+tests/TestCase.php	6
+tests/Unit/ExampleTest.php	10

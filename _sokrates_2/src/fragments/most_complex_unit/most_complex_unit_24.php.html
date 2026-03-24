@@ -1,0 +1,269 @@
+<html>
+<head>
+    <title>private function generateCodeForTestDoubleClass()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function generateCodeForTestDoubleClass()</h3>
+<p style="margin-top: 4px">in <i>vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php [662:908]</i></p>
+<ul>
+    <li><b>199</b> lines of code</li>
+    <li><b>51</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function generateCodeForTestDoubleClass(string $type, bool $mockObject, bool $markAsMockObject, ?array $explicitMethods, string $mockClassName, bool $callOriginalClone, bool $callAutoload, bool $cloneArguments, bool $callOriginalMethods): MockClass
+    {
+        $classTemplate         = $this-&gt;loadTemplate('test_double_class.tpl');
+        $additionalInterfaces  = [];
+        $doubledCloneMethod    = false;
+        $proxiedCloneMethod    = false;
+        $isClass               = false;
+        $isReadonly            = false;
+        $isInterface           = false;
+        $class                 = null;
+        $mockMethods           = new MockMethodSet;
+        $testDoubleClassPrefix = $mockObject ? 'MockObject_' : 'TestStub_';
+
+        $_mockClassName = $this-&gt;generateClassName(
+            $type,
+            $mockClassName,
+            $testDoubleClassPrefix,
+        );
+
+        if (class_exists($_mockClassName['fullClassName'], $callAutoload)) {
+            $isClass = true;
+        } elseif (interface_exists($_mockClassName['fullClassName'], $callAutoload)) {
+            $isInterface = true;
+        }
+
+        if (!$isClass &amp;&amp; !$isInterface) {
+            $prologue = 'class ' . $_mockClassName['originalClassName'] . &quot;\n{\n}\n\n&quot;;
+
+            if (!empty($_mockClassName['namespaceName'])) {
+                $prologue = 'namespace ' . $_mockClassName['namespaceName'] .
+                            &quot; {\n\n&quot; . $prologue . &quot;}\n\n&quot; .
+                            &quot;namespace {\n\n&quot;;
+
+                $epilogue = &quot;\n\n}&quot;;
+            }
+
+            $doubledCloneMethod = true;
+        } else {
+            $class = $this-&gt;reflectClass($_mockClassName['fullClassName']);
+
+            if ($class-&gt;isEnum()) {
+                throw new ClassIsEnumerationException($_mockClassName['fullClassName']);
+            }
+
+            if ($class-&gt;isFinal()) {
+                throw new ClassIsFinalException($_mockClassName['fullClassName']);
+            }
+
+            if ($class-&gt;isReadOnly()) {
+                $isReadonly = true;
+            }
+
+            // @see https://github.com/sebastianbergmann/phpunit/issues/2995
+            if ($isInterface &amp;&amp; $class-&gt;implementsInterface(Throwable::class)) {
+                $actualClassName        = Exception::class;
+                $additionalInterfaces[] = $class-&gt;getName();
+                $isInterface            = false;
+                $class                  = $this-&gt;reflectClass($actualClassName);
+
+                foreach ($this-&gt;userDefinedInterfaceMethods($_mockClassName['fullClassName']) as $method) {
+                    $methodName = $method-&gt;getName();
+
+                    if ($class-&gt;hasMethod($methodName)) {
+                        $classMethod = $class-&gt;getMethod($methodName);
+
+                        if (!$this-&gt;canMethodBeDoubled($classMethod)) {
+                            continue;
+                        }
+                    }
+
+                    $mockMethods-&gt;addMethods(
+                        MockMethod::fromReflection($method, $callOriginalMethods, $cloneArguments),
+                    );
+                }
+
+                $_mockClassName = $this-&gt;generateClassName(
+                    $actualClassName,
+                    $_mockClassName['className'],
+                    $testDoubleClassPrefix,
+                );
+            }
+
+            // @see https://github.com/sebastianbergmann/phpunit-mock-objects/issues/103
+            if ($isInterface &amp;&amp; $class-&gt;implementsInterface(Traversable::class) &amp;&amp;
+                !$class-&gt;implementsInterface(Iterator::class) &amp;&amp;
+                !$class-&gt;implementsInterface(IteratorAggregate::class)) {
+                $additionalInterfaces[] = Iterator::class;
+
+                $mockMethods-&gt;addMethods(
+                    ...$this-&gt;mockClassMethods(Iterator::class, $callOriginalMethods, $cloneArguments),
+                );
+            }
+
+            if ($class-&gt;hasMethod('__clone')) {
+                $cloneMethod = $class-&gt;getMethod('__clone');
+
+                if (!$cloneMethod-&gt;isFinal()) {
+                    if ($callOriginalClone &amp;&amp; !$isInterface) {
+                        $proxiedCloneMethod = true;
+                    } else {
+                        $doubledCloneMethod = true;
+                    }
+                }
+            } else {
+                $doubledCloneMethod = true;
+            }
+        }
+
+        if ($isClass &amp;&amp; $explicitMethods === []) {
+            $mockMethods-&gt;addMethods(
+                ...$this-&gt;mockClassMethods($_mockClassName['fullClassName'], $callOriginalMethods, $cloneArguments),
+            );
+        }
+
+        if ($isInterface &amp;&amp; ($explicitMethods === [] || $explicitMethods === null)) {
+            $mockMethods-&gt;addMethods(
+                ...$this-&gt;interfaceMethods($_mockClassName['fullClassName'], $cloneArguments),
+            );
+        }
+
+        if (is_array($explicitMethods)) {
+            foreach ($explicitMethods as $methodName) {
+                if ($class-&gt;hasMethod($methodName)) {
+                    $method = $class-&gt;getMethod($methodName);
+
+                    if ($this-&gt;canMethodBeDoubled($method)) {
+                        $mockMethods-&gt;addMethods(
+                            MockMethod::fromReflection($method, $callOriginalMethods, $cloneArguments),
+                        );
+                    }
+                } else {
+                    $mockMethods-&gt;addMethods(
+                        MockMethod::fromName(
+                            $_mockClassName['fullClassName'],
+                            $methodName,
+                            $cloneArguments,
+                        ),
+                    );
+                }
+            }
+        }
+
+        $propertiesWithHooks = $this-&gt;properties($class);
+        $configurableMethods = $this-&gt;configurableMethods($mockMethods, $propertiesWithHooks);
+
+        $mockedMethods = '';
+
+        foreach ($mockMethods-&gt;asArray() as $mockMethod) {
+            $mockedMethods .= $mockMethod-&gt;generateCode();
+        }
+
+        /** @var trait-string[] $traits */
+        $traits = [];
+
+        /** @phpstan-ignore identical.alwaysTrue */
+        $isPhp82 = PHP_MAJOR_VERSION === 8 &amp;&amp; PHP_MINOR_VERSION === 2;
+
+        if (!$isReadonly &amp;&amp; $isPhp82) {
+            // @codeCoverageIgnoreStart
+            $traits[] = MutableStubApi::class;
+            // @codeCoverageIgnoreEnd
+        } else {
+            $traits[] = StubApi::class;
+        }
+
+        if ($mockObject) {
+            $traits[] = MockObjectApi::class;
+        }
+
+        if ($markAsMockObject) {
+            $traits[] = GeneratedAsMockObject::class;
+        } else {
+            $traits[] = GeneratedAsTestStub::class;
+        }
+
+        if ($mockMethods-&gt;hasMethod('method') || (isset($class) &amp;&amp; $class-&gt;hasMethod('method'))) {
+            $message = sprintf(
+                '%s %s has a method named &quot;method&quot;. Doubling %s that have a method named &quot;method&quot; is deprecated. Support for this will be removed in PHPUnit 12.',
+                ($isInterface) ? 'Interface' : 'Class',
+                isset($class) ? $class-&gt;getName() : $type,
+                ($isInterface) ? 'interfaces' : 'classes',
+            );
+
+            try {
+                EventFacade::emitter()-&gt;testTriggeredPhpunitDeprecation(
+                    TestMethodBuilder::fromCallStack(),
+                    $message,
+                );
+            } catch (NoTestCaseObjectOnCallStackException) {
+                EventFacade::emitter()-&gt;testRunnerTriggeredPhpunitDeprecation($message);
+            }
+        }
+
+        if (!$mockMethods-&gt;hasMethod('method') &amp;&amp; (!isset($class) || !$class-&gt;hasMethod('method'))) {
+            $traits[] = Method::class;
+        }
+
+        if ($isPhp82 &amp;&amp; $isReadonly) {
+            // @codeCoverageIgnoreStart
+            $traits[] = ErrorCloneMethod::class;
+            // @codeCoverageIgnoreEnd
+        } else {
+            if ($doubledCloneMethod) {
+                $traits[] = DoubledCloneMethod::class;
+            } elseif ($proxiedCloneMethod) {
+                $traits[] = ProxiedCloneMethod::class;
+            }
+        }
+
+        $useStatements = '';
+
+        foreach ($traits as $trait) {
+            $useStatements .= sprintf(
+                '    use %s;' . PHP_EOL,
+                $trait,
+            );
+        }
+
+        unset($traits);
+
+        $classTemplate-&gt;setVar(
+            [
+                'prologue'          =&gt; $prologue ?? '',
+                'epilogue'          =&gt; $epilogue ?? '',
+                'class_declaration' =&gt; $this-&gt;generateTestDoubleClassDeclaration(
+                    $mockObject,
+                    $_mockClassName,
+                    $isInterface,
+                    $additionalInterfaces,
+                    $isReadonly,
+                ),
+                'use_statements'  =&gt; $useStatements,
+                'mock_class_name' =&gt; $_mockClassName['className'],
+                'methods'         =&gt; $mockedMethods,
+                'property_hooks'  =&gt; (new HookedPropertyGenerator)-&gt;generate(
+                    $_mockClassName['className'],
+                    $propertiesWithHooks,
+                ),
+            ],
+        );
+
+        return new MockClass(
+            $classTemplate-&gt;render(),
+            $_mockClassName['className'],
+            $configurableMethods,
+        );
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

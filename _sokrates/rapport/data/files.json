@@ -1,0 +1,1069 @@
+[ {
+  "relativePath" : "app/Http/Controllers/admin/DashboardController.php",
+  "extension" : "php",
+  "linesOfCode" : 155,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/AdminDevisController.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/ArtisanController.php",
+  "extension" : "php",
+  "linesOfCode" : 58,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/ConfirmPasswordController.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/ForgotPasswordController.php",
+  "extension" : "php",
+  "linesOfCode" : 8,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/LoginController.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/RegisterController.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/ResetPasswordController.php",
+  "extension" : "php",
+  "linesOfCode" : 9,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/Auth/VerificationController.php",
+  "extension" : "php",
+  "linesOfCode" : 15,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/AuthController.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/ChatController.php",
+  "extension" : "php",
+  "linesOfCode" : 66,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/Controller.php",
+  "extension" : "php",
+  "linesOfCode" : 5,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/DevisController.php",
+  "extension" : "php",
+  "linesOfCode" : 83,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/HomeController.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/MessageController.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/ProfessionController.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/ProfileController.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Http/Controllers/SocieteArtisanController.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/Artisan.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/Conversation.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/Devis.php",
+  "extension" : "php",
+  "linesOfCode" : 26,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/Message.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/MessagesUserArt.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/Profession.php",
+  "extension" : "php",
+  "linesOfCode" : 13,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/Service.php",
+  "extension" : "php",
+  "linesOfCode" : 9,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/SocieteArtisan.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Models/User.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "app/Providers/AppServiceProvider.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "components" : [ "primary::app" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "artisan_finder(1).sql",
+  "extension" : "sql",
+  "linesOfCode" : 111,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "bootstrap/app.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "components" : [ "primary::bootstrap" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "bootstrap/providers.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "components" : [ "primary::bootstrap" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/app.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/auth.php",
+  "extension" : "php",
+  "linesOfCode" : 28,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/cache.php",
+  "extension" : "php",
+  "linesOfCode" : 57,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/database.php",
+  "extension" : "php",
+  "linesOfCode" : 109,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/filesystems.php",
+  "extension" : "php",
+  "linesOfCode" : 36,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/logging.php",
+  "extension" : "php",
+  "linesOfCode" : 79,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/mail.php",
+  "extension" : "php",
+  "linesOfCode" : 57,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/queue.php",
+  "extension" : "php",
+  "linesOfCode" : 52,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/services.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "config/session.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "components" : [ "primary::config" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/factories/UserFactory.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/0001_01_01_000000_create_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/0001_01_01_000001_create_cache_table.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/0001_01_01_000002_create_jobs_table.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_05_27_164600_create_messages_table.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152838_create_artisans_table.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152839_create_professions_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152840_create_services_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_01_152840_create_societe_artisans_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_01_215847_add_type_user_to_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_20_095950_add_fields_to_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_20_105730_add_updated_at_to_artisans_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_20_140908_add_telephone_to_users_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_20_141421_add_updated_at_to_societe_artisan_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2025_06_20_141652_add_created_at_to_societe_artisan_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2026_01_25_043417_create_conversations_table.php",
+  "extension" : "php",
+  "linesOfCode" : 22,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2026_01_25_043501_create_messages_user_art_table.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2026_01_25_050708_add_user_id_to_artisans_table.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2026_02_06_041133_create_devis_table.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/migrations/2026_02_06_043838_fix_devis_foreign_key.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "database/seeders/DatabaseSeeder.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "components" : [ "primary::database" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "phpunit.xml",
+  "extension" : "xml",
+  "linesOfCode" : 33,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/css/login.css",
+  "extension" : "css",
+  "linesOfCode" : 119,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/css/style.css",
+  "extension" : "css",
+  "linesOfCode" : 1827,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/index.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/js/main.js",
+  "extension" : "js",
+  "linesOfCode" : 105,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/js/script.js",
+  "extension" : "js",
+  "linesOfCode" : 9,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/easing/easing.js",
+  "extension" : "js",
+  "linesOfCode" : 150,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/flaticon/font/flaticon.css",
+  "extension" : "css",
+  "linesOfCode" : 34,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/flaticon/font/flaticon.html",
+  "extension" : "html",
+  "linesOfCode" : 457,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/flaticon/font/_flaticon.scss",
+  "extension" : "scss",
+  "linesOfCode" : 51,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/isotope/isotope.pkgd.js",
+  "extension" : "js",
+  "linesOfCode" : 2193,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::TODOs" ]
+}, {
+  "relativePath" : "public/lib/lightbox/css/lightbox.css",
+  "extension" : "css",
+  "linesOfCode" : 176,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/lightbox/js/lightbox.js",
+  "extension" : "js",
+  "linesOfCode" : 372,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/lightbox/links.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.carousel.css",
+  "extension" : "css",
+  "linesOfCode" : 132,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.default.css",
+  "extension" : "css",
+  "linesOfCode" : 40,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.default.min.css",
+  "extension" : "css",
+  "linesOfCode" : 1,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.green.css",
+  "extension" : "css",
+  "linesOfCode" : 40,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/owlcarousel/assets/owl.theme.green.min.css",
+  "extension" : "css",
+  "linesOfCode" : 1,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/owlcarousel/owl.carousel.js",
+  "extension" : "js",
+  "linesOfCode" : 2420,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::TODOs" ]
+}, {
+  "relativePath" : "public/lib/slick/config.rb",
+  "extension" : "rb",
+  "linesOfCode" : 8,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/slick/slick-theme.css",
+  "extension" : "css",
+  "linesOfCode" : 170,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/slick/slick-theme.less",
+  "extension" : "less",
+  "linesOfCode" : 152,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/slick/slick-theme.scss",
+  "extension" : "scss",
+  "linesOfCode" : 170,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/slick/slick.css",
+  "extension" : "css",
+  "linesOfCode" : 104,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/slick/slick.js",
+  "extension" : "js",
+  "linesOfCode" : 2129,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/slick/slick.less",
+  "extension" : "less",
+  "linesOfCode" : 87,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/slick/slick.scss",
+  "extension" : "scss",
+  "linesOfCode" : 87,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/waypoints/links.php",
+  "extension" : "php",
+  "linesOfCode" : 5,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "public/lib/wow/wow.js",
+  "extension" : "js",
+  "linesOfCode" : 472,
+  "components" : [ "primary::public" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/css/app.css",
+  "extension" : "css",
+  "linesOfCode" : 9,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/js/app.js",
+  "extension" : "js",
+  "linesOfCode" : 1,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/sass/app.scss",
+  "extension" : "scss",
+  "linesOfCode" : 3,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/sass/_variables.scss",
+  "extension" : "scss",
+  "linesOfCode" : 4,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/artisans.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 37,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/artisans_edit.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 86,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/dashboard.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 158,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/devis/index.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 88,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/layout.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 154,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/messages.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 41,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/professions.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 41,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/professions_create.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 73,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/professions_edit.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 74,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/societes.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 40,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/societes_edit.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 86,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/users.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/admin/users_edit.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 74,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/auth/login_register.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 90,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/chat/inbox.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/chat/show.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 76,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/devis/client.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 73,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/devis/create.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/front/about.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 122,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/front/art_ind.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 143,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/front/art_soc.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 136,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/front/contact.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 133,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/front/profile.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 143,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/front/profile_edit.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 88,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/front/service.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 80,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/home.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/index.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 392,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/layout/footer.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/layout/nav_bar.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 68,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/layout/question.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 138,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/layout/sendMessage.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/layout/topbar.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 50,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/layouts/app.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 63,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/partials/artisan_cards.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/partials/societes_liste.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 28,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "resources/views/partials/societe_cards.blade.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "components" : [ "primary::resources" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "routes/console.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "components" : [ "primary::routes" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "routes/web.php",
+  "extension" : "php",
+  "linesOfCode" : 72,
+  "components" : [ "primary::routes" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/004ed925fbe1d09044debc456e62d827.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/0c456e314895cb449b8d614e42e49ebf.php",
+  "extension" : "php",
+  "linesOfCode" : 86,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/10f901c7953f4e8ea057ed7b65e682a0.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/11645604c66a043295727c16c23c5623.php",
+  "extension" : "php",
+  "linesOfCode" : 134,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/1a79ca30f83d99d5801266a79bab3e2b.php",
+  "extension" : "php",
+  "linesOfCode" : 107,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/27a0bce4217d61e93e337c865ba09c59.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/2ba9bad757a519fab2a687debe56dfad.php",
+  "extension" : "php",
+  "linesOfCode" : 73,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/2dad63890ee4ae3835a6dc33f68fd08a.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/2fdb02cfdf9db42e74a80a071ef0ac56.php",
+  "extension" : "php",
+  "linesOfCode" : 41,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/304f8051e527d7a891c786c0521d648e.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/363e70e480a2c512b7859cb262374f7b.php",
+  "extension" : "php",
+  "linesOfCode" : 89,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/3add5ab67003a3b580123d4b75450e14.php",
+  "extension" : "php",
+  "linesOfCode" : 155,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/5342c8c1fe35637bc2db25662910d9b2.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/57c6e8063f683b8581c20fcd8d2f171f.php",
+  "extension" : "php",
+  "linesOfCode" : 6,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/58b00bb5c9ae4529a07c852aa2e2432d.php",
+  "extension" : "php",
+  "linesOfCode" : 144,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/63ccf8ba014fb693f0b8f031f88d5c96.php",
+  "extension" : "php",
+  "linesOfCode" : 84,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/6ad0da796f2fd26d59570553557c6b71.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/79735874e300024b53ad0cdaee2033e8.php",
+  "extension" : "php",
+  "linesOfCode" : 40,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/7aa88300e09d948d57b2f2937f376c33.php",
+  "extension" : "php",
+  "linesOfCode" : 90,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/858eb0eae45d87ae9a4f0d5af905391f.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/8c409b2ffc58b4419d9aac205d3d1608.php",
+  "extension" : "php",
+  "linesOfCode" : 193,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/9020cdf6d6b39b43d4ae69ef674c085a.php",
+  "extension" : "php",
+  "linesOfCode" : 156,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/a0fee796d5e400644cc0b6076ce42275.php",
+  "extension" : "php",
+  "linesOfCode" : 172,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/a676a4e86c9d3a8df5b458911a464d71.php",
+  "extension" : "php",
+  "linesOfCode" : 139,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/ba3262651b9ba9737acf261241d54870.php",
+  "extension" : "php",
+  "linesOfCode" : 86,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/ba6024d816e0fafd99e84eba11c4bf6d.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/bc6f3c83cacd630d8afdbd2a802142cf.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/bdcbdc4c482e821d8522f70e14b44623.php",
+  "extension" : "php",
+  "linesOfCode" : 183,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/c0d73acd37943e5e6e6cb12d115ff894.php",
+  "extension" : "php",
+  "linesOfCode" : 41,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/c21f0ded99e9e9d26fc9ba186ed1861d.php",
+  "extension" : "php",
+  "linesOfCode" : 70,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/c3f0d25a5c5d77e16aeffba5bf91e595.php",
+  "extension" : "php",
+  "linesOfCode" : 137,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/ca5c895d99c0c11e055b7a435bd5da49.php",
+  "extension" : "php",
+  "linesOfCode" : 69,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/ca9a508ef47dc23e718892b4aabbad7c.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/cc8d0eec74aa499f7d0da28447204581.php",
+  "extension" : "php",
+  "linesOfCode" : 74,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/cc94ab1dca712cc6faf2b85441bbfcf0.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/cd673d8e3ebf6b27cba7b48b3f549030.php",
+  "extension" : "php",
+  "linesOfCode" : 74,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/d6607d6a59e853dbaea0195dedbfb60a.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/d83edad1fe926ca403ca8a2b9a7255bb.php",
+  "extension" : "php",
+  "linesOfCode" : 4,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/d8a9d403d8888107e63e337c823d1c6a.php",
+  "extension" : "php",
+  "linesOfCode" : 37,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/dcb36a344db364a89e61f1aafa645c0d.php",
+  "extension" : "php",
+  "linesOfCode" : 74,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/e6feacc5c0b3a528b4ee663b3f902f99.php",
+  "extension" : "php",
+  "linesOfCode" : 393,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/e83e3487037beb8e85372857271fd2d8.php",
+  "extension" : "php",
+  "linesOfCode" : 159,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "storage/framework/views/f8de69c6fee56f52c44947c0b83de2a1.php",
+  "extension" : "php",
+  "linesOfCode" : 40,
+  "components" : [ "primary::storage" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "vite.config.js",
+  "extension" : "js",
+  "linesOfCode" : 13,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+} ]

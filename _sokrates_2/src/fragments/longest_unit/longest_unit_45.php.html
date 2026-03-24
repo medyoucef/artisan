@@ -1,0 +1,183 @@
+<html>
+<head>
+    <title>private function elements()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function elements()</h3>
+<p style="margin-top: 4px">in <i>vendor/phpunit/phpunit/src/TextUI/Help.php [149:309]</i></p>
+<ul>
+    <li><b>143</b> lines of code</li>
+    <li><b>2</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function elements(): array
+    {
+        $elements = [
+            'Usage' =&gt; [
+                ['text' =&gt; 'phpunit [options] &lt;directory|file&gt; ...'],
+            ],
+
+            'Configuration' =&gt; [
+                ['arg' =&gt; '--bootstrap &lt;file&gt;', 'desc' =&gt; 'A PHP script that is included before the tests run'],
+                ['arg' =&gt; '-c|--configuration &lt;file&gt;', 'desc' =&gt; 'Read configuration from XML file'],
+                ['arg' =&gt; '--no-configuration', 'desc' =&gt; 'Ignore default configuration file (phpunit.xml)'],
+                ['arg' =&gt; '--extension &lt;class&gt;', 'desc' =&gt; 'Register test runner extension with bootstrap &lt;class&gt;'],
+                ['arg' =&gt; '--no-extensions', 'desc' =&gt; 'Do not register test runner extensions'],
+                ['arg' =&gt; '--include-path &lt;path(s)&gt;', 'desc' =&gt; 'Prepend PHP\'s include_path with given path(s)'],
+                ['arg' =&gt; '-d &lt;key[=value]&gt;', 'desc' =&gt; 'Sets a php.ini value'],
+                ['arg' =&gt; '--cache-directory &lt;dir&gt;', 'desc' =&gt; 'Specify cache directory'],
+                ['arg' =&gt; '--generate-configuration', 'desc' =&gt; 'Generate configuration file with suggested settings'],
+                ['arg' =&gt; '--migrate-configuration', 'desc' =&gt; 'Migrate configuration file to current format'],
+                ['arg' =&gt; '--generate-baseline &lt;file&gt;', 'desc' =&gt; 'Generate baseline for issues'],
+                ['arg' =&gt; '--use-baseline &lt;file&gt;', 'desc' =&gt; 'Use baseline to ignore issues'],
+                ['arg' =&gt; '--ignore-baseline', 'desc' =&gt; 'Do not use baseline to ignore issues'],
+            ],
+
+            'Selection' =&gt; [
+                ['arg' =&gt; '--list-suites', 'desc' =&gt; 'List available test suites'],
+                ['arg' =&gt; '--testsuite &lt;name&gt;', 'desc' =&gt; 'Only run tests from the specified test suite(s)'],
+                ['arg' =&gt; '--exclude-testsuite &lt;name&gt;', 'desc' =&gt; 'Exclude tests from the specified test suite(s)'],
+                ['arg' =&gt; '--list-groups', 'desc' =&gt; 'List available test groups'],
+                ['arg' =&gt; '--group &lt;name&gt;', 'desc' =&gt; 'Only run tests from the specified group(s)'],
+                ['arg' =&gt; '--exclude-group &lt;name&gt;', 'desc' =&gt; 'Exclude tests from the specified group(s)'],
+                ['arg' =&gt; '--covers &lt;name&gt;', 'desc' =&gt; 'Only run tests that intend to cover &lt;name&gt;'],
+                ['arg' =&gt; '--uses &lt;name&gt;', 'desc' =&gt; 'Only run tests that intend to use &lt;name&gt;'],
+                ['arg' =&gt; '--requires-php-extension &lt;name&gt;', 'desc' =&gt; 'Only run tests that require PHP extension &lt;name&gt;'],
+                ['arg' =&gt; '--list-test-files', 'desc' =&gt; 'List available test files'],
+                ['arg' =&gt; '--list-tests', 'desc' =&gt; 'List available tests'],
+                ['arg' =&gt; '--list-tests-xml &lt;file&gt;', 'desc' =&gt; 'List available tests in XML format'],
+                ['arg' =&gt; '--filter &lt;pattern&gt;', 'desc' =&gt; 'Filter which tests to run'],
+                ['arg' =&gt; '--exclude-filter &lt;pattern&gt;', 'desc' =&gt; 'Exclude tests for the specified filter pattern'],
+                ['arg' =&gt; '--test-suffix &lt;suffixes&gt;', 'desc' =&gt; 'Only search for test in files with specified suffix(es). Default: Test.php,.phpt'],
+            ],
+
+            'Execution' =&gt; [
+                ['arg' =&gt; '--process-isolation', 'desc' =&gt; 'Run each test in a separate PHP process'],
+                ['arg'    =&gt; '--globals-backup', 'desc' =&gt; 'Backup and restore $GLOBALS for each test'],
+                ['arg'    =&gt; '--static-backup', 'desc' =&gt; 'Backup and restore static properties for each test'],
+                ['spacer' =&gt; ''],
+
+                ['arg'    =&gt; '--strict-coverage', 'desc' =&gt; 'Be strict about code coverage metadata'],
+                ['arg'    =&gt; '--strict-global-state', 'desc' =&gt; 'Be strict about changes to global state'],
+                ['arg'    =&gt; '--disallow-test-output', 'desc' =&gt; 'Be strict about output during tests'],
+                ['arg'    =&gt; '--enforce-time-limit', 'desc' =&gt; 'Enforce time limit based on test size'],
+                ['arg'    =&gt; '--default-time-limit &lt;sec&gt;', 'desc' =&gt; 'Timeout in seconds for tests that have no declared size'],
+                ['arg'    =&gt; '--dont-report-useless-tests', 'desc' =&gt; 'Do not report tests that do not test anything'],
+                ['spacer' =&gt; ''],
+
+                ['arg'    =&gt; '--stop-on-defect', 'desc' =&gt; 'Stop after first error, failure, warning, or risky test'],
+                ['arg'    =&gt; '--stop-on-error', 'desc' =&gt; 'Stop after first error'],
+                ['arg'    =&gt; '--stop-on-failure', 'desc' =&gt; 'Stop after first failure'],
+                ['arg'    =&gt; '--stop-on-warning', 'desc' =&gt; 'Stop after first warning'],
+                ['arg'    =&gt; '--stop-on-risky', 'desc' =&gt; 'Stop after first risky test'],
+                ['arg'    =&gt; '--stop-on-deprecation', 'desc' =&gt; 'Stop after first test that triggered a deprecation'],
+                ['arg'    =&gt; '--stop-on-notice', 'desc' =&gt; 'Stop after first test that triggered a notice'],
+                ['arg'    =&gt; '--stop-on-skipped', 'desc' =&gt; 'Stop after first skipped test'],
+                ['arg'    =&gt; '--stop-on-incomplete', 'desc' =&gt; 'Stop after first incomplete test'],
+                ['spacer' =&gt; ''],
+
+                ['arg'    =&gt; '--fail-on-empty-test-suite', 'desc' =&gt; 'Signal failure using shell exit code when no tests were run'],
+                ['arg'    =&gt; '--fail-on-warning', 'desc' =&gt; 'Signal failure using shell exit code when a warning was triggered'],
+                ['arg'    =&gt; '--fail-on-risky', 'desc' =&gt; 'Signal failure using shell exit code when a test was considered risky'],
+                ['arg'    =&gt; '--fail-on-deprecation', 'desc' =&gt; 'Signal failure using shell exit code when a deprecation was triggered'],
+                ['arg'    =&gt; '--fail-on-phpunit-deprecation', 'desc' =&gt; 'Signal failure using shell exit code when a PHPUnit deprecation was triggered'],
+                ['arg'    =&gt; '--fail-on-notice', 'desc' =&gt; 'Signal failure using shell exit code when a notice was triggered'],
+                ['arg'    =&gt; '--fail-on-skipped', 'desc' =&gt; 'Signal failure using shell exit code when a test was skipped'],
+                ['arg'    =&gt; '--fail-on-incomplete', 'desc' =&gt; 'Signal failure using shell exit code when a test was marked incomplete'],
+                ['arg'    =&gt; '--fail-on-all-issues', 'desc' =&gt; 'Signal failure using shell exit code when an issue is triggered'],
+                ['spacer' =&gt; ''],
+
+                ['arg'    =&gt; '--cache-result', 'desc' =&gt; 'Write test results to cache file'],
+                ['arg'    =&gt; '--do-not-cache-result', 'desc' =&gt; 'Do not write test results to cache file'],
+                ['spacer' =&gt; ''],
+
+                ['arg' =&gt; '--order-by &lt;order&gt;', 'desc' =&gt; 'Run tests in order: default|defects|depends|duration|no-depends|random|reverse|size'],
+                ['arg' =&gt; '--random-order-seed &lt;N&gt;', 'desc' =&gt; 'Use the specified random seed when running tests in random order'],
+            ],
+
+            'Reporting' =&gt; [
+                ['arg' =&gt; '--colors &lt;flag&gt;', 'desc' =&gt; 'Use colors in output (&quot;never&quot;, &quot;auto&quot; or &quot;always&quot;)'],
+                ['arg'    =&gt; '--columns &lt;n&gt;', 'desc' =&gt; 'Number of columns to use for progress output'],
+                ['arg'    =&gt; '--columns max', 'desc' =&gt; 'Use maximum number of columns for progress output'],
+                ['arg'    =&gt; '--stderr', 'desc' =&gt; 'Write to STDERR instead of STDOUT'],
+                ['spacer' =&gt; ''],
+
+                ['arg'    =&gt; '--no-progress', 'desc' =&gt; 'Disable output of test execution progress'],
+                ['arg'    =&gt; '--no-results', 'desc' =&gt; 'Disable output of test results'],
+                ['arg'    =&gt; '--no-output', 'desc' =&gt; 'Disable all output'],
+                ['spacer' =&gt; ''],
+
+                ['arg'    =&gt; '--display-incomplete', 'desc' =&gt; 'Display details for incomplete tests'],
+                ['arg'    =&gt; '--display-skipped', 'desc' =&gt; 'Display details for skipped tests'],
+                ['arg'    =&gt; '--display-deprecations', 'desc' =&gt; 'Display details for deprecations triggered by tests'],
+                ['arg'    =&gt; '--display-phpunit-deprecations', 'desc' =&gt; 'Display details for PHPUnit deprecations'],
+                ['arg'    =&gt; '--display-errors', 'desc' =&gt; 'Display details for errors triggered by tests'],
+                ['arg'    =&gt; '--display-notices', 'desc' =&gt; 'Display details for notices triggered by tests'],
+                ['arg'    =&gt; '--display-warnings', 'desc' =&gt; 'Display details for warnings triggered by tests'],
+                ['arg'    =&gt; '--display-all-issues', 'desc' =&gt; 'Display details for all issues that are triggered'],
+                ['arg'    =&gt; '--reverse-list', 'desc' =&gt; 'Print defects in reverse order'],
+                ['spacer' =&gt; ''],
+
+                ['arg'    =&gt; '--teamcity', 'desc' =&gt; 'Replace default progress and result output with TeamCity format'],
+                ['arg'    =&gt; '--testdox', 'desc' =&gt; 'Replace default result output with TestDox format'],
+                ['arg'    =&gt; '--testdox-summary', 'desc' =&gt; 'Repeat TestDox output for tests with errors, failures, or issues'],
+                ['spacer' =&gt; ''],
+
+                ['arg' =&gt; '--debug', 'desc' =&gt; 'Replace default progress and result output with debugging information'],
+            ],
+
+            'Logging' =&gt; [
+                ['arg' =&gt; '--log-junit &lt;file&gt;', 'desc' =&gt; 'Write test results in JUnit XML format to file'],
+                ['arg' =&gt; '--log-teamcity &lt;file&gt;', 'desc' =&gt; 'Write test results in TeamCity format to file'],
+                ['arg' =&gt; '--testdox-html &lt;file&gt;', 'desc' =&gt; 'Write test results in TestDox format (HTML) to file'],
+                ['arg' =&gt; '--testdox-text &lt;file&gt;', 'desc' =&gt; 'Write test results in TestDox format (plain text) to file'],
+                ['arg' =&gt; '--log-events-text &lt;file&gt;', 'desc' =&gt; 'Stream events as plain text to file'],
+                ['arg' =&gt; '--log-events-verbose-text &lt;file&gt;', 'desc' =&gt; 'Stream events as plain text with extended information to file'],
+                ['arg' =&gt; '--no-logging', 'desc' =&gt; 'Ignore logging configured in the XML configuration file'],
+            ],
+
+            'Code Coverage' =&gt; [
+                ['arg' =&gt; '--coverage-clover &lt;file&gt;', 'desc' =&gt; 'Write code coverage report in Clover XML format to file'],
+                ['arg' =&gt; '--coverage-cobertura &lt;file&gt;', 'desc' =&gt; 'Write code coverage report in Cobertura XML format to file'],
+                ['arg' =&gt; '--coverage-crap4j &lt;file&gt;', 'desc' =&gt; 'Write code coverage report in Crap4J XML format to file'],
+                ['arg' =&gt; '--coverage-html &lt;dir&gt;', 'desc' =&gt; 'Write code coverage report in HTML format to directory'],
+                ['arg' =&gt; '--coverage-php &lt;file&gt;', 'desc' =&gt; 'Write serialized code coverage data to file'],
+                ['arg' =&gt; '--coverage-text=&lt;file&gt;', 'desc' =&gt; 'Write code coverage report in text format to file [default: standard output]'],
+                ['arg' =&gt; '--only-summary-for-coverage-text', 'desc' =&gt; 'Option for code coverage report in text format: only show summary'],
+                ['arg' =&gt; '--show-uncovered-for-coverage-text', 'desc' =&gt; 'Option for code coverage report in text format: show uncovered files'],
+                ['arg' =&gt; '--coverage-xml &lt;dir&gt;', 'desc' =&gt; 'Write code coverage report in XML format to directory'],
+                ['arg' =&gt; '--warm-coverage-cache', 'desc' =&gt; 'Warm static analysis cache'],
+                ['arg' =&gt; '--coverage-filter &lt;dir&gt;', 'desc' =&gt; 'Include &lt;dir&gt; in code coverage reporting'],
+                ['arg' =&gt; '--path-coverage', 'desc' =&gt; 'Report path coverage in addition to line coverage'],
+                ['arg' =&gt; '--disable-coverage-ignore', 'desc' =&gt; 'Disable metadata for ignoring code coverage'],
+                ['arg' =&gt; '--no-coverage', 'desc' =&gt; 'Ignore code coverage reporting configured in the XML configuration file'],
+            ],
+        ];
+
+        if (defined('__PHPUNIT_PHAR__')) {
+            $elements['PHAR'] = [
+                ['arg' =&gt; '--manifest', 'desc' =&gt; 'Print Software Bill of Materials (SBOM) in plain-text format'],
+                ['arg' =&gt; '--sbom', 'desc' =&gt; 'Print Software Bill of Materials (SBOM) in CycloneDX XML format'],
+                ['arg' =&gt; '--composer-lock', 'desc' =&gt; 'Print composer.lock file used to build the PHAR'],
+            ];
+        }
+
+        $elements['Miscellaneous'] = [
+            ['arg' =&gt; '-h|--help', 'desc' =&gt; 'Prints this usage information'],
+            ['arg' =&gt; '--version', 'desc' =&gt; 'Prints the version and exits'],
+            ['arg' =&gt; '--atleast-version &lt;min&gt;', 'desc' =&gt; 'Checks that version is greater than &lt;min&gt; and exits'],
+            ['arg' =&gt; '--check-version', 'desc' =&gt; 'Checks whether PHPUnit is the latest version and exits'],
+        ];
+
+        return $elements;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

@@ -1,0 +1,171 @@
+<html>
+<head>
+    <title>public function __call()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function __call()</h3>
+<p style="margin-top: 4px">in <i>vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php [1639:1787]</i></p>
+<ul>
+    <li><b>115</b> lines of code</li>
+    <li><b>52</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function __call(string $method, array $parameters): mixed
+    {
+        if (static::hasMacro($method)) {
+            return static::bindMacroContext($this, fn () =&gt; $this-&gt;callMacro($method, $parameters));
+        }
+
+        $roundedValue = $this-&gt;callRoundMethod($method, $parameters);
+
+        if ($roundedValue !== null) {
+            return $roundedValue;
+        }
+
+        $count = \count($parameters);
+
+        switch ($method) {
+            case 'start':
+            case 'since':
+                if ($count === 0) {
+                    return $this-&gt;getStartDate();
+                }
+
+                self::setDefaultParameters($parameters, [
+                    [0, 'date', null],
+                ]);
+
+                return $this-&gt;setStartDate(...$parameters);
+
+            case 'sinceNow':
+                return $this-&gt;setStartDate(new Carbon(), ...$parameters);
+
+            case 'end':
+            case 'until':
+                if ($count === 0) {
+                    return $this-&gt;getEndDate();
+                }
+
+                self::setDefaultParameters($parameters, [
+                    [0, 'date', null],
+                ]);
+
+                return $this-&gt;setEndDate(...$parameters);
+
+            case 'untilNow':
+                return $this-&gt;setEndDate(new Carbon(), ...$parameters);
+
+            case 'dates':
+            case 'between':
+                self::setDefaultParameters($parameters, [
+                    [0, 'start', null],
+                    [1, 'end', null],
+                ]);
+
+                return $this-&gt;setDates(...$parameters);
+
+            case 'recurrences':
+            case 'times':
+                if ($count === 0) {
+                    return $this-&gt;getRecurrences();
+                }
+
+                self::setDefaultParameters($parameters, [
+                    [0, 'recurrences', null],
+                ]);
+
+                return $this-&gt;setRecurrences(...$parameters);
+
+            case 'options':
+                if ($count === 0) {
+                    return $this-&gt;getOptions();
+                }
+
+                self::setDefaultParameters($parameters, [
+                    [0, 'options', null],
+                ]);
+
+                return $this-&gt;setOptions(...$parameters);
+
+            case 'toggle':
+                self::setDefaultParameters($parameters, [
+                    [0, 'options', null],
+                ]);
+
+                return $this-&gt;toggleOptions(...$parameters);
+
+            case 'filter':
+            case 'push':
+                return $this-&gt;addFilter(...$parameters);
+
+            case 'prepend':
+                return $this-&gt;prependFilter(...$parameters);
+
+            case 'filters':
+                if ($count === 0) {
+                    return $this-&gt;getFilters();
+                }
+
+                self::setDefaultParameters($parameters, [
+                    [0, 'filters', []],
+                ]);
+
+                return $this-&gt;setFilters(...$parameters);
+
+            case 'interval':
+            case 'each':
+            case 'every':
+            case 'step':
+            case 'stepBy':
+                if ($count === 0) {
+                    return $this-&gt;getDateInterval();
+                }
+
+                return $this-&gt;setDateInterval(...$parameters);
+
+            case 'invert':
+                return $this-&gt;invertDateInterval();
+
+            case 'years':
+            case 'year':
+            case 'months':
+            case 'month':
+            case 'weeks':
+            case 'week':
+            case 'days':
+            case 'dayz':
+            case 'day':
+            case 'hours':
+            case 'hour':
+            case 'minutes':
+            case 'minute':
+            case 'seconds':
+            case 'second':
+            case 'milliseconds':
+            case 'millisecond':
+            case 'microseconds':
+            case 'microsecond':
+                return $this-&gt;setDateInterval((
+                    // Override default P1D when instantiating via fluent setters.
+                    [$this-&gt;isDefaultInterval ? new CarbonInterval('PT0S') : $this-&gt;dateInterval, $method]
+                )(...$parameters));
+        }
+
+        $dateClass = $this-&gt;dateClass;
+
+        if ($this-&gt;localStrictModeEnabled ?? $dateClass::isStrictModeEnabled()) {
+            throw new UnknownMethodException($method);
+        }
+
+        return $this;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

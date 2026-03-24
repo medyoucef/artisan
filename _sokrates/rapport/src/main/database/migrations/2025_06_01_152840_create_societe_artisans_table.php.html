@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>database/migrations/2025_06_01_152840_create_societe_artisans_table.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">database/migrations/2025_06_01_152840_create_societe_artisans_table.php (<b>21</b> lines of code) (<a href="2025_06_01_152840_create_societe_artisans_table.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('societe_artisan', function (Blueprint $table) {
+            $table-&gt;id();
+            $table-&gt;string('name');
+            $table-&gt;text('description')-&gt;nullable();
+            $table-&gt;string('photo')-&gt;nullable();
+            $table-&gt;timestamps();
+        });
+        
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('societe_artisans');
+    }
+};
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>
