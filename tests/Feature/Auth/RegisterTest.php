@@ -14,12 +14,16 @@ class RegisterTest extends TestCase
     {
         $response = $this->post('/register', [
             'name' => 'Karim',
+            'username' => 'karim123',
+            'type_user' => 'client',
             'email' => 'karim@example.com',
             'password' => 'password123',
             'password_confirmation' => 'password123',
         ]);
+        
 
-        $response->assertRedirect('/home');
+        $response->assertRedirect('/');
+
 
         $this->assertDatabaseHas('users', [
             'email' => 'karim@example.com',

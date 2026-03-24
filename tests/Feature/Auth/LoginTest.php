@@ -21,7 +21,8 @@ class LoginTest extends TestCase
         'password' => 'password123',
     ]);
 
-    $response->assertRedirect('/home');
+    $response->assertRedirect('/');
+
     $this->assertAuthenticatedAs($user);
 }
 public function test_login_fails_with_invalid_password()
