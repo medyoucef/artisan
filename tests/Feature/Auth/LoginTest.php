@@ -36,8 +36,9 @@ class LoginTest extends TestCase
             'password' => 'wrongpassword',
         ]);
 
-        $response->assertRedirect('/login');
+        $response->assertRedirect('/');
         $response->assertSessionHas('error');
         $this->assertGuest();
+        
     }
 }

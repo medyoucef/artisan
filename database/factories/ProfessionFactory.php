@@ -12,7 +12,7 @@ class ProfessionFactory extends Factory
     public function definition()
     {
         return [
-            'nom' => $this->faker->jobTitle(),
+            'name' => $this->faker->jobTitle(),
         ];
     }
 }
