@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Artisan;
+use App\Models\Profession;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ArtisanFactory extends Factory
@@ -13,7 +14,7 @@ class ArtisanFactory extends Factory
     {
         return [
             'nom' => $this->faker->name(),
-            'profession' => 'Plombier',
+            'profession' => Profession::factory(),
             'ville' => 'Montreal',
             'adresse' => $this->faker->address(),
         ];

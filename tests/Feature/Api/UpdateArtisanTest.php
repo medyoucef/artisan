@@ -4,6 +4,7 @@ namespace Tests\Feature\Api;
 
 use Tests\TestCase;
 use App\Models\Artisan;
+use App\Models\Profession;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UpdateArtisanTest extends TestCase
@@ -11,25 +12,27 @@ class UpdateArtisanTest extends TestCase
     use RefreshDatabase;
 
     public function test_can_update_artisan_via_api()
-{
-    $artisan = Artisan::factory()->create([
-        'nom' => 'Karim',
-        'profession' => 1, // ou Profession::factory()
+    {
+        $profession = Profession::factory()->create();
+        $artisan = Artisan::factory()->create([
+            'profession' => $profession->id
+        ]);
 
-    ]);
+        $newProfession = Profession::factory()->create();
 
-    $response = $this->putJson("/api/artisans/{$artisan->id}", [
-        'nom' => 'Karim Updated',
-        'profession' => 'Électricien'
-    ]);
+        $response = $this->put('/admin/artisans/' . $artisan->id, [
+            'nom' => 'Karim Updated',
+            'profession' => $newProfession->id,
+            'ville' => 'Montreal',
+            'adresse' => '123 rue X'
+        ]);
 
-    $response->assertStatus(200)
-             ->assertJsonFragment(['nom' => 'Karim Updated']);
+        $response->assertStatus(302);
 
-    $this->assertDatabaseHas('artisans', [
-        'id' => $artisan->id,
-        'profession' => 'Électricien'
-    ]);
-}
-
+        $this->assertDatabaseHas('artisans', [
+            'id' => $artisan->id,
+            'nom' => 'Karim Updated',
+            'profession' => $newProfession->id
+        ]);
+    }
 }

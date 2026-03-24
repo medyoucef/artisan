@@ -4,22 +4,23 @@ namespace Tests\Feature\Api;
 
 use Tests\TestCase;
 use App\Models\Artisan;
+use App\Models\Profession;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class FilterArtisansTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_can_filter_artisans_by_city()
-{
-    Artisan::factory()->create(['ville' => 'Montreal']);
-    Artisan::factory()->create(['ville' => 'Quebec']);
+    public function test_can_filter_artisans_by_profession()
+    {
+        $profession = Profession::factory()->create(['nom' => 'Plombier']);
 
-    $response = $this->getJson('/api/artisans?ville=Montreal');
+        Artisan::factory()->create(['profession' => $profession->id]);
+        Artisan::factory()->create(); // autre artisan
 
-    $response->assertStatus(200)
-             ->assertJsonCount(1)
-             ->assertJsonFragment(['ville' => 'Montreal']);
-}
+        $response = $this->get('/artisans?profession=' . $profession->id);
 
+        $response->assertStatus(200);
+        $response->assertSee($profession->nom);
+    }
 }

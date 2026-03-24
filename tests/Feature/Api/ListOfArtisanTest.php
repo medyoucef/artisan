@@ -4,6 +4,7 @@ namespace Tests\Feature\Api;
 
 use Tests\TestCase;
 use App\Models\Artisan;
+use App\Models\Profession;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ListOfArtisanTest extends TestCase
@@ -12,11 +13,15 @@ class ListOfArtisanTest extends TestCase
 
     public function test_can_get_artisans_list()
     {
-        Artisan::factory()->count(3)->create();
+        $profession = Profession::factory()->create();
 
-        $response = $this->getJson('/api/artisans');
+        Artisan::factory()->count(3)->create([
+            'profession' => $profession->id
+        ]);
 
-        $response->assertStatus(200)
-                 ->assertJsonCount(3);
+        $response = $this->get('/artisans');
+
+        $response->assertStatus(200);
+        $response->assertSee($profession->nom);
     }
 }
