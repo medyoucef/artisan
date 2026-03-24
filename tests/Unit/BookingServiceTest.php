@@ -34,10 +34,11 @@ class BookingServiceTest extends TestCase
         $this->assertFalse($service->canBook($existing, $requested));
     }
 
-//     public function calculateDuration(Carbon $start, Carbon $end): int
-// {
-//     return $start->diffInMinutes($end);
-// }
+    public function calculateDuration(Carbon $start, Carbon $end): int
+{
+    return $start->diffInMinutes($end);
+}
+
 
 
     public function test_generate_booking_number()
