@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>private function getPluralizationRule()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function getPluralizationRule()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/translation-contracts/TranslatorTrait.php [133:224]</i></p>
+<ul>
+    <li><b>91</b> lines of code</li>
+    <li><b>49</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function getPluralizationRule(float $number, string $locale): int
+    {
+        $number = abs($number);
+
+        return match ('pt_BR' !== $locale &amp;&amp; 'en_US_POSIX' !== $locale &amp;&amp; \strlen($locale) &gt; 3 ? substr($locale, 0, strrpos($locale, '_')) : $locale) {
+            'af',
+            'bn',
+            'bg',
+            'ca',
+            'da',
+            'de',
+            'el',
+            'en',
+            'en_US_POSIX',
+            'eo',
+            'es',
+            'et',
+            'eu',
+            'fa',
+            'fi',
+            'fo',
+            'fur',
+            'fy',
+            'gl',
+            'gu',
+            'ha',
+            'he',
+            'hu',
+            'is',
+            'it',
+            'ku',
+            'lb',
+            'ml',
+            'mn',
+            'mr',
+            'nah',
+            'nb',
+            'ne',
+            'nl',
+            'nn',
+            'no',
+            'oc',
+            'om',
+            'or',
+            'pa',
+            'pap',
+            'ps',
+            'pt',
+            'so',
+            'sq',
+            'sv',
+            'sw',
+            'ta',
+            'te',
+            'tk',
+            'ur',
+            'zu' =&gt; (1 == $number) ? 0 : 1,
+            'am',
+            'bh',
+            'fil',
+            'fr',
+            'gun',
+            'hi',
+            'hy',
+            'ln',
+            'mg',
+            'nso',
+            'pt_BR',
+            'ti',
+            'wa' =&gt; ($number &lt; 2) ? 0 : 1,
+            'be',
+            'bs',
+            'hr',
+            'ru',
+            'sh',
+            'sr',
+            'uk' =&gt; ((1 == $number % 10) &amp;&amp; (11 != $number % 100)) ? 0 : ((($number % 10 &gt;= 2) &amp;&amp; ($number % 10 &lt;= 4) &amp;&amp; (($number % 100 &lt; 10) || ($number % 100 &gt;= 20))) ? 1 : 2),
+            'cs',
+            'sk' =&gt; (1 == $number) ? 0 : ((($number &gt;= 2) &amp;&amp; ($number &lt;= 4)) ? 1 : 2),
+            'ga' =&gt; (1 == $number) ? 0 : ((2 == $number) ? 1 : 2),
+            'lt' =&gt; ((1 == $number % 10) &amp;&amp; (11 != $number % 100)) ? 0 : ((($number % 10 &gt;= 2) &amp;&amp; (($number % 100 &lt; 10) || ($number % 100 &gt;= 20))) ? 1 : 2),
+            'sl' =&gt; (1 == $number % 100) ? 0 : ((2 == $number % 100) ? 1 : (((3 == $number % 100) || (4 == $number % 100)) ? 2 : 3)),
+            'mk' =&gt; (1 == $number % 10) ? 0 : 1,
+            'mt' =&gt; (1 == $number) ? 0 : (((0 == $number) || (($number % 100 &gt; 1) &amp;&amp; ($number % 100 &lt; 11))) ? 1 : ((($number % 100 &gt; 10) &amp;&amp; ($number % 100 &lt; 20)) ? 2 : 3)),
+            'lv' =&gt; (0 == $number) ? 0 : (((1 == $number % 10) &amp;&amp; (11 != $number % 100)) ? 1 : 2),
+            'pl' =&gt; (1 == $number) ? 0 : ((($number % 10 &gt;= 2) &amp;&amp; ($number % 10 &lt;= 4) &amp;&amp; (($number % 100 &lt; 12) || ($number % 100 &gt; 14))) ? 1 : 2),
+            'cy' =&gt; (1 == $number) ? 0 : ((2 == $number) ? 1 : (((8 == $number) || (11 == $number)) ? 2 : 3)),
+            'ro' =&gt; (1 == $number) ? 0 : (((0 == $number) || (($number % 100 &gt; 0) &amp;&amp; ($number % 100 &lt; 20))) ? 1 : 2),
+            'ar' =&gt; (0 == $number) ? 0 : ((1 == $number) ? 1 : ((2 == $number) ? 2 : ((($number % 100 &gt;= 3) &amp;&amp; ($number % 100 &lt;= 10)) ? 3 : ((($number % 100 &gt;= 11) &amp;&amp; ($number % 100 &lt;= 99)) ? 4 : 5)))),
+            default =&gt; 0,
+        };
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

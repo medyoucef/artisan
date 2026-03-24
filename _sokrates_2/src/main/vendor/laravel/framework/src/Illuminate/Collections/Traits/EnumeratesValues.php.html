@@ -1,0 +1,1206 @@
+<html>
+<head>
+    <title>vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php (<b>506</b> lines of code) (<a href="EnumeratesValues.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+namespace Illuminate\Support\Traits;
+
+use BackedEnum;
+use CachingIterator;
+use Closure;
+use Exception;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Enumerable;
+use Illuminate\Support\HigherOrderCollectionProxy;
+use JsonSerializable;
+use UnexpectedValueException;
+use UnitEnum;
+
+use function Illuminate\Support\enum_value;
+
+/**
+ * @template TKey of array-key
+ *
+ * @template-covariant TValue
+ *
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $average
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $avg
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $contains
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $doesntContain
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $each
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $every
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $filter
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $first
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $flatMap
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $groupBy
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $keyBy
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $last
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $map
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $max
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $min
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $partition
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $percentage
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $reject
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $skipUntil
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $skipWhile
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $some
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $sortBy
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $sortByDesc
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $sum
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $takeUntil
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $takeWhile
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $unique
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $unless
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $until
+ * @property-read HigherOrderCollectionProxy&lt;TKey, TValue&gt; $when
+ */
+trait EnumeratesValues
+{
+    use Conditionable;
+
+    /**
+     * Indicates that the object's string representation should be escaped when __toString is invoked.
+     *
+     * @var bool
+     */
+    protected $escapeWhenCastingToString = false;
+
+    /**
+     * The methods that can be proxied.
+     *
+     * @var array&lt;int, string&gt;
+     */
+    protected static $proxies = [
+        'average',
+        'avg',
+        'contains',
+        'doesntContain',
+        'each',
+        'every',
+        'filter',
+        'first',
+        'flatMap',
+        'groupBy',
+        'keyBy',
+        'last',
+        'map',
+        'max',
+        'min',
+        'partition',
+        'percentage',
+        'reject',
+        'skipUntil',
+        'skipWhile',
+        'some',
+        'sortBy',
+        'sortByDesc',
+        'sum',
+        'takeUntil',
+        'takeWhile',
+        'unique',
+        'unless',
+        'until',
+        'when',
+    ];
+
+    /**
+     * Create a new collection instance if the value isn't one already.
+     *
+     * @template TMakeKey of array-key
+     * @template TMakeValue
+     *
+     * @param  \Illuminate\Contracts\Support\Arrayable&lt;TMakeKey, TMakeValue&gt;|iterable&lt;TMakeKey, TMakeValue&gt;|null  $items
+     * @return static&lt;TMakeKey, TMakeValue&gt;
+     */
+    public static function make($items = [])
+    {
+        return new static($items);
+    }
+
+    /**
+     * Wrap the given value in a collection if applicable.
+     *
+     * @template TWrapValue
+     *
+     * @param  iterable&lt;array-key, TWrapValue&gt;|TWrapValue  $value
+     * @return static&lt;array-key, TWrapValue&gt;
+     */
+    public static function wrap($value)
+    {
+        return $value instanceof Enumerable
+            ? new static($value)
+            : new static(Arr::wrap($value));
+    }
+
+    /**
+     * Get the underlying items from the given collection if applicable.
+     *
+     * @template TUnwrapKey of array-key
+     * @template TUnwrapValue
+     *
+     * @param  array&lt;TUnwrapKey, TUnwrapValue&gt;|static&lt;TUnwrapKey, TUnwrapValue&gt;  $value
+     * @return array&lt;TUnwrapKey, TUnwrapValue&gt;
+     */
+    public static function unwrap($value)
+    {
+        return $value instanceof Enumerable ? $value-&gt;all() : $value;
+    }
+
+    /**
+     * Create a new instance with no items.
+     *
+     * @return static
+     */
+    public static function empty()
+    {
+        return new static([]);
+    }
+
+    /**
+     * Create a new collection by invoking the callback a given amount of times.
+     *
+     * @template TTimesValue
+     *
+     * @param  int  $number
+     * @param  (callable(int): TTimesValue)|null  $callback
+     * @return static&lt;int, TTimesValue&gt;
+     */
+    public static function times($number, ?callable $callback = null)
+    {
+        if ($number &lt; 1) {
+            return new static;
+        }
+
+        return static::range(1, $number)
+            -&gt;unless($callback == null)
+            -&gt;map($callback);
+    }
+
+    /**
+     * Create a new collection by decoding a JSON string.
+     *
+     * @param  string  $json
+     * @param  int  $depth
+     * @param  int  $flags
+     * @return static&lt;TKey, TValue&gt;
+     */
+    public static function fromJson($json, $depth = 512, $flags = 0)
+    {
+        return new static(json_decode($json, true, $depth, $flags));
+    }
+
+    /**
+     * Get the average value of a given key.
+     *
+     * @param  (callable(TValue): float|int)|string|null  $callback
+     * @return float|int|null
+     */
+    public function avg($callback = null)
+    {
+        $callback = $this-&gt;valueRetriever($callback);
+
+        $reduced = $this-&gt;reduce(static function (&amp;$reduce, $value) use ($callback) {
+            if (! is_null($resolved = $callback($value))) {
+                $reduce[0] += $resolved;
+                $reduce[1]++;
+            }
+
+            return $reduce;
+        }, [0, 0]);
+
+        return $reduced[1] ? $reduced[0] / $reduced[1] : null;
+    }
+
+    /**
+     * Alias for the &quot;avg&quot; method.
+     *
+     * @param  (callable(TValue): float|int)|string|null  $callback
+     * @return float|int|null
+     */
+    public function average($callback = null)
+    {
+        return $this-&gt;avg($callback);
+    }
+
+    /**
+     * Alias for the &quot;contains&quot; method.
+     *
+     * @param  (callable(TValue, TKey): bool)|TValue|string  $key
+     * @param  mixed  $operator
+     * @param  mixed  $value
+     * @return bool
+     */
+    public function some($key, $operator = null, $value = null)
+    {
+        return $this-&gt;contains(...func_get_args());
+    }
+
+    /**
+     * Dump the given arguments and terminate execution.
+     *
+     * @param  mixed  ...$args
+     * @return never
+     */
+    public function dd(...$args)
+    {
+        dd($this-&gt;all(), ...$args);
+    }
+
+    /**
+     * Dump the items.
+     *
+     * @param  mixed  ...$args
+     * @return $this
+     */
+    public function dump(...$args)
+    {
+        dump($this-&gt;all(), ...$args);
+
+        return $this;
+    }
+
+    /**
+     * Execute a callback over each item.
+     *
+     * @param  callable(TValue, TKey): mixed  $callback
+     * @return $this
+     */
+    public function each(callable $callback)
+    {
+        foreach ($this as $key =&gt; $item) {
+            if ($callback($item, $key) === false) {
+                break;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Execute a callback over each nested chunk of items.
+     *
+     * @param  callable(...mixed): mixed  $callback
+     * @return static
+     */
+    public function eachSpread(callable $callback)
+    {
+        return $this-&gt;each(function ($chunk, $key) use ($callback) {
+            $chunk[] = $key;
+
+            return $callback(...$chunk);
+        });
+    }
+
+    /**
+     * Determine if all items pass the given truth test.
+     *
+     * @param  (callable(TValue, TKey): bool)|TValue|string  $key
+     * @param  mixed  $operator
+     * @param  mixed  $value
+     * @return bool
+     */
+    public function every($key, $operator = null, $value = null)
+    {
+        if (func_num_args() === 1) {
+            $callback = $this-&gt;valueRetriever($key);
+
+            foreach ($this as $k =&gt; $v) {
+                if (! $callback($v, $k)) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        return $this-&gt;every($this-&gt;operatorForWhere(...func_get_args()));
+    }
+
+    /**
+     * Get the first item by the given key value pair.
+     *
+     * @param  callable|string  $key
+     * @param  mixed  $operator
+     * @param  mixed  $value
+     * @return TValue|null
+     */
+    public function firstWhere($key, $operator = null, $value = null)
+    {
+        return $this-&gt;first($this-&gt;operatorForWhere(...func_get_args()));
+    }
+
+    /**
+     * Get a single key's value from the first matching item in the collection.
+     *
+     * @template TValueDefault
+     *
+     * @param  string  $key
+     * @param  TValueDefault|(\Closure(): TValueDefault)  $default
+     * @return TValue|TValueDefault
+     */
+    public function value($key, $default = null)
+    {
+        if ($value = $this-&gt;firstWhere($key)) {
+            return data_get($value, $key, $default);
+        }
+
+        return value($default);
+    }
+
+    /**
+     * Ensure that every item in the collection is of the expected type.
+     *
+     * @template TEnsureOfType
+     *
+     * @param  class-string&lt;TEnsureOfType&gt;|array&lt;array-key, class-string&lt;TEnsureOfType&gt;&gt;|'string'|'int'|'float'|'bool'|'array'|'null'  $type
+     * @return static&lt;TKey, TEnsureOfType&gt;
+     *
+     * @throws \UnexpectedValueException
+     */
+    public function ensure($type)
+    {
+        $allowedTypes = is_array($type) ? $type : [$type];
+
+        return $this-&gt;each(function ($item, $index) use ($allowedTypes) {
+            $itemType = get_debug_type($item);
+
+            foreach ($allowedTypes as $allowedType) {
+                if ($itemType === $allowedType || $item instanceof $allowedType) {
+                    return true;
+                }
+            }
+
+            throw new UnexpectedValueException(
+                sprintf(&quot;Collection should only include [%s] items, but '%s' found at position %d.&quot;, implode(', ', $allowedTypes), $itemType, $index)
+            );
+        });
+    }
+
+    /**
+     * Determine if the collection is not empty.
+     *
+     * @phpstan-assert-if-true TValue $this-&gt;first()
+     * @phpstan-assert-if-true TValue $this-&gt;last()
+     *
+     * @phpstan-assert-if-false null $this-&gt;first()
+     * @phpstan-assert-if-false null $this-&gt;last()
+     *
+     * @return bool
+     */
+    public function isNotEmpty()
+    {
+        return ! $this-&gt;isEmpty();
+    }
+
+    /**
+     * Run a map over each nested chunk of items.
+     *
+     * @template TMapSpreadValue
+     *
+     * @param  callable(mixed...): TMapSpreadValue  $callback
+     * @return static&lt;TKey, TMapSpreadValue&gt;
+     */
+    public function mapSpread(callable $callback)
+    {
+        return $this-&gt;map(function ($chunk, $key) use ($callback) {
+            $chunk[] = $key;
+
+            return $callback(...$chunk);
+        });
+    }
+
+    /**
+     * Run a grouping map over the items.
+     *
+     * The callback should return an associative array with a single key/value pair.
+     *
+     * @template TMapToGroupsKey of array-key
+     * @template TMapToGroupsValue
+     *
+     * @param  callable(TValue, TKey): array&lt;TMapToGroupsKey, TMapToGroupsValue&gt;  $callback
+     * @return static&lt;TMapToGroupsKey, static&lt;int, TMapToGroupsValue&gt;&gt;
+     */
+    public function mapToGroups(callable $callback)
+    {
+        $groups = $this-&gt;mapToDictionary($callback);
+
+        return $groups-&gt;map($this-&gt;make(...));
+    }
+
+    /**
+     * Map a collection and flatten the result by a single level.
+     *
+     * @template TFlatMapKey of array-key
+     * @template TFlatMapValue
+     *
+     * @param  callable(TValue, TKey): (\Illuminate\Support\Collection&lt;TFlatMapKey, TFlatMapValue&gt;|array&lt;TFlatMapKey, TFlatMapValue&gt;)  $callback
+     * @return static&lt;TFlatMapKey, TFlatMapValue&gt;
+     */
+    public function flatMap(callable $callback)
+    {
+        return $this-&gt;map($callback)-&gt;collapse();
+    }
+
+    /**
+     * Map the values into a new class.
+     *
+     * @template TMapIntoValue
+     *
+     * @param  class-string&lt;TMapIntoValue&gt;  $class
+     * @return static&lt;TKey, TMapIntoValue&gt;
+     */
+    public function mapInto($class)
+    {
+        if (is_subclass_of($class, BackedEnum::class)) {
+            return $this-&gt;map(fn ($value, $key) =&gt; $class::from($value));
+        }
+
+        return $this-&gt;map(fn ($value, $key) =&gt; new $class($value, $key));
+    }
+
+    /**
+     * Get the min value of a given key.
+     *
+     * @param  (callable(TValue):mixed)|string|null  $callback
+     * @return mixed
+     */
+    public function min($callback = null)
+    {
+        $callback = $this-&gt;valueRetriever($callback);
+
+        return $this-&gt;map(fn ($value) =&gt; $callback($value))
+            -&gt;reject(fn ($value) =&gt; is_null($value))
+            -&gt;reduce(fn ($result, $value) =&gt; is_null($result) || $value &lt; $result ? $value : $result);
+    }
+
+    /**
+     * Get the max value of a given key.
+     *
+     * @param  (callable(TValue):mixed)|string|null  $callback
+     * @return mixed
+     */
+    public function max($callback = null)
+    {
+        $callback = $this-&gt;valueRetriever($callback);
+
+        return $this-&gt;reject(fn ($value) =&gt; is_null($value))-&gt;reduce(function ($result, $item) use ($callback) {
+            $value = $callback($item);
+
+            return is_null($result) || $value &gt; $result ? $value : $result;
+        });
+    }
+
+    /**
+     * &quot;Paginate&quot; the collection by slicing it into a smaller collection.
+     *
+     * @param  int  $page
+     * @param  int  $perPage
+     * @return static
+     */
+    public function forPage($page, $perPage)
+    {
+        $offset = max(0, ($page - 1) * $perPage);
+
+        return $this-&gt;slice($offset, $perPage);
+    }
+
+    /**
+     * Partition the collection into two arrays using the given callback or key.
+     *
+     * @param  (callable(TValue, TKey): bool)|TValue|string  $key
+     * @param  TValue|string|null  $operator
+     * @param  TValue|null  $value
+     * @return static&lt;int&lt;0, 1&gt;, static&lt;TKey, TValue&gt;&gt;
+     */
+    public function partition($key, $operator = null, $value = null)
+    {
+        $callback = func_num_args() === 1
+            ? $this-&gt;valueRetriever($key)
+            : $this-&gt;operatorForWhere(...func_get_args());
+
+        [$passed, $failed] = Arr::partition($this-&gt;getIterator(), $callback);
+
+        return new static([new static($passed), new static($failed)]);
+    }
+
+    /**
+     * Calculate the percentage of items that pass a given truth test.
+     *
+     * @param  (callable(TValue, TKey): bool)  $callback
+     * @param  int  $precision
+     * @return float|null
+     */
+    public function percentage(callable $callback, int $precision = 2)
+    {
+        if ($this-&gt;isEmpty()) {
+            return null;
+        }
+
+        return round(
+            $this-&gt;filter($callback)-&gt;count() / $this-&gt;count() * 100,
+            $precision
+        );
+    }
+
+    /**
+     * Get the sum of the given values.
+     *
+     * @template TReturnType
+     *
+     * @param  (callable(TValue): TReturnType)|string|null  $callback
+     * @return ($callback is callable ? TReturnType : mixed)
+     */
+    public function sum($callback = null)
+    {
+        $callback = is_null($callback)
+            ? $this-&gt;identity()
+            : $this-&gt;valueRetriever($callback);
+
+        return $this-&gt;reduce(fn ($result, $item) =&gt; $result + $callback($item), 0);
+    }
+
+    /**
+     * Apply the callback if the collection is empty.
+     *
+     * @template TWhenEmptyReturnType
+     *
+     * @param  (callable($this): TWhenEmptyReturnType)  $callback
+     * @param  (callable($this): TWhenEmptyReturnType)|null  $default
+     * @return $this|TWhenEmptyReturnType
+     */
+    public function whenEmpty(callable $callback, ?callable $default = null)
+    {
+        return $this-&gt;when($this-&gt;isEmpty(), $callback, $default);
+    }
+
+    /**
+     * Apply the callback if the collection is not empty.
+     *
+     * @template TWhenNotEmptyReturnType
+     *
+     * @param  callable($this): TWhenNotEmptyReturnType  $callback
+     * @param  (callable($this): TWhenNotEmptyReturnType)|null  $default
+     * @return $this|TWhenNotEmptyReturnType
+     */
+    public function whenNotEmpty(callable $callback, ?callable $default = null)
+    {
+        return $this-&gt;when($this-&gt;isNotEmpty(), $callback, $default);
+    }
+
+    /**
+     * Apply the callback unless the collection is empty.
+     *
+     * @template TUnlessEmptyReturnType
+     *
+     * @param  callable($this): TUnlessEmptyReturnType  $callback
+     * @param  (callable($this): TUnlessEmptyReturnType)|null  $default
+     * @return $this|TUnlessEmptyReturnType
+     */
+    public function unlessEmpty(callable $callback, ?callable $default = null)
+    {
+        return $this-&gt;whenNotEmpty($callback, $default);
+    }
+
+    /**
+     * Apply the callback unless the collection is not empty.
+     *
+     * @template TUnlessNotEmptyReturnType
+     *
+     * @param  callable($this): TUnlessNotEmptyReturnType  $callback
+     * @param  (callable($this): TUnlessNotEmptyReturnType)|null  $default
+     * @return $this|TUnlessNotEmptyReturnType
+     */
+    public function unlessNotEmpty(callable $callback, ?callable $default = null)
+    {
+        return $this-&gt;whenEmpty($callback, $default);
+    }
+
+    /**
+     * Filter items by the given key value pair.
+     *
+     * @param  callable|string  $key
+     * @param  mixed  $operator
+     * @param  mixed  $value
+     * @return static
+     */
+    public function where($key, $operator = null, $value = null)
+    {
+        return $this-&gt;filter($this-&gt;operatorForWhere(...func_get_args()));
+    }
+
+    /**
+     * Filter items where the value for the given key is null.
+     *
+     * @param  string|null  $key
+     * @return static
+     */
+    public function whereNull($key = null)
+    {
+        return $this-&gt;whereStrict($key, null);
+    }
+
+    /**
+     * Filter items where the value for the given key is not null.
+     *
+     * @param  string|null  $key
+     * @return static
+     */
+    public function whereNotNull($key = null)
+    {
+        return $this-&gt;where($key, '!==', null);
+    }
+
+    /**
+     * Filter items by the given key value pair using strict comparison.
+     *
+     * @param  string  $key
+     * @param  mixed  $value
+     * @return static
+     */
+    public function whereStrict($key, $value)
+    {
+        return $this-&gt;where($key, '===', $value);
+    }
+
+    /**
+     * Filter items by the given key value pair.
+     *
+     * @param  string  $key
+     * @param  \Illuminate\Contracts\Support\Arrayable|iterable  $values
+     * @param  bool  $strict
+     * @return static
+     */
+    public function whereIn($key, $values, $strict = false)
+    {
+        $values = $this-&gt;getArrayableItems($values);
+
+        return $this-&gt;filter(fn ($item) =&gt; in_array(data_get($item, $key), $values, $strict));
+    }
+
+    /**
+     * Filter items by the given key value pair using strict comparison.
+     *
+     * @param  string  $key
+     * @param  \Illuminate\Contracts\Support\Arrayable|iterable  $values
+     * @return static
+     */
+    public function whereInStrict($key, $values)
+    {
+        return $this-&gt;whereIn($key, $values, true);
+    }
+
+    /**
+     * Filter items such that the value of the given key is between the given values.
+     *
+     * @param  string  $key
+     * @param  \Illuminate\Contracts\Support\Arrayable|iterable  $values
+     * @return static
+     */
+    public function whereBetween($key, $values)
+    {
+        return $this-&gt;where($key, '&gt;=', reset($values))-&gt;where($key, '&lt;=', end($values));
+    }
+
+    /**
+     * Filter items such that the value of the given key is not between the given values.
+     *
+     * @param  string  $key
+     * @param  \Illuminate\Contracts\Support\Arrayable|iterable  $values
+     * @return static
+     */
+    public function whereNotBetween($key, $values)
+    {
+        return $this-&gt;filter(
+            fn ($item) =&gt; data_get($item, $key) &lt; reset($values) || data_get($item, $key) &gt; end($values)
+        );
+    }
+
+    /**
+     * Filter items by the given key value pair.
+     *
+     * @param  string  $key
+     * @param  \Illuminate\Contracts\Support\Arrayable|iterable  $values
+     * @param  bool  $strict
+     * @return static
+     */
+    public function whereNotIn($key, $values, $strict = false)
+    {
+        $values = $this-&gt;getArrayableItems($values);
+
+        return $this-&gt;reject(fn ($item) =&gt; in_array(data_get($item, $key), $values, $strict));
+    }
+
+    /**
+     * Filter items by the given key value pair using strict comparison.
+     *
+     * @param  string  $key
+     * @param  \Illuminate\Contracts\Support\Arrayable|iterable  $values
+     * @return static
+     */
+    public function whereNotInStrict($key, $values)
+    {
+        return $this-&gt;whereNotIn($key, $values, true);
+    }
+
+    /**
+     * Filter the items, removing any items that don't match the given type(s).
+     *
+     * @template TWhereInstanceOf
+     *
+     * @param  class-string&lt;TWhereInstanceOf&gt;|array&lt;array-key, class-string&lt;TWhereInstanceOf&gt;&gt;  $type
+     * @return static&lt;TKey, TWhereInstanceOf&gt;
+     */
+    public function whereInstanceOf($type)
+    {
+        return $this-&gt;filter(function ($value) use ($type) {
+            if (is_array($type)) {
+                foreach ($type as $classType) {
+                    if ($value instanceof $classType) {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+            return $value instanceof $type;
+        });
+    }
+
+    /**
+     * Pass the collection to the given callback and return the result.
+     *
+     * @template TPipeReturnType
+     *
+     * @param  callable($this): TPipeReturnType  $callback
+     * @return TPipeReturnType
+     */
+    public function pipe(callable $callback)
+    {
+        return $callback($this);
+    }
+
+    /**
+     * Pass the collection into a new class.
+     *
+     * @template TPipeIntoValue
+     *
+     * @param  class-string&lt;TPipeIntoValue&gt;  $class
+     * @return TPipeIntoValue
+     */
+    public function pipeInto($class)
+    {
+        return new $class($this);
+    }
+
+    /**
+     * Pass the collection through a series of callable pipes and return the result.
+     *
+     * @param  array&lt;callable&gt;  $callbacks
+     * @return mixed
+     */
+    public function pipeThrough($callbacks)
+    {
+        return (new Collection($callbacks))-&gt;reduce(
+            fn ($carry, $callback) =&gt; $callback($carry),
+            $this,
+        );
+    }
+
+    /**
+     * Reduce the collection to a single value.
+     *
+     * @template TReduceInitial
+     * @template TReduceReturnType
+     *
+     * @param  callable(TReduceInitial|TReduceReturnType, TValue, TKey): TReduceReturnType  $callback
+     * @param  TReduceInitial  $initial
+     * @return TReduceReturnType
+     */
+    public function reduce(callable $callback, $initial = null)
+    {
+        $result = $initial;
+
+        foreach ($this as $key =&gt; $value) {
+            $result = $callback($result, $value, $key);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Reduce the collection to multiple aggregate values.
+     *
+     * @param  callable  $callback
+     * @param  mixed  ...$initial
+     * @return array
+     *
+     * @throws \UnexpectedValueException
+     */
+    public function reduceSpread(callable $callback, ...$initial)
+    {
+        $result = $initial;
+
+        foreach ($this as $key =&gt; $value) {
+            $result = call_user_func_array($callback, array_merge($result, [$value, $key]));
+
+            if (! is_array($result)) {
+                throw new UnexpectedValueException(sprintf(
+                    &quot;%s::reduceSpread expects reducer to return an array, but got a '%s' instead.&quot;,
+                    class_basename(static::class), gettype($result)
+                ));
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Reduce an associative collection to a single value.
+     *
+     * @template TReduceWithKeysInitial
+     * @template TReduceWithKeysReturnType
+     *
+     * @param  callable(TReduceWithKeysInitial|TReduceWithKeysReturnType, TValue, TKey): TReduceWithKeysReturnType  $callback
+     * @param  TReduceWithKeysInitial  $initial
+     * @return TReduceWithKeysReturnType
+     */
+    public function reduceWithKeys(callable $callback, $initial = null)
+    {
+        return $this-&gt;reduce($callback, $initial);
+    }
+
+    /**
+     * Create a collection of all elements that do not pass a given truth test.
+     *
+     * @param  (callable(TValue, TKey): bool)|bool|TValue  $callback
+     * @return static
+     */
+    public function reject($callback = true)
+    {
+        $useAsCallable = $this-&gt;useAsCallable($callback);
+
+        return $this-&gt;filter(function ($value, $key) use ($callback, $useAsCallable) {
+            return $useAsCallable
+                ? ! $callback($value, $key)
+                : $value != $callback;
+        });
+    }
+
+    /**
+     * Pass the collection to the given callback and then return it.
+     *
+     * @param  callable($this): mixed  $callback
+     * @return $this
+     */
+    public function tap(callable $callback)
+    {
+        $callback($this);
+
+        return $this;
+    }
+
+    /**
+     * Return only unique items from the collection array.
+     *
+     * @param  (callable(TValue, TKey): mixed)|string|null  $key
+     * @param  bool  $strict
+     * @return static
+     */
+    public function unique($key = null, $strict = false)
+    {
+        $callback = $this-&gt;valueRetriever($key);
+
+        $exists = [];
+
+        return $this-&gt;reject(function ($item, $key) use ($callback, $strict, &amp;$exists) {
+            if (in_array($id = $callback($item, $key), $exists, $strict)) {
+                return true;
+            }
+
+            $exists[] = $id;
+        });
+    }
+
+    /**
+     * Return only unique items from the collection array using strict comparison.
+     *
+     * @param  (callable(TValue, TKey): mixed)|string|null  $key
+     * @return static
+     */
+    public function uniqueStrict($key = null)
+    {
+        return $this-&gt;unique($key, true);
+    }
+
+    /**
+     * Collect the values into a collection.
+     *
+     * @return \Illuminate\Support\Collection&lt;TKey, TValue&gt;
+     */
+    public function collect()
+    {
+        return new Collection($this-&gt;all());
+    }
+
+    /**
+     * Get the collection of items as a plain array.
+     *
+     * @return array&lt;TKey, mixed&gt;
+     */
+    public function toArray()
+    {
+        return $this-&gt;map(fn ($value) =&gt; $value instanceof Arrayable ? $value-&gt;toArray() : $value)-&gt;all();
+    }
+
+    /**
+     * Convert the object into something JSON serializable.
+     *
+     * @return array&lt;TKey, mixed&gt;
+     */
+    public function jsonSerialize(): array
+    {
+        return array_map(function ($value) {
+            if ($value instanceof JsonSerializable) {
+                return $value-&gt;jsonSerialize();
+            } elseif ($value instanceof Jsonable) {
+                return json_decode($value-&gt;toJson(), true);
+            } elseif ($value instanceof Arrayable) {
+                return $value-&gt;toArray();
+            }
+
+            return $value;
+        }, $this-&gt;all());
+    }
+
+    /**
+     * Get the collection of items as JSON.
+     *
+     * @param  int  $options
+     * @return string
+     */
+    public function toJson($options = 0)
+    {
+        return json_encode($this-&gt;jsonSerialize(), $options);
+    }
+
+    /**
+     * Get a CachingIterator instance.
+     *
+     * @param  int  $flags
+     * @return \CachingIterator
+     */
+    public function getCachingIterator($flags = CachingIterator::CALL_TOSTRING)
+    {
+        return new CachingIterator($this-&gt;getIterator(), $flags);
+    }
+
+    /**
+     * Convert the collection to its string representation.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this-&gt;escapeWhenCastingToString
+            ? e($this-&gt;toJson())
+            : $this-&gt;toJson();
+    }
+
+    /**
+     * Indicate that the model's string representation should be escaped when __toString is invoked.
+     *
+     * @param  bool  $escape
+     * @return $this
+     */
+    public function escapeWhenCastingToString($escape = true)
+    {
+        $this-&gt;escapeWhenCastingToString = $escape;
+
+        return $this;
+    }
+
+    /**
+     * Add a method to the list of proxied methods.
+     *
+     * @param  string  $method
+     * @return void
+     */
+    public static function proxy($method)
+    {
+        static::$proxies[] = $method;
+    }
+
+    /**
+     * Dynamically access collection proxies.
+     *
+     * @param  string  $key
+     * @return mixed
+     *
+     * @throws \Exception
+     */
+    public function __get($key)
+    {
+        if (! in_array($key, static::$proxies)) {
+            throw new Exception(&quot;Property [{$key}] does not exist on this collection instance.&quot;);
+        }
+
+        return new HigherOrderCollectionProxy($this, $key);
+    }
+
+    /**
+     * Results array of items from Collection or Arrayable.
+     *
+     * @param  mixed  $items
+     * @return array&lt;TKey, TValue&gt;
+     */
+    protected function getArrayableItems($items)
+    {
+        return is_null($items) || is_scalar($items) || $items instanceof UnitEnum
+            ? Arr::wrap($items)
+            : Arr::from($items);
+    }
+
+    /**
+     * Get an operator checker callback.
+     *
+     * @param  callable|string  $key
+     * @param  string|null  $operator
+     * @param  mixed  $value
+     * @return \Closure
+     */
+    protected function operatorForWhere($key, $operator = null, $value = null)
+    {
+        if ($this-&gt;useAsCallable($key)) {
+            return $key;
+        }
+
+        if (func_num_args() === 1) {
+            $value = true;
+
+            $operator = '=';
+        }
+
+        if (func_num_args() === 2) {
+            $value = $operator;
+
+            $operator = '=';
+        }
+
+        return function ($item) use ($key, $operator, $value) {
+            $retrieved = enum_value(data_get($item, $key));
+            $value = enum_value($value);
+
+            $strings = array_filter([$retrieved, $value], function ($value) {
+                return match (true) {
+                    is_string($value) =&gt; true,
+                    $value instanceof \Stringable =&gt; true,
+                    default =&gt; false,
+                };
+            });
+
+            if (count($strings) &lt; 2 &amp;&amp; count(array_filter([$retrieved, $value], 'is_object')) == 1) {
+                return in_array($operator, ['!=', '&lt;&gt;', '!==']);
+            }
+
+            switch ($operator) {
+                default:
+                case '=':
+                case '==':  return $retrieved == $value;
+                case '!=':
+                case '&lt;&gt;':  return $retrieved != $value;
+                case '&lt;':   return $retrieved &lt; $value;
+                case '&gt;':   return $retrieved &gt; $value;
+                case '&lt;=':  return $retrieved &lt;= $value;
+                case '&gt;=':  return $retrieved &gt;= $value;
+                case '===': return $retrieved === $value;
+                case '!==': return $retrieved !== $value;
+                case '&lt;=&gt;': return $retrieved &lt;=&gt; $value;
+            }
+        };
+    }
+
+    /**
+     * Determine if the given value is callable, but not a string.
+     *
+     * @param  mixed  $value
+     * @return bool
+     */
+    protected function useAsCallable($value)
+    {
+        return ! is_string($value) &amp;&amp; is_callable($value);
+    }
+
+    /**
+     * Get a value retrieving callback.
+     *
+     * @param  callable|string|null  $value
+     * @return callable
+     */
+    protected function valueRetriever($value)
+    {
+        if ($this-&gt;useAsCallable($value)) {
+            return $value;
+        }
+
+        return fn ($item) =&gt; data_get($item, $value);
+    }
+
+    /**
+     * Make a function to check an item's equality.
+     *
+     * @param  mixed  $value
+     * @return \Closure(mixed): bool
+     */
+    protected function equality($value)
+    {
+        return fn ($item) =&gt; $item === $value;
+    }
+
+    /**
+     * Make a function using another function, by negating its result.
+     *
+     * @param  \Closure  $callback
+     * @return \Closure
+     */
+    protected function negate(Closure $callback)
+    {
+        return fn (...$params) =&gt; ! $callback(...$params);
+    }
+
+    /**
+     * Make a function that returns what's passed to it.
+     *
+     * @return \Closure(TValue): TValue
+     */
+    protected function identity()
+    {
+        return fn ($value) =&gt; $value;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

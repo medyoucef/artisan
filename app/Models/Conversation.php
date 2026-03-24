@@ -22,7 +22,8 @@ class Conversation extends Model
     }
 
     public function artisan()
-    {
-        return $this->belongsTo(Artisan::class);
-    }
+{
+    return $this->belongsTo(Artisan::class, 'artisan_id');
+}
+
 }

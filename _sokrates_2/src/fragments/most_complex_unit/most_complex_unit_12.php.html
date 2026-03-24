@@ -1,0 +1,289 @@
+<html>
+<head>
+    <title>protected function fetchItems()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">protected function fetchItems()</h3>
+<p style="margin-top: 4px">in <i>vendor/laravel/serializable-closure/src/Support/ReflectionClosure.php [935:1201]</i></p>
+<ul>
+    <li><b>256</b> lines of code</li>
+    <li><b>69</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    protected function fetchItems()
+    {
+        $key = $this-&gt;getHashedFileName();
+
+        $classes = [];
+        $functions = [];
+        $constants = [];
+        $structures = [];
+        $tokens = $this-&gt;getFileTokens();
+
+        $open = 0;
+        $state = 'start';
+        $lastState = '';
+        $prefix = '';
+        $name = '';
+        $alias = '';
+        $isFunc = $isConst = false;
+
+        $startLine = $lastKnownLine = 0;
+        $structType = $structName = '';
+        $structIgnore = false;
+
+        $namespace = '';
+        $namespaceStartLine = 0;
+        $namespaceBraced = false;
+        $namespaceClasses = [];
+
+        foreach ($tokens as $token) {
+            if (is_array($token)) {
+                $lastKnownLine = $token[2];
+            }
+
+            switch ($state) {
+                case 'start':
+                    switch ($token[0]) {
+                        case T_NAMESPACE:
+                            $structures[] = [
+                                'type' =&gt; 'namespace',
+                                'name' =&gt; $namespace,
+                                'start' =&gt; $namespaceStartLine,
+                                'end' =&gt; $token[2] - 1,
+                                'classes' =&gt; $namespaceClasses,
+                            ];
+                            $namespace = '';
+                            $namespaceClasses = [];
+                            $state = 'namespace';
+                            $namespaceStartLine = $token[2];
+                            break;
+                        case T_CLASS:
+                        case T_INTERFACE:
+                        case T_TRAIT:
+                            $state = 'before_structure';
+                            $startLine = $token[2];
+                            $structType = $token[0] == T_CLASS
+                                                    ? 'class'
+                                                    : ($token[0] == T_INTERFACE ? 'interface' : 'trait');
+                            break;
+                        case T_USE:
+                            $state = 'use';
+                            $prefix = $name = $alias = '';
+                            $isFunc = $isConst = false;
+                            break;
+                        case T_FUNCTION:
+                            $state = 'structure';
+                            $structIgnore = true;
+                            break;
+                        case T_NEW:
+                            $state = 'new';
+                            break;
+                        case T_OBJECT_OPERATOR:
+                        case T_DOUBLE_COLON:
+                            $state = 'invoke';
+                            break;
+                        case '}':
+                            if ($namespaceBraced) {
+                                $structures[] = [
+                                    'type' =&gt; 'namespace',
+                                    'name' =&gt; $namespace,
+                                    'start' =&gt; $namespaceStartLine,
+                                    'end' =&gt; $lastKnownLine,
+                                    'classes' =&gt; $namespaceClasses,
+                                ];
+                                $namespaceBraced = false;
+                                $namespace = '';
+                                $namespaceClasses = [];
+                            }
+                            break;
+                    }
+                    break;
+                case 'namespace':
+                    switch ($token[0]) {
+                        case T_STRING:
+                        case T_NAME_QUALIFIED:
+                            $namespace = $token[1];
+                            break;
+                        case ';':
+                        case '{':
+                            $state = 'start';
+                            $namespaceBraced = $token[0] === '{';
+                            break;
+                    }
+                    break;
+                case 'use':
+                    switch ($token[0]) {
+                        case T_FUNCTION:
+                            $isFunc = true;
+                            break;
+                        case T_CONST:
+                            $isConst = true;
+                            break;
+                        case T_NS_SEPARATOR:
+                            $name .= $token[1];
+                            break;
+                        case T_STRING:
+                            $name .= $token[1];
+                            $alias = $token[1];
+                            break;
+                        case T_NAME_QUALIFIED:
+                            $name .= $token[1];
+                            $pieces = explode('\\', $token[1]);
+                            $alias = end($pieces);
+                            break;
+                        case T_AS:
+                            $lastState = 'use';
+                            $state = 'alias';
+                            break;
+                        case '{':
+                            $prefix = $name;
+                            $name = $alias = '';
+                            $state = 'use-group';
+                            break;
+                        case ',':
+                        case ';':
+                            if ($name === '' || $name[0] !== '\\') {
+                                $name = '\\'.$name;
+                            }
+
+                            if ($alias !== '') {
+                                if ($isFunc) {
+                                    $functions[strtolower($alias)] = $name;
+                                } elseif ($isConst) {
+                                    $constants[$alias] = $name;
+                                } else {
+                                    $classes[strtolower($alias)] = $name;
+                                    $namespaceClasses[strtolower($alias)] = $name;
+                                }
+                            }
+                            $name = $alias = '';
+                            $state = $token === ';' ? 'start' : 'use';
+                            break;
+                    }
+                    break;
+                case 'use-group':
+                    switch ($token[0]) {
+                        case T_NS_SEPARATOR:
+                            $name .= $token[1];
+                            break;
+                        case T_NAME_QUALIFIED:
+                            $name .= $token[1];
+                            $pieces = explode('\\', $token[1]);
+                            $alias = end($pieces);
+                            break;
+                        case T_STRING:
+                            $name .= $token[1];
+                            $alias = $token[1];
+                            break;
+                        case T_AS:
+                            $lastState = 'use-group';
+                            $state = 'alias';
+                            break;
+                        case ',':
+                        case '}':
+
+                            if ($prefix === '' || $prefix[0] !== '\\') {
+                                $prefix = '\\'.$prefix;
+                            }
+
+                            if ($alias !== '') {
+                                if ($isFunc) {
+                                    $functions[strtolower($alias)] = $prefix.$name;
+                                } elseif ($isConst) {
+                                    $constants[$alias] = $prefix.$name;
+                                } else {
+                                    $classes[strtolower($alias)] = $prefix.$name;
+                                    $namespaceClasses[strtolower($alias)] = $prefix.$name;
+                                }
+                            }
+                            $name = $alias = '';
+                            $state = $token === '}' ? 'use' : 'use-group';
+                            break;
+                    }
+                    break;
+                case 'alias':
+                    if ($token[0] === T_STRING) {
+                        $alias = $token[1];
+                        $state = $lastState;
+                    }
+                    break;
+                case 'new':
+                    switch ($token[0]) {
+                        case T_WHITESPACE:
+                        case T_COMMENT:
+                        case T_DOC_COMMENT:
+                            break 2;
+                        case T_CLASS:
+                            $state = 'structure';
+                            $structIgnore = true;
+                            break;
+                        default:
+                            $state = 'start';
+                    }
+                    break;
+                case 'invoke':
+                    switch ($token[0]) {
+                        case T_WHITESPACE:
+                        case T_COMMENT:
+                        case T_DOC_COMMENT:
+                            break 2;
+                        default:
+                            $state = 'start';
+                    }
+                    break;
+                case 'before_structure':
+                    if ($token[0] == T_STRING) {
+                        $structName = $token[1];
+                        $state = 'structure';
+                    }
+                    break;
+                case 'structure':
+                    switch ($token[0]) {
+                        case '{':
+                        case T_CURLY_OPEN:
+                        case T_DOLLAR_OPEN_CURLY_BRACES:
+                            $open++;
+                            break;
+                        case '}':
+                            if (--$open == 0) {
+                                if (! $structIgnore) {
+                                    $structures[] = [
+                                        'type' =&gt; $structType,
+                                        'name' =&gt; $structName,
+                                        'start' =&gt; $startLine,
+                                        'end' =&gt; $lastKnownLine,
+                                    ];
+                                }
+                                $structIgnore = false;
+                                $state = 'start';
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        $structures[] = [
+            'type' =&gt; 'namespace',
+            'name' =&gt; $namespace,
+            'start' =&gt; $namespaceStartLine,
+            'end' =&gt; PHP_INT_MAX,
+            'classes' =&gt; $namespaceClasses,
+        ];
+
+        static::$classes[$key] = $classes;
+        static::$functions[$key] = $functions;
+        static::$constants[$key] = $constants;
+        static::$structures[$key] = $structures;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

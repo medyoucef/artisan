@@ -1,0 +1,212 @@
+<html>
+<head>
+    <title>private static function evaluateScalar()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private static function evaluateScalar()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/yaml/Inline.php [567:756]</i></p>
+<ul>
+    <li><b>154</b> lines of code</li>
+    <li><b>58</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private static function evaluateScalar(string $scalar, int $flags, array &amp;$references = [], ?bool &amp;$isQuotedString = null): mixed
+    {
+        $isQuotedString = false;
+        $scalar = trim($scalar);
+
+        if (str_starts_with($scalar, '*')) {
+            if (false !== $pos = strpos($scalar, '#')) {
+                $value = substr($scalar, 1, $pos - 2);
+            } else {
+                $value = substr($scalar, 1);
+            }
+
+            // an unquoted *
+            if ('' === $value) {
+                throw new ParseException('A reference must contain at least one character.', self::$parsedLineNumber + 1, $value, self::$parsedFilename);
+            }
+
+            if (!\array_key_exists($value, $references)) {
+                throw new ParseException(\sprintf('Reference &quot;%s&quot; does not exist.', $value), self::$parsedLineNumber + 1, $value, self::$parsedFilename);
+            }
+
+            return $references[$value];
+        }
+
+        $scalarLower = strtolower($scalar);
+
+        switch (true) {
+            case 'null' === $scalarLower:
+            case '' === $scalar:
+            case '~' === $scalar:
+                return null;
+            case 'true' === $scalarLower:
+                return true;
+            case 'false' === $scalarLower:
+                return false;
+            case '!' === $scalar[0]:
+                switch (true) {
+                    case str_starts_with($scalar, '!!str '):
+                        $s = substr($scalar, 6);
+
+                        if (\in_array($s[0] ?? '', ['&quot;', &quot;'&quot;], true)) {
+                            $isQuotedString = true;
+                            $s = self::parseQuotedScalar($s);
+                        }
+
+                        return $s;
+                    case str_starts_with($scalar, '! '):
+                        return substr($scalar, 2);
+                    case str_starts_with($scalar, '!php/object'):
+                        if (self::$objectSupport) {
+                            if (!isset($scalar[12])) {
+                                throw new ParseException('Missing value for tag &quot;!php/object&quot;.', self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                            }
+
+                            return unserialize(self::parseScalar(substr($scalar, 12)));
+                        }
+
+                        if (self::$exceptionOnInvalidType) {
+                            throw new ParseException('Object support when parsing a YAML file has been disabled.', self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                        }
+
+                        return null;
+                    case str_starts_with($scalar, '!php/const'):
+                        if (self::$constantSupport) {
+                            if (!isset($scalar[11])) {
+                                throw new ParseException('Missing value for tag &quot;!php/const&quot;.', self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                            }
+
+                            $i = 0;
+                            if (\defined($const = self::parseScalar(substr($scalar, 11), 0, null, $i, false))) {
+                                return \constant($const);
+                            }
+
+                            throw new ParseException(\sprintf('The constant &quot;%s&quot; is not defined.', $const), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                        }
+                        if (self::$exceptionOnInvalidType) {
+                            throw new ParseException(\sprintf('The string &quot;%s&quot; could not be parsed as a constant. Did you forget to pass the &quot;Yaml::PARSE_CONSTANT&quot; flag to the parser?', $scalar), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                        }
+
+                        return null;
+                    case str_starts_with($scalar, '!php/enum'):
+                        if (self::$constantSupport) {
+                            if (!isset($scalar[11])) {
+                                throw new ParseException('Missing value for tag &quot;!php/enum&quot;.', self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                            }
+
+                            $i = 0;
+                            $enumName = self::parseScalar(substr($scalar, 10), 0, null, $i, false);
+                            $useName = str_contains($enumName, '::');
+                            $enum = $useName ? strstr($enumName, '::', true) : $enumName;
+
+                            if (!enum_exists($enum)) {
+                                throw new ParseException(\sprintf('The enum &quot;%s&quot; is not defined.', $enum), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                            }
+                            if (!$useName) {
+                                return $enum::cases();
+                            }
+                            if ($useValue = str_ends_with($enumName, '-&gt;value')) {
+                                $enumName = substr($enumName, 0, -7);
+                            }
+
+                            if (!\defined($enumName)) {
+                                throw new ParseException(\sprintf('The string &quot;%s&quot; is not the name of a valid enum.', $enumName), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                            }
+
+                            $value = \constant($enumName);
+
+                            if (!$useValue) {
+                                return $value;
+                            }
+                            if (!$value instanceof \BackedEnum) {
+                                throw new ParseException(\sprintf('The enum &quot;%s&quot; defines no value next to its name.', $enumName), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                            }
+
+                            return $value-&gt;value;
+                        }
+                        if (self::$exceptionOnInvalidType) {
+                            throw new ParseException(\sprintf('The string &quot;%s&quot; could not be parsed as an enum. Did you forget to pass the &quot;Yaml::PARSE_CONSTANT&quot; flag to the parser?', $scalar), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+                        }
+
+                        return null;
+                    case str_starts_with($scalar, '!!float '):
+                        return (float) substr($scalar, 8);
+                    case str_starts_with($scalar, '!!binary '):
+                        return self::evaluateBinaryScalar(substr($scalar, 9));
+                }
+
+                throw new ParseException(\sprintf('The string &quot;%s&quot; could not be parsed as it uses an unsupported built-in tag.', $scalar), self::$parsedLineNumber, $scalar, self::$parsedFilename);
+            case preg_match('/^(?:\+|-)?0o(?P&lt;value&gt;[0-7_]++)$/', $scalar, $matches):
+                $value = str_replace('_', '', $matches['value']);
+
+                if ('-' === $scalar[0]) {
+                    return -octdec($value);
+                }
+
+                return octdec($value);
+            case \in_array($scalar[0], ['+', '-', '.'], true) || is_numeric($scalar[0]):
+                if (Parser::preg_match('{^[+-]?[0-9][0-9_]*$}', $scalar)) {
+                    $scalar = str_replace('_', '', $scalar);
+                }
+
+                switch (true) {
+                    case ctype_digit($scalar):
+                    case '-' === $scalar[0] &amp;&amp; ctype_digit(substr($scalar, 1)):
+                        $cast = (int) $scalar;
+
+                        return ($scalar === (string) $cast) ? $cast : $scalar;
+                    case is_numeric($scalar):
+                    case Parser::preg_match(self::getHexRegex(), $scalar):
+                        $scalar = str_replace('_', '', $scalar);
+
+                        return '0x' === $scalar[0].$scalar[1] ? hexdec($scalar) : (float) $scalar;
+                    case '.inf' === $scalarLower:
+                    case '.nan' === $scalarLower:
+                        return -log(0);
+                    case '-.inf' === $scalarLower:
+                        return log(0);
+                    case Parser::preg_match('/^(-|\+)?[0-9][0-9_]*(\.[0-9_]+)?$/', $scalar):
+                        return (float) str_replace('_', '', $scalar);
+                    case Parser::preg_match(self::getTimestampRegex(), $scalar):
+                        try {
+                            // When no timezone is provided in the parsed date, YAML spec says we must assume UTC.
+                            $time = new \DateTimeImmutable($scalar, new \DateTimeZone('UTC'));
+                        } catch (\Exception $e) {
+                            // Some dates accepted by the regex are not valid dates.
+                            throw new ParseException(\sprintf('The date &quot;%s&quot; could not be parsed as it is an invalid date.', $scalar), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename, $e);
+                        }
+
+                        if (Yaml::PARSE_DATETIME &amp; $flags) {
+                            return $time;
+                        }
+
+                        if ('' !== rtrim($time-&gt;format('u'), '0')) {
+                            return (float) $time-&gt;format('U.u');
+                        }
+
+                        try {
+                            if (false !== $scalar = $time-&gt;getTimestamp()) {
+                                return $scalar;
+                            }
+                        } catch (\ValueError) {
+                            // no-op
+                        }
+
+                        return $time-&gt;format('U');
+                }
+        }
+
+        return (string) $scalar;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

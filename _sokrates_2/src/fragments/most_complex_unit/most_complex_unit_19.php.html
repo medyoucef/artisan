@@ -1,0 +1,268 @@
+<html>
+<head>
+    <title>protected function pArray()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">protected function pArray()</h3>
+<p style="margin-top: 4px">in <i>vendor/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php [779:1024]</i></p>
+<ul>
+    <li><b>183</b> lines of code</li>
+    <li><b>54</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    protected function pArray(
+        array  $nodes, array $origNodes, int &amp;$pos, int $indentAdjustment,
+        string $parentNodeClass, string $subNodeName, ?int $fixup
+    ): ?string {
+        $diff = $this-&gt;nodeListDiffer-&gt;diffWithReplacements($origNodes, $nodes);
+
+        $mapKey = $parentNodeClass . '-&gt;' . $subNodeName;
+        $insertStr = $this-&gt;listInsertionMap[$mapKey] ?? null;
+        $isStmtList = $subNodeName === 'stmts';
+
+        $beforeFirstKeepOrReplace = true;
+        $skipRemovedNode = false;
+        $delayedAdd = [];
+        $lastElemIndentLevel = $this-&gt;indentLevel;
+
+        $insertNewline = false;
+        if ($insertStr === &quot;\n&quot;) {
+            $insertStr = '';
+            $insertNewline = true;
+        }
+
+        if ($isStmtList &amp;&amp; \count($origNodes) === 1 &amp;&amp; \count($nodes) !== 1) {
+            $startPos = $origNodes[0]-&gt;getStartTokenPos();
+            $endPos = $origNodes[0]-&gt;getEndTokenPos();
+            \assert($startPos &gt;= 0 &amp;&amp; $endPos &gt;= 0);
+            if (!$this-&gt;origTokens-&gt;haveBraces($startPos, $endPos)) {
+                // This was a single statement without braces, but either additional statements
+                // have been added, or the single statement has been removed. This requires the
+                // addition of braces. For now fall back.
+                // TODO: Try to preserve formatting
+                return null;
+            }
+        }
+
+        $result = '';
+        foreach ($diff as $i =&gt; $diffElem) {
+            $diffType = $diffElem-&gt;type;
+            /** @var Node|string|null $arrItem */
+            $arrItem = $diffElem-&gt;new;
+            /** @var Node|string|null $origArrItem */
+            $origArrItem = $diffElem-&gt;old;
+
+            if ($diffType === DiffElem::TYPE_KEEP || $diffType === DiffElem::TYPE_REPLACE) {
+                $beforeFirstKeepOrReplace = false;
+
+                if ($origArrItem === null || $arrItem === null) {
+                    // We can only handle the case where both are null
+                    if ($origArrItem === $arrItem) {
+                        continue;
+                    }
+                    return null;
+                }
+
+                if (!$arrItem instanceof Node || !$origArrItem instanceof Node) {
+                    // We can only deal with nodes. This can occur for Names, which use string arrays.
+                    return null;
+                }
+
+                $itemStartPos = $origArrItem-&gt;getStartTokenPos();
+                $itemEndPos = $origArrItem-&gt;getEndTokenPos();
+                \assert($itemStartPos &gt;= 0 &amp;&amp; $itemEndPos &gt;= 0 &amp;&amp; $itemStartPos &gt;= $pos);
+
+                $origIndentLevel = $this-&gt;indentLevel;
+                $lastElemIndentLevel = max($this-&gt;origTokens-&gt;getIndentationBefore($itemStartPos) + $indentAdjustment, 0);
+                $this-&gt;setIndentLevel($lastElemIndentLevel);
+
+                $comments = $arrItem-&gt;getComments();
+                $origComments = $origArrItem-&gt;getComments();
+                $commentStartPos = $origComments ? $origComments[0]-&gt;getStartTokenPos() : $itemStartPos;
+                \assert($commentStartPos &gt;= 0);
+
+                if ($commentStartPos &lt; $pos) {
+                    // Comments may be assigned to multiple nodes if they start at the same position.
+                    // Make sure we don't try to print them multiple times.
+                    $commentStartPos = $itemStartPos;
+                }
+
+                if ($skipRemovedNode) {
+                    if ($isStmtList &amp;&amp; $this-&gt;origTokens-&gt;haveTagInRange($pos, $itemStartPos)) {
+                        // We'd remove an opening/closing PHP tag.
+                        // TODO: Preserve formatting.
+                        $this-&gt;setIndentLevel($origIndentLevel);
+                        return null;
+                    }
+                } else {
+                    $result .= $this-&gt;origTokens-&gt;getTokenCode(
+                        $pos, $commentStartPos, $indentAdjustment);
+                }
+
+                if (!empty($delayedAdd)) {
+                    /** @var Node $delayedAddNode */
+                    foreach ($delayedAdd as $delayedAddNode) {
+                        if ($insertNewline) {
+                            $delayedAddComments = $delayedAddNode-&gt;getComments();
+                            if ($delayedAddComments) {
+                                $result .= $this-&gt;pComments($delayedAddComments) . $this-&gt;nl;
+                            }
+                        }
+
+                        $this-&gt;safeAppend($result, $this-&gt;p($delayedAddNode, self::MAX_PRECEDENCE, self::MAX_PRECEDENCE, true));
+
+                        if ($insertNewline) {
+                            $result .= $insertStr . $this-&gt;nl;
+                        } else {
+                            $result .= $insertStr;
+                        }
+                    }
+
+                    $delayedAdd = [];
+                }
+
+                if ($comments !== $origComments) {
+                    if ($comments) {
+                        $result .= $this-&gt;pComments($comments) . $this-&gt;nl;
+                    }
+                } else {
+                    $result .= $this-&gt;origTokens-&gt;getTokenCode(
+                        $commentStartPos, $itemStartPos, $indentAdjustment);
+                }
+
+                // If we had to remove anything, we have done so now.
+                $skipRemovedNode = false;
+            } elseif ($diffType === DiffElem::TYPE_ADD) {
+                if (null === $insertStr) {
+                    // We don't have insertion information for this list type
+                    return null;
+                }
+
+                if (!$arrItem instanceof Node) {
+                    // We only support list insertion of nodes.
+                    return null;
+                }
+
+                // We go multiline if the original code was multiline,
+                // or if it's an array item with a comment above it.
+                // Match always uses multiline formatting.
+                if ($insertStr === ', ' &amp;&amp;
+                    ($this-&gt;isMultiline($origNodes) || $arrItem-&gt;getComments() ||
+                     $parentNodeClass === Expr\Match_::class)
+                ) {
+                    $insertStr = ',';
+                    $insertNewline = true;
+                }
+
+                if ($beforeFirstKeepOrReplace) {
+                    // Will be inserted at the next &quot;replace&quot; or &quot;keep&quot; element
+                    $delayedAdd[] = $arrItem;
+                    continue;
+                }
+
+                $itemStartPos = $pos;
+                $itemEndPos = $pos - 1;
+
+                $origIndentLevel = $this-&gt;indentLevel;
+                $this-&gt;setIndentLevel($lastElemIndentLevel);
+
+                if ($insertNewline) {
+                    $result .= $insertStr . $this-&gt;nl;
+                    $comments = $arrItem-&gt;getComments();
+                    if ($comments) {
+                        $result .= $this-&gt;pComments($comments) . $this-&gt;nl;
+                    }
+                } else {
+                    $result .= $insertStr;
+                }
+            } elseif ($diffType === DiffElem::TYPE_REMOVE) {
+                if (!$origArrItem instanceof Node) {
+                    // We only support removal for nodes
+                    return null;
+                }
+
+                $itemStartPos = $origArrItem-&gt;getStartTokenPos();
+                $itemEndPos = $origArrItem-&gt;getEndTokenPos();
+                \assert($itemStartPos &gt;= 0 &amp;&amp; $itemEndPos &gt;= 0);
+
+                // Consider comments part of the node.
+                $origComments = $origArrItem-&gt;getComments();
+                if ($origComments) {
+                    $itemStartPos = $origComments[0]-&gt;getStartTokenPos();
+                }
+
+                if ($i === 0) {
+                    // If we're removing from the start, keep the tokens before the node and drop those after it,
+                    // instead of the other way around.
+                    $result .= $this-&gt;origTokens-&gt;getTokenCode(
+                        $pos, $itemStartPos, $indentAdjustment);
+                    $skipRemovedNode = true;
+                } else {
+                    if ($isStmtList &amp;&amp; $this-&gt;origTokens-&gt;haveTagInRange($pos, $itemStartPos)) {
+                        // We'd remove an opening/closing PHP tag.
+                        // TODO: Preserve formatting.
+                        return null;
+                    }
+                }
+
+                $pos = $itemEndPos + 1;
+                continue;
+            } else {
+                throw new \Exception(&quot;Shouldn't happen&quot;);
+            }
+
+            if (null !== $fixup &amp;&amp; $arrItem-&gt;getAttribute('origNode') !== $origArrItem) {
+                $res = $this-&gt;pFixup($fixup, $arrItem, null, $itemStartPos, $itemEndPos);
+            } else {
+                $res = $this-&gt;p($arrItem, self::MAX_PRECEDENCE, self::MAX_PRECEDENCE, true);
+            }
+            $this-&gt;safeAppend($result, $res);
+
+            $this-&gt;setIndentLevel($origIndentLevel);
+            $pos = $itemEndPos + 1;
+        }
+
+        if ($skipRemovedNode) {
+            // TODO: Support removing single node.
+            return null;
+        }
+
+        if (!empty($delayedAdd)) {
+            if (!isset($this-&gt;emptyListInsertionMap[$mapKey])) {
+                return null;
+            }
+
+            list($findToken, $extraLeft, $extraRight) = $this-&gt;emptyListInsertionMap[$mapKey];
+            if (null !== $findToken) {
+                $insertPos = $this-&gt;origTokens-&gt;findRight($pos, $findToken) + 1;
+                $result .= $this-&gt;origTokens-&gt;getTokenCode($pos, $insertPos, $indentAdjustment);
+                $pos = $insertPos;
+            }
+
+            $first = true;
+            $result .= $extraLeft;
+            foreach ($delayedAdd as $delayedAddNode) {
+                if (!$first) {
+                    $result .= $insertStr;
+                    if ($insertNewline) {
+                        $result .= $this-&gt;nl;
+                    }
+                }
+                $result .= $this-&gt;p($delayedAddNode, self::MAX_PRECEDENCE, self::MAX_PRECEDENCE, true);
+                $first = false;
+            }
+            $result .= $extraRight === &quot;\n&quot; ? $this-&gt;nl : $extraRight;
+        }
+
+        return $result;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

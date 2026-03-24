@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>private function doMatch()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private function doMatch()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/routing/Matcher/Dumper/CompiledUrlMatcherTrait.php [73:185]</i></p>
+<ul>
+    <li><b>92</b> lines of code</li>
+    <li><b>55</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    private function doMatch(string $pathinfo, array &amp;$allow = [], array &amp;$allowSchemes = []): array
+    {
+        $allow = $allowSchemes = [];
+        $pathinfo = rawurldecode($pathinfo) ?: '/';
+        $trimmedPathinfo = rtrim($pathinfo, '/') ?: '/';
+        $context = $this-&gt;context;
+        $requestMethod = $canonicalMethod = $context-&gt;getMethod();
+
+        if ($this-&gt;matchHost) {
+            $host = strtolower($context-&gt;getHost());
+        }
+
+        if ('HEAD' === $requestMethod) {
+            $canonicalMethod = 'GET';
+        }
+        $supportsRedirections = 'GET' === $canonicalMethod &amp;&amp; $this instanceof RedirectableUrlMatcherInterface;
+
+        foreach ($this-&gt;staticRoutes[$trimmedPathinfo] ?? [] as [$ret, $requiredHost, $requiredMethods, $requiredSchemes, $hasTrailingSlash, , $condition]) {
+            if ($requiredHost) {
+                if ('{' !== $requiredHost[0] ? $requiredHost !== $host : !preg_match($requiredHost, $host, $hostMatches)) {
+                    continue;
+                }
+                if ('{' === $requiredHost[0] &amp;&amp; $hostMatches) {
+                    $hostMatches['_route'] = $ret['_route'];
+                    $ret = $this-&gt;mergeDefaults($hostMatches, $ret);
+                }
+            }
+
+            if ($condition &amp;&amp; !($this-&gt;checkCondition)($condition, $context, 0 &lt; $condition ? $request ??= $this-&gt;request ?: $this-&gt;createRequest($pathinfo) : null, $ret)) {
+                continue;
+            }
+
+            if ('/' !== $pathinfo &amp;&amp; $hasTrailingSlash === ($trimmedPathinfo === $pathinfo)) {
+                if ($supportsRedirections &amp;&amp; (!$requiredMethods || isset($requiredMethods['GET']))) {
+                    return $allow = $allowSchemes = [];
+                }
+                continue;
+            }
+
+            $hasRequiredScheme = !$requiredSchemes || isset($requiredSchemes[$context-&gt;getScheme()]);
+            if ($hasRequiredScheme &amp;&amp; $requiredMethods &amp;&amp; !isset($requiredMethods[$canonicalMethod]) &amp;&amp; !isset($requiredMethods[$requestMethod])) {
+                $allow += $requiredMethods;
+                continue;
+            }
+
+            if (!$hasRequiredScheme) {
+                $allowSchemes += $requiredSchemes;
+                continue;
+            }
+
+            return $ret;
+        }
+
+        $matchedPathinfo = $this-&gt;matchHost ? $host.'.'.$pathinfo : $pathinfo;
+
+        foreach ($this-&gt;regexpList as $offset =&gt; $regex) {
+            while (preg_match($regex, $matchedPathinfo, $matches)) {
+                foreach ($this-&gt;dynamicRoutes[$m = (int) $matches['MARK']] as [$ret, $vars, $requiredMethods, $requiredSchemes, $hasTrailingSlash, $hasTrailingVar, $condition]) {
+                    if (0 === $condition) { // marks the last route in the regexp
+                        continue 3;
+                    }
+
+                    $hasTrailingVar = $trimmedPathinfo !== $pathinfo &amp;&amp; $hasTrailingVar;
+
+                    if ($hasTrailingVar &amp;&amp; ($hasTrailingSlash || (null === $n = $matches[\count($vars)] ?? null) || '/' !== ($n[-1] ?? '/')) &amp;&amp; preg_match($regex, $this-&gt;matchHost ? $host.'.'.$trimmedPathinfo : $trimmedPathinfo, $n) &amp;&amp; $m === (int) $n['MARK']) {
+                        if ($hasTrailingSlash) {
+                            $matches = $n;
+                        } else {
+                            $hasTrailingVar = false;
+                        }
+                    }
+
+                    foreach ($vars as $i =&gt; $v) {
+                        if (isset($matches[1 + $i])) {
+                            $ret[$v] = $matches[1 + $i];
+                        }
+                    }
+
+                    if ($condition &amp;&amp; !($this-&gt;checkCondition)($condition, $context, 0 &lt; $condition ? $request ??= $this-&gt;request ?: $this-&gt;createRequest($pathinfo) : null, $ret)) {
+                        continue;
+                    }
+
+                    if ('/' !== $pathinfo &amp;&amp; !$hasTrailingVar &amp;&amp; $hasTrailingSlash === ($trimmedPathinfo === $pathinfo)) {
+                        if ($supportsRedirections &amp;&amp; (!$requiredMethods || isset($requiredMethods['GET']))) {
+                            return $allow = $allowSchemes = [];
+                        }
+                        continue;
+                    }
+
+                    if ($requiredSchemes &amp;&amp; !isset($requiredSchemes[$context-&gt;getScheme()])) {
+                        $allowSchemes += $requiredSchemes;
+                        continue;
+                    }
+
+                    if ($requiredMethods &amp;&amp; !isset($requiredMethods[$canonicalMethod]) &amp;&amp; !isset($requiredMethods[$requestMethod])) {
+                        $allow += $requiredMethods;
+                        continue;
+                    }
+
+                    return $ret;
+                }
+
+                $regex = substr_replace($regex, 'F', $m - $offset, 1 + \strlen($m));
+                $offset += \strlen($m);
+            }
+        }
+
+        if ('/' === $pathinfo &amp;&amp; !$allow &amp;&amp; !$allowSchemes) {
+            throw new NoConfigurationException();
+        }
+
+        return [];
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

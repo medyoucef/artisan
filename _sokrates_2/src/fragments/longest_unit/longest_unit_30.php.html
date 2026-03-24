@@ -1,0 +1,223 @@
+<html>
+<head>
+    <title>function getOpenCollectiveSponsors()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">function getOpenCollectiveSponsors()</h3>
+<p style="margin-top: 4px">in <i>vendor/nesbot/carbon/sponsors.php [38:238]</i></p>
+<ul>
+    <li><b>164</b> lines of code</li>
+    <li><b>30</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+function getOpenCollectiveSponsors(): string
+{
+    $customSponsorOverride = [
+        // For consistency and equity among sponsors, as of now, we kindly ask our sponsors
+        // to provide an image having a width/height ratio between 1/1 and 2/1.
+        // By default, we'll show the member picture from OpenCollective, and will resize it if bigger
+        662698 =&gt; [
+            // alt attribute
+            'name' =&gt; 'Non Gamstop Casinos',
+            // title attribute
+            'description' =&gt; 'Casinos not on Gamstop',
+            // src attribute
+            'image' =&gt; 'https://lgcnews.com/wp-content/uploads/2018/01/LGC-logo-v8-temp.png',
+            // href attribute
+            'website' =&gt; 'https://lgcnews.com/',
+        ],
+        663069 =&gt; [
+            // alt attribute
+            'name' =&gt; 'Ставки на спорт Favbet',
+            // href attribute
+            'website' =&gt; 'https://www.favbet.ua/uk/',
+        ],
+        676798 =&gt; [
+            // alt attribute
+            'name' =&gt; 'Top Casinos Canada',
+            // title attribute
+            'description' =&gt; 'Top Casinos Canada',
+            // src attribute
+            'image' =&gt; 'https://topcasino.net/img/topcasino-logo-cover.png',
+            // href attribute
+            'website' =&gt; 'https://topcasino.net/',
+        ],
+    ];
+
+    $members = json_decode(file_get_contents('https://opencollective.com/carbon/members/all.json'), true);
+
+    foreach ($members as &amp;$member) {
+        $member = array_merge($member, $customSponsorOverride[$member['MemberId']] ?? []);
+    }
+
+    // Adding sponsors paying via other payment methods
+    $members[] = [
+        'MemberId' =&gt; 1,
+        'createdAt' =&gt; '2019-01-01 02:00',
+        'type' =&gt; 'ORGANIZATION',
+        'role' =&gt; 'BACKER',
+        'tier' =&gt; 'backer+',
+        'isActive' =&gt; true,
+        'totalAmountDonated' =&gt; 1000,
+        'currency' =&gt; 'USD',
+        'lastTransactionAt' =&gt; CarbonImmutable::now()-&gt;format('Y-m-d').' 02:00',
+        'lastTransactionAmount' =&gt; 25,
+        'profile' =&gt; 'https://tidelift.com/',
+        'name' =&gt; 'Tidelift',
+        'description' =&gt; 'Get professional support for Carbon',
+        'image' =&gt; 'https://carbon.nesbot.com/docs/sponsors/tidelift-brand.png',
+        'website' =&gt; 'https://tidelift.com/subscription/pkg/packagist-nesbot-carbon?utm_source=packagist-nesbot-carbon&amp;utm_medium=referral&amp;utm_campaign=docs',
+    ];
+    $members[] = [
+        'MemberId' =&gt; 2,
+        'createdAt' =&gt; '2024-11-14 02:00',
+        'type' =&gt; 'ORGANIZATION',
+        'role' =&gt; 'BACKER',
+        'tier' =&gt; 'backer+ yearly',
+        'isActive' =&gt; true,
+        'totalAmountDonated' =&gt; 170,
+        'currency' =&gt; 'USD',
+        'lastTransactionAt' =&gt; '2024-11-14 02:00',
+        'lastTransactionAmount' =&gt; 170,
+        'profile' =&gt; 'https://www.slotozilla.com/nz/free-spins',
+        'name' =&gt; 'Slotozilla',
+        'description' =&gt; 'Slotozilla website',
+        'image' =&gt; 'https://carbon.nesbot.com/docs/sponsors/slotozilla.png',
+        'website' =&gt; 'https://www.slotozilla.com/nz/free-spins',
+    ];
+
+    $list = array_filter($members, static fn (array $member): bool =&gt; $member['totalAmountDonated'] &gt; 3 &amp;&amp; $member['role'] !== 'HOST' &amp;&amp; (
+        $member['totalAmountDonated'] &gt; 100 ||
+        $member['lastTransactionAt'] &gt; CarbonImmutable::now()
+            -&gt;subMonthsNoOverflow(getMaxHistoryMonthsByAmount($member['lastTransactionAmount']))
+            -&gt;format('Y-m-d h:i') ||
+        $member['isActive'] &amp;&amp; $member['lastTransactionAmount'] &gt;= 30
+    ));
+
+    $list = array_map(static function (array $member): array {
+        $createdAt = CarbonImmutable::parse($member['createdAt']);
+        $lastTransactionAt = CarbonImmutable::parse($member['lastTransactionAt']);
+
+        if ($createdAt-&gt;format('d H:i:s.u') &gt; $lastTransactionAt-&gt;format('d H:i:s.u')) {
+            $createdAt = $createdAt
+                -&gt;setDay($lastTransactionAt-&gt;day)
+                -&gt;modify($lastTransactionAt-&gt;format('H:i:s.u'));
+        }
+
+        $isYearly = str_contains(strtolower($member['tier'] ?? ''), 'yearly');
+        $monthlyContribution = (float) (
+            ($isYearly &amp;&amp; $lastTransactionAt &gt; CarbonImmutable::parse('-1 year'))
+                ? ($member['lastTransactionAmount'] / 11.2) // 11.2 instead of 12 to include the discount for yearly subscription
+                : ($member['totalAmountDonated'] / ceil($createdAt-&gt;floatDiffInMonths()))
+        );
+
+        if (!$isYearly) {
+            if (
+                $lastTransactionAt-&gt;isAfter('last month') &amp;&amp;
+                $member['lastTransactionAmount'] &gt; $monthlyContribution
+            ) {
+                $monthlyContribution = (float) $member['lastTransactionAmount'];
+            }
+
+            if ($lastTransactionAt-&gt;isBefore('-75 days')) {
+                $days = min(120, $lastTransactionAt-&gt;diffInDays('now') - 70);
+                $monthlyContribution *= 1 - $days / 240;
+            }
+        }
+
+        $yearlyContribution = (float) (
+            $isYearly
+                ? (12 * $monthlyContribution)
+                : ($member['totalAmountDonated'] / max(1, $createdAt-&gt;floatDiffInYears()))
+        );
+        $status = null;
+        $rank = 0;
+
+        if ($monthlyContribution &gt; 29 || $yearlyContribution &gt; 700) {
+            $status = 'sponsor';
+            $rank = 4;
+        } elseif ($monthlyContribution &gt; 14.5 || $yearlyContribution &gt; 500) {
+            $status = 'backerPlus';
+            $rank = 3;
+        } elseif ($monthlyContribution &gt; 4.5 || $yearlyContribution &gt; 80) {
+            $status = 'backer';
+            $rank = 2;
+        } elseif ($member['totalAmountDonated'] &gt; 0) {
+            $status = 'helper';
+            $rank = 1;
+        }
+
+        return array_merge($member, [
+            'star' =&gt; ($monthlyContribution &gt; 98 || $yearlyContribution &gt; 800),
+            'status' =&gt; $status,
+            'rank' =&gt; $rank,
+            'monthlyContribution' =&gt; $monthlyContribution,
+            'yearlyContribution' =&gt; $yearlyContribution,
+        ]);
+    }, $list);
+
+    usort($list, static function (array $a, array $b): int {
+        return ($b['star'] &lt;=&gt; $a['star'])
+            ?: ($b['rank'] &lt;=&gt; $a['rank'])
+            ?: ($b['monthlyContribution'] &lt;=&gt; $a['monthlyContribution'])
+            ?: ($b['totalAmountDonated'] &lt;=&gt; $a['totalAmountDonated']);
+    });
+
+    $membersByUrl = [];
+    $output = '';
+
+    foreach ($list as $member) {
+        $url = $member['website'] ?? $member['profile'];
+
+        if (isset($membersByUrl[$url]) || !\in_array($member['status'], ['sponsor', 'backerPlus'], true)) {
+            continue;
+        }
+
+        $membersByUrl[$url] = $member;
+        $href = htmlspecialchars($url);
+        $src = $customSponsorImages[$member['MemberId'] ?? ''] ?? $member['image'] ?? (strtr($member['profile'], ['https://opencollective.com/' =&gt; 'https://images.opencollective.com/']).'/avatar/256.png');
+        [$x, $y] = @getimagesize($src) ?: [0, 0];
+        $validImage = ($x &amp;&amp; $y);
+        $src = $validImage ? htmlspecialchars($src) : 'https://opencollective.com/static/images/default-guest-logo.svg';
+        $height = match ($member['status']) {
+            'sponsor' =&gt; 64,
+            'backerPlus' =&gt; 42,
+            'backer' =&gt; 32,
+            default =&gt; 24,
+        };
+        $rel = match ($member['status']) {
+            'sponsor', 'backerPlus' =&gt; '',
+            default =&gt; ' rel=&quot;sponsored&quot;',
+        };
+
+        $width = min($height * 2, $validImage ? round($x * $height / $y) : $height);
+
+        if (!str_contains($href, 'utm_source') &amp;&amp; !preg_match('/^https?:\/\/(?:www\.)?(?:onlinekasyno-polis\.pl|zonaminecraft\.net|slotozilla\.com)(\/.*)?/', $href)) {
+            $href .= (!str_contains($href, '?') ? '?' : '&amp;amp;').'utm_source=opencollective&amp;amp;utm_medium=github&amp;amp;utm_campaign=Carbon';
+        }
+
+        $title = getHtmlAttribute(($member['description'] ?? null) ?: $member['name']);
+        $alt = getHtmlAttribute($member['name']);
+
+        if ($member['star']) {
+            $width *= 1.5;
+            $height *= 1.5;
+        }
+
+        $output .= &quot;\n&quot;.'&lt;a title=&quot;'.$title.'&quot; href=&quot;'.$href.'&quot; target=&quot;_blank&quot;'.$rel.'&gt;'.
+            '&lt;img alt=&quot;'.$alt.'&quot; src=&quot;'.$src.'&quot; width=&quot;'.$width.'&quot; height=&quot;'.$height.'&quot;&gt;'.
+            '&lt;/a&gt;';
+    }
+
+    return $output;
+}
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

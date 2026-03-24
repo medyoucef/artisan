@@ -1,0 +1,184 @@
+<html>
+<head>
+    <title>protected function initializeContainer()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">protected function initializeContainer()</h3>
+<p style="margin-top: 4px">in <i>vendor/symfony/http-kernel/Kernel.php [391:552]</i></p>
+<ul>
+    <li><b>129</b> lines of code</li>
+    <li><b>46</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    protected function initializeContainer(): void
+    {
+        $class = $this-&gt;getContainerClass();
+        $buildDir = $this-&gt;warmupDir ?: $this-&gt;getBuildDir();
+        $skip = $_SERVER['SYMFONY_DISABLE_RESOURCE_TRACKING'] ?? '';
+        $skip = filter_var($skip, \FILTER_VALIDATE_BOOLEAN, \FILTER_NULL_ON_FAILURE) ?? explode(',', $skip);
+        $cache = new ConfigCache($buildDir.'/'.$class.'.php', $this-&gt;debug, null, \is_array($skip) &amp;&amp; ['*'] !== $skip ? $skip : ($skip ? [] : null));
+
+        $cachePath = $cache-&gt;getPath();
+
+        // Silence E_WARNING to ignore &quot;include&quot; failures - don't use &quot;@&quot; to prevent silencing fatal errors
+        $errorLevel = error_reporting();
+        error_reporting($errorLevel &amp; ~\E_WARNING);
+
+        try {
+            if (is_file($cachePath) &amp;&amp; \is_object($this-&gt;container = include $cachePath)
+                &amp;&amp; (!$this-&gt;debug || (self::$freshCache[$cachePath] ?? $cache-&gt;isFresh()))
+            ) {
+                self::$freshCache[$cachePath] = true;
+                $this-&gt;container-&gt;set('kernel', $this);
+                error_reporting($errorLevel);
+
+                return;
+            }
+        } catch (\Throwable $e) {
+        }
+
+        $oldContainer = \is_object($this-&gt;container) ? new \ReflectionClass($this-&gt;container) : $this-&gt;container = null;
+
+        try {
+            is_dir($buildDir) ?: mkdir($buildDir, 0777, true);
+
+            if ($lock = fopen($cachePath.'.lock', 'w+')) {
+                if (!flock($lock, \LOCK_EX | \LOCK_NB, $wouldBlock) &amp;&amp; !flock($lock, $wouldBlock ? \LOCK_SH : \LOCK_EX)) {
+                    fclose($lock);
+                    $lock = null;
+                } elseif (!is_file($cachePath) || !\is_object($this-&gt;container = include $cachePath)) {
+                    $this-&gt;container = null;
+                } elseif (!$oldContainer || $this-&gt;container::class !== $oldContainer-&gt;name) {
+                    flock($lock, \LOCK_UN);
+                    fclose($lock);
+                    $this-&gt;container-&gt;set('kernel', $this);
+
+                    return;
+                }
+            }
+        } catch (\Throwable $e) {
+        } finally {
+            error_reporting($errorLevel);
+        }
+
+        if ($collectDeprecations = $this-&gt;debug &amp;&amp; !\defined('PHPUNIT_COMPOSER_INSTALL')) {
+            $collectedLogs = [];
+            $previousHandler = set_error_handler(function ($type, $message, $file, $line) use (&amp;$collectedLogs, &amp;$previousHandler) {
+                if (\E_USER_DEPRECATED !== $type &amp;&amp; \E_DEPRECATED !== $type) {
+                    return $previousHandler ? $previousHandler($type, $message, $file, $line) : false;
+                }
+
+                if (isset($collectedLogs[$message])) {
+                    ++$collectedLogs[$message]['count'];
+
+                    return null;
+                }
+
+                $backtrace = debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS, 5);
+                // Clean the trace by removing first frames added by the error handler itself.
+                for ($i = 0; isset($backtrace[$i]); ++$i) {
+                    if (isset($backtrace[$i]['file'], $backtrace[$i]['line']) &amp;&amp; $backtrace[$i]['line'] === $line &amp;&amp; $backtrace[$i]['file'] === $file) {
+                        $backtrace = \array_slice($backtrace, 1 + $i);
+                        break;
+                    }
+                }
+                for ($i = 0; isset($backtrace[$i]); ++$i) {
+                    if (!isset($backtrace[$i]['file'], $backtrace[$i]['line'], $backtrace[$i]['function'])) {
+                        continue;
+                    }
+                    if (!isset($backtrace[$i]['class']) &amp;&amp; 'trigger_deprecation' === $backtrace[$i]['function']) {
+                        $file = $backtrace[$i]['file'];
+                        $line = $backtrace[$i]['line'];
+                        $backtrace = \array_slice($backtrace, 1 + $i);
+                        break;
+                    }
+                }
+
+                // Remove frames added by DebugClassLoader.
+                for ($i = \count($backtrace) - 2; 0 &lt; $i; --$i) {
+                    if (DebugClassLoader::class === ($backtrace[$i]['class'] ?? null)) {
+                        $backtrace = [$backtrace[$i + 1]];
+                        break;
+                    }
+                }
+
+                $collectedLogs[$message] = [
+                    'type' =&gt; $type,
+                    'message' =&gt; $message,
+                    'file' =&gt; $file,
+                    'line' =&gt; $line,
+                    'trace' =&gt; [$backtrace[0]],
+                    'count' =&gt; 1,
+                ];
+
+                return null;
+            });
+        }
+
+        try {
+            $container = null;
+            $container = $this-&gt;buildContainer();
+            $container-&gt;compile();
+        } finally {
+            if ($collectDeprecations) {
+                restore_error_handler();
+
+                @file_put_contents($buildDir.'/'.$class.'Deprecations.log', serialize(array_values($collectedLogs)));
+                @file_put_contents($buildDir.'/'.$class.'Compiler.log', null !== $container ? implode(&quot;\n&quot;, $container-&gt;getCompiler()-&gt;getLog()) : '');
+            }
+        }
+
+        $this-&gt;dumpContainer($cache, $container, $class, $this-&gt;getContainerBaseClass());
+
+        if ($lock) {
+            flock($lock, \LOCK_UN);
+            fclose($lock);
+        }
+
+        $this-&gt;container = require $cachePath;
+        $this-&gt;container-&gt;set('kernel', $this);
+
+        if ($oldContainer &amp;&amp; $this-&gt;container::class !== $oldContainer-&gt;name) {
+            // Because concurrent requests might still be using them,
+            // old container files are not removed immediately,
+            // but on a next dump of the container.
+            static $legacyContainers = [];
+            $oldContainerDir = \dirname($oldContainer-&gt;getFileName());
+            $legacyContainers[$oldContainerDir.'.legacy'] = true;
+            foreach (glob(\dirname($oldContainerDir).\DIRECTORY_SEPARATOR.'*.legacy', \GLOB_NOSORT) as $legacyContainer) {
+                if (!isset($legacyContainers[$legacyContainer]) &amp;&amp; @unlink($legacyContainer)) {
+                    (new Filesystem())-&gt;remove(substr($legacyContainer, 0, -7));
+                }
+            }
+
+            touch($oldContainerDir.'.legacy');
+        }
+
+        $buildDir = $this-&gt;container-&gt;getParameter('kernel.build_dir');
+        $cacheDir = $this-&gt;container-&gt;getParameter('kernel.cache_dir');
+        $preload = $this instanceof WarmableInterface ? $this-&gt;warmUp($cacheDir, $buildDir) : [];
+
+        if ($this-&gt;container-&gt;has('cache_warmer')) {
+            $cacheWarmer = $this-&gt;container-&gt;get('cache_warmer');
+
+            if ($cacheDir !== $buildDir) {
+                $cacheWarmer-&gt;enableOptionalWarmers();
+            }
+
+            $preload = array_merge($preload, $cacheWarmer-&gt;warmUp($cacheDir, $buildDir));
+        }
+
+        if ($preload &amp;&amp; file_exists($preloadFile = $buildDir.'/'.$class.'.preload.php')) {
+            Preloader::append($preloadFile, $preload);
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

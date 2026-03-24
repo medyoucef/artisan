@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>public function clear()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function clear()</h3>
+<p style="margin-top: 4px">in <i>vendor/google/protobuf/src/Google/Protobuf/Internal/Message.php [527:631]</i></p>
+<ul>
+    <li><b>105</b> lines of code</li>
+    <li><b>37</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function clear()
+    {
+        $this-&gt;unknown = &quot;&quot;;
+        foreach ($this-&gt;desc-&gt;getField() as $field) {
+            $setter = $field-&gt;getSetter();
+            if ($field-&gt;isMap()) {
+                $message_type = $field-&gt;getMessageType();
+                $key_field = $message_type-&gt;getFieldByNumber(1);
+                $value_field = $message_type-&gt;getFieldByNumber(2);
+                switch ($value_field-&gt;getType()) {
+                    case GPBType::MESSAGE:
+                    case GPBType::GROUP:
+                        $map_field = new MapField(
+                            $key_field-&gt;getType(),
+                            $value_field-&gt;getType(),
+                            $value_field-&gt;getMessageType()-&gt;getClass());
+                        $this-&gt;$setter($map_field);
+                        break;
+                    case GPBType::ENUM:
+                        $map_field = new MapField(
+                            $key_field-&gt;getType(),
+                            $value_field-&gt;getType(),
+                            $value_field-&gt;getEnumType()-&gt;getClass());
+                        $this-&gt;$setter($map_field);
+                        break;
+                    default:
+                        $map_field = new MapField(
+                            $key_field-&gt;getType(),
+                            $value_field-&gt;getType());
+                        $this-&gt;$setter($map_field);
+                        break;
+                }
+            } else if ($field-&gt;isRepeated()) {
+                switch ($field-&gt;getType()) {
+                    case GPBType::MESSAGE:
+                    case GPBType::GROUP:
+                        $repeated_field = new RepeatedField(
+                            $field-&gt;getType(),
+                            $field-&gt;getMessageType()-&gt;getClass());
+                        $this-&gt;$setter($repeated_field);
+                        break;
+                    case GPBType::ENUM:
+                        $repeated_field = new RepeatedField(
+                            $field-&gt;getType(),
+                            $field-&gt;getEnumType()-&gt;getClass());
+                        $this-&gt;$setter($repeated_field);
+                        break;
+                    default:
+                        $repeated_field = new RepeatedField($field-&gt;getType());
+                        $this-&gt;$setter($repeated_field);
+                        break;
+                }
+            } else if ($field-&gt;getOneofIndex() !== -1) {
+                $oneof = $this-&gt;desc-&gt;getOneofDecl()[$field-&gt;getOneofIndex()];
+                $oneof_name = $oneof-&gt;getName();
+                $this-&gt;$oneof_name = new OneofField($oneof);
+            } else if (!$field-&gt;isRequired() &amp;&amp; !$field-&gt;isRepeated()) {
+                switch ($field-&gt;getType()) {
+                    case GPBType::DOUBLE   :
+                    case GPBType::FLOAT    :
+                        $this-&gt;$setter(0.0);
+                        break;
+                    case GPBType::INT32    :
+                    case GPBType::FIXED32  :
+                    case GPBType::UINT32   :
+                    case GPBType::SFIXED32 :
+                    case GPBType::SINT32   :
+                    case GPBType::ENUM     :
+                        $this-&gt;$setter(0);
+                        break;
+                    case GPBType::BOOL     :
+                        $this-&gt;$setter(false);
+                        break;
+                    case GPBType::STRING   :
+                    case GPBType::BYTES    :
+                        $this-&gt;$setter(&quot;&quot;);
+                        break;
+                    case GPBType::GROUP    :
+                    case GPBType::MESSAGE  :
+                        $null = null;
+                        $this-&gt;$setter($null);
+                        break;
+                }
+                if (PHP_INT_SIZE == 4) {
+                    switch ($field-&gt;getType()) {
+                        case GPBType::INT64:
+                        case GPBType::UINT64:
+                        case GPBType::FIXED64:
+                        case GPBType::SFIXED64:
+                        case GPBType::SINT64:
+                            $this-&gt;$setter(&quot;0&quot;);
+                    }
+                } else {
+                    switch ($field-&gt;getType()) {
+                        case GPBType::INT64:
+                        case GPBType::UINT64:
+                        case GPBType::FIXED64:
+                        case GPBType::SFIXED64:
+                        case GPBType::SINT64:
+                            $this-&gt;$setter(0);
+                    }
+                }
+            }
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

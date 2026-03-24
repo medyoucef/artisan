@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('ville');
             $table->string('adresse')->nullable();
             $table->timestamps(); 
+            // $table->timestamp('updated_at')->nullable()->after('created_at');
         });
     }
 

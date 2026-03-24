@@ -1,0 +1,2402 @@
+duplicated block id: 1
+size: 168 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (490:700)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (490:700)
+
+duplicated block id: 2
+size: 142 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (176:347)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (176:347)
+
+duplicated block id: 3
+size: 99 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/ModelForwardsCallsExtension.php (72:201)
+ - vendor/nunomaduro/larastan/src/Methods/ModelForwardsCallsExtension.php (72:201)
+
+duplicated block id: 4
+size: 99 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/RelationExistenceRule.php (41:174)
+ - vendor/nunomaduro/larastan/src/Rules/RelationExistenceRule.php (41:174)
+
+duplicated block id: 5
+size: 98 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/MacroMethodsClassReflectionExtension.php (59:182)
+ - vendor/nunomaduro/larastan/src/Methods/MacroMethodsClassReflectionExtension.php (59:182)
+
+duplicated block id: 6
+size: 83 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/HigherOrderCollectionProxyExtension.php (31:141)
+ - vendor/nunomaduro/larastan/src/Methods/HigherOrderCollectionProxyExtension.php (31:141)
+
+duplicated block id: 7
+size: 78 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/ModelFactoryMethodsClassReflectionExtension.php (71:168)
+ - vendor/nunomaduro/larastan/src/Methods/ModelFactoryMethodsClassReflectionExtension.php (71:168)
+
+duplicated block id: 8
+size: 76 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/BuilderHelper.php (146:253)
+ - vendor/nunomaduro/larastan/src/Methods/BuilderHelper.php (146:253)
+
+duplicated block id: 9
+size: 76 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/CheckDispatchArgumentTypesCompatibleWithClassConstructorRule.php (44:139)
+ - vendor/nunomaduro/larastan/src/Rules/CheckDispatchArgumentTypesCompatibleWithClassConstructorRule.php (44:139)
+
+duplicated block id: 10
+size: 76 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ConfigParser.php (69:175)
+ - vendor/nunomaduro/larastan/src/Support/ConfigParser.php (69:175)
+
+duplicated block id: 11
+size: 72 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/HigherOrderCollectionProxyPropertyExtension.php (27:123)
+ - vendor/nunomaduro/larastan/src/Properties/HigherOrderCollectionProxyPropertyExtension.php (27:123)
+
+duplicated block id: 12
+size: 71 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/EloquentBuilderForwardsCallsExtension.php (67:159)
+ - vendor/nunomaduro/larastan/src/Methods/EloquentBuilderForwardsCallsExtension.php (67:159)
+
+duplicated block id: 13
+size: 66 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/OctaneCompatibilityRule.php (34:133)
+ - vendor/nunomaduro/larastan/src/Rules/OctaneCompatibilityRule.php (34:133)
+
+duplicated block id: 14
+size: 58 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoAuthHelperInRequestScopeRule.php (39:112)
+ - vendor/nunomaduro/larastan/src/Rules/NoAuthHelperInRequestScopeRule.php (39:112)
+
+duplicated block id: 15
+size: 58 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoMissingTranslationsRule.php (52:130)
+ - vendor/nunomaduro/larastan/src/Rules/NoMissingTranslationsRule.php (52:130)
+
+duplicated block id: 16
+size: 57 cleaned lines of code
+in 2 files:
+ - vendor/open-telemetry/sdk/Logs/Processor/BatchLogRecordProcessor.php (184:251)
+ - vendor/open-telemetry/sdk/Trace/SpanProcessor/BatchSpanProcessor.php (202:269)
+
+duplicated block id: 17
+size: 55 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (92:156)
+ - vendor/nunomaduro/larastan/src/Properties/ModelPropertyHelper.php (92:156)
+
+duplicated block id: 18
+size: 55 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/CollectionFilterRejectDynamicReturnTypeExtension.php (39:111)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/CollectionFilterRejectDynamicReturnTypeExtension.php (39:111)
+
+duplicated block id: 19
+size: 55 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ModelDynamicStaticMethodReturnTypeExtension.php (63:135)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ModelDynamicStaticMethodReturnTypeExtension.php (63:135)
+
+duplicated block id: 20
+size: 55 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoAuthFacadeInRequestScopeRule.php (40:109)
+ - vendor/nunomaduro/larastan/src/Rules/NoAuthFacadeInRequestScopeRule.php (40:109)
+
+duplicated block id: 21
+size: 54 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoPublicModelScopeAndAccessorRule.php (35:98)
+ - vendor/nunomaduro/larastan/src/Rules/NoPublicModelScopeAndAccessorRule.php (35:98)
+
+duplicated block id: 22
+size: 50 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (102:169)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (102:169)
+
+duplicated block id: 23
+size: 47 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelCastHelper.php (139:198)
+ - vendor/nunomaduro/larastan/src/Properties/ModelCastHelper.php (139:198)
+
+duplicated block id: 24
+size: 46 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelCastHelper.php (79:137)
+ - vendor/nunomaduro/larastan/src/Properties/ModelCastHelper.php (79:137)
+
+duplicated block id: 25
+size: 45 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/LiteralExtension.php (29:89)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/LiteralExtension.php (29:89)
+
+duplicated block id: 26
+size: 44 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (135:201)
+ - vendor/nunomaduro/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (135:201)
+
+duplicated block id: 27
+size: 42 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelCastHelper.php (247:300)
+ - vendor/nunomaduro/larastan/src/Properties/ModelCastHelper.php (247:300)
+
+duplicated block id: 28
+size: 42 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/ConsoleCommand/UndefinedArgumentOrOptionRule.php (33:90)
+ - vendor/nunomaduro/larastan/src/Rules/ConsoleCommand/UndefinedArgumentOrOptionRule.php (33:90)
+
+duplicated block id: 29
+size: 35 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (67:122)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (67:122)
+
+duplicated block id: 30
+size: 40 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (53:111)
+ - vendor/nunomaduro/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (53:111)
+
+duplicated block id: 31
+size: 39 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SquashedMigrationHelper.php (37:91)
+ - vendor/nunomaduro/larastan/src/Properties/SquashedMigrationHelper.php (37:91)
+
+duplicated block id: 32
+size: 39 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/IamcalSqlParser.php (18:66)
+ - vendor/nunomaduro/larastan/src/SQL/IamcalSqlParser.php (18:66)
+
+duplicated block id: 33
+size: 38 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Reflection/DynamicWhereMethodReflection.php (59:103)
+ - vendor/nunomaduro/larastan/src/Reflection/DynamicWhereMethodReflection.php (59:103)
+
+duplicated block id: 34
+size: 37 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ConsoleCommand/OptionDynamicReturnTypeExtension.php (37:90)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ConsoleCommand/OptionDynamicReturnTypeExtension.php (37:90)
+
+duplicated block id: 35
+size: 37 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/GenericEloquentBuilderTypeNodeResolverExtension.php (27:73)
+ - vendor/nunomaduro/larastan/src/Types/GenericEloquentBuilderTypeNodeResolverExtension.php (27:73)
+
+duplicated block id: 36
+size: 36 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/ModelAppendsRule.php (44:92)
+ - vendor/nunomaduro/larastan/src/Rules/ModelAppendsRule.php (44:92)
+
+duplicated block id: 37
+size: 35 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/BuilderHelper.php (88:134)
+ - vendor/nunomaduro/larastan/src/Methods/BuilderHelper.php (88:134)
+
+duplicated block id: 38
+size: 35 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/UselessConstructs/NoUselessWithFunctionCallsRule.php (26:69)
+ - vendor/nunomaduro/larastan/src/Rules/UselessConstructs/NoUselessWithFunctionCallsRule.php (26:69)
+
+duplicated block id: 39
+size: 34 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/RelationForwardsCallsExtension.php (61:106)
+ - vendor/nunomaduro/larastan/src/Methods/RelationForwardsCallsExtension.php (61:106)
+
+duplicated block id: 40
+size: 34 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (62:100)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (62:100)
+
+duplicated block id: 41
+size: 34 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/FactoryDynamicMethodReturnTypeExtension.php (38:83)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/FactoryDynamicMethodReturnTypeExtension.php (38:83)
+
+duplicated block id: 42
+size: 34 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ModelOnlyDynamicMethodReturnTypeExtension.php (36:85)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ModelOnlyDynamicMethodReturnTypeExtension.php (36:85)
+
+duplicated block id: 43
+size: 33 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ApplicationResolver.php (60:105)
+ - vendor/nunomaduro/larastan/src/ApplicationResolver.php (60:105)
+
+duplicated block id: 44
+size: 32 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Pipes/Facades.php (24:69)
+ - vendor/nunomaduro/larastan/src/Methods/Pipes/Facades.php (24:69)
+
+duplicated block id: 45
+size: 32 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (46:90)
+ - vendor/nunomaduro/larastan/src/Properties/ModelPropertyHelper.php (46:90)
+
+duplicated block id: 46
+size: 32 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ConsoleCommand/ArgumentDynamicReturnTypeExtension.php (37:84)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ConsoleCommand/ArgumentDynamicReturnTypeExtension.php (37:84)
+
+duplicated block id: 47
+size: 32 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ModelFactoryDynamicStaticMethodReturnTypeExtension.php (50:90)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ModelFactoryDynamicStaticMethodReturnTypeExtension.php (50:90)
+
+duplicated block id: 48
+size: 32 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (206:258)
+ - vendor/nunomaduro/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (206:258)
+
+duplicated block id: 49
+size: 32 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/GenericEloquentCollectionTypeNodeResolverExtension.php (41:82)
+ - vendor/nunomaduro/larastan/src/Types/GenericEloquentCollectionTypeNodeResolverExtension.php (41:82)
+
+duplicated block id: 50
+size: 30 cleaned lines of code
+in 2 files:
+ - database/migrations/2026_03_18_034601_create_telescope_entries_table.php (20:57)
+ - vendor/laravel/telescope/database/migrations/2018_08_08_100000_create_telescope_entries_table.php (20:57)
+
+duplicated block id: 51
+size: 30 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/ModelRuleHelper.php (21:62)
+ - vendor/nunomaduro/larastan/src/Rules/ModelRuleHelper.php (21:62)
+
+duplicated block id: 52
+size: 30 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/PhpMyAdminSqlParser.php (19:59)
+ - vendor/nunomaduro/larastan/src/SQL/PhpMyAdminSqlParser.php (19:59)
+
+duplicated block id: 53
+size: 29 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/ConfigCollectionRule.php (38:78)
+ - vendor/nunomaduro/larastan/src/Rules/ConfigCollectionRule.php (38:78)
+
+duplicated block id: 54
+size: 28 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationCache.php (51:88)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationCache.php (51:88)
+
+duplicated block id: 55
+size: 28 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ContainerArrayAccessDynamicMethodReturnTypeExtension.php (39:79)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ContainerArrayAccessDynamicMethodReturnTypeExtension.php (39:79)
+
+duplicated block id: 56
+size: 28 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/UnusedViewsRule.php (45:83)
+ - vendor/nunomaduro/larastan/src/Rules/UnusedViewsRule.php (45:83)
+
+duplicated block id: 57
+size: 27 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/AppMakeHelper.php (25:62)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/AppMakeHelper.php (25:62)
+
+duplicated block id: 58
+size: 27 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (96:127)
+ - vendor/nunomaduro/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (96:127)
+
+duplicated block id: 59
+size: 26 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/ModelFactoryMethodsClassReflectionExtension.php (33:69)
+ - vendor/nunomaduro/larastan/src/Methods/ModelFactoryMethodsClassReflectionExtension.php (33:69)
+
+duplicated block id: 60
+size: 26 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/CollectionWhereNotNullDynamicReturnTypeExtension.php (36:71)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/CollectionWhereNotNullDynamicReturnTypeExtension.php (36:71)
+
+duplicated block id: 61
+size: 26 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ConsoleCommand/HasOptionDynamicReturnTypeExtension.php (34:71)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ConsoleCommand/HasOptionDynamicReturnTypeExtension.php (34:71)
+
+duplicated block id: 62
+size: 26 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/EloquentBuilderExtension.php (67:106)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/EloquentBuilderExtension.php (67:106)
+
+duplicated block id: 63
+size: 26 cleaned lines of code
+in 2 files:
+ - vendor/symfony/service-contracts/ServiceMethodsSubscriberTrait.php (31:66)
+ - vendor/symfony/service-contracts/ServiceSubscriberTrait.php (35:70)
+
+duplicated block id: 64
+size: 25 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ConsoleCommand/HasArgumentDynamicReturnTypeExtension.php (34:69)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ConsoleCommand/HasArgumentDynamicReturnTypeExtension.php (34:69)
+
+duplicated block id: 65
+size: 24 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedEmailViewCollector.php (28:61)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedEmailViewCollector.php (28:61)
+
+duplicated block id: 66
+size: 24 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedRouteFacadeViewCollector.php (25:60)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedRouteFacadeViewCollector.php (25:60)
+
+duplicated block id: 67
+size: 24 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedTranslationFacadeCollector.php (29:64)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedTranslationFacadeCollector.php (29:64)
+
+duplicated block id: 68
+size: 24 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedViewFacadeMakeCollector.php (25:60)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedViewFacadeMakeCollector.php (25:60)
+
+duplicated block id: 69
+size: 24 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/DateExtension.php (29:54)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/DateExtension.php (29:54)
+
+duplicated block id: 70
+size: 24 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/HigherOrderCollectionProxyHelper.php (27:61)
+ - vendor/nunomaduro/larastan/src/Support/HigherOrderCollectionProxyHelper.php (27:61)
+
+duplicated block id: 71
+size: 23 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Pipes/Managers.php (19:52)
+ - vendor/nunomaduro/larastan/src/Methods/Pipes/Managers.php (19:52)
+
+duplicated block id: 72
+size: 23 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelRelationsExtension.php (36:67)
+ - vendor/nunomaduro/larastan/src/Properties/ModelRelationsExtension.php (36:67)
+
+duplicated block id: 73
+size: 23 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/GuardDynamicStaticMethodReturnTypeExtension.php (38:72)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/GuardDynamicStaticMethodReturnTypeExtension.php (38:72)
+
+duplicated block id: 74
+size: 23 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/UselessConstructs/NoUselessValueFunctionCallsRule.php (28:57)
+ - vendor/nunomaduro/larastan/src/Rules/UselessConstructs/NoUselessValueFunctionCallsRule.php (28:57)
+
+duplicated block id: 75
+size: 23 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/IamcalSqlParser.php (85:113)
+ - vendor/nunomaduro/larastan/src/SQL/IamcalSqlParser.php (85:113)
+
+duplicated block id: 76
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Concerns/LoadsAuthModel.php (17:47)
+ - vendor/nunomaduro/larastan/src/Concerns/LoadsAuthModel.php (17:47)
+
+duplicated block id: 77
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Passable.php (98:128)
+ - vendor/nunomaduro/larastan/src/Methods/Passable.php (98:128)
+
+duplicated block id: 78
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Pipes/Auths.php (33:63)
+ - vendor/nunomaduro/larastan/src/Methods/Pipes/Auths.php (33:63)
+
+duplicated block id: 79
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelCastHelper.php (302:335)
+ - vendor/nunomaduro/larastan/src/Properties/ModelCastHelper.php (302:335)
+
+duplicated block id: 80
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/EloquentBuilderExtension.php (35:65)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/EloquentBuilderExtension.php (35:65)
+
+duplicated block id: 81
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ModelFactoryDynamicStaticMethodReturnTypeExtension.php (112:139)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ModelFactoryDynamicStaticMethodReturnTypeExtension.php (112:139)
+
+duplicated block id: 82
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/RequestUserExtension.php (37:64)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/RequestUserExtension.php (37:64)
+
+duplicated block id: 83
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoPublicModelScopeAndAccessorRule.php (100:129)
+ - vendor/nunomaduro/larastan/src/Rules/NoPublicModelScopeAndAccessorRule.php (100:129)
+
+duplicated block id: 84
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoUnnecessaryEnumerableToArrayCallsRule.php (39:68)
+ - vendor/nunomaduro/larastan/src/Rules/NoUnnecessaryEnumerableToArrayCallsRule.php (39:68)
+
+duplicated block id: 85
+size: 22 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (147:176)
+ - vendor/nunomaduro/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (147:176)
+
+duplicated block id: 86
+size: 21 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/BuilderHelper.php (259:289)
+ - vendor/nunomaduro/larastan/src/Methods/BuilderHelper.php (259:289)
+
+duplicated block id: 87
+size: 21 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (194:221)
+ - vendor/nunomaduro/larastan/src/Properties/ModelPropertyHelper.php (194:221)
+
+duplicated block id: 88
+size: 21 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/NewModelQueryDynamicMethodReturnTypeExtension.php (43:73)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/NewModelQueryDynamicMethodReturnTypeExtension.php (43:73)
+
+duplicated block id: 89
+size: 21 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/CollectionHelper.php (43:70)
+ - vendor/nunomaduro/larastan/src/Support/CollectionHelper.php (43:70)
+
+duplicated block id: 90
+size: 21 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/ModelProperty/ModelPropertyTypeNodeResolverExtension.php (34:63)
+ - vendor/nunomaduro/larastan/src/Types/ModelProperty/ModelPropertyTypeNodeResolverExtension.php (34:63)
+
+duplicated block id: 91
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedTranslationTranslatorCollector.php (29:58)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedTranslationTranslatorCollector.php (29:58)
+
+duplicated block id: 92
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedViewMakeCollector.php (25:54)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedViewMakeCollector.php (25:54)
+
+duplicated block id: 93
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationHelper.php (40:66)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationHelper.php (40:66)
+
+duplicated block id: 94
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationHelper.php (69:96)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationHelper.php (69:96)
+
+duplicated block id: 95
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (163:192)
+ - vendor/nunomaduro/larastan/src/Properties/ModelPropertyHelper.php (163:192)
+
+duplicated block id: 96
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ConfigRepositoryDynamicMethodReturnTypeExtension.php (42:69)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ConfigRepositoryDynamicMethodReturnTypeExtension.php (42:69)
+
+duplicated block id: 97
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/FormRequestSafeDynamicMethodReturnTypeExtension.php (32:60)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/FormRequestSafeDynamicMethodReturnTypeExtension.php (32:60)
+
+duplicated block id: 98
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/RequestRouteExtension.php (36:60)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/RequestRouteExtension.php (36:60)
+
+duplicated block id: 99
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/CollectionHelper.php (72:100)
+ - vendor/nunomaduro/larastan/src/Support/CollectionHelper.php (72:100)
+
+duplicated block id: 100
+size: 20 cleaned lines of code
+in 2 files:
+ - vendor/symfony/string/CodePointString.php (48:74)
+ - vendor/symfony/string/UnicodeString.php (66:92)
+
+duplicated block id: 101
+size: 19 cleaned lines of code
+in 2 files:
+ - vendor/fakerphp/faker/src/Faker/ORM/Propel/EntityPopulator.php (100:127)
+ - vendor/fakerphp/faker/src/Faker/ORM/Propel2/EntityPopulator.php (103:130)
+
+duplicated block id: 102
+size: 19 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/GuardExtension.php (37:60)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/GuardExtension.php (37:60)
+
+duplicated block id: 103
+size: 19 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/TestCaseExtension.php (37:64)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/TestCaseExtension.php (37:64)
+
+duplicated block id: 104
+size: 19 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/CheckDispatchArgumentTypesCompatibleWithClassConstructorRule.php (142:164)
+ - vendor/nunomaduro/larastan/src/Rules/CheckDispatchArgumentTypesCompatibleWithClassConstructorRule.php (142:164)
+
+duplicated block id: 105
+size: 19 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (124:148)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (124:148)
+
+duplicated block id: 106
+size: 19 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/HigherOrderCollectionProxyHelper.php (63:84)
+ - vendor/nunomaduro/larastan/src/Support/HigherOrderCollectionProxyHelper.php (63:84)
+
+duplicated block id: 107
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Kernel.php (25:47)
+ - vendor/nunomaduro/larastan/src/Methods/Kernel.php (25:47)
+
+duplicated block id: 108
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelRelationsExtension.php (69:94)
+ - vendor/nunomaduro/larastan/src/Properties/ModelRelationsExtension.php (69:94)
+
+duplicated block id: 109
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/AuthExtension.php (36:58)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/AuthExtension.php (36:58)
+
+duplicated block id: 110
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/AuthManagerExtension.php (35:57)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/AuthManagerExtension.php (35:57)
+
+duplicated block id: 111
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/DeferrableServiceProviderMissingProvidesRule.php (32:58)
+ - vendor/nunomaduro/larastan/src/Rules/DeferrableServiceProviderMissingProvidesRule.php (32:58)
+
+duplicated block id: 112
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoEnvCallsOutsideOfConfigRule.php (55:78)
+ - vendor/nunomaduro/larastan/src/Rules/NoEnvCallsOutsideOfConfigRule.php (55:78)
+
+duplicated block id: 113
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoModelMakeRule.php (43:66)
+ - vendor/nunomaduro/larastan/src/Rules/NoModelMakeRule.php (43:66)
+
+duplicated block id: 114
+size: 18 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/CollectionOf/CollectionOfTypeNodeResolverExtension.php (30:55)
+ - vendor/nunomaduro/larastan/src/Types/CollectionOf/CollectionOfTypeNodeResolverExtension.php (30:55)
+
+duplicated block id: 115
+size: 17 cleaned lines of code
+in 4 files:
+ - vendor/fakerphp/faker/src/Faker/Provider/ka_GE/DateTime.php (23:42)
+ - vendor/fakerphp/faker/src/Faker/Provider/tr_TR/DateTime.php (28:47)
+ - vendor/fakerphp/faker/src/Faker/Provider/zh_CN/DateTime.php (28:47)
+ - vendor/fakerphp/faker/src/Faker/Provider/zh_TW/DateTime.php (28:47)
+
+duplicated block id: 116
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ApplicationResolver.php (29:53)
+ - vendor/nunomaduro/larastan/src/ApplicationResolver.php (29:53)
+
+duplicated block id: 117
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedViewFunctionCollector.php (23:50)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedViewFunctionCollector.php (23:50)
+
+duplicated block id: 118
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ConfigHelper.php (33:57)
+ - vendor/nunomaduro/larastan/src/Internal/ConfigHelper.php (33:57)
+
+duplicated block id: 119
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (412:436)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (412:436)
+
+duplicated block id: 120
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (460:483)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (460:483)
+
+duplicated block id: 121
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SquashedMigrationHelper.php (94:117)
+ - vendor/nunomaduro/larastan/src/Properties/SquashedMigrationHelper.php (94:117)
+
+duplicated block id: 122
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension.php (41:64)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension.php (41:64)
+
+duplicated block id: 123
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/GuardExtension.php (62:84)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/GuardExtension.php (62:84)
+
+duplicated block id: 124
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/CollectionHelper.php (125:148)
+ - vendor/nunomaduro/larastan/src/Support/CollectionHelper.php (125:148)
+
+duplicated block id: 125
+size: 17 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ConfigParser.php (199:223)
+ - vendor/nunomaduro/larastan/src/Support/ConfigParser.php (199:223)
+
+duplicated block id: 126
+size: 16 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/ViewStringType.php (29:53)
+ - vendor/nunomaduro/larastan/src/Types/ViewStringType.php (29:53)
+
+duplicated block id: 127
+size: 16 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/ViewStringType.php (55:79)
+ - vendor/nunomaduro/larastan/src/Types/ViewStringType.php (55:79)
+
+duplicated block id: 128
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedTranslationFunctionCollector.php (27:48)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedTranslationFunctionCollector.php (27:48)
+
+duplicated block id: 129
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedTranslationViewCollector.php (47:68)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedTranslationViewCollector.php (47:68)
+
+duplicated block id: 130
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedViewInAnotherViewCollector.php (47:68)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedViewInAnotherViewCollector.php (47:68)
+
+duplicated block id: 131
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ConsoleApplicationHelper.php (31:52)
+ - vendor/nunomaduro/larastan/src/Internal/ConsoleApplicationHelper.php (31:52)
+
+duplicated block id: 132
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ConsoleApplicationHelper.php (73:93)
+ - vendor/nunomaduro/larastan/src/Internal/ConsoleApplicationHelper.php (73:93)
+
+duplicated block id: 133
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ConsoleApplicationHelper.php (95:116)
+ - vendor/nunomaduro/larastan/src/Internal/ConsoleApplicationHelper.php (95:116)
+
+duplicated block id: 134
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/EnvFunctionDynamicFunctionReturnTypeExtension.php (24:44)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/EnvFunctionDynamicFunctionReturnTypeExtension.php (24:44)
+
+duplicated block id: 135
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/ValueExtension.php (25:44)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/ValueExtension.php (25:44)
+
+duplicated block id: 136
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoModelMakeRule.php (71:90)
+ - vendor/nunomaduro/larastan/src/Rules/NoModelMakeRule.php (71:90)
+
+duplicated block id: 137
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (265:285)
+ - vendor/nunomaduro/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (265:285)
+
+duplicated block id: 138
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (172:189)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (172:189)
+
+duplicated block id: 139
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (113:134)
+ - vendor/nunomaduro/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (113:134)
+
+duplicated block id: 140
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php (799:820)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php (424:445)
+
+duplicated block id: 141
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Routing/PendingResourceRegistration.php (149:169)
+ - vendor/laravel/framework/src/Illuminate/Routing/PendingSingletonResourceRegistration.php (173:193)
+
+duplicated block id: 142
+size: 15 cleaned lines of code
+in 2 files:
+ - vendor/symfony/mailer/Exception/UnsupportedSchemeException.php (97:116)
+ - vendor/symfony/translation/Exception/UnsupportedSchemeException.php (38:57)
+
+duplicated block id: 143
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ComposerHelper.php (23:42)
+ - vendor/nunomaduro/larastan/src/Internal/ComposerHelper.php (23:42)
+
+duplicated block id: 144
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ConsoleApplicationResolver.php (22:43)
+ - vendor/nunomaduro/larastan/src/Internal/ConsoleApplicationResolver.php (22:43)
+
+duplicated block id: 145
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/ModelForwardsCallsExtension.php (203:219)
+ - vendor/nunomaduro/larastan/src/Methods/ModelForwardsCallsExtension.php (203:219)
+
+duplicated block id: 146
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/Schema/MySqlDataTypeToPhpTypeConverter.php (20:35)
+ - vendor/nunomaduro/larastan/src/Properties/Schema/MySqlDataTypeToPhpTypeConverter.php (20:35)
+
+duplicated block id: 147
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/DateExtension.php (56:75)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/DateExtension.php (56:75)
+
+duplicated block id: 148
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/TapExtension.php (26:44)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/TapExtension.php (26:44)
+
+duplicated block id: 149
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ConfigParser.php (178:197)
+ - vendor/nunomaduro/larastan/src/Support/ConfigParser.php (178:197)
+
+duplicated block id: 150
+size: 14 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualCanonicalizing.php (85:102)
+ - vendor/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualIgnoringCase.php (86:103)
+
+duplicated block id: 151
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/guzzlehttp/psr7/src/Stream.php (77:93)
+ - vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php (41:57)
+
+duplicated block id: 152
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingKey.php (38:53)
+ - vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingKeyValuePair.php (41:56)
+
+duplicated block id: 153
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ConsoleApplicationHelper.php (54:71)
+ - vendor/nunomaduro/larastan/src/Internal/ConsoleApplicationHelper.php (54:71)
+
+duplicated block id: 154
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Extension.php (29:48)
+ - vendor/nunomaduro/larastan/src/Methods/Extension.php (29:48)
+
+duplicated block id: 155
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (438:457)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (438:457)
+
+duplicated block id: 156
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/LiteralExtension.php (91:109)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/LiteralExtension.php (91:109)
+
+duplicated block id: 157
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/RequestFileExtension.php (35:52)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/RequestFileExtension.php (35:52)
+
+duplicated block id: 158
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoEnvCallsOutsideOfConfigRule.php (80:97)
+ - vendor/nunomaduro/larastan/src/Rules/NoEnvCallsOutsideOfConfigRule.php (80:97)
+
+duplicated block id: 159
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/CollectionHelper.php (102:123)
+ - vendor/nunomaduro/larastan/src/Support/CollectionHelper.php (102:123)
+
+duplicated block id: 160
+size: 13 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php (60:76)
+ - vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php (60:76)
+ - vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php (60:76)
+
+duplicated block id: 161
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Routing/PendingResourceRegistration.php (178:195)
+ - vendor/laravel/framework/src/Illuminate/Routing/PendingSingletonResourceRegistration.php (202:219)
+
+duplicated block id: 162
+size: 13 cleaned lines of code
+in 2 files:
+ - vendor/nikic/php-parser/lib/PhpParser/Builder/Class_.php (106:122)
+ - vendor/nikic/php-parser/lib/PhpParser/Builder/Trait_.php (39:55)
+
+duplicated block id: 163
+size: 13 cleaned lines of code
+in 3 files:
+ - vendor/symfony/clock/Clock.php (72:88)
+ - vendor/symfony/clock/MonotonicClock.php (76:92)
+ - vendor/symfony/clock/NativeClock.php (50:66)
+
+duplicated block id: 164
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/fakerphp/faker/src/Faker/ORM/Propel/EntityPopulator.php (187:203)
+ - vendor/fakerphp/faker/src/Faker/ORM/Propel2/EntityPopulator.php (190:206)
+
+duplicated block id: 165
+size: 12 cleaned lines of code
+in 4 files:
+ - vendor/fakerphp/faker/src/Faker/Provider/ka_GE/DateTime.php (7:21)
+ - vendor/fakerphp/faker/src/Faker/Provider/tr_TR/DateTime.php (12:26)
+ - vendor/fakerphp/faker/src/Faker/Provider/zh_CN/DateTime.php (12:26)
+ - vendor/fakerphp/faker/src/Faker/Provider/zh_TW/DateTime.php (12:26)
+
+duplicated block id: 166
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/LarastanStubFilesExtension.php (19:39)
+ - vendor/nunomaduro/larastan/src/LarastanStubFilesExtension.php (19:39)
+
+duplicated block id: 167
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Pipes/Contracts.php (19:36)
+ - vendor/nunomaduro/larastan/src/Methods/Pipes/Contracts.php (19:36)
+
+duplicated block id: 168
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/AuthExtension.php (31:48)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/AuthExtension.php (31:48)
+
+duplicated block id: 169
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/HigherOrderTapProxyExtension.php (31:47)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/HigherOrderTapProxyExtension.php (31:47)
+
+duplicated block id: 170
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ModelFactoryDynamicStaticMethodReturnTypeExtension.php (92:110)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ModelFactoryDynamicStaticMethodReturnTypeExtension.php (92:110)
+
+duplicated block id: 171
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/OctaneCompatibilityRule.php (136:151)
+ - vendor/nunomaduro/larastan/src/Rules/OctaneCompatibilityRule.php (136:151)
+
+duplicated block id: 172
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/RelationExistenceRule.php (176:189)
+ - vendor/nunomaduro/larastan/src/Rules/RelationExistenceRule.php (176:189)
+
+duplicated block id: 173
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (48:65)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (48:65)
+
+duplicated block id: 174
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/HigherOrderCollectionProxyHelper.php (86:106)
+ - vendor/nunomaduro/larastan/src/Support/HigherOrderCollectionProxyHelper.php (86:106)
+
+duplicated block id: 175
+size: 12 cleaned lines of code
+in 2 files:
+ - vendor/laravel/prompts/src/Themes/Default/MultiSearchPromptRenderer.php (85:101)
+ - vendor/laravel/prompts/src/Themes/Default/SearchPromptRenderer.php (82:98)
+
+duplicated block id: 176
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/fakerphp/faker/src/Faker/Provider/ru_RU/Person.php (142:156)
+ - vendor/fakerphp/faker/src/Faker/Provider/uk_UA/Person.php (86:100)
+
+duplicated block id: 177
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Pipes/Contracts.php (39:54)
+ - vendor/nunomaduro/larastan/src/Methods/Pipes/Contracts.php (39:54)
+
+duplicated block id: 178
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/StorageMethodsClassReflectionExtension.php (23:39)
+ - vendor/nunomaduro/larastan/src/Methods/StorageMethodsClassReflectionExtension.php (23:39)
+
+duplicated block id: 179
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/StorageMethodsClassReflectionExtension.php (41:54)
+ - vendor/nunomaduro/larastan/src/Methods/StorageMethodsClassReflectionExtension.php (41:54)
+
+duplicated block id: 180
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (228:244)
+ - vendor/nunomaduro/larastan/src/Properties/ModelPropertyHelper.php (228:244)
+
+duplicated block id: 181
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (46:59)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (46:59)
+
+duplicated block id: 182
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (363:377)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (363:377)
+
+duplicated block id: 183
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (379:395)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (379:395)
+
+duplicated block id: 184
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Reflection/ReflectionHelper.php (18:33)
+ - vendor/nunomaduro/larastan/src/Reflection/ReflectionHelper.php (18:33)
+
+duplicated block id: 185
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Reflection/ReflectionHelper.php (38:53)
+ - vendor/nunomaduro/larastan/src/Reflection/ReflectionHelper.php (38:53)
+
+duplicated block id: 186
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/DoubleUnderscoreHelperReturnTypeExtension.php (28:41)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/DoubleUnderscoreHelperReturnTypeExtension.php (28:41)
+
+duplicated block id: 187
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/ValidatorExtension.php (27:40)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/ValidatorExtension.php (27:40)
+
+duplicated block id: 188
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/RelationCollectionExtension.php (36:51)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/RelationCollectionExtension.php (36:51)
+
+duplicated block id: 189
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/RequestUserExtension.php (66:82)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/RequestUserExtension.php (66:82)
+
+duplicated block id: 190
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/TransHelperReturnTypeExtension.php (29:42)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/TransHelperReturnTypeExtension.php (29:42)
+
+duplicated block id: 191
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoMissingTranslationsRule.php (137:154)
+ - vendor/nunomaduro/larastan/src/Rules/NoMissingTranslationsRule.php (137:154)
+
+duplicated block id: 192
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (192:205)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (192:205)
+
+duplicated block id: 193
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ViewFileHelper.php (87:101)
+ - vendor/nunomaduro/larastan/src/Support/ViewFileHelper.php (87:101)
+
+duplicated block id: 194
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php (768:783)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php (393:408)
+
+duplicated block id: 195
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php (106:119)
+ - vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SqlServerProcessor.php (89:102)
+
+duplicated block id: 196
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php (154:168)
+ - vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php (213:227)
+
+duplicated block id: 197
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Testing/Constraints/NotSoftDeletedInDatabase.php (86:103)
+ - vendor/laravel/framework/src/Illuminate/Testing/Constraints/SoftDeletedInDatabase.php (88:105)
+
+duplicated block id: 198
+size: 11 cleaned lines of code
+in 4 files:
+ - vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php (29:41)
+ - vendor/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php (30:42)
+ - vendor/monolog/monolog/src/Monolog/Formatter/WildfireFormatter.php (42:54)
+ - vendor/monolog/monolog/src/Monolog/Handler/RollbarHandler.php (61:73)
+
+duplicated block id: 199
+size: 11 cleaned lines of code
+in 3 files:
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameBackupStaticAttributesAttribute.php (23:39)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameBeStrictAboutCoversAnnotationAttribute.php (23:39)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RenameForceCoversAnnotationAttribute.php (23:39)
+
+duplicated block id: 200
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/symfony/string/Inflector/FrenchInflector.php (113:128)
+ - vendor/symfony/string/Inflector/SpanishInflector.php (82:97)
+
+duplicated block id: 201
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/symfony/string/Inflector/FrenchInflector.php (130:145)
+ - vendor/symfony/string/Inflector/SpanishInflector.php (99:114)
+
+duplicated block id: 202
+size: 11 cleaned lines of code
+in 2 files:
+ - vendor/symfony/translation/Command/XliffLintCommand.php (220:235)
+ - vendor/symfony/yaml/Command/LintCommand.php (218:233)
+
+duplicated block id: 203
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/fakerphp/faker/src/Faker/Extension/Helper.php (92:105)
+ - vendor/fakerphp/faker/src/Faker/Provider/Base.php (414:427)
+
+duplicated block id: 204
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/keepsuit/laravel-opentelemetry/src/Instrumentation/QueryInstrumentation.php (68:81)
+ - vendor/keepsuit/laravel-opentelemetry/src/Instrumentation/RedisInstrumentation.php (61:73)
+
+duplicated block id: 205
+size: 10 cleaned lines of code
+in 6 files:
+ - vendor/larastan/larastan/src/Methods/EloquentBuilderForwardsCallsExtension.php (41:56)
+ - vendor/larastan/larastan/src/Methods/ModelForwardsCallsExtension.php (46:61)
+ - vendor/larastan/larastan/src/Methods/RelationForwardsCallsExtension.php (33:48)
+ - vendor/nunomaduro/larastan/src/Methods/EloquentBuilderForwardsCallsExtension.php (41:56)
+ - vendor/nunomaduro/larastan/src/Methods/ModelForwardsCallsExtension.php (46:61)
+ - vendor/nunomaduro/larastan/src/Methods/RelationForwardsCallsExtension.php (33:48)
+
+duplicated block id: 206
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/HigherOrderTapProxyExtension.php (16:31)
+ - vendor/nunomaduro/larastan/src/Methods/HigherOrderTapProxyExtension.php (16:31)
+
+duplicated block id: 207
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Passable.php (57:72)
+ - vendor/nunomaduro/larastan/src/Methods/Passable.php (57:72)
+
+duplicated block id: 208
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationCache.php (91:107)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationCache.php (91:107)
+
+duplicated block id: 209
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationCache.php (146:161)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationCache.php (146:161)
+
+duplicated block id: 210
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Reflection/EloquentBuilderMethodReflection.php (61:72)
+ - vendor/nunomaduro/larastan/src/Reflection/EloquentBuilderMethodReflection.php (61:72)
+
+duplicated block id: 211
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Reflection/ModelScopeMethodReflection.php (55:66)
+ - vendor/nunomaduro/larastan/src/Reflection/ModelScopeMethodReflection.php (55:66)
+
+duplicated block id: 212
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/ConfigFunctionDynamicFunctionReturnTypeExtension.php (32:46)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/ConfigFunctionDynamicFunctionReturnTypeExtension.php (32:46)
+
+duplicated block id: 213
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/PhpMyAdminSqlParser.php (67:80)
+ - vendor/nunomaduro/larastan/src/SQL/PhpMyAdminSqlParser.php (67:80)
+
+duplicated block id: 214
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/SqlParserFactory.php (29:42)
+ - vendor/nunomaduro/larastan/src/SQL/SqlParserFactory.php (29:42)
+
+duplicated block id: 215
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/CollectionHelper.php (150:165)
+ - vendor/nunomaduro/larastan/src/Support/CollectionHelper.php (150:165)
+
+duplicated block id: 216
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ConfigParser.php (49:62)
+ - vendor/nunomaduro/larastan/src/Support/ConfigParser.php (49:62)
+
+duplicated block id: 217
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ViewFileHelper.php (32:46)
+ - vendor/nunomaduro/larastan/src/Support/ViewFileHelper.php (32:46)
+
+duplicated block id: 218
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ViewFileHelper.php (71:84)
+ - vendor/nunomaduro/larastan/src/Support/ViewFileHelper.php (71:84)
+
+duplicated block id: 219
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/AbortIfFunctionTypeSpecifyingExtension.php (38:51)
+ - vendor/nunomaduro/larastan/src/Types/AbortIfFunctionTypeSpecifyingExtension.php (38:51)
+
+duplicated block id: 220
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/AblyBroadcaster.php (43:56)
+ - vendor/laravel/framework/src/Illuminate/Broadcasting/Broadcasters/PusherBroadcaster.php (74:87)
+
+duplicated block id: 221
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php (1166:1179)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php (1092:1105)
+
+duplicated block id: 222
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php (1188:1201)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php (1114:1127)
+
+duplicated block id: 223
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php (1252:1264)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php (1136:1148)
+
+duplicated block id: 224
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php (85:96)
+ - vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php (151:162)
+
+duplicated block id: 225
+size: 10 cleaned lines of code
+in 2 files:
+ - vendor/laravel/prompts/src/MultiSearchPrompt.php (82:95)
+ - vendor/laravel/prompts/src/SearchPrompt.php (71:84)
+
+duplicated block id: 226
+size: 10 cleaned lines of code
+in 3 files:
+ - vendor/symfony/error-handler/Error/ClassNotFoundError.php (16:28)
+ - vendor/symfony/error-handler/Error/UndefinedFunctionError.php (16:28)
+ - vendor/symfony/error-handler/Error/UndefinedMethodError.php (16:28)
+
+duplicated block id: 227
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php (121:132)
+ - vendor/dragonmantank/cron-expression/src/Cron/DayOfWeekField.php (150:161)
+
+duplicated block id: 228
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (349:361)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (349:361)
+
+duplicated block id: 229
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/CollectExtension.php (33:45)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/CollectExtension.php (33:45)
+
+duplicated block id: 230
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/ModelDynamicStaticMethodReturnTypeExtension.php (47:61)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/ModelDynamicStaticMethodReturnTypeExtension.php (47:61)
+
+duplicated block id: 231
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/NewModelQueryDynamicMethodReturnTypeExtension.php (31:41)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/NewModelQueryDynamicMethodReturnTypeExtension.php (31:41)
+
+duplicated block id: 232
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/RelationCollectionExtension.php (53:65)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/RelationCollectionExtension.php (53:65)
+
+duplicated block id: 233
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/CollectionOf/CollectionOfType.php (80:93)
+ - vendor/nunomaduro/larastan/src/Types/CollectionOf/CollectionOfType.php (80:93)
+
+duplicated block id: 234
+size: 9 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php (762:775)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php (875:888)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php (314:327)
+
+duplicated block id: 235
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/PostgresGrammar.php (439:452)
+ - vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SQLiteGrammar.php (312:325)
+
+duplicated block id: 236
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Mail/Mailable.php (983:994)
+ - vendor/laravel/framework/src/Illuminate/Notifications/Messages/MailMessage.php (287:298)
+
+duplicated block id: 237
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php (178:191)
+ - vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php (118:131)
+
+duplicated block id: 238
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php (1274:1285)
+ - vendor/laravel/framework/src/Illuminate/Testing/TestView.php (83:94)
+
+duplicated block id: 239
+size: 9 cleaned lines of code
+in 3 files:
+ - vendor/monolog/monolog/src/Monolog/Handler/FilterHandler.php (153:164)
+ - vendor/monolog/monolog/src/Monolog/Handler/FingersCrossedHandler.php (202:213)
+ - vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php (81:92)
+
+duplicated block id: 240
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Event/Value/Telemetry/Duration.php (125:135)
+ - vendor/phpunit/phpunit/src/Event/Value/Telemetry/HRTime.php (83:93)
+
+duplicated block id: 241
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemovePrinterAttributes.php (23:36)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveTestSuiteLoaderAttributes.php (23:36)
+
+duplicated block id: 242
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php (74:86)
+ - vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php (71:83)
+
+duplicated block id: 243
+size: 9 cleaned lines of code
+in 4 files:
+ - vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php (58:70)
+ - vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php (54:66)
+ - vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php (65:77)
+ - vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php (67:79)
+
+duplicated block id: 244
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/ramsey/uuid/src/Guid/Fields.php (145:156)
+ - vendor/ramsey/uuid/src/Rfc4122/Fields.php (83:94)
+
+duplicated block id: 245
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/symfony/translation/Command/XliffLintCommand.php (240:252)
+ - vendor/symfony/yaml/Command/LintCommand.php (240:252)
+
+duplicated block id: 246
+size: 9 cleaned lines of code
+in 2 files:
+ - vendor/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php (48:60)
+ - vendor/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php (29:41)
+
+duplicated block id: 247
+size: 8 cleaned lines of code
+in 3 files:
+ - database/migrations/2025_06_01_152838_create_professions_table.php (12:22)
+ - database/migrations/2025_06_01_152840_create_services_table.php (12:22)
+ - database/migrations/2025_06_01_152840_create_societe_artisans_table.php (12:22)
+
+duplicated block id: 248
+size: 8 cleaned lines of code
+in 6 files:
+ - vendor/fakerphp/faker/src/Faker/Provider/bg_BG/Person.php (95:106)
+ - vendor/fakerphp/faker/src/Faker/Provider/cs_CZ/Person.php (516:527)
+ - vendor/fakerphp/faker/src/Faker/Provider/el_GR/Person.php (153:164)
+ - vendor/fakerphp/faker/src/Faker/Provider/lt_LT/Person.php (261:272)
+ - vendor/fakerphp/faker/src/Faker/Provider/pl_PL/Person.php (95:106)
+ - vendor/fakerphp/faker/src/Faker/Provider/sk_SK/Person.php (141:152)
+
+duplicated block id: 249
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/BuilderHelper.php (74:86)
+ - vendor/nunomaduro/larastan/src/Methods/BuilderHelper.php (74:86)
+
+duplicated block id: 250
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/HigherOrderTapProxyExtension.php (33:44)
+ - vendor/nunomaduro/larastan/src/Methods/HigherOrderTapProxyExtension.php (33:44)
+
+duplicated block id: 251
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/RedirectResponseMethodsClassReflectionExtension.php (14:26)
+ - vendor/nunomaduro/larastan/src/Methods/RedirectResponseMethodsClassReflectionExtension.php (14:26)
+
+duplicated block id: 252
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/ViewWithMethodsClassReflectionExtension.php (17:29)
+ - vendor/nunomaduro/larastan/src/Methods/ViewWithMethodsClassReflectionExtension.php (17:29)
+
+duplicated block id: 253
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelCastHelper.php (200:211)
+ - vendor/nunomaduro/larastan/src/Properties/ModelCastHelper.php (200:211)
+
+duplicated block id: 254
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelCastHelper.php (213:225)
+ - vendor/nunomaduro/larastan/src/Properties/ModelCastHelper.php (213:225)
+
+duplicated block id: 255
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (397:410)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (397:410)
+
+duplicated block id: 256
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaTable.php (22:35)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaTable.php (22:35)
+
+duplicated block id: 257
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/AppEnvironmentReturnTypeExtension.php (34:44)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/AppEnvironmentReturnTypeExtension.php (34:44)
+
+duplicated block id: 258
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/AppFacadeEnvironmentReturnTypeExtension.php (30:40)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/AppFacadeEnvironmentReturnTypeExtension.php (30:40)
+
+duplicated block id: 259
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/AppExtension.php (30:40)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/AppExtension.php (30:40)
+
+duplicated block id: 260
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/Helpers/ResponseExtension.php (26:36)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/Helpers/ResponseExtension.php (26:36)
+
+duplicated block id: 261
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/LangGetReturnTypeExtension.php (31:40)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/LangGetReturnTypeExtension.php (31:40)
+
+duplicated block id: 262
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/TranslatorGetReturnTypeExtension.php (31:40)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/TranslatorGetReturnTypeExtension.php (31:40)
+
+duplicated block id: 263
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoEnvCallsOutsideOfConfigRule.php (36:47)
+ - vendor/nunomaduro/larastan/src/Rules/NoEnvCallsOutsideOfConfigRule.php (36:47)
+
+duplicated block id: 264
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/SqlParserFactory.php (18:27)
+ - vendor/nunomaduro/larastan/src/SQL/SqlParserFactory.php (18:27)
+
+duplicated block id: 265
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Auth/DatabaseUserProvider.php (155:166)
+ - vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php (148:159)
+
+duplicated block id: 266
+size: 8 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php (111:120)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php (1110:1119)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php (612:621)
+
+duplicated block id: 267
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php (234:243)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php (1067:1076)
+
+duplicated block id: 268
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php (36:47)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/PostgresBuilder.php (42:53)
+
+duplicated block id: 269
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Hashing/ArgonHasher.php (96:107)
+ - vendor/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php (81:92)
+
+duplicated block id: 270
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Pagination/AbstractCursorPaginator.php (296:307)
+ - vendor/laravel/framework/src/Illuminate/Pagination/AbstractPaginator.php (227:238)
+
+duplicated block id: 271
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php (152:161)
+ - vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php (152:161)
+
+duplicated block id: 272
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Queue/Failed/DatabaseFailedJobProvider.php (132:145)
+ - vendor/laravel/framework/src/Illuminate/Queue/Failed/DatabaseUuidFailedJobProvider.php (145:158)
+
+duplicated block id: 273
+size: 8 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php (68:79)
+ - vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php (91:102)
+ - vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php (128:139)
+
+duplicated block id: 274
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/prompts/src/Themes/Default/MultiSearchPromptRenderer.php (139:149)
+ - vendor/laravel/prompts/src/Themes/Default/MultiSelectPromptRenderer.php (101:111)
+
+duplicated block id: 275
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/laravel/ui/src/Presets/React.php (59:69)
+ - vendor/laravel/ui/src/Presets/Vue.php (58:68)
+
+duplicated block id: 276
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/nikic/php-parser/lib/PhpParser/Error.php (148:159)
+ - vendor/nikic/php-parser/lib/PhpParser/NodeDumper.php (287:298)
+
+duplicated block id: 277
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Framework/Constraint/String/StringContains.php (150:159)
+ - vendor/phpunit/phpunit/src/Framework/Constraint/String/StringEqualsStringIgnoringLineEndings.php (47:56)
+
+duplicated block id: 278
+size: 8 cleaned lines of code
+in 5 files:
+ - vendor/phpunit/phpunit/src/Framework/Exception/ObjectEquals/ComparisonMethodDoesNotDeclareBoolReturnTypeException.php (21:30)
+ - vendor/phpunit/phpunit/src/Framework/Exception/ObjectEquals/ComparisonMethodDoesNotDeclareExactlyOneParameterException.php (21:30)
+ - vendor/phpunit/phpunit/src/Framework/Exception/ObjectEquals/ComparisonMethodDoesNotDeclareParameterTypeException.php (21:30)
+ - vendor/phpunit/phpunit/src/Framework/Exception/ObjectEquals/ComparisonMethodDoesNotExistException.php (21:30)
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Exception/NeverReturningMethodException.php (24:33)
+
+duplicated block id: 279
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Exception/CannotUseOnlyMethodsException.php (21:30)
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/CannotUseAddMethodsException.php (21:30)
+
+duplicated block id: 280
+size: 8 cleaned lines of code
+in 3 files:
+ - vendor/phpunit/phpunit/src/Runner/Exception/ClassCannotBeFoundException.php (22:31)
+ - vendor/phpunit/phpunit/src/Runner/Exception/ClassDoesNotExtendTestCaseException.php (22:31)
+ - vendor/phpunit/phpunit/src/Runner/Exception/ClassIsAbstractException.php (22:31)
+
+duplicated block id: 281
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveCoverageElementCacheDirectoryAttribute.php (22:33)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveCoverageElementProcessUncoveredFilesAttribute.php (22:33)
+
+duplicated block id: 282
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/symfony/console/Input/InputArgument.php (142:151)
+ - vendor/symfony/console/Input/InputOption.php (237:246)
+
+duplicated block id: 283
+size: 8 cleaned lines of code
+in 2 files:
+ - vendor/symfony/routing/Matcher/Dumper/CompiledUrlMatcherDumper.php (443:453)
+ - vendor/symfony/routing/Matcher/UrlMatcher.php (240:250)
+
+duplicated block id: 284
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedTranslationViewCollector.php (29:40)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedTranslationViewCollector.php (29:40)
+
+duplicated block id: 285
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Collectors/UsedViewInAnotherViewCollector.php (29:40)
+ - vendor/nunomaduro/larastan/src/Collectors/UsedViewInAnotherViewCollector.php (29:40)
+
+duplicated block id: 286
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Concerns/HasContainer.php (32:41)
+ - vendor/nunomaduro/larastan/src/Concerns/HasContainer.php (32:41)
+
+duplicated block id: 287
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/MacroMethodsClassReflectionExtension.php (191:202)
+ - vendor/nunomaduro/larastan/src/Methods/MacroMethodsClassReflectionExtension.php (191:202)
+
+duplicated block id: 288
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/ModelForwardsCallsExtension.php (221:230)
+ - vendor/nunomaduro/larastan/src/Methods/ModelForwardsCallsExtension.php (221:230)
+
+duplicated block id: 289
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Pipes/SelfClass.php (14:24)
+ - vendor/nunomaduro/larastan/src/Methods/Pipes/SelfClass.php (14:24)
+
+duplicated block id: 290
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationCache.php (123:133)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationCache.php (123:133)
+
+duplicated block id: 291
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/GuardDynamicStaticMethodReturnTypeExtension.php (74:82)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/GuardDynamicStaticMethodReturnTypeExtension.php (74:82)
+
+duplicated block id: 292
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (326:334)
+ - vendor/nunomaduro/larastan/src/Rules/NoUnnecessaryCollectionCallRule.php (326:334)
+
+duplicated block id: 293
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (161:170)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (161:170)
+
+duplicated block id: 294
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/CollectionHelper.php (167:178)
+ - vendor/nunomaduro/larastan/src/Support/CollectionHelper.php (167:178)
+
+duplicated block id: 295
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ViewFileHelper.php (49:58)
+ - vendor/nunomaduro/larastan/src/Support/ViewFileHelper.php (49:58)
+
+duplicated block id: 296
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/Factory/ModelFactoryType.php (16:25)
+ - vendor/nunomaduro/larastan/src/Types/Factory/ModelFactoryType.php (16:25)
+
+duplicated block id: 297
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php (78:86)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php (77:85)
+
+duplicated block id: 298
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php (147:156)
+ - vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php (234:243)
+
+duplicated block id: 299
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php (23:32)
+ - vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php (43:52)
+
+duplicated block id: 300
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Notifications/NotificationServiceProvider.php (16:25)
+ - vendor/laravel/framework/src/Illuminate/Pagination/PaginationServiceProvider.php (14:23)
+
+duplicated block id: 301
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Routing/PendingResourceRegistration.php (219:229)
+ - vendor/laravel/framework/src/Illuminate/Routing/PendingSingletonResourceRegistration.php (243:253)
+
+duplicated block id: 302
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/laravel/prompts/src/MultiSearchPrompt.php (69:77)
+ - vendor/laravel/prompts/src/SearchPrompt.php (58:66)
+
+duplicated block id: 303
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/laravel/telescope/src/Watchers/ClientRequestWatcher.php (191:200)
+ - vendor/laravel/telescope/src/Watchers/RequestWatcher.php (135:144)
+
+duplicated block id: 304
+size: 7 cleaned lines of code
+in 3 files:
+ - vendor/monolog/monolog/src/Monolog/Handler/FilterHandler.php (169:179)
+ - vendor/monolog/monolog/src/Monolog/Handler/FingersCrossedHandler.php (218:228)
+ - vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php (97:107)
+
+duplicated block id: 305
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php (186:195)
+ - vendor/monolog/monolog/src/Monolog/Handler/SlackHandler.php (142:151)
+
+duplicated block id: 306
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/nesbot/carbon/src/Carbon/CarbonInterval.php (1585:1596)
+ - vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php (2432:2443)
+
+duplicated block id: 307
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/AsymmetricVisibilityTokenEmulator.php (82:92)
+ - vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/KeywordEmulator.php (38:48)
+
+duplicated block id: 308
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/open-telemetry/api/Globals.php (33:41)
+ - vendor/open-telemetry/sdk/Sdk.php (20:28)
+
+duplicated block id: 309
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/open-telemetry/exporter-otlp/LogsConverter.php (136:145)
+ - vendor/open-telemetry/exporter-otlp/SpanConverter.php (113:122)
+
+duplicated block id: 310
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Event/Events/TestSuite/Finished.php (42:50)
+ - vendor/phpunit/phpunit/src/Event/Events/TestSuite/Started.php (42:50)
+
+duplicated block id: 311
+size: 7 cleaned lines of code
+in 4 files:
+ - vendor/phpunit/phpunit/src/Framework/Exception/UnknownClassOrInterfaceException.php (21:29)
+ - vendor/phpunit/phpunit/src/Framework/Exception/UnknownTypeException.php (21:29)
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/NameAlreadyInUseException.php (24:32)
+ - vendor/phpunit/phpunit/src/Runner/Exception/ParameterDoesNotExistException.php (22:30)
+
+duplicated block id: 312
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Exception/MatchBuilderNotFoundException.php (21:29)
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Exception/MatcherAlreadyRegisteredException.php (21:29)
+
+duplicated block id: 313
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Exception/MethodCannotBeConfiguredException.php (21:29)
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/InvalidMethodNameException.php (21:29)
+
+duplicated block id: 314
+size: 7 cleaned lines of code
+in 4 files:
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsEnumerationException.php (21:29)
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsFinalException.php (21:29)
+ - vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownClassException.php (21:29)
+ - vendor/phpunit/phpunit/src/Metadata/Exception/AnnotationsAreNotSupportedForInternalClassesException.php (26:34)
+
+duplicated block id: 315
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Runner/Exception/DirectoryDoesNotExistException.php (22:30)
+ - vendor/phpunit/phpunit/src/Util/Exception/InvalidDirectoryException.php (22:30)
+
+duplicated block id: 316
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/TextUI/Exception/TestDirectoryNotFoundException.php (22:30)
+ - vendor/phpunit/phpunit/src/TextUI/Exception/TestFileNotFoundException.php (22:30)
+
+duplicated block id: 317
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php (57:66)
+ - vendor/psy/psysh/src/Readline/Hoa/FileRead.php (49:58)
+
+duplicated block id: 318
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php (49:58)
+ - vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php (49:58)
+
+duplicated block id: 319
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/ramsey/uuid/src/Guid/Fields.php (135:143)
+ - vendor/ramsey/uuid/src/Nonstandard/Fields.php (107:115)
+
+duplicated block id: 320
+size: 7 cleaned lines of code
+in 4 files:
+ - vendor/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php (17:25)
+ - vendor/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php (17:25)
+ - vendor/sebastian/cli-parser/src/exceptions/RequiredOptionArgumentMissingException.php (17:25)
+ - vendor/sebastian/cli-parser/src/exceptions/UnknownOptionException.php (17:25)
+
+duplicated block id: 321
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/sebastian/code-unit/src/CodeUnitCollection.php (66:74)
+ - vendor/sebastian/complexity/src/Complexity/ComplexityCollection.php (110:118)
+
+duplicated block id: 322
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/symfony/clock/MonotonicClock.php (62:71)
+ - vendor/symfony/clock/NativeClock.php (36:45)
+
+duplicated block id: 323
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/symfony/service-contracts/ServiceMethodsSubscriberTrait.php (69:79)
+ - vendor/symfony/service-contracts/ServiceSubscriberTrait.php (73:83)
+
+duplicated block id: 324
+size: 7 cleaned lines of code
+in 2 files:
+ - vendor/symfony/translation/Command/XliffLintCommand.php (159:167)
+ - vendor/symfony/yaml/Command/LintCommand.php (151:159)
+
+duplicated block id: 325
+size: 6 cleaned lines of code
+in 6 files:
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Rules.php (14:21)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Rules.php (14:21)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Rules.php (14:21)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Rules.php (14:21)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Rules.php (14:21)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Rules.php (14:21)
+
+duplicated block id: 326
+size: 6 cleaned lines of code
+in 6 files:
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Rules.php (23:30)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Rules.php (23:30)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Rules.php (23:30)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Rules.php (23:30)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Rules.php (23:30)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Rules.php (23:30)
+
+duplicated block id: 327
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Inflectible.php (15:22)
+ - vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Inflectible.php (15:22)
+
+duplicated block id: 328
+size: 6 cleaned lines of code
+in 5 files:
+ - vendor/fakerphp/faker/src/Faker/Provider/ar_EG/Company.php (55:64)
+ - vendor/fakerphp/faker/src/Faker/Provider/ar_JO/Company.php (42:51)
+ - vendor/fakerphp/faker/src/Faker/Provider/ar_SA/Company.php (44:53)
+ - vendor/fakerphp/faker/src/Faker/Provider/fi_FI/Company.php (42:51)
+ - vendor/fakerphp/faker/src/Faker/Provider/hy_AM/Company.php (32:41)
+
+duplicated block id: 329
+size: 6 cleaned lines of code
+in 4 files:
+ - vendor/fakerphp/faker/src/Faker/Provider/ar_JO/Company.php (56:65)
+ - vendor/fakerphp/faker/src/Faker/Provider/ar_SA/Company.php (58:67)
+ - vendor/fakerphp/faker/src/Faker/Provider/fi_FI/Company.php (56:65)
+ - vendor/fakerphp/faker/src/Faker/Provider/hy_AM/Company.php (46:55)
+
+duplicated block id: 330
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php (43:51)
+ - vendor/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php (28:36)
+
+duplicated block id: 331
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/MatchingOnce.php (43:52)
+ - vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/SeriesMatchingOnce.php (45:54)
+
+duplicated block id: 332
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Internal/ConsoleApplicationResolver.php (45:53)
+ - vendor/nunomaduro/larastan/src/Internal/ConsoleApplicationResolver.php (45:53)
+
+duplicated block id: 333
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Methods/Passable.php (26:33)
+ - vendor/nunomaduro/larastan/src/Methods/Passable.php (26:33)
+
+duplicated block id: 334
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationCache.php (109:117)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationCache.php (109:117)
+
+duplicated block id: 335
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/MigrationHelper.php (25:33)
+ - vendor/nunomaduro/larastan/src/Properties/MigrationHelper.php (25:33)
+
+duplicated block id: 336
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (34:41)
+ - vendor/nunomaduro/larastan/src/Properties/ModelPropertyHelper.php (34:41)
+
+duplicated block id: 337
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (246:256)
+ - vendor/nunomaduro/larastan/src/Properties/ModelPropertyHelper.php (246:256)
+
+duplicated block id: 338
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaAggregator.php (33:43)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaAggregator.php (33:43)
+
+duplicated block id: 339
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SchemaColumn.php (12:20)
+ - vendor/nunomaduro/larastan/src/Properties/SchemaColumn.php (12:20)
+
+duplicated block id: 340
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Properties/SquashedMigrationHelper.php (27:34)
+ - vendor/nunomaduro/larastan/src/Properties/SquashedMigrationHelper.php (27:34)
+
+duplicated block id: 341
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/CollectionWhereNotNullDynamicReturnTypeExtension.php (73:82)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/CollectionWhereNotNullDynamicReturnTypeExtension.php (73:82)
+
+duplicated block id: 342
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/ReturnTypes/TestCaseExtension.php (28:35)
+ - vendor/nunomaduro/larastan/src/ReturnTypes/TestCaseExtension.php (28:35)
+
+duplicated block id: 343
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Rules/OctaneCompatibilityRule.php (153:160)
+ - vendor/nunomaduro/larastan/src/Rules/OctaneCompatibilityRule.php (153:160)
+
+duplicated block id: 344
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/ColumnDefinition.php (13:20)
+ - vendor/nunomaduro/larastan/src/SQL/ColumnDefinition.php (13:20)
+
+duplicated block id: 345
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/SQL/IamcalSqlParser.php (73:82)
+ - vendor/nunomaduro/larastan/src/SQL/IamcalSqlParser.php (73:82)
+
+duplicated block id: 346
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (150:159)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (150:159)
+
+duplicated block id: 347
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (214:222)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (214:222)
+
+duplicated block id: 348
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/BootstrapErrorHandler.php (235:242)
+ - vendor/nunomaduro/larastan/src/Support/BootstrapErrorHandler.php (235:242)
+
+duplicated block id: 349
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ConfigParser.php (226:235)
+ - vendor/nunomaduro/larastan/src/Support/ConfigParser.php (226:235)
+
+duplicated block id: 350
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ViewFileHelper.php (61:68)
+ - vendor/nunomaduro/larastan/src/Support/ViewFileHelper.php (61:68)
+
+duplicated block id: 351
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Support/ViewParser.php (33:40)
+ - vendor/nunomaduro/larastan/src/Support/ViewParser.php (33:40)
+
+duplicated block id: 352
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/CollectionOf/CollectionOfType.php (30:39)
+ - vendor/nunomaduro/larastan/src/Types/CollectionOf/CollectionOfType.php (30:39)
+
+duplicated block id: 353
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/CollectionOf/CollectionOfType.php (69:78)
+ - vendor/nunomaduro/larastan/src/Types/CollectionOf/CollectionOfType.php (69:78)
+
+duplicated block id: 354
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/larastan/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (136:145)
+ - vendor/nunomaduro/larastan/src/Types/ModelProperty/GenericModelPropertyType.php (136:145)
+
+duplicated block id: 355
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php (119:126)
+ - vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php (137:144)
+
+duplicated block id: 356
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php (708:715)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php (275:282)
+ - vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php (252:259)
+
+duplicated block id: 357
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/PostgresGrammar.php (601:612)
+ - vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SQLiteGrammar.php (365:376)
+
+duplicated block id: 358
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php (174:181)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php (629:636)
+
+duplicated block id: 359
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php (127:134)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php (141:148)
+
+duplicated block id: 360
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php (886:893)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php (871:878)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php (733:740)
+
+duplicated block id: 361
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/MariaDbSchemaState.php (13:22)
+ - vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlSchemaState.php (72:81)
+
+duplicated block id: 362
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php (70:77)
+ - vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php (49:56)
+ - vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php (62:69)
+
+duplicated block id: 363
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Mail/Transport/SesTransport.php (102:109)
+ - vendor/laravel/framework/src/Illuminate/Mail/Transport/SesV2Transport.php (106:113)
+
+duplicated block id: 364
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Pagination/AbstractCursorPaginator.php (278:287)
+ - vendor/laravel/framework/src/Illuminate/Pagination/AbstractPaginator.php (209:218)
+
+duplicated block id: 365
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Queue/Failed/DatabaseFailedJobProvider.php (72:79)
+ - vendor/laravel/framework/src/Illuminate/Queue/Failed/DatabaseUuidFailedJobProvider.php (75:82)
+
+duplicated block id: 366
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Validation/Rules/ExcludeIf.php (25:32)
+ - vendor/laravel/framework/src/Illuminate/Validation/Rules/ProhibitedIf.php (26:33)
+
+duplicated block id: 367
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/framework/src/Illuminate/Validation/Rules/In.php (47:56)
+ - vendor/laravel/framework/src/Illuminate/Validation/Rules/NotIn.php (45:54)
+
+duplicated block id: 368
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/laravel/framework/src/Illuminate/View/Compilers/Concerns/CompilesEchos.php (53:60)
+ - vendor/symfony/uid/Command/GenerateUlidCommand.php (109:116)
+ - vendor/symfony/uid/Command/GenerateUuidCommand.php (198:205)
+
+duplicated block id: 369
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/laravel/prompts/src/Themes/Default/MultiSearchPromptRenderer.php (73:80)
+ - vendor/laravel/prompts/src/Themes/Default/SearchPromptRenderer.php (70:77)
+
+duplicated block id: 370
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php (25:34)
+ - vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php (25:34)
+
+duplicated block id: 371
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php (77:86)
+ - vendor/monolog/monolog/src/Monolog/Formatter/FlowdockFormatter.php (73:82)
+
+duplicated block id: 372
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/monolog/monolog/src/Monolog/Formatter/FluentdFormatter.php (76:84)
+ - vendor/monolog/monolog/src/Monolog/Formatter/HtmlFormatter.php (119:127)
+ - vendor/monolog/monolog/src/Monolog/Formatter/LineFormatter.php (185:193)
+
+duplicated block id: 373
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/monolog/monolog/src/Monolog/Formatter/LineFormatter.php (57:66)
+ - vendor/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php (145:154)
+
+duplicated block id: 374
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/monolog/monolog/src/Monolog/Handler/BufferHandler.php (143:152)
+ - vendor/monolog/monolog/src/Monolog/Handler/OverflowHandler.php (117:126)
+
+duplicated block id: 375
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/monolog/monolog/src/Monolog/Handler/FilterHandler.php (184:192)
+ - vendor/monolog/monolog/src/Monolog/Handler/FingersCrossedHandler.php (233:241)
+ - vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php (112:120)
+
+duplicated block id: 376
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/nesbot/carbon/lazy/Carbon/MessageFormatter/MessageFormatterMapperStrongType.php (19:26)
+ - vendor/nesbot/carbon/lazy/Carbon/MessageFormatter/MessageFormatterMapperWeakType.php (22:29)
+
+duplicated block id: 377
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/AsymmetricVisibilityTokenEmulator.php (72:79)
+ - vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/KeywordEmulator.php (16:23)
+
+duplicated block id: 378
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/open-telemetry/sdk/Common/Export/Http/PsrTransport.php (142:151)
+ - vendor/open-telemetry/sdk/Metrics/MetricExporter/InMemoryExporter.php (67:76)
+
+duplicated block id: 379
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/open-telemetry/sdk/Logs/Processor/BatchLogRecordProcessor.php (173:182)
+ - vendor/open-telemetry/sdk/Trace/SpanProcessor/BatchSpanProcessor.php (186:195)
+
+duplicated block id: 380
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/phpunit/phpunit/src/Event/Events/TestRunner/ExecutionStarted.php (43:50)
+ - vendor/phpunit/phpunit/src/Event/Events/TestSuite/Filtered.php (42:49)
+ - vendor/phpunit/phpunit/src/Event/Events/TestSuite/Loaded.php (42:49)
+
+duplicated block id: 381
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Event/Value/Telemetry/Duration.php (40:48)
+ - vendor/phpunit/phpunit/src/Event/Value/Telemetry/HRTime.php (39:47)
+
+duplicated block id: 382
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Event/Value/Telemetry/Duration.php (140:147)
+ - vendor/phpunit/phpunit/src/Event/Value/Telemetry/HRTime.php (98:105)
+
+duplicated block id: 383
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/Logging/TestDox/TestResult/TestResultCollector.php (368:376)
+ - vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/ProgressPrinter.php (336:344)
+
+duplicated block id: 384
+size: 6 cleaned lines of code
+in 7 files:
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute.php (23:32)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutTodoAnnotatedTestsAttribute.php (23:32)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveCacheResultFileAttribute.php (23:32)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveCacheTokensAttribute.php (23:32)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveNoInteractionAttribute.php (23:32)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveRegisterMockObjectsFromTestArgumentsRecursivelyAttribute.php (23:32)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveVerboseAttribute.php (23:32)
+
+duplicated block id: 385
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveListeners.php (22:31)
+ - vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveTestDoxGroupsElement.php (22:31)
+
+duplicated block id: 386
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/psy/psysh/src/Command/ReflectingCommand.php (44:55)
+ - vendor/psy/psysh/src/Command/SudoCommand.php (35:46)
+
+duplicated block id: 387
+size: 6 cleaned lines of code
+in 3 files:
+ - vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php (163:172)
+ - vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php (253:262)
+ - vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php (253:262)
+
+duplicated block id: 388
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/ramsey/uuid/src/Guid/Guid.php (53:60)
+ - vendor/ramsey/uuid/src/Nonstandard/Uuid.php (29:36)
+
+duplicated block id: 389
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/sebastian/type/src/type/IntersectionType.php (92:99)
+ - vendor/sebastian/type/src/type/UnionType.php (119:126)
+
+duplicated block id: 390
+size: 6 cleaned lines of code
+in 2 files:
+ - vendor/symfony/uid/UuidV6.php (27:34)
+ - vendor/symfony/uid/UuidV7.php (31:38)
+

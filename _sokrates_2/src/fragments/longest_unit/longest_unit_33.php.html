@@ -1,0 +1,221 @@
+<html>
+<head>
+    <title>public function process()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function process()</h3>
+<p style="margin-top: 4px">in <i>vendor/phpunit/php-code-coverage/src/Report/Clover.php [32:230]</i></p>
+<ul>
+    <li><b>156</b> lines of code</li>
+    <li><b>24</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function process(CodeCoverage $coverage, ?string $target = null, ?string $name = null): string
+    {
+        $time = (string) time();
+
+        $xmlDocument               = new DOMDocument('1.0', 'UTF-8');
+        $xmlDocument-&gt;formatOutput = true;
+
+        $xmlCoverage = $xmlDocument-&gt;createElement('coverage');
+        $xmlCoverage-&gt;setAttribute('generated', $time);
+        $xmlDocument-&gt;appendChild($xmlCoverage);
+
+        $xmlProject = $xmlDocument-&gt;createElement('project');
+        $xmlProject-&gt;setAttribute('timestamp', $time);
+
+        if (is_string($name)) {
+            $xmlProject-&gt;setAttribute('name', $name);
+        }
+
+        $xmlCoverage-&gt;appendChild($xmlProject);
+
+        $packages = [];
+        $report   = $coverage-&gt;getReport();
+
+        foreach ($report as $item) {
+            if (!$item instanceof File) {
+                continue;
+            }
+
+            /* @var File $item */
+
+            $xmlFile = $xmlDocument-&gt;createElement('file');
+            $xmlFile-&gt;setAttribute('name', $item-&gt;pathAsString());
+
+            $classes      = $item-&gt;classesAndTraits();
+            $coverageData = $item-&gt;lineCoverageData();
+            $lines        = [];
+            $namespace    = 'global';
+
+            foreach ($classes as $className =&gt; $class) {
+                $classStatements        = 0;
+                $coveredClassStatements = 0;
+                $coveredMethods         = 0;
+                $classMethods           = 0;
+
+                // Assumption: one namespace per file
+                if ($class['namespace'] !== '') {
+                    $namespace = $class['namespace'];
+                }
+
+                foreach ($class['methods'] as $methodName =&gt; $method) {
+                    if ($method['executableLines'] == 0) {
+                        continue;
+                    }
+
+                    $classMethods++;
+                    $classStatements        += $method['executableLines'];
+                    $coveredClassStatements += $method['executedLines'];
+
+                    if ($method['coverage'] == 100) {
+                        $coveredMethods++;
+                    }
+
+                    $methodCount = 0;
+
+                    foreach (range($method['startLine'], $method['endLine']) as $line) {
+                        if (isset($coverageData[$line])) {
+                            $methodCount = max($methodCount, count($coverageData[$line]));
+                        }
+                    }
+
+                    $lines[$method['startLine']] = [
+                        'ccn'        =&gt; $method['ccn'],
+                        'count'      =&gt; $methodCount,
+                        'crap'       =&gt; $method['crap'],
+                        'type'       =&gt; 'method',
+                        'visibility' =&gt; $method['visibility'],
+                        'name'       =&gt; $methodName,
+                    ];
+                }
+
+                $xmlClass = $xmlDocument-&gt;createElement('class');
+                $xmlClass-&gt;setAttribute('name', $className);
+                $xmlClass-&gt;setAttribute('namespace', $namespace);
+
+                $xmlFile-&gt;appendChild($xmlClass);
+
+                $xmlMetrics = $xmlDocument-&gt;createElement('metrics');
+                $xmlMetrics-&gt;setAttribute('complexity', (string) $class['ccn']);
+                $xmlMetrics-&gt;setAttribute('methods', (string) $classMethods);
+                $xmlMetrics-&gt;setAttribute('coveredmethods', (string) $coveredMethods);
+                $xmlMetrics-&gt;setAttribute('conditionals', (string) $class['executableBranches']);
+                $xmlMetrics-&gt;setAttribute('coveredconditionals', (string) $class['executedBranches']);
+                $xmlMetrics-&gt;setAttribute('statements', (string) $classStatements);
+                $xmlMetrics-&gt;setAttribute('coveredstatements', (string) $coveredClassStatements);
+                $xmlMetrics-&gt;setAttribute('elements', (string) ($classMethods + $classStatements + $class['executableBranches']));
+                $xmlMetrics-&gt;setAttribute('coveredelements', (string) ($coveredMethods + $coveredClassStatements + $class['executedBranches']));
+                $xmlClass-&gt;appendChild($xmlMetrics);
+            }
+
+            foreach ($coverageData as $line =&gt; $data) {
+                if ($data === null || isset($lines[$line])) {
+                    continue;
+                }
+
+                $lines[$line] = [
+                    'count' =&gt; count($data), 'type' =&gt; 'stmt',
+                ];
+            }
+
+            ksort($lines);
+
+            foreach ($lines as $line =&gt; $data) {
+                $xmlLine = $xmlDocument-&gt;createElement('line');
+                $xmlLine-&gt;setAttribute('num', (string) $line);
+                $xmlLine-&gt;setAttribute('type', $data['type']);
+
+                if (isset($data['name'])) {
+                    $xmlLine-&gt;setAttribute('name', $data['name']);
+                }
+
+                if (isset($data['visibility'])) {
+                    $xmlLine-&gt;setAttribute('visibility', $data['visibility']);
+                }
+
+                if (isset($data['ccn'])) {
+                    $xmlLine-&gt;setAttribute('complexity', (string) $data['ccn']);
+                }
+
+                if (isset($data['crap'])) {
+                    $xmlLine-&gt;setAttribute('crap', (string) $data['crap']);
+                }
+
+                $xmlLine-&gt;setAttribute('count', (string) $data['count']);
+                $xmlFile-&gt;appendChild($xmlLine);
+            }
+
+            $linesOfCode = $item-&gt;linesOfCode();
+
+            $xmlMetrics = $xmlDocument-&gt;createElement('metrics');
+            $xmlMetrics-&gt;setAttribute('loc', (string) $linesOfCode['linesOfCode']);
+            $xmlMetrics-&gt;setAttribute('ncloc', (string) $linesOfCode['nonCommentLinesOfCode']);
+            $xmlMetrics-&gt;setAttribute('classes', (string) $item-&gt;numberOfClassesAndTraits());
+            $xmlMetrics-&gt;setAttribute('methods', (string) $item-&gt;numberOfMethods());
+            $xmlMetrics-&gt;setAttribute('coveredmethods', (string) $item-&gt;numberOfTestedMethods());
+            $xmlMetrics-&gt;setAttribute('conditionals', (string) $item-&gt;numberOfExecutableBranches());
+            $xmlMetrics-&gt;setAttribute('coveredconditionals', (string) $item-&gt;numberOfExecutedBranches());
+            $xmlMetrics-&gt;setAttribute('statements', (string) $item-&gt;numberOfExecutableLines());
+            $xmlMetrics-&gt;setAttribute('coveredstatements', (string) $item-&gt;numberOfExecutedLines());
+            $xmlMetrics-&gt;setAttribute('elements', (string) ($item-&gt;numberOfMethods() + $item-&gt;numberOfExecutableLines() + $item-&gt;numberOfExecutableBranches()));
+            $xmlMetrics-&gt;setAttribute('coveredelements', (string) ($item-&gt;numberOfTestedMethods() + $item-&gt;numberOfExecutedLines() + $item-&gt;numberOfExecutedBranches()));
+            $xmlFile-&gt;appendChild($xmlMetrics);
+
+            if ($namespace === 'global') {
+                $xmlProject-&gt;appendChild($xmlFile);
+            } else {
+                if (!isset($packages[$namespace])) {
+                    $packages[$namespace] = $xmlDocument-&gt;createElement(
+                        'package',
+                    );
+
+                    $packages[$namespace]-&gt;setAttribute('name', $namespace);
+                    $xmlProject-&gt;appendChild($packages[$namespace]);
+                }
+
+                $packages[$namespace]-&gt;appendChild($xmlFile);
+            }
+        }
+
+        $linesOfCode = $report-&gt;linesOfCode();
+
+        $xmlMetrics = $xmlDocument-&gt;createElement('metrics');
+        $xmlMetrics-&gt;setAttribute('files', (string) count($report));
+        $xmlMetrics-&gt;setAttribute('loc', (string) $linesOfCode['linesOfCode']);
+        $xmlMetrics-&gt;setAttribute('ncloc', (string) $linesOfCode['nonCommentLinesOfCode']);
+        $xmlMetrics-&gt;setAttribute('classes', (string) $report-&gt;numberOfClassesAndTraits());
+        $xmlMetrics-&gt;setAttribute('methods', (string) $report-&gt;numberOfMethods());
+        $xmlMetrics-&gt;setAttribute('coveredmethods', (string) $report-&gt;numberOfTestedMethods());
+        $xmlMetrics-&gt;setAttribute('conditionals', (string) $report-&gt;numberOfExecutableBranches());
+        $xmlMetrics-&gt;setAttribute('coveredconditionals', (string) $report-&gt;numberOfExecutedBranches());
+        $xmlMetrics-&gt;setAttribute('statements', (string) $report-&gt;numberOfExecutableLines());
+        $xmlMetrics-&gt;setAttribute('coveredstatements', (string) $report-&gt;numberOfExecutedLines());
+        $xmlMetrics-&gt;setAttribute('elements', (string) ($report-&gt;numberOfMethods() + $report-&gt;numberOfExecutableLines() + $report-&gt;numberOfExecutableBranches()));
+        $xmlMetrics-&gt;setAttribute('coveredelements', (string) ($report-&gt;numberOfTestedMethods() + $report-&gt;numberOfExecutedLines() + $report-&gt;numberOfExecutedBranches()));
+        $xmlProject-&gt;appendChild($xmlMetrics);
+
+        $buffer = $xmlDocument-&gt;saveXML();
+
+        if ($target !== null) {
+            if (!str_contains($target, '://')) {
+                Filesystem::createDirectory(dirname($target));
+            }
+
+            if (@file_put_contents($target, $buffer) === false) {
+                throw new WriteOperationFailedException($target);
+            }
+        }
+
+        return $buffer;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

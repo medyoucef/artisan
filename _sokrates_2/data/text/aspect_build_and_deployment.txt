@@ -1,0 +1,7 @@
+Path	Lines of Code
+.gitattributes	9
+.gitignore	23
+vendor/laravel/sail/database/mariadb/create-testing-database.sh	4
+vendor/laravel/sail/database/mysql/create-testing-database.sh	4
+vendor/laravel/telescope/webpack.mix.js	32
+vendor/opcodesio/log-viewer/webpack.mix.js	27

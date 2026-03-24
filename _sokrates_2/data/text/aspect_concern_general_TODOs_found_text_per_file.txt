@@ -1,0 +1,154 @@
+vendor/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php (8 lines):
+	- line 577: // TODO Add <?php properly
+	- line 808: // TODO: Try to preserve formatting
+	- line 859: // TODO: Preserve formatting.
+	- line 969: // TODO: Preserve formatting.
+	- line 992: // TODO: Support removing single node.
+	- line 1459: // TODO: "yield" where both key and value are inserted doesn't work
+	- line 1506: //'Expr_ShellExec->parts' => '', // TODO These need to be treated more carefully
+	- line 1609: // TODO Insertion into empty statement lists.
+
+
+vendor/nunomaduro/collision/src/Adapters/Phpunit/TestResult.php (5 lines):
+	- line 25: public const TODO = 'todo';
+	- line 245: case self::TODO:
+	- line 271: case self::TODO:
+	- line 296: case self::TODO:
+	- line 309: case self::TODO:
+
+
+vendor/google/protobuf/src/Google/Protobuf/Internal/Message.php (3 lines):
+	- line 432: // TODO: Check unknown enum value.
+	- line 1674: // TODO: Add support.
+	- line 1783: #                 // TODO: Add support.
+
+
+vendor/nunomaduro/collision/src/Adapters/Phpunit/State.php (2 lines):
+	- line 121: if ($test->type !== TestResult::PASS && $test->type !== TestResult::TODO && $test->type !== TestResult::DEPRECATED && $test->type !== TestResult::NOTICE) {
+	- line 179: if ($test->type !== TestResult::PASS && $test->type !== TestResult::TODO && $test->type !== TestResult::DEPRECATED) {
+
+
+vendor/league/commonmark/src/Delimiter/DelimiterStack.php (2 lines):
+	- line 147: // TODO: Remove the line below once PHP 7.4 support is dropped, as WeakMap won't hold onto the reference, making this unnecessary
+	- line 282: // TODO: Remove this conditional check in 3.0. It only exists to prevent behavioral BC breaks in 2.x.
+
+
+vendor/nesbot/carbon/src/Carbon/Lang/ar_Shakl.php (2 lines):
+	- line 20: // @TODO add shakl to months
+	- line 55: // @TODO add shakl to translations below
+
+
+vendor/league/commonmark/src/Parser/Block/DocumentBlockParser.php (1 line):
+	- line 67: // TODO for v3: It would be great if we could find an alternate way to identify such paragraphs.
+
+
+public/lib/isotope/isotope.pkgd.js (1 line):
+	- line 3394: // TODO console.error
+
+
+vendor/fakerphp/faker/src/Faker/Provider/kk_KZ/Address.php (1 line):
+	- line 16: // TODO list all country names in the world
+
+
+vendor/fakerphp/faker/src/Faker/Provider/Base.php (1 line):
+	- line 644: // TODO: remove in v2
+
+
+vendor/larastan/larastan/src/Rules/NoModelMakeRule.php (1 line):
+	- line 83: // TODO can we handle relative names, do they even occur here?
+
+
+vendor/open-telemetry/sdk/Metrics/MeterProviderFactory.php (1 line):
+	- line 38: //TODO "The SDK MAY accept a comma-separated list to enable setting multiple exporters"
+
+
+vendor/fakerphp/faker/src/Faker/ORM/CakePHP/EntityPopulator.php (1 line):
+	- line 122: // TODO check if TreeBehavior attached to modify lft/rgt cols
+
+
+vendor/nunomaduro/collision/src/Adapters/Phpunit/Style.php (1 line):
+	- line 238: if ($type === TestResult::TODO && $countTests > 1) {
+
+
+vendor/guzzlehttp/guzzle/src/Client.php (1 line):
+	- line 436: // TODO: Add more sink validation?
+
+
+vendor/google/protobuf/src/Google/Protobuf/Internal/FieldDescriptor.php (1 line):
+	- line 247: // TODO: once proto2 is supported, this default should be false
+
+
+vendor/league/commonmark/src/Extension/CommonMark/Node/Block/ListBlock.php (1 line):
+	- line 30: protected bool $tight = false; // TODO Make lists tight by default in v3
+
+
+vendor/nikic/php-parser/lib/PhpParser/Internal/TokenStream.php (1 line):
+	- line 233: // TODO Handle non-space indentation
+
+
+vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php (1 line):
+	- line 11: // TODO: Allow this to take matchers or values within the array
+
+
+vendor/nunomaduro/larastan/src/Rules/NoModelMakeRule.php (1 line):
+	- line 83: // TODO can we handle relative names, do they even occur here?
+
+
+vendor/symfony/mime/Header/ParameterizedHeader.php (1 line):
+	- line 118: // TODO: text, or something else??
+
+
+vendor/dflydev/dot-access-data/src/Data.php (1 line):
+	- line 67: // TODO: Is this really what we want to do?
+
+
+vendor/nikic/php-parser/lib/PhpParser/Comment.php (1 line):
+	- line 200: // TODO: Rename these to include "start".
+
+
+public/lib/owlcarousel/owl.carousel.js (1 line):
+	- line 329: // TODO: Should be computed from number of min width items in stage
+
+
+vendor/nunomaduro/larastan/src/Properties/SquashedMigrationHelper.php (1 line):
+	- line 68: // TODO: re-throw the exception with a clear message?
+
+
+vendor/symfony/translation/Loader/PoFileLoader.php (1 line):
+	- line 88: // TODO: this fails when comments or contexts are added
+
+
+vendor/composer/semver/src/Constraint/MultiConstraint.php (1 line):
+	- line 295: // TODO: Here's the place to put more optimizations
+
+
+vendor/open-telemetry/api/Instrumentation/AutoInstrumentation/ExtensionHookManager.php (1 line):
+	- line 38: // TODO Add an option flag to ext-opentelemetry `hook` that configures whether return values should be used?
+
+
+vendor/league/commonmark/src/Extension/CommonMark/Parser/Block/ListBlockStartParser.php (1 line):
+	- line 61: // TODO for 3.0: Just make them tight by default in the block so we can remove this call
+
+
+vendor/open-telemetry/sdk/Trace/SpanBuilder.php (1 line):
+	- line 171: // TODO must suppress no-op spans too
+
+
+vendor/symfony/http-kernel/HttpCache/HttpCache.php (1 line):
+	- line 186: // FIXME: catch exceptions and implement a 500 error page here? -> in Varnish, there is a built-in error page mechanism
+
+
+vendor/symfony/http-kernel/HttpCache/Store.php (1 line):
+	- line 164: // TODO the metaStore referenced an entity that doesn't exist in
+
+
+vendor/larastan/larastan/src/Collectors/UsedViewFunctionCollector.php (1 line):
+	- line 37: // TODO: maybe make sure this function is coming from Laravel
+
+
+vendor/larastan/larastan/src/Properties/SquashedMigrationHelper.php (1 line):
+	- line 68: // TODO: re-throw the exception with a clear message?
+
+
+vendor/nunomaduro/larastan/src/Collectors/UsedViewFunctionCollector.php (1 line):
+	- line 37: // TODO: maybe make sure this function is coming from Laravel

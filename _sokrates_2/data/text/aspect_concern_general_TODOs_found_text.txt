@@ -1,0 +1,47 @@
+Summary: 51 instances, 44 unique
+
+Text	Count
+case self::TODO:	4
+// TODO: Add more sink validation?	1
+// FIXME: catch exceptions and implement a 500 error page here? -> in Varnish, there is a built-in error page mechanism	1
+#                 // TODO: Add support.	1
+// TODO: Remove the line below once PHP 7.4 support is dropped, as WeakMap won't hold onto the reference, making this unnecessary	1
+// TODO: Should be computed from number of min width items in stage	1
+// TODO: Try to preserve formatting	1
+// TODO Handle non-space indentation	1
+if ($type === TestResult::TODO && $countTests > 1) {	1
+// TODO: Here's the place to put more optimizations	1
+// TODO the metaStore referenced an entity that doesn't exist in	1
+// TODO: Rename these to include "start".	1
+if ($test->type !== TestResult::PASS && $test->type !== TestResult::TODO && $test->type !== TestResult::DEPRECATED && $test->type !== TestResult::NOTICE) {	1
+// TODO: Remove this conditional check in 3.0. It only exists to prevent behavioral BC breaks in 2.x.	1
+protected bool $tight = false; // TODO Make lists tight by default in v3	1
+// TODO list all country names in the world	1
+public const TODO = 'todo';	1
+// TODO Add <?php properly	1
+// TODO: Add support.	1
+// TODO can we handle relative names, do they even occur here?	2
+// TODO for v3: It would be great if we could find an alternate way to identify such paragraphs.	1
+// @TODO add shakl to months	1
+// TODO: Is this really what we want to do?	1
+// TODO: remove in v2	1
+// TODO: text, or something else??	1
+// TODO: once proto2 is supported, this default should be false	1
+// TODO: re-throw the exception with a clear message?	2
+// TODO check if TreeBehavior attached to modify lft/rgt cols	1
+// TODO: Support removing single node.	1
+// @TODO add shakl to translations below	1
+// TODO: Check unknown enum value.	1
+// TODO Add an option flag to ext-opentelemetry `hook` that configures whether return values should be used?	1
+// TODO console.error	1
+// TODO Insertion into empty statement lists.	1
+// TODO: Allow this to take matchers or values within the array	1
+// TODO: maybe make sure this function is coming from Laravel	2
+//'Expr_ShellExec->parts' => '', // TODO These need to be treated more carefully	1
+// TODO: "yield" where both key and value are inserted doesn't work	1
+if ($test->type !== TestResult::PASS && $test->type !== TestResult::TODO && $test->type !== TestResult::DEPRECATED) {	1
+// TODO must suppress no-op spans too	1
+// TODO: Preserve formatting.	2
+//TODO "The SDK MAY accept a comma-separated list to enable setting multiple exporters"	1
+// TODO: this fails when comments or contexts are added	1
+// TODO for 3.0: Just make them tight by default in the block so we can remove this call	1

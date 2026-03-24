@@ -1,0 +1,257 @@
+<html>
+<head>
+    <title>public function forMethod()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function forMethod()</h3>
+<p style="margin-top: 4px">in <i>vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php [210:444]</i></p>
+<ul>
+    <li><b>167</b> lines of code</li>
+    <li><b>44</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function forMethod(string $className, string $methodName): MetadataCollection
+    {
+        assert(class_exists($className));
+        assert(method_exists($className, $methodName));
+
+        $result = [];
+
+        foreach (AnnotationRegistry::getInstance()-&gt;forMethod($className, $methodName)-&gt;symbolAnnotations() as $annotation =&gt; $values) {
+            switch ($annotation) {
+                case 'after':
+                    $result[] = Metadata::after(0);
+
+                    break;
+
+                case 'afterClass':
+                    $result[] = Metadata::afterClass(0);
+
+                    break;
+
+                case 'backupGlobals':
+                    $result[] = Metadata::backupGlobalsOnMethod($this-&gt;stringToBool($values[0]));
+
+                    break;
+
+                case 'backupStaticAttributes':
+                case 'backupStaticProperties':
+                    $result[] = Metadata::backupStaticPropertiesOnMethod($this-&gt;stringToBool($values[0]));
+
+                    break;
+
+                case 'before':
+                    $result[] = Metadata::before(0);
+
+                    break;
+
+                case 'beforeClass':
+                    $result[] = Metadata::beforeClass(0);
+
+                    break;
+
+                case 'covers':
+                    foreach ($values as $value) {
+                        $value = $this-&gt;cleanUpCoversOrUsesTarget($value);
+
+                        $result[] = Metadata::coversOnMethod($value);
+                    }
+
+                    break;
+
+                case 'coversNothing':
+                    $result[] = Metadata::coversNothingOnMethod();
+
+                    break;
+
+                case 'dataProvider':
+                    foreach ($values as $value) {
+                        $value = rtrim($value, &quot; ()\n\r\t\v\x00&quot;);
+
+                        if (str_contains($value, '::')) {
+                            $result[] = Metadata::dataProvider(...explode('::', $value));
+
+                            continue;
+                        }
+
+                        $result[] = Metadata::dataProvider($className, $value);
+                    }
+
+                    break;
+
+                case 'depends':
+                    foreach ($values as $value) {
+                        $deepClone    = false;
+                        $shallowClone = false;
+
+                        if (str_starts_with($value, 'clone ')) {
+                            $deepClone = true;
+                            $value     = substr($value, strlen('clone '));
+                        } elseif (str_starts_with($value, '!clone ')) {
+                            $value = substr($value, strlen('!clone '));
+                        } elseif (str_starts_with($value, 'shallowClone ')) {
+                            $shallowClone = true;
+                            $value        = substr($value, strlen('shallowClone '));
+                        } elseif (str_starts_with($value, '!shallowClone ')) {
+                            $value = substr($value, strlen('!shallowClone '));
+                        }
+
+                        if (str_contains($value, '::')) {
+                            [$_className, $_methodName] = explode('::', $value);
+
+                            assert($_className !== '');
+                            assert($_methodName !== '');
+
+                            if ($_methodName === 'class') {
+                                $result[] = Metadata::dependsOnClass($_className, $deepClone, $shallowClone);
+
+                                continue;
+                            }
+
+                            $result[] = Metadata::dependsOnMethod($_className, $_methodName, $deepClone, $shallowClone);
+
+                            continue;
+                        }
+
+                        $result[] = Metadata::dependsOnMethod($className, $value, $deepClone, $shallowClone);
+                    }
+
+                    break;
+
+                case 'doesNotPerformAssertions':
+                    $result[] = Metadata::doesNotPerformAssertionsOnMethod();
+
+                    break;
+
+                case 'excludeGlobalVariableFromBackup':
+                    foreach ($values as $value) {
+                        $result[] = Metadata::excludeGlobalVariableFromBackupOnMethod($value);
+                    }
+
+                    break;
+
+                case 'excludeStaticPropertyFromBackup':
+                    foreach ($values as $value) {
+                        $tmp = explode(' ', $value);
+
+                        if (count($tmp) !== 2) {
+                            continue;
+                        }
+
+                        $result[] = Metadata::excludeStaticPropertyFromBackupOnMethod(
+                            trim($tmp[0]),
+                            trim($tmp[1]),
+                        );
+                    }
+
+                    break;
+
+                case 'group':
+                case 'ticket':
+                    foreach ($values as $value) {
+                        $result[] = Metadata::groupOnMethod($value);
+                    }
+
+                    break;
+
+                case 'large':
+                    $result[] = Metadata::groupOnMethod('large');
+
+                    break;
+
+                case 'medium':
+                    $result[] = Metadata::groupOnMethod('medium');
+
+                    break;
+
+                case 'postCondition':
+                    $result[] = Metadata::postCondition(0);
+
+                    break;
+
+                case 'preCondition':
+                    $result[] = Metadata::preCondition(0);
+
+                    break;
+
+                case 'preserveGlobalState':
+                    $result[] = Metadata::preserveGlobalStateOnMethod($this-&gt;stringToBool($values[0]));
+
+                    break;
+
+                case 'runInSeparateProcess':
+                    $result[] = Metadata::runInSeparateProcess();
+
+                    break;
+
+                case 'small':
+                    $result[] = Metadata::groupOnMethod('small');
+
+                    break;
+
+                case 'test':
+                    $result[] = Metadata::test();
+
+                    break;
+
+                case 'testdox':
+                    $result[] = Metadata::testDoxOnMethod($values[0]);
+
+                    break;
+
+                case 'uses':
+                    foreach ($values as $value) {
+                        $value = $this-&gt;cleanUpCoversOrUsesTarget($value);
+
+                        $result[] = Metadata::usesOnMethod($value);
+                    }
+
+                    break;
+            }
+        }
+
+        try {
+            $result = array_merge(
+                $result,
+                $this-&gt;parseRequirements(
+                    AnnotationRegistry::getInstance()-&gt;forMethod($className, $methodName)-&gt;requirements(),
+                    'method',
+                ),
+            );
+        } catch (InvalidVersionRequirementException $e) {
+            EventFacade::emitter()-&gt;testRunnerTriggeredPhpunitWarning(
+                sprintf(
+                    'Method %s::%s is annotated using an invalid version requirement: %s',
+                    $className,
+                    $methodName,
+                    $e-&gt;getMessage(),
+                ),
+            );
+        }
+
+        if (!empty($result) &amp;&amp;
+            !isset(self::$deprecationEmittedForMethod[$className . '::' . $methodName]) &amp;&amp;
+            !str_starts_with($className, 'PHPUnit\TestFixture')) {
+            EventFacade::emitter()-&gt;testRunnerTriggeredPhpunitDeprecation(
+                sprintf(
+                    'Metadata found in doc-comment for method %s::%s(). Metadata in doc-comments is deprecated and will no longer be supported in PHPUnit 12. Update your test code to use attributes instead.',
+                    $className,
+                    $methodName,
+                ),
+            );
+
+            self::$deprecationEmittedForMethod[$className . '::' . $methodName] = true;
+        }
+
+        return MetadataCollection::fromArray($result);
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

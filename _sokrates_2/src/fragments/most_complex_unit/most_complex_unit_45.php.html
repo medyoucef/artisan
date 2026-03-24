@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>public function shouldBeProcessed()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function shouldBeProcessed()</h3>
+<p style="margin-top: 4px">in <i>vendor/phpunit/phpunit/src/Runner/IssueFilter.php [36:116]</i></p>
+<ul>
+    <li><b>65</b> lines of code</li>
+    <li><b>40</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function shouldBeProcessed(DeprecationTriggered|ErrorTriggered|NoticeTriggered|PhpDeprecationTriggered|PhpNoticeTriggered|PhpWarningTriggered|WarningTriggered $event, bool $onlyTestMethods = false): bool
+    {
+        if ($onlyTestMethods &amp;&amp; !$event-&gt;test()-&gt;isTestMethod()) {
+            return false;
+        }
+
+        if ($event instanceof DeprecationTriggered || $event instanceof PhpDeprecationTriggered) {
+            if ($event-&gt;ignoredByTest()) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;ignoreSelfDeprecations() &amp;&amp;
+                ($event-&gt;trigger()-&gt;isTest() || $event-&gt;trigger()-&gt;isSelf())) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;ignoreDirectDeprecations() &amp;&amp; $event-&gt;trigger()-&gt;isDirect()) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;ignoreIndirectDeprecations() &amp;&amp; $event-&gt;trigger()-&gt;isIndirect()) {
+                return false;
+            }
+
+            if (!$this-&gt;source-&gt;ignoreSuppressionOfDeprecations() &amp;&amp; $event-&gt;wasSuppressed()) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;restrictDeprecations() &amp;&amp; !SourceFilter::instance()-&gt;includes($event-&gt;file())) {
+                return false;
+            }
+        }
+
+        if ($event instanceof NoticeTriggered) {
+            if (!$this-&gt;source-&gt;ignoreSuppressionOfNotices() &amp;&amp; $event-&gt;wasSuppressed()) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;restrictNotices() &amp;&amp; !SourceFilter::instance()-&gt;includes($event-&gt;file())) {
+                return false;
+            }
+        }
+
+        if ($event instanceof PhpNoticeTriggered) {
+            if (!$this-&gt;source-&gt;ignoreSuppressionOfPhpNotices() &amp;&amp; $event-&gt;wasSuppressed()) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;restrictNotices() &amp;&amp; !SourceFilter::instance()-&gt;includes($event-&gt;file())) {
+                return false;
+            }
+        }
+
+        if ($event instanceof WarningTriggered) {
+            if (!$this-&gt;source-&gt;ignoreSuppressionOfWarnings() &amp;&amp; $event-&gt;wasSuppressed()) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;restrictWarnings() &amp;&amp; !SourceFilter::instance()-&gt;includes($event-&gt;file())) {
+                return false;
+            }
+        }
+
+        if ($event instanceof PhpWarningTriggered) {
+            if (!$this-&gt;source-&gt;ignoreSuppressionOfPhpWarnings() &amp;&amp; $event-&gt;wasSuppressed()) {
+                return false;
+            }
+
+            if ($this-&gt;source-&gt;restrictWarnings() &amp;&amp; !SourceFilter::instance()-&gt;includes($event-&gt;file())) {
+                return false;
+            }
+        }
+
+        if ($event instanceof ErrorTriggered) {
+            if (!$this-&gt;source-&gt;ignoreSuppressionOfErrors() &amp;&amp; $event-&gt;wasSuppressed()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

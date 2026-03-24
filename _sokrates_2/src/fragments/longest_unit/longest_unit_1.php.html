@@ -1,0 +1,1642 @@
+<html>
+<head>
+    <title>protected function initReduceCallbacks()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">protected function initReduceCallbacks()</h3>
+<p style="margin-top: 4px">in <i>vendor/nikic/php-parser/lib/PhpParser/Parser/Php8.php [1170:2789]</i></p>
+<ul>
+    <li><b>1,611</b> lines of code</li>
+    <li><b>21</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    protected function initReduceCallbacks(): void {
+        $this-&gt;reduceCallbacks = [
+            0 =&gt; null,
+            1 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;handleNamespaces($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            2 =&gt; static function ($self, $stackPos) {
+                 if ($self-&gt;semStack[$stackPos-(2-2)] !== null) { $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; } $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];;
+            },
+            3 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            4 =&gt; static function ($self, $stackPos) {
+                 $nop = $self-&gt;maybeCreateZeroLengthNop($self-&gt;tokenPos);;
+            if ($nop !== null) { $self-&gt;semStack[$stackPos-(1-1)][] = $nop; } $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)];
+            },
+            5 =&gt; null,
+            6 =&gt; null,
+            7 =&gt; null,
+            8 =&gt; null,
+            9 =&gt; null,
+            10 =&gt; null,
+            11 =&gt; null,
+            12 =&gt; null,
+            13 =&gt; null,
+            14 =&gt; null,
+            15 =&gt; null,
+            16 =&gt; null,
+            17 =&gt; null,
+            18 =&gt; null,
+            19 =&gt; null,
+            20 =&gt; null,
+            21 =&gt; null,
+            22 =&gt; null,
+            23 =&gt; null,
+            24 =&gt; null,
+            25 =&gt; null,
+            26 =&gt; null,
+            27 =&gt; null,
+            28 =&gt; null,
+            29 =&gt; null,
+            30 =&gt; null,
+            31 =&gt; null,
+            32 =&gt; null,
+            33 =&gt; null,
+            34 =&gt; null,
+            35 =&gt; null,
+            36 =&gt; null,
+            37 =&gt; null,
+            38 =&gt; null,
+            39 =&gt; null,
+            40 =&gt; null,
+            41 =&gt; null,
+            42 =&gt; null,
+            43 =&gt; null,
+            44 =&gt; null,
+            45 =&gt; null,
+            46 =&gt; null,
+            47 =&gt; null,
+            48 =&gt; null,
+            49 =&gt; null,
+            50 =&gt; null,
+            51 =&gt; null,
+            52 =&gt; null,
+            53 =&gt; null,
+            54 =&gt; null,
+            55 =&gt; null,
+            56 =&gt; null,
+            57 =&gt; null,
+            58 =&gt; null,
+            59 =&gt; null,
+            60 =&gt; null,
+            61 =&gt; null,
+            62 =&gt; null,
+            63 =&gt; null,
+            64 =&gt; null,
+            65 =&gt; null,
+            66 =&gt; null,
+            67 =&gt; null,
+            68 =&gt; null,
+            69 =&gt; null,
+            70 =&gt; null,
+            71 =&gt; null,
+            72 =&gt; null,
+            73 =&gt; null,
+            74 =&gt; null,
+            75 =&gt; null,
+            76 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)]; if ($self-&gt;semValue === &quot;&lt;?=&quot;) $self-&gt;emitError(new Error('Cannot use &quot;&lt;?=&quot; as an identifier', $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos])));
+            },
+            77 =&gt; null,
+            78 =&gt; null,
+            79 =&gt; null,
+            80 =&gt; null,
+            81 =&gt; null,
+            82 =&gt; null,
+            83 =&gt; null,
+            84 =&gt; null,
+            85 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            86 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            87 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            88 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            89 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            90 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            91 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            92 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            93 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            94 =&gt; null,
+            95 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name(substr($self-&gt;semStack[$stackPos-(1-1)], 1), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            96 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Variable(substr($self-&gt;semStack[$stackPos-(1-1)], 1), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            97 =&gt; static function ($self, $stackPos) {
+                 /* nothing */
+            },
+            98 =&gt; static function ($self, $stackPos) {
+                 /* nothing */
+            },
+            99 =&gt; static function ($self, $stackPos) {
+                 /* nothing */
+            },
+            100 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;emitError(new Error('A trailing comma is not allowed here', $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos])));
+            },
+            101 =&gt; null,
+            102 =&gt; null,
+            103 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Attribute($self-&gt;semStack[$stackPos-(1-1)], [], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            104 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Attribute($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            105 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            106 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            107 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\AttributeGroup($self-&gt;semStack[$stackPos-(4-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            108 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            109 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            110 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = [];
+            },
+            111 =&gt; null,
+            112 =&gt; null,
+            113 =&gt; null,
+            114 =&gt; null,
+            115 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\HaltCompiler($self-&gt;handleHaltCompiler(), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            116 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Namespace_($self-&gt;semStack[$stackPos-(3-2)], null, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;semValue-&gt;setAttribute('kind', Stmt\Namespace_::KIND_SEMICOLON);
+            $self-&gt;checkNamespace($self-&gt;semValue);
+            },
+            117 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Namespace_($self-&gt;semStack[$stackPos-(5-2)], $self-&gt;semStack[$stackPos-(5-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;semValue-&gt;setAttribute('kind', Stmt\Namespace_::KIND_BRACED);
+            $self-&gt;checkNamespace($self-&gt;semValue);
+            },
+            118 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Namespace_(null, $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;semValue-&gt;setAttribute('kind', Stmt\Namespace_::KIND_BRACED);
+            $self-&gt;checkNamespace($self-&gt;semValue);
+            },
+            119 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Use_($self-&gt;semStack[$stackPos-(3-2)], Stmt\Use_::TYPE_NORMAL, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            120 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Use_($self-&gt;semStack[$stackPos-(4-3)], $self-&gt;semStack[$stackPos-(4-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            121 =&gt; null,
+            122 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Const_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            123 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Stmt\Use_::TYPE_FUNCTION;
+            },
+            124 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Stmt\Use_::TYPE_CONSTANT;
+            },
+            125 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\GroupUse($self-&gt;semStack[$stackPos-(8-3)], $self-&gt;semStack[$stackPos-(8-6)], $self-&gt;semStack[$stackPos-(8-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            126 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\GroupUse($self-&gt;semStack[$stackPos-(7-2)], $self-&gt;semStack[$stackPos-(7-5)], Stmt\Use_::TYPE_UNKNOWN, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            127 =&gt; null,
+            128 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            129 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            130 =&gt; null,
+            131 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            132 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            133 =&gt; null,
+            134 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            135 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            136 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\UseItem($self-&gt;semStack[$stackPos-(1-1)], null, Stmt\Use_::TYPE_UNKNOWN, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;checkUseUse($self-&gt;semValue, $stackPos-(1-1));
+            },
+            137 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\UseItem($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], Stmt\Use_::TYPE_UNKNOWN, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;checkUseUse($self-&gt;semValue, $stackPos-(3-3));
+            },
+            138 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\UseItem($self-&gt;semStack[$stackPos-(1-1)], null, Stmt\Use_::TYPE_UNKNOWN, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;checkUseUse($self-&gt;semValue, $stackPos-(1-1));
+            },
+            139 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\UseItem($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], Stmt\Use_::TYPE_UNKNOWN, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;checkUseUse($self-&gt;semValue, $stackPos-(3-3));
+            },
+            140 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)]; $self-&gt;semValue-&gt;type = Stmt\Use_::TYPE_NORMAL;
+            },
+            141 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue-&gt;type = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            142 =&gt; null,
+            143 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            144 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            145 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Const_($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            146 =&gt; null,
+            147 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            148 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            149 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Const_(new Node\Identifier($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)],  $self-&gt;tokenEndStack[$stackPos-(3-1)])), $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            150 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Const_(new Node\Identifier($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)],  $self-&gt;tokenEndStack[$stackPos-(3-1)])), $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            151 =&gt; static function ($self, $stackPos) {
+                 if ($self-&gt;semStack[$stackPos-(2-2)] !== null) { $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; } $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];;
+            },
+            152 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            153 =&gt; static function ($self, $stackPos) {
+                 $nop = $self-&gt;maybeCreateZeroLengthNop($self-&gt;tokenPos);;
+            if ($nop !== null) { $self-&gt;semStack[$stackPos-(1-1)][] = $nop; } $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)];
+            },
+            154 =&gt; null,
+            155 =&gt; null,
+            156 =&gt; null,
+            157 =&gt; static function ($self, $stackPos) {
+                 throw new Error('__HALT_COMPILER() can only be used from the outermost scope', $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            158 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Block($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            159 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\If_($self-&gt;semStack[$stackPos-(7-3)], ['stmts' =&gt; $self-&gt;semStack[$stackPos-(7-5)], 'elseifs' =&gt; $self-&gt;semStack[$stackPos-(7-6)], 'else' =&gt; $self-&gt;semStack[$stackPos-(7-7)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            160 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\If_($self-&gt;semStack[$stackPos-(10-3)], ['stmts' =&gt; $self-&gt;semStack[$stackPos-(10-6)], 'elseifs' =&gt; $self-&gt;semStack[$stackPos-(10-7)], 'else' =&gt; $self-&gt;semStack[$stackPos-(10-8)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(10-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            161 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\While_($self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            162 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Do_($self-&gt;semStack[$stackPos-(7-5)], $self-&gt;semStack[$stackPos-(7-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            163 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\For_(['init' =&gt; $self-&gt;semStack[$stackPos-(9-3)], 'cond' =&gt; $self-&gt;semStack[$stackPos-(9-5)], 'loop' =&gt; $self-&gt;semStack[$stackPos-(9-7)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(9-9)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            164 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Switch_($self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            165 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Break_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            166 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Continue_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            167 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Return_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            168 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Global_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            169 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Static_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            170 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Echo_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            171 =&gt; static function ($self, $stackPos) {
+
+        $self-&gt;semValue = new Stmt\InlineHTML($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+        $self-&gt;semValue-&gt;setAttribute('hasLeadingNewline', $self-&gt;inlineHtmlHasLeadingNewline($stackPos-(1-1)));
+
+            },
+            172 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Expression($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            173 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Unset_($self-&gt;semStack[$stackPos-(5-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            174 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Foreach_($self-&gt;semStack[$stackPos-(7-3)], $self-&gt;semStack[$stackPos-(7-5)][0], ['keyVar' =&gt; null, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(7-5)][1], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(7-7)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            175 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Foreach_($self-&gt;semStack[$stackPos-(9-3)], $self-&gt;semStack[$stackPos-(9-7)][0], ['keyVar' =&gt; $self-&gt;semStack[$stackPos-(9-5)], 'byRef' =&gt; $self-&gt;semStack[$stackPos-(9-7)][1], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(9-9)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            176 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Foreach_($self-&gt;semStack[$stackPos-(6-3)], new Expr\Error($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-4)],  $self-&gt;tokenEndStack[$stackPos-(6-4)])), ['stmts' =&gt; $self-&gt;semStack[$stackPos-(6-6)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            177 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Declare_($self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            178 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\TryCatch($self-&gt;semStack[$stackPos-(6-3)], $self-&gt;semStack[$stackPos-(6-5)], $self-&gt;semStack[$stackPos-(6-6)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;checkTryCatch($self-&gt;semValue);
+            },
+            179 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Goto_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            180 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Label($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            181 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null; /* means: no statement */
+            },
+            182 =&gt; null,
+            183 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;maybeCreateNop($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]);
+            },
+            184 =&gt; static function ($self, $stackPos) {
+                 if ($self-&gt;semStack[$stackPos-(1-1)] instanceof Stmt\Block) { $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)]-&gt;stmts; } else if ($self-&gt;semStack[$stackPos-(1-1)] === null) { $self-&gt;semValue = []; } else { $self-&gt;semValue = [$self-&gt;semStack[$stackPos-(1-1)]]; };
+            },
+            185 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            186 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            187 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            188 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            189 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Catch_($self-&gt;semStack[$stackPos-(8-3)], $self-&gt;semStack[$stackPos-(8-4)], $self-&gt;semStack[$stackPos-(8-7)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            190 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            191 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Finally_($self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            192 =&gt; null,
+            193 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            194 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            195 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = false;
+            },
+            196 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = true;
+            },
+            197 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = false;
+            },
+            198 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = true;
+            },
+            199 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = false;
+            },
+            200 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = true;
+            },
+            201 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            202 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = [];
+            },
+            203 =&gt; null,
+            204 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            205 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            206 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Function_($self-&gt;semStack[$stackPos-(8-3)], ['byRef' =&gt; $self-&gt;semStack[$stackPos-(8-2)], 'params' =&gt; $self-&gt;semStack[$stackPos-(8-5)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(8-7)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(8-8)], 'attrGroups' =&gt; []], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            207 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Function_($self-&gt;semStack[$stackPos-(9-4)], ['byRef' =&gt; $self-&gt;semStack[$stackPos-(9-3)], 'params' =&gt; $self-&gt;semStack[$stackPos-(9-6)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(9-8)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(9-9)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(9-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            208 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Class_($self-&gt;semStack[$stackPos-(7-2)], ['type' =&gt; $self-&gt;semStack[$stackPos-(7-1)], 'extends' =&gt; $self-&gt;semStack[$stackPos-(7-3)], 'implements' =&gt; $self-&gt;semStack[$stackPos-(7-4)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(7-6)], 'attrGroups' =&gt; []], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;checkClass($self-&gt;semValue, $stackPos-(7-2));
+            },
+            209 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Class_($self-&gt;semStack[$stackPos-(8-3)], ['type' =&gt; $self-&gt;semStack[$stackPos-(8-2)], 'extends' =&gt; $self-&gt;semStack[$stackPos-(8-4)], 'implements' =&gt; $self-&gt;semStack[$stackPos-(8-5)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(8-7)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(8-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;checkClass($self-&gt;semValue, $stackPos-(8-3));
+            },
+            210 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Interface_($self-&gt;semStack[$stackPos-(7-3)], ['extends' =&gt; $self-&gt;semStack[$stackPos-(7-4)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(7-6)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(7-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;checkInterface($self-&gt;semValue, $stackPos-(7-3));
+            },
+            211 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Trait_($self-&gt;semStack[$stackPos-(6-3)], ['stmts' =&gt; $self-&gt;semStack[$stackPos-(6-5)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(6-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            212 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Enum_($self-&gt;semStack[$stackPos-(8-3)], ['scalarType' =&gt; $self-&gt;semStack[$stackPos-(8-4)], 'implements' =&gt; $self-&gt;semStack[$stackPos-(8-5)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(8-7)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(8-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;checkEnum($self-&gt;semValue, $stackPos-(8-3));
+            },
+            213 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            214 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            215 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            216 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            217 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = 0;
+            },
+            218 =&gt; null,
+            219 =&gt; null,
+            220 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;checkClassModifier($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $stackPos-(2-2)); $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)] | $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            221 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::ABSTRACT;
+            },
+            222 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::FINAL;
+            },
+            223 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::READONLY;
+            },
+            224 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            225 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            226 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            227 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            228 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            229 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            230 =&gt; null,
+            231 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            232 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            233 =&gt; null,
+            234 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-2)];
+            },
+            235 =&gt; null,
+            236 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-2)];
+            },
+            237 =&gt; static function ($self, $stackPos) {
+                 if ($self-&gt;semStack[$stackPos-(1-1)] instanceof Stmt\Block) { $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)]-&gt;stmts; } else if ($self-&gt;semStack[$stackPos-(1-1)] === null) { $self-&gt;semValue = []; } else { $self-&gt;semValue = [$self-&gt;semStack[$stackPos-(1-1)]]; };
+            },
+            238 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            239 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-2)];
+            },
+            240 =&gt; null,
+            241 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            242 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            243 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\DeclareItem($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            244 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            245 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-3)];
+            },
+            246 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-2)];
+            },
+            247 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(5-3)];
+            },
+            248 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            249 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            250 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Case_($self-&gt;semStack[$stackPos-(4-2)], $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            251 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Case_(null, $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            252 =&gt; null,
+            253 =&gt; null,
+            254 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Match_($self-&gt;semStack[$stackPos-(7-3)], $self-&gt;semStack[$stackPos-(7-6)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            255 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = [];
+            },
+            256 =&gt; null,
+            257 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            258 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            259 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\MatchArm($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            260 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\MatchArm(null, $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            261 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)];
+            },
+            262 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-2)];
+            },
+            263 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            264 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            265 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\ElseIf_($self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            266 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            267 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            268 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\ElseIf_($self-&gt;semStack[$stackPos-(6-3)], $self-&gt;semStack[$stackPos-(6-6)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;fixupAlternativeElse($self-&gt;semValue);
+            },
+            269 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            270 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Else_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            271 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            272 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Else_($self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;fixupAlternativeElse($self-&gt;semValue);
+            },
+            273 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)], false);
+            },
+            274 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(2-2)], true);
+            },
+            275 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)], false);
+            },
+            276 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;fixupArrayDestructuring($self-&gt;semStack[$stackPos-(1-1)]), false);
+            },
+            277 =&gt; null,
+            278 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            279 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            280 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            281 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = 0;
+            },
+            282 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;checkModifier($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $stackPos-(2-2)); $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)] | $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            283 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PUBLIC;
+            },
+            284 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PROTECTED;
+            },
+            285 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PRIVATE;
+            },
+            286 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PUBLIC_SET;
+            },
+            287 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PROTECTED_SET;
+            },
+            288 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PRIVATE_SET;
+            },
+            289 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::READONLY;
+            },
+            290 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Param($self-&gt;semStack[$stackPos-(7-6)], null, $self-&gt;semStack[$stackPos-(7-3)], $self-&gt;semStack[$stackPos-(7-4)], $self-&gt;semStack[$stackPos-(7-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(7-2)], $self-&gt;semStack[$stackPos-(7-1)], $self-&gt;semStack[$stackPos-(7-7)]);
+            $self-&gt;checkParam($self-&gt;semValue);
+            $self-&gt;addPropertyNameToHooks($self-&gt;semValue);
+            },
+            291 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Param($self-&gt;semStack[$stackPos-(9-6)], $self-&gt;semStack[$stackPos-(9-8)], $self-&gt;semStack[$stackPos-(9-3)], $self-&gt;semStack[$stackPos-(9-4)], $self-&gt;semStack[$stackPos-(9-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(9-2)], $self-&gt;semStack[$stackPos-(9-1)], $self-&gt;semStack[$stackPos-(9-9)]);
+            $self-&gt;checkParam($self-&gt;semValue);
+            $self-&gt;addPropertyNameToHooks($self-&gt;semValue);
+            },
+            292 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Param(new Expr\Error($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos])), null, $self-&gt;semStack[$stackPos-(6-3)], $self-&gt;semStack[$stackPos-(6-4)], $self-&gt;semStack[$stackPos-(6-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(6-2)], $self-&gt;semStack[$stackPos-(6-1)]);
+            },
+            293 =&gt; null,
+            294 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\NullableType($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            295 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\UnionType($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            296 =&gt; null,
+            297 =&gt; null,
+            298 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Name('static', $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            299 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;handleBuiltinTypes($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            300 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier('array', $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            301 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Identifier('callable', $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            302 =&gt; null,
+            303 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            304 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)]);
+            },
+            305 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            306 =&gt; null,
+            307 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            308 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)]);
+            },
+            309 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            310 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)]);
+            },
+            311 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            312 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\IntersectionType($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            313 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)]);
+            },
+            314 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            315 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\IntersectionType($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            316 =&gt; null,
+            317 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\NullableType($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            318 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\UnionType($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            319 =&gt; null,
+            320 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            321 =&gt; null,
+            322 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            323 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            324 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            325 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            326 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-2)];
+            },
+            327 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(3-2)]);
+            },
+            328 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\VariadicPlaceholder($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            329 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            330 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            331 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Arg($self-&gt;semStack[$stackPos-(1-1)], false, false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            332 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Arg($self-&gt;semStack[$stackPos-(2-2)], true, false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            333 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Arg($self-&gt;semStack[$stackPos-(2-2)], false, true, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            334 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\Arg($self-&gt;semStack[$stackPos-(3-3)], false, false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(3-1)]);
+            },
+            335 =&gt; null,
+            336 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            337 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            338 =&gt; null,
+            339 =&gt; null,
+            340 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            341 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            342 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\StaticVar($self-&gt;semStack[$stackPos-(1-1)], null, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            343 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\StaticVar($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            344 =&gt; static function ($self, $stackPos) {
+                 if ($self-&gt;semStack[$stackPos-(2-2)] !== null) { $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)]; } else { $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)]; }
+            },
+            345 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            346 =&gt; static function ($self, $stackPos) {
+                 $nop = $self-&gt;maybeCreateZeroLengthNop($self-&gt;tokenPos);;
+            if ($nop !== null) { $self-&gt;semStack[$stackPos-(1-1)][] = $nop; } $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)];
+            },
+            347 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Property($self-&gt;semStack[$stackPos-(5-2)], $self-&gt;semStack[$stackPos-(5-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-1)]);
+            },
+            348 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\Property($self-&gt;semStack[$stackPos-(7-2)], $self-&gt;semStack[$stackPos-(7-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(7-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(7-3)], $self-&gt;semStack[$stackPos-(7-1)], $self-&gt;semStack[$stackPos-(7-6)]);
+            $self-&gt;checkPropertyHooksForMultiProperty($self-&gt;semValue, $stackPos-(7-5));
+            $self-&gt;checkEmptyPropertyHookList($self-&gt;semStack[$stackPos-(7-6)], $stackPos-(7-5));
+            $self-&gt;addPropertyNameToHooks($self-&gt;semValue);
+            },
+            349 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\ClassConst($self-&gt;semStack[$stackPos-(5-4)], $self-&gt;semStack[$stackPos-(5-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(5-1)]);
+            $self-&gt;checkClassConst($self-&gt;semValue, $stackPos-(5-2));
+            },
+            350 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\ClassConst($self-&gt;semStack[$stackPos-(6-5)], $self-&gt;semStack[$stackPos-(6-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;semStack[$stackPos-(6-1)], $self-&gt;semStack[$stackPos-(6-4)]);
+            $self-&gt;checkClassConst($self-&gt;semValue, $stackPos-(6-2));
+            },
+            351 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\ClassMethod($self-&gt;semStack[$stackPos-(10-5)], ['type' =&gt; $self-&gt;semStack[$stackPos-(10-2)], 'byRef' =&gt; $self-&gt;semStack[$stackPos-(10-4)], 'params' =&gt; $self-&gt;semStack[$stackPos-(10-7)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(10-9)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(10-10)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(10-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(10-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;checkClassMethod($self-&gt;semValue, $stackPos-(10-2));
+            },
+            352 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\TraitUse($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            353 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\EnumCase($self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-4)], $self-&gt;semStack[$stackPos-(5-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            354 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null; /* will be skipped */
+            },
+            355 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            356 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            357 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            358 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            359 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\TraitUseAdaptation\Precedence($self-&gt;semStack[$stackPos-(4-1)][0], $self-&gt;semStack[$stackPos-(4-1)][1], $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            360 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\TraitUseAdaptation\Alias($self-&gt;semStack[$stackPos-(5-1)][0], $self-&gt;semStack[$stackPos-(5-1)][1], $self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            361 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\TraitUseAdaptation\Alias($self-&gt;semStack[$stackPos-(4-1)][0], $self-&gt;semStack[$stackPos-(4-1)][1], $self-&gt;semStack[$stackPos-(4-3)], null, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            362 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\TraitUseAdaptation\Alias($self-&gt;semStack[$stackPos-(4-1)][0], $self-&gt;semStack[$stackPos-(4-1)][1], null, $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            363 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Stmt\TraitUseAdaptation\Alias($self-&gt;semStack[$stackPos-(4-1)][0], $self-&gt;semStack[$stackPos-(4-1)][1], null, $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            364 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)]);
+            },
+            365 =&gt; null,
+            366 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array(null, $self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            367 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            368 =&gt; null,
+            369 =&gt; null,
+            370 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = 0;
+            },
+            371 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = 0;
+            },
+            372 =&gt; null,
+            373 =&gt; null,
+            374 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;checkModifier($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $stackPos-(2-2)); $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)] | $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            375 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PUBLIC;
+            },
+            376 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PROTECTED;
+            },
+            377 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PRIVATE;
+            },
+            378 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PUBLIC_SET;
+            },
+            379 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PROTECTED_SET;
+            },
+            380 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::PRIVATE_SET;
+            },
+            381 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::STATIC;
+            },
+            382 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::ABSTRACT;
+            },
+            383 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::FINAL;
+            },
+            384 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Modifiers::READONLY;
+            },
+            385 =&gt; null,
+            386 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            387 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            388 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\VarLikeIdentifier(substr($self-&gt;semStack[$stackPos-(1-1)], 1), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            389 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\PropertyItem($self-&gt;semStack[$stackPos-(1-1)], null, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            390 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\PropertyItem($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            391 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = [];
+            },
+            392 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            393 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = [];
+            },
+            394 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)]; $self-&gt;checkEmptyPropertyHookList($self-&gt;semStack[$stackPos-(3-2)], $stackPos-(3-1));
+            },
+            395 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\PropertyHook($self-&gt;semStack[$stackPos-(5-4)], $self-&gt;semStack[$stackPos-(5-5)], ['flags' =&gt; $self-&gt;semStack[$stackPos-(5-2)], 'byRef' =&gt; $self-&gt;semStack[$stackPos-(5-3)], 'params' =&gt; [], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(5-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;checkPropertyHook($self-&gt;semValue, null);
+            },
+            396 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\PropertyHook($self-&gt;semStack[$stackPos-(8-4)], $self-&gt;semStack[$stackPos-(8-8)], ['flags' =&gt; $self-&gt;semStack[$stackPos-(8-2)], 'byRef' =&gt; $self-&gt;semStack[$stackPos-(8-3)], 'params' =&gt; $self-&gt;semStack[$stackPos-(8-6)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(8-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            $self-&gt;checkPropertyHook($self-&gt;semValue, $stackPos-(8-5));
+            },
+            397 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            398 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            399 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            400 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = 0;
+            },
+            401 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;checkPropertyHookModifiers($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $stackPos-(2-2)); $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)] | $self-&gt;semStack[$stackPos-(2-2)];
+            },
+            402 =&gt; null,
+            403 =&gt; null,
+            404 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            405 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            406 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            407 =&gt; null,
+            408 =&gt; null,
+            409 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Assign($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            410 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Assign($self-&gt;fixupArrayDestructuring($self-&gt;semStack[$stackPos-(3-1)]), $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            411 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Assign($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            412 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignRef($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            413 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignRef($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            if (!$self-&gt;phpVersion-&gt;allowsAssignNewByReference()) {
+                $self-&gt;emitError(new Error('Cannot assign new by reference', $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos])));
+            }
+
+            },
+            414 =&gt; null,
+            415 =&gt; null,
+            416 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Clone_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            417 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Plus($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            418 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Minus($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            419 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Mul($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            420 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Div($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            421 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Concat($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            422 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Mod($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            423 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\BitwiseAnd($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            424 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\BitwiseOr($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            425 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\BitwiseXor($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            426 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\ShiftLeft($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            427 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\ShiftRight($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            428 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Pow($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            429 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\AssignOp\Coalesce($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            430 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\PostInc($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            431 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\PreInc($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            432 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\PostDec($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            433 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\PreDec($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            434 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\BooleanOr($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            435 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\BooleanAnd($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            436 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\LogicalOr($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            437 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\LogicalAnd($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            438 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\LogicalXor($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            439 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\BitwiseOr($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            440 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\BitwiseAnd($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            441 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\BitwiseAnd($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            442 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\BitwiseXor($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            443 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Concat($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            444 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Plus($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            445 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Minus($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            446 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Mul($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            447 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Div($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            448 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Mod($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            449 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\ShiftLeft($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            450 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\ShiftRight($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            451 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Pow($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            452 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\UnaryPlus($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            453 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\UnaryMinus($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            454 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BooleanNot($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            455 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BitwiseNot($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            456 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Identical($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            457 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\NotIdentical($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            458 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Equal($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            459 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\NotEqual($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            460 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Spaceship($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            461 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Smaller($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            462 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\SmallerOrEqual($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            463 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Greater($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            464 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\GreaterOrEqual($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            465 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Instanceof_($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            466 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            467 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Ternary($self-&gt;semStack[$stackPos-(5-1)], $self-&gt;semStack[$stackPos-(5-3)], $self-&gt;semStack[$stackPos-(5-5)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            468 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Ternary($self-&gt;semStack[$stackPos-(4-1)], null, $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            469 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\BinaryOp\Coalesce($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            470 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Isset_($self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            471 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Empty_($self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            472 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Include_($self-&gt;semStack[$stackPos-(2-2)], Expr\Include_::TYPE_INCLUDE, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            473 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Include_($self-&gt;semStack[$stackPos-(2-2)], Expr\Include_::TYPE_INCLUDE_ONCE, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            474 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Eval_($self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            475 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Include_($self-&gt;semStack[$stackPos-(2-2)], Expr\Include_::TYPE_REQUIRE, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            476 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Include_($self-&gt;semStack[$stackPos-(2-2)], Expr\Include_::TYPE_REQUIRE_ONCE, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            477 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Cast\Int_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            478 =&gt; static function ($self, $stackPos) {
+                 $attrs = $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]);
+            $attrs['kind'] = $self-&gt;getFloatCastKind($self-&gt;semStack[$stackPos-(2-1)]);
+            $self-&gt;semValue = new Expr\Cast\Double($self-&gt;semStack[$stackPos-(2-2)], $attrs);
+            },
+            479 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Cast\String_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            480 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Cast\Array_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            481 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Cast\Object_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            482 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Cast\Bool_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            483 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Cast\Unset_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            484 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;createExitExpr($self-&gt;semStack[$stackPos-(2-1)], $stackPos-(2-1), $self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            485 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ErrorSuppress($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            486 =&gt; null,
+            487 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ShellExec($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            488 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Print_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            489 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Yield_(null, null, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            490 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Yield_($self-&gt;semStack[$stackPos-(2-2)], null, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            491 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Yield_($self-&gt;semStack[$stackPos-(4-4)], $self-&gt;semStack[$stackPos-(4-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            492 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\YieldFrom($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            493 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Throw_($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            494 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrowFunction(['static' =&gt; false, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(8-2)], 'params' =&gt; $self-&gt;semStack[$stackPos-(8-4)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(8-6)], 'expr' =&gt; $self-&gt;semStack[$stackPos-(8-8)], 'attrGroups' =&gt; []], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            495 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrowFunction(['static' =&gt; true, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(9-3)], 'params' =&gt; $self-&gt;semStack[$stackPos-(9-5)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(9-7)], 'expr' =&gt; $self-&gt;semStack[$stackPos-(9-9)], 'attrGroups' =&gt; []], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            496 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Closure(['static' =&gt; false, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(8-2)], 'params' =&gt; $self-&gt;semStack[$stackPos-(8-4)], 'uses' =&gt; $self-&gt;semStack[$stackPos-(8-6)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(8-7)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(8-8)], 'attrGroups' =&gt; []], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            497 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Closure(['static' =&gt; true, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(9-3)], 'params' =&gt; $self-&gt;semStack[$stackPos-(9-5)], 'uses' =&gt; $self-&gt;semStack[$stackPos-(9-7)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(9-8)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(9-9)], 'attrGroups' =&gt; []], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            498 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrowFunction(['static' =&gt; false, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(9-3)], 'params' =&gt; $self-&gt;semStack[$stackPos-(9-5)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(9-7)], 'expr' =&gt; $self-&gt;semStack[$stackPos-(9-9)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(9-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            499 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrowFunction(['static' =&gt; true, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(10-4)], 'params' =&gt; $self-&gt;semStack[$stackPos-(10-6)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(10-8)], 'expr' =&gt; $self-&gt;semStack[$stackPos-(10-10)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(10-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(10-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            500 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Closure(['static' =&gt; false, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(9-3)], 'params' =&gt; $self-&gt;semStack[$stackPos-(9-5)], 'uses' =&gt; $self-&gt;semStack[$stackPos-(9-7)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(9-8)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(9-9)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(9-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(9-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            501 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Closure(['static' =&gt; true, 'byRef' =&gt; $self-&gt;semStack[$stackPos-(10-4)], 'params' =&gt; $self-&gt;semStack[$stackPos-(10-6)], 'uses' =&gt; $self-&gt;semStack[$stackPos-(10-8)], 'returnType' =&gt; $self-&gt;semStack[$stackPos-(10-9)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(10-10)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(10-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(10-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            502 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array(new Stmt\Class_(null, ['type' =&gt; $self-&gt;semStack[$stackPos-(8-2)], 'extends' =&gt; $self-&gt;semStack[$stackPos-(8-4)], 'implements' =&gt; $self-&gt;semStack[$stackPos-(8-5)], 'stmts' =&gt; $self-&gt;semStack[$stackPos-(8-7)], 'attrGroups' =&gt; $self-&gt;semStack[$stackPos-(8-1)]], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(8-1)], $self-&gt;tokenEndStack[$stackPos])), $self-&gt;semStack[$stackPos-(8-3)]);
+            $self-&gt;checkClass($self-&gt;semValue[0], -1);
+            },
+            503 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\New_($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            504 =&gt; static function ($self, $stackPos) {
+                 list($class, $ctorArgs) = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = new Expr\New_($class, $ctorArgs, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            505 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\New_($self-&gt;semStack[$stackPos-(2-2)], [], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            506 =&gt; null,
+            507 =&gt; null,
+            508 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            509 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(4-3)];
+            },
+            510 =&gt; null,
+            511 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            512 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            513 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ClosureUse($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;semStack[$stackPos-(2-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            514 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            515 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\FuncCall($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            516 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\FuncCall($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            517 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\FuncCall($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            518 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\StaticCall($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            519 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            520 =&gt; null,
+            521 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            522 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            523 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name\FullyQualified(substr($self-&gt;semStack[$stackPos-(1-1)], 1), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            524 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Name\Relative(substr($self-&gt;semStack[$stackPos-(1-1)], 10), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            525 =&gt; null,
+            526 =&gt; null,
+            527 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            528 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Error($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;errorState = 2;
+            },
+            529 =&gt; null,
+            530 =&gt; null,
+            531 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            532 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]); foreach ($self-&gt;semValue as $s) { if ($s instanceof Node\InterpolatedStringPart) { $s-&gt;value = Node\Scalar\String_::parseEscapeSequences($s-&gt;value, '`', $self-&gt;phpVersion-&gt;supportsUnicodeEscapes()); } };
+            },
+            533 =&gt; static function ($self, $stackPos) {
+                 foreach ($self-&gt;semStack[$stackPos-(1-1)] as $s) { if ($s instanceof Node\InterpolatedStringPart) { $s-&gt;value = Node\Scalar\String_::parseEscapeSequences($s-&gt;value, '`', $self-&gt;phpVersion-&gt;supportsUnicodeEscapes()); } }; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)];
+            },
+            534 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array();
+            },
+            535 =&gt; null,
+            536 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ConstFetch($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            537 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Line($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            538 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\File($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            539 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Dir($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            540 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Class_($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            541 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Trait_($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            542 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Method($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            543 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Function_($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            544 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Namespace_($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            545 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\MagicConst\Property($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            546 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ClassConstFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            547 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ClassConstFetch($self-&gt;semStack[$stackPos-(5-1)], $self-&gt;semStack[$stackPos-(5-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(5-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            548 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ClassConstFetch($self-&gt;semStack[$stackPos-(3-1)], new Expr\Error($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-3)],  $self-&gt;tokenEndStack[$stackPos-(3-3)])), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;errorState = 2;
+            },
+            549 =&gt; static function ($self, $stackPos) {
+                 $attrs = $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]); $attrs['kind'] = Expr\Array_::KIND_SHORT;
+            $self-&gt;semValue = new Expr\Array_($self-&gt;semStack[$stackPos-(3-2)], $attrs);
+            },
+            550 =&gt; static function ($self, $stackPos) {
+                 $attrs = $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]); $attrs['kind'] = Expr\Array_::KIND_LONG;
+            $self-&gt;semValue = new Expr\Array_($self-&gt;semStack[$stackPos-(4-3)], $attrs);
+            $self-&gt;createdArrays-&gt;attach($self-&gt;semValue);
+            },
+            551 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)]; $self-&gt;createdArrays-&gt;attach($self-&gt;semValue);
+            },
+            552 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Scalar\String_::fromString($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;phpVersion-&gt;supportsUnicodeEscapes());
+            },
+            553 =&gt; static function ($self, $stackPos) {
+                 $attrs = $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]); $attrs['kind'] = Scalar\String_::KIND_DOUBLE_QUOTED;
+            foreach ($self-&gt;semStack[$stackPos-(3-2)] as $s) { if ($s instanceof Node\InterpolatedStringPart) { $s-&gt;value = Node\Scalar\String_::parseEscapeSequences($s-&gt;value, '&quot;', $self-&gt;phpVersion-&gt;supportsUnicodeEscapes()); } }; $self-&gt;semValue = new Scalar\InterpolatedString($self-&gt;semStack[$stackPos-(3-2)], $attrs);
+            },
+            554 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;parseLNumber($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;phpVersion-&gt;allowsInvalidOctals());
+            },
+            555 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = Scalar\Float_::fromString($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            556 =&gt; null,
+            557 =&gt; null,
+            558 =&gt; null,
+            559 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;parseDocString($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-2)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-3)],  $self-&gt;tokenEndStack[$stackPos-(3-3)]), true);
+            },
+            560 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;parseDocString($self-&gt;semStack[$stackPos-(2-1)], '', $self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-2)],  $self-&gt;tokenEndStack[$stackPos-(2-2)]), true);
+            },
+            561 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;parseDocString($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-2)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-3)],  $self-&gt;tokenEndStack[$stackPos-(3-3)]), true);
+            },
+            562 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            563 =&gt; null,
+            564 =&gt; null,
+            565 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            566 =&gt; null,
+            567 =&gt; null,
+            568 =&gt; null,
+            569 =&gt; null,
+            570 =&gt; null,
+            571 =&gt; null,
+            572 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            573 =&gt; null,
+            574 =&gt; null,
+            575 =&gt; null,
+            576 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrayDimFetch($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            577 =&gt; null,
+            578 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\MethodCall($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            579 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\NullsafeMethodCall($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;semStack[$stackPos-(4-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            580 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = null;
+            },
+            581 =&gt; null,
+            582 =&gt; null,
+            583 =&gt; null,
+            584 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\PropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            585 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\NullsafePropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            586 =&gt; null,
+            587 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Variable($self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            588 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Variable($self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            589 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Variable(new Expr\Error($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos])), $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;errorState = 2;
+            },
+            590 =&gt; static function ($self, $stackPos) {
+                 $var = $self-&gt;semStack[$stackPos-(1-1)]-&gt;name; $self-&gt;semValue = \is_string($var) ? new Node\VarLikeIdentifier($var, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos])) : $var;
+            },
+            591 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\StaticPropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            592 =&gt; null,
+            593 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrayDimFetch($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            594 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\PropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            595 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\NullsafePropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            596 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\StaticPropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            597 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\StaticPropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            598 =&gt; null,
+            599 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            600 =&gt; null,
+            601 =&gt; null,
+            602 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            603 =&gt; null,
+            604 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Error($self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;errorState = 2;
+            },
+            605 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\List_($self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos])); $self-&gt;semValue-&gt;setAttribute('kind', Expr\List_::KIND_LIST);
+            $self-&gt;postprocessList($self-&gt;semValue);
+            },
+            606 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(1-1)]; $end = count($self-&gt;semValue)-1; if ($self-&gt;semValue[$end]-&gt;value instanceof Expr\Error) array_pop($self-&gt;semValue);
+            },
+            607 =&gt; null,
+            608 =&gt; static function ($self, $stackPos) {
+                 /* do nothing -- prevent default action of $$=$self-&gt;semStack[$1]. See $551. */
+            },
+            609 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(3-1)][] = $self-&gt;semStack[$stackPos-(3-3)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-1)];
+            },
+            610 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            611 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ArrayItem($self-&gt;semStack[$stackPos-(1-1)], null, false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            612 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ArrayItem($self-&gt;semStack[$stackPos-(2-2)], null, true, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            613 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ArrayItem($self-&gt;semStack[$stackPos-(1-1)], null, false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            614 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ArrayItem($self-&gt;semStack[$stackPos-(3-3)], $self-&gt;semStack[$stackPos-(3-1)], false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            615 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ArrayItem($self-&gt;semStack[$stackPos-(4-4)], $self-&gt;semStack[$stackPos-(4-1)], true, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            616 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ArrayItem($self-&gt;semStack[$stackPos-(3-3)], $self-&gt;semStack[$stackPos-(3-1)], false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            617 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Node\ArrayItem($self-&gt;semStack[$stackPos-(2-2)], null, false, $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]), true);
+            },
+            618 =&gt; static function ($self, $stackPos) {
+                 /* Create an Error node now to remember the position. We'll later either report an error,
+             or convert this into a null element, depending on whether this is a creation or destructuring context. */
+          $attrs = $self-&gt;createEmptyElemAttributes($self-&gt;tokenPos);
+          $self-&gt;semValue = new Node\ArrayItem(new Expr\Error($attrs), null, false, $attrs);
+            },
+            619 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            620 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semStack[$stackPos-(2-1)][] = $self-&gt;semStack[$stackPos-(2-2)]; $self-&gt;semValue = $self-&gt;semStack[$stackPos-(2-1)];
+            },
+            621 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(1-1)]);
+            },
+            622 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = array($self-&gt;semStack[$stackPos-(2-1)], $self-&gt;semStack[$stackPos-(2-2)]);
+            },
+            623 =&gt; static function ($self, $stackPos) {
+                 $attrs = $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]); $attrs['rawValue'] = $self-&gt;semStack[$stackPos-(1-1)]; $self-&gt;semValue = new Node\InterpolatedStringPart($self-&gt;semStack[$stackPos-(1-1)], $attrs);
+            },
+            624 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Variable($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            625 =&gt; null,
+            626 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrayDimFetch($self-&gt;semStack[$stackPos-(4-1)], $self-&gt;semStack[$stackPos-(4-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(4-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            627 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\PropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            628 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\NullsafePropertyFetch($self-&gt;semStack[$stackPos-(3-1)], $self-&gt;semStack[$stackPos-(3-3)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            629 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Variable($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            630 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\Variable($self-&gt;semStack[$stackPos-(3-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(3-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            631 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Expr\ArrayDimFetch($self-&gt;semStack[$stackPos-(6-2)], $self-&gt;semStack[$stackPos-(6-4)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(6-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            632 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;semStack[$stackPos-(3-2)];
+            },
+            633 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = new Scalar\String_($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            634 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;parseNumString($self-&gt;semStack[$stackPos-(1-1)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(1-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            635 =&gt; static function ($self, $stackPos) {
+                 $self-&gt;semValue = $self-&gt;parseNumString('-' . $self-&gt;semStack[$stackPos-(2-2)], $self-&gt;getAttributes($self-&gt;tokenStartStack[$stackPos-(2-1)], $self-&gt;tokenEndStack[$stackPos]));
+            },
+            636 =&gt; null,
+        ];
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

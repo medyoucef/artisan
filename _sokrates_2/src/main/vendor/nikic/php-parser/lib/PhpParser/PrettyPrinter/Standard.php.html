@@ -1,0 +1,1218 @@
+<html>
+<head>
+    <title>vendor/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php (<b>928</b> lines of code) (<a href="Standard.php">raw</a>):</h3>
+<div id="editor">&lt;?php declare(strict_types=1);
+
+namespace PhpParser\PrettyPrinter;
+
+use PhpParser\Node;
+use PhpParser\Node\Expr;
+use PhpParser\Node\Expr\AssignOp;
+use PhpParser\Node\Expr\BinaryOp;
+use PhpParser\Node\Expr\Cast;
+use PhpParser\Node\Name;
+use PhpParser\Node\Scalar;
+use PhpParser\Node\Scalar\MagicConst;
+use PhpParser\Node\Stmt;
+use PhpParser\PrettyPrinterAbstract;
+
+class Standard extends PrettyPrinterAbstract {
+    // Special nodes
+
+    protected function pParam(Node\Param $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups, true)
+             . $this-&gt;pModifiers($node-&gt;flags)
+             . ($node-&gt;type ? $this-&gt;p($node-&gt;type) . ' ' : '')
+             . ($node-&gt;byRef ? '&amp;' : '')
+             . ($node-&gt;variadic ? '...' : '')
+             . $this-&gt;p($node-&gt;var)
+             . ($node-&gt;default ? ' = ' . $this-&gt;p($node-&gt;default) : '')
+             . ($node-&gt;hooks ? ' {' . $this-&gt;pStmts($node-&gt;hooks) . $this-&gt;nl . '}' : '');
+    }
+
+    protected function pArg(Node\Arg $node): string {
+        return ($node-&gt;name ? $node-&gt;name-&gt;toString() . ': ' : '')
+             . ($node-&gt;byRef ? '&amp;' : '') . ($node-&gt;unpack ? '...' : '')
+             . $this-&gt;p($node-&gt;value);
+    }
+
+    protected function pVariadicPlaceholder(Node\VariadicPlaceholder $node): string {
+        return '...';
+    }
+
+    protected function pConst(Node\Const_ $node): string {
+        return $node-&gt;name . ' = ' . $this-&gt;p($node-&gt;value);
+    }
+
+    protected function pNullableType(Node\NullableType $node): string {
+        return '?' . $this-&gt;p($node-&gt;type);
+    }
+
+    protected function pUnionType(Node\UnionType $node): string {
+        $types = [];
+        foreach ($node-&gt;types as $typeNode) {
+            if ($typeNode instanceof Node\IntersectionType) {
+                $types[] = '('. $this-&gt;p($typeNode) . ')';
+                continue;
+            }
+            $types[] = $this-&gt;p($typeNode);
+        }
+        return implode('|', $types);
+    }
+
+    protected function pIntersectionType(Node\IntersectionType $node): string {
+        return $this-&gt;pImplode($node-&gt;types, '&amp;');
+    }
+
+    protected function pIdentifier(Node\Identifier $node): string {
+        return $node-&gt;name;
+    }
+
+    protected function pVarLikeIdentifier(Node\VarLikeIdentifier $node): string {
+        return '$' . $node-&gt;name;
+    }
+
+    protected function pAttribute(Node\Attribute $node): string {
+        return $this-&gt;p($node-&gt;name)
+             . ($node-&gt;args ? '(' . $this-&gt;pCommaSeparated($node-&gt;args) . ')' : '');
+    }
+
+    protected function pAttributeGroup(Node\AttributeGroup $node): string {
+        return '#[' . $this-&gt;pCommaSeparated($node-&gt;attrs) . ']';
+    }
+
+    // Names
+
+    protected function pName(Name $node): string {
+        return $node-&gt;name;
+    }
+
+    protected function pName_FullyQualified(Name\FullyQualified $node): string {
+        return '\\' . $node-&gt;name;
+    }
+
+    protected function pName_Relative(Name\Relative $node): string {
+        return 'namespace\\' . $node-&gt;name;
+    }
+
+    // Magic Constants
+
+    protected function pScalar_MagicConst_Class(MagicConst\Class_ $node): string {
+        return '__CLASS__';
+    }
+
+    protected function pScalar_MagicConst_Dir(MagicConst\Dir $node): string {
+        return '__DIR__';
+    }
+
+    protected function pScalar_MagicConst_File(MagicConst\File $node): string {
+        return '__FILE__';
+    }
+
+    protected function pScalar_MagicConst_Function(MagicConst\Function_ $node): string {
+        return '__FUNCTION__';
+    }
+
+    protected function pScalar_MagicConst_Line(MagicConst\Line $node): string {
+        return '__LINE__';
+    }
+
+    protected function pScalar_MagicConst_Method(MagicConst\Method $node): string {
+        return '__METHOD__';
+    }
+
+    protected function pScalar_MagicConst_Namespace(MagicConst\Namespace_ $node): string {
+        return '__NAMESPACE__';
+    }
+
+    protected function pScalar_MagicConst_Trait(MagicConst\Trait_ $node): string {
+        return '__TRAIT__';
+    }
+
+    protected function pScalar_MagicConst_Property(MagicConst\Property $node): string {
+        return '__PROPERTY__';
+    }
+
+    // Scalars
+
+    private function indentString(string $str): string {
+        return str_replace(&quot;\n&quot;, $this-&gt;nl, $str);
+    }
+
+    protected function pScalar_String(Scalar\String_ $node): string {
+        $kind = $node-&gt;getAttribute('kind', Scalar\String_::KIND_SINGLE_QUOTED);
+        switch ($kind) {
+            case Scalar\String_::KIND_NOWDOC:
+                $label = $node-&gt;getAttribute('docLabel');
+                if ($label &amp;&amp; !$this-&gt;containsEndLabel($node-&gt;value, $label)) {
+                    $shouldIdent = $this-&gt;phpVersion-&gt;supportsFlexibleHeredoc();
+                    $nl = $shouldIdent ? $this-&gt;nl : $this-&gt;newline;
+                    if ($node-&gt;value === '') {
+                        return &quot;&lt;&lt;&lt;'$label'$nl$label{$this-&gt;docStringEndToken}&quot;;
+                    }
+
+                    // Make sure trailing \r is not combined with following \n into CRLF.
+                    if ($node-&gt;value[strlen($node-&gt;value) - 1] !== &quot;\r&quot;) {
+                        $value = $shouldIdent ? $this-&gt;indentString($node-&gt;value) : $node-&gt;value;
+                        return &quot;&lt;&lt;&lt;'$label'$nl$value$nl$label{$this-&gt;docStringEndToken}&quot;;
+                    }
+                }
+                /* break missing intentionally */
+                // no break
+            case Scalar\String_::KIND_SINGLE_QUOTED:
+                return $this-&gt;pSingleQuotedString($node-&gt;value);
+            case Scalar\String_::KIND_HEREDOC:
+                $label = $node-&gt;getAttribute('docLabel');
+                $escaped = $this-&gt;escapeString($node-&gt;value, null);
+                if ($label &amp;&amp; !$this-&gt;containsEndLabel($escaped, $label)) {
+                    $nl = $this-&gt;phpVersion-&gt;supportsFlexibleHeredoc() ? $this-&gt;nl : $this-&gt;newline;
+                    if ($escaped === '') {
+                        return &quot;&lt;&lt;&lt;$label$nl$label{$this-&gt;docStringEndToken}&quot;;
+                    }
+
+                    return &quot;&lt;&lt;&lt;$label$nl$escaped$nl$label{$this-&gt;docStringEndToken}&quot;;
+                }
+                /* break missing intentionally */
+                // no break
+            case Scalar\String_::KIND_DOUBLE_QUOTED:
+                return '&quot;' . $this-&gt;escapeString($node-&gt;value, '&quot;') . '&quot;';
+        }
+        throw new \Exception('Invalid string kind');
+    }
+
+    protected function pScalar_InterpolatedString(Scalar\InterpolatedString $node): string {
+        if ($node-&gt;getAttribute('kind') === Scalar\String_::KIND_HEREDOC) {
+            $label = $node-&gt;getAttribute('docLabel');
+            if ($label &amp;&amp; !$this-&gt;encapsedContainsEndLabel($node-&gt;parts, $label)) {
+                $nl = $this-&gt;phpVersion-&gt;supportsFlexibleHeredoc() ? $this-&gt;nl : $this-&gt;newline;
+                if (count($node-&gt;parts) === 1
+                    &amp;&amp; $node-&gt;parts[0] instanceof Node\InterpolatedStringPart
+                    &amp;&amp; $node-&gt;parts[0]-&gt;value === ''
+                ) {
+                    return &quot;&lt;&lt;&lt;$label$nl$label{$this-&gt;docStringEndToken}&quot;;
+                }
+
+                return &quot;&lt;&lt;&lt;$label$nl&quot; . $this-&gt;pEncapsList($node-&gt;parts, null)
+                     . &quot;$nl$label{$this-&gt;docStringEndToken}&quot;;
+            }
+        }
+        return '&quot;' . $this-&gt;pEncapsList($node-&gt;parts, '&quot;') . '&quot;';
+    }
+
+    protected function pScalar_Int(Scalar\Int_ $node): string {
+        if ($node-&gt;value === -\PHP_INT_MAX - 1) {
+            // PHP_INT_MIN cannot be represented as a literal,
+            // because the sign is not part of the literal
+            return '(-' . \PHP_INT_MAX . '-1)';
+        }
+
+        $kind = $node-&gt;getAttribute('kind', Scalar\Int_::KIND_DEC);
+        if (Scalar\Int_::KIND_DEC === $kind) {
+            return (string) $node-&gt;value;
+        }
+
+        if ($node-&gt;value &lt; 0) {
+            $sign = '-';
+            $str = (string) -$node-&gt;value;
+        } else {
+            $sign = '';
+            $str = (string) $node-&gt;value;
+        }
+        switch ($kind) {
+            case Scalar\Int_::KIND_BIN:
+                return $sign . '0b' . base_convert($str, 10, 2);
+            case Scalar\Int_::KIND_OCT:
+                return $sign . '0' . base_convert($str, 10, 8);
+            case Scalar\Int_::KIND_HEX:
+                return $sign . '0x' . base_convert($str, 10, 16);
+        }
+        throw new \Exception('Invalid number kind');
+    }
+
+    protected function pScalar_Float(Scalar\Float_ $node): string {
+        if (!is_finite($node-&gt;value)) {
+            if ($node-&gt;value === \INF) {
+                return '1.0E+1000';
+            }
+            if ($node-&gt;value === -\INF) {
+                return '-1.0E+1000';
+            } else {
+                return '\NAN';
+            }
+        }
+
+        // Try to find a short full-precision representation
+        $stringValue = sprintf('%.16G', $node-&gt;value);
+        if ($node-&gt;value !== (float) $stringValue) {
+            $stringValue = sprintf('%.17G', $node-&gt;value);
+        }
+
+        // %G is locale dependent and there exists no locale-independent alternative. We don't want
+        // mess with switching locales here, so let's assume that a comma is the only non-standard
+        // decimal separator we may encounter...
+        $stringValue = str_replace(',', '.', $stringValue);
+
+        // ensure that number is really printed as float
+        return preg_match('/^-?[0-9]+$/', $stringValue) ? $stringValue . '.0' : $stringValue;
+    }
+
+    // Assignments
+
+    protected function pExpr_Assign(Expr\Assign $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\Assign::class, $this-&gt;p($node-&gt;var) . ' = ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignRef(Expr\AssignRef $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\AssignRef::class, $this-&gt;p($node-&gt;var) . ' =&amp; ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Plus(AssignOp\Plus $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Plus::class, $this-&gt;p($node-&gt;var) . ' += ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Minus(AssignOp\Minus $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Minus::class, $this-&gt;p($node-&gt;var) . ' -= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Mul(AssignOp\Mul $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Mul::class, $this-&gt;p($node-&gt;var) . ' *= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Div(AssignOp\Div $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Div::class, $this-&gt;p($node-&gt;var) . ' /= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Concat(AssignOp\Concat $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Concat::class, $this-&gt;p($node-&gt;var) . ' .= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Mod(AssignOp\Mod $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Mod::class, $this-&gt;p($node-&gt;var) . ' %= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_BitwiseAnd(AssignOp\BitwiseAnd $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\BitwiseAnd::class, $this-&gt;p($node-&gt;var) . ' &amp;= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_BitwiseOr(AssignOp\BitwiseOr $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\BitwiseOr::class, $this-&gt;p($node-&gt;var) . ' |= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_BitwiseXor(AssignOp\BitwiseXor $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\BitwiseXor::class, $this-&gt;p($node-&gt;var) . ' ^= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_ShiftLeft(AssignOp\ShiftLeft $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\ShiftLeft::class, $this-&gt;p($node-&gt;var) . ' &lt;&lt;= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_ShiftRight(AssignOp\ShiftRight $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\ShiftRight::class, $this-&gt;p($node-&gt;var) . ' &gt;&gt;= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Pow(AssignOp\Pow $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Pow::class, $this-&gt;p($node-&gt;var) . ' **= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_AssignOp_Coalesce(AssignOp\Coalesce $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(AssignOp\Coalesce::class, $this-&gt;p($node-&gt;var) . ' ??= ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    // Binary expressions
+
+    protected function pExpr_BinaryOp_Plus(BinaryOp\Plus $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Plus::class, $node-&gt;left, ' + ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Minus(BinaryOp\Minus $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Minus::class, $node-&gt;left, ' - ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Mul(BinaryOp\Mul $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Mul::class, $node-&gt;left, ' * ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Div(BinaryOp\Div $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Div::class, $node-&gt;left, ' / ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Concat(BinaryOp\Concat $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Concat::class, $node-&gt;left, ' . ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Mod(BinaryOp\Mod $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Mod::class, $node-&gt;left, ' % ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_BooleanAnd(BinaryOp\BooleanAnd $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\BooleanAnd::class, $node-&gt;left, ' &amp;&amp; ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_BooleanOr(BinaryOp\BooleanOr $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\BooleanOr::class, $node-&gt;left, ' || ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_BitwiseAnd(BinaryOp\BitwiseAnd $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\BitwiseAnd::class, $node-&gt;left, ' &amp; ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_BitwiseOr(BinaryOp\BitwiseOr $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\BitwiseOr::class, $node-&gt;left, ' | ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_BitwiseXor(BinaryOp\BitwiseXor $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\BitwiseXor::class, $node-&gt;left, ' ^ ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_ShiftLeft(BinaryOp\ShiftLeft $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\ShiftLeft::class, $node-&gt;left, ' &lt;&lt; ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_ShiftRight(BinaryOp\ShiftRight $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\ShiftRight::class, $node-&gt;left, ' &gt;&gt; ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Pow(BinaryOp\Pow $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Pow::class, $node-&gt;left, ' ** ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_LogicalAnd(BinaryOp\LogicalAnd $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\LogicalAnd::class, $node-&gt;left, ' and ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_LogicalOr(BinaryOp\LogicalOr $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\LogicalOr::class, $node-&gt;left, ' or ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_LogicalXor(BinaryOp\LogicalXor $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\LogicalXor::class, $node-&gt;left, ' xor ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Equal(BinaryOp\Equal $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Equal::class, $node-&gt;left, ' == ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_NotEqual(BinaryOp\NotEqual $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\NotEqual::class, $node-&gt;left, ' != ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Identical(BinaryOp\Identical $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Identical::class, $node-&gt;left, ' === ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_NotIdentical(BinaryOp\NotIdentical $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\NotIdentical::class, $node-&gt;left, ' !== ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Spaceship(BinaryOp\Spaceship $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Spaceship::class, $node-&gt;left, ' &lt;=&gt; ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Greater(BinaryOp\Greater $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Greater::class, $node-&gt;left, ' &gt; ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_GreaterOrEqual(BinaryOp\GreaterOrEqual $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\GreaterOrEqual::class, $node-&gt;left, ' &gt;= ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Smaller(BinaryOp\Smaller $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Smaller::class, $node-&gt;left, ' &lt; ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_SmallerOrEqual(BinaryOp\SmallerOrEqual $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\SmallerOrEqual::class, $node-&gt;left, ' &lt;= ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BinaryOp_Coalesce(BinaryOp\Coalesce $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pInfixOp(BinaryOp\Coalesce::class, $node-&gt;left, ' ?? ', $node-&gt;right, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Instanceof(Expr\Instanceof_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPostfixOp(
+            Expr\Instanceof_::class, $node-&gt;expr,
+            ' instanceof ' . $this-&gt;pNewOperand($node-&gt;class),
+            $precedence, $lhsPrecedence);
+    }
+
+    // Unary expressions
+
+    protected function pExpr_BooleanNot(Expr\BooleanNot $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\BooleanNot::class, '!', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_BitwiseNot(Expr\BitwiseNot $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\BitwiseNot::class, '~', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_UnaryMinus(Expr\UnaryMinus $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\UnaryMinus::class, '-', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_UnaryPlus(Expr\UnaryPlus $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\UnaryPlus::class, '+', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_PreInc(Expr\PreInc $node): string {
+        return '++' . $this-&gt;p($node-&gt;var);
+    }
+
+    protected function pExpr_PreDec(Expr\PreDec $node): string {
+        return '--' . $this-&gt;p($node-&gt;var);
+    }
+
+    protected function pExpr_PostInc(Expr\PostInc $node): string {
+        return $this-&gt;p($node-&gt;var) . '++';
+    }
+
+    protected function pExpr_PostDec(Expr\PostDec $node): string {
+        return $this-&gt;p($node-&gt;var) . '--';
+    }
+
+    protected function pExpr_ErrorSuppress(Expr\ErrorSuppress $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\ErrorSuppress::class, '@', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_YieldFrom(Expr\YieldFrom $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\YieldFrom::class, 'yield from ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Print(Expr\Print_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\Print_::class, 'print ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    // Casts
+
+    protected function pExpr_Cast_Int(Cast\Int_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Cast\Int_::class, '(int) ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Cast_Double(Cast\Double $node, int $precedence, int $lhsPrecedence): string {
+        $kind = $node-&gt;getAttribute('kind', Cast\Double::KIND_DOUBLE);
+        if ($kind === Cast\Double::KIND_DOUBLE) {
+            $cast = '(double)';
+        } elseif ($kind === Cast\Double::KIND_FLOAT) {
+            $cast = '(float)';
+        } else {
+            assert($kind === Cast\Double::KIND_REAL);
+            $cast = '(real)';
+        }
+        return $this-&gt;pPrefixOp(Cast\Double::class, $cast . ' ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Cast_String(Cast\String_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Cast\String_::class, '(string) ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Cast_Array(Cast\Array_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Cast\Array_::class, '(array) ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Cast_Object(Cast\Object_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Cast\Object_::class, '(object) ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Cast_Bool(Cast\Bool_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Cast\Bool_::class, '(bool) ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Cast_Unset(Cast\Unset_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Cast\Unset_::class, '(unset) ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    // Function calls and similar constructs
+
+    protected function pExpr_FuncCall(Expr\FuncCall $node): string {
+        return $this-&gt;pCallLhs($node-&gt;name)
+             . '(' . $this-&gt;pMaybeMultiline($node-&gt;args) . ')';
+    }
+
+    protected function pExpr_MethodCall(Expr\MethodCall $node): string {
+        return $this-&gt;pDereferenceLhs($node-&gt;var) . '-&gt;' . $this-&gt;pObjectProperty($node-&gt;name)
+             . '(' . $this-&gt;pMaybeMultiline($node-&gt;args) . ')';
+    }
+
+    protected function pExpr_NullsafeMethodCall(Expr\NullsafeMethodCall $node): string {
+        return $this-&gt;pDereferenceLhs($node-&gt;var) . '?-&gt;' . $this-&gt;pObjectProperty($node-&gt;name)
+            . '(' . $this-&gt;pMaybeMultiline($node-&gt;args) . ')';
+    }
+
+    protected function pExpr_StaticCall(Expr\StaticCall $node): string {
+        return $this-&gt;pStaticDereferenceLhs($node-&gt;class) . '::'
+             . ($node-&gt;name instanceof Expr
+                ? ($node-&gt;name instanceof Expr\Variable
+                   ? $this-&gt;p($node-&gt;name)
+                   : '{' . $this-&gt;p($node-&gt;name) . '}')
+                : $node-&gt;name)
+             . '(' . $this-&gt;pMaybeMultiline($node-&gt;args) . ')';
+    }
+
+    protected function pExpr_Empty(Expr\Empty_ $node): string {
+        return 'empty(' . $this-&gt;p($node-&gt;expr) . ')';
+    }
+
+    protected function pExpr_Isset(Expr\Isset_ $node): string {
+        return 'isset(' . $this-&gt;pCommaSeparated($node-&gt;vars) . ')';
+    }
+
+    protected function pExpr_Eval(Expr\Eval_ $node): string {
+        return 'eval(' . $this-&gt;p($node-&gt;expr) . ')';
+    }
+
+    protected function pExpr_Include(Expr\Include_ $node, int $precedence, int $lhsPrecedence): string {
+        static $map = [
+            Expr\Include_::TYPE_INCLUDE      =&gt; 'include',
+            Expr\Include_::TYPE_INCLUDE_ONCE =&gt; 'include_once',
+            Expr\Include_::TYPE_REQUIRE      =&gt; 'require',
+            Expr\Include_::TYPE_REQUIRE_ONCE =&gt; 'require_once',
+        ];
+
+        return $this-&gt;pPrefixOp(Expr\Include_::class, $map[$node-&gt;type] . ' ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_List(Expr\List_ $node): string {
+        $syntax = $node-&gt;getAttribute('kind',
+            $this-&gt;phpVersion-&gt;supportsShortArrayDestructuring() ? Expr\List_::KIND_ARRAY : Expr\List_::KIND_LIST);
+        if ($syntax === Expr\List_::KIND_ARRAY) {
+            return '[' . $this-&gt;pMaybeMultiline($node-&gt;items, true) . ']';
+        } else {
+            return 'list(' . $this-&gt;pMaybeMultiline($node-&gt;items, true) . ')';
+        }
+    }
+
+    // Other
+
+    protected function pExpr_Error(Expr\Error $node): string {
+        throw new \LogicException('Cannot pretty-print AST with Error nodes');
+    }
+
+    protected function pExpr_Variable(Expr\Variable $node): string {
+        if ($node-&gt;name instanceof Expr) {
+            return '${' . $this-&gt;p($node-&gt;name) . '}';
+        } else {
+            return '$' . $node-&gt;name;
+        }
+    }
+
+    protected function pExpr_Array(Expr\Array_ $node): string {
+        $syntax = $node-&gt;getAttribute('kind',
+            $this-&gt;shortArraySyntax ? Expr\Array_::KIND_SHORT : Expr\Array_::KIND_LONG);
+        if ($syntax === Expr\Array_::KIND_SHORT) {
+            return '[' . $this-&gt;pMaybeMultiline($node-&gt;items, true) . ']';
+        } else {
+            return 'array(' . $this-&gt;pMaybeMultiline($node-&gt;items, true) . ')';
+        }
+    }
+
+    protected function pKey(?Node $node): string {
+        if ($node === null) {
+            return '';
+        }
+
+        // =&gt; is not really an operator and does not typically participate in precedence resolution.
+        // However, there is an exception if yield expressions with keys are involved:
+        // [yield $a =&gt; $b] is interpreted as [(yield $a =&gt; $b)], so we need to ensure that
+        // [(yield $a) =&gt; $b] is printed with parentheses. We approximate this by lowering the LHS
+        // precedence to that of yield (which will also print unnecessary parentheses for rare low
+        // precedence unary operators like include).
+        $yieldPrecedence = $this-&gt;precedenceMap[Expr\Yield_::class][0];
+        return $this-&gt;p($node, self::MAX_PRECEDENCE, $yieldPrecedence) . ' =&gt; ';
+    }
+
+    protected function pArrayItem(Node\ArrayItem $node): string {
+        return $this-&gt;pKey($node-&gt;key)
+             . ($node-&gt;byRef ? '&amp;' : '')
+             . ($node-&gt;unpack ? '...' : '')
+             . $this-&gt;p($node-&gt;value);
+    }
+
+    protected function pExpr_ArrayDimFetch(Expr\ArrayDimFetch $node): string {
+        return $this-&gt;pDereferenceLhs($node-&gt;var)
+             . '[' . (null !== $node-&gt;dim ? $this-&gt;p($node-&gt;dim) : '') . ']';
+    }
+
+    protected function pExpr_ConstFetch(Expr\ConstFetch $node): string {
+        return $this-&gt;p($node-&gt;name);
+    }
+
+    protected function pExpr_ClassConstFetch(Expr\ClassConstFetch $node): string {
+        return $this-&gt;pStaticDereferenceLhs($node-&gt;class) . '::' . $this-&gt;pObjectProperty($node-&gt;name);
+    }
+
+    protected function pExpr_PropertyFetch(Expr\PropertyFetch $node): string {
+        return $this-&gt;pDereferenceLhs($node-&gt;var) . '-&gt;' . $this-&gt;pObjectProperty($node-&gt;name);
+    }
+
+    protected function pExpr_NullsafePropertyFetch(Expr\NullsafePropertyFetch $node): string {
+        return $this-&gt;pDereferenceLhs($node-&gt;var) . '?-&gt;' . $this-&gt;pObjectProperty($node-&gt;name);
+    }
+
+    protected function pExpr_StaticPropertyFetch(Expr\StaticPropertyFetch $node): string {
+        return $this-&gt;pStaticDereferenceLhs($node-&gt;class) . '::$' . $this-&gt;pObjectProperty($node-&gt;name);
+    }
+
+    protected function pExpr_ShellExec(Expr\ShellExec $node): string {
+        return '`' . $this-&gt;pEncapsList($node-&gt;parts, '`') . '`';
+    }
+
+    protected function pExpr_Closure(Expr\Closure $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups, true)
+             . $this-&gt;pStatic($node-&gt;static)
+             . 'function ' . ($node-&gt;byRef ? '&amp;' : '')
+             . '(' . $this-&gt;pMaybeMultiline($node-&gt;params, $this-&gt;phpVersion-&gt;supportsTrailingCommaInParamList()) . ')'
+             . (!empty($node-&gt;uses) ? ' use (' . $this-&gt;pCommaSeparated($node-&gt;uses) . ')' : '')
+             . (null !== $node-&gt;returnType ? ': ' . $this-&gt;p($node-&gt;returnType) : '')
+             . ' {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pExpr_Match(Expr\Match_ $node): string {
+        return 'match (' . $this-&gt;p($node-&gt;cond) . ') {'
+            . $this-&gt;pCommaSeparatedMultiline($node-&gt;arms, true)
+            . $this-&gt;nl
+            . '}';
+    }
+
+    protected function pMatchArm(Node\MatchArm $node): string {
+        $result = '';
+        if ($node-&gt;conds) {
+            for ($i = 0, $c = \count($node-&gt;conds); $i + 1 &lt; $c; $i++) {
+                $result .= $this-&gt;p($node-&gt;conds[$i]) . ', ';
+            }
+            $result .= $this-&gt;pKey($node-&gt;conds[$i]);
+        } else {
+            $result = 'default =&gt; ';
+        }
+        return $result . $this-&gt;p($node-&gt;body);
+    }
+
+    protected function pExpr_ArrowFunction(Expr\ArrowFunction $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(
+            Expr\ArrowFunction::class,
+            $this-&gt;pAttrGroups($node-&gt;attrGroups, true)
+            . $this-&gt;pStatic($node-&gt;static)
+            . 'fn' . ($node-&gt;byRef ? '&amp;' : '')
+            . '(' . $this-&gt;pMaybeMultiline($node-&gt;params, $this-&gt;phpVersion-&gt;supportsTrailingCommaInParamList()) . ')'
+            . (null !== $node-&gt;returnType ? ': ' . $this-&gt;p($node-&gt;returnType) : '')
+            . ' =&gt; ',
+            $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pClosureUse(Node\ClosureUse $node): string {
+        return ($node-&gt;byRef ? '&amp;' : '') . $this-&gt;p($node-&gt;var);
+    }
+
+    protected function pExpr_New(Expr\New_ $node): string {
+        if ($node-&gt;class instanceof Stmt\Class_) {
+            $args = $node-&gt;args ? '(' . $this-&gt;pMaybeMultiline($node-&gt;args) . ')' : '';
+            return 'new ' . $this-&gt;pClassCommon($node-&gt;class, $args);
+        }
+        return 'new ' . $this-&gt;pNewOperand($node-&gt;class)
+            . '(' . $this-&gt;pMaybeMultiline($node-&gt;args) . ')';
+    }
+
+    protected function pExpr_Clone(Expr\Clone_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\Clone_::class, 'clone ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Ternary(Expr\Ternary $node, int $precedence, int $lhsPrecedence): string {
+        // a bit of cheating: we treat the ternary as a binary op where the ?...: part is the operator.
+        // this is okay because the part between ? and : never needs parentheses.
+        return $this-&gt;pInfixOp(Expr\Ternary::class,
+            $node-&gt;cond, ' ?' . (null !== $node-&gt;if ? ' ' . $this-&gt;p($node-&gt;if) . ' ' : '') . ': ', $node-&gt;else,
+            $precedence, $lhsPrecedence
+        );
+    }
+
+    protected function pExpr_Exit(Expr\Exit_ $node): string {
+        $kind = $node-&gt;getAttribute('kind', Expr\Exit_::KIND_DIE);
+        return ($kind === Expr\Exit_::KIND_EXIT ? 'exit' : 'die')
+             . (null !== $node-&gt;expr ? '(' . $this-&gt;p($node-&gt;expr) . ')' : '');
+    }
+
+    protected function pExpr_Throw(Expr\Throw_ $node, int $precedence, int $lhsPrecedence): string {
+        return $this-&gt;pPrefixOp(Expr\Throw_::class, 'throw ', $node-&gt;expr, $precedence, $lhsPrecedence);
+    }
+
+    protected function pExpr_Yield(Expr\Yield_ $node, int $precedence, int $lhsPrecedence): string {
+        if ($node-&gt;value === null) {
+            $opPrecedence = $this-&gt;precedenceMap[Expr\Yield_::class][0];
+            return $opPrecedence &gt;= $lhsPrecedence ? '(yield)' : 'yield';
+        } else {
+            if (!$this-&gt;phpVersion-&gt;supportsYieldWithoutParentheses()) {
+                return '(yield ' . $this-&gt;pKey($node-&gt;key) . $this-&gt;p($node-&gt;value) . ')';
+            }
+            return $this-&gt;pPrefixOp(
+                Expr\Yield_::class, 'yield ' . $this-&gt;pKey($node-&gt;key),
+                $node-&gt;value, $precedence, $lhsPrecedence);
+        }
+    }
+
+    // Declarations
+
+    protected function pStmt_Namespace(Stmt\Namespace_ $node): string {
+        if ($this-&gt;canUseSemicolonNamespaces) {
+            return 'namespace ' . $this-&gt;p($node-&gt;name) . ';'
+                 . $this-&gt;nl . $this-&gt;pStmts($node-&gt;stmts, false);
+        } else {
+            return 'namespace' . (null !== $node-&gt;name ? ' ' . $this-&gt;p($node-&gt;name) : '')
+                 . ' {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+        }
+    }
+
+    protected function pStmt_Use(Stmt\Use_ $node): string {
+        return 'use ' . $this-&gt;pUseType($node-&gt;type)
+             . $this-&gt;pCommaSeparated($node-&gt;uses) . ';';
+    }
+
+    protected function pStmt_GroupUse(Stmt\GroupUse $node): string {
+        return 'use ' . $this-&gt;pUseType($node-&gt;type) . $this-&gt;pName($node-&gt;prefix)
+             . '\{' . $this-&gt;pCommaSeparated($node-&gt;uses) . '};';
+    }
+
+    protected function pUseItem(Node\UseItem $node): string {
+        return $this-&gt;pUseType($node-&gt;type) . $this-&gt;p($node-&gt;name)
+             . (null !== $node-&gt;alias ? ' as ' . $node-&gt;alias : '');
+    }
+
+    protected function pUseType(int $type): string {
+        return $type === Stmt\Use_::TYPE_FUNCTION ? 'function '
+            : ($type === Stmt\Use_::TYPE_CONSTANT ? 'const ' : '');
+    }
+
+    protected function pStmt_Interface(Stmt\Interface_ $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . 'interface ' . $node-&gt;name
+             . (!empty($node-&gt;extends) ? ' extends ' . $this-&gt;pCommaSeparated($node-&gt;extends) : '')
+             . $this-&gt;nl . '{' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Enum(Stmt\Enum_ $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . 'enum ' . $node-&gt;name
+             . ($node-&gt;scalarType ? ' : ' . $this-&gt;p($node-&gt;scalarType) : '')
+             . (!empty($node-&gt;implements) ? ' implements ' . $this-&gt;pCommaSeparated($node-&gt;implements) : '')
+             . $this-&gt;nl . '{' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Class(Stmt\Class_ $node): string {
+        return $this-&gt;pClassCommon($node, ' ' . $node-&gt;name);
+    }
+
+    protected function pStmt_Trait(Stmt\Trait_ $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . 'trait ' . $node-&gt;name
+             . $this-&gt;nl . '{' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_EnumCase(Stmt\EnumCase $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . 'case ' . $node-&gt;name
+             . ($node-&gt;expr ? ' = ' . $this-&gt;p($node-&gt;expr) : '')
+             . ';';
+    }
+
+    protected function pStmt_TraitUse(Stmt\TraitUse $node): string {
+        return 'use ' . $this-&gt;pCommaSeparated($node-&gt;traits)
+             . (empty($node-&gt;adaptations)
+                ? ';'
+                : ' {' . $this-&gt;pStmts($node-&gt;adaptations) . $this-&gt;nl . '}');
+    }
+
+    protected function pStmt_TraitUseAdaptation_Precedence(Stmt\TraitUseAdaptation\Precedence $node): string {
+        return $this-&gt;p($node-&gt;trait) . '::' . $node-&gt;method
+             . ' insteadof ' . $this-&gt;pCommaSeparated($node-&gt;insteadof) . ';';
+    }
+
+    protected function pStmt_TraitUseAdaptation_Alias(Stmt\TraitUseAdaptation\Alias $node): string {
+        return (null !== $node-&gt;trait ? $this-&gt;p($node-&gt;trait) . '::' : '')
+             . $node-&gt;method . ' as'
+             . (null !== $node-&gt;newModifier ? ' ' . rtrim($this-&gt;pModifiers($node-&gt;newModifier), ' ') : '')
+             . (null !== $node-&gt;newName ? ' ' . $node-&gt;newName : '')
+             . ';';
+    }
+
+    protected function pStmt_Property(Stmt\Property $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+            . (0 === $node-&gt;flags ? 'var ' : $this-&gt;pModifiers($node-&gt;flags))
+            . ($node-&gt;type ? $this-&gt;p($node-&gt;type) . ' ' : '')
+            . $this-&gt;pCommaSeparated($node-&gt;props)
+            . ($node-&gt;hooks ? ' {' . $this-&gt;pStmts($node-&gt;hooks) . $this-&gt;nl . '}' : ';');
+    }
+
+    protected function pPropertyItem(Node\PropertyItem $node): string {
+        return '$' . $node-&gt;name
+             . (null !== $node-&gt;default ? ' = ' . $this-&gt;p($node-&gt;default) : '');
+    }
+
+    protected function pPropertyHook(Node\PropertyHook $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . $this-&gt;pModifiers($node-&gt;flags)
+             . ($node-&gt;byRef ? '&amp;' : '') . $node-&gt;name
+             . ($node-&gt;params ? '(' . $this-&gt;pMaybeMultiline($node-&gt;params, $this-&gt;phpVersion-&gt;supportsTrailingCommaInParamList()) . ')' : '')
+             . (\is_array($node-&gt;body) ? ' {' . $this-&gt;pStmts($node-&gt;body) . $this-&gt;nl . '}'
+                : ($node-&gt;body !== null ? ' =&gt; ' . $this-&gt;p($node-&gt;body) : '') . ';');
+    }
+
+    protected function pStmt_ClassMethod(Stmt\ClassMethod $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . $this-&gt;pModifiers($node-&gt;flags)
+             . 'function ' . ($node-&gt;byRef ? '&amp;' : '') . $node-&gt;name
+             . '(' . $this-&gt;pMaybeMultiline($node-&gt;params, $this-&gt;phpVersion-&gt;supportsTrailingCommaInParamList()) . ')'
+             . (null !== $node-&gt;returnType ? ': ' . $this-&gt;p($node-&gt;returnType) : '')
+             . (null !== $node-&gt;stmts
+                ? $this-&gt;nl . '{' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}'
+                : ';');
+    }
+
+    protected function pStmt_ClassConst(Stmt\ClassConst $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . $this-&gt;pModifiers($node-&gt;flags)
+             . 'const '
+             . (null !== $node-&gt;type ? $this-&gt;p($node-&gt;type) . ' ' : '')
+             . $this-&gt;pCommaSeparated($node-&gt;consts) . ';';
+    }
+
+    protected function pStmt_Function(Stmt\Function_ $node): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups)
+             . 'function ' . ($node-&gt;byRef ? '&amp;' : '') . $node-&gt;name
+             . '(' . $this-&gt;pMaybeMultiline($node-&gt;params, $this-&gt;phpVersion-&gt;supportsTrailingCommaInParamList()) . ')'
+             . (null !== $node-&gt;returnType ? ': ' . $this-&gt;p($node-&gt;returnType) : '')
+             . $this-&gt;nl . '{' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Const(Stmt\Const_ $node): string {
+        return 'const ' . $this-&gt;pCommaSeparated($node-&gt;consts) . ';';
+    }
+
+    protected function pStmt_Declare(Stmt\Declare_ $node): string {
+        return 'declare (' . $this-&gt;pCommaSeparated($node-&gt;declares) . ')'
+             . (null !== $node-&gt;stmts ? ' {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}' : ';');
+    }
+
+    protected function pDeclareItem(Node\DeclareItem $node): string {
+        return $node-&gt;key . '=' . $this-&gt;p($node-&gt;value);
+    }
+
+    // Control flow
+
+    protected function pStmt_If(Stmt\If_ $node): string {
+        return 'if (' . $this-&gt;p($node-&gt;cond) . ') {'
+             . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}'
+             . ($node-&gt;elseifs ? ' ' . $this-&gt;pImplode($node-&gt;elseifs, ' ') : '')
+             . (null !== $node-&gt;else ? ' ' . $this-&gt;p($node-&gt;else) : '');
+    }
+
+    protected function pStmt_ElseIf(Stmt\ElseIf_ $node): string {
+        return 'elseif (' . $this-&gt;p($node-&gt;cond) . ') {'
+             . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Else(Stmt\Else_ $node): string {
+        if (\count($node-&gt;stmts) === 1 &amp;&amp; $node-&gt;stmts[0] instanceof Stmt\If_) {
+            // Print as &quot;else if&quot; rather than &quot;else { if }&quot;
+            return 'else ' . $this-&gt;p($node-&gt;stmts[0]);
+        }
+        return 'else {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_For(Stmt\For_ $node): string {
+        return 'for ('
+             . $this-&gt;pCommaSeparated($node-&gt;init) . ';' . (!empty($node-&gt;cond) ? ' ' : '')
+             . $this-&gt;pCommaSeparated($node-&gt;cond) . ';' . (!empty($node-&gt;loop) ? ' ' : '')
+             . $this-&gt;pCommaSeparated($node-&gt;loop)
+             . ') {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Foreach(Stmt\Foreach_ $node): string {
+        return 'foreach (' . $this-&gt;p($node-&gt;expr) . ' as '
+             . (null !== $node-&gt;keyVar ? $this-&gt;p($node-&gt;keyVar) . ' =&gt; ' : '')
+             . ($node-&gt;byRef ? '&amp;' : '') . $this-&gt;p($node-&gt;valueVar) . ') {'
+             . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_While(Stmt\While_ $node): string {
+        return 'while (' . $this-&gt;p($node-&gt;cond) . ') {'
+             . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Do(Stmt\Do_ $node): string {
+        return 'do {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl
+             . '} while (' . $this-&gt;p($node-&gt;cond) . ');';
+    }
+
+    protected function pStmt_Switch(Stmt\Switch_ $node): string {
+        return 'switch (' . $this-&gt;p($node-&gt;cond) . ') {'
+             . $this-&gt;pStmts($node-&gt;cases) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Case(Stmt\Case_ $node): string {
+        return (null !== $node-&gt;cond ? 'case ' . $this-&gt;p($node-&gt;cond) : 'default') . ':'
+             . $this-&gt;pStmts($node-&gt;stmts);
+    }
+
+    protected function pStmt_TryCatch(Stmt\TryCatch $node): string {
+        return 'try {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}'
+             . ($node-&gt;catches ? ' ' . $this-&gt;pImplode($node-&gt;catches, ' ') : '')
+             . ($node-&gt;finally !== null ? ' ' . $this-&gt;p($node-&gt;finally) : '');
+    }
+
+    protected function pStmt_Catch(Stmt\Catch_ $node): string {
+        return 'catch (' . $this-&gt;pImplode($node-&gt;types, '|')
+             . ($node-&gt;var !== null ? ' ' . $this-&gt;p($node-&gt;var) : '')
+             . ') {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Finally(Stmt\Finally_ $node): string {
+        return 'finally {' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pStmt_Break(Stmt\Break_ $node): string {
+        return 'break' . ($node-&gt;num !== null ? ' ' . $this-&gt;p($node-&gt;num) : '') . ';';
+    }
+
+    protected function pStmt_Continue(Stmt\Continue_ $node): string {
+        return 'continue' . ($node-&gt;num !== null ? ' ' . $this-&gt;p($node-&gt;num) : '') . ';';
+    }
+
+    protected function pStmt_Return(Stmt\Return_ $node): string {
+        return 'return' . (null !== $node-&gt;expr ? ' ' . $this-&gt;p($node-&gt;expr) : '') . ';';
+    }
+
+    protected function pStmt_Label(Stmt\Label $node): string {
+        return $node-&gt;name . ':';
+    }
+
+    protected function pStmt_Goto(Stmt\Goto_ $node): string {
+        return 'goto ' . $node-&gt;name . ';';
+    }
+
+    // Other
+
+    protected function pStmt_Expression(Stmt\Expression $node): string {
+        return $this-&gt;p($node-&gt;expr) . ';';
+    }
+
+    protected function pStmt_Echo(Stmt\Echo_ $node): string {
+        return 'echo ' . $this-&gt;pCommaSeparated($node-&gt;exprs) . ';';
+    }
+
+    protected function pStmt_Static(Stmt\Static_ $node): string {
+        return 'static ' . $this-&gt;pCommaSeparated($node-&gt;vars) . ';';
+    }
+
+    protected function pStmt_Global(Stmt\Global_ $node): string {
+        return 'global ' . $this-&gt;pCommaSeparated($node-&gt;vars) . ';';
+    }
+
+    protected function pStaticVar(Node\StaticVar $node): string {
+        return $this-&gt;p($node-&gt;var)
+             . (null !== $node-&gt;default ? ' = ' . $this-&gt;p($node-&gt;default) : '');
+    }
+
+    protected function pStmt_Unset(Stmt\Unset_ $node): string {
+        return 'unset(' . $this-&gt;pCommaSeparated($node-&gt;vars) . ');';
+    }
+
+    protected function pStmt_InlineHTML(Stmt\InlineHTML $node): string {
+        $newline = $node-&gt;getAttribute('hasLeadingNewline', true) ? $this-&gt;newline : '';
+        return '?&gt;' . $newline . $node-&gt;value . '&lt;?php ';
+    }
+
+    protected function pStmt_HaltCompiler(Stmt\HaltCompiler $node): string {
+        return '__halt_compiler();' . $node-&gt;remaining;
+    }
+
+    protected function pStmt_Nop(Stmt\Nop $node): string {
+        return '';
+    }
+
+    protected function pStmt_Block(Stmt\Block $node): string {
+        return '{' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    // Helpers
+
+    protected function pClassCommon(Stmt\Class_ $node, string $afterClassToken): string {
+        return $this-&gt;pAttrGroups($node-&gt;attrGroups, $node-&gt;name === null)
+            . $this-&gt;pModifiers($node-&gt;flags)
+            . 'class' . $afterClassToken
+            . (null !== $node-&gt;extends ? ' extends ' . $this-&gt;p($node-&gt;extends) : '')
+            . (!empty($node-&gt;implements) ? ' implements ' . $this-&gt;pCommaSeparated($node-&gt;implements) : '')
+            . $this-&gt;nl . '{' . $this-&gt;pStmts($node-&gt;stmts) . $this-&gt;nl . '}';
+    }
+
+    protected function pObjectProperty(Node $node): string {
+        if ($node instanceof Expr) {
+            return '{' . $this-&gt;p($node) . '}';
+        } else {
+            assert($node instanceof Node\Identifier);
+            return $node-&gt;name;
+        }
+    }
+
+    /** @param (Expr|Node\InterpolatedStringPart)[] $encapsList */
+    protected function pEncapsList(array $encapsList, ?string $quote): string {
+        $return = '';
+        foreach ($encapsList as $element) {
+            if ($element instanceof Node\InterpolatedStringPart) {
+                $return .= $this-&gt;escapeString($element-&gt;value, $quote);
+            } else {
+                $return .= '{' . $this-&gt;p($element) . '}';
+            }
+        }
+
+        return $return;
+    }
+
+    protected function pSingleQuotedString(string $string): string {
+        // It is idiomatic to only escape backslashes when necessary, i.e. when followed by ', \ or
+        // the end of the string ('Foo\Bar' instead of 'Foo\\Bar'). However, we also don't want to
+        // produce an odd number of backslashes, so '\\\\a' should not get rendered as '\\\a', even
+        // though that would be legal.
+        $regex = '/\'|\\\\(?=[\'\\\\]|$)|(?&lt;=\\\\)\\\\/';
+        return '\'' . preg_replace($regex, '\\\\$0', $string) . '\'';
+    }
+
+    protected function escapeString(string $string, ?string $quote): string {
+        if (null === $quote) {
+            // For doc strings, don't escape newlines
+            $escaped = addcslashes($string, &quot;\t\f\v$\\&quot;);
+            // But do escape isolated \r. Combined with the terminating newline, it might get
+            // interpreted as \r\n and dropped from the string contents.
+            $escaped = preg_replace('/\r(?!\n)/', '\\r', $escaped);
+            if ($this-&gt;phpVersion-&gt;supportsFlexibleHeredoc()) {
+                $escaped = $this-&gt;indentString($escaped);
+            }
+        } else {
+            $escaped = addcslashes($string, &quot;\n\r\t\f\v$&quot; . $quote . &quot;\\&quot;);
+        }
+
+        // Escape control characters and non-UTF-8 characters.
+        // Regex based on https://stackoverflow.com/a/11709412/385378.
+        $regex = '/(
+              [\x00-\x08\x0E-\x1F] # Control characters
+            | [\xC0-\xC1] # Invalid UTF-8 Bytes
+            | [\xF5-\xFF] # Invalid UTF-8 Bytes
+            | \xE0(?=[\x80-\x9F]) # Overlong encoding of prior code point
+            | \xF0(?=[\x80-\x8F]) # Overlong encoding of prior code point
+            | [\xC2-\xDF](?![\x80-\xBF]) # Invalid UTF-8 Sequence Start
+            | [\xE0-\xEF](?![\x80-\xBF]{2}) # Invalid UTF-8 Sequence Start
+            | [\xF0-\xF4](?![\x80-\xBF]{3}) # Invalid UTF-8 Sequence Start
+            | (?&lt;=[\x00-\x7F\xF5-\xFF])[\x80-\xBF] # Invalid UTF-8 Sequence Middle
+            | (?&lt;![\xC2-\xDF]|[\xE0-\xEF]|[\xE0-\xEF][\x80-\xBF]|[\xF0-\xF4]|[\xF0-\xF4][\x80-\xBF]|[\xF0-\xF4][\x80-\xBF]{2})[\x80-\xBF] # Overlong Sequence
+            | (?&lt;=[\xE0-\xEF])[\x80-\xBF](?![\x80-\xBF]) # Short 3 byte sequence
+            | (?&lt;=[\xF0-\xF4])[\x80-\xBF](?![\x80-\xBF]{2}) # Short 4 byte sequence
+            | (?&lt;=[\xF0-\xF4][\x80-\xBF])[\x80-\xBF](?![\x80-\xBF]) # Short 4 byte sequence (2)
+        )/x';
+        return preg_replace_callback($regex, function ($matches): string {
+            assert(strlen($matches[0]) === 1);
+            $hex = dechex(ord($matches[0]));
+            return '\\x' . str_pad($hex, 2, '0', \STR_PAD_LEFT);
+        }, $escaped);
+    }
+
+    protected function containsEndLabel(string $string, string $label, bool $atStart = true): bool {
+        $start = $atStart ? '(?:^|[\r\n])[ \t]*' : '[\r\n][ \t]*';
+        return false !== strpos($string, $label)
+            &amp;&amp; preg_match('/' . $start . $label . '(?:$|[^_A-Za-z0-9\x80-\xff])/', $string);
+    }
+
+    /** @param (Expr|Node\InterpolatedStringPart)[] $parts */
+    protected function encapsedContainsEndLabel(array $parts, string $label): bool {
+        foreach ($parts as $i =&gt; $part) {
+            if ($part instanceof Node\InterpolatedStringPart
+                &amp;&amp; $this-&gt;containsEndLabel($this-&gt;escapeString($part-&gt;value, null), $label, $i === 0)
+            ) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    protected function pDereferenceLhs(Node $node): string {
+        if (!$this-&gt;dereferenceLhsRequiresParens($node)) {
+            return $this-&gt;p($node);
+        } else {
+            return '(' . $this-&gt;p($node) . ')';
+        }
+    }
+
+    protected function pStaticDereferenceLhs(Node $node): string {
+        if (!$this-&gt;staticDereferenceLhsRequiresParens($node)) {
+            return $this-&gt;p($node);
+        } else {
+            return '(' . $this-&gt;p($node) . ')';
+        }
+    }
+
+    protected function pCallLhs(Node $node): string {
+        if (!$this-&gt;callLhsRequiresParens($node)) {
+            return $this-&gt;p($node);
+        } else {
+            return '(' . $this-&gt;p($node) . ')';
+        }
+    }
+
+    protected function pNewOperand(Node $node): string {
+        if (!$this-&gt;newOperandRequiresParens($node)) {
+            return $this-&gt;p($node);
+        } else {
+            return '(' . $this-&gt;p($node) . ')';
+        }
+    }
+
+    /**
+     * @param Node[] $nodes
+     */
+    protected function hasNodeWithComments(array $nodes): bool {
+        foreach ($nodes as $node) {
+            if ($node &amp;&amp; $node-&gt;getComments()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** @param Node[] $nodes */
+    protected function pMaybeMultiline(array $nodes, bool $trailingComma = false): string {
+        if (!$this-&gt;hasNodeWithComments($nodes)) {
+            return $this-&gt;pCommaSeparated($nodes);
+        } else {
+            return $this-&gt;pCommaSeparatedMultiline($nodes, $trailingComma) . $this-&gt;nl;
+        }
+    }
+
+    /** @param Node\AttributeGroup[] $nodes */
+    protected function pAttrGroups(array $nodes, bool $inline = false): string {
+        $result = '';
+        $sep = $inline ? ' ' : $this-&gt;nl;
+        foreach ($nodes as $node) {
+            $result .= $this-&gt;p($node) . $sep;
+        }
+
+        return $result;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

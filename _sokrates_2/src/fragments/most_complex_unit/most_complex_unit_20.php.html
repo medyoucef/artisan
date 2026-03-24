@@ -1,0 +1,187 @@
+<html>
+<head>
+    <title>public static function fromString()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public static function fromString()</h3>
+<p style="margin-top: 4px">in <i>vendor/nesbot/carbon/src/Carbon/CarbonInterval.php [930:1094]</i></p>
+<ul>
+    <li><b>124</b> lines of code</li>
+    <li><b>52</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public static function fromString(string $intervalDefinition): static
+    {
+        if (empty($intervalDefinition)) {
+            return self::withOriginal(new static(0), $intervalDefinition);
+        }
+
+        $years = 0;
+        $months = 0;
+        $weeks = 0;
+        $days = 0;
+        $hours = 0;
+        $minutes = 0;
+        $seconds = 0;
+        $milliseconds = 0;
+        $microseconds = 0;
+
+        $pattern = '/(-?\d+(?:\.\d+)?)\h*([^\d\h]*)/i';
+        preg_match_all($pattern, $intervalDefinition, $parts, PREG_SET_ORDER);
+
+        while ([$part, $value, $unit] = array_shift($parts)) {
+            $intValue = (int) $value;
+            $fraction = (float) $value - $intValue;
+
+            // Fix calculation precision
+            switch (round($fraction, 6)) {
+                case 1:
+                    $fraction = 0;
+                    $intValue++;
+
+                    break;
+                case 0:
+                    $fraction = 0;
+
+                    break;
+            }
+
+            switch ($unit === '&micro;s' ? '&micro;s' : strtolower($unit)) {
+                case 'millennia':
+                case 'millennium':
+                    $years += $intValue * CarbonInterface::YEARS_PER_MILLENNIUM;
+
+                    break;
+
+                case 'century':
+                case 'centuries':
+                    $years += $intValue * CarbonInterface::YEARS_PER_CENTURY;
+
+                    break;
+
+                case 'decade':
+                case 'decades':
+                    $years += $intValue * CarbonInterface::YEARS_PER_DECADE;
+
+                    break;
+
+                case 'year':
+                case 'years':
+                case 'y':
+                case 'yr':
+                case 'yrs':
+                    $years += $intValue;
+
+                    break;
+
+                case 'quarter':
+                case 'quarters':
+                    $months += $intValue * CarbonInterface::MONTHS_PER_QUARTER;
+
+                    break;
+
+                case 'month':
+                case 'months':
+                case 'mo':
+                case 'mos':
+                    $months += $intValue;
+
+                    break;
+
+                case 'week':
+                case 'weeks':
+                case 'w':
+                    $weeks += $intValue;
+
+                    if ($fraction) {
+                        $parts[] = [null, $fraction * static::getDaysPerWeek(), 'd'];
+                    }
+
+                    break;
+
+                case 'day':
+                case 'days':
+                case 'd':
+                    $days += $intValue;
+
+                    if ($fraction) {
+                        $parts[] = [null, $fraction * static::getHoursPerDay(), 'h'];
+                    }
+
+                    break;
+
+                case 'hour':
+                case 'hours':
+                case 'h':
+                    $hours += $intValue;
+
+                    if ($fraction) {
+                        $parts[] = [null, $fraction * static::getMinutesPerHour(), 'm'];
+                    }
+
+                    break;
+
+                case 'minute':
+                case 'minutes':
+                case 'm':
+                    $minutes += $intValue;
+
+                    if ($fraction) {
+                        $parts[] = [null, $fraction * static::getSecondsPerMinute(), 's'];
+                    }
+
+                    break;
+
+                case 'second':
+                case 'seconds':
+                case 's':
+                    $seconds += $intValue;
+
+                    if ($fraction) {
+                        $parts[] = [null, $fraction * static::getMillisecondsPerSecond(), 'ms'];
+                    }
+
+                    break;
+
+                case 'millisecond':
+                case 'milliseconds':
+                case 'milli':
+                case 'ms':
+                    $milliseconds += $intValue;
+
+                    if ($fraction) {
+                        $microseconds += round($fraction * static::getMicrosecondsPerMillisecond());
+                    }
+
+                    break;
+
+                case 'microsecond':
+                case 'microseconds':
+                case 'micro':
+                case '&micro;s':
+                    $microseconds += $intValue;
+
+                    break;
+
+                default:
+                    throw new InvalidIntervalException(
+                        \sprintf('Invalid part %s in definition %s', $part, $intervalDefinition),
+                    );
+            }
+        }
+
+        return self::withOriginal(
+            new static($years, $months, $weeks, $days, $hours, $minutes, $seconds, $milliseconds * Carbon::MICROSECONDS_PER_MILLISECOND + $microseconds),
+            $intervalDefinition,
+        );
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

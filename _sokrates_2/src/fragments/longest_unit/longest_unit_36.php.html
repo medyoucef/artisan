@@ -1,0 +1,221 @@
+<html>
+<head>
+    <title>final public function runBare()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">final public function runBare()</h3>
+<p style="margin-top: 4px">in <i>vendor/phpunit/phpunit/src/Framework/TestCase.php [471:669]</i></p>
+<ul>
+    <li><b>153</b> lines of code</li>
+    <li><b>27</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    final public function runBare(): void
+    {
+        $emitter = Event\Facade::emitter();
+
+        error_clear_last();
+        clearstatcache();
+
+        $emitter-&gt;testPreparationStarted(
+            $this-&gt;valueObjectForEvents(),
+        );
+
+        $this-&gt;snapshotGlobalState();
+        $this-&gt;snapshotGlobalErrorExceptionHandlers();
+        $this-&gt;startOutputBuffering();
+
+        $hookMethods                       = (new HookMethods)-&gt;hookMethods(static::class);
+        $hasMetRequirements                = false;
+        $this-&gt;numberOfAssertionsPerformed = 0;
+        $currentWorkingDirectory           = getcwd();
+
+        try {
+            $this-&gt;checkRequirements();
+            $hasMetRequirements = true;
+
+            if ($this-&gt;inIsolation) {
+                // @codeCoverageIgnoreStart
+                $this-&gt;invokeBeforeClassHookMethods($hookMethods, $emitter);
+                // @codeCoverageIgnoreEnd
+            }
+
+            if (method_exists(static::class, $this-&gt;methodName) &amp;&amp;
+                MetadataRegistry::parser()-&gt;forClassAndMethod(static::class, $this-&gt;methodName)-&gt;isDoesNotPerformAssertions()-&gt;isNotEmpty()) {
+                $this-&gt;doesNotPerformAssertions = true;
+            }
+
+            $this-&gt;invokeBeforeTestHookMethods($hookMethods, $emitter);
+            $this-&gt;invokePreConditionHookMethods($hookMethods, $emitter);
+
+            $emitter-&gt;testPrepared(
+                $this-&gt;valueObjectForEvents(),
+            );
+
+            $this-&gt;wasPrepared = true;
+            $this-&gt;testResult  = $this-&gt;runTest();
+
+            $this-&gt;verifyDeprecationExpectations();
+            $this-&gt;verifyMockObjects();
+            $this-&gt;invokePostConditionHookMethods($hookMethods, $emitter);
+
+            $this-&gt;status = TestStatus::success();
+        } catch (IncompleteTest $e) {
+            $this-&gt;status = TestStatus::incomplete($e-&gt;getMessage());
+
+            $emitter-&gt;testMarkedAsIncomplete(
+                $this-&gt;valueObjectForEvents(),
+                Event\Code\ThrowableBuilder::from($e),
+            );
+        } catch (SkippedTest $e) {
+            $this-&gt;status = TestStatus::skipped($e-&gt;getMessage());
+
+            $emitter-&gt;testSkipped(
+                $this-&gt;valueObjectForEvents(),
+                $e-&gt;getMessage(),
+            );
+        } catch (AssertionError|AssertionFailedError $e) {
+            $this-&gt;handleExceptionFromInvokedCountMockObjectRule($e);
+
+            if (!$this-&gt;wasPrepared) {
+                $this-&gt;wasPrepared = true;
+
+                $emitter-&gt;testPreparationFailed(
+                    $this-&gt;valueObjectForEvents(),
+                );
+            }
+
+            $this-&gt;status = TestStatus::failure($e-&gt;getMessage());
+
+            $emitter-&gt;testFailed(
+                $this-&gt;valueObjectForEvents(),
+                Event\Code\ThrowableBuilder::from($e),
+                Event\Code\ComparisonFailureBuilder::from($e),
+            );
+        } catch (TimeoutException $e) {
+        } catch (Throwable $_e) {
+            if ($this-&gt;isRegisteredFailure($_e)) {
+                $this-&gt;status = TestStatus::failure($_e-&gt;getMessage());
+
+                $emitter-&gt;testFailed(
+                    $this-&gt;valueObjectForEvents(),
+                    Event\Code\ThrowableBuilder::from($_e),
+                    null,
+                );
+            } else {
+                $e = $this-&gt;transformException($_e);
+
+                $this-&gt;status = TestStatus::error($e-&gt;getMessage());
+
+                if (!$this-&gt;wasPrepared) {
+                    $emitter-&gt;testPreparationFailed(
+                        $this-&gt;valueObjectForEvents(),
+                    );
+                }
+
+                $emitter-&gt;testErrored(
+                    $this-&gt;valueObjectForEvents(),
+                    Event\Code\ThrowableBuilder::from($e),
+                );
+            }
+        }
+
+        $outputBufferingStopped = false;
+
+        if (!isset($e) &amp;&amp;
+            $this-&gt;hasExpectationOnOutput() &amp;&amp;
+            $this-&gt;stopOutputBuffering()) {
+            $outputBufferingStopped = true;
+
+            $this-&gt;performAssertionsOnOutput();
+        }
+
+        try {
+            $this-&gt;mockObjects = [];
+
+            /** @phpstan-ignore catch.neverThrown */
+        } catch (Throwable $e) {
+            Event\Facade::emitter()-&gt;testErrored(
+                $this-&gt;valueObjectForEvents(),
+                Event\Code\ThrowableBuilder::from($e),
+            );
+        }
+
+        // Tear down the fixture. An exception raised in tearDown() will be
+        // caught and passed on when no exception was raised before.
+        try {
+            if ($hasMetRequirements) {
+                $this-&gt;invokeAfterTestHookMethods($hookMethods, $emitter);
+
+                if ($this-&gt;inIsolation) {
+                    // @codeCoverageIgnoreStart
+                    $this-&gt;invokeAfterClassHookMethods($hookMethods, $emitter);
+                    // @codeCoverageIgnoreEnd
+                }
+            }
+        } catch (AssertionError|AssertionFailedError $e) {
+            $this-&gt;status = TestStatus::failure($e-&gt;getMessage());
+
+            $emitter-&gt;testFailed(
+                $this-&gt;valueObjectForEvents(),
+                Event\Code\ThrowableBuilder::from($e),
+                Event\Code\ComparisonFailureBuilder::from($e),
+            );
+        } catch (Throwable $exceptionRaisedDuringTearDown) {
+            if (!isset($e)) {
+                $this-&gt;status = TestStatus::error($exceptionRaisedDuringTearDown-&gt;getMessage());
+                $e            = $exceptionRaisedDuringTearDown;
+
+                $emitter-&gt;testErrored(
+                    $this-&gt;valueObjectForEvents(),
+                    Event\Code\ThrowableBuilder::from($exceptionRaisedDuringTearDown),
+                );
+            }
+        }
+
+        if (!isset($e) &amp;&amp; !isset($_e)) {
+            $emitter-&gt;testPassed(
+                $this-&gt;valueObjectForEvents(),
+            );
+
+            if (!$this-&gt;usesDataProvider()) {
+                PassedTests::instance()-&gt;testMethodPassed(
+                    $this-&gt;valueObjectForEvents(),
+                    $this-&gt;testResult,
+                );
+            }
+        }
+
+        if (!$outputBufferingStopped) {
+            $this-&gt;stopOutputBuffering();
+        }
+
+        clearstatcache();
+
+        if ($currentWorkingDirectory !== getcwd()) {
+            chdir($currentWorkingDirectory);
+        }
+
+        $this-&gt;restoreGlobalErrorExceptionHandlers();
+        $this-&gt;restoreGlobalState();
+        $this-&gt;unregisterCustomComparators();
+        $this-&gt;cleanupIniSettings();
+        $this-&gt;cleanupLocaleSettings();
+        libxml_clear_errors();
+
+        $this-&gt;testValueObjectForEvents = null;
+
+        if (isset($e)) {
+            $this-&gt;onNotSuccessfulTest($e);
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

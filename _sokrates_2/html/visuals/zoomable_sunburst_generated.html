@@ -1,0 +1,3055 @@
+<head>
+    <style>
+        body {
+            font-family: Sans-serif;
+            font-size: 11px;
+        }
+
+        .slice {
+            cursor: pointer;
+        }
+
+        .slice .main-arc {
+            stroke: #fff;
+            stroke-width: 1px;
+        }
+
+        .slice .hidden-arc {
+            fill: none;
+        }
+
+        .slice text {
+            pointer-events: none;
+            dominant-baseline: middle;
+            text-anchor: middle;
+        }
+    </style>
+
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+</head>
+<body>
+<script>
+    const width = window.innerWidth,
+        height = window.innerHeight,
+        maxRadius = (Math.min(width, height) / 2) - 5;
+
+    const formatNumber = d3.format(',d');
+
+    const x = d3.scaleLinear()
+        .range([0, 2 * Math.PI])
+        .clamp(true);
+
+    const y = d3.scaleSqrt()
+        .range([maxRadius * .1, maxRadius]);
+
+    const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    const partition = d3.partition();
+
+    const arc = d3.arc()
+        .startAngle(d => x(d.x0))
+        .endAngle(d => x(d.x1))
+        .innerRadius(d => Math.max(0, y(d.y0)))
+        .outerRadius(d => Math.max(0, y(d.y1)));
+
+    const middleArcLine = d => {
+        const halfPi = Math.PI / 2;
+        const angles = [x(d.x0) - halfPi, x(d.x1) - halfPi];
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+
+        const middleAngle = (angles[1] + angles[0]) / 2;
+        const invertDirection = middleAngle > 0 && middleAngle < Math.PI; // On lower quadrants write text ccw
+        if (invertDirection) {
+            angles.reverse();
+        }
+
+        const path = d3.path();
+        path.arc(0, 0, r, angles[0], angles[1], invertDirection);
+        return path.toString();
+    };
+
+    const textFits = d => {
+        const CHAR_SPACE = 6;
+
+        const deltaAngle = x(d.x1) - x(d.x0);
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+        const perimeter = r * deltaAngle;
+
+        return d.data.name.length * CHAR_SPACE < perimeter;
+    };
+
+    const svg = d3.select('body').append('svg')
+        .style('width', '100vw')
+        .style('height', '100vh')
+        .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
+        .on('click', () => focusOn()); // Reset zoom on canvas click
+
+    var rootData = {
+        "name": "",
+        "children": [ {
+  "name" : "vendor",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "google",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "protobuf",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "src",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Google",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Protobuf",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Any.php",
+              "color" : "",
+              "size" : 34,
+              "children" : [ ]
+            }, {
+              "name" : "Api.php",
+              "color" : "",
+              "size" : 108,
+              "children" : [ ]
+            }, {
+              "name" : "BoolValue.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "BytesValue.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "DoubleValue.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Duration.php",
+              "color" : "",
+              "size" : 34,
+              "children" : [ ]
+            }, {
+              "name" : "Enum.php",
+              "color" : "",
+              "size" : 86,
+              "children" : [ ]
+            }, {
+              "name" : "EnumValue.php",
+              "color" : "",
+              "size" : 45,
+              "children" : [ ]
+            }, {
+              "name" : "Field",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Cardinality.php",
+                "color" : "",
+                "size" : 33,
+                "children" : [ ]
+              }, {
+                "name" : "Kind.php",
+                "color" : "",
+                "size" : 63,
+                "children" : [ ]
+              } ]
+            }, {
+              "name" : "Field.php",
+              "color" : "",
+              "size" : 122,
+              "children" : [ ]
+            }, {
+              "name" : "FieldMask.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Field_Cardinality.php",
+              "color" : "",
+              "size" : 7,
+              "children" : [ ]
+            }, {
+              "name" : "Field_Kind.php",
+              "color" : "",
+              "size" : 7,
+              "children" : [ ]
+            }, {
+              "name" : "FloatValue.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "GPBEmpty.php",
+              "color" : "",
+              "size" : 12,
+              "children" : [ ]
+            }, {
+              "name" : "Int32Value.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Int64Value.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Internal",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "DescriptorProto",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ExtensionRange.php",
+                  "color" : "",
+                  "size" : 71,
+                  "children" : [ ]
+                }, {
+                  "name" : "ReservedRange.php",
+                  "color" : "",
+                  "size" : 52,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "DescriptorProto.php",
+                "color" : "",
+                "size" : 159,
+                "children" : [ ]
+              }, {
+                "name" : "Edition.php",
+                "color" : "",
+                "size" : 51,
+                "children" : [ ]
+              }, {
+                "name" : "EnumDescriptorProto",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "EnumReservedRange.php",
+                  "color" : "",
+                  "size" : 52,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "EnumDescriptorProto.php",
+                "color" : "",
+                "size" : 104,
+                "children" : [ ]
+              }, {
+                "name" : "EnumOptions.php",
+                "color" : "",
+                "size" : 109,
+                "children" : [ ]
+              }, {
+                "name" : "EnumValueDescriptorProto.php",
+                "color" : "",
+                "size" : 71,
+                "children" : [ ]
+              }, {
+                "name" : "EnumValueOptions.php",
+                "color" : "",
+                "size" : 101,
+                "children" : [ ]
+              }, {
+                "name" : "ExtensionRangeOptions",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Declaration.php",
+                  "color" : "",
+                  "size" : 109,
+                  "children" : [ ]
+                }, {
+                  "name" : "VerificationState.php",
+                  "color" : "",
+                  "size" : 29,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "ExtensionRangeOptions.php",
+                "color" : "",
+                "size" : 74,
+                "children" : [ ]
+              }, {
+                "name" : "FeatureSet",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "EnforceNamingStyle.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "EnumType.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "FieldPresence.php",
+                  "color" : "",
+                  "size" : 33,
+                  "children" : [ ]
+                }, {
+                  "name" : "JsonFormat.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "MessageEncoding.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "RepeatedFieldEncoding.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "Utf8Validation.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "VisibilityFeature",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "DefaultSymbolVisibility.php",
+                    "color" : "",
+                    "size" : 35,
+                    "children" : [ ]
+                  } ]
+                }, {
+                  "name" : "VisibilityFeature.php",
+                  "color" : "",
+                  "size" : 14,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "FeatureSet.php",
+                "color" : "",
+                "size" : 166,
+                "children" : [ ]
+              }, {
+                "name" : "FeatureSetDefaults",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "FeatureSetEditionDefault.php",
+                  "color" : "",
+                  "size" : 71,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "FeatureSetDefaults.php",
+                "color" : "",
+                "size" : 63,
+                "children" : [ ]
+              }, {
+                "name" : "FieldDescriptorProto",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Label.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "Type.php",
+                  "color" : "",
+                  "size" : 61,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "FieldDescriptorProto.php",
+                "color" : "",
+                "size" : 223,
+                "children" : [ ]
+              }, {
+                "name" : "FieldOptions",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "CType.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "EditionDefault.php",
+                  "color" : "",
+                  "size" : 52,
+                  "children" : [ ]
+                }, {
+                  "name" : "FeatureSupport.php",
+                  "color" : "",
+                  "size" : 90,
+                  "children" : [ ]
+                }, {
+                  "name" : "JSType.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "OptionRetention.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "OptionTargetType.php",
+                  "color" : "",
+                  "size" : 45,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "FieldOptions.php",
+                "color" : "",
+                "size" : 264,
+                "children" : [ ]
+              }, {
+                "name" : "FileDescriptorProto.php",
+                "color" : "",
+                "size" : 216,
+                "children" : [ ]
+              }, {
+                "name" : "FileDescriptorSet.php",
+                "color" : "",
+                "size" : 25,
+                "children" : [ ]
+              }, {
+                "name" : "FileOptions",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "OptimizeMode.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "FileOptions.php",
+                "color" : "",
+                "size" : 413,
+                "children" : [ ]
+              }, {
+                "name" : "GeneratedCodeInfo",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Annotation",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "Semantic.php",
+                    "color" : "",
+                    "size" : 31,
+                    "children" : [ ]
+                  } ]
+                }, {
+                  "name" : "Annotation.php",
+                  "color" : "",
+                  "size" : 101,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "GeneratedCodeInfo.php",
+                "color" : "",
+                "size" : 25,
+                "children" : [ ]
+              }, {
+                "name" : "MessageOptions.php",
+                "color" : "",
+                "size" : 147,
+                "children" : [ ]
+              }, {
+                "name" : "MethodDescriptorProto.php",
+                "color" : "",
+                "size" : 128,
+                "children" : [ ]
+              }, {
+                "name" : "MethodOptions",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "IdempotencyLevel.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "MethodOptions.php",
+                "color" : "",
+                "size" : 82,
+                "children" : [ ]
+              }, {
+                "name" : "OneofDescriptorProto.php",
+                "color" : "",
+                "size" : 52,
+                "children" : [ ]
+              }, {
+                "name" : "OneofOptions.php",
+                "color" : "",
+                "size" : 44,
+                "children" : [ ]
+              }, {
+                "name" : "ServiceDescriptorProto.php",
+                "color" : "",
+                "size" : 63,
+                "children" : [ ]
+              }, {
+                "name" : "ServiceOptions.php",
+                "color" : "",
+                "size" : 63,
+                "children" : [ ]
+              }, {
+                "name" : "SourceCodeInfo",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Location.php",
+                  "color" : "",
+                  "size" : 85,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "SourceCodeInfo.php",
+                "color" : "",
+                "size" : 25,
+                "children" : [ ]
+              }, {
+                "name" : "SymbolVisibility.php",
+                "color" : "",
+                "size" : 31,
+                "children" : [ ]
+              }, {
+                "name" : "UninterpretedOption",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "NamePart.php",
+                  "color" : "",
+                  "size" : 52,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "UninterpretedOption.php",
+                "color" : "",
+                "size" : 139,
+                "children" : [ ]
+              } ]
+            }, {
+              "name" : "ListValue.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Method.php",
+              "color" : "",
+              "size" : 108,
+              "children" : [ ]
+            }, {
+              "name" : "Mixin.php",
+              "color" : "",
+              "size" : 34,
+              "children" : [ ]
+            }, {
+              "name" : "NullValue.php",
+              "color" : "",
+              "size" : 27,
+              "children" : [ ]
+            }, {
+              "name" : "Option.php",
+              "color" : "",
+              "size" : 42,
+              "children" : [ ]
+            }, {
+              "name" : "SourceContext.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "StringValue.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Struct.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Syntax.php",
+              "color" : "",
+              "size" : 31,
+              "children" : [ ]
+            }, {
+              "name" : "Timestamp.php",
+              "color" : "",
+              "size" : 34,
+              "children" : [ ]
+            }, {
+              "name" : "Type.php",
+              "color" : "",
+              "size" : 97,
+              "children" : [ ]
+            }, {
+              "name" : "UInt32Value.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "UInt64Value.php",
+              "color" : "",
+              "size" : 23,
+              "children" : [ ]
+            }, {
+              "name" : "Value.php",
+              "color" : "",
+              "size" : 101,
+              "children" : [ ]
+            } ]
+          } ]
+        }, {
+          "name" : "GPBMetadata",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Google",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Protobuf",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Any.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              }, {
+                "name" : "Duration.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              }, {
+                "name" : "FieldMask.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              }, {
+                "name" : "GPBEmpty.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              }, {
+                "name" : "Internal",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Descriptor.php",
+                  "color" : "",
+                  "size" : 391,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "SourceContext.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              }, {
+                "name" : "Timestamp.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              }, {
+                "name" : "Wrappers.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "laravel",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "framework",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "src",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Illuminate",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Foundation",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "resources",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "exceptions",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "renderer",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "package-lock.json",
+                    "color" : "",
+                    "size" : 2297,
+                    "children" : [ ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "open-telemetry",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "gen-otlp-protobuf",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Opentelemetry",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Proto",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Collector",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Logs",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "V1",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ExportLogsPartialSuccess.php",
+                  "color" : "",
+                  "size" : 34,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportLogsServiceRequest.php",
+                  "color" : "",
+                  "size" : 23,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportLogsServiceResponse.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                } ]
+              } ]
+            }, {
+              "name" : "Metrics",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "V1",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ExportMetricsPartialSuccess.php",
+                  "color" : "",
+                  "size" : 34,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportMetricsServiceRequest.php",
+                  "color" : "",
+                  "size" : 23,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportMetricsServiceResponse.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                } ]
+              } ]
+            }, {
+              "name" : "Profiles",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "V1development",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ExportProfilesPartialSuccess.php",
+                  "color" : "",
+                  "size" : 34,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportProfilesServiceRequest.php",
+                  "color" : "",
+                  "size" : 42,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportProfilesServiceResponse.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                } ]
+              } ]
+            }, {
+              "name" : "Trace",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "V1",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ExportTracePartialSuccess.php",
+                  "color" : "",
+                  "size" : 34,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportTraceServiceRequest.php",
+                  "color" : "",
+                  "size" : 23,
+                  "children" : [ ]
+                }, {
+                  "name" : "ExportTraceServiceResponse.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                } ]
+              } ]
+            } ]
+          }, {
+            "name" : "Common",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "V1",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "AnyValue.php",
+                "color" : "",
+                "size" : 115,
+                "children" : [ ]
+              }, {
+                "name" : "ArrayValue.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "EntityRef.php",
+                "color" : "",
+                "size" : 56,
+                "children" : [ ]
+              }, {
+                "name" : "InstrumentationLibrary.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              }, {
+                "name" : "InstrumentationScope.php",
+                "color" : "",
+                "size" : 56,
+                "children" : [ ]
+              }, {
+                "name" : "KeyValue.php",
+                "color" : "",
+                "size" : 42,
+                "children" : [ ]
+              }, {
+                "name" : "KeyValueList.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "StringKeyValue.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Logs",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "V1",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "InstrumentationLibraryLogs.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "LogRecord.php",
+                "color" : "",
+                "size" : 141,
+                "children" : [ ]
+              }, {
+                "name" : "LogRecordFlags.php",
+                "color" : "",
+                "size" : 29,
+                "children" : [ ]
+              }, {
+                "name" : "LogsData.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "ResourceLogs.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "ScopeLogs.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "SeverityNumber.php",
+                "color" : "",
+                "size" : 75,
+                "children" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Metrics",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Experimental",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "MetricConfigRequest.php",
+                "color" : "",
+                "size" : 42,
+                "children" : [ ]
+              }, {
+                "name" : "MetricConfigResponse",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Schedule",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "Pattern.php",
+                    "color" : "",
+                    "size" : 46,
+                    "children" : [ ]
+                  } ]
+                }, {
+                  "name" : "Schedule.php",
+                  "color" : "",
+                  "size" : 46,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "MetricConfigResponse.php",
+                "color" : "",
+                "size" : 45,
+                "children" : [ ]
+              }, {
+                "name" : "MetricConfigResponse_Schedule.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "MetricConfigResponse_Schedule_Pattern.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              } ]
+            }, {
+              "name" : "V1",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "AggregationTemporality.php",
+                "color" : "",
+                "size" : 31,
+                "children" : [ ]
+              }, {
+                "name" : "DataPointFlags.php",
+                "color" : "",
+                "size" : 29,
+                "children" : [ ]
+              }, {
+                "name" : "Exemplar.php",
+                "color" : "",
+                "size" : 89,
+                "children" : [ ]
+              }, {
+                "name" : "ExponentialHistogram.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              }, {
+                "name" : "ExponentialHistogramDataPoint",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Buckets.php",
+                  "color" : "",
+                  "size" : 35,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "ExponentialHistogramDataPoint.php",
+                "color" : "",
+                "size" : 206,
+                "children" : [ ]
+              }, {
+                "name" : "ExponentialHistogramDataPoint_Buckets.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "Gauge.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "Histogram.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              }, {
+                "name" : "HistogramDataPoint.php",
+                "color" : "",
+                "size" : 157,
+                "children" : [ ]
+              }, {
+                "name" : "InstrumentationLibraryMetrics.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "IntDataPoint.php",
+                "color" : "",
+                "size" : 67,
+                "children" : [ ]
+              }, {
+                "name" : "IntExemplar.php",
+                "color" : "",
+                "size" : 67,
+                "children" : [ ]
+              }, {
+                "name" : "IntGauge.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "IntHistogram.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              }, {
+                "name" : "IntHistogramDataPoint.php",
+                "color" : "",
+                "size" : 100,
+                "children" : [ ]
+              }, {
+                "name" : "IntSum.php",
+                "color" : "",
+                "size" : 45,
+                "children" : [ ]
+              }, {
+                "name" : "Metric.php",
+                "color" : "",
+                "size" : 131,
+                "children" : [ ]
+              }, {
+                "name" : "MetricsData.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "NumberDataPoint.php",
+                "color" : "",
+                "size" : 100,
+                "children" : [ ]
+              }, {
+                "name" : "ResourceMetrics.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "ScopeMetrics.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "Sum.php",
+                "color" : "",
+                "size" : 45,
+                "children" : [ ]
+              }, {
+                "name" : "Summary.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "SummaryDataPoint",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ValueAtQuantile.php",
+                  "color" : "",
+                  "size" : 35,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "SummaryDataPoint.php",
+                "color" : "",
+                "size" : 89,
+                "children" : [ ]
+              }, {
+                "name" : "SummaryDataPoint_ValueAtQuantile.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Profiles",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "V1development",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "AggregationTemporality.php",
+                "color" : "",
+                "size" : 31,
+                "children" : [ ]
+              }, {
+                "name" : "AttributeUnit.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              }, {
+                "name" : "KeyValueAndUnit.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "Line.php",
+                "color" : "",
+                "size" : 45,
+                "children" : [ ]
+              }, {
+                "name" : "Link.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              }, {
+                "name" : "Location.php",
+                "color" : "",
+                "size" : 56,
+                "children" : [ ]
+              }, {
+                "name" : "Mapping.php",
+                "color" : "",
+                "size" : 67,
+                "children" : [ ]
+              }, {
+                "name" : "PBFunction.php",
+                "color" : "",
+                "size" : 56,
+                "children" : [ ]
+              }, {
+                "name" : "Profile.php",
+                "color" : "",
+                "size" : 160,
+                "children" : [ ]
+              }, {
+                "name" : "ProfilesData.php",
+                "color" : "",
+                "size" : 42,
+                "children" : [ ]
+              }, {
+                "name" : "ProfilesDictionary.php",
+                "color" : "",
+                "size" : 89,
+                "children" : [ ]
+              }, {
+                "name" : "ResourceProfiles.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "Sample.php",
+                "color" : "",
+                "size" : 67,
+                "children" : [ ]
+              }, {
+                "name" : "ScopeProfiles.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "Stack.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "ValueType.php",
+                "color" : "",
+                "size" : 45,
+                "children" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Resource",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "V1",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Resource.php",
+                "color" : "",
+                "size" : 45,
+                "children" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "Trace",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "V1",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "ConstantSampler",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ConstantDecision.php",
+                  "color" : "",
+                  "size" : 32,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "ConstantSampler.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "ConstantSampler_ConstantDecision.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "InstrumentationLibrarySpans.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "RateLimitingSampler.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "ResourceSpans.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "ScopeSpans.php",
+                "color" : "",
+                "size" : 53,
+                "children" : [ ]
+              }, {
+                "name" : "Span",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Event.php",
+                  "color" : "",
+                  "size" : 57,
+                  "children" : [ ]
+                }, {
+                  "name" : "Link.php",
+                  "color" : "",
+                  "size" : 79,
+                  "children" : [ ]
+                }, {
+                  "name" : "SpanKind.php",
+                  "color" : "",
+                  "size" : 38,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "Span.php",
+                "color" : "",
+                "size" : 196,
+                "children" : [ ]
+              }, {
+                "name" : "SpanFlags.php",
+                "color" : "",
+                "size" : 33,
+                "children" : [ ]
+              }, {
+                "name" : "Span_Event.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "Span_Link.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "Span_SpanKind.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "Status",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "DeprecatedStatusCode.php",
+                  "color" : "",
+                  "size" : 60,
+                  "children" : [ ]
+                }, {
+                  "name" : "StatusCode.php",
+                  "color" : "",
+                  "size" : 32,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "Status.php",
+                "color" : "",
+                "size" : 34,
+                "children" : [ ]
+              }, {
+                "name" : "Status_DeprecatedStatusCode.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "Status_StatusCode.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "TraceConfig.php",
+                "color" : "",
+                "size" : 114,
+                "children" : [ ]
+              }, {
+                "name" : "TraceIdRatioBased.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "TracesData.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "thecodingmachine",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "safe",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "generated",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "8.1",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "apache.php",
+            "color" : "",
+            "size" : 73,
+            "children" : [ ]
+          }, {
+            "name" : "apcu.php",
+            "color" : "",
+            "size" : 47,
+            "children" : [ ]
+          }, {
+            "name" : "array.php",
+            "color" : "",
+            "size" : 67,
+            "children" : [ ]
+          }, {
+            "name" : "bzip2.php",
+            "color" : "",
+            "size" : 50,
+            "children" : [ ]
+          }, {
+            "name" : "calendar.php",
+            "color" : "",
+            "size" : 16,
+            "children" : [ ]
+          }, {
+            "name" : "classobj.php",
+            "color" : "",
+            "size" : 11,
+            "children" : [ ]
+          }, {
+            "name" : "com.php",
+            "color" : "",
+            "size" : 64,
+            "children" : [ ]
+          }, {
+            "name" : "cubrid.php",
+            "color" : "",
+            "size" : 523,
+            "children" : [ ]
+          }, {
+            "name" : "curl.php",
+            "color" : "",
+            "size" : 116,
+            "children" : [ ]
+          }, {
+            "name" : "datetime.php",
+            "color" : "",
+            "size" : 193,
+            "children" : [ ]
+          }, {
+            "name" : "dir.php",
+            "color" : "",
+            "size" : 67,
+            "children" : [ ]
+          }, {
+            "name" : "eio.php",
+            "color" : "",
+            "size" : 364,
+            "children" : [ ]
+          }, {
+            "name" : "errorfunc.php",
+            "color" : "",
+            "size" : 17,
+            "children" : [ ]
+          }, {
+            "name" : "exec.php",
+            "color" : "",
+            "size" : 64,
+            "children" : [ ]
+          }, {
+            "name" : "fileinfo.php",
+            "color" : "",
+            "size" : 33,
+            "children" : [ ]
+          }, {
+            "name" : "filesystem.php",
+            "color" : "",
+            "size" : 478,
+            "children" : [ ]
+          }, {
+            "name" : "filter.php",
+            "color" : "",
+            "size" : 21,
+            "children" : [ ]
+          }, {
+            "name" : "fpm.php",
+            "color" : "",
+            "size" : 11,
+            "children" : [ ]
+          }, {
+            "name" : "ftp.php",
+            "color" : "",
+            "size" : 213,
+            "children" : [ ]
+          }, {
+            "name" : "funchand.php",
+            "color" : "",
+            "size" : 15,
+            "children" : [ ]
+          }, {
+            "name" : "functionsList.php",
+            "color" : "",
+            "size" : 1100,
+            "children" : [ ]
+          }, {
+            "name" : "gettext.php",
+            "color" : "",
+            "size" : 12,
+            "children" : [ ]
+          }, {
+            "name" : "gmp.php",
+            "color" : "",
+            "size" : 11,
+            "children" : [ ]
+          }, {
+            "name" : "gnupg.php",
+            "color" : "",
+            "size" : 71,
+            "children" : [ ]
+          }, {
+            "name" : "hash.php",
+            "color" : "",
+            "size" : 24,
+            "children" : [ ]
+          }, {
+            "name" : "ibase.php",
+            "color" : "",
+            "size" : 282,
+            "children" : [ ]
+          }, {
+            "name" : "ibmDb2.php",
+            "color" : "",
+            "size" : 129,
+            "children" : [ ]
+          }, {
+            "name" : "iconv.php",
+            "color" : "",
+            "size" : 64,
+            "children" : [ ]
+          }, {
+            "name" : "image.php",
+            "color" : "",
+            "size" : 820,
+            "children" : [ ]
+          }, {
+            "name" : "imap.php",
+            "color" : "",
+            "size" : 440,
+            "children" : [ ]
+          }, {
+            "name" : "info.php",
+            "color" : "",
+            "size" : 181,
+            "children" : [ ]
+          }, {
+            "name" : "inotify.php",
+            "color" : "",
+            "size" : 20,
+            "children" : [ ]
+          }, {
+            "name" : "json.php",
+            "color" : "",
+            "size" : 12,
+            "children" : [ ]
+          }, {
+            "name" : "ldap.php",
+            "color" : "",
+            "size" : 347,
+            "children" : [ ]
+          }, {
+            "name" : "libxml.php",
+            "color" : "",
+            "size" : 11,
+            "children" : [ ]
+          }, {
+            "name" : "lzf.php",
+            "color" : "",
+            "size" : 21,
+            "children" : [ ]
+          }, {
+            "name" : "mailparse.php",
+            "color" : "",
+            "size" : 49,
+            "children" : [ ]
+          }, {
+            "name" : "mbstring.php",
+            "color" : "",
+            "size" : 235,
+            "children" : [ ]
+          }, {
+            "name" : "misc.php",
+            "color" : "",
+            "size" : 131,
+            "children" : [ ]
+          }, {
+            "name" : "mysql.php",
+            "color" : "",
+            "size" : 286,
+            "children" : [ ]
+          }, {
+            "name" : "mysqli.php",
+            "color" : "",
+            "size" : 12,
+            "children" : [ ]
+          }, {
+            "name" : "network.php",
+            "color" : "",
+            "size" : 133,
+            "children" : [ ]
+          }, {
+            "name" : "oci8.php",
+            "color" : "",
+            "size" : 336,
+            "children" : [ ]
+          }, {
+            "name" : "opcache.php",
+            "color" : "",
+            "size" : 20,
+            "children" : [ ]
+          }, {
+            "name" : "openssl.php",
+            "color" : "",
+            "size" : 493,
+            "children" : [ ]
+          }, {
+            "name" : "outcontrol.php",
+            "color" : "",
+            "size" : 76,
+            "children" : [ ]
+          }, {
+            "name" : "pcntl.php",
+            "color" : "",
+            "size" : 74,
+            "children" : [ ]
+          }, {
+            "name" : "pcre.php",
+            "color" : "",
+            "size" : 57,
+            "children" : [ ]
+          }, {
+            "name" : "pgsql.php",
+            "color" : "",
+            "size" : 418,
+            "children" : [ ]
+          }, {
+            "name" : "posix.php",
+            "color" : "",
+            "size" : 181,
+            "children" : [ ]
+          }, {
+            "name" : "ps.php",
+            "color" : "",
+            "size" : 538,
+            "children" : [ ]
+          }, {
+            "name" : "pspell.php",
+            "color" : "",
+            "size" : 143,
+            "children" : [ ]
+          }, {
+            "name" : "readline.php",
+            "color" : "",
+            "size" : 59,
+            "children" : [ ]
+          }, {
+            "name" : "rector-migrate.php",
+            "color" : "",
+            "size" : 1107,
+            "children" : [ ]
+          }, {
+            "name" : "rpminfo.php",
+            "color" : "",
+            "size" : 11,
+            "children" : [ ]
+          }, {
+            "name" : "rrd.php",
+            "color" : "",
+            "size" : 84,
+            "children" : [ ]
+          }, {
+            "name" : "sem.php",
+            "color" : "",
+            "size" : 141,
+            "children" : [ ]
+          }, {
+            "name" : "session.php",
+            "color" : "",
+            "size" : 172,
+            "children" : [ ]
+          }, {
+            "name" : "shmop.php",
+            "color" : "",
+            "size" : 20,
+            "children" : [ ]
+          }, {
+            "name" : "sockets.php",
+            "color" : "",
+            "size" : 240,
+            "children" : [ ]
+          }, {
+            "name" : "sodium.php",
+            "color" : "",
+            "size" : 126,
+            "children" : [ ]
+          }, {
+            "name" : "solr.php",
+            "color" : "",
+            "size" : 12,
+            "children" : [ ]
+          }, {
+            "name" : "spl.php",
+            "color" : "",
+            "size" : 54,
+            "children" : [ ]
+          }, {
+            "name" : "sqlsrv.php",
+            "color" : "",
+            "size" : 197,
+            "children" : [ ]
+          }, {
+            "name" : "ssdeep.php",
+            "color" : "",
+            "size" : 30,
+            "children" : [ ]
+          }, {
+            "name" : "ssh2.php",
+            "color" : "",
+            "size" : 242,
+            "children" : [ ]
+          }, {
+            "name" : "stream.php",
+            "color" : "",
+            "size" : 226,
+            "children" : [ ]
+          }, {
+            "name" : "strings.php",
+            "color" : "",
+            "size" : 39,
+            "children" : [ ]
+          }, {
+            "name" : "swoole.php",
+            "color" : "",
+            "size" : 71,
+            "children" : [ ]
+          }, {
+            "name" : "uodbc.php",
+            "color" : "",
+            "size" : 332,
+            "children" : [ ]
+          }, {
+            "name" : "uopz.php",
+            "color" : "",
+            "size" : 19,
+            "children" : [ ]
+          }, {
+            "name" : "url.php",
+            "color" : "",
+            "size" : 43,
+            "children" : [ ]
+          }, {
+            "name" : "var.php",
+            "color" : "",
+            "size" : 11,
+            "children" : [ ]
+          }, {
+            "name" : "xdiff.php",
+            "color" : "",
+            "size" : 84,
+            "children" : [ ]
+          }, {
+            "name" : "xml.php",
+            "color" : "",
+            "size" : 91,
+            "children" : [ ]
+          }, {
+            "name" : "xmlrpc.php",
+            "color" : "",
+            "size" : 11,
+            "children" : [ ]
+          }, {
+            "name" : "yaml.php",
+            "color" : "",
+            "size" : 42,
+            "children" : [ ]
+          }, {
+            "name" : "yaz.php",
+            "color" : "",
+            "size" : 73,
+            "children" : [ ]
+          }, {
+            "name" : "zip.php",
+            "color" : "",
+            "size" : 64,
+            "children" : [ ]
+          }, {
+            "name" : "zlib.php",
+            "color" : "",
+            "size" : 216,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.2",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "array.php",
+            "color" : "",
+            "size" : 55,
+            "children" : [ ]
+          }, {
+            "name" : "curl.php",
+            "color" : "",
+            "size" : 124,
+            "children" : [ ]
+          }, {
+            "name" : "datetime.php",
+            "color" : "",
+            "size" : 206,
+            "children" : [ ]
+          }, {
+            "name" : "errorfunc.php",
+            "color" : "",
+            "size" : 17,
+            "children" : [ ]
+          }, {
+            "name" : "exec.php",
+            "color" : "",
+            "size" : 64,
+            "children" : [ ]
+          }, {
+            "name" : "filesystem.php",
+            "color" : "",
+            "size" : 478,
+            "children" : [ ]
+          }, {
+            "name" : "fpm.php",
+            "color" : "",
+            "size" : 20,
+            "children" : [ ]
+          }, {
+            "name" : "functionsList.php",
+            "color" : "",
+            "size" : 1137,
+            "children" : [ ]
+          }, {
+            "name" : "gmp.php",
+            "color" : "",
+            "size" : 8,
+            "children" : [ ]
+          }, {
+            "name" : "gnupg.php",
+            "color" : "",
+            "size" : 79,
+            "children" : [ ]
+          }, {
+            "name" : "hash.php",
+            "color" : "",
+            "size" : 21,
+            "children" : [ ]
+          }, {
+            "name" : "image.php",
+            "color" : "",
+            "size" : 817,
+            "children" : [ ]
+          }, {
+            "name" : "imap.php",
+            "color" : "",
+            "size" : 440,
+            "children" : [ ]
+          }, {
+            "name" : "ldap.php",
+            "color" : "",
+            "size" : 347,
+            "children" : [ ]
+          }, {
+            "name" : "misc.php",
+            "color" : "",
+            "size" : 128,
+            "children" : [ ]
+          }, {
+            "name" : "mysqli.php",
+            "color" : "",
+            "size" : 9,
+            "children" : [ ]
+          }, {
+            "name" : "network.php",
+            "color" : "",
+            "size" : 142,
+            "children" : [ ]
+          }, {
+            "name" : "oci8.php",
+            "color" : "",
+            "size" : 344,
+            "children" : [ ]
+          }, {
+            "name" : "openssl.php",
+            "color" : "",
+            "size" : 505,
+            "children" : [ ]
+          }, {
+            "name" : "rector-migrate.php",
+            "color" : "",
+            "size" : 1144,
+            "children" : [ ]
+          }, {
+            "name" : "rnp.php",
+            "color" : "",
+            "size" : 269,
+            "children" : [ ]
+          }, {
+            "name" : "sodium.php",
+            "color" : "",
+            "size" : 135,
+            "children" : [ ]
+          }, {
+            "name" : "ssh2.php",
+            "color" : "",
+            "size" : 242,
+            "children" : [ ]
+          }, {
+            "name" : "stream.php",
+            "color" : "",
+            "size" : 250,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.3",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "rector-migrate.php",
+            "color" : "",
+            "size" : 1144,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.4",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "apache.php",
+            "color" : "",
+            "size" : 64,
+            "children" : [ ]
+          }, {
+            "name" : "array.php",
+            "color" : "",
+            "size" : 59,
+            "children" : [ ]
+          }, {
+            "name" : "curl.php",
+            "color" : "",
+            "size" : 118,
+            "children" : [ ]
+          }, {
+            "name" : "datetime.php",
+            "color" : "",
+            "size" : 210,
+            "children" : [ ]
+          }, {
+            "name" : "ftp.php",
+            "color" : "",
+            "size" : 222,
+            "children" : [ ]
+          }, {
+            "name" : "functionsList.php",
+            "color" : "",
+            "size" : 1105,
+            "children" : [ ]
+          }, {
+            "name" : "gettext.php",
+            "color" : "",
+            "size" : 16,
+            "children" : [ ]
+          }, {
+            "name" : "ibmDb2.php",
+            "color" : "",
+            "size" : 124,
+            "children" : [ ]
+          }, {
+            "name" : "image.php",
+            "color" : "",
+            "size" : 811,
+            "children" : [ ]
+          }, {
+            "name" : "imap.php",
+            "color" : "",
+            "size" : 427,
+            "children" : [ ]
+          }, {
+            "name" : "info.php",
+            "color" : "",
+            "size" : 174,
+            "children" : [ ]
+          }, {
+            "name" : "inotify.php",
+            "color" : "",
+            "size" : 29,
+            "children" : [ ]
+          }, {
+            "name" : "ldap.php",
+            "color" : "",
+            "size" : 344,
+            "children" : [ ]
+          }, {
+            "name" : "mbstring.php",
+            "color" : "",
+            "size" : 232,
+            "children" : [ ]
+          }, {
+            "name" : "misc.php",
+            "color" : "",
+            "size" : 122,
+            "children" : [ ]
+          }, {
+            "name" : "network.php",
+            "color" : "",
+            "size" : 133,
+            "children" : [ ]
+          }, {
+            "name" : "openssl.php",
+            "color" : "",
+            "size" : 507,
+            "children" : [ ]
+          }, {
+            "name" : "outcontrol.php",
+            "color" : "",
+            "size" : 85,
+            "children" : [ ]
+          }, {
+            "name" : "pgsql.php",
+            "color" : "",
+            "size" : 428,
+            "children" : [ ]
+          }, {
+            "name" : "posix.php",
+            "color" : "",
+            "size" : 193,
+            "children" : [ ]
+          }, {
+            "name" : "pspell.php",
+            "color" : "",
+            "size" : 140,
+            "children" : [ ]
+          }, {
+            "name" : "readline.php",
+            "color" : "",
+            "size" : 53,
+            "children" : [ ]
+          }, {
+            "name" : "rector-migrate.php",
+            "color" : "",
+            "size" : 1112,
+            "children" : [ ]
+          }, {
+            "name" : "sockets.php",
+            "color" : "",
+            "size" : 248,
+            "children" : [ ]
+          }, {
+            "name" : "sodium.php",
+            "color" : "",
+            "size" : 151,
+            "children" : [ ]
+          }, {
+            "name" : "stream.php",
+            "color" : "",
+            "size" : 258,
+            "children" : [ ]
+          }, {
+            "name" : "uodbc.php",
+            "color" : "",
+            "size" : 309,
+            "children" : [ ]
+          }, {
+            "name" : "xml.php",
+            "color" : "",
+            "size" : 79,
+            "children" : [ ]
+          }, {
+            "name" : "zlib.php",
+            "color" : "",
+            "size" : 210,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.5",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "functionsList.php",
+            "color" : "",
+            "size" : 1108,
+            "children" : [ ]
+          }, {
+            "name" : "pcntl.php",
+            "color" : "",
+            "size" : 101,
+            "children" : [ ]
+          }, {
+            "name" : "rector-migrate.php",
+            "color" : "",
+            "size" : 1115,
+            "children" : [ ]
+          }, {
+            "name" : "rpminfo.php",
+            "color" : "",
+            "size" : 19,
+            "children" : [ ]
+          }, {
+            "name" : "shmop.php",
+            "color" : "",
+            "size" : 17,
+            "children" : [ ]
+          }, {
+            "name" : "uodbc.php",
+            "color" : "",
+            "size" : 325,
+            "children" : [ ]
+          }, {
+            "name" : "xdiff.php",
+            "color" : "",
+            "size" : 93,
+            "children" : [ ]
+          }, {
+            "name" : "zlib.php",
+            "color" : "",
+            "size" : 210,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "8.6",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "functionsList.php",
+            "color" : "",
+            "size" : 1107,
+            "children" : [ ]
+          }, {
+            "name" : "ldap.php",
+            "color" : "",
+            "size" : 344,
+            "children" : [ ]
+          }, {
+            "name" : "openssl.php",
+            "color" : "",
+            "size" : 515,
+            "children" : [ ]
+          }, {
+            "name" : "pcntl.php",
+            "color" : "",
+            "size" : 101,
+            "children" : [ ]
+          }, {
+            "name" : "rector-migrate.php",
+            "color" : "",
+            "size" : 1114,
+            "children" : [ ]
+          }, {
+            "name" : "yaml.php",
+            "color" : "",
+            "size" : 39,
+            "children" : [ ]
+          }, {
+            "name" : "zlib.php",
+            "color" : "",
+            "size" : 210,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "apache.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "apcu.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "array.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "bzip2.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "calendar.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "classobj.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "com.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "cubrid.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "curl.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "datetime.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "dir.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "eio.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "errorfunc.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "Exceptions",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "ApacheException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ApcuException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ArrayException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "Bzip2Exception.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "CalendarException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ClassobjException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ComException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "CubridException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "DatetimeException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "DirException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "EioException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ErrorfuncException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ExecException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "FileinfoException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "FilesystemException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "FilterException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "FpmException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "FtpException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "FunchandException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "GettextException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "GmpException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "GnupgException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "HashException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "IbaseException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "IbmDb2Exception.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "IconvException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ImageException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ImapException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "InfoException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "InotifyException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "LdapException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "LibxmlException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "LzfException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "MailparseException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "MbstringException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "MiscException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "MysqlException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "MysqliException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "NetworkException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "Oci8Exception.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "OpcacheException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "OutcontrolException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "PcntlException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "PgsqlException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "PosixException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "PsException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "PspellException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ReadlineException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "RnpException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "RpminfoException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "RrdException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SemException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SessionException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ShmopException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SocketsException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SodiumException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SolrException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SplException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SqlsrvException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SsdeepException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "Ssh2Exception.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "StreamException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "StringsException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "SwooleException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "UodbcException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "UopzException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "UrlException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "VarException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "XdiffException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "XmlException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "XmlrpcException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "YamlException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "YazException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ZipException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          }, {
+            "name" : "ZlibException.php",
+            "color" : "",
+            "size" : 10,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "exec.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "fileinfo.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "filesystem.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "filter.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "fpm.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ftp.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "funchand.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "functionsList.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "gettext.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "gmp.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "gnupg.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "hash.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ibase.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ibmDb2.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "iconv.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "image.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "imap.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "info.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "inotify.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "json.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ldap.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "libxml.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "lzf.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "mailparse.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "mbstring.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "misc.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "mysql.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "mysqli.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "network.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "oci8.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "opcache.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "openssl.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "outcontrol.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "pcntl.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "pcre.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "pgsql.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "posix.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ps.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "pspell.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "readline.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "rnp.php",
+          "color" : "",
+          "size" : 16,
+          "children" : [ ]
+        }, {
+          "name" : "rpminfo.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "rrd.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "sem.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "session.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "shmop.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "sockets.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "sodium.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "solr.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "spl.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "sqlsrv.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ssdeep.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ssh2.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "stream.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "strings.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "swoole.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "uodbc.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "uopz.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "url.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "var.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "xdiff.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "xml.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "xmlrpc.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "yaml.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "yaz.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "zip.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "zlib.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        } ]
+      } ]
+    } ]
+  } ]
+} ]
+    }
+
+
+    root = d3.hierarchy(rootData);
+    root.sum(d => d.size);
+
+    const slice = svg.selectAll('g.slice')
+        .data(partition(root).descendants());
+
+    slice.exit().remove();
+
+    const newSlice = slice.enter()
+        .append('g').attr('class', 'slice')
+        .on('click', d => {
+            d3.event.stopPropagation();
+            focusOn(d);
+        });
+
+    newSlice.append('title')
+        .text(d => d.data.name + '\n' + formatNumber(d.value));
+
+    newSlice.append('path')
+        .attr('class', 'main-arc')
+        .style('fill', d => color((d.children ? d : d.parent).data.name))
+        .attr('d', arc);
+
+    newSlice.append('path')
+        .attr('class', 'hidden-arc')
+        .attr('id', (_, i) => `hiddenArc${i}`)
+        .attr('d', middleArcLine);
+
+    const text = newSlice.append('text')
+        .attr('display', d => textFits(d) ? null : 'none');
+
+    // Add white contour
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name)
+        .style('fill', 'none')
+        .style('stroke', '#fff')
+        .style('stroke-width', 5)
+        .style('stroke-linejoin', 'round');
+
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name);
+
+    function focusOn(d = {x0: 0, x1: 1, y0: 0, y1: 1}) {
+        const transition = svg.transition()
+            .duration(750)
+            .tween('scale', () => {
+                const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
+                    yd = d3.interpolate(y.domain(), [d.y0, 1]);
+                return t => {
+                    x.domain(xd(t));
+                    y.domain(yd(t));
+                };
+            });
+
+        transition.selectAll('path.main-arc')
+            .attrTween('d', d => () => arc(d));
+
+        transition.selectAll('path.hidden-arc')
+            .attrTween('d', d => () => middleArcLine(d));
+
+        transition.selectAll('text')
+            .attrTween('display', d => () => textFits(d) ? null : 'none');
+
+        moveStackToFront(d);
+
+        //
+
+        function moveStackToFront(elD) {
+            svg.selectAll('.slice').filter(d => d === elD)
+                .each(function (d) {
+                    this.parentNode.appendChild(this);
+                    if (d.parent) {
+                        moveStackToFront(d.parent);
+                    }
+                })
+        }
+    }
+</script>
+</body>

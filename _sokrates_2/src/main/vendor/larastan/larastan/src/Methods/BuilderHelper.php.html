@@ -1,0 +1,316 @@
+<html>
+<head>
+    <title>vendor/larastan/larastan/src/Methods/BuilderHelper.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/larastan/larastan/src/Methods/BuilderHelper.php (<b>208</b> lines of code) (<a href="BuilderHelper.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+declare(strict_types=1);
+
+namespace Larastan\Larastan\Methods;
+
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder as QueryBuilder;
+use Illuminate\Support\Str;
+use Larastan\Larastan\Reflection\AnnotationScopeMethodParameterReflection;
+use Larastan\Larastan\Reflection\DynamicWhereParameterReflection;
+use Larastan\Larastan\Reflection\EloquentBuilderMethodReflection;
+use PhpParser\Node\Expr\ClassConstFetch;
+use PhpParser\Node\Name;
+use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\MethodReflection;
+use PHPStan\Reflection\MissingMethodFromReflectionException;
+use PHPStan\Reflection\ReflectionProvider;
+use PHPStan\ShouldNotHappenException;
+use PHPStan\TrinaryLogic;
+use PHPStan\Type\Generic\GenericObjectType;
+use PHPStan\Type\Type;
+use PHPStan\Type\VerbosityLevel;
+
+use function array_key_exists;
+use function array_shift;
+use function count;
+use function defined;
+use function in_array;
+use function preg_split;
+use function substr;
+use function ucfirst;
+use function version_compare;
+
+use const PREG_SPLIT_DELIM_CAPTURE;
+
+class BuilderHelper
+{
+    public const MODEL_RETRIEVAL_METHODS = ['first', 'find', 'findMany', 'findOrFail', 'firstOrFail', 'sole'];
+
+    public const MODEL_CREATION_METHODS = ['make', 'create', 'forceCreate', 'findOrNew', 'firstOrNew', 'updateOrCreate', 'firstOrCreate', 'createOrFirst'];
+
+    /**
+     * The methods that should be returned from query builder.
+     *
+     * @var string[]
+     */
+    public array $passthru = [
+        'average',
+        'avg',
+        'count',
+        'dd',
+        'dump',
+        'doesntExist',
+        'exists',
+        'getBindings',
+        'getConnection',
+        'getGrammar',
+        'insert',
+        'insertGetId',
+        'insertOrIgnore',
+        'insertUsing',
+        'max',
+        'min',
+        'raw',
+        'sum',
+        'toSql',
+        'toRawSql',
+        'dumpRawSql',
+        'ddRawSql',
+    ];
+
+    public function __construct(
+        private ReflectionProvider $reflectionProvider,
+        private bool $checkProperties,
+        private MacroMethodsClassReflectionExtension $macroMethodsClassReflectionExtension,
+    ) {
+        // @phpstan-ignore-next-line
+        if (! defined('LARAVEL_VERSION') || version_compare(LARAVEL_VERSION, '12.15.0', '&lt;')) {
+            return;
+        }
+
+        // @phpstan-ignore-next-line
+        $this-&gt;passthru[] = 'getCountForPagination';
+    }
+
+    public function dynamicWhere(
+        string $methodName,
+        Type $returnObject,
+    ): EloquentBuilderMethodReflection|null {
+        if (! Str::startsWith($methodName, 'where')) {
+            return null;
+        }
+
+        if (count($returnObject-&gt;getObjectClassReflections()) &gt; 0 &amp;&amp; $this-&gt;checkProperties) {
+            $returnClassReflection = $returnObject-&gt;getObjectClassReflections()[0];
+
+            $modelType = $returnClassReflection-&gt;getActiveTemplateTypeMap()-&gt;getType('TModel')
+                ?? $returnClassReflection-&gt;getActiveTemplateTypeMap()-&gt;getType('TRelatedModel');
+
+            if ($modelType !== null) {
+                $finder = substr($methodName, 5);
+
+                $segments = preg_split('/(And|Or)(?=[A-Z])/', $finder, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+                if ($segments !== false) {
+                    $trinaryLogic = TrinaryLogic::createYes();
+
+                    foreach ($segments as $segment) {
+                        if ($segment === 'And' || $segment === 'Or') {
+                            continue;
+                        }
+
+                        $trinaryLogic = $trinaryLogic-&gt;and($modelType-&gt;hasInstanceProperty(Str::snake($segment)));
+                    }
+
+                    if (! $trinaryLogic-&gt;yes()) {
+                        return null;
+                    }
+                }
+            }
+        }
+
+        $classReflection = $this-&gt;reflectionProvider-&gt;getClass(QueryBuilder::class);
+
+        return new EloquentBuilderMethodReflection(
+            $methodName,
+            $classReflection,
+            [new DynamicWhereParameterReflection()],
+            $returnObject,
+            true,
+        );
+    }
+
+    /**
+     * This method mimics the `EloquentBuilder::__call` method.
+     * Does not handle the case where $methodName exists in `EloquentBuilder`,
+     * that should be checked by caller before calling this method.
+     *
+     * @param  ClassReflection $eloquentBuilder Can be `EloquentBuilder` or a custom builder extending it.
+     *
+     * @throws MissingMethodFromReflectionException
+     * @throws ShouldNotHappenException
+     */
+    public function searchOnEloquentBuilder(ClassReflection $eloquentBuilder, string $methodName, Type $modelType): MethodReflection|null
+    {
+        // Check for macros first
+        if ($this-&gt;macroMethodsClassReflectionExtension-&gt;hasMethod($eloquentBuilder, $methodName)) {
+            return $this-&gt;macroMethodsClassReflectionExtension-&gt;getMethod($eloquentBuilder, $methodName);
+        }
+
+        $scopeName = 'scope' . ucfirst($methodName);
+
+        foreach ($modelType-&gt;getObjectClassReflections() as $reflection) {
+            // Check for Scope attribute
+            if ($reflection-&gt;hasNativeMethod($methodName)) {
+                $methodReflection  = $reflection-&gt;getNativeMethod($methodName);
+                $hasScopeAttribute = false;
+                foreach ($methodReflection-&gt;getAttributes() as $attribute) {
+                    // using string instead of class constant to avoid failing on older Laravel versions
+                    if ($attribute-&gt;getName() === 'Illuminate\Database\Eloquent\Attributes\Scope') {
+                        $hasScopeAttribute = true;
+                        break;
+                    }
+                }
+
+                if (! $methodReflection-&gt;isPublic() &amp;&amp; $hasScopeAttribute) {
+                    $parametersAcceptor = $methodReflection-&gt;getVariants()[0];
+
+                    $parameters = $parametersAcceptor-&gt;getParameters();
+                    // We shift the parameters,
+                    // because first parameter is the Builder
+                    array_shift($parameters);
+
+                    $returnType = $parametersAcceptor-&gt;getReturnType();
+
+                    return new EloquentBuilderMethodReflection(
+                        $methodName,
+                        $methodReflection-&gt;getDeclaringClass(),
+                        $parameters,
+                        $returnType,
+                        $parametersAcceptor-&gt;isVariadic(),
+                    );
+                }
+            }
+
+            // Check for @method phpdoc tags
+            if (array_key_exists($scopeName, $reflection-&gt;getMethodTags())) {
+                $methodTag = $reflection-&gt;getMethodTags()[$scopeName];
+
+                $parameters = [];
+                foreach ($methodTag-&gt;getParameters() as $parameterName =&gt; $parameterTag) {
+                    $parameters[] = new AnnotationScopeMethodParameterReflection(
+                        $parameterName,
+                        $parameterTag-&gt;getType(),
+                        $parameterTag-&gt;passedByReference(),
+                        $parameterTag-&gt;isOptional(),
+                        $parameterTag-&gt;isVariadic(),
+                        $parameterTag-&gt;getDefaultValue(),
+                    );
+                }
+
+                // We shift the parameters,
+                // because first parameter is the Builder
+                array_shift($parameters);
+
+                return new EloquentBuilderMethodReflection(
+                    $scopeName,
+                    $reflection,
+                    $parameters,
+                    $methodTag-&gt;getReturnType(),
+                );
+            }
+
+            if ($reflection-&gt;hasNativeMethod($scopeName)) {
+                $methodReflection   = $reflection-&gt;getNativeMethod($scopeName);
+                $parametersAcceptor = $methodReflection-&gt;getVariants()[0];
+
+                $parameters = $parametersAcceptor-&gt;getParameters();
+                // We shift the parameters,
+                // because first parameter is the Builder
+                array_shift($parameters);
+
+                $returnType = $parametersAcceptor-&gt;getReturnType();
+
+                return new EloquentBuilderMethodReflection(
+                    $scopeName,
+                    $methodReflection-&gt;getDeclaringClass(),
+                    $parameters,
+                    $returnType,
+                    $parametersAcceptor-&gt;isVariadic(),
+                );
+            }
+        }
+
+        $queryBuilderReflection = $this-&gt;reflectionProvider-&gt;getClass(QueryBuilder::class);
+
+        if (in_array($methodName, $this-&gt;passthru, true)) {
+            return $queryBuilderReflection-&gt;getNativeMethod($methodName);
+        }
+
+        if ($queryBuilderReflection-&gt;hasNativeMethod($methodName)) {
+            return $queryBuilderReflection-&gt;getNativeMethod($methodName);
+        }
+
+        // Check for query builder macros
+        if ($this-&gt;macroMethodsClassReflectionExtension-&gt;hasMethod($queryBuilderReflection, $methodName)) {
+            return $this-&gt;macroMethodsClassReflectionExtension-&gt;getMethod($queryBuilderReflection, $methodName);
+        }
+
+        return $this-&gt;dynamicWhere($methodName, new GenericObjectType($eloquentBuilder-&gt;getName(), [$modelType]));
+    }
+
+    /**
+     * @throws MissingMethodFromReflectionException
+     * @throws ShouldNotHappenException
+     */
+    public function determineBuilderName(string $modelClassName): string
+    {
+        $modelReflection = $this-&gt;reflectionProvider-&gt;getClass($modelClassName);
+        $method          = $modelReflection-&gt;getNativeMethod('newEloquentBuilder');
+
+        if ($method-&gt;getDeclaringClass()-&gt;getName() === Model::class) {
+            $attrs = $modelReflection-&gt;getNativeReflection()-&gt;getAttributes('Illuminate\Database\Eloquent\Attributes\UseEloquentBuilder'); //@phpstan-ignore argument.type (Attribute class might not exist)
+
+            if ($attrs !== []) {
+                $expr =  $attrs[0]-&gt;getArgumentsExpressions()[0];
+
+                if ($expr instanceof ClassConstFetch &amp;&amp; $expr-&gt;class instanceof Name) {
+                    return $expr-&gt;class-&gt;toString();
+                }
+            }
+        }
+
+        $returnType = $method-&gt;getVariants()[0]-&gt;getReturnType();
+
+        if (in_array(EloquentBuilder::class, $returnType-&gt;getReferencedClasses(), true)) {
+            return EloquentBuilder::class;
+        }
+
+        $classNames = $returnType-&gt;getObjectClassNames();
+
+        if (count($classNames) === 1) {
+            return $classNames[0];
+        }
+
+        return $returnType-&gt;describe(VerbosityLevel::value());
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

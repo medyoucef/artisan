@@ -1,0 +1,3494 @@
+[ {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Any.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Api.php",
+  "extension" : "php",
+  "linesOfCode" : 108,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/BoolValue.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/BytesValue.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/DoubleValue.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Duration.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Enum.php",
+  "extension" : "php",
+  "linesOfCode" : 86,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/EnumValue.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Field/Cardinality.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Field/Kind.php",
+  "extension" : "php",
+  "linesOfCode" : 63,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Field.php",
+  "extension" : "php",
+  "linesOfCode" : 122,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/FieldMask.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Field_Cardinality.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Field_Kind.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/FloatValue.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/GPBEmpty.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Int32Value.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Int64Value.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/DescriptorProto/ExtensionRange.php",
+  "extension" : "php",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/DescriptorProto/ReservedRange.php",
+  "extension" : "php",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/DescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 159,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/Edition.php",
+  "extension" : "php",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/EnumDescriptorProto/EnumReservedRange.php",
+  "extension" : "php",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/EnumDescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 104,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/EnumOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 109,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/EnumValueDescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/EnumValueOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 101,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/ExtensionRangeOptions/Declaration.php",
+  "extension" : "php",
+  "linesOfCode" : 109,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/ExtensionRangeOptions/VerificationState.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/ExtensionRangeOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 74,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/EnforceNamingStyle.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/EnumType.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/FieldPresence.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/JsonFormat.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/MessageEncoding.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/RepeatedFieldEncoding.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/Utf8Validation.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/VisibilityFeature/DefaultSymbolVisibility.php",
+  "extension" : "php",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet/VisibilityFeature.php",
+  "extension" : "php",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSet.php",
+  "extension" : "php",
+  "linesOfCode" : 166,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSetDefaults/FeatureSetEditionDefault.php",
+  "extension" : "php",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FeatureSetDefaults.php",
+  "extension" : "php",
+  "linesOfCode" : 63,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldDescriptorProto/Label.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldDescriptorProto/Type.php",
+  "extension" : "php",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldDescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 223,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldOptions/CType.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldOptions/EditionDefault.php",
+  "extension" : "php",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldOptions/FeatureSupport.php",
+  "extension" : "php",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldOptions/JSType.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldOptions/OptionRetention.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldOptions/OptionTargetType.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FieldOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 264,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FileDescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 216,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FileDescriptorSet.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FileOptions/OptimizeMode.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/FileOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 413,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/GeneratedCodeInfo/Annotation/Semantic.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/GeneratedCodeInfo/Annotation.php",
+  "extension" : "php",
+  "linesOfCode" : 101,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/GeneratedCodeInfo.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/MessageOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 147,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/MethodDescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 128,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/MethodOptions/IdempotencyLevel.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/MethodOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 82,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/OneofDescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/OneofOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/ServiceDescriptorProto.php",
+  "extension" : "php",
+  "linesOfCode" : 63,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/ServiceOptions.php",
+  "extension" : "php",
+  "linesOfCode" : 63,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/SourceCodeInfo/Location.php",
+  "extension" : "php",
+  "linesOfCode" : 85,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/SourceCodeInfo.php",
+  "extension" : "php",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/SymbolVisibility.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/UninterpretedOption/NamePart.php",
+  "extension" : "php",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Internal/UninterpretedOption.php",
+  "extension" : "php",
+  "linesOfCode" : 139,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/ListValue.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Method.php",
+  "extension" : "php",
+  "linesOfCode" : 108,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Mixin.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/NullValue.php",
+  "extension" : "php",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Option.php",
+  "extension" : "php",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/SourceContext.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/StringValue.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Struct.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Syntax.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Timestamp.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Type.php",
+  "extension" : "php",
+  "linesOfCode" : 97,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/UInt32Value.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/UInt64Value.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/Google/Protobuf/Value.php",
+  "extension" : "php",
+  "linesOfCode" : 101,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Any.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Duration.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/FieldMask.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/GPBEmpty.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Internal/Descriptor.php",
+  "extension" : "php",
+  "linesOfCode" : 391,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/SourceContext.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Timestamp.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/google/protobuf/src/GPBMetadata/Google/Protobuf/Wrappers.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/laravel/framework/src/Illuminate/Foundation/resources/exceptions/renderer/package-lock.json",
+  "extension" : "json",
+  "linesOfCode" : 2297,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Logs/V1/ExportLogsPartialSuccess.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Logs/V1/ExportLogsServiceRequest.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Logs/V1/ExportLogsServiceResponse.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Metrics/V1/ExportMetricsPartialSuccess.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Metrics/V1/ExportMetricsServiceRequest.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Metrics/V1/ExportMetricsServiceResponse.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Profiles/V1development/ExportProfilesPartialSuccess.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Profiles/V1development/ExportProfilesServiceRequest.php",
+  "extension" : "php",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Profiles/V1development/ExportProfilesServiceResponse.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Trace/V1/ExportTracePartialSuccess.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Trace/V1/ExportTraceServiceRequest.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Collector/Trace/V1/ExportTraceServiceResponse.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/AnyValue.php",
+  "extension" : "php",
+  "linesOfCode" : 115,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/ArrayValue.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/EntityRef.php",
+  "extension" : "php",
+  "linesOfCode" : 56,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/InstrumentationLibrary.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/InstrumentationScope.php",
+  "extension" : "php",
+  "linesOfCode" : 56,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/KeyValue.php",
+  "extension" : "php",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/KeyValueList.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Common/V1/StringKeyValue.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Logs/V1/InstrumentationLibraryLogs.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Logs/V1/LogRecord.php",
+  "extension" : "php",
+  "linesOfCode" : 141,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Logs/V1/LogRecordFlags.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Logs/V1/LogsData.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Logs/V1/ResourceLogs.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Logs/V1/ScopeLogs.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Logs/V1/SeverityNumber.php",
+  "extension" : "php",
+  "linesOfCode" : 75,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/Experimental/MetricConfigRequest.php",
+  "extension" : "php",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/Experimental/MetricConfigResponse/Schedule/Pattern.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/Experimental/MetricConfigResponse/Schedule.php",
+  "extension" : "php",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/Experimental/MetricConfigResponse.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/Experimental/MetricConfigResponse_Schedule.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/Experimental/MetricConfigResponse_Schedule_Pattern.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/AggregationTemporality.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/DataPointFlags.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/Exemplar.php",
+  "extension" : "php",
+  "linesOfCode" : 89,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/ExponentialHistogram.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/ExponentialHistogramDataPoint/Buckets.php",
+  "extension" : "php",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/ExponentialHistogramDataPoint.php",
+  "extension" : "php",
+  "linesOfCode" : 206,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/ExponentialHistogramDataPoint_Buckets.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/Gauge.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/Histogram.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/HistogramDataPoint.php",
+  "extension" : "php",
+  "linesOfCode" : 157,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/InstrumentationLibraryMetrics.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/IntDataPoint.php",
+  "extension" : "php",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/IntExemplar.php",
+  "extension" : "php",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/IntGauge.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/IntHistogram.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/IntHistogramDataPoint.php",
+  "extension" : "php",
+  "linesOfCode" : 100,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/IntSum.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/Metric.php",
+  "extension" : "php",
+  "linesOfCode" : 131,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/MetricsData.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/NumberDataPoint.php",
+  "extension" : "php",
+  "linesOfCode" : 100,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/ResourceMetrics.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/ScopeMetrics.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/Sum.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/Summary.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/SummaryDataPoint/ValueAtQuantile.php",
+  "extension" : "php",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/SummaryDataPoint.php",
+  "extension" : "php",
+  "linesOfCode" : 89,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Metrics/V1/SummaryDataPoint_ValueAtQuantile.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/AggregationTemporality.php",
+  "extension" : "php",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/AttributeUnit.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/KeyValueAndUnit.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/Line.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/Link.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/Location.php",
+  "extension" : "php",
+  "linesOfCode" : 56,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/Mapping.php",
+  "extension" : "php",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/PBFunction.php",
+  "extension" : "php",
+  "linesOfCode" : 56,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/Profile.php",
+  "extension" : "php",
+  "linesOfCode" : 160,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/ProfilesData.php",
+  "extension" : "php",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/ProfilesDictionary.php",
+  "extension" : "php",
+  "linesOfCode" : 89,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/ResourceProfiles.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/Sample.php",
+  "extension" : "php",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/ScopeProfiles.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/Stack.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Profiles/V1development/ValueType.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Resource/V1/Resource.php",
+  "extension" : "php",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/ConstantSampler/ConstantDecision.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/ConstantSampler.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/ConstantSampler_ConstantDecision.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/InstrumentationLibrarySpans.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/RateLimitingSampler.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/ResourceSpans.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/ScopeSpans.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Span/Event.php",
+  "extension" : "php",
+  "linesOfCode" : 57,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Span/Link.php",
+  "extension" : "php",
+  "linesOfCode" : 79,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Span/SpanKind.php",
+  "extension" : "php",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Span.php",
+  "extension" : "php",
+  "linesOfCode" : 196,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/SpanFlags.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Span_Event.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Span_Link.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Span_SpanKind.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Status/DeprecatedStatusCode.php",
+  "extension" : "php",
+  "linesOfCode" : 60,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Status/StatusCode.php",
+  "extension" : "php",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Status.php",
+  "extension" : "php",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Status_DeprecatedStatusCode.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/Status_StatusCode.php",
+  "extension" : "php",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/TraceConfig.php",
+  "extension" : "php",
+  "linesOfCode" : 114,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/TraceIdRatioBased.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/open-telemetry/gen-otlp-protobuf/Opentelemetry/Proto/Trace/V1/TracesData.php",
+  "extension" : "php",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/apache.php",
+  "extension" : "php",
+  "linesOfCode" : 73,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/apcu.php",
+  "extension" : "php",
+  "linesOfCode" : 47,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/array.php",
+  "extension" : "php",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/bzip2.php",
+  "extension" : "php",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/calendar.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/classobj.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/com.php",
+  "extension" : "php",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/cubrid.php",
+  "extension" : "php",
+  "linesOfCode" : 523,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/curl.php",
+  "extension" : "php",
+  "linesOfCode" : 116,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/datetime.php",
+  "extension" : "php",
+  "linesOfCode" : 193,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/dir.php",
+  "extension" : "php",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/eio.php",
+  "extension" : "php",
+  "linesOfCode" : 364,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/errorfunc.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/exec.php",
+  "extension" : "php",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/fileinfo.php",
+  "extension" : "php",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/filesystem.php",
+  "extension" : "php",
+  "linesOfCode" : 478,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/filter.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/fpm.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/ftp.php",
+  "extension" : "php",
+  "linesOfCode" : 213,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/funchand.php",
+  "extension" : "php",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/functionsList.php",
+  "extension" : "php",
+  "linesOfCode" : 1100,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/gettext.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/gmp.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/gnupg.php",
+  "extension" : "php",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/hash.php",
+  "extension" : "php",
+  "linesOfCode" : 24,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/ibase.php",
+  "extension" : "php",
+  "linesOfCode" : 282,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/ibmDb2.php",
+  "extension" : "php",
+  "linesOfCode" : 129,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/iconv.php",
+  "extension" : "php",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/image.php",
+  "extension" : "php",
+  "linesOfCode" : 820,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/imap.php",
+  "extension" : "php",
+  "linesOfCode" : 440,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/info.php",
+  "extension" : "php",
+  "linesOfCode" : 181,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/inotify.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/json.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/ldap.php",
+  "extension" : "php",
+  "linesOfCode" : 347,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/libxml.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/lzf.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/mailparse.php",
+  "extension" : "php",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/mbstring.php",
+  "extension" : "php",
+  "linesOfCode" : 235,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/misc.php",
+  "extension" : "php",
+  "linesOfCode" : 131,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/mysql.php",
+  "extension" : "php",
+  "linesOfCode" : 286,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/mysqli.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/network.php",
+  "extension" : "php",
+  "linesOfCode" : 133,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/oci8.php",
+  "extension" : "php",
+  "linesOfCode" : 336,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/opcache.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/openssl.php",
+  "extension" : "php",
+  "linesOfCode" : 493,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/outcontrol.php",
+  "extension" : "php",
+  "linesOfCode" : 76,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/pcntl.php",
+  "extension" : "php",
+  "linesOfCode" : 74,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/pcre.php",
+  "extension" : "php",
+  "linesOfCode" : 57,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/pgsql.php",
+  "extension" : "php",
+  "linesOfCode" : 418,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/posix.php",
+  "extension" : "php",
+  "linesOfCode" : 181,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/ps.php",
+  "extension" : "php",
+  "linesOfCode" : 538,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/pspell.php",
+  "extension" : "php",
+  "linesOfCode" : 143,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/readline.php",
+  "extension" : "php",
+  "linesOfCode" : 59,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/rector-migrate.php",
+  "extension" : "php",
+  "linesOfCode" : 1107,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/rpminfo.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/rrd.php",
+  "extension" : "php",
+  "linesOfCode" : 84,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/sem.php",
+  "extension" : "php",
+  "linesOfCode" : 141,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/session.php",
+  "extension" : "php",
+  "linesOfCode" : 172,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/shmop.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/sockets.php",
+  "extension" : "php",
+  "linesOfCode" : 240,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/sodium.php",
+  "extension" : "php",
+  "linesOfCode" : 126,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/solr.php",
+  "extension" : "php",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/spl.php",
+  "extension" : "php",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/sqlsrv.php",
+  "extension" : "php",
+  "linesOfCode" : 197,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/ssdeep.php",
+  "extension" : "php",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/ssh2.php",
+  "extension" : "php",
+  "linesOfCode" : 242,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/stream.php",
+  "extension" : "php",
+  "linesOfCode" : 226,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/strings.php",
+  "extension" : "php",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/swoole.php",
+  "extension" : "php",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/uodbc.php",
+  "extension" : "php",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/uopz.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/url.php",
+  "extension" : "php",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/var.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/xdiff.php",
+  "extension" : "php",
+  "linesOfCode" : 84,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/xml.php",
+  "extension" : "php",
+  "linesOfCode" : 91,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/xmlrpc.php",
+  "extension" : "php",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/yaml.php",
+  "extension" : "php",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/yaz.php",
+  "extension" : "php",
+  "linesOfCode" : 73,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/zip.php",
+  "extension" : "php",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.1/zlib.php",
+  "extension" : "php",
+  "linesOfCode" : 216,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/array.php",
+  "extension" : "php",
+  "linesOfCode" : 55,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/curl.php",
+  "extension" : "php",
+  "linesOfCode" : 124,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/datetime.php",
+  "extension" : "php",
+  "linesOfCode" : 206,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/errorfunc.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/exec.php",
+  "extension" : "php",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/filesystem.php",
+  "extension" : "php",
+  "linesOfCode" : 478,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/fpm.php",
+  "extension" : "php",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/functionsList.php",
+  "extension" : "php",
+  "linesOfCode" : 1137,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/gmp.php",
+  "extension" : "php",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/gnupg.php",
+  "extension" : "php",
+  "linesOfCode" : 79,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/hash.php",
+  "extension" : "php",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/image.php",
+  "extension" : "php",
+  "linesOfCode" : 817,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/imap.php",
+  "extension" : "php",
+  "linesOfCode" : 440,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/ldap.php",
+  "extension" : "php",
+  "linesOfCode" : 347,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/misc.php",
+  "extension" : "php",
+  "linesOfCode" : 128,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/mysqli.php",
+  "extension" : "php",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/network.php",
+  "extension" : "php",
+  "linesOfCode" : 142,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/oci8.php",
+  "extension" : "php",
+  "linesOfCode" : 344,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/openssl.php",
+  "extension" : "php",
+  "linesOfCode" : 505,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/rector-migrate.php",
+  "extension" : "php",
+  "linesOfCode" : 1144,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/rnp.php",
+  "extension" : "php",
+  "linesOfCode" : 269,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/sodium.php",
+  "extension" : "php",
+  "linesOfCode" : 135,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/ssh2.php",
+  "extension" : "php",
+  "linesOfCode" : 242,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.2/stream.php",
+  "extension" : "php",
+  "linesOfCode" : 250,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.3/rector-migrate.php",
+  "extension" : "php",
+  "linesOfCode" : 1144,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/apache.php",
+  "extension" : "php",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/array.php",
+  "extension" : "php",
+  "linesOfCode" : 59,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/curl.php",
+  "extension" : "php",
+  "linesOfCode" : 118,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/datetime.php",
+  "extension" : "php",
+  "linesOfCode" : 210,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/ftp.php",
+  "extension" : "php",
+  "linesOfCode" : 222,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/functionsList.php",
+  "extension" : "php",
+  "linesOfCode" : 1105,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/gettext.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/ibmDb2.php",
+  "extension" : "php",
+  "linesOfCode" : 124,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/image.php",
+  "extension" : "php",
+  "linesOfCode" : 811,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/imap.php",
+  "extension" : "php",
+  "linesOfCode" : 427,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/info.php",
+  "extension" : "php",
+  "linesOfCode" : 174,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/inotify.php",
+  "extension" : "php",
+  "linesOfCode" : 29,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/ldap.php",
+  "extension" : "php",
+  "linesOfCode" : 344,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/mbstring.php",
+  "extension" : "php",
+  "linesOfCode" : 232,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/misc.php",
+  "extension" : "php",
+  "linesOfCode" : 122,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/network.php",
+  "extension" : "php",
+  "linesOfCode" : 133,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/openssl.php",
+  "extension" : "php",
+  "linesOfCode" : 507,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/outcontrol.php",
+  "extension" : "php",
+  "linesOfCode" : 85,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/pgsql.php",
+  "extension" : "php",
+  "linesOfCode" : 428,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/posix.php",
+  "extension" : "php",
+  "linesOfCode" : 193,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/pspell.php",
+  "extension" : "php",
+  "linesOfCode" : 140,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/readline.php",
+  "extension" : "php",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/rector-migrate.php",
+  "extension" : "php",
+  "linesOfCode" : 1112,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/sockets.php",
+  "extension" : "php",
+  "linesOfCode" : 248,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/sodium.php",
+  "extension" : "php",
+  "linesOfCode" : 151,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/stream.php",
+  "extension" : "php",
+  "linesOfCode" : 258,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/uodbc.php",
+  "extension" : "php",
+  "linesOfCode" : 309,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/xml.php",
+  "extension" : "php",
+  "linesOfCode" : 79,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.4/zlib.php",
+  "extension" : "php",
+  "linesOfCode" : 210,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/functionsList.php",
+  "extension" : "php",
+  "linesOfCode" : 1108,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/pcntl.php",
+  "extension" : "php",
+  "linesOfCode" : 101,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/rector-migrate.php",
+  "extension" : "php",
+  "linesOfCode" : 1115,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/rpminfo.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/shmop.php",
+  "extension" : "php",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/uodbc.php",
+  "extension" : "php",
+  "linesOfCode" : 325,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/xdiff.php",
+  "extension" : "php",
+  "linesOfCode" : 93,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.5/zlib.php",
+  "extension" : "php",
+  "linesOfCode" : 210,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.6/functionsList.php",
+  "extension" : "php",
+  "linesOfCode" : 1107,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.6/ldap.php",
+  "extension" : "php",
+  "linesOfCode" : 344,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.6/openssl.php",
+  "extension" : "php",
+  "linesOfCode" : 515,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.6/pcntl.php",
+  "extension" : "php",
+  "linesOfCode" : 101,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.6/rector-migrate.php",
+  "extension" : "php",
+  "linesOfCode" : 1114,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.6/yaml.php",
+  "extension" : "php",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/8.6/zlib.php",
+  "extension" : "php",
+  "linesOfCode" : 210,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/apache.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/apcu.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/array.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/bzip2.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/calendar.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/classobj.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/com.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/cubrid.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/curl.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/datetime.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/dir.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/eio.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/errorfunc.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ApacheException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ApcuException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ArrayException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/Bzip2Exception.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/CalendarException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ClassobjException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ComException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/CubridException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/DatetimeException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/DirException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/EioException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ErrorfuncException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ExecException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/FileinfoException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/FilesystemException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/FilterException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/FpmException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/FtpException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/FunchandException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/GettextException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/GmpException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/GnupgException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/HashException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/IbaseException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/IbmDb2Exception.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/IconvException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ImageException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ImapException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/InfoException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/InotifyException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/LdapException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/LibxmlException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/LzfException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/MailparseException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/MbstringException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/MiscException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/MysqlException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/MysqliException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/NetworkException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/Oci8Exception.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/OpcacheException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/OutcontrolException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/PcntlException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/PgsqlException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/PosixException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/PsException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/PspellException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ReadlineException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/RnpException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/RpminfoException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/RrdException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SemException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SessionException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ShmopException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SocketsException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SodiumException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SolrException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SplException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SqlsrvException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SsdeepException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/Ssh2Exception.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/StreamException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/StringsException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/SwooleException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/UodbcException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/UopzException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/UrlException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/VarException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/XdiffException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/XmlException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/XmlrpcException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/YamlException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/YazException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ZipException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/Exceptions/ZlibException.php",
+  "extension" : "php",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/exec.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/fileinfo.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/filesystem.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/filter.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/fpm.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/ftp.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/funchand.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/functionsList.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/gettext.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/gmp.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/gnupg.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/hash.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/ibase.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/ibmDb2.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/iconv.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/image.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/imap.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/info.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/inotify.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/json.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/ldap.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/libxml.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/lzf.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/mailparse.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/mbstring.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/misc.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/mysql.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/mysqli.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/network.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/oci8.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/opcache.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/openssl.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/outcontrol.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/pcntl.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/pcre.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/pgsql.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/posix.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/ps.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/pspell.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/readline.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/rnp.php",
+  "extension" : "php",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/rpminfo.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/rrd.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/sem.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/session.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/shmop.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/sockets.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/sodium.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/solr.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/spl.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/sqlsrv.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/ssdeep.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/ssh2.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/stream.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/strings.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/swoole.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/uodbc.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/uopz.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/url.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/var.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/xdiff.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/xml.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/xmlrpc.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/yaml.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/yaz.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/zip.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vendor/thecodingmachine/safe/generated/zlib.php",
+  "extension" : "php",
+  "linesOfCode" : 19,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

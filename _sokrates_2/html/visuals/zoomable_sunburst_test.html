@@ -1,0 +1,1810 @@
+<head>
+    <style>
+        body {
+            font-family: Sans-serif;
+            font-size: 11px;
+        }
+
+        .slice {
+            cursor: pointer;
+        }
+
+        .slice .main-arc {
+            stroke: #fff;
+            stroke-width: 1px;
+        }
+
+        .slice .hidden-arc {
+            fill: none;
+        }
+
+        .slice text {
+            pointer-events: none;
+            dominant-baseline: middle;
+            text-anchor: middle;
+        }
+    </style>
+
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+</head>
+<body>
+<script>
+    const width = window.innerWidth,
+        height = window.innerHeight,
+        maxRadius = (Math.min(width, height) / 2) - 5;
+
+    const formatNumber = d3.format(',d');
+
+    const x = d3.scaleLinear()
+        .range([0, 2 * Math.PI])
+        .clamp(true);
+
+    const y = d3.scaleSqrt()
+        .range([maxRadius * .1, maxRadius]);
+
+    const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    const partition = d3.partition();
+
+    const arc = d3.arc()
+        .startAngle(d => x(d.x0))
+        .endAngle(d => x(d.x1))
+        .innerRadius(d => Math.max(0, y(d.y0)))
+        .outerRadius(d => Math.max(0, y(d.y1)));
+
+    const middleArcLine = d => {
+        const halfPi = Math.PI / 2;
+        const angles = [x(d.x0) - halfPi, x(d.x1) - halfPi];
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+
+        const middleAngle = (angles[1] + angles[0]) / 2;
+        const invertDirection = middleAngle > 0 && middleAngle < Math.PI; // On lower quadrants write text ccw
+        if (invertDirection) {
+            angles.reverse();
+        }
+
+        const path = d3.path();
+        path.arc(0, 0, r, angles[0], angles[1], invertDirection);
+        return path.toString();
+    };
+
+    const textFits = d => {
+        const CHAR_SPACE = 6;
+
+        const deltaAngle = x(d.x1) - x(d.x0);
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+        const perimeter = r * deltaAngle;
+
+        return d.data.name.length * CHAR_SPACE < perimeter;
+    };
+
+    const svg = d3.select('body').append('svg')
+        .style('width', '100vw')
+        .style('height', '100vh')
+        .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
+        .on('click', () => focusOn()); // Reset zoom on canvas click
+
+    var rootData = {
+        "name": "",
+        "children": [ {
+  "name" : "vendor",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "laravel",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "ui",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "tests",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "AuthBackend",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "AuthenticatesUsersTest.php",
+            "color" : "",
+            "size" : 139,
+            "children" : [ ]
+          }, {
+            "name" : "RegistersUsersTest.php",
+            "color" : "",
+            "size" : 67,
+            "children" : [ ]
+          }, {
+            "name" : "ThrottleLoginsTest.php",
+            "color" : "",
+            "size" : 39,
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "mockery",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "mockery",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "library",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "helpers.php",
+          "color" : "",
+          "size" : 41,
+          "children" : [ ]
+        }, {
+          "name" : "Mockery",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Adapter",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Phpunit",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "MockeryPHPUnitIntegration.php",
+                "color" : "",
+                "size" : 48,
+                "children" : [ ]
+              }, {
+                "name" : "MockeryPHPUnitIntegrationAssertPostConditions.php",
+                "color" : "",
+                "size" : 10,
+                "children" : [ ]
+              }, {
+                "name" : "MockeryTestCase.php",
+                "color" : "",
+                "size" : 14,
+                "children" : [ ]
+              }, {
+                "name" : "MockeryTestCaseSetUp.php",
+                "color" : "",
+                "size" : 16,
+                "children" : [ ]
+              }, {
+                "name" : "TestListener.php",
+                "color" : "",
+                "size" : 23,
+                "children" : [ ]
+              }, {
+                "name" : "TestListenerTrait.php",
+                "color" : "",
+                "size" : 50,
+                "children" : [ ]
+              } ]
+            } ]
+          }, {
+            "name" : "ClosureWrapper.php",
+            "color" : "",
+            "size" : 16,
+            "children" : [ ]
+          }, {
+            "name" : "CompositeExpectation.php",
+            "color" : "",
+            "size" : 64,
+            "children" : [ ]
+          }, {
+            "name" : "Configuration.php",
+            "color" : "",
+            "size" : 165,
+            "children" : [ ]
+          }, {
+            "name" : "Container.php",
+            "color" : "",
+            "size" : 368,
+            "children" : [ ]
+          }, {
+            "name" : "CountValidator",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "AtLeast.php",
+              "color" : "",
+              "size" : 29,
+              "children" : [ ]
+            }, {
+              "name" : "AtMost.php",
+              "color" : "",
+              "size" : 25,
+              "children" : [ ]
+            }, {
+              "name" : "CountValidatorAbstract.php",
+              "color" : "",
+              "size" : 18,
+              "children" : [ ]
+            }, {
+              "name" : "CountValidatorInterface.php",
+              "color" : "",
+              "size" : 7,
+              "children" : [ ]
+            }, {
+              "name" : "Exact.php",
+              "color" : "",
+              "size" : 27,
+              "children" : [ ]
+            }, {
+              "name" : "Exception.php",
+              "color" : "",
+              "size" : 7,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Exception",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "BadMethodCallException.php",
+              "color" : "",
+              "size" : 19,
+              "children" : [ ]
+            }, {
+              "name" : "InvalidArgumentException.php",
+              "color" : "",
+              "size" : 5,
+              "children" : [ ]
+            }, {
+              "name" : "InvalidCountException.php",
+              "color" : "",
+              "size" : 69,
+              "children" : [ ]
+            }, {
+              "name" : "InvalidOrderException.php",
+              "color" : "",
+              "size" : 55,
+              "children" : [ ]
+            }, {
+              "name" : "MockeryExceptionInterface.php",
+              "color" : "",
+              "size" : 7,
+              "children" : [ ]
+            }, {
+              "name" : "NoMatchingExpectationException.php",
+              "color" : "",
+              "size" : 45,
+              "children" : [ ]
+            }, {
+              "name" : "RuntimeException.php",
+              "color" : "",
+              "size" : 6,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Exception.php",
+            "color" : "",
+            "size" : 7,
+            "children" : [ ]
+          }, {
+            "name" : "Expectation.php",
+            "color" : "",
+            "size" : 497,
+            "children" : [ ]
+          }, {
+            "name" : "ExpectationDirector.php",
+            "color" : "",
+            "size" : 117,
+            "children" : [ ]
+          }, {
+            "name" : "ExpectationInterface.php",
+            "color" : "",
+            "size" : 9,
+            "children" : [ ]
+          }, {
+            "name" : "ExpectsHigherOrderMessage.php",
+            "color" : "",
+            "size" : 14,
+            "children" : [ ]
+          }, {
+            "name" : "Generator",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "CachingGenerator.php",
+              "color" : "",
+              "size" : 19,
+              "children" : [ ]
+            }, {
+              "name" : "DefinedTargetClass.php",
+              "color" : "",
+              "size" : 104,
+              "children" : [ ]
+            }, {
+              "name" : "Generator.php",
+              "color" : "",
+              "size" : 6,
+              "children" : [ ]
+            }, {
+              "name" : "Method.php",
+              "color" : "",
+              "size" : 28,
+              "children" : [ ]
+            }, {
+              "name" : "MockConfiguration.php",
+              "color" : "",
+              "size" : 398,
+              "children" : [ ]
+            }, {
+              "name" : "MockConfigurationBuilder.php",
+              "color" : "",
+              "size" : 135,
+              "children" : [ ]
+            }, {
+              "name" : "MockDefinition.php",
+              "color" : "",
+              "size" : 28,
+              "children" : [ ]
+            }, {
+              "name" : "MockNameBuilder.php",
+              "color" : "",
+              "size" : 22,
+              "children" : [ ]
+            }, {
+              "name" : "Parameter.php",
+              "color" : "",
+              "size" : 48,
+              "children" : [ ]
+            }, {
+              "name" : "StringManipulation",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Pass",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "AvoidMethodClashPass.php",
+                  "color" : "",
+                  "size" : 24,
+                  "children" : [ ]
+                }, {
+                  "name" : "CallTypeHintPass.php",
+                  "color" : "",
+                  "size" : 25,
+                  "children" : [ ]
+                }, {
+                  "name" : "ClassAttributesPass.php",
+                  "color" : "",
+                  "size" : 20,
+                  "children" : [ ]
+                }, {
+                  "name" : "ClassNamePass.php",
+                  "color" : "",
+                  "size" : 16,
+                  "children" : [ ]
+                }, {
+                  "name" : "ClassPass.php",
+                  "color" : "",
+                  "size" : 29,
+                  "children" : [ ]
+                }, {
+                  "name" : "ConstantsPass.php",
+                  "color" : "",
+                  "size" : 32,
+                  "children" : [ ]
+                }, {
+                  "name" : "InstanceMockPass.php",
+                  "color" : "",
+                  "size" : 54,
+                  "children" : [ ]
+                }, {
+                  "name" : "InterfacePass.php",
+                  "color" : "",
+                  "size" : 24,
+                  "children" : [ ]
+                }, {
+                  "name" : "MagicMethodTypeHintsPass.php",
+                  "color" : "",
+                  "size" : 111,
+                  "children" : [ ]
+                }, {
+                  "name" : "MethodDefinitionPass.php",
+                  "color" : "",
+                  "size" : 154,
+                  "children" : [ ]
+                }, {
+                  "name" : "Pass.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "RemoveBuiltinMethodsThatAreFinalPass.php",
+                  "color" : "",
+                  "size" : 29,
+                  "children" : [ ]
+                }, {
+                  "name" : "RemoveDestructorPass.php",
+                  "color" : "",
+                  "size" : 18,
+                  "children" : [ ]
+                }, {
+                  "name" : "RemoveUnserializeForInternalSerializableClassesPass.php",
+                  "color" : "",
+                  "size" : 30,
+                  "children" : [ ]
+                }, {
+                  "name" : "TraitPass.php",
+                  "color" : "",
+                  "size" : 21,
+                  "children" : [ ]
+                } ]
+              } ]
+            }, {
+              "name" : "StringManipulationGenerator.php",
+              "color" : "",
+              "size" : 61,
+              "children" : [ ]
+            }, {
+              "name" : "TargetClassInterface.php",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            }, {
+              "name" : "UndefinedTargetClass.php",
+              "color" : "",
+              "size" : 69,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "HigherOrderMessage.php",
+            "color" : "",
+            "size" : 21,
+            "children" : [ ]
+          }, {
+            "name" : "Instantiator.php",
+            "color" : "",
+            "size" : 89,
+            "children" : [ ]
+          }, {
+            "name" : "LegacyMockInterface.php",
+            "color" : "",
+            "size" : 37,
+            "children" : [ ]
+          }, {
+            "name" : "Loader",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "EvalLoader.php",
+              "color" : "",
+              "size" : 14,
+              "children" : [ ]
+            }, {
+              "name" : "Loader.php",
+              "color" : "",
+              "size" : 7,
+              "children" : [ ]
+            }, {
+              "name" : "RequireLoader.php",
+              "color" : "",
+              "size" : 44,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "Matcher",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "AndAnyOtherArgs.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "Any.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "AnyArgs.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "AnyOf.php",
+              "color" : "",
+              "size" : 14,
+              "children" : [ ]
+            }, {
+              "name" : "ArgumentListMatcher.php",
+              "color" : "",
+              "size" : 5,
+              "children" : [ ]
+            }, {
+              "name" : "Closure.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "Contains.php",
+              "color" : "",
+              "size" : 32,
+              "children" : [ ]
+            }, {
+              "name" : "Ducktype.php",
+              "color" : "",
+              "size" : 24,
+              "children" : [ ]
+            }, {
+              "name" : "HasKey.php",
+              "color" : "",
+              "size" : 20,
+              "children" : [ ]
+            }, {
+              "name" : "HasValue.php",
+              "color" : "",
+              "size" : 19,
+              "children" : [ ]
+            }, {
+              "name" : "IsEqual.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "IsSame.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "MatcherAbstract.php",
+              "color" : "",
+              "size" : 10,
+              "children" : [ ]
+            }, {
+              "name" : "MatcherInterface.php",
+              "color" : "",
+              "size" : 8,
+              "children" : [ ]
+            }, {
+              "name" : "MultiArgumentClosure.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "MustBe.php",
+              "color" : "",
+              "size" : 17,
+              "children" : [ ]
+            }, {
+              "name" : "NoArgs.php",
+              "color" : "",
+              "size" : 14,
+              "children" : [ ]
+            }, {
+              "name" : "Not.php",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "NotAnyOf.php",
+              "color" : "",
+              "size" : 18,
+              "children" : [ ]
+            }, {
+              "name" : "Pattern.php",
+              "color" : "",
+              "size" : 14,
+              "children" : [ ]
+            }, {
+              "name" : "Subset.php",
+              "color" : "",
+              "size" : 45,
+              "children" : [ ]
+            }, {
+              "name" : "Type.php",
+              "color" : "",
+              "size" : 29,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "MethodCall.php",
+            "color" : "",
+            "size" : 20,
+            "children" : [ ]
+          }, {
+            "name" : "Mock.php",
+            "color" : "",
+            "size" : 551,
+            "children" : [ ]
+          }, {
+            "name" : "MockInterface.php",
+            "color" : "",
+            "size" : 7,
+            "children" : [ ]
+          }, {
+            "name" : "QuickDefinitionsConfiguration.php",
+            "color" : "",
+            "size" : 17,
+            "children" : [ ]
+          }, {
+            "name" : "ReceivedMethodCalls.php",
+            "color" : "",
+            "size" : 23,
+            "children" : [ ]
+          }, {
+            "name" : "Reflector.php",
+            "color" : "",
+            "size" : 186,
+            "children" : [ ]
+          }, {
+            "name" : "Undefined.php",
+            "color" : "",
+            "size" : 14,
+            "children" : [ ]
+          }, {
+            "name" : "VerificationDirector.php",
+            "color" : "",
+            "size" : 73,
+            "children" : [ ]
+          }, {
+            "name" : "VerificationExpectation.php",
+            "color" : "",
+            "size" : 14,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Mockery.php",
+          "color" : "",
+          "size" : 489,
+          "children" : [ ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "monolog",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "monolog",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "src",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Monolog",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Test",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "MonologTestCase.php",
+              "color" : "",
+              "size" : 42,
+              "children" : [ ]
+            }, {
+              "name" : "TestCase.php",
+              "color" : "",
+              "size" : 5,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "opcodesio",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "mail-parser",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "tests",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Fixtures",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "complex_email.eml",
+            "color" : "",
+            "size" : 25,
+            "children" : [ ]
+          }, {
+            "name" : "complex_email_2.eml",
+            "color" : "",
+            "size" : 79,
+            "children" : [ ]
+          }, {
+            "name" : "multiformat_email.eml",
+            "color" : "",
+            "size" : 24,
+            "children" : [ ]
+          }, {
+            "name" : "multiformat_email_2.eml",
+            "color" : "",
+            "size" : 50,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Pest.php",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "TestCase.php",
+          "color" : "",
+          "size" : 6,
+          "children" : [ ]
+        }, {
+          "name" : "Unit",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "MessageTest.php",
+            "color" : "",
+            "size" : 348,
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "phpunit",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "phpunit",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "src",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Event",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Events",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Test",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "ComparatorRegistered.php",
+                "color" : "",
+                "size" : 30,
+                "children" : [ ]
+              }, {
+                "name" : "ComparatorRegisteredSubscriber.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "HookMethod",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "AfterLastTestMethodCalled.php",
+                  "color" : "",
+                  "size" : 38,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterLastTestMethodCalledSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterLastTestMethodErrored.php",
+                  "color" : "",
+                  "size" : 51,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterLastTestMethodErroredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterLastTestMethodFinished.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterLastTestMethodFinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterTestMethodCalled.php",
+                  "color" : "",
+                  "size" : 38,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterTestMethodCalledSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterTestMethodErrored.php",
+                  "color" : "",
+                  "size" : 51,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterTestMethodErroredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterTestMethodFinished.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "AfterTestMethodFinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeFirstTestMethodCalled.php",
+                  "color" : "",
+                  "size" : 38,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeFirstTestMethodCalledSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeFirstTestMethodErrored.php",
+                  "color" : "",
+                  "size" : 51,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeFirstTestMethodErroredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeFirstTestMethodFinished.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeFirstTestMethodFinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeTestMethodCalled.php",
+                  "color" : "",
+                  "size" : 38,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeTestMethodCalledSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeTestMethodErrored.php",
+                  "color" : "",
+                  "size" : 51,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeTestMethodErroredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeTestMethodFinished.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "BeforeTestMethodFinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PostConditionCalled.php",
+                  "color" : "",
+                  "size" : 38,
+                  "children" : [ ]
+                }, {
+                  "name" : "PostConditionCalledSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PostConditionErrored.php",
+                  "color" : "",
+                  "size" : 51,
+                  "children" : [ ]
+                }, {
+                  "name" : "PostConditionErroredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PostConditionFinished.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "PostConditionFinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreConditionCalled.php",
+                  "color" : "",
+                  "size" : 38,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreConditionCalledSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreConditionErrored.php",
+                  "color" : "",
+                  "size" : 51,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreConditionErroredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreConditionFinished.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreConditionFinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "Issue",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "ConsideredRisky.php",
+                  "color" : "",
+                  "size" : 40,
+                  "children" : [ ]
+                }, {
+                  "name" : "ConsideredRiskySubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "DeprecationTriggered.php",
+                  "color" : "",
+                  "size" : 99,
+                  "children" : [ ]
+                }, {
+                  "name" : "DeprecationTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "ErrorTriggered.php",
+                  "color" : "",
+                  "size" : 68,
+                  "children" : [ ]
+                }, {
+                  "name" : "ErrorTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "NoticeTriggered.php",
+                  "color" : "",
+                  "size" : 77,
+                  "children" : [ ]
+                }, {
+                  "name" : "NoticeTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpDeprecationTriggered.php",
+                  "color" : "",
+                  "size" : 93,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpDeprecationTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpNoticeTriggered.php",
+                  "color" : "",
+                  "size" : 77,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpNoticeTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpunitDeprecationTriggered.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpunitDeprecationTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpunitErrorTriggered.php",
+                  "color" : "",
+                  "size" : 44,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpunitErrorTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpunitWarningTriggered.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpunitWarningTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpWarningTriggered.php",
+                  "color" : "",
+                  "size" : 77,
+                  "children" : [ ]
+                }, {
+                  "name" : "PhpWarningTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "WarningTriggered.php",
+                  "color" : "",
+                  "size" : 77,
+                  "children" : [ ]
+                }, {
+                  "name" : "WarningTriggeredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "Lifecycle",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "DataProviderMethodCalled.php",
+                  "color" : "",
+                  "size" : 40,
+                  "children" : [ ]
+                }, {
+                  "name" : "DataProviderMethodCalledSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "DataProviderMethodFinished.php",
+                  "color" : "",
+                  "size" : 47,
+                  "children" : [ ]
+                }, {
+                  "name" : "DataProviderMethodFinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "Finished.php",
+                  "color" : "",
+                  "size" : 37,
+                  "children" : [ ]
+                }, {
+                  "name" : "FinishedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreparationFailed.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreparationFailedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreparationStarted.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreparationStartedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "Prepared.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "PreparedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "Outcome",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Errored.php",
+                  "color" : "",
+                  "size" : 45,
+                  "children" : [ ]
+                }, {
+                  "name" : "ErroredSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "Failed.php",
+                  "color" : "",
+                  "size" : 59,
+                  "children" : [ ]
+                }, {
+                  "name" : "FailedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "MarkedIncomplete.php",
+                  "color" : "",
+                  "size" : 45,
+                  "children" : [ ]
+                }, {
+                  "name" : "MarkedIncompleteSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "Passed.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "PassedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "Skipped.php",
+                  "color" : "",
+                  "size" : 43,
+                  "children" : [ ]
+                }, {
+                  "name" : "SkippedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "PrintedUnexpectedOutput.php",
+                "color" : "",
+                "size" : 32,
+                "children" : [ ]
+              }, {
+                "name" : "PrintedUnexpectedOutputSubscriber.php",
+                "color" : "",
+                "size" : 7,
+                "children" : [ ]
+              }, {
+                "name" : "TestDouble",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "MockObjectCreated.php",
+                  "color" : "",
+                  "size" : 30,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectForAbstractClassCreated.php",
+                  "color" : "",
+                  "size" : 30,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectForAbstractClassCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectForIntersectionOfInterfacesCreated.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectForIntersectionOfInterfacesCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectForTraitCreated.php",
+                  "color" : "",
+                  "size" : 30,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectForTraitCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectFromWsdlCreated.php",
+                  "color" : "",
+                  "size" : 60,
+                  "children" : [ ]
+                }, {
+                  "name" : "MockObjectFromWsdlCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "PartialMockObjectCreated.php",
+                  "color" : "",
+                  "size" : 36,
+                  "children" : [ ]
+                }, {
+                  "name" : "PartialMockObjectCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestProxyCreated.php",
+                  "color" : "",
+                  "size" : 36,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestProxyCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestStubCreated.php",
+                  "color" : "",
+                  "size" : 30,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestStubCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestStubForIntersectionOfInterfacesCreated.php",
+                  "color" : "",
+                  "size" : 31,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestStubForIntersectionOfInterfacesCreatedSubscriber.php",
+                  "color" : "",
+                  "size" : 7,
+                  "children" : [ ]
+                } ]
+              } ]
+            } ]
+          }, {
+            "name" : "Value",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Test",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Issue",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "DirectTrigger.php",
+                  "color" : "",
+                  "size" : 13,
+                  "children" : [ ]
+                }, {
+                  "name" : "IndirectTrigger.php",
+                  "color" : "",
+                  "size" : 13,
+                  "children" : [ ]
+                }, {
+                  "name" : "IssueTrigger.php",
+                  "color" : "",
+                  "size" : 49,
+                  "children" : [ ]
+                }, {
+                  "name" : "SelfTrigger.php",
+                  "color" : "",
+                  "size" : 13,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestTrigger.php",
+                  "color" : "",
+                  "size" : 13,
+                  "children" : [ ]
+                }, {
+                  "name" : "UnknownTrigger.php",
+                  "color" : "",
+                  "size" : 13,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "Phpt.php",
+                "color" : "",
+                "size" : 17,
+                "children" : [ ]
+              }, {
+                "name" : "Test.php",
+                "color" : "",
+                "size" : 24,
+                "children" : [ ]
+              }, {
+                "name" : "TestCollection.php",
+                "color" : "",
+                "size" : 29,
+                "children" : [ ]
+              }, {
+                "name" : "TestCollectionIterator.php",
+                "color" : "",
+                "size" : 33,
+                "children" : [ ]
+              }, {
+                "name" : "TestData",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "DataFromDataProvider.php",
+                  "color" : "",
+                  "size" : 29,
+                  "children" : [ ]
+                }, {
+                  "name" : "DataFromTestDependency.php",
+                  "color" : "",
+                  "size" : 13,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestData.php",
+                  "color" : "",
+                  "size" : 22,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestDataCollection.php",
+                  "color" : "",
+                  "size" : 48,
+                  "children" : [ ]
+                }, {
+                  "name" : "TestDataCollectionIterator.php",
+                  "color" : "",
+                  "size" : 33,
+                  "children" : [ ]
+                } ]
+              }, {
+                "name" : "TestDox.php",
+                "color" : "",
+                "size" : 25,
+                "children" : [ ]
+              }, {
+                "name" : "TestDoxBuilder.php",
+                "color" : "",
+                "size" : 26,
+                "children" : [ ]
+              }, {
+                "name" : "TestMethod.php",
+                "color" : "",
+                "size" : 84,
+                "children" : [ ]
+              }, {
+                "name" : "TestMethodBuilder.php",
+                "color" : "",
+                "size" : 55,
+                "children" : [ ]
+              } ]
+            } ]
+          } ]
+        }, {
+          "name" : "Framework",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "MockObject",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Generator",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "templates",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "test_double_class.tpl",
+                  "color" : "",
+                  "size" : 4,
+                  "children" : [ ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "name" : "symfony",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "clock",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ClockSensitiveTrait.php",
+          "color" : "",
+          "size" : 34,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "http-foundation",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Constraint",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "RequestAttributeValueSame.php",
+            "color" : "",
+            "size" : 24,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseCookieValueSame.php",
+            "color" : "",
+            "size" : 44,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseFormatSame.php",
+            "color" : "",
+            "size" : 30,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseHasCookie.php",
+            "color" : "",
+            "size" : 39,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseHasHeader.php",
+            "color" : "",
+            "size" : 23,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseHeaderLocationSame.php",
+            "color" : "",
+            "size" : 43,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseHeaderSame.php",
+            "color" : "",
+            "size" : 24,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseIsRedirected.php",
+            "color" : "",
+            "size" : 26,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseIsSuccessful.php",
+            "color" : "",
+            "size" : 26,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseIsUnprocessable.php",
+            "color" : "",
+            "size" : 26,
+            "children" : [ ]
+          }, {
+            "name" : "ResponseStatusCodeSame.php",
+            "color" : "",
+            "size" : 28,
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "mailer",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "AbstractTransportFactoryTestCase.php",
+          "color" : "",
+          "size" : 39,
+          "children" : [ ]
+        }, {
+          "name" : "Constraint",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "EmailCount.php",
+            "color" : "",
+            "size" : 38,
+            "children" : [ ]
+          }, {
+            "name" : "EmailIsQueued.php",
+            "color" : "",
+            "size" : 19,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "IncompleteDsnTestTrait.php",
+          "color" : "",
+          "size" : 15,
+          "children" : [ ]
+        }, {
+          "name" : "TransportFactoryTestCase.php",
+          "color" : "",
+          "size" : 33,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "mime",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Constraint",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "EmailAddressContains.php",
+            "color" : "",
+            "size" : 40,
+            "children" : [ ]
+          }, {
+            "name" : "EmailAttachmentCount.php",
+            "color" : "",
+            "size" : 27,
+            "children" : [ ]
+          }, {
+            "name" : "EmailHasHeader.php",
+            "color" : "",
+            "size" : 26,
+            "children" : [ ]
+          }, {
+            "name" : "EmailHeaderSame.php",
+            "color" : "",
+            "size" : 35,
+            "children" : [ ]
+          }, {
+            "name" : "EmailHtmlBodyContains.php",
+            "color" : "",
+            "size" : 27,
+            "children" : [ ]
+          }, {
+            "name" : "EmailSubjectContains.php",
+            "color" : "",
+            "size" : 30,
+            "children" : [ ]
+          }, {
+            "name" : "EmailTextBodyContains.php",
+            "color" : "",
+            "size" : 27,
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "service-contracts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ServiceLocatorTest.php",
+          "color" : "",
+          "size" : 8,
+          "children" : [ ]
+        }, {
+          "name" : "ServiceLocatorTestCase.php",
+          "color" : "",
+          "size" : 69,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "translation",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "AbstractProviderFactoryTestCase.php",
+          "color" : "",
+          "size" : 35,
+          "children" : [ ]
+        }, {
+          "name" : "IncompleteDsnTestTrait.php",
+          "color" : "",
+          "size" : 19,
+          "children" : [ ]
+        }, {
+          "name" : "ProviderFactoryTestCase.php",
+          "color" : "",
+          "size" : 51,
+          "children" : [ ]
+        }, {
+          "name" : "ProviderTestCase.php",
+          "color" : "",
+          "size" : 51,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "translation-contracts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "TranslatorTest.php",
+          "color" : "",
+          "size" : 247,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "var-dumper",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Test",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "VarDumperTestTrait.php",
+          "color" : "",
+          "size" : 54,
+          "children" : [ ]
+        } ]
+      } ]
+    } ]
+  } ]
+} ]
+    }
+
+
+    root = d3.hierarchy(rootData);
+    root.sum(d => d.size);
+
+    const slice = svg.selectAll('g.slice')
+        .data(partition(root).descendants());
+
+    slice.exit().remove();
+
+    const newSlice = slice.enter()
+        .append('g').attr('class', 'slice')
+        .on('click', d => {
+            d3.event.stopPropagation();
+            focusOn(d);
+        });
+
+    newSlice.append('title')
+        .text(d => d.data.name + '\n' + formatNumber(d.value));
+
+    newSlice.append('path')
+        .attr('class', 'main-arc')
+        .style('fill', d => color((d.children ? d : d.parent).data.name))
+        .attr('d', arc);
+
+    newSlice.append('path')
+        .attr('class', 'hidden-arc')
+        .attr('id', (_, i) => `hiddenArc${i}`)
+        .attr('d', middleArcLine);
+
+    const text = newSlice.append('text')
+        .attr('display', d => textFits(d) ? null : 'none');
+
+    // Add white contour
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name)
+        .style('fill', 'none')
+        .style('stroke', '#fff')
+        .style('stroke-width', 5)
+        .style('stroke-linejoin', 'round');
+
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name);
+
+    function focusOn(d = {x0: 0, x1: 1, y0: 0, y1: 1}) {
+        const transition = svg.transition()
+            .duration(750)
+            .tween('scale', () => {
+                const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
+                    yd = d3.interpolate(y.domain(), [d.y0, 1]);
+                return t => {
+                    x.domain(xd(t));
+                    y.domain(yd(t));
+                };
+            });
+
+        transition.selectAll('path.main-arc')
+            .attrTween('d', d => () => arc(d));
+
+        transition.selectAll('path.hidden-arc')
+            .attrTween('d', d => () => middleArcLine(d));
+
+        transition.selectAll('text')
+            .attrTween('display', d => () => textFits(d) ? null : 'none');
+
+        moveStackToFront(d);
+
+        //
+
+        function moveStackToFront(elD) {
+            svg.selectAll('.slice').filter(d => d === elD)
+                .each(function (d) {
+                    this.parentNode.appendChild(this);
+                    if (d.parent) {
+                        moveStackToFront(d.parent);
+                    }
+                })
+        }
+    }
+</script>
+</body>

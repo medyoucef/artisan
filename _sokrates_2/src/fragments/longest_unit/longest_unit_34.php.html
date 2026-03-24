@@ -1,0 +1,208 @@
+<html>
+<head>
+    <title>public function __invoke()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function __invoke()</h3>
+<p style="margin-top: 4px">in <i>vendor/laravel/framework/src/Illuminate/Foundation/Vite.php [370:555]</i></p>
+<ul>
+    <li><b>155</b> lines of code</li>
+    <li><b>16</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function __invoke($entrypoints, $buildDirectory = null)
+    {
+        $entrypoints = new Collection($entrypoints);
+        $buildDirectory ??= $this-&gt;buildDirectory;
+
+        if ($this-&gt;isRunningHot()) {
+            return new HtmlString(
+                $entrypoints
+                    -&gt;prepend('@vite/client')
+                    -&gt;map(fn ($entrypoint) =&gt; $this-&gt;makeTagForChunk($entrypoint, $this-&gt;hotAsset($entrypoint), null, null))
+                    -&gt;join('')
+            );
+        }
+
+        $manifest = $this-&gt;manifest($buildDirectory);
+
+        $tags = new Collection;
+        $preloads = new Collection;
+
+        foreach ($entrypoints as $entrypoint) {
+            $chunk = $this-&gt;chunk($manifest, $entrypoint);
+
+            $preloads-&gt;push([
+                $chunk['src'],
+                $this-&gt;assetPath(&quot;{$buildDirectory}/{$chunk['file']}&quot;),
+                $chunk,
+                $manifest,
+            ]);
+
+            foreach ($chunk['imports'] ?? [] as $import) {
+                $preloads-&gt;push([
+                    $import,
+                    $this-&gt;assetPath(&quot;{$buildDirectory}/{$manifest[$import]['file']}&quot;),
+                    $manifest[$import],
+                    $manifest,
+                ]);
+
+                foreach ($manifest[$import]['css'] ?? [] as $css) {
+                    $partialManifest = (new Collection($manifest))-&gt;where('file', $css);
+
+                    $preloads-&gt;push([
+                        $partialManifest-&gt;keys()-&gt;first(),
+                        $this-&gt;assetPath(&quot;{$buildDirectory}/{$css}&quot;),
+                        $partialManifest-&gt;first(),
+                        $manifest,
+                    ]);
+
+                    $tags-&gt;push($this-&gt;makeTagForChunk(
+                        $partialManifest-&gt;keys()-&gt;first(),
+                        $this-&gt;assetPath(&quot;{$buildDirectory}/{$css}&quot;),
+                        $partialManifest-&gt;first(),
+                        $manifest
+                    ));
+                }
+            }
+
+            $tags-&gt;push($this-&gt;makeTagForChunk(
+                $entrypoint,
+                $this-&gt;assetPath(&quot;{$buildDirectory}/{$chunk['file']}&quot;),
+                $chunk,
+                $manifest
+            ));
+
+            foreach ($chunk['css'] ?? [] as $css) {
+                $partialManifest = (new Collection($manifest))-&gt;where('file', $css);
+
+                $preloads-&gt;push([
+                    $partialManifest-&gt;keys()-&gt;first(),
+                    $this-&gt;assetPath(&quot;{$buildDirectory}/{$css}&quot;),
+                    $partialManifest-&gt;first(),
+                    $manifest,
+                ]);
+
+                $tags-&gt;push($this-&gt;makeTagForChunk(
+                    $partialManifest-&gt;keys()-&gt;first(),
+                    $this-&gt;assetPath(&quot;{$buildDirectory}/{$css}&quot;),
+                    $partialManifest-&gt;first(),
+                    $manifest
+                ));
+            }
+        }
+
+        [$stylesheets, $scripts] = $tags-&gt;unique()-&gt;partition(fn ($tag) =&gt; str_starts_with($tag, '&lt;link'));
+
+        $preloads = $preloads-&gt;unique()
+            -&gt;sortByDesc(fn ($args) =&gt; $this-&gt;isCssPath($args[1]))
+            -&gt;map(fn ($args) =&gt; $this-&gt;makePreloadTagForChunk(...$args));
+
+        $base = $preloads-&gt;join('').$stylesheets-&gt;join('').$scripts-&gt;join('');
+
+        if ($this-&gt;prefetchStrategy === null || $this-&gt;isRunningHot()) {
+            return new HtmlString($base);
+        }
+
+        $discoveredImports = [];
+
+        return (new Collection($entrypoints))
+            -&gt;flatMap(fn ($entrypoint) =&gt; (new Collection($manifest[$entrypoint]['dynamicImports'] ?? []))
+                -&gt;map(fn ($import) =&gt; $manifest[$import])
+                -&gt;filter(fn ($chunk) =&gt; str_ends_with($chunk['file'], '.js') || str_ends_with($chunk['file'], '.css'))
+                -&gt;flatMap($f = function ($chunk) use (&amp;$f, $manifest, &amp;$discoveredImports) {
+                    return (new Collection([...$chunk['imports'] ?? [], ...$chunk['dynamicImports'] ?? []]))
+                        -&gt;reject(function ($import) use (&amp;$discoveredImports) {
+                            if (isset($discoveredImports[$import])) {
+                                return true;
+                            }
+
+                            return ! $discoveredImports[$import] = true;
+                        })
+                        -&gt;reduce(
+                            fn ($chunks, $import) =&gt; $chunks-&gt;merge(
+                                $f($manifest[$import])
+                            ), new Collection([$chunk]))
+                        -&gt;merge((new Collection($chunk['css'] ?? []))-&gt;map(
+                            fn ($css) =&gt; (new Collection($manifest))-&gt;first(fn ($chunk) =&gt; $chunk['file'] === $css) ?? [
+                                'file' =&gt; $css,
+                            ],
+                        ));
+                })
+                -&gt;map(function ($chunk) use ($buildDirectory, $manifest) {
+                    return (new Collection([
+                        ...$this-&gt;resolvePreloadTagAttributes(
+                            $chunk['src'] ?? null,
+                            $url = $this-&gt;assetPath(&quot;{$buildDirectory}/{$chunk['file']}&quot;),
+                            $chunk,
+                            $manifest,
+                        ),
+                        'rel' =&gt; 'prefetch',
+                        'fetchpriority' =&gt; 'low',
+                        'href' =&gt; $url,
+                    ]))-&gt;reject(
+                        fn ($value) =&gt; in_array($value, [null, false], true)
+                    )-&gt;mapWithKeys(fn ($value, $key) =&gt; [
+                        $key = (is_int($key) ? $value : $key) =&gt; $value === true ? $key : $value,
+                    ])-&gt;all();
+                })
+                -&gt;reject(fn ($attributes) =&gt; isset($this-&gt;preloadedAssets[$attributes['href']])))
+            -&gt;unique('href')
+            -&gt;values()
+            -&gt;pipe(fn ($assets) =&gt; with(Js::from($assets), fn ($assets) =&gt; match ($this-&gt;prefetchStrategy) {
+                'waterfall' =&gt; new HtmlString($base.&lt;&lt;&lt;HTML
+
+                    &lt;script{$this-&gt;nonceAttribute()}&gt;
+                         window.addEventListener('{$this-&gt;prefetchEvent}', () =&gt; window.setTimeout(() =&gt; {
+                            const makeLink = (asset) =&gt; {
+                                const link = document.createElement('link')
+
+                                Object.keys(asset).forEach((attribute) =&gt; {
+                                    link.setAttribute(attribute, asset[attribute])
+                                })
+
+                                return link
+                            }
+
+                            const loadNext = (assets, count) =&gt; window.setTimeout(() =&gt; {
+                                if (count &gt; assets.length) {
+                                    count = assets.length
+
+                                    if (count === 0) {
+                                        return
+                                    }
+                                }
+
+                                const fragment = new DocumentFragment
+
+                                while (count &gt; 0) {
+                                    const link = makeLink(assets.shift())
+                                    fragment.append(link)
+                                    count--
+
+                                    if (assets.length) {
+                                        link.onload = () =&gt; loadNext(assets, 1)
+                                        link.onerror = () =&gt; loadNext(assets, 1)
+                                    }
+                                }
+
+                                document.head.append(fragment)
+                            })
+
+                            loadNext({$assets}, {$this-&gt;prefetchConcurrently})
+                        }))
+                    &lt;/script&gt;
+                    HTML),
+                'aggressive' =&gt; new HtmlString($base.&lt;&lt;&lt;HTML
+
+                    &lt;script{$this-&gt;nonceAttribute()}&gt;
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

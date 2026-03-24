@@ -1,0 +1,727 @@
+<html>
+<head>
+    <title>vendor/larastan/larastan/src/Properties/SchemaAggregator.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/larastan/larastan/src/Properties/SchemaAggregator.php (<b>547</b> lines of code) (<a href="SchemaAggregator.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+declare(strict_types=1);
+
+namespace Larastan\Larastan\Properties;
+
+use Exception;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use PhpParser;
+use PhpParser\NodeFinder;
+use PHPStan\Reflection\ReflectionProvider;
+use PHPStan\Type\ObjectType;
+use ReflectionException;
+
+use function array_key_exists;
+use function array_merge;
+use function class_basename;
+use function count;
+use function is_string;
+use function property_exists;
+use function strtolower;
+
+/** @see https://github.com/psalm/laravel-psalm-plugin/blob/master/src/SchemaAggregator.php */
+final class SchemaAggregator
+{
+    /** @param array&lt;string, SchemaTable&gt; $tables */
+    public function __construct(private ReflectionProvider $reflectionProvider, public array $tables = [])
+    {
+    }
+
+    /** @param  array&lt;int, PhpParser\Node\Stmt&gt; $stmts */
+    public function addStatements(array $stmts): void
+    {
+        $nodeFinder = new NodeFinder();
+
+        /** @var PhpParser\Node\Stmt\Class_[] $classes */
+        $classes = $nodeFinder-&gt;findInstanceOf($stmts, PhpParser\Node\Stmt\Class_::class);
+
+        foreach ($classes as $stmt) {
+            $this-&gt;addClassStatements($stmt-&gt;stmts);
+        }
+    }
+
+    /** @param  array&lt;int, PhpParser\Node\Stmt&gt; $stmts */
+    private function addClassStatements(array $stmts): void
+    {
+        foreach ($stmts as $stmt) {
+            if (
+                ! ($stmt instanceof PhpParser\Node\Stmt\ClassMethod)
+                || $stmt-&gt;name-&gt;name === 'down'
+                || ! $stmt-&gt;stmts
+            ) {
+                continue;
+            }
+
+            $this-&gt;addUpMethodStatements($stmt-&gt;stmts);
+        }
+    }
+
+    /** @param  PhpParser\Node\Stmt[] $stmts */
+    private function addUpMethodStatements(array $stmts): void
+    {
+        $nodeFinder = new NodeFinder();
+        $methods    = $nodeFinder-&gt;findInstanceOf($stmts, PhpParser\Node\Stmt\Expression::class);
+
+        foreach ($methods as $stmt) {
+            if (
+                $stmt-&gt;expr instanceof PhpParser\Node\Expr\MethodCall
+                &amp;&amp; $stmt-&gt;expr-&gt;var instanceof PhpParser\Node\Expr\StaticCall
+                &amp;&amp; $stmt-&gt;expr-&gt;var-&gt;class instanceof PhpParser\Node\Name
+                &amp;&amp; $stmt-&gt;expr-&gt;var-&gt;name instanceof PhpParser\Node\Identifier
+                &amp;&amp; ($stmt-&gt;expr-&gt;var-&gt;name-&gt;toString() === 'connection' || $stmt-&gt;expr-&gt;var-&gt;name-&gt;toString() === 'setConnection')
+                &amp;&amp; ($stmt-&gt;expr-&gt;var-&gt;class-&gt;toCodeString() === '\Schema' || (new ObjectType('Illuminate\Support\Facades\Schema'))-&gt;isSuperTypeOf(new ObjectType($stmt-&gt;expr-&gt;var-&gt;class-&gt;toCodeString()))-&gt;yes())
+            ) {
+                $statement = $stmt-&gt;expr;
+            } elseif (
+                $stmt-&gt;expr instanceof PhpParser\Node\Expr\StaticCall
+                &amp;&amp; $stmt-&gt;expr-&gt;class instanceof PhpParser\Node\Name
+                &amp;&amp; $stmt-&gt;expr-&gt;name instanceof PhpParser\Node\Identifier
+                &amp;&amp; ($stmt-&gt;expr-&gt;class-&gt;toCodeString() === '\Schema' || (new ObjectType('Illuminate\Support\Facades\Schema'))-&gt;isSuperTypeOf(new ObjectType($stmt-&gt;expr-&gt;class-&gt;toCodeString()))-&gt;yes())
+            ) {
+                $statement = $stmt-&gt;expr;
+            } else {
+                continue;
+            }
+
+            if (! $statement-&gt;name instanceof PhpParser\Node\Identifier) {
+                continue;
+            }
+
+            match ($statement-&gt;name-&gt;name) {
+                'create' =&gt; $this-&gt;alterTable($statement, true),
+                'table' =&gt; $this-&gt;alterTable($statement, false),
+                'drop', 'dropIfExists' =&gt; $this-&gt;dropTable($statement),
+                'rename' =&gt; $this-&gt;renameTableThroughStaticCall($statement),
+                default =&gt; null,
+            };
+        }
+    }
+
+    private function alterTable(PhpParser\Node\Expr\StaticCall|PhpParser\Node\Expr\MethodCall $call, bool $creating): void
+    {
+        if (! isset($call-&gt;args[0])) {
+            return;
+        }
+
+        $value = $call-&gt;getArgs()[0]-&gt;value;
+
+        $tableName = null;
+
+        if ($value instanceof PhpParser\Node\Scalar\String_) {
+            $tableName = $value-&gt;value;
+        }
+
+        if ($value instanceof PhpParser\Node\Expr\ClassConstFetch) {
+            if (! $value-&gt;class instanceof PhpParser\Node\Name\FullyQualified) {
+                return;
+            }
+
+            if (! $value-&gt;name instanceof PhpParser\Node\Identifier) {
+                return;
+            }
+
+            if (! $this-&gt;reflectionProvider-&gt;hasClass($value-&gt;class-&gt;name)) {
+                return;
+            }
+
+            $class = $this-&gt;reflectionProvider-&gt;getClass($value-&gt;class-&gt;name);
+
+            $constantValueType = $class-&gt;getConstant($value-&gt;name-&gt;toString())-&gt;getValueType();
+
+            if ($constantValueType-&gt;getConstantStrings() !== []) {
+                $tableName = $constantValueType-&gt;getConstantStrings()[0]-&gt;getValue();
+            }
+        }
+
+        if ($tableName === null) {
+            return;
+        }
+
+        if ($creating) {
+            $this-&gt;tables[$tableName] = new SchemaTable($tableName);
+        }
+
+        if (
+            ! isset($call-&gt;args[1])
+            || ! $call-&gt;getArgs()[1]-&gt;value instanceof PhpParser\Node\Expr\Closure
+            || count($call-&gt;getArgs()[1]-&gt;value-&gt;params) &lt; 1
+            || ($call-&gt;getArgs()[1]-&gt;value-&gt;params[0]-&gt;type instanceof PhpParser\Node\Name
+                &amp;&amp; ! (new ObjectType('Illuminate\Database\Schema\Blueprint'))-&gt;isSuperTypeOf(new ObjectType($call-&gt;getArgs()[1]-&gt;value-&gt;params[0]-&gt;type-&gt;toCodeString()))-&gt;yes()
+            )
+        ) {
+            return;
+        }
+
+        $updateClosure = $call-&gt;getArgs()[1]-&gt;value;
+
+        if (
+            ! ($call-&gt;getArgs()[1]-&gt;value-&gt;params[0]-&gt;var instanceof PhpParser\Node\Expr\Variable)
+            || ! is_string($call-&gt;getArgs()[1]-&gt;value-&gt;params[0]-&gt;var-&gt;name)
+        ) {
+            return;
+        }
+
+        $argName = $call-&gt;getArgs()[1]-&gt;value-&gt;params[0]-&gt;var-&gt;name;
+
+        $this-&gt;processColumnUpdates($tableName, $argName, $this-&gt;getUpdateStatements($updateClosure));
+    }
+
+    /**
+     * @param  PhpParser\Node\Stmt[] $stmts
+     *
+     * @throws Exception
+     */
+    private function processColumnUpdates(string $tableName, string $argName, array $stmts): void
+    {
+        if (! isset($this-&gt;tables[$tableName])) {
+            return;
+        }
+
+        $table = $this-&gt;tables[$tableName];
+
+        foreach ($stmts as $stmt) {
+            if (
+                ! ($stmt instanceof PhpParser\Node\Stmt\Expression)
+                || ! ($stmt-&gt;expr instanceof PhpParser\Node\Expr\MethodCall)
+                || ! ($stmt-&gt;expr-&gt;name instanceof PhpParser\Node\Identifier)
+            ) {
+                continue;
+            }
+
+            $rootVar = $stmt-&gt;expr;
+
+            $firstMethodCall = $rootVar;
+
+            $nullable = false;
+            $unsigned = false;
+
+            while ($rootVar instanceof PhpParser\Node\Expr\MethodCall) {
+                if ($rootVar-&gt;name instanceof PhpParser\Node\Identifier) {
+                    if (
+                        $rootVar-&gt;name-&gt;name === 'nullable'
+                        &amp;&amp; $this-&gt;getNullableArgumentValue($rootVar) === true
+                    ) {
+                        $nullable = true;
+                    } elseif ($rootVar-&gt;name-&gt;name === 'unsigned') {
+                        $unsigned = true;
+                    }
+                }
+
+                $firstMethodCall = $rootVar;
+                $rootVar         = $rootVar-&gt;var;
+            }
+
+            if (
+                ! ($rootVar instanceof PhpParser\Node\Expr\Variable)
+                || $rootVar-&gt;name !== $argName
+                || ! ($firstMethodCall-&gt;name instanceof PhpParser\Node\Identifier)
+            ) {
+                continue;
+            }
+
+            $firstArg  = $firstMethodCall-&gt;getArgs()[0]-&gt;value ?? null;
+            $secondArg = $firstMethodCall-&gt;getArgs()[1]-&gt;value ?? null;
+
+            if ($firstMethodCall-&gt;name-&gt;name === 'foreignIdFor') {
+                if (
+                    $firstArg instanceof PhpParser\Node\Expr\ClassConstFetch
+                    &amp;&amp; $firstArg-&gt;class instanceof PhpParser\Node\Name
+                ) {
+                    $modelClass = $firstArg-&gt;class-&gt;toCodeString();
+                } elseif ($firstArg instanceof PhpParser\Node\Scalar\String_) {
+                    $modelClass = $firstArg-&gt;value;
+                } else {
+                    continue;
+                }
+
+                $columnName = Str::snake(class_basename($modelClass)) . '_id';
+                if ($secondArg instanceof PhpParser\Node\Scalar\String_) {
+                    $columnName = $secondArg-&gt;value;
+                }
+
+                $type = $this-&gt;getModelReferenceType($modelClass);
+                if ($unsigned &amp;&amp; ($type === null || $type === 'int')) {
+                    $type = 'non-negative-int';
+                }
+
+                $table-&gt;setColumn(new SchemaColumn($columnName, $type ?? 'int', $nullable));
+
+                continue;
+            }
+
+            if (! $firstArg instanceof PhpParser\Node\Scalar\String_) {
+                if ($firstArg instanceof PhpParser\Node\Expr\Array_ &amp;&amp; $firstMethodCall-&gt;name-&gt;name === 'dropColumn') {
+                    foreach ($firstArg-&gt;items as $arrayItem) {
+                        if (! $arrayItem-&gt;value instanceof PhpParser\Node\Scalar\String_) {
+                            continue;
+                        }
+
+                        $table-&gt;dropColumn($arrayItem-&gt;value-&gt;value);
+                    }
+                }
+
+                if (
+                    $firstMethodCall-&gt;name-&gt;name === 'timestamps'
+                    || $firstMethodCall-&gt;name-&gt;name === 'timestampsTz'
+                    || $firstMethodCall-&gt;name-&gt;name === 'nullableTimestamps'
+                    || $firstMethodCall-&gt;name-&gt;name === 'nullableTimestampsTz'
+                    || $firstMethodCall-&gt;name-&gt;name === 'rememberToken'
+                ) {
+                    switch (strtolower($firstMethodCall-&gt;name-&gt;name)) {
+                        case 'droptimestamps':
+                        case 'droptimestampstz':
+                            $table-&gt;dropColumn('created_at');
+                            $table-&gt;dropColumn('updated_at');
+                            break;
+
+                        case 'remembertoken':
+                            $table-&gt;setColumn(new SchemaColumn('remember_token', 'string', $nullable));
+                            break;
+
+                        case 'dropremembertoken':
+                            $table-&gt;dropColumn('remember_token');
+                            break;
+
+                        case 'timestamps':
+                        case 'timestampstz':
+                        case 'nullabletimestamps':
+                            $table-&gt;setColumn(new SchemaColumn('created_at', 'string', true));
+                            $table-&gt;setColumn(new SchemaColumn('updated_at', 'string', true));
+                            break;
+                    }
+
+                    continue;
+                }
+
+                $defaultsMap = [
+                    'softDeletes' =&gt; 'deleted_at',
+                    'softDeletesTz' =&gt; 'deleted_at',
+                    'softDeletesDatetime' =&gt; 'deleted_at',
+                    'dropSoftDeletes' =&gt; 'deleted_at',
+                    'dropSoftDeletesTz' =&gt; 'deleted_at',
+                    'uuid' =&gt; 'uuid',
+                    'id' =&gt; 'id',
+                    'ulid' =&gt; 'ulid',
+                    'ipAddress' =&gt; 'ip_address',
+                    'macAddress' =&gt; 'mac_address',
+                ];
+                if (! array_key_exists($firstMethodCall-&gt;name-&gt;name, $defaultsMap)) {
+                    continue;
+                }
+
+                $columnName = $defaultsMap[$firstMethodCall-&gt;name-&gt;name];
+            } else {
+                $columnName = $firstArg-&gt;value;
+            }
+
+            $secondArgArray = null;
+
+            if ($secondArg instanceof PhpParser\Node\Expr\Array_) {
+                $secondArgArray = [];
+
+                foreach ($secondArg-&gt;items as $arrayItem) {
+                    if (! $arrayItem-&gt;value instanceof PhpParser\Node\Scalar\String_) {
+                        continue;
+                    }
+
+                    $secondArgArray[] = $arrayItem-&gt;value-&gt;value;
+                }
+            }
+
+            $this-&gt;processStatementAlterMethod(
+                strtolower($firstMethodCall-&gt;name-&gt;name),
+                $firstMethodCall,
+                $table,
+                $columnName,
+                $nullable,
+                $unsigned,
+                $secondArg,
+                $argName,
+                $tableName,
+                $secondArgArray,
+                $stmt,
+            );
+        }
+    }
+
+    private function dropTable(PhpParser\Node\Expr\StaticCall|PhpParser\Node\Expr\MethodCall $call): void
+    {
+        if (
+            ! isset($call-&gt;args[0])
+            || ! $call-&gt;getArgs()[0]-&gt;value instanceof PhpParser\Node\Scalar\String_
+        ) {
+            return;
+        }
+
+        $tableName = $call-&gt;getArgs()[0]-&gt;value-&gt;value;
+
+        unset($this-&gt;tables[$tableName]);
+    }
+
+    private function renameTableThroughStaticCall(PhpParser\Node\Expr\StaticCall|PhpParser\Node\Expr\MethodCall $call): void
+    {
+        if (
+            ! isset($call-&gt;args[0], $call-&gt;args[1])
+            || ! $call-&gt;getArgs()[0]-&gt;value instanceof PhpParser\Node\Scalar\String_
+            || ! $call-&gt;getArgs()[1]-&gt;value instanceof PhpParser\Node\Scalar\String_
+        ) {
+            return;
+        }
+
+        $oldTableName = $call-&gt;getArgs()[0]-&gt;value-&gt;value;
+        $newTableName = $call-&gt;getArgs()[1]-&gt;value-&gt;value;
+
+        $this-&gt;renameTable($oldTableName, $newTableName);
+    }
+
+    private function renameTableThroughMethodCall(SchemaTable $oldTable, PhpParser\Node\Expr\MethodCall $call): void
+    {
+        if (
+            ! isset($call-&gt;args[0])
+            || ! $call-&gt;getArgs()[0]-&gt;value instanceof PhpParser\Node\Scalar\String_
+        ) {
+            return;
+        }
+
+        /** @var PhpParser\Node\Scalar\String_ $methodCallArgument */
+        $methodCallArgument = $call-&gt;getArgs()[0]-&gt;value;
+
+        $oldTableName = $oldTable-&gt;name;
+        $newTableName = $methodCallArgument-&gt;value;
+
+        $this-&gt;renameTable($oldTableName, $newTableName);
+    }
+
+    private function renameTable(string $oldTableName, string $newTableName): void
+    {
+        if (! isset($this-&gt;tables[$oldTableName])) {
+            return;
+        }
+
+        $table = $this-&gt;tables[$oldTableName];
+
+        unset($this-&gt;tables[$oldTableName]);
+
+        $table-&gt;name = $newTableName;
+
+        $this-&gt;tables[$newTableName] = $table;
+    }
+
+    private function getModelReferenceType(string $modelClass): string|null
+    {
+        $classReflection = $this-&gt;reflectionProvider-&gt;getClass($modelClass);
+        try {
+            /** @var Model $modelInstance */
+            $modelInstance = $classReflection-&gt;getNativeReflection()-&gt;newInstanceWithoutConstructor();
+        } catch (ReflectionException) {
+            return null;
+        }
+
+        $tableName = $modelInstance-&gt;getTable();
+
+        if (! array_key_exists($tableName, $this-&gt;tables)) {
+            return null;
+        }
+
+        $table  = $this-&gt;tables[$tableName];
+        $column = $modelInstance-&gt;getKeyName();
+
+        if (! array_key_exists($column, $table-&gt;columns)) {
+            return null;
+        }
+
+        return $table-&gt;columns[$column]-&gt;readableType;
+    }
+
+    private function getNullableArgumentValue(PhpParser\Node\Expr\MethodCall $rootVar): bool
+    {
+        if (! array_key_exists(0, $rootVar-&gt;args)) {
+            return true;
+        }
+
+        $arg = $rootVar-&gt;args[0];
+
+        if (! ($arg instanceof PhpParser\Node\Arg)) {
+            return true;
+        }
+
+        $argExpression = $arg-&gt;value;
+
+        if (! ($argExpression instanceof PhpParser\Node\Expr\ConstFetch)) {
+            return true;
+        }
+
+        return $argExpression-&gt;name-&gt;getFirst() === 'true';
+    }
+
+    /** @return PhpParser\Node\Stmt\Expression[] */
+    private function getUpdateStatements(PhpParser\Node\Expr $updateClosure): array
+    {
+        if (! property_exists($updateClosure, 'stmts')) {
+            return [];
+        }
+
+        $statements = [];
+        $nodeFinder = new NodeFinder();
+
+        foreach ($updateClosure-&gt;stmts as $updateStatement) {
+            if ($updateStatement instanceof PhpParser\Node\Stmt\If_) {
+                $statements = array_merge(
+                    $statements,
+                    $nodeFinder-&gt;findInstanceOf($updateStatement, PhpParser\Node\Stmt\Expression::class),
+                );
+
+                continue;
+            }
+
+            $statements[] = $updateStatement;
+        }
+
+        return $statements;
+    }
+
+    /**
+     * @param array&lt;int, mixed&gt;|null $secondArgArray
+     *
+     * @throws Exception
+     */
+    private function processStatementAlterMethod(
+        string $method,
+        PhpParser\Node\Expr\MethodCall|null $firstMethodCall,
+        SchemaTable $table,
+        string $columnName,
+        bool $nullable,
+        bool $unsigned,
+        mixed $secondArg,
+        PhpParser\Node\Expr|string $argName,
+        string $tableName,
+        array|null $secondArgArray,
+        PhpParser\Node\Stmt\Expression $stmt,
+    ): void {
+        switch ($method) {
+            case 'addcolumn':
+                $this-&gt;processStatementAlterMethod(
+                    strtolower($firstMethodCall-&gt;args[0]-&gt;value-&gt;value ?? ''),
+                    null,
+                    $table,
+                    $firstMethodCall-&gt;args[1]-&gt;value-&gt;value ?? '',
+                    $nullable,
+                    $unsigned,
+                    $secondArg,
+                    $argName,
+                    $tableName,
+                    $secondArgArray,
+                    $stmt,
+                );
+
+                return;
+
+            case 'integer':
+            case 'tinyinteger':
+            case 'smallinteger':
+            case 'mediuminteger':
+            case 'biginteger':
+                $columnType = $unsigned ? 'non-negative-int' : 'int';
+                $table-&gt;setColumn(new SchemaColumn($columnName, $columnType, $nullable));
+
+                return;
+
+            case 'increments':
+            case 'id':
+            case 'unsignedbiginteger':
+            case 'unsignedinteger':
+            case 'unsignedmediuminteger':
+            case 'unsignedsmallinteger':
+            case 'unsignedtinyinteger':
+            case 'integerincrements':
+            case 'mediumincrements':
+            case 'smallincrements':
+            case 'tinyincrements':
+            case 'bigincrements':
+            case 'foreignid':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'non-negative-int', $nullable));
+
+                return;
+
+            case 'char':
+            case 'datetimetz':
+            case 'date':
+            case 'datetime':
+            case 'foreignulid':
+            case 'foreignuuid':
+            case 'ipaddress':
+            case 'json':
+            case 'jsonb':
+            case 'linestring':
+            case 'longtext':
+            case 'macaddress':
+            case 'mediumtext':
+            case 'multilinestring':
+            case 'string':
+            case 'text':
+            case 'time':
+            case 'timestamp':
+            case 'ulid':
+            case 'uuid':
+            case 'binary':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'string', $nullable));
+
+                return;
+
+            case 'boolean':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'bool', $nullable));
+
+                return;
+
+            case 'geometry':
+            case 'geometrycollection':
+            case 'multipoint':
+            case 'multipolygon':
+            case 'multipolygonz':
+            case 'point':
+            case 'polygon':
+            case 'computed':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'mixed', $nullable));
+
+                return;
+
+            case 'double':
+            case 'float':
+            case 'unsigneddecimal':
+            case 'decimal':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'float', $nullable));
+
+                return;
+
+            case 'after':
+                if (
+                    $secondArg instanceof PhpParser\Node\Expr\Closure
+                    &amp;&amp; $secondArg-&gt;params[0]-&gt;var instanceof PhpParser\Node\Expr\Variable
+                    &amp;&amp; ! ($secondArg-&gt;params[0]-&gt;var-&gt;name instanceof PhpParser\Node\Expr)
+                ) {
+                    $argName = $secondArg-&gt;params[0]-&gt;var-&gt;name;
+                    $this-&gt;processColumnUpdates($tableName, $argName, $secondArg-&gt;stmts);
+                }
+
+                return;
+
+            case 'dropcolumn':
+            case 'dropifexists':
+            case 'dropsoftdeletes':
+            case 'dropsoftdeletestz':
+            case 'removecolumn':
+            case 'drop':
+                $table-&gt;dropColumn($columnName);
+
+                return;
+
+            case 'dropforeign':
+            case 'dropindex':
+            case 'dropprimary':
+            case 'dropunique':
+            case 'foreign':
+            case 'index':
+            case 'primary':
+            case 'renameindex':
+            case 'spatialIndex':
+            case 'unique':
+            case 'dropspatialindex':
+                return;
+
+            case 'dropmorphs':
+                $table-&gt;dropColumn($columnName . '_type');
+                $table-&gt;dropColumn($columnName . '_id');
+
+                return;
+
+            case 'enum':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'enum', $nullable, $secondArgArray));
+
+                return;
+
+            case 'morphs':
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_type', 'string', $nullable));
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_id', 'int', $nullable));
+
+                return;
+
+            case 'nullablemorphs':
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_type', 'string', true));
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_id', 'int', true));
+
+                return;
+
+            case 'nullableuuidmorphs':
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_type', 'string', true));
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_id', 'string', true));
+
+                return;
+
+            case 'rename':
+                /** @var PhpParser\Node\Expr\MethodCall $methodCall */
+                $methodCall = $stmt-&gt;expr;
+                $this-&gt;renameTableThroughMethodCall($table, $methodCall);
+
+                return;
+
+            case 'renamecolumn':
+                if ($secondArg instanceof PhpParser\Node\Scalar\String_) {
+                    $table-&gt;renameColumn($columnName, $secondArg-&gt;value);
+                }
+
+                return;
+
+            case 'set':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'set', $nullable, $secondArgArray));
+
+                return;
+
+            case 'softdeletestz':
+            case 'timestamptz':
+            case 'timetz':
+            case 'year':
+            case 'softdeletes':
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'string', true));
+
+                return;
+
+            case 'uuidmorphs':
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_type', 'string', $nullable));
+                $table-&gt;setColumn(new SchemaColumn($columnName . '_id', 'string', $nullable));
+
+                return;
+
+            default:
+                // We know a property exists with a name, we just don't know its type.
+                $table-&gt;setColumn(new SchemaColumn($columnName, 'mixed', $nullable));
+        }
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

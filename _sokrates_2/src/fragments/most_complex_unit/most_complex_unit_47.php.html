@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>public static function serializeFieldToStream()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public static function serializeFieldToStream()</h3>
+<p style="margin-top: 4px">in <i>vendor/google/protobuf/src/Google/Protobuf/Internal/GPBWire.php [484:598]</i></p>
+<ul>
+    <li><b>110</b> lines of code</li>
+    <li><b>39</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public static function serializeFieldToStream(
+        $value,
+        $field,
+        $need_tag,
+        &amp;$output)
+    {
+        if ($need_tag) {
+            if (!GPBWire::writeTag(
+                $output,
+                self::makeTag(
+                    $field-&gt;getNumber(),
+                    $field-&gt;getType()))) {
+                return false;
+            }
+        }
+        switch ($field-&gt;getType()) {
+            case GPBType::DOUBLE:
+                if (!GPBWire::writeDouble($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::FLOAT:
+                if (!GPBWire::writeFloat($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::INT64:
+                if (!GPBWire::writeInt64($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::UINT64:
+                if (!GPBWire::writeUint64($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::INT32:
+                if (!GPBWire::writeInt32($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::FIXED32:
+                if (!GPBWire::writeFixed32($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::FIXED64:
+                if (!GPBWire::writeFixed64($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::BOOL:
+                if (!GPBWire::writeBool($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::STRING:
+                if (!GPBWire::writeString($output, $value)) {
+                    return false;
+                }
+                break;
+            //    case GPBType::GROUP:
+            //      echo &quot;GROUP\xA&quot;;
+            //      trigger_error(&quot;Not implemented.&quot;, E_ERROR);
+            //      break;
+            case GPBType::MESSAGE:
+                if (!GPBWire::writeMessage($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::BYTES:
+                if (!GPBWire::writeBytes($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::UINT32:
+                if (PHP_INT_SIZE === 8 &amp;&amp; $value &lt; 0) {
+                    $value += 4294967296;
+                }
+                if (!GPBWire::writeUint32($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::ENUM:
+                if (!GPBWire::writeInt32($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::SFIXED32:
+                if (!GPBWire::writeSfixed32($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::SFIXED64:
+                if (!GPBWire::writeSfixed64($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::SINT32:
+                if (!GPBWire::writeSint32($output, $value)) {
+                    return false;
+                }
+                break;
+            case GPBType::SINT64:
+                if (!GPBWire::writeSint64($output, $value)) {
+                    return false;
+                }
+                break;
+            default:
+                user_error(&quot;Unsupported type.&quot;);
+                return false;
+        }
+
+        return true;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

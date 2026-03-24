@@ -1,0 +1,287 @@
+<html>
+<head>
+    <title>public function get()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public function get()</h3>
+<p style="margin-top: 4px">in <i>vendor/nesbot/carbon/src/Carbon/Traits/Date.php [1086:1350]</i></p>
+<ul>
+    <li><b>147</b> lines of code</li>
+    <li><b>51</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="php">
+    public function get(Unit|string $name): mixed
+    {
+        static $localizedFormats = [
+            // @property string the day of week in current locale
+            'localeDayOfWeek' =&gt; 'dddd',
+            // @property string the abbreviated day of week in current locale
+            'shortLocaleDayOfWeek' =&gt; 'ddd',
+            // @property string the month in current locale
+            'localeMonth' =&gt; 'MMMM',
+            // @property string the abbreviated month in current locale
+            'shortLocaleMonth' =&gt; 'MMM',
+        ];
+
+        $name = Unit::toName($name);
+
+        if (isset($localizedFormats[$name])) {
+            return $this-&gt;isoFormat($localizedFormats[$name]);
+        }
+
+        static $formats = [
+            // @property int
+            'year' =&gt; 'Y',
+            // @property int
+            'yearIso' =&gt; 'o',
+            // @--property-read int
+            // @--property-write Month|int
+            // @property int
+            'month' =&gt; 'n',
+            // @property int
+            'day' =&gt; 'j',
+            // @property int
+            'hour' =&gt; 'G',
+            // @property int
+            'minute' =&gt; 'i',
+            // @property int
+            'second' =&gt; 's',
+            // @property int
+            'micro' =&gt; 'u',
+            // @property int
+            'microsecond' =&gt; 'u',
+            // @property int 0 (for Sunday) through 6 (for Saturday)
+            'dayOfWeek' =&gt; 'w',
+            // @property int 1 (for Monday) through 7 (for Sunday)
+            'dayOfWeekIso' =&gt; 'N',
+            // @property int ISO-8601 week number of year, weeks starting on Monday
+            'weekOfYear' =&gt; 'W',
+            // @property-read int number of days in the given month
+            'daysInMonth' =&gt; 't',
+            // @property int|float|string seconds since the Unix Epoch
+            'timestamp' =&gt; 'U',
+            // @property-read string &quot;am&quot;/&quot;pm&quot; (Ante meridiem or Post meridiem latin lowercase mark)
+            'latinMeridiem' =&gt; 'a',
+            // @property-read string &quot;AM&quot;/&quot;PM&quot; (Ante meridiem or Post meridiem latin uppercase mark)
+            'latinUpperMeridiem' =&gt; 'A',
+            // @property string the day of week in English
+            'englishDayOfWeek' =&gt; 'l',
+            // @property string the abbreviated day of week in English
+            'shortEnglishDayOfWeek' =&gt; 'D',
+            // @property string the month in English
+            'englishMonth' =&gt; 'F',
+            // @property string the abbreviated month in English
+            'shortEnglishMonth' =&gt; 'M',
+            // @property-read string $timezoneAbbreviatedName the current timezone abbreviated name
+            'timezoneAbbreviatedName' =&gt; 'T',
+            // @property-read string $tzAbbrName alias of $timezoneAbbreviatedName
+            'tzAbbrName' =&gt; 'T',
+        ];
+
+        switch (true) {
+            case isset($formats[$name]):
+                $value = $this-&gt;rawFormat($formats[$name]);
+
+                return is_numeric($value) ? (int) $value : $value;
+
+            // @property-read string long name of weekday translated according to Carbon locale, in english if no translation available for current language
+            case $name === 'dayName':
+                return $this-&gt;getTranslatedDayName();
+            // @property-read string short name of weekday translated according to Carbon locale, in english if no translation available for current language
+            case $name === 'shortDayName':
+                return $this-&gt;getTranslatedShortDayName();
+            // @property-read string very short name of weekday translated according to Carbon locale, in english if no translation available for current language
+            case $name === 'minDayName':
+                return $this-&gt;getTranslatedMinDayName();
+            // @property-read string long name of month translated according to Carbon locale, in english if no translation available for current language
+            case $name === 'monthName':
+                return $this-&gt;getTranslatedMonthName();
+            // @property-read string short name of month translated according to Carbon locale, in english if no translation available for current language
+            case $name === 'shortMonthName':
+                return $this-&gt;getTranslatedShortMonthName();
+            // @property-read string lowercase meridiem mark translated according to Carbon locale, in latin if no translation available for current language
+            case $name === 'meridiem':
+                return $this-&gt;meridiem(true);
+            // @property-read string uppercase meridiem mark translated according to Carbon locale, in latin if no translation available for current language
+            case $name === 'upperMeridiem':
+                return $this-&gt;meridiem();
+            // @property-read int current hour from 1 to 24
+            case $name === 'noZeroHour':
+                return $this-&gt;hour ?: 24;
+            // @property int
+            case $name === 'milliseconds':
+                // @property int
+            case $name === 'millisecond':
+            // @property int
+            case $name === 'milli':
+                return (int) floor(((int) $this-&gt;rawFormat('u')) / 1000);
+
+            // @property int 1 through 53
+            case $name === 'week':
+                return (int) $this-&gt;week();
+
+            // @property int 1 through 53
+            case $name === 'isoWeek':
+                return (int) $this-&gt;isoWeek();
+
+            // @property int year according to week format
+            case $name === 'weekYear':
+                return (int) $this-&gt;weekYear();
+
+            // @property int year according to ISO week format
+            case $name === 'isoWeekYear':
+                return (int) $this-&gt;isoWeekYear();
+
+            // @property-read int 51 through 53
+            case $name === 'weeksInYear':
+                return $this-&gt;weeksInYear();
+
+            // @property-read int 51 through 53
+            case $name === 'isoWeeksInYear':
+                return $this-&gt;isoWeeksInYear();
+
+            // @property int 1 through 5
+            case $name === 'weekOfMonth':
+                return (int) ceil($this-&gt;day / static::DAYS_PER_WEEK);
+
+            // @property-read int 1 through 5
+            case $name === 'weekNumberInMonth':
+                return (int) ceil(($this-&gt;day + $this-&gt;avoidMutation()-&gt;startOfMonth()-&gt;dayOfWeekIso - 1) / static::DAYS_PER_WEEK);
+
+            // @property-read int 0 through 6
+            case $name === 'firstWeekDay':
+                return (int) $this-&gt;getTranslationMessage('first_day_of_week');
+
+            // @property-read int 0 through 6
+            case $name === 'lastWeekDay':
+                return $this-&gt;transmitFactory(fn () =&gt; static::weekRotate((int) $this-&gt;getTranslationMessage('first_day_of_week'), -1));
+
+            // @property int 1 through 366
+            case $name === 'dayOfYear':
+                return 1 + (int) ($this-&gt;rawFormat('z'));
+
+            // @property-read int 365 or 366
+            case $name === 'daysInYear':
+                return static::DAYS_PER_YEAR + ($this-&gt;isLeapYear() ? 1 : 0);
+
+            // @property int does a diffInYears() with default parameters
+            case $name === 'age':
+                return (int) $this-&gt;diffInYears();
+
+            // @property-read int the quarter of this instance, 1 - 4
+            case $name === 'quarter':
+                return (int) ceil($this-&gt;month / static::MONTHS_PER_QUARTER);
+
+            // @property-read int the decade of this instance
+            // @call isSameUnit
+            case $name === 'decade':
+                return (int) ceil($this-&gt;year / static::YEARS_PER_DECADE);
+
+            // @property-read int the century of this instance
+            // @call isSameUnit
+            case $name === 'century':
+                $factor = 1;
+                $year = $this-&gt;year;
+
+                if ($year &lt; 0) {
+                    $year = -$year;
+                    $factor = -1;
+                }
+
+                return (int) ($factor * ceil($year / static::YEARS_PER_CENTURY));
+
+            // @property-read int the millennium of this instance
+            // @call isSameUnit
+            case $name === 'millennium':
+                $factor = 1;
+                $year = $this-&gt;year;
+
+                if ($year &lt; 0) {
+                    $year = -$year;
+                    $factor = -1;
+                }
+
+                return (int) ($factor * ceil($year / static::YEARS_PER_MILLENNIUM));
+
+            // @property int the timezone offset in seconds from UTC
+            case $name === 'offset':
+                return $this-&gt;getOffset();
+
+            // @property int the timezone offset in minutes from UTC
+            case $name === 'offsetMinutes':
+                return $this-&gt;getOffset() / static::SECONDS_PER_MINUTE;
+
+            // @property int the timezone offset in hours from UTC
+            case $name === 'offsetHours':
+                return $this-&gt;getOffset() / static::SECONDS_PER_MINUTE / static::MINUTES_PER_HOUR;
+
+            // @property-read bool daylight savings time indicator, true if DST, false otherwise
+            case $name === 'dst':
+                return $this-&gt;rawFormat('I') === '1';
+
+            // @property-read bool checks if the timezone is local, true if local, false otherwise
+            case $name === 'local':
+                return $this-&gt;getOffset() === $this-&gt;avoidMutation()-&gt;setTimezone(date_default_timezone_get())-&gt;getOffset();
+
+            // @property-read bool checks if the timezone is UTC, true if UTC, false otherwise
+            case $name === 'utc':
+                return $this-&gt;getOffset() === 0;
+
+            // @--property-write DateTimeZone|string|int $timezone the current timezone
+            // @--property-write DateTimeZone|string|int $tz alias of $timezone
+            // @--property-read CarbonTimeZone $timezone the current timezone
+            // @--property-read CarbonTimeZone $tz alias of $timezone
+            // @property CarbonTimeZone $timezone the current timezone
+            // @property CarbonTimeZone $tz alias of $timezone
+            case $name === 'timezone' || $name === 'tz':
+                return $this-&gt;getTimezone();
+
+            // @property-read string $timezoneName the current timezone name
+            // @property-read string $tzName alias of $timezoneName
+            case $name === 'timezoneName' || $name === 'tzName':
+                return $this-&gt;getTimezone()-&gt;getName();
+
+            // @property-read string locale of the current instance
+            case $name === 'locale':
+                return $this-&gt;getTranslatorLocale();
+
+            case preg_match('/^([a-z]{2,})(In|Of)([A-Z][a-z]+)$/', $name, $match):
+                [, $firstUnit, $operator, $secondUnit] = $match;
+
+                try {
+                    $start = $this-&gt;avoidMutation()-&gt;startOf($secondUnit);
+                    $value = $operator === 'Of'
+                        ? (\in_array($firstUnit, [
+                            // Unit with indexes starting at 1 (other units start at 0)
+                            'day',
+                            'week',
+                            'month',
+                            'quarter',
+                        ], true) ? 1 : 0) + floor($start-&gt;diffInUnit($firstUnit, $this))
+                        : round($start-&gt;diffInUnit($firstUnit, $start-&gt;avoidMutation()-&gt;add($secondUnit, 1)));
+
+                    return (int) $value;
+                } catch (UnknownUnitException) {
+                    // default to macro
+                }
+
+            default:
+                $macro = $this-&gt;getLocalMacro('get'.ucfirst($name));
+
+                if ($macro) {
+                    return $this-&gt;executeCallableWithContext($macro);
+                }
+
+                throw new UnknownGetterException($name);
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

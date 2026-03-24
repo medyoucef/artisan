@@ -1,0 +1,283 @@
+<html>
+<head>
+    <title>vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">vendor/larastan/larastan/src/Properties/ModelPropertyHelper.php (<b>196</b> lines of code) (<a href="ModelPropertyHelper.php">raw</a>):</h3>
+<div id="editor">&lt;?php
+
+declare(strict_types=1);
+
+namespace Larastan\Larastan\Properties;
+
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use Larastan\Larastan\Reflection\ReflectionHelper;
+use PHPStan\PhpDoc\TypeStringResolver;
+use PHPStan\Reflection\ClassReflection;
+use PHPStan\ShouldNotHappenException;
+use PHPStan\Type\Constant\ConstantStringType;
+use PHPStan\Type\Generic\GenericObjectType;
+use PHPStan\Type\MixedType;
+use PHPStan\Type\ObjectType;
+use PHPStan\Type\StringType;
+use PHPStan\Type\TypeCombinator;
+use ReflectionException;
+
+use function array_key_exists;
+use function array_map;
+use function count;
+use function in_array;
+use function is_string;
+use function method_exists;
+
+class ModelPropertyHelper
+{
+    /** @var array&lt;string, SchemaTable&gt; */
+    private array $tables = [];
+
+    public function __construct(
+        private TypeStringResolver $stringResolver,
+        private MigrationHelper $migrationHelper,
+        private SquashedMigrationHelper $squashedMigrationHelper,
+        private ModelCastHelper $modelCastHelper,
+        private MigrationCache $migrationCache,
+    ) {
+    }
+
+    /**
+     * Determine if the model has a database property.
+     */
+    public function hasDatabaseProperty(ClassReflection|string $classReflectionOrTable, string $propertyName): bool
+    {
+        if (! $this-&gt;migrationsLoaded()) {
+            $this-&gt;loadMigrations();
+        }
+
+        if (is_string($classReflectionOrTable)) {
+            if (! array_key_exists($classReflectionOrTable, $this-&gt;tables)) {
+                return false;
+            }
+
+            return array_key_exists($propertyName, $this-&gt;tables[$classReflectionOrTable]-&gt;columns);
+        }
+
+        if (! $classReflectionOrTable-&gt;is(Model::class)) {
+            return false;
+        }
+
+        if ($classReflectionOrTable-&gt;isAbstract()) {
+            return false;
+        }
+
+        if (ReflectionHelper::hasPropertyTag($classReflectionOrTable, $propertyName)) {
+            return false;
+        }
+
+        try {
+            /** @var Model $modelInstance */
+            $modelInstance = $classReflectionOrTable-&gt;getNativeReflection()-&gt;newInstanceWithoutConstructor();
+        } catch (ReflectionException) {
+            return false;
+        }
+
+        if ($propertyName === $modelInstance-&gt;getKeyName()) {
+            return true;
+        }
+
+        $tableName = $modelInstance-&gt;getTable();
+
+        if (! array_key_exists($tableName, $this-&gt;tables)) {
+            return false;
+        }
+
+        return array_key_exists($propertyName, $this-&gt;tables[$tableName]-&gt;columns);
+    }
+
+    public function getDatabaseProperty(ClassReflection $classReflection, string $propertyName): ModelProperty
+    {
+        try {
+            /** @var Model $modelInstance */
+            $modelInstance = $classReflection-&gt;getNativeReflection()-&gt;newInstanceWithoutConstructor();
+        } catch (ReflectionException) {
+            throw new ShouldNotHappenException();
+        }
+
+        $tableName = $modelInstance-&gt;getTable();
+
+        if (
+            $propertyName === $modelInstance-&gt;getKeyName()
+            &amp;&amp; (! array_key_exists($tableName, $this-&gt;tables) || ! array_key_exists($propertyName, $this-&gt;tables[$tableName]-&gt;columns))
+        ) {
+            return new ModelProperty(
+                $classReflection,
+                $this-&gt;stringResolver-&gt;resolve($modelInstance-&gt;getKeyType()),
+                $this-&gt;stringResolver-&gt;resolve($modelInstance-&gt;getKeyType()),
+            );
+        }
+
+        $column = $this-&gt;tables[$tableName]-&gt;columns[$propertyName];
+
+        if ($this-&gt;hasDate($modelInstance, $propertyName)) {
+            $readableType = $this-&gt;modelCastHelper-&gt;getDateType();
+            $writableType = TypeCombinator::union($this-&gt;modelCastHelper-&gt;getDateType(), new StringType());
+        } else {
+            $cast = $this-&gt;modelCastHelper-&gt;getCastForProperty($classReflection, $propertyName);
+
+            if ($cast !== null) {
+                $readableType = $this-&gt;modelCastHelper-&gt;getReadableType(
+                    $cast,
+                    $this-&gt;stringResolver-&gt;resolve($column-&gt;readableType),
+                );
+                $writableType = $this-&gt;modelCastHelper-&gt;getWriteableType(
+                    $cast,
+                    $this-&gt;stringResolver-&gt;resolve($column-&gt;writeableType),
+                );
+            } elseif (in_array($column-&gt;readableType, ['enum', 'set'], true)) {
+                if ($column-&gt;options === null || count($column-&gt;options) &lt; 1) {
+                    $readableType = $writableType = new StringType();
+                } else {
+                    $readableType = $writableType = TypeCombinator::union(...array_map(
+                        static fn ($option) =&gt; new ConstantStringType($option),
+                        $column-&gt;options,
+                    ));
+                }
+            } else {
+                $readableType = $this-&gt;stringResolver-&gt;resolve($column-&gt;readableType);
+                $writableType = $this-&gt;stringResolver-&gt;resolve($column-&gt;writeableType);
+            }
+        }
+
+        if ($column-&gt;nullable) {
+            $readableType = TypeCombinator::addNull($readableType);
+            $writableType = TypeCombinator::addNull($writableType);
+        }
+
+        return new ModelProperty(
+            $classReflection,
+            $readableType,
+            $writableType,
+        );
+    }
+
+    /**
+     * Determine if the model has a property accessor.
+     *
+     * @param bool $strictGenerics Requires the Attribute generics to be defined.
+     */
+    public function hasAccessor(ClassReflection $classReflection, string $propertyName, bool $strictGenerics = true): bool
+    {
+        if (! $classReflection-&gt;is(Model::class)) {
+            return false;
+        }
+
+        $camelCase = Str::camel($propertyName);
+
+        if (! $classReflection-&gt;hasNativeMethod($camelCase)) {
+            return $classReflection-&gt;hasNativeMethod('get' . Str::studly($propertyName) . 'Attribute');
+        }
+
+        $methodReflection = $classReflection-&gt;getNativeMethod($camelCase);
+
+        if ($methodReflection-&gt;isPublic() || $methodReflection-&gt;isPrivate()) {
+            return false;
+        }
+
+        $returnType = $methodReflection-&gt;getVariants()[0]-&gt;getReturnType();
+
+        if (! $strictGenerics) {
+            return (new ObjectType(Attribute::class))-&gt;isSuperTypeOf($returnType)-&gt;yes();
+        }
+
+        if ($returnType-&gt;getObjectClassReflections() === [] || ! $returnType-&gt;getObjectClassReflections()[0]-&gt;isGeneric()) {
+            return false;
+        }
+
+        return (new GenericObjectType(Attribute::class, [new MixedType(), new MixedType()]))-&gt;isSuperTypeOf($returnType)-&gt;yes();
+    }
+
+    public function getAccessor(ClassReflection $classReflection, string $propertyName): ModelProperty
+    {
+        $camelCase = Str::camel($propertyName);
+
+        if ($classReflection-&gt;hasNativeMethod($camelCase)) {
+            $methodReflection = $classReflection-&gt;getNativeMethod($camelCase);
+
+            if (! $methodReflection-&gt;isPublic() &amp;&amp; ! $methodReflection-&gt;isPrivate()) {
+                $returnType = $methodReflection-&gt;getVariants()[0]-&gt;getReturnType();
+
+                if ((new ObjectType(Attribute::class))-&gt;isSuperTypeOf($returnType)-&gt;yes()) {
+                    return new ModelProperty(
+                        $classReflection,
+                        $returnType-&gt;getTemplateType(Attribute::class, 'TGet'),
+                        $returnType-&gt;getTemplateType(Attribute::class, 'TSet'),
+                    );
+                }
+            }
+        }
+
+        $method = $classReflection-&gt;getNativeMethod('get' . Str::studly($propertyName) . 'Attribute');
+
+        return new ModelProperty(
+            $classReflection,
+            $method-&gt;getVariants()[0]-&gt;getReturnType(),
+            $method-&gt;getVariants()[0]-&gt;getReturnType(),
+        );
+    }
+
+    private function migrationsLoaded(): bool
+    {
+        return count($this-&gt;tables) &gt; 0;
+    }
+
+    private function loadMigrations(): void
+    {
+        $migrationFiles = $this-&gt;migrationHelper-&gt;getMigrationFiles();
+        $schemaFiles    = $this-&gt;squashedMigrationHelper-&gt;getSchemaFiles();
+
+        $this-&gt;tables = $this-&gt;migrationCache-&gt;remember(
+            $migrationFiles,
+            $schemaFiles,
+            function () {
+                // First try to create tables from squashed migrations, if there are any
+                // Then scan the normal migration files for further changes to tables.
+                $tables = $this-&gt;squashedMigrationHelper-&gt;initializeTables();
+
+                return $this-&gt;migrationHelper-&gt;initializeTables($tables);
+            },
+        );
+    }
+
+    private function hasDate(Model $modelInstance, string $propertyName): bool
+    {
+        $dates = $modelInstance-&gt;getDates();
+
+        // In order to support SoftDeletes
+        if (method_exists($modelInstance, 'getDeletedAtColumn')) {
+            $dates[] = $modelInstance-&gt;getDeletedAtColumn();
+        }
+
+        return in_array($propertyName, $dates, true);
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/php");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

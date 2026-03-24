@@ -1,0 +1,91 @@
+name: CD Deployment to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # -------------------------
+      # 1. Checkout du code
+      # -------------------------
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # -------------------------
+      # 2. Setup PHP
+      # -------------------------
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo, pdo_mysql, intl
+          coverage: none
+
+      # -------------------------
+      # 3. Installer les dépendances DEV (pour PHPStan)
+      # -------------------------
+      - name: Install Composer dev dependencies
+        run: composer install
+
+      # -------------------------
+      # 4. Analyse statique PHPStan
+      # -------------------------
+      - name: Run static analysis (PHPStan)
+        run: vendor/bin/phpstan analyse --memory-limit=1G
+
+      # -------------------------
+      # 5. Installer les dépendances PROD
+      # -------------------------
+      - name: Install Composer dependencies (production)
+        run: composer install --no-dev --optimize-autoloader
+
+      # -------------------------
+      # 6. Build frontend
+      # -------------------------
+      - name: Build frontend
+        run: |
+          if [ -f package.json ]; then
+            npm install
+            npm run build
+          fi
+
+      # -------------------------
+      # 7. Préparation Laravel
+      # -------------------------
+      - name: Prepare Laravel for production
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:cache
+
+      # -------------------------
+      # 8. Déploiement FTP Hostinger
+      # -------------------------
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          local-dir: ./
+          server-dir: /public_html/
+          exclude: |
+            **/.git**
+            **/.github**
+            **/node_modules/**
+            **/vendor/**
+            **/tests/**
+            **/storage/logs/**
+            **/storage/framework/cache/**
+            **/storage/framework/sessions/**
+            **/_sokrates/**
+            artisan
+            *.sql
