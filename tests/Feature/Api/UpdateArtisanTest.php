@@ -14,7 +14,8 @@ class UpdateArtisanTest extends TestCase
 {
     $artisan = Artisan::factory()->create([
         'nom' => 'Karim',
-        'profession' => 'Plombier'
+        'profession' => 1, // ou Profession::factory()
+
     ]);
 
     $response = $this->putJson("/api/artisans/{$artisan->id}", [

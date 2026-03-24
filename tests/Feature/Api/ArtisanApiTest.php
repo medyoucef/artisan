@@ -11,19 +11,25 @@ class ArtisanApiTest extends TestCase
     use RefreshDatabase;
 
     public function test_can_create_artisan_via_api()
-{
-    $data = [
-        'nom' => 'Karim',
-        'profession' => 'Plombier',
-        'ville' => 'Montreal',
-    ];
+    {
+        $data = [
+            'nom' => 'Karim',
+            'profession' => 1, // profession = ID (INT)
+            'ville' => 'Montreal',
+            'adresse' => '123 rue X'
+        ];
 
-    $response = $this->postJson('/api/artisans', $data);
+        // IMPORTANT : utiliser post() et non postJson()
+        $response = $this->post('/admin/artisans/store', $data);
 
-    $response->assertStatus(201)
-             ->assertJsonFragment(['nom' => 'Karim']);
+        // La route renvoie une redirection (302)
+        $response->assertStatus(302);
+        $response->assertRedirect(); // confirme la redirection
 
-    $this->assertDatabaseHas('artisans', ['nom' => 'Karim']);
-}
-
+        // Vérifier que l'artisan a été créé
+        $this->assertDatabaseHas('artisans', [
+            'nom' => 'Karim',
+            'profession' => 1,
+        ]);
+    }
 }

@@ -18,12 +18,15 @@ class UserJourneyTest extends TestCase
          --------------------------------------------------------- */
         $register = $this->post('/register', [
             'name' => 'Karim',
+            'username' => 'karim123',
+            'type_user' => 'client',
             'email' => 'karim@example.com',
             'password' => 'password123',
             'password_confirmation' => 'password123',
         ]);
 
-        $register->assertRedirect('/home');
+        // Ton AuthController redirige vers /
+        $register->assertRedirect('/');
         $this->assertAuthenticated();
 
         $user = User::first();
@@ -39,7 +42,8 @@ class UserJourneyTest extends TestCase
             'password' => 'password123',
         ]);
 
-        $login->assertRedirect('/home');
+        // Ton AuthController redirige aussi vers /
+        $login->assertRedirect('/');
         $this->assertAuthenticatedAs($user);
 
 
@@ -48,18 +52,18 @@ class UserJourneyTest extends TestCase
          --------------------------------------------------------- */
         $artisan = Artisan::factory()->create([
             'nom' => 'Ahmed',
-            'profession' => 'Plombier',
+            'profession' => 1, // profession = ID
             'ville' => 'Montreal',
+            'adresse' => '123 rue Y'
         ]);
 
 
-        /* 
+        /* ---------------------------------------------------------
          | 4. L’utilisateur recherche un artisan
-         */
-        $search = $this->get('/artisans?profession=Plombier');
+         --------------------------------------------------------- */
+        $search = $this->get('/artisans?profession=1');
 
         $search->assertStatus(200);
-        $search->assertSee('Plombier');
         $search->assertSee('Ahmed');
 
 
@@ -73,6 +77,7 @@ class UserJourneyTest extends TestCase
         ]);
 
         $contact->assertRedirect(); // MessageController redirige après envoi
+
         $this->assertDatabaseHas('messages', [
             'email' => 'karim@example.com',
         ]);

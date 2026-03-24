@@ -47,7 +47,6 @@ Route::post('/rejoindre-artisan', [ArtisanController::class, 'rejoindre'])->name
 
 Route::post('/rejoindre-societe', [ProfileController::class, 'rejoindreSociete'])->name('societe.rejoindre');
 
-Route::post('/artisans', [ArtisanController::class, 'store']);
 
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');

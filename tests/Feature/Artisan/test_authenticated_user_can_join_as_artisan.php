@@ -21,7 +21,8 @@ class ArtisanE2ETest extends TestCase
     $this->actingAs($user);
 
     $response = $this->post('/artisans/rejoindre', [
-        'profession' => 'Plombier'
+        'profession' => 1, // ou Profession::factory()
+
     ]);
 
     $response->assertRedirect();
