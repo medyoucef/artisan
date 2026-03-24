@@ -17,9 +17,11 @@ class BookingService
     }
 
     public function calculateDuration(Carbon $start, Carbon $end): int
-    {
-        return $start->diffInMinutes($end);
-    }
+{
+    dd('VERSION UTILISÉE PAR PHPSTAN');
+    return $start->diffInMinutes($end);
+}
+
 
     public function generateBookingNumber(): string
     {
