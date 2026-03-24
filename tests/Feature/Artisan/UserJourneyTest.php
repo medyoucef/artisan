@@ -38,7 +38,7 @@ class UserJourneyTest extends TestCase
         $login->assertRedirect('/');
         $this->assertAuthenticatedAs($user);
 
-        $profession = Profession::factory()->create(['nom' => 'Plombier']);
+        $profession = Profession::factory()->create(['name' => 'Plombier']);
 
         $artisan = Artisan::factory()->create([
             'nom' => 'Ahmed',

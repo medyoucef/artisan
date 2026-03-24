@@ -13,7 +13,7 @@ class FilterArtisansTest extends TestCase
 
     public function test_can_filter_artisans_by_profession()
     {
-        $profession = Profession::factory()->create(['nom' => 'Plombier']);
+        $profession = Profession::factory()->create(['name' => 'Plombier']);
 
         Artisan::factory()->create(['profession' => $profession->id]);
         Artisan::factory()->create(); // autre artisan

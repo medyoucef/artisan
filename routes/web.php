@@ -8,7 +8,7 @@ use App\Http\Controllers\SocieteArtisanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfessionController;
-use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DevisController;
 use App\Http\Controllers\AdminDevisController;
