@@ -7,16 +7,20 @@ import {
   global,
   responseTimeInMillis,
   bodyString,
-  css
+  css,
+  getParameter
 } from "@gatling.io/core";
 import { currentLocationRegex, http, status } from "@gatling.io/http";
 import { csv } from "@gatling.io/core";
+
+const baseUrl = getParameter("baseUrl") ?? "http://localhost:8000";
+
 
 // ─────────────────────────────────────────
 // Configuration HTTP de base
 // ─────────────────────────────────────────
 const httpProtocol = http
-  .baseUrl("http://localhost:8000") // À adapter selon l'environnement staging
+  .baseUrl(baseUrl) // À adapter selon l'environnement staging
   .acceptHeader("application/json, text/html")
   .acceptLanguageHeader("fr-FR,fr;q=0.9")
   .userAgentHeader("Gatling/MonArtisan-PeakSearch")
@@ -49,7 +53,7 @@ const searchScenario = scenario("PERF-01 - Pic de recherche d'artisans")
       .formParam("password", "password123") // Champ password du formulaire
       .check(status().is(200))
       // Vérifier qu'on est bien redirigé vers le dashboard et non la page de login
-      .check(currentLocationRegex("http://localhost:8000"))
+      .check(currentLocationRegex(baseUrl))
   )
   .pause(1, 2)
 

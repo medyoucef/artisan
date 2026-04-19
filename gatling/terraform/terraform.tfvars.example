@@ -1,0 +1,16 @@
+# Copy to terraform.tfvars (not committed) and fill values.
+# do_token can instead be set: export TF_VAR_do_token="dop_v1_..."
+
+do_token = "dop_v1_REPLACE_ME"
+
+region       = "nyc3"
+droplet_name = "gatling-target"
+
+# One size at a time; change then terraform apply
+# droplet_size = "s-1vcpu-512mb-10gb" # Basic 1 vCPU / 512 MiB / 10 GiB
+# droplet_size = "g-2vcpu-8gb"       # General Purpose 2 vCPU / 8 GiB / 25 GiB
+
+# Optional: SSH key IDs from https://cloud.digitalocean.com/account/security
+ssh_keys = [
+  # "12345678",
+]

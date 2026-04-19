@@ -9,15 +9,18 @@ import {
   responseTimeInMillis,
   bodyString,
   css,
-  jsonPath
+  jsonPath,
+  getParameter
 } from "@gatling.io/core";
 import { currentLocationRegex, http, status } from "@gatling.io/http";
+
+const baseUrl = getParameter("baseUrl") ?? "http://localhost:8000";
 
 // ─────────────────────────────────────────
 // Configuration HTTP de base
 // ─────────────────────────────────────────
 const httpProtocol = http
-  .baseUrl("http://localhost:8000")
+  .baseUrl(baseUrl)
   .acceptHeader("application/json, text/html")
   .acceptLanguageHeader("fr-FR,fr;q=0.9")
   .userAgentHeader("Gatling/MonArtisan-DevisTunnel")
@@ -57,7 +60,7 @@ const devisScenario = scenario("PERF-02 - Tunnel de devis")
       .formParam("email", "artisan1@test.com")
       .formParam("password", "password123")
       .check(status().is(200))
-      .check(currentLocationRegex("http://localhost:8000"))
+      .check(currentLocationRegex(baseUrl))
   )
   .pause(1, 2)
 

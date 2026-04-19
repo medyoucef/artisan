@@ -7,15 +7,17 @@ import {
   responseTimeInMillis,
   bodyString,
   css,
-  rampUsers
+  rampUsers,
+  getParameter
 } from "@gatling.io/core";
 import { http, status, currentLocationRegex } from "@gatling.io/http";
 
+const baseUrl = getParameter("baseUrl") ?? "http://localhost:8000";
 // ─────────────────────────────────────────
 // Configuration HTTP de base
 // ─────────────────────────────────────────
 const httpProtocol = http
-  .baseUrl("http://localhost:8000")
+  .baseUrl(baseUrl)
   .acceptHeader("application/json, text/html")
   .acceptLanguageHeader("fr-FR,fr;q=0.9")
   .userAgentHeader("Gatling/MonArtisan-StressTest")
@@ -58,7 +60,7 @@ const stressScenario = scenario("PERF-05 - Stress pur / Point de rupture")
       .formParam("email", "#{email}")
       .formParam("password", "#{password}")
       .check(status().is(200))
-      .check(currentLocationRegex("http://localhost:8000"))
+      .check(currentLocationRegex(baseUrl))
   )
 
   // ─────────────────────────────────────────

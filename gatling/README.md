@@ -1,48 +1,33 @@
 # Gatling JS - TypeScript ecommerce application load tests
 
-A simple showcase of TypeScript NPM projects using Gatling JS. Please also check out the [introduction to JavaScript scripting](https://docs.gatling.io/tutorials/scripting-intro-js/) in the Gatling documentation.
-
-## Prerequisites
-
-You need [Node.js](https://nodejs.org/en/download) v20 or later (LTS versions only) and npm v10 or later (included with Node.js).
-
-## Use ecommerce project
-
-Run the typeScript sample:
 
 ```shell
 npm install
-npx gatling run --typescript --simulation appSimulationA # automatically download Gatling runtime, build the project, and run the appSimulationA simulation
+npm run perf01 -- baseUrl=https://other.example
 ```
+terraform init
+terraform plan
+terraform apply
 
-You can also launch the simulation with an Alias.
+git clone https://github.com/ets-dorian/artisan
 
-```shell
-npm gatling run --typescript simA # automatically download Gatling runtime, build the project, and run the simA alias.
-```
+git checkout test-performance
 
-You can also launch the [Gatling Recorder](https://docs.gatling.io/tutorials/recorder/) and use it to capture browser-based actions and help create a realistic user scenario:
+install php 
 
-```shell
-npx gatling recorder
-```
+composer install
 
-The `gatling` command-line tool has a built-in help function:
+npm install
+npm run dev
 
-```shell
-npx gatling --help # List all available commands
-npx gatling run --help # List options for the "run" command (--help also works for all other available commands)
-```
+cp .env.example .env
 
-## Included helper scripts
+php artisan key:generate
 
-Note that both sample projects include a few aliases in the `package.json`'s `scripts` section, which you can use for convenience or refer to as examples:
+php artisan migrate
 
-```shell
-npm run clean # Delete Gatling bundled code and generated reports
-npm run format # Format code with prettier
-npm run check # TypeScript project only, type check but don't build or run
-npm run build # Build project but don't run
-npm run computerdatabase # Run the included computerdatabase simulation
-npm run recorder # Starts the Gatling Recorder
-```
+php artisan migrate --seed
+
+php artisan storage:link
+
+php artisan serve

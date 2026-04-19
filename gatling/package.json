@@ -19,8 +19,7 @@
     "check": "tsc --noEmit",
     "build": "tsc --noEmit && gatling build --typescript",
     "recorder": "gatling recorder --typescript",
-    "basicSim": "gatling run --simulation=basicSimulation",
-    "advancedSim": "gatling run --simulation=advancedSimulation",
+    "perf01": "gatling run --simulation=perf01 --results-folder=metrics/ram/perf01",
     "package": "gatling enterprise-package",
     "deploy": "gatling enterprise-deploy"
   }
