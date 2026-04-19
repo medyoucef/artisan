@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Devis extends Model
@@ -20,9 +20,9 @@ class Devis extends Model
         return $this->belongsTo(Conversation::class);
     }
 
-    public function artisan()
+public function artisan()
 {
-    return $this->belongsTo(Artisan::class, 'artisan_id');
+    return $this->belongsTo(User::class, 'artisan_id');
 }
 
 

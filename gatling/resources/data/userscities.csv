@@ -1,0 +1,6 @@
+email, password, ville, profession
+client1@test.com,password123,Montreal,Plombier
+client2@test.com,password123,Quebec,Electricien
+client3@test.com,password123,Laval,Menuisier
+client4@test.com,password123,Sherbrooke,Plombier
+client5@test.com,password123,Trois-Rivieres,Electricien

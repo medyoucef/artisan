@@ -1,0 +1,11 @@
+email,password,client_id,montant,description
+artisan1@test.com,password123,101,350.00,Réparation plomberie salle de bain
+artisan2@test.com,password123,102,780.50,Installation électrique cuisine
+artisan3@test.com,password123,103,125.00,Peinture chambre principale
+artisan4@test.com,password123,104,2100.00,Rénovation plancher bois franc
+artisan5@test.com,password123,105,450.75,Pose carrelage salle de bain
+artisan6@test.com,password123,106,890.00,Installation fenêtres double vitrage
+artisan7@test.com,password123,107,310.00,Réparation toiture urgence
+artisan8@test.com,password123,108,670.25,Aménagement sous-sol
+artisan9@test.com,password123,109,215.00,Nettoyage conduits ventilation
+artisan10@test.com,password123,110,1500.00,Construction terrasse bois
