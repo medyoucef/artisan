@@ -1,8 +1,8 @@
 FROM php:8.2-fpm
 
 RUN apt-get update && apt-get install -y \
-    zip unzip git curl libpng-dev libonig-dev libxml2-dev \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+    zip unzip git curl libpng-dev libonig-dev libxml2-dev libzip-dev default-mysql-client \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
@@ -10,11 +10,11 @@ WORKDIR /var/www
 
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+COPY docker/app/entrypoint.sh /usr/local/bin/entrypoint.sh
 
-RUN php artisan config:cache \
-    && php artisan route:cache
+RUN chmod +x /usr/local/bin/entrypoint.sh \
+    && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache || true
 
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 CMD ["php-fpm"]

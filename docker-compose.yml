@@ -1,0 +1,68 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: khdamlii_app
+    working_dir: /var/www
+    env_file:
+      - .docker.env
+    volumes:
+      - .:/var/www
+      - vendor_data:/var/www/vendor
+      - storage_data:/var/www/storage
+      - cache_data:/var/www/bootstrap/cache
+    depends_on:
+      db:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:alpine
+    container_name: khdamlii_nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www:ro
+      - vendor_data:/var/www/vendor
+      - storage_data:/var/www/storage
+      - cache_data:/var/www/bootstrap/cache
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    container_name: khdamlii_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: khdamlii
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/db_artisan.sql:/docker-entrypoint-initdb.d/db_artisan.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -proot --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+
+  npm:
+    image: node:20
+    container_name: khdamlii_npm
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host"
+    profiles:
+      - dev
+
+volumes:
+  mysql_data:
+  vendor_data:
+  storage_data:
+  cache_data:
