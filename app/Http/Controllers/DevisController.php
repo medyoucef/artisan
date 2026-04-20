@@ -7,6 +7,7 @@ use App\Models\Devis;
 use App\Models\MessagesUserArt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class DevisController extends Controller
 {
@@ -14,10 +15,19 @@ class DevisController extends Controller
     {
         $conversation = Conversation::findOrFail($conversationId);
 
-        // Optionnel : vérifier que l'utilisateur est bien l'artisan de cette conversation
         if (Auth::id() !== $conversation->artisan->user_id) {
+            Log::warning('Accès refusé à la création de devis', [
+                'conversation_id' => $conversationId,
+                'user_id' => Auth::id(),
+            ]);
+
             abort(403, "Vous n'êtes pas l'artisan de cette conversation.");
         }
+
+        Log::info('Accès à la page de création de devis', [
+            'conversation_id' => $conversationId,
+            'artisan_id' => Auth::id(),
+        ]);
 
         return view('devis.create', compact('conversation'));
     }
@@ -27,6 +37,11 @@ class DevisController extends Controller
         $conversation = Conversation::findOrFail($conversationId);
 
         if (Auth::id() !== $conversation->artisan->user_id) {
+            Log::warning('Tentative non autorisée de création de devis', [
+                'conversation_id' => $conversationId,
+                'user_id' => Auth::id(),
+            ]);
+
             abort(403, "Vous n'êtes pas l'artisan de cette conversation.");
         }
 
@@ -44,7 +59,13 @@ class DevisController extends Controller
             'statut'          => 'en_attente',
         ]);
 
-        // Message automatique dans le chat
+        Log::info('Devis créé', [
+            'devis_id' => $devis->id,
+            'artisan_id' => Auth::id(),
+            'client_id' => $conversation->user_id,
+            'montant' => $request->montant,
+        ]);
+
         MessagesUserArt::create([
             'conversation_id' => $conversationId,
             'sender_id'       => Auth::id(),
@@ -61,10 +82,20 @@ class DevisController extends Controller
         $devis = Devis::findOrFail($id);
 
         if (Auth::id() !== $devis->client_id) {
+            Log::warning('Tentative non autorisée d’acceptation de devis', [
+                'devis_id' => $id,
+                'user_id' => Auth::id(),
+            ]);
+
             abort(403, "Vous n'êtes pas le client de ce devis.");
         }
 
         $devis->update(['statut' => 'accepté']);
+
+        Log::info('Devis accepté', [
+            'devis_id' => $devis->id,
+            'client_id' => Auth::id(),
+        ]);
 
         MessagesUserArt::create([
             'conversation_id' => $devis->conversation_id,
@@ -75,26 +106,41 @@ class DevisController extends Controller
 
         return back()->with('success', 'Devis accepté.');
     }
+
     public function clientDevis()
-{
-    $clientId = Auth::id();
+    {
+        $clientId = Auth::id();
 
-    $devis = Devis::where('client_id', $clientId)
-                  ->orderBy('created_at', 'desc')
-                  ->get();
+        Log::info('Consultation des devis client', [
+            'client_id' => $clientId,
+        ]);
 
-    return view('devis.client', compact('devis'));
-}
+        $devis = Devis::where('client_id', $clientId)
+                      ->orderBy('created_at', 'desc')
+                      ->get();
+
+        return view('devis.client', compact('devis'));
+    }
 
     public function refuser($id)
     {
         $devis = Devis::findOrFail($id);
 
         if (Auth::id() !== $devis->client_id) {
-            abort(403, "Vous n\'êtes pas le client de ce devis.");
+            Log::warning('Tentative non autorisée de refus de devis', [
+                'devis_id' => $id,
+                'user_id' => Auth::id(),
+            ]);
+
+            abort(403, "Vous n'êtes pas le client de ce devis.");
         }
 
         $devis->update(['statut' => 'refusé']);
+
+        Log::info('Devis refusé', [
+            'devis_id' => $devis->id,
+            'client_id' => Auth::id(),
+        ]);
 
         MessagesUserArt::create([
             'conversation_id' => $devis->conversation_id,
@@ -106,4 +152,3 @@ class DevisController extends Controller
         return back()->with('success', 'Devis refusé.');
     }
 }
-

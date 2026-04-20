@@ -9,26 +9,25 @@ use App\Models\Artisan;
 
 class ArtisanController extends Controller
 {
-    /* ---------------------------------------------------------
-     |  FRONT — Liste + Recherche + Rejoindre
-     --------------------------------------------------------- */
+    
 
     public function index(Request $request)
-    {
-        $query = DB::table('artisans');
+{
+    $query = Artisan::with('professionRelation');
 
-        if ($request->filled('profession')) {
-            $query->where('profession', $request->profession);
-        }
-
-        if ($request->filled('ville')) {
-            $query->where('ville', 'like', '%' . $request->ville . '%');
-        }
-
-        $artisans = $query->get();
-
-        return view('front.art_ind', compact('artisans'));
+    if ($request->filled('profession')) {
+        $query->where('profession', $request->profession);
     }
+
+    if ($request->filled('ville')) {
+        $query->where('ville', 'like', '%' . $request->ville . '%');
+    }
+
+    $artisans = $query->get();
+
+    return view('front.art_ind', compact('artisans'));
+}
+
 
     public function search(Request $request)
     {
@@ -83,16 +82,19 @@ class ArtisanController extends Controller
      |  ADMIN — CRUD COMPLET
      --------------------------------------------------------- */
 
-    public function adminIndex()
-    {
-        $artisans = Artisan::all();
-        return view('admin.artisans', compact('artisans'));
-    }
+     public function adminIndex()
+     {
+         $artisans = Artisan::with('professionRelation')->get();
+         return view('admin.artisans', compact('artisans'));
+     }
+     
 
     public function create()
-    {
-        return view('admin.artisans.create');
-    }
+{
+    $professions = \App\Models\Profession::all();
+    return view('admin.artisans.create', compact('professions'));
+}
+
 
     public function store(Request $request)
     {
