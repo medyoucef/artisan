@@ -15,10 +15,12 @@ class Artisan extends Model
     ];
 
     // Relation avec Profession (un artisan appartient à une profession)
-    public function profession()
-    {
-        return $this->belongsTo(Profession::class, 'profession');
-    }
+    public function professionRelation()
+{
+    return $this->belongsTo(\App\Models\Profession::class, 'profession', 'id');
+}
+
+    
     public function user()
 {
     return $this->belongsTo(User::class);

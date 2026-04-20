@@ -72,6 +72,13 @@
 
     <form action="{{ route('admin.artisans.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        @if ($errors->any())
+    <div style="color:red; margin-bottom:15px;">
+        @foreach ($errors->all() as $error)
+            <div>{{ $error }}</div>
+        @endforeach
+    </div>
+@endif
 
         <div class="form-group">
             <label>Nom :</label>
@@ -79,9 +86,14 @@
         </div>
 
         <div class="form-group">
-            <label>Profession :</label>
-            <input type="text" name="profession" required class="form-control">
-        </div>
+    <label>Profession :</label>
+    <select name="profession" class="form-control" required>
+        @foreach($professions as $profession)
+            <option value="{{ $profession->id }}">{{ $profession->name}}</option>
+        @endforeach
+    </select>
+</div>
+
 
         <div class="form-group">
             <label>Téléphone :</label>

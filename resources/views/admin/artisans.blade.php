@@ -19,7 +19,7 @@
             @foreach($artisans as $artisan)
             <tr>
                 <td>{{ $artisan->nom }}</td>
-                <td>{{ $artisan->profession }}</td>
+                <td>{{ $artisan->professionRelation->name ?? '—' }}</td>
                 <td>{{ $artisan->telephone }}</td>
                 <td>{{ $artisan->ville }}</td>
                 <td class="action-buttons">
