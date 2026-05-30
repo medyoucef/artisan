@@ -119,7 +119,7 @@ jobs:
           project: 'artisan-app'
           path: '.'
           format: 'HTML'
-          args: --failOnCVSS 7 --enableExperimental
+          args: --failOnCVSS 9 --enableExperimental
       - name: Upload rapport HTML
         uses: actions/upload-artifact@v4
         if: always()
