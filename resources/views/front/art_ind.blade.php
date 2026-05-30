@@ -98,7 +98,8 @@
                 </div>
                 <div class="team-text">
                     <h2>{{ $artisan->nom }}</h2>
-                    <p>{{ $artisan->professionRelation->name ?? '—' }}</p>
+                    <p>{{ $artisan->profession }}</p>
+
                     <p><i class="fas fa-map-marker-alt"></i> {{ $artisan->ville }} - {{ $artisan->adresse }}</p>
                     <a href="{{ route('chat.start', $artisan->id) }}" 
    class="btn btn-primary"

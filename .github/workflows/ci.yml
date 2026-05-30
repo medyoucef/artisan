@@ -1,5 +1,4 @@
 name: CI Laravel
-
 on:
   push:
     branches: [ develop, feature/* ]
@@ -9,7 +8,6 @@ on:
 jobs:
   laravel-tests:
     runs-on: ubuntu-latest
-
     services:
       mysql:
         image: mysql:8
@@ -23,27 +21,21 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           extensions: mbstring, pdo, pdo_mysql, intl
           coverage: none
-
       - name: Install Composer dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
-
       - name: Copy .env
         run: cp .env.example .env
-
       - name: Generate key
         run: php artisan key:generate
-
       - name: Run migrations
         env:
           DB_CONNECTION: mysql
@@ -53,7 +45,6 @@ jobs:
           DB_USERNAME: root
           DB_PASSWORD: root
         run: php artisan migrate --force
-
       - name: Run tests
         env:
           DB_CONNECTION: mysql
@@ -63,6 +54,62 @@ jobs:
           DB_USERNAME: root
           DB_PASSWORD: root
         run: php artisan test
-
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --memory-limit=1G
+
+  # -----------------------------------------------
+  # JOB : Détection de secrets (Gitleaks)
+  # -----------------------------------------------
+  gitleaks:
+    name: Secret Scanning (Gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # -----------------------------------------------
+  # JOB : Scan filesystem PHP/JS (Trivy)
+  # -----------------------------------------------
+  trivy:
+    name: Filesystem Scan (Trivy)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Trivy on filesystem
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          format: table
+          exit-code: 1
+          severity: HIGH,CRITICAL
+
+  # -----------------------------------------------
+  # JOB : Dépendances PHP + JS (OWASP)
+  # -----------------------------------------------
+  dependency-check:
+    name: Dependency Check (OWASP)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run OWASP Dependency-Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: 'artisan-app'
+          path: '.'
+          format: 'HTML'
+          args: --failOnCVSS 7 --enableExperimental
+      - name: Upload rapport HTML
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dependency-check-report
+          path: reports/

@@ -50,7 +50,9 @@ class AuthController extends Controller
         }
 
         return back()->with('login_error', 'Email ou mot de passe incorrect');
+        
     }
+
 
     public function logout(Request $request)
     {

@@ -5,7 +5,7 @@
                         <div class="col-lg-4 col-md-12">
                             <div class="logo">
                                 <a href="index.php">
-                                    <h1>MonArtisan</h1>
+                                    <h1>Khdamlii</h1>
                                     <!-- <img src="img/logo.jpg" alt="Logo"> -->
                                 </a>
                             </div>
@@ -30,7 +30,7 @@
                                         </div>
                                         <div class="top-bar-text">
                                             <h3>appelez-nous</h3>
-                                            <p>+1 XXX XXX XXXX</p>
+                                            <p>+213 XXX XX XX XX</p>
                                         </div>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                         </div>
                                         <div class="top-bar-text">
                                             <h3>envoyez-nous un e-mail</h3>
-                                            <p>info@MonArtisqn.com</p>
+                                            <p>info@Khdamlii.com</p>
                                         </div>
                                     </div>
                                 </div>

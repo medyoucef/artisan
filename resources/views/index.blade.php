@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>MonArtisan</title>
+        <title>Khdamlii</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Construction Company Website Template" name="keywords">
         <meta content="Construction Company Website Template" name="description">
@@ -161,12 +161,12 @@
                         </div>
                         <div class="col-lg-7 col-md-6">
                             <div class="section-header text-left">
-                                <p>Bienvenue chez MonArtisan</p>
+                                <p>Bienvenue chez Khdamlii</p>
                                 <h2>Trouver un artisan facilement </h2>
                             </div>
                             <div class="about-text">
                                 <p>
-                                    MonArtisqn est une plateforme conçue pour mettre en relation les particuliers et les artisans qualifiés à travers tout le pays. Que vous ayez besoin d’un plombier, d’un électricien, d’un menuisier ou tout autre professionnel du bâtiment ou des services, notre objectif est de vous aider à trouver rapidement et facilement l’artisan qu’il vous faut, près de chez vous.
+                                    Khdamlii est une plateforme conçue pour mettre en relation les particuliers et les artisans qualifiés à travers tout le pays. Que vous ayez besoin d’un plombier, d’un électricien, d’un menuisier ou tout autre professionnel du bâtiment ou des services, notre objectif est de vous aider à trouver rapidement et facilement l’artisan qu’il vous faut, près de chez vous.
                                 </p>
                                 <p>
                                     Nous croyons en la valeur du travail artisanal local, en la confiance et en la qualité du service rendu. Chaque artisan inscrit est soigneusement sélectionné pour vous garantir une expérience fiable, transparente et professionnelle.
@@ -215,8 +215,8 @@
                                         <i class="flaticon-address"></i>
                                     </div>
                                     <div class="fact-text">
-                                        <h2 data-toggle="counter-up">789</h2>
-                                        <p>Completed Projects</p>
+                                        <h2 data-toggle="counter-up">389</h2>
+                                        <p>Projets réalisés</p>
                                     </div>
                                 </div>
                                 
@@ -225,7 +225,7 @@
                                         <i class="flaticon-building"></i>
                                     </div>
                                     <div class="fact-text">
-                                        <h2 data-toggle="counter-up">685</h2>
+                                        <h2 data-toggle="counter-up">371</h2>
                                         <p>Clients satisfaits</p>
                                     </div>
                                 </div>

@@ -6,7 +6,7 @@
                                 <h2>Office Contact</h2>
                                 <p><i class="fa fa-map-marker-alt"></i>Oran Algérie</p>
                                 <p><i class="fa fa-phone-alt"></i>+213 534657728</p>
-                                <p><i class="fa fa-envelope"></i>info@MonArtisqn.com</p>
+                                <p><i class="fa fa-envelope"></i>info@Khdamlii.com</p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="footer-link">
-                                <h2>MonArtisqn pages</h2>
+                                <h2>Khdamlii pages</h2>
                                 <a href="{{ route('home') }}">Accueil</a>
                                 <a href="{{ route('about') }}">à propos</a>
                                 <a href="{{ route('service') }}">services</a>
@@ -60,7 +60,7 @@
                 <div class="container copyright">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>&copy; <a href="#">MonArtisan</a>, All Right Reserved.</p>
+                            <p>&copy; <a href="#">Khdamlii</a>, All Right Reserved.</p>
                         </div>
 						
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
