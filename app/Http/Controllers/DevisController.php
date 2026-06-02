@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Conversation;
-use App\Models\Devis;
 use App\Models\MessagesUserArt;
+use App\Repositories\DevisRepositoryInterface;
+use App\States\Devis\InvalidDevisTransition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class DevisController extends Controller
 {
+    public function __construct(private DevisRepositoryInterface $devisRepository)
+    {
+    }
+
     public function create($conversationId)
     {
         $conversation = Conversation::findOrFail($conversationId);
@@ -50,7 +55,7 @@ class DevisController extends Controller
             'description' => 'required|string',
         ]);
 
-        $devis = Devis::create([
+        $devis = $this->devisRepository->create([
             'conversation_id' => $conversationId,
             'artisan_id'      => Auth::id(),
             'client_id'       => $conversation->user_id,
@@ -79,10 +84,10 @@ class DevisController extends Controller
 
     public function accepter($id)
     {
-        $devis = Devis::findOrFail($id);
+        $devis = $this->devisRepository->findOrFail((int) $id);
 
         if (Auth::id() !== $devis->client_id) {
-            Log::warning('Tentative non autorisée d’acceptation de devis', [
+            Log::warning('Tentative non autorisée d\'acceptation de devis', [
                 'devis_id' => $id,
                 'user_id' => Auth::id(),
             ]);
@@ -90,7 +95,13 @@ class DevisController extends Controller
             abort(403, "Vous n'êtes pas le client de ce devis.");
         }
 
-        $devis->update(['statut' => 'accepté']);
+        try {
+            $devis->accept();
+        } catch (InvalidDevisTransition $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        $this->devisRepository->save($devis);
 
         Log::info('Devis accepté', [
             'devis_id' => $devis->id,
@@ -107,24 +118,9 @@ class DevisController extends Controller
         return back()->with('success', 'Devis accepté.');
     }
 
-    public function clientDevis()
-    {
-        $clientId = Auth::id();
-
-        Log::info('Consultation des devis client', [
-            'client_id' => $clientId,
-        ]);
-
-        $devis = Devis::where('client_id', $clientId)
-                      ->orderBy('created_at', 'desc')
-                      ->get();
-
-        return view('devis.client', compact('devis'));
-    }
-
     public function refuser($id)
     {
-        $devis = Devis::findOrFail($id);
+        $devis = $this->devisRepository->findOrFail((int) $id);
 
         if (Auth::id() !== $devis->client_id) {
             Log::warning('Tentative non autorisée de refus de devis', [
@@ -135,7 +131,13 @@ class DevisController extends Controller
             abort(403, "Vous n'êtes pas le client de ce devis.");
         }
 
-        $devis->update(['statut' => 'refusé']);
+        try {
+            $devis->refuse();
+        } catch (InvalidDevisTransition $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        $this->devisRepository->save($devis);
 
         Log::info('Devis refusé', [
             'devis_id' => $devis->id,
@@ -150,5 +152,18 @@ class DevisController extends Controller
         ]);
 
         return back()->with('success', 'Devis refusé.');
+    }
+
+    public function clientDevis()
+    {
+        $clientId = Auth::id();
+
+        Log::info('Consultation des devis client', [
+            'client_id' => $clientId,
+        ]);
+
+        $devis = $this->devisRepository->forClient($clientId);
+
+        return view('devis.client', compact('devis'));
     }
 }
