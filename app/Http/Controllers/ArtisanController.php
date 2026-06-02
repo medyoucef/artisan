@@ -6,42 +6,24 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Artisan;
+use App\Repositories\ArtisanRepositoryInterface;
 
 class ArtisanController extends Controller
 {
-    
+    public function __construct(private ArtisanRepositoryInterface $artisans)
+    {
+    }
 
     public function index(Request $request)
-{
-    $query = Artisan::with('professionRelation');
+    {
+        $artisans = $this->artisans->search($request->only(['profession', 'ville']));
 
-    if ($request->filled('profession')) {
-        $query->where('profession', $request->profession);
+        return view('front.art_ind', compact('artisans'));
     }
-
-    if ($request->filled('ville')) {
-        $query->where('ville', 'like', '%' . $request->ville . '%');
-    }
-
-    $artisans = $query->get();
-
-    return view('front.art_ind', compact('artisans'));
-}
-
 
     public function search(Request $request)
     {
-        $query = Artisan::query();
-
-        if ($request->filled('ville')) {
-            $query->where('ville', 'like', '%' . $request->ville . '%');
-        }
-
-        if ($request->filled('profession')) {
-            $query->where('profession', $request->profession);
-        }
-
-        $artisans = $query->get();
+        $artisans = $this->artisans->search($request->only(['profession', 'ville']));
 
         $html = view('partials.artisan_cards', compact('artisans'))->render();
 
