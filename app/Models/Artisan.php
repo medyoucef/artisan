@@ -11,7 +11,7 @@ class Artisan extends Model
     protected $fillable = [
         'nom', 'profession', 'photo', 'telephone',
         'facebook', 'instagram', 'whatsapp',
-        'ville', 'adresse'
+        'ville', 'adresse', 'user_id'
     ];
 
     // Relation avec Profession (un artisan appartient à une profession)
