@@ -9,11 +9,11 @@ parameters:
 
     ignoreErrors:
         - '#Call to an undefined method .*::middleware#'
-        - '#Access to an undefined property .*#'
+
         - '#Relation .* is not found in .* model#'
-     
+        
         - '#App\\Events\\DevisCreated#'
-        - '#Access to property \$devis on an unknown class#'
+        
         - '#Call to an undefined method App\\Domain\\Interfaces\\ArtisanRepositoryInterface::baseQuery#'
         - '#Call to an undefined method App\\Domain\\Interfaces\\ArtisanRepositoryInterface::finalizeSearch#'
         - '#Call to an undefined method App\\Domain\\Interfaces\\ArtisanRepositoryInterface::save#'
