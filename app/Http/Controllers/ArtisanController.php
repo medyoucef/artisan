@@ -23,20 +23,7 @@ class ArtisanController extends Controller
     }
 
 
-   
-
-public function store(Request $request)
-{
-    Artisan::create([
-        'nom' => $request->nom,
-        'profession' => $request->profession,
-        'ville' => $request->ville,
-        'adresse' => $request->adresse,
-    ]);
-
-    return redirect()->back();
-}
-
+    
 
     public function search(Request $request)
     {

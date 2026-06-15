@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Application\Services\DashboardService;
-use Illuminate\Http\Request;
-
 
 class DashboardController extends Controller
 {
@@ -50,21 +48,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function updateArtisan(Request $request, $id)
-{
-    $artisan = Artisan::findOrFail($id);
-
-    $artisan->update([
-        'nom' => $request->nom,
-        'profession' => $request->profession,
-        'ville' => $request->ville,
-        'adresse' => $request->adresse,
-    ]);
-
-    return redirect()->back();
-}
-
-
+    
 
     public function professions()
     {
