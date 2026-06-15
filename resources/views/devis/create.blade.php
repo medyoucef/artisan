@@ -18,6 +18,7 @@
     <h2>Envoyer un devis</h2>
 
     <form method="POST" action="{{ route('devis.store', $conversation->id) }}">
+
         @csrf
 
         <label>Montant ($)</label>

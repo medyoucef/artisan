@@ -19,69 +19,63 @@
                     <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
 
                     @auth
-                        <!-- Vérifier si l'utilisateur est un artisan -->
                         @php
                             $isArtisan = \App\Models\Artisan::where('user_id', auth()->id())->exists();
-                        @endphp
-                        @php
-    $unreadMessages = \App\Models\MessagesUserArt::where('receiver_id', auth()->id())->count();
-@endphp
 
+                            // 🔥 Nouveau compteur : uniquement les messages NON LUS
+                            $unreadMessages = \App\Models\MessagesUserArt::where('receiver_id', auth()->id())
+                                ->whereNull('read_at')
+                                ->count();
+                        @endphp
 
                         @if($isArtisan)
-                        <a href="{{ route('messages.inbox') }}" class="nav-item nav-link">
-    <i class="fas fa-envelope me-1"></i>
-    Messages
-    @if($unreadMessages > 0)
-        <span style="
-            background:#fdbe33;
-            color:#030f27;
-            padding:2px 6px;
-            border-radius:10px;
-            font-weight:bold;
-            margin-left:4px;
-        ">
-            {{ $unreadMessages }}
-        </span>
-    @endif
-</a>
-
+                            <a href="{{ route('messages.inbox') }}" class="nav-item nav-link">
+                                <i class="fas fa-envelope me-1"></i>
+                                Messages
+                                @if($unreadMessages > 0)
+                                    <span style="
+                                        background:#fdbe33;
+                                        color:#030f27;
+                                        padding:2px 6px;
+                                        border-radius:10px;
+                                        font-weight:bold;
+                                        margin-left:4px;
+                                    ">
+                                        {{ $unreadMessages }}
+                                    </span>
+                                @endif
+                            </a>
                         @endif
 
-                        <!-- Vérifier si l'utilisateur est un client -->
                         @if(auth()->user()->type_user === 'client')
-                        @php
-    $pendingDevis = \App\Models\Devis::where('client_id', auth()->id())
-                         ->where('statut', 'en_attente')
-                         ->count();
-@endphp
+                            @php
+                                $pendingDevis = \App\Models\Devis::where('client_id', auth()->id())
+                                    ->where('statut', 'en_attente')
+                                    ->count();
+                            @endphp
 
+                            <a href="{{ route('client.devis') }}" class="nav-item nav-link">
+                                <i class="fas fa-file-invoice-dollar me-1"></i>
+                                Devis 
+                                @if($pendingDevis > 0)
+                                    <span style="
+                                        background:#fdbe33;
+                                        color:#030f27;
+                                        padding:2px 6px;
+                                        border-radius:10px;
+                                        font-weight:bold;
+                                        margin-left:4px;
+                                    ">
+                                        {{ $pendingDevis }}
+                                    </span>
+                                @endif
+                            </a>
+                        @endif
 
-    <a href="{{ route('client.devis') }}" class="nav-item nav-link">
-        <i class="fas fa-file-invoice-dollar me-1"></i>
-        Devis 
-        @if($pendingDevis > 0)
-            <span style="
-                background:#fdbe33;
-                color:#030f27;
-                padding:2px 6px;
-                border-radius:10px;
-                font-weight:bold;
-                margin-left:4px;
-            ">
-                {{ $pendingDevis }}
-            </span>
-        @endif
-    </a>
-@endif
-
-
-                        <!-- Profil -->
                         <a href="{{ route('profile') }}" class="nav-item nav-link">
                             <i class="fas fa-user-circle me-1"></i> Profile
                         </a>
 
-                        <!-- Déconnexion -->
                         <a href="#" class="nav-item nav-link"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="fas fa-sign-out-alt me-1"></i> Logout
@@ -93,7 +87,6 @@
                     @endauth
 
                     @guest
-                        <!-- Login -->
                         <a href="{{ route('auth') }}" class="nav-item nav-link">
                             <i class="fas fa-sign-in-alt me-1"></i> Login
                         </a>

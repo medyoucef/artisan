@@ -10,26 +10,41 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up()
-{
-    Schema::create('devis', function (Blueprint $table) {
-        $table->id();
-        $table->unsignedBigInteger('conversation_id');
-        $table->unsignedBigInteger('artisan_id'); // user_id de l'artisan
-        $table->unsignedBigInteger('client_id');  // user_id du client
+    {
+        Schema::create('devis', function (Blueprint $table) {
+            $table->id();
 
-        $table->decimal('montant', 10, 2);
-        $table->text('description')->nullable();
-        $table->string('statut')->default('en_attente'); // en_attente, accepté, refusé
+            // Relations
+            $table->unsignedBigInteger('conversation_id');
+            $table->unsignedBigInteger('artisan_id'); // référence à artisans.id
+            $table->unsignedBigInteger('client_id');  // référence à users.id
 
-        $table->timestamps();
+            // Données du devis
+            $table->decimal('montant', 10, 2);
+            $table->text('description')->nullable();
+            $table->string('statut')->default('en_attente'); // en_attente, accepté, refusé
 
-        $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
+            $table->timestamps();
 
-        $table->foreign('artisan_id')->references('id')->on('users')->onDelete('cascade');
-        $table->foreign('client_id')->references('id')->on('users')->onDelete('cascade');
-    });
-}
+            // Foreign keys
+            $table->foreign('conversation_id')
+                  ->references('id')
+                  ->on('conversations')
+                  ->onDelete('cascade');
 
+            // ✔ CORRECTION IMPORTANTE : artisan_id → artisans.id
+            $table->foreign('artisan_id')
+                  ->references('id')
+                  ->on('artisans')
+                  ->onDelete('cascade');
+
+            // client_id → users.id (correct)
+            $table->foreign('client_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
+        });
+    }
 
     /**
      * Reverse the migrations.

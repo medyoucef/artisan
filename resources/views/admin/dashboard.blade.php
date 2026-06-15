@@ -147,28 +147,28 @@
             <a href="{{ route('admin.artisans') }}">
             <div class="card">
                 <h3>Artisans</h3>
-                <p>{{ $artisans }}</p>
+                <p>{{ $stats->artisans }}</p>
             </div>
             </a>
 
             <a href="{{route('admin.societes')}}">
             <div class="card">
                 <h3>Sociétés</h3>
-                <p>{{ $societes }}</p>
+                <p>{{ $stats->societes }}</p>
             </div>
             </a>
 
             <a href="{{route('admin.users')}}">
             <div class="card">
                 <h3>Utilisateurs</h3>
-                <p>{{ $users }}</p>
+                <p>{{ $stats->users }}</p>
             </div>
             </a>
 
             <a href="{{route('admin.messages')}}">
             <div class="card">
                 <h3>Messages reçus</h3>
-                <p>{{ $messages ?? 0 }}</p>
+                <p>{{ $stats->messages ?? 0 }}</p>
             </div>
 
             </a>
@@ -176,7 +176,7 @@
             <a href="{{route('admin.professions')}}">
             <div class="card">
                 <h3>Profession</h3>
-                <p>{{ $categories ?? 0 }}</p>
+                <p>{{ $stats->categories ?? 0 }}</p>
             </div>
             </a>
 

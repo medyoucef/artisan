@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Artisan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,25 +20,37 @@ class AuthController extends Controller
     {
         // Validation des champs
         $request->validate([
-            'username' => 'required|string|max:255',
-            'type_user' => 'required|string|in:client,artisan,societe_artisan',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6',
+            'username'   => 'required|string|max:255',
+            'type_user'  => 'required|string|in:client,artisan,societe_artisan',
+            'email'      => 'required|string|email|max:255|unique:users',
+            'password'   => 'required|string|min:6',
+            'profession' => 'nullable|string',
+            'ville'      => 'nullable|string',
         ]);
-        
 
-        // Création de l'utilisateur
+        // 1. Création du user
         $user = User::create([
-            'name' => $request->username,
+            'name'      => $request->username,
             'type_user' => $request->type_user,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'email'     => $request->email,
+            'password'  => Hash::make($request->password),
         ]);
-        // dd($user);
-        // Connexion automatique
+
+        // 2. Si c’est un artisan → créer l’artisan associé
+        if ($user->type_user === 'artisan') {
+            Artisan::create([
+                'user_id'    => $user->id,
+                'nom'        => $user->name,
+                'profession' => $request->profession,
+                'ville'      => $request->ville,
+                'adresse'    => $request->adresse ?? null,
+                'telephone'  => $request->telephone ?? null,
+            ]);
+        }
+
+        // 3. Connexion automatique
         Auth::login($user);
 
-        // Redirection vers la page home
         return redirect()->route('home')->with('success', 'Inscription réussie, bienvenue !');
     }
 
@@ -50,9 +63,7 @@ class AuthController extends Controller
         }
 
         return back()->with('login_error', 'Email ou mot de passe incorrect');
-        
     }
-
 
     public function logout(Request $request)
     {

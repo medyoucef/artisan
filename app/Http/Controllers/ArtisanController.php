@@ -2,46 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use App\Application\Services\ArtisanService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Artisan;
 
 class ArtisanController extends Controller
 {
-    
+    private ArtisanService $service;
+
+    public function __construct(ArtisanService $service)
+    {
+        $this->service = $service;
+    }
 
     public function index(Request $request)
-{
-    $query = Artisan::with('professionRelation');
+    {
+        $filters = $request->only(['profession', 'ville']);
+        $artisans = $this->service->search($filters);
 
-    if ($request->filled('profession')) {
-        $query->where('profession', $request->profession);
+        return view('front.art_ind', compact('artisans'));
     }
-
-    if ($request->filled('ville')) {
-        $query->where('ville', 'like', '%' . $request->ville . '%');
-    }
-
-    $artisans = $query->get();
-
-    return view('front.art_ind', compact('artisans'));
-}
-
 
     public function search(Request $request)
     {
-        $query = Artisan::query();
-
-        if ($request->filled('ville')) {
-            $query->where('ville', 'like', '%' . $request->ville . '%');
-        }
-
-        if ($request->filled('profession')) {
-            $query->where('profession', $request->profession);
-        }
-
-        $artisans = $query->get();
+        $filters = $request->only(['profession', 'ville']);
+        $artisans = $this->service->search($filters);
 
         $html = view('partials.artisan_cards', compact('artisans'))->render();
 
@@ -54,113 +38,8 @@ class ArtisanController extends Controller
             'profession' => 'required|integer|exists:professions,id',
         ]);
 
-        $user = Auth::user();
+        $result = $this->service->registerAsArtisan($request->profession);
 
-        $existe = Artisan::where('nom', $user->name)->first();
-        if ($existe) {
-            return back()->with('success', 'Vous êtes déjà enregistré comme artisan.');
-        }
-
-        Artisan::create([
-            'nom' => $user->name,
-            'profession' => $request->profession,
-            'photo' => $user->photo,
-            'telephone' => null,
-            'facebook' => null,
-            'instagram' => null,
-            'whatsapp' => null,
-            'ville' => $user->ville,
-            'adresse' => $user->adresse,
-            'created_at' => now(),
-        ]);
-
-        return back()->with('success', 'Bienvenue parmi les artisans !');
-    }
-
-
-    /* ---------------------------------------------------------
-     |  ADMIN — CRUD COMPLET
-     --------------------------------------------------------- */
-
-     public function adminIndex()
-     {
-         $artisans = Artisan::with('professionRelation')->get();
-         return view('admin.artisans', compact('artisans'));
-     }
-     
-
-    public function create()
-{
-    $professions = \App\Models\Profession::all();
-    return view('admin.artisans.create', compact('professions'));
-}
-
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nom' => 'required|string|max:255',
-            'profession' => 'required|integer|exists:professions,id',
-            'telephone' => 'nullable|string|max:20',
-            'ville' => 'required|string|max:255',
-            'adresse' => 'nullable|string',
-            'facebook' => 'nullable|string',
-            'instagram' => 'nullable|string',
-            'whatsapp' => 'nullable|string',
-            'photo' => 'nullable|image|max:2048'
-        ]);
-
-        $data = $request->all();
-
-        if ($request->hasFile('photo')) {
-            $data['photo'] = $request->file('photo')->store('artisans', 'public');
-        }
-
-        Artisan::create($data);
-
-        return redirect()->route('admin.artisans')
-                         ->with('success', 'Artisan ajouté avec succès');
-    }
-
-    public function edit($id)
-    {
-        $artisan = Artisan::findOrFail($id);
-        return view('admin.artisans_edit', compact('artisan'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $artisan = Artisan::findOrFail($id);
-
-        $request->validate([
-            'nom' => 'required|string|max:255',
-            'profession' => 'required|integer|exists:professions,id',
-            'telephone' => 'nullable|string|max:20',
-            'ville' => 'required|string|max:255',
-            'adresse' => 'nullable|string',
-            'facebook' => 'nullable|string',
-            'instagram' => 'nullable|string',
-            'whatsapp' => 'nullable|string',
-            'photo' => 'nullable|image|max:2048'
-        ]);
-
-        $data = $request->all();
-
-        if ($request->hasFile('photo')) {
-            $data['photo'] = $request->file('photo')->store('artisans', 'public');
-        }
-
-        $artisan->update($data);
-
-        return redirect()->route('admin.artisans')
-                         ->with('success', 'Artisan mis à jour avec succès');
-    }
-
-    public function delete($id)
-    {
-        Artisan::destroy($id);
-
-        return redirect()->route('admin.artisans')
-                         ->with('success', 'Artisan supprimé avec succès');
+        return back()->with('success', $result['message']);
     }
 }

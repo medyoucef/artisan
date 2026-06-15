@@ -47,7 +47,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>Liste des artisan</h2>
+                            <h2>Liste des artisans</h2>
                         </div>
                         <div class="col-12">
                             <a href="">artisan</a>

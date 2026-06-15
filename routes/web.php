@@ -31,6 +31,7 @@ Route::post('/messages', [MessageController::class, 'store'])->name('messages.st
 
 Route::get('/auth', [AuthController::class, 'index'])->name('auth');
 
+
 Route::post('/login', [AuthController::class, 'login'])->name('login.custom');
 
 Route::post('/register', [AuthController::class, 'register'])->name('register.custom');
@@ -106,8 +107,12 @@ Route::put('/admin/societes/{id}', [DashboardController::class, 'updateSociete']
 // envoie de devis 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/conversation/{id}/devis/create', [DevisController::class, 'create'])->name('devis.create');
-    Route::post('/conversation/{id}/devis', [DevisController::class, 'store'])->name('devis.store');
+    Route::get('/devis/create/{conversation}', [DevisController::class, 'create'])
+    ->name('devis.create');
+
+    Route::post('/devis/store/{conversation}', [DevisController::class, 'store'])
+    ->name('devis.store');
+
 
     Route::post('/devis/{id}/accepter', [DevisController::class, 'accepter'])->name('devis.accepter');
     Route::post('/devis/{id}/refuser', [DevisController::class, 'refuser'])->name('devis.refuser');
