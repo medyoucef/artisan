@@ -22,6 +22,14 @@ class ArtisanController extends Controller
         return view('front.art_ind', compact('artisans'));
     }
 
+
+    public function store(Request $request)
+{
+    
+
+    return redirect()->back();
+}
+
     public function search(Request $request)
     {
         $filters = $request->only(['profession', 'ville']);
@@ -43,3 +51,5 @@ class ArtisanController extends Controller
         return back()->with('success', $result['message']);
     }
 }
+
+

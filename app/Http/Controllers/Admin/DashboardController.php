@@ -48,6 +48,14 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function updateArtisan(Request $request, $id)
+{
+    
+
+    return redirect()->back();
+}
+
+
     public function professions()
     {
         return view('admin.professions', [
